@@ -1,17 +1,21 @@
-/* Temporary diagnostics: deliberately readable independently of rem scaling. */
+/* Temporary utility strip. All dimensions follow the shared rem scale. */
 .viewport-panel {
   display: flex;
   flex-wrap: wrap;
-  align-items: baseline;
-  justify-content: flex-end;
-  gap: 4px 8px;
-  padding: 6px var(--space-inline);
-  border-block-end: 1px solid var(--line);
+  align-items: center;
+  justify-content: space-between;
+  gap: .6rem 2rem;
+  padding: .6rem var(--space-inline);
+  border-block-end: .1rem solid var(--line);
   background: var(--surface);
   color: var(--ink);
-  font-size: 12px;
+  font-size: var(--small-size);
   line-height: 1.5;
 }
 .viewport-panel[hidden] { display: none; }
 .viewport-panel output { font-variant-numeric: tabular-nums; font-weight: 650; }
+.viewport-reading, .utility-actions { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem 1rem; min-inline-size: 0; }
+.utility-actions { margin-inline-start: auto; }
+.utility-actions select, .utility-actions button { font: inherit; padding: .4rem .8rem; border: .1rem solid var(--line); border-radius: .4rem; background: var(--paper); color: var(--ink); }
+.utility-actions button:disabled { color: var(--muted); cursor: not-allowed; }
 @media print { .viewport-panel { display: none; } }

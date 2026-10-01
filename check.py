@@ -3,6 +3,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urlsplit, unquote
 import xml.etree.ElementTree as ET
+import re
 
 
 class Page(HTMLParser):
@@ -32,6 +33,10 @@ def main():
     root = Path(__file__).resolve().parent
     pages = {path: Page(path.read_text(encoding="utf-8")) for path in root.glob("*.html")}
     errors = []
+    for path in (root / "assets").glob("*.css"):
+        css = re.sub(r"/\*.*?\*/", "", path.read_text(encoding="utf-8"), flags=re.S)
+        if re.search(r"\d(?:\.\d+)?px\b", css, flags=re.I):
+            errors.append(f"{path.name}: unexpected px dimension")
     for path, page in pages.items():
         errors.extend(f"{path.name}: duplicate id {item}" for item in page.duplicates)
         if any(src != "assets/viewport.js" for src in page.scripts) or len(page.scripts) > 1:

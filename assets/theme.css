@@ -5,7 +5,7 @@
 .brand { display: inline-flex; align-items: center; gap: 1rem; text-decoration: none; color: var(--ink); font-weight: 700; font-size: 2rem; }
 .brand svg { inline-size: 4rem; block-size: 4rem; }
 .desktop-nav { display: flex; flex-wrap: wrap; gap: 1rem; }
-.desktop-nav a, .mobile-nav a { padding: .8rem 1rem; text-decoration: none; min-block-size: max(4.4rem, 44px); display: inline-flex; align-items: center; }
+.desktop-nav a, .mobile-nav a { padding: .8rem 1rem; text-decoration: none; min-block-size: 4.4rem; display: inline-flex; align-items: center; }
 [aria-current=page] { font-weight: 700; text-decoration: underline !important; }
 .mobile-nav { display: none; }
 .demo-note { padding: 1rem var(--space-inline); font-size: var(--small-size); background: var(--surface); color: var(--muted); }
@@ -22,11 +22,11 @@
 .product-thumbs .media { --media-ratio: 4 / 3; }
 .product-gallery > details { margin-block-start: 1rem; }
 .code { max-inline-size: 100%; margin: 0; padding: 2rem; border: .1rem solid var(--line); border-radius: var(--radius); background: var(--paper); white-space: pre-wrap; overflow-wrap: anywhere; font-size: var(--small-size); }
-.catalog-nav a { min-block-size: max(4.4rem, 44px); display: inline-flex; align-items: center; }
-@media (max-width: 800px) {
+.catalog-nav a { min-block-size: 4.4rem; display: inline-flex; align-items: center; }
+@media (max-width: 50em) {
   .desktop-nav { display: none; }
   .mobile-nav { display: block; }
-  .mobile-nav > summary { padding: 1rem; min-block-size: 44px; }
+  .mobile-nav > summary { padding: 1rem; min-block-size: 4.4rem; }
   .mobile-nav[open] { flex-basis: 100%; }
   .mobile-nav nav { display: grid; }
   .brand { font-size: 2.4rem; }

@@ -1,7 +1,7 @@
 /* Layout primitives. Site colours and page composition belong in theme.css. */
 :root {
   --scale-units: 128;
-  --scale-min: 0px;
+  --scale-min: 0rem;
   --text-size: 1.6rem;
   --small-size: 1.4rem;
   --lead-size: 1.9rem;
@@ -58,7 +58,7 @@ button, summary { cursor: pointer; }
 .card { padding: var(--card-space); border: .1rem solid var(--line); border-radius: var(--radius); background: var(--paper); }
 .card-flex { display: flex; flex-direction: column; gap: 1.5rem; }
 .card-flex > :last-child { margin-block-start: auto; }
-.btn { display: inline-flex; align-items: center; justify-content: center; min-block-size: max(4.4rem, 44px); padding: 1rem 2rem; font-size: var(--button-size); line-height: 1.3; border: .1rem solid transparent; border-radius: var(--radius); color: var(--on-accent); background: var(--accent); text-decoration: none; text-align: center; max-inline-size: 100%; }
+.btn { display: inline-flex; align-items: center; justify-content: center; min-block-size: 4.4rem; padding: 1rem 2rem; font-size: var(--button-size); line-height: 1.3; border: .1rem solid transparent; border-radius: var(--radius); color: var(--on-accent); background: var(--accent); text-decoration: none; text-align: center; max-inline-size: 100%; }
 .btn-secondary { color: var(--accent); background: var(--paper); border-color: var(--line); }
 .btn[disabled] { opacity: .6; cursor: not-allowed; }
 .prose > * + * { margin-block-start: 2rem; }
@@ -69,7 +69,7 @@ button, summary { cursor: pointer; }
 .media-wide { --media-ratio: 16 / 9; }
 .media-square { --media-ratio: 1; }
 .disclosure { border-block-end: .1rem solid var(--line); padding-block: 1rem; }
-.disclosure > summary { padding-block: 1rem; min-block-size: max(4.4rem, 44px); }
+.disclosure > summary { padding-block: 1rem; min-block-size: 4.4rem; }
 .disclosure > :not(summary) { margin-block: 1rem; }
 .toc a { display: block; padding-block: .8rem; }
 .breadcrumbs { display: flex; flex-wrap: wrap; gap: .8rem; list-style: none; padding: 0; font-size: var(--small-size); }
@@ -80,7 +80,7 @@ button, summary { cursor: pointer; }
 .specs dt { color: var(--muted); }
 .specs dd { margin: 0; }
 .field { display: grid; gap: .7rem; }
-.field input, .field textarea, .field select { inline-size: 100%; min-inline-size: 0; min-block-size: max(4.4rem, 44px); border: .1rem solid var(--line); border-radius: var(--radius); background: var(--paper); color: var(--ink); padding: 1rem; }
+.field input, .field textarea, .field select { inline-size: 100%; min-inline-size: 0; min-block-size: 4.4rem; border: .1rem solid var(--line); border-radius: var(--radius); background: var(--paper); color: var(--ink); padding: 1rem; }
 .field textarea { min-block-size: 12rem; resize: vertical; }
 .anchor { scroll-margin-block-start: 2rem; }
 .skip { position: absolute; inset-block-start: -20rem; inset-inline-start: 1rem; z-index: 10; padding: 1rem; background: var(--paper); }
@@ -95,7 +95,7 @@ button, summary { cursor: pointer; }
   .aligned > .card { display: grid; grid-template-rows: subgrid; grid-row: span calc(var(--items) + 1); row-gap: 1rem; }
   .aligned > .card > ul { display: grid; grid-template-rows: subgrid; grid-row: 2 / span var(--items); row-gap: 1rem; }
 }
-@media (max-width: 800px) {
+@media (max-width: 50em) {
   :root { --scale-units: 64; --text-size: 2.08rem; --small-size: 1.82rem; --lead-size: 2.47rem; --button-size: 2.52rem; --space-block: 3rem; --space-inline: 1.6rem; --gap: 2rem; }
   .grid { --columns: 1; }
   .grid-compact { --columns: 2; }
@@ -104,7 +104,7 @@ button, summary { cursor: pointer; }
   h3 { font-size: 2.8rem; }
   .aligned { font-size: 1.68rem; }
 }
-@media (min-width: 2000px) {
+@media (min-width: 125em) {
   :root { --scale-units: 160; --space-block: 6rem; --space-inline: 12rem; --gap: 6rem; }
 }
 @media print {
