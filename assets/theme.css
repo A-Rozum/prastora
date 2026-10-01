@@ -24,7 +24,7 @@
 .code { max-inline-size: 100%; margin: 0; padding: 2rem; border: .1rem solid var(--line); border-radius: var(--radius); background: var(--paper); white-space: pre-wrap; overflow-wrap: anywhere; font-size: var(--small-size); }
 .catalog-nav a { min-block-size: 4.4rem; display: inline-flex; align-items: center; }
 @media (max-width: 50em) {
-  .header-inner { display: grid; grid-template-columns: minmax(0, 1fr) 18rem; align-items: start; }
+  .header-inner { display: grid; grid-template-columns: minmax(0, 1fr) 22rem; align-items: start; }
   .header-inner > .brand { min-block-size: calc(2rem + var(--text-size) * var(--line-height)); }
   .desktop-nav { display: none; }
   .mobile-nav { display: block; }
