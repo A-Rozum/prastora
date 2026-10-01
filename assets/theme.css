@@ -24,16 +24,17 @@
 .code { max-inline-size: 100%; margin: 0; padding: 2rem; border: .1rem solid var(--line); border-radius: var(--radius); background: var(--paper); white-space: pre-wrap; overflow-wrap: anywhere; font-size: var(--small-size); }
 .catalog-nav a { min-block-size: 4.4rem; display: inline-flex; align-items: center; }
 @media (max-width: 50em) {
+  .header-inner { display: grid; grid-template-columns: minmax(0, 1fr) 18rem; align-items: start; }
+  .header-inner > .brand { min-block-size: calc(2rem + var(--text-size) * var(--line-height)); }
   .desktop-nav { display: none; }
   .mobile-nav { display: block; }
-  .mobile-nav > summary { display: flex; align-items: center; gap: 1rem; padding: 1rem; min-block-size: 4.4rem; list-style: none; }
+  .mobile-nav > summary { box-sizing: border-box; display: flex; align-items: center; gap: 1rem; padding: 1rem; min-block-size: 4.4rem; list-style: none; }
   .mobile-nav > summary::-webkit-details-marker { display: none; }
   .mobile-nav > summary::marker { content: ''; }
-  .mobile-nav > summary::before { content: ''; inline-size: 1rem; block-size: 1rem; flex: none; border-top: .18rem solid currentColor; border-right: .18rem solid currentColor; transform: rotate(45deg); }
+  .mobile-nav > summary::before { content: ''; box-sizing: border-box; inline-size: 1rem; block-size: 1rem; flex: none; border-top: .18rem solid currentColor; border-right: .18rem solid currentColor; transform: rotate(45deg); }
   .mobile-nav:dir(rtl) > summary::before { transform: rotate(225deg); }
   .mobile-nav[open] > summary::before { transform: rotate(135deg); }
-  .mobile-nav[open] { flex-basis: 100%; }
-  .mobile-nav nav { display: grid; }
+  .mobile-nav nav { display: grid; padding-inline-start: 2rem; }
   .brand { font-size: 2.4rem; }
   .catalog-nav { gap: 1rem; }
   .grid-compact .card { --card-space: 1.5rem; }

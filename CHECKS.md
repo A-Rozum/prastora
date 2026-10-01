@@ -1,5 +1,7 @@
 # First pass
 
+Mobile-header composition: grid now keeps the brand and disclosure in separate columns, with an 18rem menu column in both states. Links sit below the summary with their text aligned to Menu. Removed the open-state full-row flex rule. Checked brand/summary coordinates before and after opening, text alignment and header bounds across five pages, 14 widths including 292, and LTR/RTL: 140 checks passed, with no coordinate shifts. Desktop layout remains flex-based; real-device visual review is still needed.
+
 Mobile-menu refinement: replaced the native summary marker with a CSS chevron and explicit 1rem flex gap. Chevron dimensions and stroke use rem; closed direction follows LTR/RTL and open direction points down. Checked header bounds and computed arrow/gap proportions on all five pages at 14 widths (including 292 and 836), both directions and both disclosure states: 280 checks passed. Browser-zoom raster rounding and Dark Reader rendering remain subject to real-device review; existing native disclosure semantics were retained.
 
 Dark Reader follow-up: the user confirmed that disabling the extension immediately fixes the arrow; enabling it makes the background arrow disappear or move to the top-left after reload in Chrome on Windows 11. Replaced the background arrow with a separate inline SVG overlay using logical rem offsets and pointer-events:none. The native select remains functional; forced-colour mode hides the SVG and restores the browser arrow. Dark Reader compatibility still requires the user's confirmation on the affected setup.
