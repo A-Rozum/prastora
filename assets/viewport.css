@@ -30,9 +30,9 @@
   background-image: url("chevron-down.svg");
   background-repeat: no-repeat;
   background-size: 1.4rem 1.4rem;
-  background-position: right .8rem center;
+  background-position: calc(100% - .8rem) 50%;
 }
-.utility-actions select:dir(rtl) { background-position: left .8rem center; }
+.utility-actions select:dir(rtl) { background-position: .8rem 50%; }
 @media (forced-colors: active) {
   .utility-actions select { appearance: auto; -webkit-appearance: auto; background-image: none; }
 }
