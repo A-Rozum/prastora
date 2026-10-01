@@ -4,11 +4,14 @@
 @media (prefers-color-scheme: dark) {
   :root { color-scheme: dark; --ink: #e3eef0; --muted: #b4c8cd; --paper: #13262c; --surface: #1b333a; --line: #47616b; --accent: #96d2df; --on-accent: #12272d; --error: #ffb6c5; --success: #a3dfb7; }
   .scheme-status::after { content: 'Dark'; }
+  :root { --utility-surface: #30464f; --utility-line: #718a96; }
 }
 :root[data-scheme=light] { color-scheme: light; --ink: #233a40; --muted: #576b71; --paper: #fff; --surface: #edf3f3; --line: #d3e0e1; --accent: #285d6b; --on-accent: #fff; --error: #8c3043; --success: #28653d; }
 :root[data-scheme=light] .scheme-status::after { content: 'Light'; }
+:root[data-scheme=light] { --utility-surface: #e5e9ec; --utility-line: #adb9c2; }
 :root[data-scheme=dark] { color-scheme: dark; --ink: #e3eef0; --muted: #b4c8cd; --paper: #13262c; --surface: #1b333a; --line: #47616b; --accent: #96d2df; --on-accent: #12272d; --error: #ffb6c5; --success: #a3dfb7; }
 :root[data-scheme=dark] .scheme-status::after { content: 'Dark'; }
+:root[data-scheme=dark] { --utility-surface: #30464f; --utility-line: #718a96; }
 .viewport-tools { display: flex; align-items: center; gap: 1rem; min-inline-size: 0; }
 .viewport-tools .viewport-reading { flex-wrap: nowrap; }
 .theme-toggle { display: inline-flex; align-items: center; justify-content: center; inline-size: 3.6rem; block-size: 3.6rem; padding: .6rem; border: .1rem solid var(--line); border-radius: .4rem; background: var(--paper); color: var(--ink); flex: none; }
@@ -59,7 +62,7 @@
 .story-row .media { --media-ratio: 1; }
 body { padding-block-end: var(--consent-height, 0rem); }
 html { scroll-padding-block-end: calc(var(--consent-height, 0rem) + 1rem); }
-.consent-bar { position: fixed; inset-inline: 0; inset-block-end: 0; z-index: 30; padding: .6rem var(--space-inline); border-block-start: .1rem solid var(--line); background: var(--surface); font-size: var(--small-size); max-block-size: 45svh; overflow: auto; }
+.consent-bar { position: fixed; inset-inline: 0; inset-block-end: 0; z-index: 30; padding: .6rem var(--space-inline); border-block-start: .1rem solid var(--utility-line); background: var(--utility-surface); font-size: var(--small-size); max-block-size: 45svh; overflow: auto; }
 .consent-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: nowrap; gap: 1rem; }
 .consent-row > p { flex: none; }
 .consent-actions { display: flex; flex-wrap: nowrap; gap: .6rem; }
