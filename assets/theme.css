@@ -23,11 +23,13 @@
 .product-gallery > details { margin-block-start: 1rem; }
 .code { max-inline-size: 100%; margin: 0; padding: 2rem; border: .1rem solid var(--line); border-radius: var(--radius); background: var(--paper); white-space: pre-wrap; overflow-wrap: anywhere; font-size: var(--small-size); }
 .catalog-nav a { min-block-size: 4.4rem; display: inline-flex; align-items: center; }
+.media-link { display: block; inline-size: 100%; line-height: 0; border-radius: var(--radius); }
+.media-link > .media { display: block; }
 /* Interaction cue only: transforms do not change the surrounding layout. */
 @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
-  :where(.btn, .brand, .desktop-nav a, .mobile-nav > summary, .mobile-nav nav a, .footer-links a, .catalog-nav a, .card a, .language-control) { transition: transform .16s ease; }
+  :where(.btn, .brand, .desktop-nav a, .mobile-nav > summary, .mobile-nav nav a, .footer-links a, .catalog-nav a, .card a, .media-link, .language-control) { transition: transform .16s ease; }
   .card a:not(.btn), .footer-links a { display: inline-block; }
-  :where(.btn, .brand, .desktop-nav a, .mobile-nav > summary, .mobile-nav nav a, .footer-links a, .catalog-nav a, .card a, .language-control):not(:disabled):hover { transform: scale(1.03); }
+  :where(.btn, .brand, .desktop-nav a, .mobile-nav > summary, .mobile-nav nav a, .footer-links a, .catalog-nav a, .card a, .media-link, .language-control):not(:disabled):hover { transform: scale(1.03); }
   .brand { transform-origin: left center; }
   .brand:dir(rtl) { transform-origin: right center; }
   .mobile-nav > summary, .mobile-nav nav a, .language-control { transform-origin: right center; }
