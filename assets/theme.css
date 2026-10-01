@@ -1,6 +1,10 @@
 /* Neutral demonstration theme. Replace this file to change site identity. */
 :root { --accent: #285d6b; --ink: #233a40; --muted: #576b71; --surface: #edf3f3; --line: #d3e0e1; }
 .site-header { border-block-end: .1rem solid var(--line); background: var(--paper); }
+.site-top { position: fixed; inset-block-start: 0; inset-inline: 0; z-index: 20; max-block-size: 75svh; overflow: auto; }
+.site-top.is-compact .header-inner { padding-block: .5rem; }
+html { scroll-padding-block-start: calc(var(--sticky-height, 0rem) + 1rem); }
+.lead, .card > p:not(.eyebrow, .sample-label, .paragraph-sample, .price), .card-flex > p, .story-row p, .site-footer > p { text-wrap: pretty; }
 .header-inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 2rem; padding: 1.5rem var(--space-inline); }
 .brand { display: inline-flex; align-items: center; gap: 1rem; text-decoration: none; color: var(--ink); font-weight: 700; font-size: 2rem; }
 .brand svg { inline-size: 4rem; block-size: 4rem; }
@@ -53,4 +57,8 @@
   .grid-compact .card { --card-space: 1.5rem; }
   .grid-compact h3 { font-size: 2.5rem; }
   .product-thumbs { --columns: 3; }
+}
+@media print {
+  .site-top, .site-top-slot { display: none; }
+  html { scroll-padding-block-start: 0; }
 }

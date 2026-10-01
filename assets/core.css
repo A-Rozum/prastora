@@ -25,7 +25,7 @@ html { font-size: max(var(--scale-min), calc(100vw / var(--scale-units))); box-s
 *, ::before, ::after { box-sizing: inherit; }
 body { margin: 0; font: var(--text-size)/var(--line-height) var(--font); color: var(--ink); background: var(--paper); }
 h1, h2, h3, h4, p, ul, ol, figure, blockquote { margin: 0; }
-h1, h2, h3, h4 { line-height: 1.15; font-weight: 650; overflow-wrap: anywhere; }
+h1, h2, h3, h4, h5, h6 { line-height: 1.15; font-weight: 650; overflow-wrap: anywhere; text-wrap: balance; }
 h1 { font-size: 5rem; }
 h2 { font-size: 3.6rem; }
 h3 { font-size: 2.5rem; }
@@ -45,6 +45,7 @@ button, summary { cursor: pointer; }
 .lead { font-size: var(--lead-size); }
 .small { font-size: var(--small-size); }
 .muted { color: var(--muted); }
+.text-pretty { text-wrap: pretty; }
 .surface { background: var(--surface); }
 .grid { display: grid; grid-template-columns: repeat(var(--columns, 1), minmax(0, 1fr)); gap: var(--gap); }
 .grid-2 { --columns: 2; }

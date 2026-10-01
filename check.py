@@ -1,4 +1,4 @@
-"""Optional local checks; no dependencies. Only temporary viewport JS is allowed."""
+"""Optional local checks; no dependencies. Allow only explicit local UI scripts."""
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urlsplit, unquote
@@ -39,7 +39,7 @@ def main():
             errors.append(f"{path.name}: unexpected px dimension")
     for path, page in pages.items():
         errors.extend(f"{path.name}: duplicate id {item}" for item in page.duplicates)
-        if any(src != "assets/viewport.js" for src in page.scripts) or len(page.scripts) > 1:
+        if any(src not in ("assets/viewport.js", "assets/interactions.js") for src in page.scripts) or len(page.scripts) != len(set(page.scripts)):
             errors.append(f"{path.name}: unexpected browser script")
         for ref in page.refs:
             url = urlsplit(ref)
