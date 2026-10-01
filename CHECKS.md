@@ -1,5 +1,7 @@
 # First pass
 
+Compact dropdown trial: links use the mobile small-text size (1.82rem instead of 2.08rem), 1.4 line-height, .4rem block padding and a 3.4rem minimum border-box height. Summary and branding are unchanged. All five pages checked at 14 widths in LTR/RTL: 140 checks passed for bounds, stationary header elements and computed link proportions. At phone widths the denser rows have smaller touch targets; review tapping on a physical device before treating this as a final accessibility choice.
+
 Header alignment trial: Explore Prastora and dropdown links now share the outer inline-end content edge, with no additional inline padding. The menu column remains 22rem, fitting the longer label on one line. Tested all five pages at 14 widths in LTR/RTL: 140 checks passed for label/links edge alignment, no header overflow, and unchanged brand/summary coordinates on opening. Edge checks use the header's content box, excluding any browser scrollbar.
 
 Mobile-header composition: grid now keeps the brand and disclosure in separate columns, with an 18rem menu column in both states. Links sit below the summary with their text aligned to Menu. Removed the open-state full-row flex rule. Checked brand/summary coordinates before and after opening, text alignment and header bounds across five pages, 14 widths including 292, and LTR/RTL: 140 checks passed, with no coordinate shifts. Desktop layout remains flex-based; real-device visual review is still needed.

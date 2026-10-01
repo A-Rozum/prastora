@@ -35,7 +35,7 @@
   .mobile-nav:dir(rtl) > summary::before { transform: rotate(225deg); }
   .mobile-nav[open] > summary::before { transform: rotate(135deg); }
   .mobile-nav nav { display: grid; }
-  .mobile-nav nav a { justify-content: flex-end; text-align: end; padding-inline: 0; }
+  .mobile-nav nav a { box-sizing: border-box; justify-content: flex-end; text-align: end; font-size: var(--small-size); line-height: 1.4; min-block-size: 3.4rem; padding-block: .4rem; padding-inline: 0; }
   .brand { font-size: 2.4rem; }
   .catalog-nav { gap: 1rem; }
   .grid-compact .card { --card-space: 1.5rem; }
