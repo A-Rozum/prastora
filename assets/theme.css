@@ -26,7 +26,12 @@
 @media (max-width: 50em) {
   .desktop-nav { display: none; }
   .mobile-nav { display: block; }
-  .mobile-nav > summary { padding: 1rem; min-block-size: 4.4rem; }
+  .mobile-nav > summary { display: flex; align-items: center; gap: 1rem; padding: 1rem; min-block-size: 4.4rem; list-style: none; }
+  .mobile-nav > summary::-webkit-details-marker { display: none; }
+  .mobile-nav > summary::marker { content: ''; }
+  .mobile-nav > summary::before { content: ''; inline-size: 1rem; block-size: 1rem; flex: none; border-top: .18rem solid currentColor; border-right: .18rem solid currentColor; transform: rotate(45deg); }
+  .mobile-nav:dir(rtl) > summary::before { transform: rotate(225deg); }
+  .mobile-nav[open] > summary::before { transform: rotate(135deg); }
   .mobile-nav[open] { flex-basis: 100%; }
   .mobile-nav nav { display: grid; }
   .brand { font-size: 2.4rem; }
