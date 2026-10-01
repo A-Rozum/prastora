@@ -5,11 +5,21 @@
   <meta name="description" content="Explore typography, container-aware components, colour schemes and content states in the Prastora experiments lab.">
   <title>Experiments — Prastora</title>
   <link rel="stylesheet" href="assets/core.css"><link rel="stylesheet" href="assets/theme.css?v=10">
-  <link rel="stylesheet" href="assets/viewport.css?v=3"><link rel="stylesheet" href="assets/experiments.css">
+  <link rel="stylesheet" href="assets/viewport.css?v=3"><link rel="stylesheet" href="assets/experiments.css?v=2">
   <script src="assets/viewport.js" defer></script>
 </head>
 <body>
-  <aside class="viewport-panel" data-viewport hidden aria-label="Utility strip"><div class="viewport-reading" title="Browser viewport size in CSS pixels"><span>Viewport</span><output data-viewport-value dir="ltr"></output></div><a href="index.html">Back to overview</a></aside>
+  <aside class="viewport-panel" data-viewport hidden aria-label="Utility strip">
+    <div class="viewport-tools">
+      <fieldset class="theme-picker" aria-label="Colour scheme"><div class="scheme-controls">
+        <label title="System theme"><input type="radio" name="scheme" id="scheme-system" aria-label="System theme" checked><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8m-4-4v4"/></svg></label>
+        <label title="Light theme"><input type="radio" name="scheme" id="scheme-light" aria-label="Light theme"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg></label>
+        <label title="Dark theme"><input type="radio" name="scheme" id="scheme-dark" aria-label="Dark theme"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.5A9 9 0 0 1 9.5 3.5a9 9 0 1 0 11 11Z"/></svg></label>
+      </div></fieldset>
+      <div class="viewport-reading" title="Browser viewport size in CSS pixels"><span>Viewport</span><output data-viewport-value dir="ltr"></output></div>
+    </div>
+    <div class="utility-actions"><span class="language-control"><select aria-label="Language" title="English only for now; other languages are planned"><option value="en" lang="en" selected>English</option><option value="es" lang="es" disabled>Español — soon</option><option value="fr" lang="fr" disabled>Français — soon</option><option value="ar" lang="ar" dir="rtl" disabled>العربية — soon</option></select><svg class="language-arrow" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="m4 6 4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><button type="button" disabled title="Account access is not connected"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="assets/placeholders.svg#account"/></svg>Sign in</button></div>
+  </aside>
   <a class="skip" href="#main">Skip to content</a>
   <header class="site-header"><div class="header-inner">
     <a class="brand" href="index.html"><svg viewBox="0 0 64 64" aria-hidden="true"><use href="assets/placeholders.svg#logo"/></svg>Prastora</a>
@@ -21,8 +31,7 @@
       <p class="eyebrow">An isolated testing ground</p><h1>Useful refinements. Same proportional foundation.</h1>
       <p class="lead">Compare small improvements before making them part of the core. These experiments retain Prastora's existing mobile, desktop and wide-screen scale settings.</p>
       <nav class="flex catalog-nav" aria-label="Experiments"><a href="#wrapping">Text wrapping</a><a href="#containers">Context-aware cards</a><a href="#states">Content states</a><a href="#rhythm">Composition</a></nav>
-      <fieldset class="theme-picker"><legend>Colour scheme</legend><div class="scheme-controls"><label><input type="radio" name="scheme" id="scheme-system" checked>System</label><label><input type="radio" name="scheme" id="scheme-light">Light</label><label><input type="radio" name="scheme" id="scheme-dark">Dark</label></div></fieldset>
-      <p class="small muted">Current scheme: <span class="scheme-status"></span>. System follows the preference reported by your browser. Manual choices apply to this page and are not saved.</p>
+      <p class="small muted">Current scheme: <span class="scheme-status"></span>. Use the monitor, sun and moon icons beside Viewport to choose System, Light or Dark. System follows the preference reported by your browser. Manual choices apply to this page and are not saved.</p>
     </section>
     <section class="section surface stack anchor" id="wrapping">
       <h2>Make line endings more deliberate.</h2>
@@ -43,6 +52,7 @@
       <div class="context-layout">
         <div class="stack-small"><h3>Main content area</h3><p class="small muted">With a mouse, drag the lower corner of this area to change its width independently of the page.</p>
           <div class="component-context component-resizable"><article class="card adaptive-card"><a class="media-link" href="product.html" aria-label="Explore the page starter"><svg class="media" viewBox="0 0 640 480" aria-hidden="true"><use href="assets/placeholders.svg#product"/></svg></a><div class="stack-small"><p class="small muted component-mode"></p><h3>A flexible starting point</h3><p>Keep the same component while adapting its composition to the space available.</p><a href="product.html">Explore the starter</a></div></article></div>
+          <div class="context-notes stack-small"><h4>What changes — and what stays the same</h4><p>The container changes the arrangement and heading size. The card keeps its content, links and place in the reading order.</p><p class="small muted">Use a wider composition for a featured entry and a stacked one in a supporting column. A taller neighbouring card does not require stretching this card or cropping its content.</p></div>
         </div>
         <aside class="stack-small context-sidebar"><h3>Supporting area</h3><p class="small muted">The same card in a narrower context.</p>
           <div class="component-context"><article class="card adaptive-card"><a class="media-link" href="product.html" aria-label="Explore the page starter"><svg class="media" viewBox="0 0 640 480" aria-hidden="true"><use href="assets/placeholders.svg#product"/></svg></a><div class="stack-small"><p class="small muted component-mode"></p><h3>A flexible starting point</h3><p>Keep the same component while adapting its composition to the space available.</p><a href="product.html">Explore the starter</a></div></article></div>
