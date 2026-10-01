@@ -17,7 +17,25 @@
 .viewport-reading, .utility-actions { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem 1rem; min-inline-size: 0; }
 .utility-actions { margin-inline-start: auto; }
 .utility-actions select, .utility-actions button { font: inherit; padding: .4rem .8rem; border: .1rem solid var(--line); border-radius: .4rem; background: var(--paper); color: var(--ink); }
-.utility-actions select { inline-size: 14rem; min-inline-size: 0; max-inline-size: 100%; flex: none; }
+.utility-actions select {
+  appearance: none;
+  -webkit-appearance: none;
+  inline-size: 14rem;
+  min-inline-size: 0;
+  max-inline-size: 100%;
+  flex: none;
+  padding-block: .4rem;
+  padding-inline: .8rem 2.8rem;
+  line-height: 1.5;
+  background-image: url("chevron-down.svg");
+  background-repeat: no-repeat;
+  background-size: 1.4rem 1.4rem;
+  background-position: right .8rem center;
+}
+.utility-actions select:dir(rtl) { background-position: left .8rem center; }
+@media (forced-colors: active) {
+  .utility-actions select { appearance: auto; -webkit-appearance: auto; background-image: none; }
+}
 .utility-actions button:disabled { color: var(--muted); cursor: not-allowed; }
 .utility-actions button { display: inline-flex; align-items: center; gap: .6rem; }
 .utility-actions svg { inline-size: calc(var(--small-size) * 1.2); block-size: calc(var(--small-size) * 1.2); flex: none; }
