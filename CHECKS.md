@@ -1,5 +1,7 @@
 # First pass
 
+Hover trial: actionable links, buttons, navigation summaries and the language-control wrapper scale to 1.03 over .16s. Enabled only for hover-capable fine pointers with no reduced-motion preference. Decorative cards and disabled buttons are excluded; language arrow transforms with its wrapper. Browser pointer test on the brand produced a 1.03 transform while layout dimensions stayed unchanged; disabled Sign in retained no transform. Local reference and CSS-unit checks passed. Touch-device, reduced-motion and Dark Reader visual behaviour should be reviewed on the user's setup.
+
 Compact dropdown trial: links use the mobile small-text size (1.82rem instead of 2.08rem), 1.4 line-height, .4rem block padding and a 3.4rem minimum border-box height. Summary and branding are unchanged. All five pages checked at 14 widths in LTR/RTL: 140 checks passed for bounds, stationary header elements and computed link proportions. At phone widths the denser rows have smaller touch targets; review tapping on a physical device before treating this as a final accessibility choice.
 
 Header alignment trial: Explore Prastora and dropdown links now share the outer inline-end content edge, with no additional inline padding. The menu column remains 22rem, fitting the longer label on one line. Tested all five pages at 14 widths in LTR/RTL: 140 checks passed for label/links edge alignment, no header overflow, and unchanged brand/summary coordinates on opening. Edge checks use the header's content box, excluding any browser scrollbar.
