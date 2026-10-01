@@ -1,5 +1,7 @@
 # First pass
 
+After the Remwork rename and English copy rewrite, local reference checks again passed (five pages, zero errors). Browser geometry was rechecked at all 12 widths below in LTR and RTL with disclosures expanded: 120 configurations, no visible element overflow found. The starter's code samples wrap within their containers. This recheck does not establish accessibility or physical-device readability.
+
 Five static page examples, two CSS files and a shared SVG sprite. No client JavaScript or external requests are required. check.py checks local references, fragments, duplicate IDs and absence of script tags; run with `python check.py`.
 
 Browser geometry checked at 320, 360, 390, 423, 609, 800, 801, 1280, 1463, 1999, 2000 and 2560 CSS pixels for all five pages, both LTR and RTL (120 configurations): no visible element overflow found. Expanded mobile menus checked on all pages at 320, 423 and 609px: no overflow. Enter opened the main page's native menu. Corresponding subgrid list rows had matching top coordinates at 423px. Arabic/Chinese text samples were inserted temporarily in the browser; Arabic quote border appeared on the right. SVG artwork was visible in a desktop screenshot.

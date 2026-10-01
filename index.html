@@ -1,41 +1,42 @@
 <!doctype html>
-<html lang="ru" dir="ltr">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Главная — мини-фреймворк</title>
+  <meta name="description" content="An evolving CSS framework exploring predictable layouts across screen sizes. Discover proportional scaling and complete page examples. Feedback and suggestions are welcome.">
+  <title>Prastora — predictable layouts across screen sizes</title>
   <link rel="stylesheet" href="assets/core.css"><link rel="stylesheet" href="assets/theme.css">
 </head>
 <body>
-  <a class="skip" href="#main">К содержанию</a>
+  <a class="skip" href="#main">Skip to content</a>
   <header class="site-header"><div class="header-inner">
-    <a class="brand" href="index.html"><svg viewBox="0 0 64 64" aria-hidden="true"><use href="assets/placeholders.svg#logo"/></svg>Название компании</a>
-    <nav class="desktop-nav" aria-label="Основная навигация"><a href="index.html" aria-current="page">Главная</a><a href="service.html">Услуга</a><a href="article.html">Статья</a><a href="catalog.html">Каталог</a><a href="product.html">Товар</a></nav>
-    <details class="mobile-nav"><summary>Меню</summary><nav aria-label="Мобильная навигация"><a href="index.html" aria-current="page">Главная</a><a href="service.html">Услуга</a><a href="article.html">Статья</a><a href="catalog.html">Каталог</a><a href="product.html">Товар</a></nav></details>
+    <a class="brand" href="index.html"><svg viewBox="0 0 64 64" aria-hidden="true"><use href="assets/placeholders.svg#logo"/></svg>Prastora</a>
+    <nav class="desktop-nav" aria-label="Main navigation"><a href="index.html" aria-current="page">Overview</a><a href="service.html">Layouts</a><a href="article.html">Typography</a><a href="catalog.html">Patterns</a><a href="product.html">Starter</a></nav>
+    <details class="mobile-nav"><summary>Menu</summary><nav aria-label="Mobile navigation"><a href="index.html" aria-current="page">Overview</a><a href="service.html">Layouts</a><a href="article.html">Typography</a><a href="catalog.html">Patterns</a><a href="product.html">Starter</a></nav></details>
   </div></header>
-  <div class="demo-note">Нейтральный демонстрационный сайт. Все названия, изображения и предложения — заглушки.</div>
+  <div class="demo-note">Prastora · an experimental CSS toolkit, built around proportionally scaled layouts.</div>
   <main id="main">
     <section class="section pair pair-equal hero">
-      <div class="stack"><p class="eyebrow">Главная коммерческого сайта</p><h1>Понятное предложение без лишних деталей</h1><p class="lead">Коротко расскажите, кому помогает компания, какую задачу решает и почему посетителю стоит продолжить знакомство.</p><div class="flex"><a class="btn" href="service.html">Посмотреть услуги</a><a class="btn btn-secondary" href="catalog.html">Открыть каталог</a></div></div>
-      <svg class="media" viewBox="0 0 640 480" role="img" aria-label="Заглушка основной иллюстрации"><use href="assets/placeholders.svg#workspace"/></svg>
+      <div class="stack"><p class="eyebrow">An evolving CSS framework</p><h1>Build websites with predictable layouts across screen sizes.</h1><p class="lead">Explore a proportional approach to typography, spacing and full-width layouts, with complete page examples built in HTML and CSS. Still evolving — feedback, ideas and suggestions are welcome.</p><div class="flex"><a class="btn" href="product.html">Explore the starter</a><a class="btn btn-secondary" href="catalog.html">Explore patterns</a></div></div>
+      <svg class="media" viewBox="0 0 640 480" role="img" aria-label="Workspace illustration"><use href="assets/placeholders.svg#workspace"/></svg>
     </section>
-    <section class="section surface stack"><h2>Пять страниц на одной основе</h2><p>Каждый пример использует общие сетки, карточки, кнопки и типографику. Перейдите на страницу, чтобы посмотреть её отдельно.</p><div class="grid grid-4">
-      <article class="card card-flex"><h3>Услуга</h3><p>Описание, этапы работы, вопросы и блок обращения.</p><a href="service.html">Открыть пример</a></article>
-      <article class="card card-flex"><h3>Статья</h3><p>Длинный текст, оглавление, иллюстрации, цитаты и списки.</p><a href="article.html">Открыть пример</a></article>
-      <article class="card card-flex"><h3>Каталог</h3><p>Разделы и карточки с разной длиной названий.</p><a href="catalog.html">Открыть пример</a></article>
-      <article class="card card-flex"><h3>Товар</h3><p>Изображения, цена, описание и характеристики.</p><a href="product.html">Открыть пример</a></article>
+    <section class="section surface stack"><h2>Start with a page, not an empty canvas.</h2><p>See the same foundation in different contexts. These examples bring navigation, content, cards and supporting sections together, so you can judge the whole layout rather than an isolated button.</p><div class="grid grid-4">
+      <article class="card card-flex"><h3>Service page</h3><p>A clear introduction, scope of work, process, questions and an enquiry section.</p><a href="service.html">Explore the layout</a></article>
+      <article class="card card-flex"><h3>Long-form article</h3><p>Headings, paragraphs, quotations and media in a continuous reading experience.</p><a href="article.html">Explore typography</a></article>
+      <article class="card card-flex"><h3>Catalogue</h3><p>Browse collections and compare cards with different amounts of content.</p><a href="catalog.html">Explore patterns</a></article>
+      <article class="card card-flex"><h3>Detail page</h3><p>Bring a primary image, key information and a fuller explanation together.</p><a href="product.html">Explore the starter</a></article>
     </div></section>
-    <section class="section stack"><h2>Направления работы</h2><div class="grid grid-2 grid-compact aligned">
-      <article class="card"><h3>Для частных клиентов</h3><ul><li>Первичное обсуждение задачи</li><li>Подробное изучение исходных данных и возможных вариантов решения</li><li>Практическая помощь</li><li>Обратная связь</li></ul></article>
-      <article class="card"><h3>Для компаний и небольших команд</h3><ul><li>Анализ ситуации</li><li>План работ</li><li>Сопровождение проекта с учётом меняющихся потребностей команды</li><li>Проверка результата</li></ul></article>
-    </div><p class="small muted">Пункты соседних списков выравниваются через CSS subgrid; текст и маркеры — по центру высоты строки.</p></section>
-    <section class="section surface stack"><h2>О компании</h2><div class="pair hero"><div class="prose"><p>Этот блок показывает, как можно сочетать обычный текст и иллюстрацию без обязательного набора декоративных элементов.</p><p>Вместо реальных фотографий используются лёгкие локальные SVG. Цвета и оформление меняются отдельно от сеток и компонентов.</p><a href="article.html">Подробнее в примере статьи</a></div><svg class="media" viewBox="0 0 640 480" role="img" aria-label="Заглушка фотографии компании"><use href="assets/placeholders.svg#landscape"/></svg></div></section>
-    <section class="section stack"><h2>Люди за проектом</h2><div class="grid grid-3">
-      <figure class="card stack"><svg class="media" viewBox="0 0 640 480" role="img" aria-label="Силуэт первого участника команды"><use href="assets/placeholders.svg#person"/></svg><figcaption class="stack-small"><h3>Имя участника</h3><p class="muted">Роль в компании</p></figcaption></figure>
-      <figure class="card stack"><svg class="media" viewBox="0 0 640 480" role="img" aria-label="Силуэт второго участника команды"><use href="assets/placeholders.svg#person"/></svg><figcaption class="stack-small"><h3>Ещё один участник</h3><p class="muted">Другая специализация</p></figcaption></figure>
-      <figure class="card stack"><svg class="media" viewBox="0 0 640 480" role="img" aria-label="Силуэт третьего участника команды"><use href="assets/placeholders.svg#person"/></svg><figcaption class="stack-small"><h3>Длинное имя участника команды</h3><p class="muted">Направление работы</p></figcaption></figure>
+    <section class="section stack"><h2>A shared rhythm, even when content varies.</h2><p>Responsive grids handle the composition. An optional subgrid pattern aligns corresponding list rows and centres their text and markers without measuring them in JavaScript.</p><div class="grid grid-2 grid-compact aligned">
+      <article class="card"><h3>Build with familiar tools</h3><ul><li>Semantic HTML</li><li>CSS Grid and logical properties for adaptable layouts</li><li>Native disclosure elements</li><li>Local SVG artwork</li></ul></article>
+      <article class="card"><h3>Keep the structure flexible</h3><ul><li>Composable sections</li><li>Shared theme variables</li><li>Optional row alignment when neighbouring lists need a common rhythm</li><li>No browser runtime required</li></ul></article>
     </div></section>
-    <section class="section callout pair hero"><div class="stack"><h2>Следующий понятный шаг</h2><p>Здесь может быть приглашение обсудить задачу, выбрать товар или задать вопрос.</p></div><div><a class="btn" href="service.html#contact">Посмотреть блок обращения</a></div></section>
+    <section class="section surface stack"><h2>A different starting point for responsive design.</h2><div class="pair hero"><div class="prose"><p>Prastora grew out of a practical preference: let the content use the screen, instead of holding it in a narrow column surrounded by increasingly large margins.</p><p>A viewport-linked rem scale carries proportions across typography, spacing and components. Responsive rules still change the composition where needed, particularly for reading and navigation on smaller screens.</p><p>Scale is a design choice, not a substitute for testing. Prastora is still being refined through page examples and real-device review.</p><a href="article.html#scaling">Read about the approach</a></div><svg class="media" viewBox="0 0 640 480" role="img" aria-label="Landscape illustration"><use href="assets/placeholders.svg#landscape"/></svg></div></section>
+    <section class="section stack"><h2>One foundation. Different kinds of content.</h2><p>Use figures and captions for profiles, product images or editorial media. Keep the layout independent of the assets you put into it.</p><div class="grid grid-3">
+      <figure class="card stack"><svg class="media" viewBox="0 0 640 480" role="img" aria-label="Person silhouette"><use href="assets/placeholders.svg#person"/></svg><figcaption class="stack-small"><h3>Profiles</h3><p class="muted">Portraits, names and supporting information.</p></figcaption></figure>
+      <figure class="card stack"><svg class="media" viewBox="0 0 640 480" role="img" aria-label="Product illustration"><use href="assets/placeholders.svg#product"/></svg><figcaption class="stack-small"><h3>Products</h3><p class="muted">Visuals paired with descriptions and details.</p></figcaption></figure>
+      <figure class="card stack"><svg class="media" viewBox="0 0 640 480" role="img" aria-label="Video illustration"><use href="assets/placeholders.svg#video"/></svg><figcaption class="stack-small"><h3>Editorial media</h3><p class="muted">Images, interviews and video sections.</p></figcaption></figure>
+    </div></section>
+    <section class="section callout pair hero"><div class="stack"><h2>Still evolving. Open to your ideas.</h2><p>This is a framework in development, not a finished promise. Explore the examples and consider what could work better. Feedback, use cases and suggestions are welcome.</p></div><div><a class="btn" href="product.html">Explore the starter</a></div></section>
   </main>
-  <footer class="site-footer section stack"><div class="grid grid-3"><div class="stack-small"><h3>Название компании</h3><p class="muted">Заглушка описания и реквизитов.</p></div><nav class="stack-small" aria-label="Примеры страниц"><h3>Примеры</h3><div class="footer-links"><a href="service.html">Услуга</a><a href="article.html">Статья</a><a href="catalog.html">Каталог</a></div></nav><div class="stack-small"><h3>Контактные данные</h3><p><bdi>hello@example.org</bdi></p><p class="small muted">Место для служебных страниц и политик.</p></div></div><p class="small muted">Мини-фреймворк · демонстрация вёрстки, без клиентских скриптов.</p></footer>
+  <footer class="site-footer section stack"><div class="grid grid-3"><div class="stack-small"><h3>Prastora</h3><p class="muted">An evolving CSS framework for predictable layouts across screen sizes.</p></div><nav class="stack-small" aria-label="Examples"><h3>Explore</h3><div class="footer-links"><a href="service.html">Layouts</a><a href="article.html">Typography</a><a href="catalog.html">Patterns</a></div></nav><div class="stack-small"><h3>Built with the web</h3><p>HTML · CSS · SVG</p><p class="small muted">Experimental. No client-side JavaScript required by these examples.</p></div></div></footer>
 </body>
 </html>

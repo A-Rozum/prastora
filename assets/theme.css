@@ -21,6 +21,7 @@
 .product-thumbs { margin-block-start: 1.5rem; gap: 1.5rem; }
 .product-thumbs .media { --media-ratio: 4 / 3; }
 .product-gallery > details { margin-block-start: 1rem; }
+.code { max-inline-size: 100%; margin: 0; padding: 2rem; border: .1rem solid var(--line); border-radius: var(--radius); background: var(--paper); white-space: pre-wrap; overflow-wrap: anywhere; font-size: var(--small-size); }
 .catalog-nav a { min-block-size: max(4.4rem, 44px); display: inline-flex; align-items: center; }
 @media (max-width: 800px) {
   .desktop-nav { display: none; }
