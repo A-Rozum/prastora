@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ru" dir="ltr">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Главная — мини-фреймворк</title>
+  <link rel="stylesheet" href="assets/core.css"><link rel="stylesheet" href="assets/theme.css">
+</head>
+<body>
+  <a class="skip" href="#main">К содержанию</a>
+  <header class="site-header"><div class="header-inner">
+    <a class="brand" href="index.html"><svg viewBox="0 0 64 64" aria-hidden="true"><use href="assets/placeholders.svg#logo"/></svg>Название компании</a>
+    <nav class="desktop-nav" aria-label="Основная навигация"><a href="index.html" aria-current="page">Главная</a><a href="service.html">Услуга</a><a href="article.html">Статья</a><a href="catalog.html">Каталог</a><a href="product.html">Товар</a></nav>
+    <details class="mobile-nav"><summary>Меню</summary><nav aria-label="Мобильная навигация"><a href="index.html" aria-current="page">Главная</a><a href="service.html">Услуга</a><a href="article.html">Статья</a><a href="catalog.html">Каталог</a><a href="product.html">Товар</a></nav></details>
+  </div></header>
+  <div class="demo-note">Нейтральный демонстрационный сайт. Все названия, изображения и предложения — заглушки.</div>
+  <main id="main">
+    <section class="section pair pair-equal hero">
+      <div class="stack"><p class="eyebrow">Главная коммерческого сайта</p><h1>Понятное предложение без лишних деталей</h1><p class="lead">Коротко расскажите, кому помогает компания, какую задачу решает и почему посетителю стоит продолжить знакомство.</p><div class="flex"><a class="btn" href="service.html">Посмотреть услуги</a><a class="btn btn-secondary" href="catalog.html">Открыть каталог</a></div></div>
+      <svg class="media" viewBox="0 0 640 480" role="img" aria-label="Заглушка основной иллюстрации"><use href="assets/placeholders.svg#workspace"/></svg>
+    </section>
+    <section class="section surface stack"><h2>Пять страниц на одной основе</h2><p>Каждый пример использует общие сетки, карточки, кнопки и типографику. Перейдите на страницу, чтобы посмотреть её отдельно.</p><div class="grid grid-4">
+      <article class="card card-flex"><h3>Услуга</h3><p>Описание, этапы работы, вопросы и блок обращения.</p><a href="service.html">Открыть пример</a></article>
+      <article class="card card-flex"><h3>Статья</h3><p>Длинный текст, оглавление, иллюстрации, цитаты и списки.</p><a href="article.html">Открыть пример</a></article>
+      <article class="card card-flex"><h3>Каталог</h3><p>Разделы и карточки с разной длиной названий.</p><a href="catalog.html">Открыть пример</a></article>
+      <article class="card card-flex"><h3>Товар</h3><p>Изображения, цена, описание и характеристики.</p><a href="product.html">Открыть пример</a></article>
+    </div></section>
+    <section class="section stack"><h2>Направления работы</h2><div class="grid grid-2 grid-compact aligned">
+      <article class="card"><h3>Для частных клиентов</h3><ul><li>Первичное обсуждение задачи</li><li>Подробное изучение исходных данных и возможных вариантов решения</li><li>Практическая помощь</li><li>Обратная связь</li></ul></article>
+      <article class="card"><h3>Для компаний и небольших команд</h3><ul><li>Анализ ситуации</li><li>План работ</li><li>Сопровождение проекта с учётом меняющихся потребностей команды</li><li>Проверка результата</li></ul></article>
+    </div><p class="small muted">Пункты соседних списков выравниваются через CSS subgrid; текст и маркеры — по центру высоты строки.</p></section>
+    <section class="section surface stack"><h2>О компании</h2><div class="pair hero"><div class="prose"><p>Этот блок показывает, как можно сочетать обычный текст и иллюстрацию без обязательного набора декоративных элементов.</p><p>Вместо реальных фотографий используются лёгкие локальные SVG. Цвета и оформление меняются отдельно от сеток и компонентов.</p><a href="article.html">Подробнее в примере статьи</a></div><svg class="media" viewBox="0 0 640 480" role="img" aria-label="Заглушка фотографии компании"><use href="assets/placeholders.svg#landscape"/></svg></div></section>
+    <section class="section stack"><h2>Люди за проектом</h2><div class="grid grid-3">
+      <figure class="card stack"><svg class="media" viewBox="0 0 640 480" role="img" aria-label="Силуэт первого участника команды"><use href="assets/placeholders.svg#person"/></svg><figcaption class="stack-small"><h3>Имя участника</h3><p class="muted">Роль в компании</p></figcaption></figure>
+      <figure class="card stack"><svg class="media" viewBox="0 0 640 480" role="img" aria-label="Силуэт второго участника команды"><use href="assets/placeholders.svg#person"/></svg><figcaption class="stack-small"><h3>Ещё один участник</h3><p class="muted">Другая специализация</p></figcaption></figure>
+      <figure class="card stack"><svg class="media" viewBox="0 0 640 480" role="img" aria-label="Силуэт третьего участника команды"><use href="assets/placeholders.svg#person"/></svg><figcaption class="stack-small"><h3>Длинное имя участника команды</h3><p class="muted">Направление работы</p></figcaption></figure>
+    </div></section>
+    <section class="section callout pair hero"><div class="stack"><h2>Следующий понятный шаг</h2><p>Здесь может быть приглашение обсудить задачу, выбрать товар или задать вопрос.</p></div><div><a class="btn" href="service.html#contact">Посмотреть блок обращения</a></div></section>
+  </main>
+  <footer class="site-footer section stack"><div class="grid grid-3"><div class="stack-small"><h3>Название компании</h3><p class="muted">Заглушка описания и реквизитов.</p></div><nav class="stack-small" aria-label="Примеры страниц"><h3>Примеры</h3><div class="footer-links"><a href="service.html">Услуга</a><a href="article.html">Статья</a><a href="catalog.html">Каталог</a></div></nav><div class="stack-small"><h3>Контактные данные</h3><p><bdi>hello@example.org</bdi></p><p class="small muted">Место для служебных страниц и политик.</p></div></div><p class="small muted">Мини-фреймворк · демонстрация вёрстки, без клиентских скриптов.</p></footer>
+</body>
+</html>

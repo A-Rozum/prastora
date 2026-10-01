@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <symbol id="logo" viewBox="0 0 64 64">
+    <rect x="5" y="5" width="54" height="54" rx="14" fill="#285d6b"/>
+    <path d="M19 43V21h26M19 32h20" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="landscape" viewBox="0 0 640 480">
+    <rect width="640" height="480" rx="16" fill="#e5eeee"/>
+    <circle cx="465" cy="120" r="49" fill="#bdd4d5"/>
+    <path d="M0 410 210 185 390 390 505 245 640 410V480H0Z" fill="#99b8bc"/>
+    <path d="M0 455 180 325 335 455 520 340 640 420V480H0Z" fill="#678f97"/>
+  </symbol>
+  <symbol id="product" viewBox="0 0 640 480">
+    <rect width="640" height="480" rx="16" fill="#eaf0f1"/>
+    <ellipse cx="320" cy="394" rx="155" ry="23" fill="#d0dfe1"/>
+    <path d="M170 163 320 98 470 163 320 233Z" fill="#c0d4d7"/>
+    <path d="M170 163V332L320 397V233Z" fill="#8db0b6"/>
+    <path d="M320 233 470 163V332L320 397Z" fill="#638d96"/>
+    <path d="M245 131 394 197V253L361 267V211L212 145Z" fill="#e5eeee"/>
+  </symbol>
+  <symbol id="person" viewBox="0 0 640 480">
+    <rect width="640" height="480" rx="16" fill="#e7eff0"/>
+    <circle cx="320" cy="169" r="78" fill="#8bafb5"/>
+    <path d="M145 480V423C145 318 219 274 320 274S495 318 495 423V480Z" fill="#638d96"/>
+    <path d="M271 291 320 355 369 291" fill="none" stroke="#e7eff0" stroke-width="12"/>
+  </symbol>
+  <symbol id="video" viewBox="0 0 640 480">
+    <rect width="640" height="480" rx="16" fill="#dce8e9"/>
+    <rect x="70" y="80" width="500" height="320" rx="20" fill="#7b9fa7"/>
+    <circle cx="320" cy="240" r="62" fill="#eaf0f1"/>
+    <path d="m305 205 49 35-49 35Z" fill="#285d6b"/>
+    <path d="M104 369h432" stroke="#dce8e9" stroke-width="7"/>
+  </symbol>
+  <symbol id="workspace" viewBox="0 0 640 480">
+    <rect width="640" height="480" rx="16" fill="#e7eff0"/>
+    <rect x="105" y="95" width="240" height="175" rx="10" fill="#8bafb5"/>
+    <rect x="119" y="109" width="212" height="147" rx="4" fill="#d5e4e6"/>
+    <path d="M225 270v39m-59 0h118M70 330h500M110 330v150m420-150v150" stroke="#638d96" stroke-width="14"/>
+    <path d="M427 324v-95m0 24c-56-2-71-36-65-58 44-5 65 29 65 58m0-9c48-8 62-41 49-65-36 2-53 30-49 65" fill="none" stroke="#8bafb5" stroke-width="12"/>
+    <path d="M391 287h73l-12 43h-49Z" fill="#638d96"/>
+  </symbol>
+</svg>

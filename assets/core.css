@@ -1,0 +1,117 @@
+/* Layout primitives. Site colours and page composition belong in theme.css. */
+:root {
+  --scale-units: 128;
+  --scale-min: 0px;
+  --text-size: 1.6rem;
+  --small-size: 1.4rem;
+  --lead-size: 1.9rem;
+  --button-size: 1.8rem;
+  --font: system-ui, sans-serif;
+  --line-height: 1.6;
+  --space-block: 4rem;
+  --space-inline: 4rem;
+  --gap: 3rem;
+  --card-space: 2rem;
+  --radius: .8rem;
+  --ink: #25313c;
+  --muted: #64717d;
+  --paper: #fff;
+  --surface: #f3f5f7;
+  --line: #d5dce3;
+  --accent: #245b82;
+  --on-accent: #fff;
+}
+html { font-size: max(var(--scale-min), calc(100vw / var(--scale-units))); box-sizing: border-box; text-size-adjust: 100%; }
+*, ::before, ::after { box-sizing: inherit; }
+body { margin: 0; font: var(--text-size)/var(--line-height) var(--font); color: var(--ink); background: var(--paper); }
+h1, h2, h3, h4, p, ul, ol, figure, blockquote { margin: 0; }
+h1, h2, h3, h4 { line-height: 1.15; font-weight: 650; overflow-wrap: anywhere; }
+h1 { font-size: 5rem; }
+h2 { font-size: 3.6rem; }
+h3 { font-size: 2.5rem; }
+h4 { font-size: 2rem; }
+p, li, a, label { overflow-wrap: anywhere; }
+a { color: var(--accent); text-underline-offset: .2em; }
+button, input, select, textarea { font: inherit; }
+img, video, svg { max-inline-size: 100%; block-size: auto; }
+img { display: block; }
+button, summary { cursor: pointer; }
+:focus-visible { outline: .25rem solid var(--accent); outline-offset: .35rem; }
+:lang(ar) { --font: Tahoma, Arial, sans-serif; }
+:lang(zh) { --font: "PingFang SC", "Microsoft YaHei", system-ui, sans-serif; }
+.section { padding-block: var(--space-block); padding-inline: var(--space-inline); }
+.stack > * + * { margin-block-start: 2rem; }
+.stack-small > * + * { margin-block-start: 1rem; }
+.lead { font-size: var(--lead-size); }
+.small { font-size: var(--small-size); }
+.muted { color: var(--muted); }
+.surface { background: var(--surface); }
+.grid { display: grid; grid-template-columns: repeat(var(--columns, 1), minmax(0, 1fr)); gap: var(--gap); }
+.grid-2 { --columns: 2; }
+.grid-3 { --columns: 3; }
+.grid-4 { --columns: 4; }
+.pair { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: var(--gap); align-items: start; }
+.pair-equal { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.grid > *, .pair > *, .flex > * { min-inline-size: 0; }
+.span-all { grid-column: 1 / -1; }
+.flex { display: flex; flex-wrap: wrap; align-items: center; gap: 1.5rem; }
+.card { padding: var(--card-space); border: .1rem solid var(--line); border-radius: var(--radius); background: var(--paper); }
+.card-flex { display: flex; flex-direction: column; gap: 1.5rem; }
+.card-flex > :last-child { margin-block-start: auto; }
+.btn { display: inline-flex; align-items: center; justify-content: center; min-block-size: max(4.4rem, 44px); padding: 1rem 2rem; font-size: var(--button-size); line-height: 1.3; border: .1rem solid transparent; border-radius: var(--radius); color: var(--on-accent); background: var(--accent); text-decoration: none; text-align: center; max-inline-size: 100%; }
+.btn-secondary { color: var(--accent); background: var(--paper); border-color: var(--line); }
+.btn[disabled] { opacity: .6; cursor: not-allowed; }
+.prose > * + * { margin-block-start: 2rem; }
+.prose ul, .prose ol { padding-inline-start: 2.5rem; }
+.prose li + li { margin-block-start: .8rem; }
+.prose blockquote { border-inline-start: .3rem solid var(--accent); padding-inline-start: 2rem; color: var(--muted); }
+.media { display: block; inline-size: 100%; aspect-ratio: var(--media-ratio, 4 / 3); border-radius: var(--radius); background: var(--surface); }
+.media-wide { --media-ratio: 16 / 9; }
+.media-square { --media-ratio: 1; }
+.disclosure { border-block-end: .1rem solid var(--line); padding-block: 1rem; }
+.disclosure > summary { padding-block: 1rem; min-block-size: max(4.4rem, 44px); }
+.disclosure > :not(summary) { margin-block: 1rem; }
+.toc a { display: block; padding-block: .8rem; }
+.breadcrumbs { display: flex; flex-wrap: wrap; gap: .8rem; list-style: none; padding: 0; font-size: var(--small-size); }
+.breadcrumbs li + li::before { content: '/'; margin-inline-end: .8rem; color: var(--muted); }
+.badge { display: inline-block; padding: .4rem 1rem; border: .1rem solid var(--line); border-radius: 3rem; font-size: var(--small-size); }
+.specs { margin: 0; }
+.specs > div { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1rem; padding-block: 1rem; border-block-end: .1rem solid var(--line); }
+.specs dt { color: var(--muted); }
+.specs dd { margin: 0; }
+.field { display: grid; gap: .7rem; }
+.field input, .field textarea, .field select { inline-size: 100%; min-inline-size: 0; min-block-size: max(4.4rem, 44px); border: .1rem solid var(--line); border-radius: var(--radius); background: var(--paper); color: var(--ink); padding: 1rem; }
+.field textarea { min-block-size: 12rem; resize: vertical; }
+.anchor { scroll-margin-block-start: 2rem; }
+.skip { position: absolute; inset-block-start: -20rem; inset-inline-start: 1rem; z-index: 10; padding: 1rem; background: var(--paper); }
+.skip:focus { inset-block-start: 1rem; }
+/* Opt-in: one heading and N matching list items per card. No JS measurements. */
+.aligned { --items: 4; }
+.aligned > .card > ul { list-style: none; padding: 0; }
+.aligned li { display: flex; align-items: center; gap: 1rem; min-inline-size: 0; }
+.aligned li::before { content: ''; inline-size: .6rem; block-size: .6rem; border-radius: 50%; background: var(--accent); flex: none; }
+@supports (grid-template-rows: subgrid) {
+  .aligned { row-gap: 1rem; }
+  .aligned > .card { display: grid; grid-template-rows: subgrid; grid-row: span calc(var(--items) + 1); row-gap: 1rem; }
+  .aligned > .card > ul { display: grid; grid-template-rows: subgrid; grid-row: 2 / span var(--items); row-gap: 1rem; }
+}
+@media (max-width: 800px) {
+  :root { --scale-units: 64; --text-size: 2.08rem; --small-size: 1.82rem; --lead-size: 2.47rem; --button-size: 2.52rem; --space-block: 3rem; --space-inline: 1.6rem; --gap: 2rem; }
+  .grid { --columns: 1; }
+  .grid-compact { --columns: 2; }
+  .pair { grid-template-columns: minmax(0, 1fr); }
+  h1 { font-size: 4.8rem; }
+  h3 { font-size: 2.8rem; }
+  .aligned { font-size: 1.68rem; }
+}
+@media (min-width: 2000px) {
+  :root { --scale-units: 160; --space-block: 6rem; --space-inline: 12rem; --gap: 6rem; }
+}
+@media print {
+  html { font-size: 10pt; }
+  body { font-size: 12pt; color: #000; background: #fff; }
+  .site-header, .site-footer, .demo-note, .skip, .btn { display: none; }
+  .grid, .pair { grid-template-columns: 1fr; }
+  .section { padding: 1rem 0; }
+  .card { break-inside: avoid; }
+}

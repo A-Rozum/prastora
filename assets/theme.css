@@ -1,0 +1,36 @@
+/* Neutral demonstration theme. Replace this file to change site identity. */
+:root { --accent: #285d6b; --ink: #233a40; --muted: #657c82; --surface: #edf3f3; --line: #d3e0e1; }
+.site-header { border-block-end: .1rem solid var(--line); background: var(--paper); }
+.header-inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 2rem; padding: 1.5rem var(--space-inline); }
+.brand { display: inline-flex; align-items: center; gap: 1rem; text-decoration: none; color: var(--ink); font-weight: 700; font-size: 2rem; }
+.brand svg { inline-size: 4rem; block-size: 4rem; }
+.desktop-nav { display: flex; flex-wrap: wrap; gap: 1rem; }
+.desktop-nav a, .mobile-nav a { padding: .8rem 1rem; text-decoration: none; min-block-size: max(4.4rem, 44px); display: inline-flex; align-items: center; }
+[aria-current=page] { font-weight: 700; text-decoration: underline !important; }
+.mobile-nav { display: none; }
+.demo-note { padding: 1rem var(--space-inline); font-size: var(--small-size); background: var(--surface); color: var(--muted); }
+.eyebrow { font-size: var(--small-size); text-transform: uppercase; letter-spacing: .1em; color: var(--muted); }
+.hero { align-items: center; }
+.section-heading { margin-block-end: 3rem; }
+.callout { background: var(--accent); color: var(--on-accent); }
+.callout a:not(.btn) { color: inherit; }
+.callout .btn { background: var(--paper); color: var(--accent); }
+.price { font-size: 3.2rem; font-weight: 650; }
+.site-footer { border-block-start: .1rem solid var(--line); background: var(--surface); }
+.footer-links { display: flex; flex-wrap: wrap; gap: 1.5rem; }
+.product-thumbs { margin-block-start: 1.5rem; gap: 1.5rem; }
+.product-thumbs .media { --media-ratio: 4 / 3; }
+.product-gallery > details { margin-block-start: 1rem; }
+.catalog-nav a { min-block-size: max(4.4rem, 44px); display: inline-flex; align-items: center; }
+@media (max-width: 800px) {
+  .desktop-nav { display: none; }
+  .mobile-nav { display: block; }
+  .mobile-nav > summary { padding: 1rem; min-block-size: 44px; }
+  .mobile-nav[open] { flex-basis: 100%; }
+  .mobile-nav nav { display: grid; }
+  .brand { font-size: 2.4rem; }
+  .catalog-nav { gap: 1rem; }
+  .grid-compact .card { --card-space: 1.5rem; }
+  .grid-compact h3 { font-size: 2.5rem; }
+  .product-thumbs { --columns: 3; }
+}
