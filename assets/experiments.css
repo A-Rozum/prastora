@@ -1,0 +1,62 @@
+/* Opt-in experiments only. The production scale and composition are unchanged. */
+:root { color-scheme: light; --error: #8c3043; --success: #28653d; }
+.scheme-status::after { content: 'Light'; }
+@media (prefers-color-scheme: dark) {
+  :root { color-scheme: dark; --ink: #e3eef0; --muted: #b4c8cd; --paper: #13262c; --surface: #1b333a; --line: #47616b; --accent: #96d2df; --on-accent: #12272d; --error: #ffb6c5; --success: #a3dfb7; }
+  .scheme-status::after { content: 'Dark'; }
+}
+:root:has(#scheme-light:checked) { color-scheme: light; --ink: #233a40; --muted: #576b71; --paper: #fff; --surface: #edf3f3; --line: #d3e0e1; --accent: #285d6b; --on-accent: #fff; --error: #8c3043; --success: #28653d; }
+:root:has(#scheme-light:checked) .scheme-status::after { content: 'Light'; }
+:root:has(#scheme-dark:checked) { color-scheme: dark; --ink: #e3eef0; --muted: #b4c8cd; --paper: #13262c; --surface: #1b333a; --line: #47616b; --accent: #96d2df; --on-accent: #12272d; --error: #ffb6c5; --success: #a3dfb7; }
+:root:has(#scheme-dark:checked) .scheme-status::after { content: 'Dark'; }
+.theme-picker { margin: 0; min-inline-size: 0; padding: 1.5rem; border: .1rem solid var(--line); border-radius: var(--radius); }
+.theme-picker legend { padding-inline: .5rem; }
+.scheme-controls { display: flex; flex-wrap: wrap; gap: 1rem 2rem; }
+.scheme-controls label { display: inline-flex; align-items: center; gap: .8rem; padding-block: .6rem; cursor: pointer; }
+.scheme-controls input { appearance: none; inline-size: 1.6rem; block-size: 1.6rem; margin: 0; border: .18rem solid var(--accent); border-radius: 50%; flex: none; }
+.scheme-controls input:checked { background: var(--accent); box-shadow: inset 0 0 0 .3rem var(--paper); }
+.sample-label { font-size: var(--small-size); color: var(--muted); }
+.heading-sample { font-size: 3.2rem; max-inline-size: 29rem; }
+.paragraph-sample { max-inline-size: 36rem; }
+.balanced { text-wrap: balance; }
+.pretty { text-wrap: pretty; }
+.support-balance::after, .support-pretty::after, .support-container::after { content: 'Not supported here — ordinary layout is retained.'; }
+@supports (text-wrap: balance) { .support-balance::after { content: 'Supported in this browser.'; } }
+@supports (text-wrap: pretty) { .support-pretty::after { content: 'Supported in this browser.'; } }
+@supports (container-type: inline-size) { .support-container::after { content: 'Supported in this browser.'; } }
+.context-layout { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 1fr); gap: var(--gap); align-items: start; }
+.context-layout > * { min-inline-size: 0; }
+.component-context { container-type: inline-size; container-name: pattern; }
+.component-resizable { inline-size: 100%; min-inline-size: 18rem; max-inline-size: 100%; overflow: auto; resize: horizontal; padding-block-end: 1rem; }
+.adaptive-card { display: grid; grid-template-columns: minmax(0, 1fr); gap: 2rem; }
+.adaptive-card h3 { font-size: 2.5rem; }
+.component-mode::after { content: 'Stacked composition'; }
+@container pattern (min-width: 32rem) {
+  .adaptive-card { grid-template-columns: minmax(0, 1fr) minmax(0, 1.7fr); align-items: center; }
+  .adaptive-card h3 { font-size: 3.2rem; }
+  .component-mode::after { content: 'Side-by-side composition'; }
+}
+.state-note { padding: 1rem; border-inline-start: .3rem solid currentColor; background: var(--surface); }
+.state-error { color: var(--error); }
+.state-success { color: var(--success); }
+.field input[aria-invalid=true] { border-color: var(--error); }
+.field-success input { border-color: var(--success); }
+.state-actions { display: flex; flex-wrap: wrap; gap: 1.5rem; }
+.story-list { display: grid; gap: 1.5rem; }
+.story-row { display: grid; grid-template-columns: 9rem minmax(0, 1fr); gap: 1.5rem; align-items: start; padding-block-end: 1.5rem; border-block-end: .1rem solid var(--line); }
+.story-row > * { min-inline-size: 0; }
+.story-row h3 { font-size: 2.2rem; }
+.story-row .media { --media-ratio: 1; }
+@media (max-width: 50em) {
+  .context-layout { grid-template-columns: minmax(0, 1fr); }
+  .context-sidebar { inline-size: 28rem; max-inline-size: 100%; }
+  .heading-sample { max-inline-size: 100%; }
+}
+@media print {
+  :root { color-scheme: light; }
+  .theme-picker { display: none; }
+  .component-resizable { resize: none; overflow: visible; }
+}
+@media (forced-colors: active) {
+  .scheme-controls input { appearance: auto; box-shadow: none; }
+}

@@ -2,6 +2,7 @@
 
 - Prastora is an independent experimental CSS toolkit. Do not modify legal-status, framework or HTML archives when working here.
 - Public-facing copy is English and describes the toolkit, its approach and page patterns, not a fictional company. Keep claims proportional to implemented features.
+- experiments.html and assets/experiments.css are the isolated testing ground for balanced/pretty text, container queries, CSS-only system/manual colour schemes, static UI states and alternative compositions. Do not apply these globally without approval. Keep the existing three proportional scale regimes; the user deliberately prefers them over smoothing.
 - core.css contains reusable layout primitives; theme.css contains demonstration branding and composition.
 - Keep full-width proportional rem scaling (128 units desktop, 64 mobile, 160 wide screens). Typography follows the tested mobile sizes from legal-status. No default max-width container or upper scale cap. --scale-min is an optional configurable floor, not enabled by default.
 - index, service, article, catalog and product are static examples, not a CMS or shop. No client JavaScript, third-party fonts, trackers or embeds. Forms are disabled until a real backend is configured. Do not imply placeholder links, media or prices are real.
