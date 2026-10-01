@@ -1,5 +1,7 @@
 # First pass
 
+Temporary device-review diagnostics: viewport.css and viewport.js add a small bar above each page header, showing window.innerWidth × window.innerHeight in CSS pixels (not physical display resolution). The bar updates on resize, stays hidden without JavaScript and is omitted in print. It is independent of proportional rem sizing. Tested on all five pages at the 12 widths below in LTR/RTL, plus height changes: 125 checks passed. check.py permits only this external diagnostic script. Remove both files, their HTML hooks and the checker exception after device review. Earlier no-JavaScript notes below describe the original baseline; the page layouts still do not depend on a runtime.
+
 After the Remwork rename and English copy rewrite, local reference checks again passed (five pages, zero errors). Browser geometry was rechecked at all 12 widths below in LTR and RTL with disclosures expanded: 120 configurations, no visible element overflow found. The starter's code samples wrap within their containers. This recheck does not establish accessibility or physical-device readability.
 
 Five static page examples, two CSS files and a shared SVG sprite. No client JavaScript or external requests are required. check.py checks local references, fragments, duplicate IDs and absence of script tags; run with `python check.py`.

@@ -1,0 +1,17 @@
+/* Temporary diagnostics: deliberately readable independently of rem scaling. */
+.viewport-panel {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: flex-end;
+  gap: 4px 8px;
+  padding: 6px var(--space-inline);
+  border-block-end: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 12px;
+  line-height: 1.5;
+}
+.viewport-panel[hidden] { display: none; }
+.viewport-panel output { font-variant-numeric: tabular-nums; font-weight: 650; }
+@media print { .viewport-panel { display: none; } }

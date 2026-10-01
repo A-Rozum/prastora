@@ -1,4 +1,4 @@
-"""Optional local checks; no dependencies and no browser JavaScript."""
+"""Optional local checks; no dependencies. Only temporary viewport JS is allowed."""
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urlsplit, unquote
@@ -11,7 +11,7 @@ class Page(HTMLParser):
         self.ids = set()
         self.refs = []
         self.duplicates = []
-        self.scripts = 0
+        self.scripts = []
         self.feed(text)
 
     def handle_starttag(self, tag, attrs):
@@ -24,7 +24,8 @@ class Page(HTMLParser):
         for key in ("href", "src", "action"):
             if attrs.get(key):
                 self.refs.append(attrs[key])
-        self.scripts += tag == "script"
+        if tag == "script":
+            self.scripts.append(attrs.get("src"))
 
 
 def main():
@@ -33,7 +34,7 @@ def main():
     errors = []
     for path, page in pages.items():
         errors.extend(f"{path.name}: duplicate id {item}" for item in page.duplicates)
-        if page.scripts:
+        if any(src != "assets/viewport.js" for src in page.scripts) or len(page.scripts) > 1:
             errors.append(f"{path.name}: unexpected browser script")
         for ref in page.refs:
             url = urlsplit(ref)
@@ -53,7 +54,7 @@ def main():
     for error in errors:
         print(error)
     assets = list((root / "assets").glob("*"))
-    print(f"Pages: {len(pages)}; errors: {len(errors)}; HTML/CSS/SVG total: {sum(p.stat().st_size for p in [*pages, *assets])} bytes")
+    print(f"Pages: {len(pages)}; errors: {len(errors)}; HTML/assets total: {sum(p.stat().st_size for p in [*pages, *assets])} bytes")
     raise SystemExit(bool(errors))
 
 
