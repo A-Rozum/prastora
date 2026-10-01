@@ -1,5 +1,7 @@
 # First pass
 
+Header alignment trial: Explore Prastora and dropdown links now share the outer inline-end content edge, with no additional inline padding. The menu column remains 22rem, fitting the longer label on one line. Tested all five pages at 14 widths in LTR/RTL: 140 checks passed for label/links edge alignment, no header overflow, and unchanged brand/summary coordinates on opening. Edge checks use the header's content box, excluding any browser scrollbar.
+
 Mobile-header composition: grid now keeps the brand and disclosure in separate columns, with an 18rem menu column in both states. Links sit below the summary with their text aligned to Menu. Removed the open-state full-row flex rule. Checked brand/summary coordinates before and after opening, text alignment and header bounds across five pages, 14 widths including 292, and LTR/RTL: 140 checks passed, with no coordinate shifts. Desktop layout remains flex-based; real-device visual review is still needed.
 
 Mobile-menu refinement: replaced the native summary marker with a CSS chevron and explicit 1rem flex gap. Chevron dimensions and stroke use rem; closed direction follows LTR/RTL and open direction points down. Checked header bounds and computed arrow/gap proportions on all five pages at 14 widths (including 292 and 836), both directions and both disclosure states: 280 checks passed. Browser-zoom raster rounding and Dark Reader rendering remain subject to real-device review; existing native disclosure semantics were retained.

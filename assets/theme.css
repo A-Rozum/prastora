@@ -28,13 +28,14 @@
   .header-inner > .brand { min-block-size: calc(2rem + var(--text-size) * var(--line-height)); }
   .desktop-nav { display: none; }
   .mobile-nav { display: block; }
-  .mobile-nav > summary { box-sizing: border-box; display: flex; align-items: center; gap: 1rem; padding: 1rem; min-block-size: 4.4rem; list-style: none; }
+  .mobile-nav > summary { box-sizing: border-box; display: flex; align-items: center; justify-content: flex-end; gap: 1rem; padding-block: 1rem; padding-inline: 0; min-block-size: 4.4rem; list-style: none; }
   .mobile-nav > summary::-webkit-details-marker { display: none; }
   .mobile-nav > summary::marker { content: ''; }
   .mobile-nav > summary::before { content: ''; box-sizing: border-box; inline-size: 1rem; block-size: 1rem; flex: none; border-top: .18rem solid currentColor; border-right: .18rem solid currentColor; transform: rotate(45deg); }
   .mobile-nav:dir(rtl) > summary::before { transform: rotate(225deg); }
   .mobile-nav[open] > summary::before { transform: rotate(135deg); }
-  .mobile-nav nav { display: grid; padding-inline-start: 2rem; }
+  .mobile-nav nav { display: grid; }
+  .mobile-nav nav a { justify-content: flex-end; text-align: end; padding-inline: 0; }
   .brand { font-size: 2.4rem; }
   .catalog-nav { gap: 1rem; }
   .grid-compact .card { --card-space: 1.5rem; }
