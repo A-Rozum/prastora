@@ -4,9 +4,9 @@
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Explore typography, container-aware components, colour schemes and content states in the Prastora experiments lab.">
   <title>Experiments — Prastora</title>
-  <link rel="stylesheet" href="assets/core.css?v=2"><link rel="stylesheet" href="assets/theme.css?v=11">
-  <link rel="stylesheet" href="assets/viewport.css?v=3"><link rel="stylesheet" href="assets/experiments.css?v=3">
-  <script src="assets/viewport.js" defer></script><script src="assets/interactions.js" defer></script>
+  <link rel="stylesheet" href="assets/core.css?v=2"><link rel="stylesheet" href="assets/theme.css?v=12">
+  <link rel="stylesheet" href="assets/viewport.css?v=4"><link rel="stylesheet" href="assets/experiments.css?v=4">
+  <script src="assets/viewport.js?v=2" defer></script><script src="assets/interactions.js?v=2" defer></script>
 </head>
 <body>
   <aside class="viewport-panel" data-viewport hidden aria-label="Utility strip">
@@ -27,7 +27,7 @@
       <p class="eyebrow">An isolated testing ground</p><h1>Useful refinements. Same proportional foundation.</h1>
       <p class="lead">Compare small improvements before making them part of the core. These experiments retain Prastora's existing mobile, desktop and wide-screen scale settings.</p>
       <nav class="flex catalog-nav" aria-label="Experiments"><a href="#wrapping">Text wrapping</a><a href="#containers">Context-aware cards</a><a href="#states">Content states</a><a href="#rhythm">Composition</a></nav>
-      <p class="small muted">Current scheme: <span class="scheme-status"></span>. The initial theme follows your browser's preference. Use the sun or moon beside Viewport to switch. Manual choices apply to this page and are not saved.</p>
+      <p class="small muted">Current scheme: <span class="scheme-status"></span>. The initial theme follows your browser's preference. Use the sun or moon beside the viewport dimensions to switch. Manual choices apply to this page and are not saved.</p>
     </section>
     <section class="section surface stack anchor" id="wrapping">
       <h2>Make line endings more deliberate.</h2>
@@ -80,10 +80,10 @@
       </div>
     </section>
   </main>
-  <footer class="site-footer section stack"><a class="brand" href="index.html">Prastora</a><nav class="footer-links" aria-label="Examples"><a href="index.html">Overview</a><a href="service.html">Layouts</a><a href="article.html">Typography</a><a href="catalog.html">Patterns</a><a href="product.html">Starter</a></nav><p class="small muted">Experiments stay separate until they earn a place in the foundation.</p><div><button type="button" class="consent-reopen" data-consent-reopen hidden>Cookie settings · demo</button></div><p class="small muted" data-consent-status role="status">Consent UI example: no trackers are connected and choices are not stored between page loads.</p></footer>
-  <aside class="consent-bar" data-consent-demo hidden aria-label="Optional cookie consent — interactive demo">
-    <div class="consent-settings" id="consent-settings" data-consent-settings hidden><p>Demo preferences · necessary functions stay available.</p><label><input type="checkbox" id="consent-analytics">Analytics</label><label><input type="checkbox" id="consent-marketing">Marketing</label><button type="button" data-consent-save>Save preferences</button><p class="small muted">No tracking services are connected. Choices apply to this page only.</p></div>
-    <div class="consent-row"><p>Optional cookies · UI demo. Off until you choose.</p><div class="consent-actions"><button type="button" data-consent-reject>Reject optional</button><button type="button" data-consent-accept>Accept all</button><button type="button" data-consent-configure aria-expanded="false" aria-controls="consent-settings">Settings</button></div></div>
+  <footer class="site-footer section stack"><a class="brand" href="index.html">Prastora</a><nav class="footer-links" aria-label="Examples"><a href="index.html">Overview</a><a href="service.html">Layouts</a><a href="article.html">Typography</a><a href="catalog.html">Patterns</a><a href="product.html">Starter</a></nav><p class="small muted">Experiments stay separate until they earn a place in the foundation.</p><div><button type="button" class="consent-reopen" data-consent-reopen hidden>Cookie settings</button></div><p class="small muted" data-consent-status role="status"></p></footer>
+  <aside class="consent-bar" data-consent-demo hidden aria-label="Cookie preferences">
+    <div class="consent-settings" id="consent-settings" data-consent-settings hidden><p>Cookie preferences · necessary functions stay available.</p><label><input type="checkbox" id="consent-analytics">Analytics</label><label><input type="checkbox" id="consent-marketing">Marketing</label><button type="button" data-consent-save>Save preferences</button></div>
+    <div class="consent-row"><p>Cookies</p><div class="consent-actions"><button type="button" data-consent-accept>Accept all</button><button type="button" data-consent-reject>Necessary only</button><button type="button" data-consent-configure aria-expanded="false" aria-controls="consent-settings">Settings</button></div></div>
   </aside>
 </body>
 </html>

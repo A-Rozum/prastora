@@ -59,9 +59,11 @@
 .story-row .media { --media-ratio: 1; }
 body { padding-block-end: var(--consent-height, 0rem); }
 html { scroll-padding-block-end: calc(var(--consent-height, 0rem) + 1rem); }
-.consent-bar { position: fixed; inset-inline: 0; inset-block-end: 0; z-index: 30; padding: .8rem var(--space-inline); border-block-start: .1rem solid var(--line); background: var(--paper); font-size: var(--small-size); max-block-size: 45svh; overflow: auto; }
-.consent-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: .6rem 2rem; }
-.consent-actions { display: flex; flex-wrap: wrap; gap: .6rem; }
+.consent-bar { position: fixed; inset-inline: 0; inset-block-end: 0; z-index: 30; padding: .6rem var(--space-inline); border-block-start: .1rem solid var(--line); background: var(--surface); font-size: var(--small-size); max-block-size: 45svh; overflow: auto; }
+.consent-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: nowrap; gap: 1rem; }
+.consent-row > p { flex: none; }
+.consent-actions { display: flex; flex-wrap: nowrap; gap: .6rem; }
+.consent-actions button { white-space: nowrap; flex: none; }
 .consent-bar button, .consent-reopen { min-block-size: 3.8rem; padding: .6rem 1rem; border: .1rem solid var(--accent); border-radius: .4rem; color: var(--accent); background: var(--paper); font: inherit; }
 .consent-settings { padding-block: 1rem; border-block-end: .1rem solid var(--line); margin-block-end: 1rem; }
 .consent-settings label { display: inline-flex; align-items: center; gap: .6rem; margin-inline-end: 2rem; padding-block: .5rem; }
