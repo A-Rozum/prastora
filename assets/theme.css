@@ -87,6 +87,9 @@
   :is(.mobile-nav > summary, .mobile-nav nav a, .language-control):dir(rtl) { transform-origin: left center; }
 }
 @media (max-width: 50em) {
+  .overview-desktop-card { display: none; }
+  .overview-media-grid { --columns: 2; }
+  .overview-media-grid > :last-child { grid-column: 1 / -1; }
   .icon-heading-reserved .icon { block-size: 6.44rem; }
   .article-rail-extra, .form-art { display: none; }
   .article-rail { display: block; }
