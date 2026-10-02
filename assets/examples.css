@@ -1,12 +1,16 @@
-/* Opt-in experiments only. The production scale and composition are unchanged. */
+/* Opt-in page examples. The proportional foundation remains in core.css. */
 .context-notes { padding: 1.5rem 0; border-block-start: .1rem solid var(--line); }
 .sample-label { font-size: var(--small-size); color: var(--muted); }
 .heading-sample { font-size: 3.2rem; max-inline-size: 29rem; }
 .paragraph-sample { max-inline-size: 36rem; }
 .balanced { text-wrap: balance; }
-.heading-ordinary { text-wrap: wrap; }
+.heading-ordinary, .card > .paragraph-sample { text-wrap: wrap; }
+.card > .paragraph-sample.pretty { text-wrap: pretty; }
+.type-samples .heading-sample { font-size: 3.2rem; }
+.type-samples .sample-card { display: grid; align-content: start; gap: 2rem; }
+.empty-experiments { min-block-size: 28rem; display: grid; align-content: center; gap: 2rem; }
 .pretty { text-wrap: pretty; }
-.support-balance::after, .support-pretty::after, .support-container::after { content: 'Not supported here — ordinary layout is retained.'; }
+.support-balance::after, .support-pretty::after, .support-container::after { content: 'Not supported here – ordinary layout is retained.'; }
 @supports (text-wrap: balance) { .support-balance::after { content: 'Supported in this browser.'; } }
 @supports (text-wrap: pretty) { .support-pretty::after { content: 'Supported in this browser.'; } }
 @supports (container-type: inline-size) { .support-container::after { content: 'Supported in this browser.'; } }

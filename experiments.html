@@ -5,8 +5,8 @@
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Explore typography, container-aware components, colour schemes and content states in the Prastora experiments lab.">
   <title>Experiments – Prastora</title>
-  <link rel="stylesheet" href="assets/core.css?v=2"><link rel="stylesheet" href="assets/theme.css?v=19">
-  <link rel="stylesheet" href="assets/viewport.css?v=9"><link rel="stylesheet" href="assets/experiments.css?v=11">
+  <link rel="stylesheet" href="assets/core.css?v=2"><link rel="stylesheet" href="assets/theme.css?v=22">
+  <link rel="stylesheet" href="assets/viewport.css?v=9">
    <script src="assets/viewport.js?v=2" defer></script><script src="assets/interactions.js?v=9" defer></script>
 </head>
 <body>
@@ -26,62 +26,7 @@
   </div></header>
   </div>
   <main id="main">
-    <section class="section stack">
-      <p class="eyebrow">An isolated testing ground</p><h1>Useful refinements. Same proportional foundation.</h1>
-      <p class="lead">Compare small improvements before making them part of the core. These experiments retain Prastora's existing mobile, desktop and wide-screen scale settings.</p>
-      <nav class="flex catalog-nav" aria-label="Experiments"><a href="#wrapping">Text wrapping</a><a href="#containers">Context-aware cards</a><a href="#states">Content states</a><a href="#rhythm">Composition</a></nav>
-      <p class="small muted">Current scheme: <span class="scheme-status"></span>. The initial theme follows your browser's preference. Use the sun or moon beside the viewport dimensions to switch. Your manual choice is remembered across pages and browser visits when local storage is available.</p>
-    </section>
-    <section class="section surface stack anchor" id="wrapping">
-      <h2>Make line endings more deliberate.</h2>
-      <p>Each pair uses the same content, font size and available width. Only the wrapping rule changes.</p>
-      <div class="grid grid-2">
-        <article class="card stack"><p class="sample-label">Heading / ordinary wrapping</p><h3 class="heading-sample heading-ordinary">Build thoughtful websites with a predictable visual rhythm.</h3></article>
-        <article class="card stack"><p class="sample-label">Heading / text-wrap: balance</p><h3 class="heading-sample balanced">Build thoughtful websites with a predictable visual rhythm.</h3><p class="small muted support-balance"></p></article>
-      </div>
-      <p class="small muted">Balance tries to distribute a short heading more evenly across lines. It does not change its font size.</p>
-      <div class="grid grid-2">
-        <article class="card stack"><p class="sample-label">Paragraph / ordinary wrapping</p><p class="paragraph-sample">A useful layout gives each idea enough room to be understood. Typography, spacing and imagery should support the message without competing for attention. Small refinements can make a page calmer to read, especially when a paragraph ends with a single short word.</p></article>
-        <article class="card stack"><p class="sample-label">Paragraph / text-wrap: pretty</p><p class="paragraph-sample pretty">A useful layout gives each idea enough room to be understood. Typography, spacing and imagery should support the message without competing for attention. Small refinements can make a page calmer to read, especially when a paragraph ends with a single short word.</p><p class="small muted support-pretty"></p></article>
-      </div>
-      <p class="small muted">Pretty asks the browser to favour better line endings, such as avoiding a very short final line. It may make no visible difference to a particular paragraph. It involves extra layout work, so this trial is limited to one sample.</p>
-    </section>
-    <section class="section stack anchor" id="containers">
-      <h2>One component. Different places.</h2><p>The cards below have the same markup and content. Their composition responds to the width of their own container, not directly to the screen.</p><p class="small muted support-container"></p>
-      <div class="context-layout">
-        <div class="stack-small"><h3>Main content area</h3><p class="small muted">With a mouse, drag the lower corner of this area to change its width independently of the page.</p>
-          <div class="component-context component-resizable"><article class="card adaptive-card"><a class="media-link" href="product.html" aria-label="Explore the page starter"><svg class="media" viewBox="0 0 640 480" aria-hidden="true"><use href="assets/placeholders.svg#product"/></svg></a><div class="stack-small"><p class="small muted component-mode"></p><h3>A flexible starting point</h3><p>Keep the same component while adapting its composition to the space available.</p><a href="product.html">Explore the starter</a></div></article></div>
-          <div class="context-notes stack-small"><h4>What changes — and what stays the same</h4><p>The container changes the arrangement and heading size. The card keeps its content, links and place in the reading order.</p><p class="small muted">Use a wider composition for a featured entry and a stacked one in a supporting column. A taller neighbouring card does not require stretching this card or cropping its content.</p></div>
-        </div>
-        <aside class="stack-small context-sidebar"><h3>Supporting area</h3><p class="small muted">The same card in a narrower context.</p>
-          <div class="component-context"><article class="card adaptive-card"><a class="media-link" href="product.html" aria-label="Explore the page starter"><svg class="media" viewBox="0 0 640 480" aria-hidden="true"><use href="assets/placeholders.svg#product"/></svg></a><div class="stack-small"><p class="small muted component-mode"></p><h3>A flexible starting point</h3><p>Keep the same component while adapting its composition to the space available.</p><a href="product.html">Explore the starter</a></div></article></div>
-        </aside>
-      </div>
-      <p class="small muted">At 32rem of container width, this card switches from stacked to side-by-side and gives its heading more room. The duplicate supporting example is omitted on mobile; essential content would stay in the reading flow.</p>
-    </section>
-    <section class="section surface stack anchor" id="states">
-      <h2>Design the situations, not just the ideal content.</h2><p>These are static examples of interface states, not a connected form or search service. Status is expressed in words as well as colour.</p>
-      <div class="grid grid-2">
-        <article class="card stack"><h3>A field that needs attention</h3><div class="field"><label for="sample-email-error">Email</label><input id="sample-email-error" type="email" value="reader@" aria-invalid="true" aria-describedby="sample-email-help"><p class="small state-error" id="sample-email-help">Error: enter a complete email address.</p></div><p class="small muted">The message stays near its field and is associated with it for assistive technology. This sample state does not validate edits.</p></article>
-        <article class="card stack"><h3>A completed field</h3><div class="field field-success"><label for="sample-email-success">Email</label><input id="sample-email-success" type="email" value="reader@example.org" aria-describedby="sample-email-confirmed"><p class="small state-success" id="sample-email-confirmed">Success: the sample address has the expected format.</p></div><p class="small muted">Confirmation describes the state without relying on a green border alone. This sample does not verify ownership of the address.</p></article>
-      </div>
-      <div class="grid grid-3">
-        <article class="card stack"><h3>No matches yet.</h3><p>Try a broader category or return to the full collection.</p><a class="btn btn-secondary" href="catalog.html">Browse all patterns</a></article>
-        <article class="card stack"><h3>When an image is unavailable</h3><div class="card surface stack-small"><p>Image unavailable</p><p class="small muted">The title and destination remain useful without the artwork.</p></div><a href="product.html">Explore the starter</a></article>
-        <article class="card stack"><h3>A deliberately longer title that needs several lines without hiding the important words</h3><p>The card grows with its content. Nothing is clipped to a fixed number of lines.</p><div class="state-actions"><a class="btn" href="catalog.html">Explore patterns</a><button class="btn" disabled>Unavailable</button></div></article>
-      </div>
-      <div class="grid grid-2"><article class="card prose" lang="ar" dir="rtl"><h3>مساحة مرنة للمحتوى</h3><p>هذا نص تجريبي لفحص اتجاه القراءة والمسافات داخل البطاقة.</p><p><bdi dir="ltr">hello@example.org</bdi></p><a href="article.html">قراءة المزيد</a></article><article class="card prose" lang="zh-Hans"><h3>让内容拥有合适的空间</h3><p>这是一段用于测试中文排版的示例文字。布局应当适应不同的内容，而不依赖固定的文本长度。</p><a href="article.html">查看文章布局</a></article></div>
-    </section>
-    <section class="section stack anchor" id="rhythm">
-      <h2>Vary the rhythm without adding noise.</h2><p>Pair one larger composition with a compact list instead of repeating the same large image card for every item.</p>
-      <div class="pair">
-        <article class="surface card stack"><p class="eyebrow">Featured composition</p><div class="pair pair-equal hero"><a class="media-link" href="service.html" aria-label="Explore the service composition"><svg class="media" viewBox="0 0 640 480" aria-hidden="true"><use href="assets/placeholders.svg#workspace"/></svg></a><div class="stack"><h3 class="balanced">A clear introduction with room for the details.</h3><p>Text and imagery share a section without needing identical card proportions.</p><a href="service.html">Explore layouts</a></div></div></article>
-        <aside class="story-list" aria-label="Related patterns">
-          <article class="story-row"><a class="media-link" href="product.html" aria-label="Explore the detail page"><svg class="media" viewBox="0 0 640 480" aria-hidden="true"><use href="assets/placeholders.svg#product"/></svg></a><div class="stack-small"><h3>Detail pages</h3><p class="small muted">A compact introduction to another composition.</p><a href="product.html">Explore the starter</a></div></article>
-          <article class="story-row"><a class="media-link" href="article.html#media" aria-label="Explore editorial media"><svg class="media" viewBox="0 0 640 480" aria-hidden="true"><use href="assets/placeholders.svg#video"/></svg></a><div class="stack-small"><h3>Editorial media</h3><p class="small muted">An image can support a short entry instead of dominating it.</p><a href="article.html#media">Read the media guide</a></div></article>
-        </aside>
-      </div>
-    </section>
+    <section class="section empty-experiments"><p class="eyebrow">An open testing ground</p><h1>No active experiments right now.</h1><p class="lead">The previous comparisons now live alongside the page examples they help explain. This short page leaves room for the next experiment.</p><nav class="flex catalog-nav" aria-label="Established examples"><a href="article.html#wrapping">Typography</a><a href="catalog.html#containers">Context-aware cards</a><a href="contacts.html#field-states">Field states</a><a href="gallery.html#missing-media">Missing media</a><a href="service.html#rhythm">Composition</a></nav></section>
   </main>
   <footer class="site-footer section"><div class="grid grid-3"><div class="stack-small"><h3>Prastora</h3><p class="muted">An evolving CSS framework for predictable layouts across screen sizes.</p></div><nav class="stack-small" aria-label="Examples"><h3>Explore</h3><div class="footer-links"><a href="index.html">Overview</a><a href="service.html">Layouts</a><a href="article.html">Typography</a><a href="catalog.html">Patterns</a><a href="product.html">Starter</a><a href="pricing.html">Pricing</a><a href="gallery.html">Gallery</a><a href="contacts.html">Contacts</a><a href="experiments.html">Experiments</a></div></nav><div class="stack-small"><h3>Built with the web</h3><p>HTML · CSS · SVG</p><p class="small muted">Core layouts need no JavaScript. Viewport and load-time diagnostics are optional prototyping aids.</p><div><button type="button" class="consent-reopen" data-consent-reopen hidden>Cookie settings</button><p class="small muted" data-consent-status role="status"></p></div></div></div>
   </footer>

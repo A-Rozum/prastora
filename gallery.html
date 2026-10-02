@@ -5,7 +5,7 @@
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Explore a full-width gallery pattern with local SVG artwork, varied image proportions and links to complete Prastora page compositions.">
   <title>Gallery – Prastora</title>
-  <link rel="stylesheet" href="assets/core.css?v=2"><link rel="stylesheet" href="assets/theme.css?v=19"><link rel="stylesheet" href="assets/viewport.css?v=9">
+  <link rel="stylesheet" href="assets/core.css?v=2"><link rel="stylesheet" href="assets/theme.css?v=22"><link rel="stylesheet" href="assets/viewport.css?v=9">
   <script src="assets/viewport.js?v=2" defer></script><script src="assets/interactions.js?v=9" defer></script>
 </head>
 <body>
@@ -25,7 +25,7 @@
   </div></header>
   </div>
   <main id="main">
-    <section class="section stack"><p class="eyebrow">Gallery page pattern</p><h1>Give the visual work room to breathe.</h1><p class="lead">Combine wider compositions with quieter supporting images. Keep captions close to the artwork and make every destination clear.</p><nav class="flex catalog-nav" aria-label="Gallery sections"><a href="#collection">The collection</a><a href="#featured">A closer look</a><a href="#gallery-notes">Working with media</a></nav></section>
+    <section class="section stack"><p class="eyebrow">Gallery page pattern</p><h1>Give the visual work room to breathe.</h1><p class="lead">Combine wider compositions with quieter supporting images. Keep captions close to the artwork and make every destination clear.</p><nav class="flex catalog-nav" aria-label="Gallery sections"><a href="#collection">The collection</a><a href="#featured">A closer look</a><a href="#missing-media">Missing media</a><a href="#gallery-notes">Working with media</a></nav></section>
     <section class="section surface stack anchor" id="collection"><h2>A collection with a varied rhythm.</h2><p class="text-pretty">Six original local SVG illustrations. Image links lead to related page examples, not a slideshow or an external media service.</p>
       <div class="gallery-grid">
         <figure class="gallery-wide"><a class="media-link" href="article.html#media" aria-label="Explore editorial media with the Open horizon illustration"><svg class="media" viewBox="0 0 640 480" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="assets/gallery.svg#horizon"/></svg></a><figcaption class="gallery-caption stack-small"><h3>Open horizon</h3><p class="small muted">A wide frame for an editorial introduction.</p><a href="article.html#media">Explore editorial media</a></figcaption></figure>
@@ -37,6 +37,7 @@
       </div>
     </section>
     <section class="section gallery-feature anchor" id="featured"><figure class="stack-small"><svg class="media" viewBox="0 0 640 480" role="img" aria-label="Abstract composition of a warm arch, a teal circle and a dark triangle"><use href="assets/gallery.svg#composition"/></svg><figcaption class="small muted">Shapes in balance · uncropped local SVG artwork.</figcaption></figure><div class="stack"><p class="eyebrow">A closer look</p><h2>Let one image lead the section.</h2><p class="text-pretty">A gallery does not have to stop at a grid. A larger image can share a section with its context, materials or a route to the next page.</p><p class="text-pretty">The artwork stays crisp as the layout scales. The caption remains part of the reading flow rather than appearing only on hover.</p><a class="btn btn-secondary" href="article.html#media">Read the media guide</a></div></section>
+    <section class="section pair anchor" id="missing-media"><div class="stack"><h2>Keep the destination useful when an image is missing.</h2><p>The title, explanation and link should survive without the artwork. This deliberate placeholder demonstrates the state without requesting a broken image.</p></div><article class="card stack"><h3>When an image is unavailable</h3><div class="card surface stack-small"><p>Image unavailable</p><p class="small muted">The title and destination remain useful without the artwork.</p></div><a href="product.html">Explore the starter</a></article></section>
     <section class="section surface pair anchor" id="gallery-notes"><div class="stack"><h2>Useful media, without a heavy gallery engine.</h2><p class="text-pretty">The composition uses CSS Grid, figures and ordinary links. Add a lightbox or filtering only when the content genuinely needs those behaviours.</p><a href="product.html#setup">Start with the page structure</a></div><div>
       <details class="disclosure" name="gallery-questions"><summary>How do the proportions change?</summary><p>Desktop uses four grid columns, with two artworks spanning a pair of columns. Mobile uses two columns and gives the wider artworks their own row. The source order stays the same.</p></details>
       <details class="disclosure" name="gallery-questions"><summary>Can I replace these with photographs?</summary><p>Yes. Use images with useful alternative text and appropriate dimensions. For larger photographs, provide responsive sources and load below-the-fold media lazily where appropriate.</p></details>
