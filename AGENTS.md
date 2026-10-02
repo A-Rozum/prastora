@@ -4,6 +4,9 @@
 
 - Desktop refinement pass: keep the same three-column footer and nine example links on every page. Page-section links are in-page anchors, labelled On this page / In this article; use spacing rather than text pipe separators. Extra article-rail cards and decorative form artwork are desktop-only, not extra mobile reading content.
 - Reusable outline icons live in assets/icons.svg. Use a decorative aria-hidden/focusable=false SVG with the .icon class and a symbol reference; currentColor and rem sizing come from CSS. Replace symbols without changing their IDs/viewBoxes; no icon font, third-party library or extra JS.
+- Use compact .icon-heading markup for overview cards rather than a separate icon row. Cookie settings and its live status belong inside the footer's right-hand column below the developer note, not in a separate footer row. The developer note calls viewport/load-time diagnostics optional prototyping aids.
+- FAQ groups use native details name attributes (a different name per group); all start closed and only one stays open where supported. Do not group mobile navigation or independent media disclosures with FAQs. No accordion JS fallback.
+- Desktop article rail includes a disabled feedback form with email and optional Messenger phone fields in one row. Phone input is type=tel, autocomplete=tel, LTR; message uses auto direction. Backend/actual sending remain out of scope; mobile composition is deferred.
 - Prefer en dashes (–) to em dashes (—) in public copy as pages are edited. Do not run a separate whole-site replacement pass just for punctuation.
 
 - Theme and cookie UI are now shared across nine pages. Both manual theme and versioned cookie preferences use localStorage with no automatic expiry; unavailable storage must not break the UI. No trackers, consent enforcement or production consent manager are connected.
