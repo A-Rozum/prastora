@@ -66,3 +66,11 @@ html { scroll-padding-block-start: calc(var(--sticky-height, 0rem) + 1rem); }
   .site-top, .site-top-slot { display: none; }
   html { scroll-padding-block-start: 0; }
 }
+/* Animate only header compaction; reduced-motion keeps the immediate change. */
+@media (prefers-reduced-motion: no-preference) {
+  .site-top .header-inner { transition: padding-block .18s ease; }
+  .site-top .brand svg { transition: inline-size .18s ease, block-size .18s ease; }
+  .site-top .header-inner > .brand { transition: min-block-size .18s ease, transform .16s ease; }
+  .site-top .desktop-nav a, .site-top .mobile-nav > summary { transition: min-block-size .18s ease, padding-block .18s ease, transform .16s ease; }
+}
+.site-top.is-measuring :is(.header-inner, .brand, .brand svg, .desktop-nav a, .mobile-nav > summary) { transition: none; }

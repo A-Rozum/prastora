@@ -17,18 +17,20 @@
     const refreshExpandedHeight = () => {
       const compact = top.classList.contains('is-compact');
       const open = menu?.open;
+      top.classList.add('is-measuring');
       top.classList.remove('is-compact');
       if (menu) menu.open = false;
       expandedHeight = top.getBoundingClientRect().height;
       if (menu) menu.open = open;
       top.classList.toggle('is-compact', compact);
+      top.getBoundingClientRect();
+      top.classList.remove('is-measuring');
     };
     const measure = () => {
       const unit = rem();
       const height = top.getBoundingClientRect().height;
       root.style.setProperty('--sticky-height', `${height / unit}rem`);
       // Reserve the expanded height so shrinking does not move page content.
-      if (!top.classList.contains('is-compact') && !menu?.open) expandedHeight = height;
       slot.style.blockSize = `${expandedHeight / unit}rem`;
     };
     let pending = false;
