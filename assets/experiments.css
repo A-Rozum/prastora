@@ -6,7 +6,8 @@
 .icon-reserved .icon-heading { align-items: center; }
 .icon-reserved .icon-heading .icon { inline-size: 4rem; block-size: 5.75rem; }
 .icon-flow .card > p { display: flow-root; }
-.icon-flow p .icon { float: inline-start; inline-size: 2.8rem; block-size: 2.8rem; margin-inline-end: 1rem; margin-block-end: .4rem; }
+/* Fit within the first description line so subsequent lines use the full width. */
+.icon-flow p .icon { float: inline-start; inline-size: 2.4rem; block-size: 2.4rem; margin-inline-end: .8rem; margin-block-start: .08rem; }
 .heading-sample { font-size: 3.2rem; max-inline-size: 29rem; }
 .paragraph-sample { max-inline-size: 36rem; }
 .balanced { text-wrap: balance; }
