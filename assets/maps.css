@@ -1,5 +1,6 @@
 /* Optional contact-map examples. No remote tiles for the regional map. */
 .map-address { font-style: normal; }
+.contact-notes-art { --media-ratio: 16 / 9; }
 .map-preview { border: .1rem solid var(--line); border-radius: var(--radius); overflow: hidden; background: var(--surface); }
 .map-preview-art { inline-size: 100%; block-size: auto; aspect-ratio: 16 / 9; display: block; }
 .google-map-frame { display: block; inline-size: 100%; block-size: 36rem; border: 0; }

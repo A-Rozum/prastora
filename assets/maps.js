@@ -39,11 +39,12 @@
   const zoomOut = root.querySelector('[data-map-action="out"]');
   const points = {
     bagnara: [500.4, 569.2], minsk: [712.2, 194.4], vilnius: [671, 175.5],
-    warsaw: [594.2, 234.5], lodz: [566.2, 245.8], krakow: [575, 286.4], prague: [475.9, 286.2]
+    warsaw: [594.2, 234.5], lodz: [566.2, 245.8], krakow: [575, 286.4],
+    vlore: [566.7, 516.8], prague: [475.9, 286.2]
   };
   let zoom = 1;
   let center = [450, 350];
-  let selected = 'bagnara';
+  let selected = 'vilnius';
   const render = () => {
     const width = 900 / zoom, height = 700 / zoom;
     center[0] = Math.max(width / 2, Math.min(900 - width / 2, center[0]));
