@@ -46,8 +46,6 @@ def main():
         errors.extend(f"{path.name}: duplicate id {item}" for item in page.duplicates)
         scripts = [urlsplit(src or "").path for src in page.scripts]
         allowed = {"assets/viewport.js", "assets/interactions.js", "assets/theme-init.js"}
-        if path.name == "contacts.html":
-            allowed.add("assets/maps.js")
         if any(src not in allowed for src in scripts) or len(scripts) != len(set(scripts)):
             errors.append(f"{path.name}: unexpected browser script")
         for ref in page.refs:
