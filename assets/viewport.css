@@ -92,6 +92,7 @@ html { scroll-padding-block-end: calc(var(--consent-height, 0rem) + 1rem); }
 .consent-bar { position: fixed; inset-inline: 0; inset-block-end: 0; z-index: 30; padding: .35rem var(--space-inline); border-block-start: .1rem solid var(--utility-line); background: var(--utility-surface); font-size: calc(var(--small-size) * .9); line-height: 1.4; max-block-size: 45svh; overflow: auto; }
 .consent-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: nowrap; gap: 1rem; }
 .consent-row > p { flex: none; }
+.consent-desktop-copy { display: none; }
 .consent-actions { display: flex; flex-wrap: nowrap; gap: .6rem; }
 .consent-actions button { white-space: nowrap; flex: none; }
 .consent-bar button, .consent-reopen { min-block-size: 3.8rem; padding: .6rem 1rem; border: .1rem solid var(--accent); border-radius: .4rem; color: var(--accent); background: var(--paper); font: inherit; }
@@ -103,10 +104,16 @@ html { scroll-padding-block-end: calc(var(--consent-height, 0rem) + 1rem); }
 /* Service controls never get the site's hover-scale cue; arrow positioning is untouched. */
 .viewport-panel :is(a, button, select, .language-control), .consent-bar :is(a, button, select, input, label) { transform: none; transition: none; }
 @media (width > 50em) {
+  .consent-desktop-copy { display: inline; }
+  .consent-row > p { flex: 0 1 auto; min-inline-size: 0; }
   .theme-toggle { inline-size: 2.6rem; block-size: 2.6rem; padding: .45rem; }
   .theme-toggle svg { inline-size: 1.5rem; block-size: 1.5rem; }
   .consent-bar { padding-block: .25rem; font-size: calc(var(--small-size) * .8); }
   .consent-bar button { min-block-size: 2.8rem; padding: .2rem .7rem; }
+}
+@media (max-width: 50em) {
+  .consent-desktop-copy { display: none; }
+  .consent-row > p { flex: none; }
 }
 @media print {
   :root, :root[data-scheme] { color-scheme: light; --paper: #fff; --ink: #000; --muted: #333; }
