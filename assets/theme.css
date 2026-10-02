@@ -53,9 +53,9 @@
   .article-intro { padding-block-end: 1rem; }
   .article-intro > .section-nav { margin-block-start: 1rem; }
   .article-layout { padding-block-start: 1.5rem; }
-  .article-rail { display: grid; grid-template-rows: repeat(4, minmax(0, 1fr)); align-self: stretch; gap: 3rem; }
-  .article-rail > * { align-self: start; min-inline-size: 0; }
-  .article-rail > :last-child { align-self: end; }
+  .article-rail { display: flex; flex-direction: column; justify-content: space-between; align-self: stretch; gap: 3rem; }
+  .article-rail > * { min-inline-size: 0; flex: none; }
+  .article-related { grid-column: 1; }
   .service-intro { padding-block-start: 0; }
   .article-rail-extra { display: block; }
   .form-art { display: block; --media-ratio: 16 / 9; }
