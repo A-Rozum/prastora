@@ -1,13 +1,13 @@
-/* Lab only: sticky positioning and scroll-driven compaction, with no header JS.
+/* Shared sticky positioning and scroll-driven compaction, with no header JS.
    Reserve matches this English demo's expanded single-row desktop/mobile header.
    Recheck the reserve when changing navigation, fonts or header dimensions. */
 html:has([data-css-header]) { scroll-padding-block-start: 13rem; }
-.css-top { position: sticky; inset-block-start: 0; z-index: 20; pointer-events: none; }
-.css-top > .viewport-panel, .css-top .site-header { pointer-events: auto; }
-.css-header-reserve { position: relative; block-size: 7.5rem; }
-.css-top .site-header { position: absolute; inset-block-start: 0; inset-inline: 0; max-block-size: 65svh; overflow: auto; }
+.css-top { display: grid; grid-template-rows: auto 7.5rem; position: sticky; inset-block-start: 0; z-index: 20; pointer-events: none; }
+.css-top > .viewport-panel, .css-top .site-header, .css-top > .skip { pointer-events: auto; }
+.css-top > .viewport-panel { grid-row: 1; }
+.css-top .site-header { grid-row: 2; align-self: start; max-block-size: 65svh; overflow: auto; }
 @media (max-width: 50em) {
-  .css-header-reserve { block-size: calc(5.1rem + var(--text-size) * var(--line-height)); }
+  .css-top { grid-template-rows: auto calc(5.1rem + var(--text-size) * var(--line-height)); }
 }
 /* Unsupported browsers keep a sticky, expanded header. No timer animation. */
 @supports (animation-timeline: scroll()) and (animation-range: 0rem 8rem) {
@@ -30,8 +30,8 @@ html:has([data-css-header]) { scroll-padding-block-start: 13rem; }
 @keyframes css-header-links { to { min-block-size: 3.6rem; padding-block: .4rem; } }
 @keyframes css-header-summary { to { min-block-size: 3.8rem; padding-block: .3rem; } }
 @media print {
-  .css-top { position: static; }
-  .css-header-reserve { block-size: auto; }
+  html:has([data-css-header]) { scroll-padding-block-start: 0; }
+  .css-top { position: static; grid-template-rows: auto auto; }
   .css-top .site-header { position: static; max-block-size: none; }
   .css-top :is(.header-inner, .brand svg, .header-inner > .brand, .desktop-nav a, .mobile-nav > summary) { animation: none; }
 }

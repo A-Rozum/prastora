@@ -1,10 +1,10 @@
 # Project scope
 
-## Current UI trial (overrides older UI/storage notes below)
+## Current shared UI (overrides older UI/storage notes below)
 
 - Theme and cookie UI are now shared across nine pages. Both manual theme and versioned cookie preferences use localStorage with no automatic expiry; unavailable storage must not break the UI. No trackers, consent enforcement or production consent manager are connected.
-- Experiments alone uses static HTML wrappers and assets/css-header.css for sticky positioning and scroll-driven compaction. interactions.js skips header enhancement on [data-css-header]. Unsupported scroll timelines and reduced-motion use a sticky expanded header. Other pages retain the older JS header until the trial is approved.
-- The lab's CSS header reserve matches this English navigation's expanded dimensions. Recheck it for changed labels, fonts, multi-row navigation or new header controls; it is not a general intrinsic-height solution. The animation follows 0–8rem of scroll rather than a 180ms timer.
+- All nine pages use static .css-top HTML wrappers and assets/css-header.css (imported by theme.css) for sticky positioning and scroll-driven compaction. Header creation, scroll listeners and header measurements have been removed from interactions.js. Unsupported scroll timelines and reduced-motion use a sticky expanded header.
+- The CSS Grid header row reserves this English navigation's expanded dimensions. Recheck it for changed labels, fonts, multi-row navigation or new header controls; it is not a general intrinsic-height solution. The animation follows 0–8rem of scroll rather than a 180ms timer. Demo notes stay outside the sticky group.
 - Service-strip controls do not scale on hover. Existing mobile control sizes and all three scale regimes remain unchanged. The lab's theme/consent markup is static; older pending shared UI code still creates missing widgets on other pages, to be moved to HTML separately.
 
 - Prastora is an independent experimental CSS toolkit. Do not modify legal-status, framework or HTML archives when working here.

@@ -1,13 +1,7 @@
 /* Neutral demonstration theme. Replace this file to change site identity. */
+@import url("css-header.css?v=2");
 :root { --accent: #285d6b; --ink: #233a40; --muted: #576b71; --surface: #edf3f3; --line: #d3e0e1; }
 .site-header { border-block-end: .1rem solid var(--line); background: var(--paper); }
-.site-top { position: fixed; inset-block-start: 0; inset-inline: 0; z-index: 20; max-block-size: 75svh; overflow: auto; }
-.site-top.is-compact .header-inner { padding-block: .15rem; }
-.site-top.is-compact .brand svg { inline-size: 3rem; block-size: 3rem; }
-.site-top.is-compact .desktop-nav a { min-block-size: 3.6rem; padding-block: .4rem; }
-.site-top.is-compact .header-inner > .brand { min-block-size: 3.8rem; }
-.site-top.is-compact .mobile-nav > summary { min-block-size: 3.8rem; padding-block: .3rem; }
-html { scroll-padding-block-start: calc(var(--sticky-height, 0rem) + 1rem); }
 .lead, .card > p:not(.eyebrow, .sample-label, .paragraph-sample, .price), .card-flex > p, .story-row p, .site-footer > p { text-wrap: pretty; }
 .header-inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 2rem; padding: 1.5rem var(--space-inline); }
 .brand { display: inline-flex; align-items: center; gap: 1rem; text-decoration: none; color: var(--ink); font-weight: 700; font-size: 2rem; }
@@ -63,17 +57,8 @@ html { scroll-padding-block-start: calc(var(--sticky-height, 0rem) + 1rem); }
   .product-thumbs { --columns: 3; }
 }
 @media print {
-  .site-top, .site-top-slot { display: none; }
   html { scroll-padding-block-start: 0; }
 }
-/* Animate only header compaction; reduced-motion keeps the immediate change. */
-@media (prefers-reduced-motion: no-preference) {
-  .site-top .header-inner { transition: padding-block .18s ease; }
-  .site-top .brand svg { transition: inline-size .18s ease, block-size .18s ease; }
-  .site-top .header-inner > .brand { transition: min-block-size .18s ease, transform .16s ease; }
-  .site-top .desktop-nav a, .site-top .mobile-nav > summary { transition: min-block-size .18s ease, padding-block .18s ease, transform .16s ease; }
-}
-.site-top.is-measuring :is(.header-inner, .brand, .brand svg, .desktop-nav a, .mobile-nav > summary) { transition: none; }
 /* Complete-page examples: composition remains separate from the core. */
 .pricing-grid { align-items: stretch; }
 .pricing-plan { display: flex; flex-direction: column; gap: 1.5rem; }

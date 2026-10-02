@@ -33,55 +33,6 @@
     controls.innerHTML = '<button type="button" class="consent-reopen" data-consent-reopen hidden>Cookie settings</button><p class="small muted" data-consent-status role="status"></p>';
     footer.append(controls);
   }
-  const header = document.querySelector('.site-header');
-  if (utility && header && !document.querySelector('[data-css-header]')) {
-    const slot = document.createElement('div');
-    const top = document.createElement('div');
-    slot.className = 'site-top-slot';
-    top.className = 'site-top';
-    utility.before(slot);
-    slot.append(top);
-    top.append(utility, header);
-    const menu = header.querySelector('.mobile-nav');
-    let expandedHeight = 0;
-    const refreshExpandedHeight = () => {
-      const compact = top.classList.contains('is-compact');
-      const open = menu?.open;
-      top.classList.add('is-measuring');
-      top.classList.remove('is-compact');
-      if (menu) menu.open = false;
-      expandedHeight = top.getBoundingClientRect().height;
-      if (menu) menu.open = open;
-      top.classList.toggle('is-compact', compact);
-      top.getBoundingClientRect();
-      top.classList.remove('is-measuring');
-    };
-    const measure = () => {
-      const unit = rem();
-      const height = top.getBoundingClientRect().height;
-      root.style.setProperty('--sticky-height', `${height / unit}rem`);
-      // Reserve the expanded height so shrinking does not move page content.
-      slot.style.blockSize = `${expandedHeight / unit}rem`;
-    };
-    let pending = false;
-    const update = () => {
-      top.classList.toggle('is-compact', window.scrollY > 2 * rem());
-      measure();
-      pending = false;
-    };
-    window.addEventListener('scroll', () => {
-      if (!pending) { pending = true; requestAnimationFrame(update); }
-    }, { passive: true });
-    window.addEventListener('resize', () => { refreshExpandedHeight(); update(); }, { passive: true });
-    new ResizeObserver(measure).observe(top);
-    refreshExpandedHeight();
-    update();
-    if (location.hash) requestAnimationFrame(() => {
-      let id = location.hash.slice(1);
-      try { id = decodeURIComponent(id); } catch { /* Keep malformed hashes harmless. */ }
-      document.getElementById(id)?.scrollIntoView();
-    });
-  }
 
   const themeButton = document.querySelector('[data-theme-toggle]');
   if (themeButton) {
