@@ -28,6 +28,9 @@
 .icon-heading-reserved .icon { inline-size: 4rem; block-size: 5.75rem; }
 .card-icon-flow > p { display: flow-root; text-align: justify; text-align-last: start; text-wrap: wrap; }
 .card-icon-flow p .icon { float: inline-start; inline-size: 2.4rem; block-size: 2.4rem; margin-inline-end: .8rem; margin-block-start: .08rem; }
+.card-icon-feature { text-align: center; }
+.card-icon-feature > .icon { inline-size: 9rem; block-size: 9rem; align-self: center; margin-block: 1rem; }
+.card-icon-feature > a { align-self: center; }
 .rail-contact-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
 .rail-contact-row > * { min-inline-size: 0; }
 .rail-contact-row label { font-size: var(--small-size); }
