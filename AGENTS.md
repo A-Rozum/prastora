@@ -2,6 +2,10 @@
 
 ## Current shared UI (overrides older UI/storage notes below)
 
+- Desktop refinement pass: keep the same three-column footer and nine example links on every page. Page-section links are in-page anchors, labelled On this page / In this article; use spacing rather than text pipe separators. Extra article-rail cards and decorative form artwork are desktop-only, not extra mobile reading content.
+- Reusable outline icons live in assets/icons.svg. Use a decorative aria-hidden/focusable=false SVG with the .icon class and a symbol reference; currentColor and rem sizing come from CSS. Replace symbols without changing their IDs/viewBoxes; no icon font, third-party library or extra JS.
+- Prefer en dashes (–) to em dashes (—) in public copy as pages are edited. Do not run a separate whole-site replacement pass just for punctuation.
+
 - Theme and cookie UI are now shared across nine pages. Both manual theme and versioned cookie preferences use localStorage with no automatic expiry; unavailable storage must not break the UI. No trackers, consent enforcement or production consent manager are connected.
 - All nine pages use static .css-top HTML wrappers and assets/css-header.css (imported by theme.css) for sticky positioning and scroll-driven compaction. Header creation, scroll listeners and header measurements have been removed from interactions.js. Unsupported scroll timelines and reduced-motion use a sticky expanded header.
 - The CSS Grid header row reserves this English navigation's expanded dimensions. Recheck it for changed labels, fonts, multi-row navigation or new header controls; it is not a general intrinsic-height solution. The animation follows 0–8rem of scroll rather than a 180ms timer. Demo notes stay outside the sticky group.
