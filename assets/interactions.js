@@ -41,6 +41,29 @@
     const settingsButton = consent.querySelector('[data-consent-configure]');
     const reopen = document.querySelector('[data-consent-reopen]');
     const status = document.querySelector('[data-consent-status]');
+    let returnControl = null;
+    const readingTarget = () => {
+      const main = document.querySelector('main');
+      if (!main) return document.body;
+      const header = document.querySelector('.site-header');
+      const top = Math.max(0, header?.getBoundingClientRect().bottom || 0);
+      const bottom = Math.min(window.innerHeight, consent.getBoundingClientRect().top);
+      const candidates = [...main.querySelectorAll('h1, h2, h3, h4, p, li, summary, a, button, input, select, textarea')];
+      const visible = candidates.filter(element => {
+        const rect = element.getBoundingClientRect();
+        return rect.width > 0 && rect.height > 0 && rect.bottom > top && rect.top < bottom
+          && getComputedStyle(element).visibility === 'visible';
+      });
+      // Prefer the start of a visible block, not a paragraph already scrolled past.
+      return visible.find(element => element.getBoundingClientRect().top >= top) || visible[0] || main;
+    };
+    const focusWithoutScroll = element => {
+      if (!element.hasAttribute('tabindex') && element.tabIndex < 0) {
+        element.setAttribute('tabindex', '-1');
+        element.addEventListener('blur', () => element.removeAttribute('tabindex'), { once: true });
+      }
+      element.focus({ preventScroll: true });
+    };
     let savedChoice = null;
     try {
       const choice = JSON.parse(read('localStorage', 'prastora.consent.v1'));
@@ -54,6 +77,8 @@
       root.style.setProperty('--consent-height', `${consent.hidden ? 0 : consent.getBoundingClientRect().height / rem()}rem`);
     };
     const choose = (analytics, marketing) => {
+      const target = returnControl?.isConnected ? returnControl : readingTarget();
+      returnControl = null;
       write('localStorage', 'prastora.consent.v1', JSON.stringify({ version: 1, analytics, marketing }));
       consent.querySelector('#consent-analytics').checked = analytics;
       consent.querySelector('#consent-marketing').checked = marketing;
@@ -62,7 +87,7 @@
       settingsButton.setAttribute('aria-expanded', 'false');
       status.textContent = analytics || marketing ? 'Cookie preference selected.' : 'Necessary only selected.';
       measure();
-      reopen.focus({ preventScroll: true });
+      focusWithoutScroll(target);
     };
     consent.querySelector('[data-consent-reject]').addEventListener('click', () => choose(false, false));
     consent.querySelector('[data-consent-accept]').addEventListener('click', () => choose(true, true));
@@ -77,6 +102,7 @@
     });
     reopen.hidden = false;
     reopen.addEventListener('click', () => {
+      returnControl = reopen;
       consent.hidden = false;
       measure();
       settingsButton.focus({ preventScroll: true });
