@@ -1,0 +1,37 @@
+/* Lab only: sticky positioning and scroll-driven compaction, with no header JS.
+   Reserve matches this English demo's expanded single-row desktop/mobile header.
+   Recheck the reserve when changing navigation, fonts or header dimensions. */
+html:has([data-css-header]) { scroll-padding-block-start: 13rem; }
+.css-top { position: sticky; inset-block-start: 0; z-index: 20; pointer-events: none; }
+.css-top > .viewport-panel, .css-top .site-header { pointer-events: auto; }
+.css-header-reserve { position: relative; block-size: 7.5rem; }
+.css-top .site-header { position: absolute; inset-block-start: 0; inset-inline: 0; max-block-size: 65svh; overflow: auto; }
+@media (max-width: 50em) {
+  .css-header-reserve { block-size: calc(5.1rem + var(--text-size) * var(--line-height)); }
+}
+/* Unsupported browsers keep a sticky, expanded header. No timer animation. */
+@supports (animation-timeline: scroll()) and (animation-range: 0rem 8rem) {
+  @media (prefers-reduced-motion: no-preference) {
+    .css-top .header-inner { animation: css-header-padding linear both; }
+    .css-top .brand svg { animation: css-header-logo linear both; }
+    .css-top .header-inner > .brand { animation: css-header-brand linear both; }
+    .css-top .desktop-nav a { animation: css-header-links linear both; }
+    .css-top .mobile-nav > summary { animation: css-header-summary linear both; }
+    .css-top :is(.header-inner, .brand svg, .header-inner > .brand, .desktop-nav a, .mobile-nav > summary) {
+      animation-duration: auto;
+      animation-timeline: scroll(root block);
+      animation-range: 0rem 8rem;
+    }
+  }
+}
+@keyframes css-header-padding { to { padding-block: .15rem; } }
+@keyframes css-header-logo { to { inline-size: 3rem; block-size: 3rem; } }
+@keyframes css-header-brand { to { min-block-size: 3.8rem; } }
+@keyframes css-header-links { to { min-block-size: 3.6rem; padding-block: .4rem; } }
+@keyframes css-header-summary { to { min-block-size: 3.8rem; padding-block: .3rem; } }
+@media print {
+  .css-top { position: static; }
+  .css-header-reserve { block-size: auto; }
+  .css-top .site-header { position: static; max-block-size: none; }
+  .css-top :is(.header-inner, .brand svg, .header-inner > .brand, .desktop-nav a, .mobile-nav > summary) { animation: none; }
+}

@@ -35,9 +35,9 @@ html { scroll-padding-block-start: calc(var(--sticky-height, 0rem) + 1rem); }
 .media-link > .media { display: block; }
 /* Interaction cue only: transforms do not change the surrounding layout. */
 @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
-  :where(.btn, .brand, .desktop-nav a, .mobile-nav > summary, .mobile-nav nav a, .footer-links a, .catalog-nav a, .card a, .media-link, .language-control) { transition: transform .16s ease; }
+  :where(.btn, .brand, .desktop-nav a, .mobile-nav > summary, .mobile-nav nav a, .footer-links a, .catalog-nav a, .card a, .media-link) { transition: transform .16s ease; }
   .card a:not(.btn), .footer-links a { display: inline-block; }
-  :where(.btn, .brand, .desktop-nav a, .mobile-nav > summary, .mobile-nav nav a, .footer-links a, .catalog-nav a, .card a, .media-link, .language-control):not(:disabled):hover { transform: scale(1.03); }
+  :where(.btn, .brand, .desktop-nav a, .mobile-nav > summary, .mobile-nav nav a, .footer-links a, .catalog-nav a, .card a, .media-link):not(:disabled):hover { transform: scale(1.03); }
   .brand { transform-origin: left center; }
   .brand:dir(rtl) { transform-origin: right center; }
   .mobile-nav > summary, .mobile-nav nav a, .language-control { transform-origin: right center; }
