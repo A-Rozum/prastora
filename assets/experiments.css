@@ -73,6 +73,12 @@ html { scroll-padding-block-end: calc(var(--consent-height, 0rem) + 1rem); }
 .consent-settings label { display: inline-flex; align-items: center; gap: .6rem; margin-inline-end: 2rem; padding-block: .5rem; }
 .consent-settings input { inline-size: 1.8rem; block-size: 1.8rem; margin: 0; accent-color: var(--accent); }
 .consent-bar[hidden], .consent-settings[hidden], .consent-reopen[hidden] { display: none; }
+@media (width > 50em) {
+  .theme-toggle { inline-size: 2.6rem; block-size: 2.6rem; padding: .45rem; }
+  .theme-toggle svg { inline-size: 1.5rem; block-size: 1.5rem; }
+  .consent-bar { padding-block: .25rem; font-size: calc(var(--small-size) * .8); }
+  .consent-bar button { min-block-size: 2.8rem; padding: .2rem .7rem; }
+}
 @media (max-width: 50em) {
   .context-layout { grid-template-columns: minmax(0, 1fr); }
   .context-sidebar { display: none; }

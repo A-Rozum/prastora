@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <!-- Original local artwork for the gallery; no external assets or fonts. -->
+  <symbol id="horizon" viewBox="0 0 640 480">
+    <rect width="640" height="480" fill="#dce8e8"/>
+    <circle cx="473" cy="126" r="58" fill="#d9b991"/>
+    <path d="M0 292 126 222 256 292 393 186 640 285V480H0Z" fill="#96b6b8"/>
+    <path d="M0 360 191 288 339 362 505 301 640 345V480H0Z" fill="#537f88"/>
+    <path d="M0 420Q170 365 320 426T640 405V480H0Z" fill="#285d6b"/>
+    <path d="M280 480 405 338 435 343 335 480Z" fill="#e4d5bc"/>
+  </symbol>
+  <symbol id="arch" viewBox="0 0 640 480">
+    <rect width="640" height="480" fill="#e7dfd2"/>
+    <path d="M130 480V242a190 190 0 0 1 380 0V480Z" fill="#c4a98b"/>
+    <path d="M192 480V244a128 128 0 0 1 256 0V480Z" fill="#325b65"/>
+    <path d="M222 480V257a98 98 0 0 1 196 0V480Z" fill="#91b2b6"/>
+    <circle cx="344" cy="260" r="42" fill="#e4d5b8"/>
+    <path d="M222 369 292 317 368 376 418 344V480H222Z" fill="#547d84"/>
+    <path d="M0 440H640M95 480l63-40m387 40-63-40" fill="none" stroke="#a78f74" stroke-width="4"/>
+  </symbol>
+  <symbol id="botanical" viewBox="0 0 640 480">
+    <rect width="640" height="480" fill="#e5eeea"/>
+    <circle cx="320" cy="245" r="178" fill="#c9dcd4"/>
+    <path d="M320 390V104m0 211c-100 0-140-58-127-102 85-4 128 48 127 102m0-62c99 0 140-58 127-102-85-4-128 48-127 102m0-61c-59-4-86-42-72-79 55 2 77 35 72 79" fill="#71998b" stroke="#315e55" stroke-width="6" stroke-linejoin="round"/>
+    <path d="M248 358h144l-24 84h-96Z" fill="#b99474"/>
+    <path d="M260 383h120" stroke="#dbc6ac" stroke-width="5"/>
+  </symbol>
+  <symbol id="studio" viewBox="0 0 640 480">
+    <rect width="640" height="480" fill="#e9e6df"/>
+    <rect x="55" y="58" width="270" height="212" fill="#a9c4c6"/>
+    <path d="M190 58v212M55 166h270" stroke="#faf7f0" stroke-width="12"/>
+    <path d="M60 339h520M100 339v141m440-141v141" stroke="#527880" stroke-width="16"/>
+    <rect x="194" y="224" width="213" height="110" rx="8" fill="#315e69"/>
+    <rect x="210" y="237" width="181" height="80" rx="3" fill="#d5e3df"/>
+    <path d="M265 334h72m-36-18v18" stroke="#315e69" stroke-width="9"/>
+    <path d="M474 332v-92m-21 92h42l8-30h-58Z" fill="#b89170" stroke="#b89170" stroke-width="4"/>
+    <path d="M474 288q-46-10-39-49 39-2 39 49m0-24q39-14 31-47-35 3-31 47" fill="#74988a"/>
+  </symbol>
+  <symbol id="city" viewBox="0 0 640 480">
+    <rect width="640" height="480" fill="#dfe8e9"/>
+    <circle cx="473" cy="110" r="45" fill="#d7b58a"/>
+    <path d="M0 480V242h105V120h145v170h81V183h115v87h100V210h94v270Z" fill="#87a8ad"/>
+    <path d="M0 480V340h150V204h112v276h53V313h118v167h80V286h127v194Z" fill="#3e6b78"/>
+    <path d="M181 237h50m-50 32h50m-50 32h50m-50 32h50m162 15h40m-40 32h40m138-60h44m-44 32h44" stroke="#d6e4df" stroke-width="11"/>
+    <path d="M0 457h640" stroke="#d4ba97" stroke-width="10"/>
+  </symbol>
+  <symbol id="composition" viewBox="0 0 640 480">
+    <rect width="640" height="480" fill="#e9e1d6"/>
+    <rect x="72" y="68" width="246" height="344" rx="123" fill="#b98f70"/>
+    <circle cx="389" cy="228" r="127" fill="#6f989c"/>
+    <path d="M285 412 444 92 585 412Z" fill="#2e606d"/>
+    <path d="M82 292h454M181 78v332" stroke="#ede9df" stroke-width="7"/>
+    <circle cx="181" cy="292" r="43" fill="#e4d2b7"/>
+  </symbol>
+</svg>

@@ -52,3 +52,13 @@
 .utility-actions button { display: inline-flex; align-items: center; gap: .6rem; }
 .utility-actions svg { inline-size: var(--small-size); block-size: var(--small-size); flex: none; }
 @media print { .viewport-panel { display: none; } }
+/* Keep the approved mobile strip unchanged; desktop utility UI is quieter. */
+@media (width > 50em) {
+  .viewport-panel { padding-block: .22rem; font-size: calc(var(--small-size) * .8); }
+  .viewport-reading { font-size: calc(var(--small-size) * .75); }
+  .utility-actions select, .utility-actions button { padding: .18rem .6rem; }
+  .language-control { inline-size: 12rem; }
+  .utility-actions select { padding-inline: .65rem 2.5rem; }
+  .language-control .language-arrow { inline-size: 1rem; block-size: 1rem; inset-inline-end: .7rem; }
+  .utility-actions svg { inline-size: calc(var(--small-size) * .85); block-size: calc(var(--small-size) * .85); }
+}
