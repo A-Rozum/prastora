@@ -7,32 +7,7 @@
   const write = (store, key, value) => {
     try { window[store].setItem(key, value); } catch { /* UI still works without storage. */ }
   };
-  const savedTheme = read('localStorage', 'prastora.theme');
-  if (savedTheme === 'light' || savedTheme === 'dark') root.dataset.scheme = savedTheme;
   const rem = () => parseFloat(getComputedStyle(root).fontSize);
-  const utility = document.querySelector('.viewport-panel');
-  // Interactive utility widgets share one implementation; navigation stays static HTML.
-  if (utility && !utility.querySelector('[data-theme-toggle]')) {
-    const tools = document.createElement('div');
-    tools.className = 'viewport-tools';
-    const reading = utility.querySelector('.viewport-reading');
-    reading.before(tools);
-    tools.innerHTML = '<button class="theme-toggle" data-theme-toggle type="button" aria-label="Switch colour theme" hidden><svg class="theme-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg><svg class="theme-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.5A9 9 0 0 1 9.5 3.5a9 9 0 1 0 11 11Z"/></svg></button>';
-    tools.append(reading);
-  }
-  if (!document.querySelector('[data-consent-demo]')) {
-    const consent = document.createElement('aside');
-    consent.className = 'consent-bar';
-    consent.dataset.consentDemo = '';
-    consent.hidden = true;
-    consent.setAttribute('aria-label', 'Cookie preferences');
-    consent.innerHTML = '<div class="consent-settings" id="consent-settings" data-consent-settings hidden><p>Cookie preferences · necessary functions stay available.</p><label><input type="checkbox" id="consent-analytics">Analytics</label><label><input type="checkbox" id="consent-marketing">Marketing</label><button type="button" data-consent-save>Save preferences</button></div><div class="consent-row"><p>We use cookies.<span class="consent-desktop-copy"> Choose which data we may collect, or set your preferences in Settings.</span></p><div class="consent-actions"><button type="button" data-consent-accept>Accept all</button><button type="button" data-consent-reject>Necessary only</button><button type="button" data-consent-configure aria-expanded="false" aria-controls="consent-settings">Settings</button></div></div>';
-    document.body.append(consent);
-    const footer = document.querySelector('.site-footer');
-    const controls = document.createElement('div');
-    controls.innerHTML = '<button type="button" class="consent-reopen" data-consent-reopen hidden>Cookie settings</button><p class="small muted" data-consent-status role="status"></p>';
-    footer.append(controls);
-  }
 
   const themeButton = document.querySelector('[data-theme-toggle]');
   if (themeButton) {

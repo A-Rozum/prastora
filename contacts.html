@@ -1,15 +1,22 @@
 <!doctype html>
 <html lang="en" dir="ltr">
 <head>
+  <script src="assets/theme-init.js?v=1"></script>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="A contact-page composition with clear destinations, a labelled form pattern and frequently asked questions, built with Prastora.">
   <title>Contacts — Prastora</title>
   <link rel="stylesheet" href="assets/core.css?v=2"><link rel="stylesheet" href="assets/theme.css?v=16"><link rel="stylesheet" href="assets/viewport.css?v=9">
-  <script src="assets/viewport.js?v=2" defer></script><script src="assets/interactions.js?v=7" defer></script>
+  <script src="assets/viewport.js?v=2" defer></script><script src="assets/interactions.js?v=8" defer></script>
 </head>
 <body>
   <div class="css-top" data-css-header>
-  <aside class="viewport-panel" data-viewport hidden aria-label="Utility strip"><div class="viewport-reading" title="Browser viewport size in CSS pixels"><output data-viewport-value dir="ltr"></output></div><div class="utility-actions"><span class="language-control"><select aria-label="Language" title="English only for now; other languages are planned"><option value="en" lang="en" selected>English</option><option value="es" lang="es" disabled>Español — soon</option><option value="fr" lang="fr" disabled>Français — soon</option><option value="ar" lang="ar" dir="rtl" disabled>العربية — soon</option></select><svg class="language-arrow" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="m4 6 4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><button type="button" disabled title="Account access is not connected"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="assets/placeholders.svg#account"/></svg>Sign in</button></div></aside>
+  <aside class="viewport-panel" data-viewport hidden aria-label="Utility strip">
+    <div class="viewport-tools">
+      <button class="theme-toggle" data-theme-toggle type="button" aria-label="Switch colour theme" hidden><svg class="theme-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg><svg class="theme-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.5A9 9 0 0 1 9.5 3.5a9 9 0 1 0 11 11Z"/></svg></button>
+      <div class="viewport-reading" title="Browser viewport size in CSS pixels"><output data-viewport-value dir="ltr"></output></div>
+    </div>
+    <div class="utility-actions"><span class="language-control"><select aria-label="Language" title="English only for now; other languages are planned"><option value="en" lang="en" selected>English</option><option value="es" lang="es" disabled>Español — soon</option><option value="fr" lang="fr" disabled>Français — soon</option><option value="ar" lang="ar" dir="rtl" disabled>العربية — soon</option></select><svg class="language-arrow" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="m4 6 4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><button type="button" disabled title="Account access is not connected"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="assets/placeholders.svg#account"/></svg>Sign in</button></div>
+  </aside>
   <a class="skip" href="#main">Skip to content</a>
   <header class="site-header"><div class="header-inner">
     <a class="brand" href="index.html"><svg viewBox="0 0 64 64" aria-hidden="true"><use href="assets/placeholders.svg#logo"/></svg>Prastora</a>
@@ -29,6 +36,12 @@
     </section>
     <section class="section surface pair"><div class="stack"><h2>Help visitors before they need to ask.</h2><p class="text-pretty">A few direct answers can remove uncertainty. Keep them near the contact options rather than sending everyone through the same form.</p></div><div><details class="disclosure"><summary>Where can I share feedback about Prastora?</summary><p>The public repository is the working destination for project feedback. The form on this page is a visual example and does not send messages.</p><a href="https://github.com/A-Rozum/prastora">Visit the repository</a></details><details class="disclosure"><summary>Can I use this as a contact-page starting point?</summary><p>Yes. Adapt the labels, fields and destinations to your site. Form processing and any required privacy information belong to your implementation.</p></details><details class="disclosure"><summary>Does the page need an embedded map?</summary><p>Only if a physical location helps the visitor. A useful address or directions link may be enough; this example does not invent an office or load a map service.</p></details></div></section>
   </main>
-  <footer class="site-footer section stack"><a class="brand" href="index.html">Prastora</a><nav class="footer-links" aria-label="Examples"><a href="index.html">Overview</a><a href="service.html">Layouts</a><a href="article.html">Typography</a><a href="catalog.html">Patterns</a><a href="product.html">Starter</a><a href="pricing.html">Pricing</a><a href="gallery.html">Gallery</a><a href="experiments.html">Experiments</a></nav><p class="small muted">Core layouts need no JavaScript.</p></footer>
+  <footer class="site-footer section stack"><a class="brand" href="index.html">Prastora</a><nav class="footer-links" aria-label="Examples"><a href="index.html">Overview</a><a href="service.html">Layouts</a><a href="article.html">Typography</a><a href="catalog.html">Patterns</a><a href="product.html">Starter</a><a href="pricing.html">Pricing</a><a href="gallery.html">Gallery</a><a href="experiments.html">Experiments</a></nav><p class="small muted">Core layouts need no JavaScript.</p>
+    <div><button type="button" class="consent-reopen" data-consent-reopen hidden>Cookie settings</button><p class="small muted" data-consent-status role="status"></p></div>
+  </footer>
+  <aside class="consent-bar" data-consent-demo hidden aria-label="Cookie preferences">
+    <div class="consent-settings" id="consent-settings" data-consent-settings hidden><p>Cookie preferences · necessary functions stay available.</p><label><input type="checkbox" id="consent-analytics">Analytics</label><label><input type="checkbox" id="consent-marketing">Marketing</label><button type="button" data-consent-save>Save preferences</button></div>
+    <div class="consent-row"><p>We use cookies.<span class="consent-desktop-copy"> Choose which data we may collect, or set your preferences in Settings.</span></p><div class="consent-actions"><button type="button" data-consent-accept>Accept all</button><button type="button" data-consent-reject>Necessary only</button><button type="button" data-consent-configure aria-expanded="false" aria-controls="consent-settings">Settings</button></div></div>
+  </aside>
 </body>
 </html>

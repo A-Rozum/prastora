@@ -13,10 +13,14 @@ class Page(HTMLParser):
         self.refs = []
         self.duplicates = []
         self.scripts = []
+        self.widgets = dict.fromkeys(("data-theme-toggle", "data-consent-demo", "data-consent-reopen", "data-consent-status"), 0)
         self.feed(text)
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
+        for hook in self.widgets:
+            if hook in attrs:
+                self.widgets[hook] += 1
         identifier = attrs.get("id")
         if identifier:
             if identifier in self.ids:
@@ -38,9 +42,10 @@ def main():
         if re.search(r"\d(?:\.\d+)?px\b", css, flags=re.I):
             errors.append(f"{path.name}: unexpected px dimension")
     for path, page in pages.items():
+        errors.extend(f"{path.name}: expected one static {hook}" for hook, count in page.widgets.items() if count != 1)
         errors.extend(f"{path.name}: duplicate id {item}" for item in page.duplicates)
         scripts = [urlsplit(src or "").path for src in page.scripts]
-        if any(src not in ("assets/viewport.js", "assets/interactions.js") for src in scripts) or len(scripts) != len(set(scripts)):
+        if any(src not in ("assets/viewport.js", "assets/interactions.js", "assets/theme-init.js") for src in scripts) or len(scripts) != len(set(scripts)):
             errors.append(f"{path.name}: unexpected browser script")
         for ref in page.refs:
             url = urlsplit(ref)
