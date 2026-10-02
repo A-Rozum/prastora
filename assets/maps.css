@@ -1,0 +1,27 @@
+/* Optional contact-map examples. No remote tiles for the regional map. */
+.map-address { font-style: normal; }
+.map-preview { border: .1rem solid var(--line); border-radius: var(--radius); overflow: hidden; background: var(--surface); }
+.map-preview-art { inline-size: 100%; block-size: auto; aspect-ratio: 16 / 9; display: block; }
+.google-map-frame { display: block; inline-size: 100%; block-size: 36rem; border: 0; }
+.region-map { border: .1rem solid var(--line); border-radius: var(--radius); background: var(--surface); overflow: hidden; }
+.region-map svg { display: block; inline-size: 100%; block-size: auto; aspect-ratio: 9 / 7; overflow: hidden; }
+.map-land { fill: var(--paper); stroke: var(--line); stroke-width: 1.5; }
+.map-point { color: var(--accent); text-decoration: none; }
+.map-point .map-hit { fill: transparent; }
+.map-point circle:not(.map-hit) { fill: var(--paper); stroke: currentColor; stroke-width: 3; }
+.map-point text { fill: currentColor; font-weight: 650; font-family: system-ui, sans-serif; text-anchor: middle; dominant-baseline: central; }
+.map-point[aria-current=true] circle:not(.map-hit) { fill: var(--accent); }
+.map-point[aria-current=true] text { fill: var(--on-accent); }
+.map-point:focus-visible circle:not(.map-hit) { stroke-width: 6; }
+.map-toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; }
+.map-toolbar button { min-block-size: 4.4rem; min-inline-size: 4.4rem; border: .1rem solid var(--line); border-radius: var(--radius); color: var(--accent); background: var(--paper); }
+.map-toolbar button:disabled { opacity: .5; cursor: default; }
+.location-list { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.location-list a { display: flex; align-items: center; gap: 1rem; min-block-size: 4.4rem; padding: .6rem 1rem; border: .1rem solid var(--line); border-radius: var(--radius); text-decoration: none; }
+.location-list a[aria-current=true] { border-color: var(--accent); background: var(--surface); font-weight: 650; }
+.location-list span { flex: none; }
+.location-info { padding-block-start: 1.5rem; border-block-start: .1rem solid var(--line); }
+[data-regional-map] [hidden], [data-google-map-host] [hidden], [data-load-google-map][hidden] { display: none; }
+@media (max-width: 50em) {
+  .location-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}

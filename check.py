@@ -45,7 +45,10 @@ def main():
         errors.extend(f"{path.name}: expected one static {hook}" for hook, count in page.widgets.items() if count != 1)
         errors.extend(f"{path.name}: duplicate id {item}" for item in page.duplicates)
         scripts = [urlsplit(src or "").path for src in page.scripts]
-        if any(src not in ("assets/viewport.js", "assets/interactions.js", "assets/theme-init.js") for src in scripts) or len(scripts) != len(set(scripts)):
+        allowed = {"assets/viewport.js", "assets/interactions.js", "assets/theme-init.js"}
+        if path.name == "contacts.html":
+            allowed.add("assets/maps.js")
+        if any(src not in allowed for src in scripts) or len(scripts) != len(set(scripts)):
             errors.append(f"{path.name}: unexpected browser script")
         for ref in page.refs:
             url = urlsplit(ref)

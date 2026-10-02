@@ -87,6 +87,7 @@
   :is(.mobile-nav > summary, .mobile-nav nav a, .language-control):dir(rtl) { transform-origin: left center; }
 }
 @media (max-width: 50em) {
+  .gallery-repeat { display: none; }
   .overview-desktop-card { display: none; }
   .overview-examples-grid { --columns: 2; }
   .overview-examples-grid > .card-icon-feature { grid-column: 1 / -1; }
