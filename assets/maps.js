@@ -1,33 +1,5 @@
-/* Optional maps only: local SVG controls; Google loads solely after a click. */
+/* Optional local Europe-map enhancement. The Google map is a lazy-loaded HTML iframe. */
 (() => {
-  const load = document.querySelector('[data-load-google-map]');
-  if (load) {
-    const host = document.querySelector('[data-google-map-host]');
-    const preview = host.querySelector('[data-map-preview]');
-    let frame;
-    load.hidden = false;
-    load.addEventListener('click', () => {
-      if (frame) {
-        frame.remove();
-        frame = null;
-        preview.hidden = false;
-        load.textContent = 'Load Google map';
-        load.setAttribute('aria-expanded', 'false');
-        return;
-      }
-      frame = document.createElement('iframe');
-      frame.className = 'google-map-frame';
-      frame.title = 'Google map of the waterfront near Viale Filippo Turati, Bagnara Calabra; approximate beach area';
-      frame.referrerPolicy = 'strict-origin-when-cross-origin';
-      frame.allowFullscreen = true;
-      frame.src = 'https://maps.google.com/maps?q=38.2839%2C15.7990&z=16&hl=en&output=embed';
-      preview.hidden = true;
-      host.append(frame);
-      load.textContent = 'Hide Google map';
-      load.setAttribute('aria-expanded', 'true');
-    });
-  }
-
   const root = document.querySelector('[data-regional-map]');
   if (!root) return;
   const svg = root.querySelector('svg');

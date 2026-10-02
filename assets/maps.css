@@ -2,8 +2,8 @@
 .map-address { font-style: normal; }
 .contact-notes-art { --media-ratio: 16 / 9; }
 .map-preview { border: .1rem solid var(--line); border-radius: var(--radius); overflow: hidden; background: var(--surface); }
-.map-preview-art { inline-size: 100%; block-size: auto; aspect-ratio: 16 / 9; display: block; }
-.google-map-frame { display: block; inline-size: 100%; block-size: 36rem; border: 0; }
+.google-map-frame { display: block; inline-size: 100%; block-size: 32rem; border: 0; }
+.map-disclosure { padding: 1rem; }
 .region-map { border: .1rem solid var(--line); border-radius: var(--radius); background: var(--surface); overflow: hidden; }
 .region-map svg { display: block; inline-size: 100%; block-size: auto; aspect-ratio: 9 / 7; overflow: hidden; }
 .map-land { fill: var(--paper); stroke: var(--line); stroke-width: 1.5; }
@@ -22,7 +22,7 @@
 .location-list a[aria-current=true] { border-color: var(--accent); background: var(--surface); font-weight: 650; }
 .location-list span { flex: none; }
 .location-info { padding-block-start: 1.5rem; border-block-start: .1rem solid var(--line); }
-[data-regional-map] [hidden], [data-google-map-host] [hidden], [data-load-google-map][hidden] { display: none; }
+[data-regional-map] [hidden] { display: none; }
 @media (max-width: 50em) {
   .location-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
