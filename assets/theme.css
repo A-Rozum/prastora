@@ -48,7 +48,7 @@
   .article-rail { display: grid; grid-template-rows: repeat(4, minmax(0, 1fr)); align-self: stretch; gap: 3rem; }
   .article-rail > * { align-self: start; min-inline-size: 0; }
   .article-rail > :last-child { align-self: end; }
-  .service-intro { padding-block-start: 1.5rem; }
+  .service-intro { padding-block-start: 0; }
   .article-rail-extra { display: block; }
   .form-art { display: block; --media-ratio: 16 / 9; }
   .disclosure { padding-block: .6rem; }

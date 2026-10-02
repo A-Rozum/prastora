@@ -1,6 +1,12 @@
 /* Opt-in experiments only. The production scale and composition are unchanged. */
 .context-notes { padding: 1.5rem 0; border-block-start: .1rem solid var(--line); }
 .sample-label { font-size: var(--small-size); color: var(--muted); }
+.icon-trial + .icon-trial { padding-block-start: 2rem; border-block-start: .1rem solid var(--line); }
+/* Keep the visible icon at its original size; its SVG box reserves two lines. */
+.icon-reserved .icon-heading { align-items: center; }
+.icon-reserved .icon-heading .icon { inline-size: 4rem; block-size: 5.75rem; }
+.icon-flow .card > p { display: flow-root; }
+.icon-flow p .icon { float: inline-start; inline-size: 2.8rem; block-size: 2.8rem; margin-inline-end: 1rem; margin-block-end: .4rem; }
 .heading-sample { font-size: 3.2rem; max-inline-size: 29rem; }
 .paragraph-sample { max-inline-size: 36rem; }
 .balanced { text-wrap: balance; }
@@ -34,6 +40,7 @@
 .story-row h3 { font-size: 2.2rem; }
 .story-row .media { --media-ratio: 1; }
 @media (max-width: 50em) {
+  .icon-reserved .icon-heading .icon { block-size: 6.44rem; }
   .context-layout { grid-template-columns: minmax(0, 1fr); }
   .context-sidebar { display: none; }
   .heading-sample { max-inline-size: 100%; }

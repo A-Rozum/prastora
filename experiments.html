@@ -5,8 +5,8 @@
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Explore typography, container-aware components, colour schemes and content states in the Prastora experiments lab.">
   <title>Experiments – Prastora</title>
-  <link rel="stylesheet" href="assets/core.css?v=2"><link rel="stylesheet" href="assets/theme.css?v=18">
-  <link rel="stylesheet" href="assets/viewport.css?v=9"><link rel="stylesheet" href="assets/experiments.css?v=8">
+  <link rel="stylesheet" href="assets/core.css?v=2"><link rel="stylesheet" href="assets/theme.css?v=19">
+  <link rel="stylesheet" href="assets/viewport.css?v=9"><link rel="stylesheet" href="assets/experiments.css?v=9">
    <script src="assets/viewport.js?v=2" defer></script><script src="assets/interactions.js?v=9" defer></script>
 </head>
 <body>
@@ -29,8 +29,29 @@
     <section class="section stack">
       <p class="eyebrow">An isolated testing ground</p><h1>Useful refinements. Same proportional foundation.</h1>
       <p class="lead">Compare small improvements before making them part of the core. These experiments retain Prastora's existing mobile, desktop and wide-screen scale settings.</p>
-      <nav class="flex catalog-nav" aria-label="Experiments"><a href="#wrapping">Text wrapping</a><a href="#containers">Context-aware cards</a><a href="#states">Content states</a><a href="#rhythm">Composition</a></nav>
+      <nav class="flex catalog-nav" aria-label="Experiments"><a href="#icon-comparison">Icon placement</a><a href="#wrapping">Text wrapping</a><a href="#containers">Context-aware cards</a><a href="#states">Content states</a><a href="#rhythm">Composition</a></nav>
       <p class="small muted">Current scheme: <span class="scheme-status"></span>. The initial theme follows your browser's preference. Use the sun or moon beside the viewport dimensions to switch. Your manual choice is remembered across pages and browser visits when local storage is available.</p>
+    </section>
+    <section class="section surface stack anchor" id="icon-comparison">
+      <h2>Compare three icon placements.</h2><p>Temporary comparison using the same four overview cards, copy and grid in every row.</p>
+      <section class="stack icon-trial" aria-labelledby="icons-current"><h3 id="icons-current">1. Compact icons beside headings</h3><p class="small muted">The current overview treatment. Longer headings can use a second line.</p><div class="grid grid-4">
+        <article class="card card-flex"><h3 class="icon-heading"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="assets/icons.svg#layout"/></svg><span>Service page</span></h3><p>A clear introduction, scope of work, process, questions and an enquiry section.</p><a href="service.html">Explore the layout</a></article>
+        <article class="card card-flex"><h3 class="icon-heading"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="assets/icons.svg#article"/></svg><span>Long-form article</span></h3><p>Headings, paragraphs, quotations and media in a continuous reading experience.</p><a href="article.html">Explore typography</a></article>
+        <article class="card card-flex"><h3 class="icon-heading"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="assets/icons.svg#collection"/></svg><span>Catalogue</span></h3><p>Browse collections and compare cards with different amounts of content.</p><a href="catalog.html">Explore patterns</a></article>
+        <article class="card card-flex"><h3 class="icon-heading"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="assets/icons.svg#starter"/></svg><span>Detail page</span></h3><p>Bring a primary image, key information and a fuller explanation together.</p><a href="product.html">Explore the starter</a></article>
+      </div></section>
+      <section class="stack icon-trial icon-reserved" aria-labelledby="icons-reserved"><h3 id="icons-reserved">2. Original-size icons with a two-line reserve</h3><p class="small muted">A 4rem icon in a two-line-high SVG box keeps descriptions aligned, whether a heading uses one line or two.</p><div class="grid grid-4">
+        <article class="card card-flex"><h3 class="icon-heading"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="assets/icons.svg#layout"/></svg><span>Service page</span></h3><p>A clear introduction, scope of work, process, questions and an enquiry section.</p><a href="service.html">Explore the layout</a></article>
+        <article class="card card-flex"><h3 class="icon-heading"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="assets/icons.svg#article"/></svg><span>Long-form article</span></h3><p>Headings, paragraphs, quotations and media in a continuous reading experience.</p><a href="article.html">Explore typography</a></article>
+        <article class="card card-flex"><h3 class="icon-heading"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="assets/icons.svg#collection"/></svg><span>Catalogue</span></h3><p>Browse collections and compare cards with different amounts of content.</p><a href="catalog.html">Explore patterns</a></article>
+        <article class="card card-flex"><h3 class="icon-heading"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="assets/icons.svg#starter"/></svg><span>Detail page</span></h3><p>Bring a primary image, key information and a fuller explanation together.</p><a href="product.html">Explore the starter</a></article>
+      </div></section>
+      <section class="stack icon-trial icon-flow" aria-labelledby="icons-flow"><h3 id="icons-flow">3. Compact icons inside the description</h3><p class="small muted">Headings use the full card width. Description text wraps around a 2.8rem icon.</p><div class="grid grid-4">
+        <article class="card card-flex"><h3>Service page</h3><p><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="assets/icons.svg#layout"/></svg>A clear introduction, scope of work, process, questions and an enquiry section.</p><a href="service.html">Explore the layout</a></article>
+        <article class="card card-flex"><h3>Long-form article</h3><p><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="assets/icons.svg#article"/></svg>Headings, paragraphs, quotations and media in a continuous reading experience.</p><a href="article.html">Explore typography</a></article>
+        <article class="card card-flex"><h3>Catalogue</h3><p><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="assets/icons.svg#collection"/></svg>Browse collections and compare cards with different amounts of content.</p><a href="catalog.html">Explore patterns</a></article>
+        <article class="card card-flex"><h3>Detail page</h3><p><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="assets/icons.svg#starter"/></svg>Bring a primary image, key information and a fuller explanation together.</p><a href="product.html">Explore the starter</a></article>
+      </div></section>
     </section>
     <section class="section surface stack anchor" id="wrapping">
       <h2>Make line endings more deliberate.</h2>
