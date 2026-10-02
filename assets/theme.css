@@ -24,6 +24,10 @@
 .icon-heading { display: flex; align-items: flex-start; gap: 1rem; }
 .icon-heading .icon { inline-size: 2.8rem; block-size: 2.8rem; }
 .icon-heading > span { min-inline-size: 0; }
+.icon-heading-reserved { align-items: center; }
+.icon-heading-reserved .icon { inline-size: 4rem; block-size: 5.75rem; }
+.card-icon-flow > p { display: flow-root; text-align: justify; text-align-last: start; text-wrap: wrap; }
+.card-icon-flow p .icon { float: inline-start; inline-size: 2.4rem; block-size: 2.4rem; margin-inline-end: .8rem; margin-block-start: .08rem; }
 .rail-contact-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
 .rail-contact-row > * { min-inline-size: 0; }
 .rail-contact-row label { font-size: var(--small-size); }
@@ -79,6 +83,7 @@
   :is(.mobile-nav > summary, .mobile-nav nav a, .language-control):dir(rtl) { transform-origin: left center; }
 }
 @media (max-width: 50em) {
+  .icon-heading-reserved .icon { block-size: 6.44rem; }
   .article-rail-extra, .form-art { display: none; }
   .article-rail { display: block; }
   .header-inner { display: grid; grid-template-columns: minmax(0, 1fr) 22rem; align-items: start; }
