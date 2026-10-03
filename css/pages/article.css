@@ -32,6 +32,8 @@
   .ar-pull footer { margin-block-start: 1.2rem; font-size: var(--small-size); color: var(--muted); }
   .ar-end { font-style: italic; color: var(--muted); }
   .ar-after { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 5fr) minmax(0, 4fr); gap: 4rem; align-items: start; }
+  .ar-author-col { display: grid; gap: 2rem; }
+  .ar-bike { display: block; inline-size: 100%; block-size: auto; opacity: .9; }
   .ar-small-h { margin-block-end: 1.2rem; font-family: var(--font-display, var(--font)); font-size: 2.2rem; font-weight: 600; }
   .ar-list { display: grid; gap: 1.6rem; margin: 0; padding: 0; list-style: none; }
   .ar-list li { display: grid; gap: .2rem; padding-block-end: 1.6rem; border-block-end: .1rem solid var(--line); }
@@ -50,5 +52,6 @@
     .ar-figure { margin-inline-end: 0; }
     .ar-pull p { font-size: 3.2rem; }
     .ar-after { grid-template-columns: minmax(0, 1fr); }
+    .ar-bike { inline-size: 70%; justify-self: center; }
   }
 }
