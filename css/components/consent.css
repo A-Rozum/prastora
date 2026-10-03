@@ -1,4 +1,5 @@
-/* Consent: cookie preference bar. */
+/* Consent.
+   .consent-bar (+ -row, -actions, -settings) – cookie preference bar */
 @layer components {
   body { padding-block-end: var(--consent-height, 0rem); }
   html { scroll-padding-block-end: calc(var(--consent-height, 0rem) + 1rem); }

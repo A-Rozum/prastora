@@ -1,4 +1,11 @@
-/* Content: cards, buttons, media, disclosures, icons, badges, specs and other content blocks. */
+/* Content.
+   .card, .card-flex, .card-icon-flow, .card-icon-feature – cards; .icon, .icon-heading – icons
+   .btn, .btn-secondary – buttons; .badge – pill label
+   .media (+ -square, -wide), .media-link – image frames
+   .disclosure – native <details> accordion; .toc, .section-nav, .breadcrumbs – in-page navigation
+   .specs – definition list of properties; .data-table, .table-wrap – tables
+   .hero, .callout, .section-heading, .eyebrow, .price, .prose-action, .related-list, .code
+   .fill / .fill-art – art that fills the height left next to text (see comment below) */
 @layer components {
   .card { padding: var(--card-space); border: .1rem solid var(--line); border-radius: var(--radius); background: var(--paper); }
   .card-flex { display: flex; flex-direction: column; gap: 1.5rem; }

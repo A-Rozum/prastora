@@ -1,4 +1,8 @@
-/* Data: KPI tiles, status labels, meters and chart frames for dashboards and reports. */
+/* Data.
+   .kpi (+ -label, -value, -delta .up/.down) – key figure tile
+   .status (+ -ok, -warn, -bad) – status label
+   .meter / .meter-bar (--v, --meter) – horizontal bar for shares and funnels
+   .chart – SVG chart frame with themed text */
 @layer components {
   .kpi { display: grid; gap: .6rem; align-content: start; }
   .kpi-label { font-size: var(--small-size); color: var(--muted); }

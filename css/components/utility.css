@@ -1,4 +1,6 @@
-/* Utility strip: theme toggle, language and account controls. */
+/* Utility strip.
+   .viewport-panel / .viewport-tools / .utility-actions – strip above the header
+   .theme-toggle, .language-control, .utility-back (Back to Prastora on templates with their own design) */
 @layer components {
   .viewport-panel { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .6rem 2rem; padding: .3rem var(--space-inline); border-block-end: .1rem solid var(--utility-line); background: var(--utility-surface); color: var(--ink); font-size: calc(var(--small-size) * .9); line-height: 1.5; }
   .viewport-panel[hidden] { display: none; }

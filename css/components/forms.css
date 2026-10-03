@@ -1,4 +1,8 @@
-/* Forms: fields and form layouts. */
+/* Forms.
+   .field (+ -hint, -error via :user-invalid) – labelled input; .field-row (--fields) – fields side by side
+   .check – checkbox or radio with label
+   .choice – radio chips; .choice-stack – chips as stacked cards with description and price; .swatch – colour dot
+   .contact-form-grid, .rail-contact-row – form layouts */
 @layer components {
   .field { display: grid; gap: .7rem; }
   .field input, .field textarea, .field select { inline-size: 100%; min-inline-size: 0; min-block-size: 4.4rem; border: .1rem solid var(--line); border-radius: var(--radius); background: var(--paper); color: var(--ink); padding: 1rem; }

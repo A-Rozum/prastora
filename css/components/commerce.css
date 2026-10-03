@@ -1,4 +1,9 @@
-/* Commerce: pricing plans and comparison tables. */
+/* Commerce.
+   .pricing-grid / .pricing-plan / .pricing-featured / .plan-price – plan cards
+   .comparison-table – plan comparison
+   .product-viewer (+ -stage, -thumbs) – CSS-only product gallery: radios + :has, up to 6 views
+   .rating / .rating-stars – star rating
+   .order-lines / .order-line / .order-totals / .order-total – cart and order summary */
 @layer components {
   .pricing-grid { align-items: stretch; }
   .pricing-plan { display: flex; flex-direction: column; gap: 1.5rem; }

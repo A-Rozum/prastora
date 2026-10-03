@@ -1,4 +1,5 @@
-/* Gallery: image grids, captions and feature rows. */
+/* Gallery.
+   .gallery-grid, .gallery-wide, .gallery-caption, .gallery-feature – image grids and feature rows */
 @layer components {
   .gallery-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--gap); }
   .gallery-grid > * { min-inline-size: 0; }

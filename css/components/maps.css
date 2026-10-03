@@ -1,4 +1,6 @@
-/* Maps: embedded map frame and the local regional SVG map. */
+/* Maps.
+   .region-map, .map-point, .map-land – local SVG regional map with :target points
+   .google-map-frame, .map-preview, .map-disclosure, .location-list, .location-info – embedded map and locations */
 @layer components {
   .map-address { font-style: normal; }
   .contact-notes-art { --media-ratio: 16 / 9; }

@@ -1,4 +1,7 @@
-/* Navigation: site header (sticky, scroll-compacting), section and catalogue navigation, footer. */
+/* Navigation.
+   .css-top / .site-header / .header-inner / .brand – sticky header that compacts on scroll
+   .desktop-nav, .mobile-nav – main menu (mobile: <details>, opens across the header)
+   .catalog-nav – inline section links; .site-footer / .footer-links – footer; .demo-note */
 @layer components {
   html:has([data-css-header]) { scroll-padding-block-start: 13rem; }
   .css-top { display: grid; grid-template-rows: auto 7.5rem; position: sticky; inset-block-start: 0; z-index: 20; pointer-events: none; }
