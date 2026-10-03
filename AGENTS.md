@@ -7,6 +7,7 @@ Deliberate, keep unless told otherwise:
 - CSS lives in css/ by layer: core.css, themes/ (custom properties only), components/, pages/ (CSS of one page, same name as the page), dev/ (development aids). Pages link only what they use, in that order.
 - HTML: framework pages in the root, component catalogue in components/, demo templates in templates/.
 - Copy in English, lively and varied in register. Humour and self-irony woven into the text's logic, never bolted on; tease gently, never mock others. Templates use plausible fictional content of their field, marked as demo.
+- Mascot (sloth): at most one per page and only where it fits; exceptions are rare.
 
 Gate: `python3 check.py` exits 0.
 Visual check: `tools/snap.py` (base before, diff after). Only pages linking the changed files (--css) and only the regimes the change touches.
