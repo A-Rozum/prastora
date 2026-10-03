@@ -5,8 +5,8 @@
   .load-reading { display: inline-flex; align-items: center; gap: 1rem; }
   .load-reading[hidden] { display: none; }
   .viewport-reading { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem 1rem; min-inline-size: 0; }
+  .viewport-tools .viewport-reading { flex-wrap: nowrap; }
   @media (width > 50em) {
     .viewport-reading { font-size: calc(var(--small-size) * .75); }
   }
-  .viewport-tools .viewport-reading { flex-wrap: nowrap; }
 }

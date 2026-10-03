@@ -1,7 +1,9 @@
 /* Page composition for the article example. Not part of the framework. */
 @layer page {
   .article-feedback textarea { min-block-size: 9rem; }
-  .article-rail-extra { display: none; }
+  @media (width <= 50em) {
+    .article-rail { display: block; }
+  }
   @media (width > 50em) {
     .article-intro { padding-block-end: 1rem; }
     .article-intro > .section-nav { margin-block-start: 1rem; }
@@ -9,10 +11,5 @@
     .article-rail { display: flex; flex-direction: column; justify-content: space-between; align-self: stretch; gap: 3rem; }
     .article-rail > * { min-inline-size: 0; flex: none; }
     .article-related { grid-column: 1; }
-    .article-rail-extra { display: block; }
-  }
-  @media (max-width: 50em) {
-    .article-rail-extra { display: none; }
-    .article-rail { display: block; }
   }
 }

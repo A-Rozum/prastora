@@ -9,7 +9,7 @@
   .gallery-caption h3 { font-size: 2.2rem; }
   .gallery-feature { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: var(--gap); align-items: center; }
   .gallery-feature > * { min-inline-size: 0; }
-  @media (max-width: 50em) {
+  @media (width <= 50em) {
     .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .gallery-wide .media { --media-ratio: 16 / 9; }
     .gallery-feature { grid-template-columns: minmax(0, 1fr); }

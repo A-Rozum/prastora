@@ -8,6 +8,44 @@ import re
 ROOT = Path(__file__).resolve().parent
 LAYERS = {"core.css": "core", "themes": "theme", "components": "components", "pages": "page", "dev": "dev"}
 ORDER = ["core", "theme", "components", "page", "dev"]
+REGIMES = ["(width <= 50em)", "(width > 50em)", "(width >= 125em)"]
+
+
+def top_level(body):
+    """Top-level (prelude, block) pairs of a CSS block body."""
+    items, depth, start = [], 0, 0
+    for i, ch in enumerate(body):
+        if ch == "{":
+            if depth == 0:
+                prelude, open_at = body[start:i].strip(), i
+            depth += 1
+        elif ch == "}":
+            depth -= 1
+            if depth == 0:
+                items.append((prelude, body[open_at + 1:i]))
+                start = i + 1
+        elif ch == ";" and depth == 0:
+            start = i + 1
+    return items
+
+
+def check_regimes(name, css, errors):
+    for cond in re.findall(r"@media\s+([^{]*?)\s*\{", css):
+        if re.search(r"width", cond) and cond not in REGIMES:
+            errors.append(f"{name}: width query {cond} is not a regime query (see core.css)")
+    layer = top_level(re.sub(r"^\s*@layer [\w\s,]+;", "", css))
+    if not layer:
+        return
+    seen = []
+    for prelude, _ in top_level(layer[0][1]):
+        cond = prelude[len("@media"):].strip() if prelude.startswith("@media") else None
+        if cond in REGIMES:
+            seen.append(cond)
+        elif seen and cond != "print":
+            errors.append(f"{name}: regime blocks must come last (only @media print may follow)")
+            break
+    if seen != sorted(set(seen), key=REGIMES.index):
+        errors.append(f"{name}: one block per regime, in the order listed in core.css")
 
 
 class Page(HTMLParser):
@@ -46,6 +84,7 @@ def check_css(errors):
         body = re.sub(r"^\s*@layer [\w\s,]+;", "", css) if layer == "core" else css
         if not re.match(rf"\s*@layer {layer}\s*\{{", body) or body.count("@layer") != 1:
             errors.append(f"{name}: must be wrapped in a single @layer {layer} block")
+        check_regimes(name, css, errors)
         if "@import" in css:
             errors.append(f"{name}: @import is not used; link files from the page")
         if re.search(r"\d(?:\.\d+)?px\b", css, flags=re.I):

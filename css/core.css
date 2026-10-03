@@ -1,4 +1,9 @@
-/* Core: scale regimes, structural tokens, reset, base typography and layout primitives. Required on every page. */
+/* Core: scale regimes, structural tokens, reset, base typography and layout primitives. Required on every page.
+   Regime queries – the only width conditions allowed anywhere, one block each, at the end of a file, in this order:
+     (width <= 50em)   mobile
+     (width > 50em)    above mobile (desktop and wide)
+     (width >= 125em)  wide
+   Show or hide by regime with .desktop-only / .mobile-only rather than per-component display rules. */
 @layer core, theme, components, page, dev;
 @layer core {
   :root { --scale-units: 128; --scale-min: 0rem; --text-size: 1.6rem; --small-size: 1.4rem; --lead-size: 1.9rem; --button-size: 1.8rem; --font: system-ui, sans-serif; --line-height: 1.6; --space-block: 4rem; --space-inline: 4rem; --gap: 3rem; --card-space: 2rem; --radius: .8rem; --ink: #25313c; --muted: #64717d; --paper: #fff; --surface: #f3f5f7; --line: #d5dce3; --accent: #245b82; --on-accent: #fff; }
@@ -52,7 +57,8 @@
     .aligned > .card { display: grid; grid-template-rows: subgrid; grid-row: span calc(var(--items) + 1); row-gap: 1rem; }
     .aligned > .card > ul { display: grid; grid-template-rows: subgrid; grid-row: 2 / span var(--items); row-gap: 1rem; }
   }
-  @media (max-width: 50em) {
+  @media (width <= 50em) {
+    .desktop-only { display: none !important; }
     :root { --scale-units: 64; --text-size: 2.08rem; --small-size: 1.82rem; --lead-size: 2.47rem; --button-size: 2.52rem; --space-block: 3rem; --space-inline: 1.6rem; --gap: 2rem; }
     .grid { --columns: 1; }
     .grid-compact { --columns: 2; }
@@ -61,7 +67,10 @@
     h3 { font-size: 2.8rem; }
     .aligned { font-size: 1.68rem; }
   }
-  @media (min-width: 125em) {
+  @media (width > 50em) {
+    .mobile-only { display: none !important; }
+  }
+  @media (width >= 125em) {
     :root { --scale-units: 160; --space-block: 6rem; --space-inline: 12rem; --gap: 6rem; }
   }
   @media print {
