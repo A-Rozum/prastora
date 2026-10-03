@@ -29,7 +29,7 @@
   .wy-pull { margin-block: 6rem; margin-inline: -6rem -10rem; padding-inline-start: 3rem; border-inline-start: .6rem solid var(--accent); }
   .wy-pull p { font-size: 4rem; line-height: 1.2; font-weight: 650; letter-spacing: -.01em; }
   .wy-figure { margin-block: 6rem; margin-inline: calc(-1 * (4rem + 6rem)) calc(-1 * (var(--wy-gap) + 16rem)); padding: 3rem; border-radius: var(--radius); background: var(--surface); }
-  .wy-shots { display: grid; grid-template-columns: 1024fr 1440fr 1920fr; gap: 1.6rem; align-items: end; }
+  .wy-shots { display: grid; grid-template-columns: 1024fr 1440fr 3840fr; gap: 1.6rem; align-items: end; }
   .wy-shots img { display: block; inline-size: 100%; block-size: auto; border-radius: .6rem; border: .1rem solid var(--line); }
   .wy-fig-label { font-size: var(--small-size); font-weight: 650; }
   .wy-fig-label + .wy-shots { margin-block-start: 1rem; }

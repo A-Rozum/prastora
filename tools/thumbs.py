@@ -3,7 +3,7 @@ Needs: pip install playwright pillow && playwright install chromium
 
   python3 tools/thumbs.py            # all
   python3 tools/thumbs.py landing    # one
-  python3 tools/thumbs.py --why      # the landing at three desktop widths, as is and as a conventional
+  python3 tools/thumbs.py --why      # the landing on a laptop, a desktop and a 4K screen, as is and as a conventional
                                      # fluid layout (fixed type, 1200px container), for the figure in why.html
 
 Each shot starts at a selector that shows what the template is about and is cropped to 16:10.
@@ -27,7 +27,7 @@ SHOTS = {  # name: (selector to start from, colour scheme)
 WIDTH, THUMB = 1440, (720, 450)
 
 
-WHY_WIDTHS = (1024, 1440, 1920)
+WHY_SIZES = ((1024, 640), (1440, 900), (3840, 2160))  # laptop, desktop, 4K at 100%
 FLUID = ":root{--space-inline:max(4rem,calc((100vw - 1200px) / 2))!important}html{font-size:10px!important}"
 
 
@@ -36,8 +36,7 @@ def why_shots(browser, base):
     out = ROOT / "assets" / "why"
     out.mkdir(parents=True, exist_ok=True)
     for kind, extra in (("prastora", ""), ("fluid", FLUID)):
-        for width in WHY_WIDTHS:
-            height = round(width * 10 / 16)
+        for width, height in WHY_SIZES:
             ctx = browser.new_context(viewport={"width": width, "height": height}, color_scheme="dark")
             tab = ctx.new_page()
             tab.route("**/*", lambda r: r.continue_() if r.request.url.startswith(base) else r.abort())
