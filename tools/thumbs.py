@@ -15,6 +15,7 @@ SHOTS = {  # name: (selector to start from, colour scheme)
     "landing": (".sb-hero", "dark"),
     "product": (".pd", "light"),
     "checkout": (".co", "light"),
+    "dashboard": (".db-main", "light"),
     "service": ("main", "light"),
     "article": (".ar", "light"),
     "pricing": ("#packages", "light"),

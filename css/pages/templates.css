@@ -19,6 +19,5 @@
   .tpl-catalog:has(#tpl-own:checked) .tpl-card:not([data-tags~="own"]),
   .tpl-catalog:has(#tpl-marketing:checked) .tpl-card:not([data-tags~="marketing"]),
   .tpl-catalog:has(#tpl-editorial:checked) .tpl-card:not([data-tags~="editorial"]),
-  .tpl-catalog:has(#tpl-commerce:checked) .tpl-card:not([data-tags~="commerce"]),
-  .tpl-catalog:has(#tpl-planned:checked) .tpl-card:not([data-tags~="planned"]) { display: none; }
+  .tpl-catalog:has(#tpl-commerce:checked) .tpl-card:not([data-tags~="commerce"]) { display: none; }
 }

@@ -1,0 +1,53 @@
+/* Page composition for the dashboard example (Shutter & Crumb back office). Dense by design: above mobile
+   the page uses more scale units than the default, so the same screen holds more data rather than larger
+   type. The period switch is CSS only (radio + :has). */
+@layer page {
+  .db { display: grid; grid-template-columns: 20rem minmax(0, 1fr); min-block-size: 80svh; }
+  .db-top { gap: 3rem; }
+  .db-search { flex: 1; max-inline-size: 56rem; }
+  .db-search .field { gap: .2rem; }
+  .db-user { display: flex; align-items: center; gap: 1rem; }
+  .db-avatar { display: grid; place-items: center; inline-size: 3.6rem; block-size: 3.6rem; border-radius: 50%; background: var(--accent); color: var(--on-accent); font-weight: 650; font-size: var(--small-size); }
+  .db-side { display: grid; align-content: start; gap: .2rem; padding: 2.4rem 1.2rem; border-inline-end: .1rem solid var(--line); background: var(--surface); }
+  .db-side a { padding: .8rem 1.2rem; border-radius: var(--radius); color: var(--ink); text-decoration: none; }
+  .db-side a:hover { background: var(--paper); }
+  .db-side a[aria-current=page] { background: var(--paper); color: var(--accent); font-weight: 650; text-decoration: none !important; }
+  .db-side a:last-child { margin-block-start: 2rem; color: var(--accent); }
+  .db-main { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 2rem; align-content: start; padding: 2.4rem var(--space-inline) 4rem 3rem; }
+  .db-head { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 1.6rem; }
+  .db-head h1 { font-size: 3.2rem; }
+  .db-range { align-items: center; }
+  .db-range legend { float: inline-start; margin: 0 1rem 0 0; font-weight: 400; }
+  .db-range label { min-block-size: 3.6rem; padding-block: .3rem; }
+  .db-kpis { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 2rem; }
+  .db-revenue { grid-column: span 8; }
+  .db-colours { grid-column: span 4; display: grid; gap: 1.6rem; align-content: start; }
+  .db-funnel { grid-column: span 5; display: grid; gap: 1.6rem; align-content: start; }
+  .db-hours { grid-column: span 7; display: grid; gap: 1rem; align-content: start; }
+  .db-orders { grid-column: span 8; }
+  .db-alerts { grid-column: span 4; }
+  .db-foot { grid-column: 1 / -1; }
+  .db-h { margin-block-end: 1.2rem; font-size: 2rem; }
+  .db-list { display: grid; gap: 1.4rem; margin: 0; padding: 0; list-style: none; }
+  .db-list li { display: grid; grid-template-columns: 8rem minmax(0, 1fr); gap: 1.2rem; align-items: start; }
+  .db-list .status { justify-self: start; }
+  .db .data-table { font-size: var(--small-size); }
+  .v7, .v90, .db:has(#r7:checked) .v30, .db:has(#r90:checked) .v30 { display: none; }
+  .db:has(#r7:checked) .v7, .db:has(#r90:checked) .v90 { display: revert; }
+  @media (width <= 50em) {
+    .db { grid-template-columns: minmax(0, 1fr); }
+    .db-side { display: flex; overflow-x: auto; gap: .4rem; padding: 1rem var(--space-inline); border-inline-end: 0; border-block-end: .1rem solid var(--line); white-space: nowrap; }
+    .db-side a:last-child { margin-block-start: 0; }
+    .db-main { grid-template-columns: minmax(0, 1fr); padding: 2rem var(--space-inline) 3rem; }
+    .db-main > * { grid-column: 1 / -1; }
+    .db-kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .db-head h1 { font-size: 3.4rem; }
+    .db-user { justify-self: end; }
+  }
+  @media (width > 50em) {
+    :root { --scale-units: 152; }
+  }
+  @media (width >= 125em) {
+    :root { --scale-units: 190; }
+  }
+}

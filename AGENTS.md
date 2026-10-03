@@ -1,7 +1,7 @@
 Static HTML/CSS, no build. GitHub Pages serves main.
 
 Deliberate, keep unless told otherwise:
-- Root font-size = 100vw / --scale-units, set per regime. No clamp, caps or max-width containers; --scale-min stays 0. Jumps between regimes are intended.
+- Root font-size = 100vw / --scale-units, set per regime. No clamp, caps or max-width containers; --scale-min stays 0. Jumps between regimes are intended. A page may set a denser --scale-units per regime (see dashboard).
 - CSS lengths in rem only.
 - JS only where HTML/CSS have no equivalent, with a working no-JS fallback.
 - CSS lives in css/ by layer: core.css, themes/ (custom properties only), components/, pages/ (CSS of one page, same name as the page; a folder's index takes the folder name), dev/ (development aids). Pages link only what they use, in that order.

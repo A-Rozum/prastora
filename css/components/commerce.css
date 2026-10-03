@@ -15,7 +15,7 @@
   .comparison-table thead { background: var(--surface); }
   .comparison-table th:first-child { inline-size: 34%; }
   .product-viewer { display: grid; gap: 1.6rem; }
-  .product-viewer > input, .choice input { position: absolute; opacity: 0; inline-size: .1rem; block-size: .1rem; }
+  .product-viewer > input { position: absolute; opacity: 0; inline-size: .1rem; block-size: .1rem; }
   .product-viewer-stage { display: grid; border-radius: var(--radius); background: var(--surface); }
   .product-viewer-stage > * { grid-area: 1 / 1; margin: 0; display: none; }
   .product-viewer-stage svg { display: block; inline-size: 100%; block-size: auto; aspect-ratio: 10 / 7; }

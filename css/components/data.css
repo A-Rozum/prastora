@@ -1,0 +1,20 @@
+/* Data: KPI tiles, status labels, meters and chart frames for dashboards and reports. */
+@layer components {
+  .kpi { display: grid; gap: .6rem; align-content: start; }
+  .kpi-label { font-size: var(--small-size); color: var(--muted); }
+  .kpi-value { font-size: 3.4rem; font-weight: 650; line-height: 1.1; font-variant-numeric: tabular-nums; }
+  .kpi-delta { font-size: var(--small-size); font-variant-numeric: tabular-nums; }
+  .kpi-delta.up { color: var(--success); }
+  .kpi-delta.down { color: var(--error); }
+  .kpi-delta.up::before { content: '▲ '; }
+  .kpi-delta.down::before { content: '▼ '; }
+  .status { display: inline-block; padding: .2rem .9rem; border-radius: 3rem; font-size: var(--small-size); line-height: 1.5; background: var(--surface); border: .1rem solid var(--line); }
+  .status-ok { color: var(--success); border-color: currentColor; }
+  .status-warn { color: var(--accent); border-color: currentColor; }
+  .status-bad { color: var(--error); border-color: currentColor; }
+  .meter { display: grid; grid-template-columns: minmax(0, 12rem) minmax(0, 1fr) auto; gap: 1.2rem; align-items: center; }
+  .meter-bar { block-size: 1.2rem; border-radius: .6rem; background: var(--surface); overflow: hidden; }
+  .meter-bar > span { display: block; block-size: 100%; inline-size: calc(var(--v, 0) * 1%); border-radius: inherit; background: var(--meter, var(--accent)); }
+  .chart { display: block; inline-size: 100%; block-size: auto; }
+  .chart text { fill: var(--muted); }
+}
