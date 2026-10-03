@@ -1,0 +1,29 @@
+/* Page composition for the checkout example (Shutter & Crumb). One-page checkout, no JavaScript:
+   :has() reacts to the chosen delivery and payment, :target shows the confirmation after submit. */
+@layer page {
+  .co { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); gap: 6rem; align-items: start; padding-block-start: 6rem; }
+  .co-steps { display: flex; flex-wrap: wrap; gap: 1rem 3rem; margin: 0; padding: 0; list-style: none; counter-reset: step; font-size: var(--small-size); }
+  .co-steps li { counter-increment: step; display: flex; align-items: center; gap: .8rem; }
+  .co-steps li::before { content: counter(step); display: grid; place-items: center; inline-size: 2.6rem; block-size: 2.6rem; border-radius: 50%; border: .1rem solid var(--accent); color: var(--accent); font-weight: 650; }
+  .co-step { display: grid; gap: 2rem; margin: 0; padding: 3rem 0 0; border: 0; border-block-start: .1rem solid var(--line); }
+  .co-step > legend { float: inline-start; inline-size: 100%; margin-block-end: 2rem; padding: 0; }
+  .co-step > legend h2 { font-size: 2.8rem; }
+  .co-place { inline-size: 100%; min-block-size: 6rem; font-size: 2.2rem; }
+  .co-summary { position: sticky; inset-block-start: 10rem; background: var(--surface); }
+  .co-h { font-size: 2.4rem; }
+  .co-promo-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1rem; }
+  .co-exp, .co:has(#ship-exp:checked) .co-free { display: none; }
+  .co:has(#ship-exp:checked) .co-exp { display: inline; }
+  .co-bank, .co-later, .co:has(#pay-bank:checked) .co-card, .co:has(#pay-later:checked) .co-card { display: none; }
+  .co:has(#pay-bank:checked) .co-bank, .co:has(#pay-later:checked) .co-later { display: block; }
+  .co-done { display: none; }
+  .co-done:target { display: block; }
+  .co-done:target + .co { display: none; }
+  .co-done-inner { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 6rem; align-items: center; }
+  .co-done-inner svg { inline-size: 100%; block-size: auto; --cam-body: var(--accent); }
+  @media (width <= 50em) {
+    .co { grid-template-columns: 1fr; gap: 4rem; }
+    .co-summary { position: static; grid-row: 1; }
+    .co-done-inner { grid-template-columns: 1fr; gap: 3rem; }
+  }
+}

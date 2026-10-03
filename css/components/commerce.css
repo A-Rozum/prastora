@@ -36,6 +36,13 @@
   .product-viewer:has(> input:nth-of-type(6):focus-visible) .product-viewer-thumbs > :nth-child(6) { outline: .25rem solid var(--accent); outline-offset: .3rem; }
   .rating { display: inline-flex; align-items: center; gap: .8rem; color: var(--muted); font-size: var(--small-size); }
   .rating-stars { color: var(--accent); letter-spacing: .15em; font-size: var(--text-size); }
+  .order-lines { display: grid; gap: 1.6rem; margin-inline: 0; margin-block-end: 0; padding: 0; list-style: none; }
+  .order-line { display: grid; grid-template-columns: 8rem minmax(0, 1fr) auto; gap: 1.6rem; align-items: center; }
+  .order-line svg { inline-size: 100%; block-size: auto; border-radius: var(--radius); background: var(--surface); }
+  .order-totals { display: grid; gap: .8rem; margin-inline: 0; margin-block-end: 0; }
+  .order-totals > div { display: flex; justify-content: space-between; gap: 2rem; }
+  .order-totals dd { margin: 0; font-variant-numeric: tabular-nums; }
+  .order-total { padding-block-start: 1.2rem; border-block-start: .1rem solid var(--line); font-size: 2.2rem; font-weight: 650; }
   @media (width <= 50em) {
     .comparison-table { font-size: var(--small-size); }
     .comparison-table th, .comparison-table td { padding: .8rem .6rem; }

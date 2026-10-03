@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <script src="../assets/theme-init.js?v=1"></script>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Shutter &amp; Crumb, a fictional camera shop: a checkout template built with Prastora.">
+  <title>Checkout – Shutter &amp; Crumb (Prastora demo)</title>
+  <link rel="stylesheet" href="../css/core.css">
+  <link rel="stylesheet" href="../css/themes/default.css">
+  <link rel="stylesheet" href="../css/components/navigation.css">
+  <link rel="stylesheet" href="../css/components/content.css">
+  <link rel="stylesheet" href="../css/components/forms.css">
+  <link rel="stylesheet" href="../css/components/commerce.css">
+  <link rel="stylesheet" href="../css/components/utility.css">
+  <link rel="stylesheet" href="../css/pages/checkout.css">
+  <link rel="stylesheet" href="../css/dev/viewport.css">
+  <script src="../assets/viewport.js?v=2" defer></script>
+  <script src="../assets/interactions.js?v=9" defer></script>
+</head>
+<body>
+  <div class="css-top" data-css-header>
+  <aside class="viewport-panel" data-viewport hidden aria-label="Utility strip">
+    <div class="viewport-tools">
+      <button class="theme-toggle" data-theme-toggle type="button" aria-label="Switch colour theme" hidden><svg class="theme-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg><svg class="theme-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.5A9 9 0 0 1 9.5 3.5a9 9 0 1 0 11 11Z"/></svg></button>
+      <div class="viewport-reading" title="Browser viewport size in CSS pixels"><output data-viewport-value dir="ltr"></output></div>
+      <a class="utility-back" href="../index.html" aria-label="Back to Prastora"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg><span class="mobile-only">Back</span><span class="desktop-only">Back to Prastora</span></a>
+    </div>
+    <div class="utility-actions"><span class="language-control"><select aria-label="Language" title="English only for now; other languages are planned"><option value="en" lang="en" selected>English</option><option value="es" lang="es" disabled>Español — soon</option><option value="fr" lang="fr" disabled>Français — soon</option><option value="ar" lang="ar" dir="rtl" disabled>العربية — soon</option></select><svg class="language-arrow" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="m4 6 4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><button type="button" disabled title="Account access is not connected"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="../assets/placeholders.svg#account"/></svg>Sign in</button></div>
+  </aside>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header"><div class="header-inner">
+    <a class="brand" href="#main"><svg viewBox="0 0 64 64" aria-hidden="true"><use href="../assets/shop.svg#shop-logo"/></svg>Shutter &amp; Crumb</a>
+    <nav class="desktop-nav desktop-only" aria-label="Main navigation"><a href="product.html">Cameras</a><a href="product.html#related">Accessories</a><a href="product.html#reviews">Reviews</a><a href="#help">Help</a><a href="#main" aria-current="true">Cart (2)</a></nav>
+    <details class="mobile-nav mobile-only"><summary>Menu</summary><nav aria-label="Mobile navigation"><a href="product.html">Cameras</a><a href="product.html#related">Accessories</a><a href="product.html#reviews">Reviews</a><a href="#help">Help</a><a href="#main" aria-current="true">Cart (2)</a></nav></details>
+  </div></header>
+  </div>
+  <main id="main">
+    <section class="section co-done" id="confirmed" tabindex="-1">
+      <div class="co-done-inner">
+        <svg viewBox="0 0 400 280" role="img" aria-label="The camera's screen shows a sloth waving goodbye"><use href="../assets/shop.svg#cam-back"/></svg>
+        <div class="stack">
+          <h1>Order placed. Lunch is about to get photogenic.</h1>
+          <p class="lead">We've sent the receipt to your email. Your Crumb One leaves the warehouse tomorrow morning, tripod number four right behind it.</p>
+          <p class="small muted">This is a demo: nothing was charged, nothing will ship and nobody saw your card number.</p>
+          <div class="flex"><a class="btn" href="product.html">Back to the shop</a><a class="btn btn-secondary" href="checkout.html">Start over</a></div>
+        </div>
+      </div>
+    </section>
+    <div class="section co">
+      <div class="co-main stack">
+        <h1>Checkout</h1>
+        <ol class="co-steps" aria-label="Checkout steps"><li><a href="#contact">Contact</a></li><li><a href="#delivery">Delivery</a></li><li><a href="#payment">Payment</a></li><li><a href="#review">Review</a></li></ol>
+        <form class="co-form stack" id="checkout" action="#confirmed">
+          <!-- Demo: fields have no name attributes, so nothing typed here leaves the page. -->
+          <fieldset class="co-step anchor" id="contact"><legend><h2>Contact</h2></legend>
+            <div class="field"><label for="email">Email</label><input id="email" type="email" autocomplete="email" required aria-describedby="email-hint email-err"><p class="field-hint" id="email-hint">For the receipt and the tracking link. Nothing else, promise.</p><p class="field-error" id="email-err">Enter an email address with an @ and a domain, like you@example.com.</p></div>
+            <div class="field"><label for="phone">Phone <span class="muted">(optional)</span></label><input id="phone" type="tel" autocomplete="tel" aria-describedby="phone-hint"><p class="field-hint" id="phone-hint">Only the courier calls, and only if your door is hard to find.</p></div>
+          </fieldset>
+          <fieldset class="co-step anchor" id="delivery"><legend><h2>Delivery</h2></legend>
+            <div class="field"><label for="name">Full name</label><input id="name" type="text" autocomplete="name" required aria-describedby="name-err"><p class="field-error" id="name-err">We need a name for the parcel.</p></div>
+            <div class="field"><label for="address">Street and house number</label><input id="address" type="text" autocomplete="street-address" required aria-describedby="address-err"><p class="field-error" id="address-err">Add the street, so the courier doesn't have to guess.</p></div>
+            <div class="field-row"><div class="field"><label for="city">City</label><input id="city" type="text" autocomplete="address-level2" required aria-describedby="city-err"><p class="field-error" id="city-err">Which city?</p></div><div class="field"><label for="postcode">Postcode</label><input id="postcode" type="text" autocomplete="postal-code" required aria-describedby="postcode-err"><p class="field-error" id="postcode-err">Add the postcode.</p></div></div>
+            <div class="field"><label for="country">Country</label><select id="country" autocomplete="country" required><option value="LT">Lithuania</option><option value="PL">Poland</option><option value="DE">Germany</option><option value="IT">Italy</option><option value="PT" selected>Portugal</option></select></div>
+            <fieldset class="choice choice-stack"><legend>Delivery method</legend>
+              <input type="radio" name="ship" id="ship-std" value="standard" checked><label for="ship-std">Standard<b>Free</b><small>Three to five working days. Plenty of time to clear a shelf.</small></label>
+              <input type="radio" name="ship" id="ship-exp" value="express"><label for="ship-exp">Express<b>$12</b><small>Tomorrow, before lunch. Fittingly.</small></label>
+              <input type="radio" name="ship" id="ship-pick" value="pickup"><label for="ship-pick">Pick up in Lisbon<b>Free</b><small>We'll keep it for seven days and won't take it out for walks.</small></label>
+            </fieldset>
+          </fieldset>
+          <fieldset class="co-step anchor" id="payment"><legend><h2>Payment</h2></legend>
+            <fieldset class="choice"><legend>Pay with</legend>
+              <input type="radio" name="pay" id="pay-card" value="card" checked><label for="pay-card">Card</label>
+              <input type="radio" name="pay" id="pay-bank" value="bank"><label for="pay-bank">Bank transfer</label>
+              <input type="radio" name="pay" id="pay-later" value="later"><label for="pay-later">Pay in 30 days</label>
+            </fieldset>
+            <div class="co-card stack">
+              <div class="field"><label for="cc">Card number <span class="muted">(optional)</span></label><input id="cc" type="text" autocomplete="cc-number" aria-describedby="cc-hint cc-err" inputmode="numeric" pattern="[0-9 ]{12,23}"><p class="field-hint" id="cc-hint">We don't keep it. We barely keep our receipts.</p><p class="field-error" id="cc-err">That doesn't look like a card number: 12 to 19 digits, spaces are fine.</p></div>
+              <div class="field-row"><div class="field"><label for="exp">Expiry <span class="muted">(optional)</span></label><input id="exp" type="text" autocomplete="cc-exp" aria-describedby="exp-hint exp-err" placeholder="MM/YY" inputmode="numeric" pattern="(0[1-9]|1[0-2])/[0-9]{2}"><p class="field-hint" id="exp-hint">MM/YY</p><p class="field-error" id="exp-err">Use the MM/YY format, like 08/29.</p></div><div class="field"><label for="cvc">Security code <span class="muted">(optional)</span></label><input id="cvc" type="text" autocomplete="cc-csc" aria-describedby="cvc-hint cvc-err" inputmode="numeric" pattern="[0-9]{3,4}"><p class="field-hint" id="cvc-hint">Three or four digits on the back.</p><p class="field-error" id="cvc-err">Three or four digits.</p></div></div>
+            </div>
+            <p class="co-bank small">We'll email bank details after you place the order. The camera ships once the money arrives, usually within two days.</p>
+            <p class="co-later small">Pay the full amount within 30 days of delivery, no interest. Long enough to test it on at least four lunches.</p>
+          </fieldset>
+          <fieldset class="co-step anchor" id="review"><legend><h2>Review</h2></legend>
+            <label class="check"><input type="checkbox" id="terms" required>I agree to the terms of sale and the returns policy.</label>
+            <label class="check"><input type="checkbox" id="news">Send me the occasional newsletter. Monthly at most, we're not that organised.</label>
+            <button class="btn co-place" type="submit">Place order</button>
+            <p class="small muted">Secure checkout. The padlock is real; the shop isn't.</p>
+          </fieldset>
+        </form>
+      </div>
+      <aside class="co-summary card stack" aria-label="Order summary">
+        <h2 class="co-h">Your order</h2>
+        <ul class="order-lines">
+          <li class="order-line" style="--cam-body: #e3cf8e;"><svg viewBox="0 0 400 280" aria-hidden="true"><use href="../assets/shop.svg#cam-front"/></svg><span><b>Crumb One</b><br><span class="small muted">Butter, with 35 mm lens · 1</span></span><span>$799</span></li>
+          <li class="order-line"><svg viewBox="0 0 120 90" aria-hidden="true"><use href="../assets/shop.svg#acc-tripod"/></svg><span><b>Travel tripod</b><br><span class="small muted">Your fourth · 1</span></span><span>$89</span></li>
+        </ul>
+        <div class="field co-promo"><label for="promo">Promo code</label><div class="co-promo-row"><input id="promo" aria-describedby="promo-hint"><button class="btn btn-secondary" type="button">Apply</button></div><p class="field-hint" id="promo-hint">Try SLOTH. It does nothing, slowly.</p></div>
+        <dl class="order-totals">
+          <div><dt>Subtotal</dt><dd>$888</dd></div>
+          <div><dt>Delivery</dt><dd><span class="co-free">Free</span><span class="co-exp">$12</span></dd></div>
+          <div class="order-total"><dt>Total</dt><dd><span class="co-free">$888</span><span class="co-exp">$900</span></dd></div>
+        </dl>
+        <p class="small muted" id="help">Questions? help@shutter-and-crumb.example. Replies before the coffee goes cold.</p>
+      </aside>
+    </div>
+  </main>
+  <footer class="site-footer section">
+    <div class="grid grid-3">
+      <div class="stack-small"><h3>Shutter &amp; Crumb</h3><p class="muted">Cameras for people who mostly photograph their lunch. Beautifully.</p></div>
+      <nav class="stack-small" aria-label="Footer"><h3>Shop</h3><div class="footer-links"><a href="product.html">Cameras</a><a href="product.html#related">Accessories</a><a href="product.html#reviews">Reviews</a></div></nav>
+      <div class="stack-small"><h3>Fine print</h3><p class="muted">Shutter &amp; Crumb is fictional: a checkout template for <a href="../index.html">Prastora</a>. No sandwiches were harmed.</p></div>
+    </div>
+  </footer>
+</body>
+</html>

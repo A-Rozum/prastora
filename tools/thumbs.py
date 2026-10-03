@@ -14,6 +14,7 @@ OUT = ROOT / "assets" / "templates"
 SHOTS = {  # name: (selector to start from, colour scheme)
     "landing": (".sb-hero", "dark"),
     "product": (".pd", "light"),
+    "checkout": (".co", "light"),
     "service": ("main", "light"),
     "article": ("main", "light"),
     "pricing": ("#packages", "light"),

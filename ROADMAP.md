@@ -8,7 +8,7 @@ Pre-product (0.x). Each template stresses something the others don't.
 - **landing** – poster-like composition, artwork across section boundaries (done: templates/landing.html)
 - **article** – long-form typography: footnotes, tables, quotes
 - **product** – gallery, specs, variants (done: templates/product.html)
-- **checkout** – multi-step form, validation, order summary
+- **checkout** – multi-step form, validation, order summary (done: templates/checkout.html)
 - **dashboard** – dense data, charts, tables, its own scale
 
 ## Later
