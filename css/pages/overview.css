@@ -1,0 +1,10 @@
+/* Page composition for the overview example. Not part of the framework. */
+@layer page {
+  @media (max-width: 50em) {
+    .overview-desktop-card { display: none; }
+    .overview-examples-grid { --columns: 2; }
+    .overview-examples-grid > .card-icon-feature { grid-column: 1 / -1; }
+    .overview-media-grid { --columns: 2; }
+    .overview-media-grid > :last-child { grid-column: 1 / -1; }
+  }
+}

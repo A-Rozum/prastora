@@ -1,4 +1,4 @@
-/* Temporary device-review aid. Remove with viewport.css and its HTML hooks. */
+/* Temporary device-review aid. Remove with css/dev/viewport.css and its HTML hooks. */
 (() => {
   const panel = document.querySelector('[data-viewport]');
   const value = panel?.querySelector('[data-viewport-value]');

@@ -1,0 +1,14 @@
+/* Forms: fields and form layouts. */
+@layer components {
+  .field { display: grid; gap: .7rem; }
+  .field input, .field textarea, .field select { inline-size: 100%; min-inline-size: 0; min-block-size: 4.4rem; border: .1rem solid var(--line); border-radius: var(--radius); background: var(--paper); color: var(--ink); padding: 1rem; }
+  .field textarea { min-block-size: 12rem; resize: vertical; }
+  .rail-contact-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+  .rail-contact-row > * { min-inline-size: 0; }
+  .rail-contact-row label { font-size: var(--small-size); }
+  .contact-form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; }
+  .contact-form-grid > * { min-inline-size: 0; }
+  @media (max-width: 50em) {
+    .contact-form-grid { grid-template-columns: minmax(0, 1fr); }
+  }
+}
