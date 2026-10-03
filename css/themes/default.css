@@ -1,0 +1,13 @@
+/* Default theme: palette values only (custom properties). Each theme defines a light and a dark scheme;
+   the dark scheme follows the system unless data-scheme on <html> sets one explicitly. */
+@layer theme {
+  :root { color-scheme: light; --ink: #233a40; --muted: #576b71; --paper: #fff; --surface: #edf3f3; --line: #d3e0e1; --accent: #285d6b; --on-accent: #fff; --error: #8c3043; --success: #28653d; --utility-surface: #e5e9ec; --utility-line: #adb9c2; }
+  @media (prefers-color-scheme: dark) {
+    :root { color-scheme: dark; --ink: #e3eef0; --muted: #b4c8cd; --paper: #13262c; --surface: #1b333a; --line: #47616b; --accent: #96d2df; --on-accent: #12272d; --error: #ffb6c5; --success: #a3dfb7; --utility-surface: #30464f; --utility-line: #718a96; }
+  }
+  :root[data-scheme=light] { color-scheme: light; --ink: #233a40; --muted: #576b71; --paper: #fff; --surface: #edf3f3; --line: #d3e0e1; --accent: #285d6b; --on-accent: #fff; --error: #8c3043; --success: #28653d; --utility-surface: #e5e9ec; --utility-line: #adb9c2; }
+  :root[data-scheme=dark] { color-scheme: dark; --ink: #e3eef0; --muted: #b4c8cd; --paper: #13262c; --surface: #1b333a; --line: #47616b; --accent: #96d2df; --on-accent: #12272d; --error: #ffb6c5; --success: #a3dfb7; --utility-surface: #30464f; --utility-line: #718a96; }
+  @media print {
+    :root, :root[data-scheme] { color-scheme: light; --paper: #fff; --ink: #000; --muted: #333; }
+  }
+}

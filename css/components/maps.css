@@ -1,0 +1,29 @@
+/* Maps: embedded map frame and the local regional SVG map. */
+@layer components {
+  .map-address { font-style: normal; }
+  .contact-notes-art { --media-ratio: 16 / 9; }
+  .map-preview { border: .1rem solid var(--line); border-radius: var(--radius); overflow: hidden; background: var(--surface); }
+  .google-map-frame { display: block; inline-size: 100%; block-size: 32rem; border: 0; }
+  .map-disclosure { padding: 1rem; }
+  .region-map { border: .1rem solid var(--line); border-radius: var(--radius); background: var(--surface); overflow: hidden; }
+  .region-map svg { display: block; inline-size: 100%; block-size: auto; aspect-ratio: 9 / 7; overflow: hidden; }
+  .map-land { fill: var(--paper); stroke: var(--line); stroke-width: 1.5; }
+  .map-point { color: var(--accent); text-decoration: none; }
+  .map-point .map-hit { fill: transparent; }
+  .map-point circle:not(.map-hit) { fill: var(--paper); stroke: currentColor; stroke-width: 3; }
+  .map-point text { fill: currentColor; font-weight: 650; font-family: system-ui, sans-serif; text-anchor: middle; dominant-baseline: central; }
+  .map-point[aria-current=true] circle:not(.map-hit) { fill: var(--accent); }
+  .map-point[aria-current=true] text { fill: var(--on-accent); }
+  .map-point:focus-visible circle:not(.map-hit) { stroke-width: 6; }
+  .location-list { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+  .location-list a { display: flex; align-items: center; gap: 1rem; min-block-size: 4.4rem; padding: .6rem 1rem; border: .1rem solid var(--line); border-radius: var(--radius); text-decoration: none; }
+  .location-list span { flex: none; }
+  .location-info { padding-block-start: 1.5rem; border-block-start: .1rem solid var(--line); }
+  .location-info:not(:first-of-type, :target) { display: none; }
+  #locations:has(.location-info:target) .location-info:first-of-type:not(:target) { display: none; }
+  .location-info:target { display: block; }
+  .location-info:target h3 { color: var(--accent); }
+  @media (max-width: 50em) {
+    .location-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+}

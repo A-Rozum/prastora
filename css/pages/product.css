@@ -1,0 +1,9 @@
+/* Page composition for the product example. Not part of the framework. */
+@layer page {
+  .product-thumbs { margin-block-start: 1.5rem; gap: 1.5rem; }
+  .product-thumbs .media { --media-ratio: 4 / 3; }
+  .product-gallery > details { margin-block-start: 1rem; }
+  @media (max-width: 50em) {
+    .product-thumbs { --columns: 3; }
+  }
+}
