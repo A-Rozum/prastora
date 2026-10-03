@@ -63,6 +63,7 @@
   .sb-big { min-block-size: 9rem; font-size: 3.2rem; font-family: var(--font-display, var(--font)); }
 
   @media (width <= 50em) {
+    .mobile-nav nav { display: grid; grid-template-columns: repeat(3, auto); justify-content: end; justify-items: start; column-gap: 2.4rem; }
     .sb-hero { grid-template-columns: 1fr; gap: 2rem; padding-block-start: 5rem; }
     .sb-hero-text { padding-block-end: 0; }
     .sb-hero h1 { font-size: 4.2rem; }

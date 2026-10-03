@@ -43,7 +43,7 @@
     .mobile-nav > summary::before { content: ''; box-sizing: border-box; inline-size: 1rem; block-size: 1rem; flex: none; border-top: .18rem solid currentColor; border-right: .18rem solid currentColor; transform: rotate(45deg); }
     .mobile-nav:dir(rtl) > summary::before { transform: rotate(225deg); }
     .mobile-nav[open] > summary::before { transform: rotate(135deg); }
-    .mobile-nav nav { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 0 2rem; padding-block-end: .6rem; }
+    .mobile-nav nav { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 0 2rem; margin-inline-start: calc(22rem - 100vw + 2 * var(--space-inline)); padding-block-end: .6rem; }
     .mobile-nav nav a { box-sizing: border-box; font-size: var(--small-size); line-height: 1.4; min-block-size: 3.8rem; padding-block: .6rem; padding-inline: 0; }
     .brand { font-size: 2.4rem; }
     .catalog-nav { gap: 1rem; }
