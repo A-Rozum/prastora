@@ -8,6 +8,8 @@ Prastora builds the composition differently. It replaces this zoo of possible st
 
 Within each mode the page scales as a whole, much like a vector image: as elements change size, their proportions and relative positions stay the same. This makes possible techniques that fluid layouts cannot deliver, or cannot deliver reliably – graphics locked to text, compositions that cross section boundaries and more. The page ends up working as a single, coherent image.
 
+Prastora also covers the ground common to frameworks of this kind: grids and navigation in plain HTML and CSS, a typographic scale, a baseline that evens out browser differences, a dark theme out of the box and so on.
+
 Examples: https://a-rozum.github.io/prastora/
 
 Usage instructions, including how to add Prastora to a project, will follow later.
