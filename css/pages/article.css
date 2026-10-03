@@ -55,8 +55,7 @@
     .ar-bike { inline-size: 70%; justify-self: center; }
   }
   @media (width > 50em) {
-    .ar-after { padding-block-end: 0; }
-    .ar-author-col { gap: 1rem; }
-    .ar-bike { margin-block-end: -1.04rem; }
+    .ar-author-col { position: relative; align-self: stretch; grid-template-rows: auto minmax(0, 1fr); gap: 0; }
+    .ar-bike { position: absolute; grid-row: 2; inset-block-start: 1rem; inset-inline-start: 0; inline-size: auto; max-inline-size: 100%; block-size: calc(100% - 1rem + var(--space-block)); }
   }
 }
