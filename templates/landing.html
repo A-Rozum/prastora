@@ -20,6 +20,7 @@
   <div class="css-top" data-css-header>
   <aside class="viewport-panel" data-viewport hidden aria-label="Utility strip">
     <div class="viewport-tools">
+      <a class="utility-back" href="../index.html" aria-label="Back to Prastora"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg><span class="desktop-only">Back to Prastora</span></a>
       <button class="theme-toggle" data-theme-toggle type="button" aria-label="Switch colour theme" hidden><svg class="theme-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg><svg class="theme-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.5A9 9 0 0 1 9.5 3.5a9 9 0 1 0 11 11Z"/></svg></button>
       <div class="viewport-reading" title="Browser viewport size in CSS pixels"><output data-viewport-value dir="ltr"></output></div>
     </div>
@@ -40,26 +41,26 @@
         <div class="flex"><a class="btn" href="#open">Open a case</a><a class="btn btn-secondary" href="#how">See how it works</a></div>
         <p class="small muted">First case is on the house. The rest we can discuss over coffee.</p>
       </div>
-      <svg class="sb-window" viewBox="0 0 400 500" role="img" aria-label="A rainy night city seen through an art deco office window"><use href="../assets/slowburn.svg#window"/></svg>
+      <svg class="sb-window" viewBox="0 0 400 510" role="img" aria-label="A rainy night city seen through an art deco office window"><use href="../assets/slowburn.svg#window"/></svg>
       <div class="sb-blinds" aria-hidden="true"></div>
-      <svg class="sb-sloth" viewBox="0 0 190 160" aria-hidden="true"><use href="../assets/slowburn.svg#sloth-draped"/></svg>
+      <svg class="sb-sloth" viewBox="0 0 204 184" aria-hidden="true"><use href="../assets/slowburn.svg#sloth-draped"/></svg>
     </section>
 
     <section class="section sb-clients" aria-labelledby="clients-title">
       <h2 id="clients-title" class="sb-quiet">Trusted by companies that would rather stay anonymous.</h2>
-      <ul class="sb-redacted">
-        <li><span>Client name redacted</span></li><li><span>Client name redacted</span></li><li><span>Client name redacted</span></li><li><span>Client name redacted</span></li><li><span>Client name redacted</span></li>
+      <ul class="sb-redacted" aria-hidden="true">
+        <li><span class="sb-logo" aria-hidden="true"></span><span class="sb-name"><span>Acme Freight</span></span></li><li><span class="sb-logo" aria-hidden="true"></span><span class="sb-name"><span>Bluefin Bank</span></span></li><li><span class="sb-logo" aria-hidden="true"></span><span class="sb-name"><span>Orbital Pizza</span></span></li><li><span class="sb-logo" aria-hidden="true"></span><span class="sb-name"><span>Greystone Insurance</span></span></li><li><span class="sb-logo" aria-hidden="true"></span><span class="sb-name"><span>Kettle &amp; Kin</span></span></li>
       </ul>
-      <p class="small muted">Their lawyers were very clear about this.</p>
+      <p class="small muted">Names blacked out at their lawyers' request. Logos left in, because legal ran out of marker.</p>
     </section>
 
     <section class="section sb-pipe sb-pipe-start anchor" id="how">
       <div class="stack">
         <h2>How a case gets solved</h2>
         <ol class="grid grid-3 sb-steps">
-          <li class="stack-small"><h3>The call</h3><p>Tell us what happened. All of it, including the part where someone deployed on a Friday afternoon.</p></li>
-          <li class="stack-small"><h3>The legwork</h3><p>We follow the trail through logs, traces and commit history. Every witness gets questioned, the intern's cron job included.</p></li>
-          <li class="stack-small"><h3>The report</h3><p>A plain account of what broke, why it broke and what keeps it from breaking again. We check DNS first. It's always DNS – until it isn't.</p></li>
+          <li><h3>The call</h3><p>Tell us what happened. All of it, including the part where someone deployed on a Friday afternoon.</p></li>
+          <li><h3>The legwork</h3><p>We follow the trail through logs, traces and commit history. Every witness gets questioned, the intern's cron job included.</p></li>
+          <li><h3>The report</h3><p>A plain account of what broke, why it broke and what keeps it from breaking again. We check DNS first. It's always DNS – until it isn't.</p></li>
         </ol>
       </div>
     </section>
@@ -80,7 +81,6 @@
     </section>
 
     <section class="section sb-pipe anchor" id="cases">
-      <span class="sb-capsule" aria-hidden="true"></span>
       <div class="stack">
         <h2>Closed cases</h2>
         <div class="grid grid-3">
@@ -118,8 +118,10 @@
     </section>
 
     <section class="section sb-final anchor" id="open">
-      <h2>Every bug has a story. Let's hear yours.</h2>
-      <div class="flex"><a class="btn" href="#open">Open a case</a></div>
+      <div class="sb-final-inner">
+        <h2>Every bug has a story.<br> Let's hear yours.</h2>
+        <a class="btn sb-big" href="#open">Open a case</a>
+      </div>
       <p class="small muted">The office is open. The coffee is terrible.</p>
     </section>
   </main>
