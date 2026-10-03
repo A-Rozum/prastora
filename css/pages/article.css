@@ -54,4 +54,9 @@
     .ar-after { grid-template-columns: minmax(0, 1fr); }
     .ar-bike { inline-size: 70%; justify-self: center; }
   }
+  @media (width > 50em) {
+    .ar-after { padding-block-end: 0; }
+    .ar-author-col { gap: 1rem; }
+    .ar-bike { margin-block-end: -1.04rem; }
+  }
 }
