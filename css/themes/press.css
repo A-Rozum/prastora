@@ -1,0 +1,12 @@
+/* Press theme: newsprint and ink with an editorial red. Serif body, condensed sans headlines. Tokens only. */
+@layer theme {
+  :root { color-scheme: light; --font: Charter, "Iowan Old Style", "Bitstream Charter", Georgia, serif; --font-display: "Franklin Gothic Medium", "Arial Narrow", "Liberation Sans Narrow", "Roboto Condensed", sans-serif; --line-height: 1.7; --radius: .2rem; --ink: #1d1b18; --muted: #5f5a52; --paper: #fbf8f2; --surface: #f1ebdf; --line: #d9d0c0; --accent: #a1341f; --on-accent: #fff; --error: #a1341f; --success: #2f6a3f; --utility-surface: #ece5d7; --utility-line: #c9bfad; }
+  @media (prefers-color-scheme: dark) {
+    :root { color-scheme: dark; --ink: #ece6dc; --muted: #b3aa9c; --paper: #171614; --surface: #211f1c; --line: #3c3833; --accent: #f08a6c; --on-accent: #1b0f0b; --error: #ffb4a3; --success: #9fd7ae; --utility-surface: #24221f; --utility-line: #4a4540; }
+  }
+  :root[data-scheme=light] { color-scheme: light; --ink: #1d1b18; --muted: #5f5a52; --paper: #fbf8f2; --surface: #f1ebdf; --line: #d9d0c0; --accent: #a1341f; --on-accent: #fff; --error: #a1341f; --success: #2f6a3f; --utility-surface: #ece5d7; --utility-line: #c9bfad; }
+  :root[data-scheme=dark] { color-scheme: dark; --ink: #ece6dc; --muted: #b3aa9c; --paper: #171614; --surface: #211f1c; --line: #3c3833; --accent: #f08a6c; --on-accent: #1b0f0b; --error: #ffb4a3; --success: #9fd7ae; --utility-surface: #24221f; --utility-line: #4a4540; }
+  @media print {
+    :root, :root[data-scheme] { color-scheme: light; --paper: #fff; --ink: #000; --muted: #333; }
+  }
+}

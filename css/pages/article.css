@@ -1,15 +1,54 @@
-/* Page composition for the article example. Not part of the framework. */
+/* Page composition for the article example (Harbour Lights). Three proportional columns – meta, text,
+   margin – so sidenotes can float into the margin next to the paragraph that cites them. With 128 units
+   across, the column arithmetic is exact at every width within a regime. */
 @layer page {
-  .article-feedback textarea { min-block-size: 9rem; }
+  .ar-masthead { font-family: var(--font-display, var(--font)); font-size: 2.6rem; letter-spacing: .02em; }
+  .desktop-nav .btn { padding-inline: 1.6rem; min-block-size: 3.8rem; font-size: var(--text-size); }
+  .ar { --ar-gap: 4rem; --ar-rail: 28rem; display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 7fr) minmax(0, 3fr); column-gap: var(--ar-gap); row-gap: 3rem; padding-block-start: 6rem; }
+  .ar-head { grid-column: 2 / -1; display: grid; gap: 1.6rem; }
+  .ar-kicker { font-family: var(--font-display, var(--font)); color: var(--accent); }
+  .ar-kicker a { color: inherit; }
+  .ar h1 { font-family: var(--font-display, var(--font)); font-size: 6.4rem; line-height: 1.02; font-weight: 600; max-inline-size: 90rem; }
+  .ar-dek { font-size: 2.3rem; line-height: 1.45; color: var(--muted); max-inline-size: 80rem; }
+  .ar-meta { grid-column: 1; display: grid; gap: 1.6rem; align-content: start; padding-block-start: .6rem; border-block-start: .3rem solid var(--ink); color: var(--muted); }
+  .ar-meta b { color: var(--ink); }
+  .ar-share { display: grid; gap: .4rem; }
+  .ar-body { grid-column: 2; font-size: 1.9rem; }
+  .ar-body > * + * { margin-block-start: 2.2rem; }
+  .ar-body h2 { margin-block-start: 5rem; font-family: var(--font-display, var(--font)); font-size: 3.2rem; font-weight: 600; }
+  .ar-body ul { padding-inline-start: 2.6rem; }
+  .ar-body li + li { margin-block-start: 1rem; }
+  .ar-lede::first-letter { float: inline-start; margin: .6rem 1.2rem 0 0; font-family: var(--font-display, var(--font)); font-size: 8.6rem; line-height: .82; color: var(--accent); }
+  .ar-body sup { line-height: 0; vertical-align: baseline; position: relative; inset-block-start: -.8rem; }
+  .ref { text-decoration: none; font-family: var(--font-display, var(--font)); font-size: 1.3rem; padding-inline: .2rem; }
+  .sidenote { float: inline-end; clear: inline-end; inline-size: var(--ar-rail); margin-inline-end: calc(-1 * (var(--ar-rail) + var(--ar-gap))); margin-block: .4rem 1.6rem; padding-block-start: .8rem; border-block-start: .1rem solid var(--line); font-size: var(--small-size); line-height: 1.55; color: var(--muted); }
+  .sidenote-n { font-family: var(--font-display, var(--font)); color: var(--accent); }
+  .sidenote:target { color: var(--ink); border-color: var(--accent); }
+  .ar-figure { margin-inline-end: calc(-1 * (var(--ar-rail) + var(--ar-gap))); }
+  .ar-chart { display: block; inline-size: 100%; block-size: auto; }
+  .ar-figure figcaption { margin-block-start: 1rem; font-size: var(--small-size); color: var(--muted); }
+  .ar-pull { margin: 4rem 0; padding: 2.4rem 0; border-block: .3rem solid var(--ink); }
+  .ar-pull p { font-family: var(--font-display, var(--font)); font-size: 3.6rem; line-height: 1.15; }
+  .ar-pull footer { margin-block-start: 1.2rem; font-size: var(--small-size); color: var(--muted); }
+  .ar-end { font-style: italic; color: var(--muted); }
+  .ar-after { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 5fr) minmax(0, 4fr); gap: 4rem; align-items: start; }
+  .ar-small-h { margin-block-end: 1.2rem; font-family: var(--font-display, var(--font)); font-size: 2.2rem; font-weight: 600; }
+  .ar-list { display: grid; gap: 1.6rem; margin: 0; padding: 0; list-style: none; }
+  .ar-list li { display: grid; gap: .2rem; padding-block-end: 1.6rem; border-block-end: .1rem solid var(--line); }
+  .ar-list a { font-family: var(--font-display, var(--font)); font-size: 2rem; line-height: 1.25; color: var(--ink); text-decoration: none; }
+  .ar-list a:hover { text-decoration: underline; }
+  .ar-sub .btn { margin-block-start: 1.6rem; }
   @media (width <= 50em) {
-    .article-rail { display: block; }
-  }
-  @media (width > 50em) {
-    .article-intro { padding-block-end: 1rem; }
-    .article-intro > .section-nav { margin-block-start: 1rem; }
-    .article-layout { padding-block-start: 1.5rem; }
-    .article-rail { display: flex; flex-direction: column; justify-content: space-between; align-self: stretch; gap: 3rem; }
-    .article-rail > * { min-inline-size: 0; flex: none; }
-    .article-related { grid-column: 1; }
+    .ar { grid-template-columns: minmax(0, 1fr); padding-block-start: 4rem; }
+    .ar-head, .ar-meta, .ar-body { grid-column: 1; }
+    .ar h1 { font-size: 4.4rem; }
+    .ar-dek { font-size: 2.6rem; }
+    .ar-meta { display: flex; flex-wrap: wrap; gap: 1rem 3rem; }
+    .ar-share { display: flex; gap: 1.6rem; }
+    .ar-body { font-size: 2.3rem; }
+    .sidenote { display: block; float: none; inline-size: auto; margin: 1.2rem 0; padding: 1rem 1.4rem; border: 0; border-inline-start: .3rem solid var(--line); background: var(--surface); }
+    .ar-figure { margin-inline-end: 0; }
+    .ar-pull p { font-size: 3.2rem; }
+    .ar-after { grid-template-columns: minmax(0, 1fr); }
   }
 }

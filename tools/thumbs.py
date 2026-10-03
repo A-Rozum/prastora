@@ -16,7 +16,7 @@ SHOTS = {  # name: (selector to start from, colour scheme)
     "product": (".pd", "light"),
     "checkout": (".co", "light"),
     "service": ("main", "light"),
-    "article": ("main", "light"),
+    "article": (".ar", "light"),
     "pricing": ("#packages", "light"),
     "gallery": ("#collection", "light"),
     "contacts": ("main", "light"),

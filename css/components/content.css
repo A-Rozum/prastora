@@ -65,6 +65,12 @@
   .contact-facts > div { padding-block: 1.5rem; border-block-end: .1rem solid var(--line); }
   .contact-facts dt { font-weight: 650; }
   .contact-facts dd { margin: .5rem 0 0; }
+  .table-wrap { overflow-x: auto; }
+  .data-table { inline-size: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+  .data-table caption { padding-block-end: 1rem; text-align: start; color: var(--muted); font-size: var(--small-size); }
+  .data-table :is(th, td) { padding: .8rem 1.2rem; border-block-end: .1rem solid var(--line); text-align: start; }
+  .data-table thead th { border-block-end-width: .2rem; font-size: var(--small-size); color: var(--muted); }
+  .data-table .num { text-align: end; }
   @media (width <= 50em) {
     .icon-heading-reserved .icon { block-size: 6.44rem; }
     .grid-compact .card { --card-space: 1.5rem; }
