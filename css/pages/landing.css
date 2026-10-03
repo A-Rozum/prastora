@@ -83,4 +83,7 @@
     .sb-final-inner { inline-size: 100%; }
     .sb-big { min-block-size: 6.4rem; font-size: 2.6rem; }
   }
+  @media (width >= 125em) {
+    .sb-flying { inset-block-start: -.6rem; inset-inline-start: calc(-1 * var(--card-space) - 8.2rem); transform: rotate(18deg); }
+  }
 }
