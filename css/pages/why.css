@@ -35,7 +35,14 @@
   .wy-fig-row + .wy-fig-label { margin-block-start: 3rem; }
   .wy-figure figcaption { margin-block-start: 2rem; font-size: var(--small-size); color: var(--muted); }
   .wy-margin { float: inline-end; clear: inline-end; inline-size: var(--wy-rail); margin-inline-end: calc(-1 * (var(--wy-rail) + var(--wy-gap))); margin-block: .6rem 2rem; }
-  .wy-margin svg { display: block; inline-size: 100%; block-size: auto; }
+  .wy-crawl-t { margin-block-end: .8rem; font-size: 1.3rem; font-weight: 650; }
+  .wy-mini { display: grid; gap: .5rem; margin-block-end: 2rem; padding: 1.2rem; border: .1rem solid var(--line); border-radius: .6rem; background: var(--paper); }
+  .wy-mini span { display: block; block-size: .5rem; border-radius: .3rem; background: var(--line); }
+  .wy-mini .h { inline-size: 70%; block-size: .9rem; background: var(--muted); }
+  .wy-mini .s { inline-size: 60%; }
+  .wy-mini .img { block-size: 5rem; background: color-mix(in srgb, var(--accent) 22%, var(--paper)); }
+  .wy-mini .b { inline-size: 40%; block-size: 1.2rem; background: var(--accent); }
+  .wy-code { margin: 0; padding: 1rem 1.2rem; border-radius: .6rem; background: var(--surface); border: .1rem solid var(--line); font-size: 1.2rem; line-height: 1.5; color: var(--muted); overflow-x: auto; }
   .wy-margin figcaption { margin-block-start: 1rem; font-size: var(--small-size); line-height: 1.5; color: var(--muted); }
   .wy-wrap { float: inline-end; inline-size: 30rem; margin: .8rem 0 2rem 3.6rem; padding: 2rem; border-radius: var(--radius); background: var(--surface); }
   .wy-stacks { display: grid; grid-template-columns: 1fr 1fr; gap: 1.6rem; align-items: end; }
@@ -44,11 +51,6 @@
   .wy-stack li { padding: .5rem .8rem; border-radius: .3rem; background: var(--paper); border: .1rem solid var(--line); }
   .wy-stack .is-you { background: var(--accent); border-color: var(--accent); color: var(--on-accent); font-weight: 650; }
   .wy-wrap figcaption { margin-block-start: 1.4rem; font-size: 1.3rem; line-height: 1.45; color: var(--muted); }
-  .f-edge-strong { fill: var(--ink); }
-  .f-x { stroke: var(--muted); stroke-width: 1.5; stroke-linecap: round; }
-  .f-rev { fill: var(--paper); opacity: .6; }
-  .f-rev-line { stroke: var(--on-accent); stroke-width: 1.6; stroke-linecap: round; }
-  .f-tiny { fill: var(--paper); opacity: .35; }
   .f-screen { fill: var(--paper); }
   .f-edge { fill: none; stroke: var(--line); stroke-width: 1.5; }
   .f-line { fill: var(--line); }
@@ -71,7 +73,11 @@
     .wy-pull { margin-inline: 0; padding-inline-start: 2rem; }
     .wy-pull p { font-size: 3.2rem; }
     .wy-figure { margin-inline: 0; padding: 2rem; }
-    .wy-margin { float: none; inline-size: 48%; margin: 3rem auto; }
+    .wy-margin { float: none; inline-size: auto; margin: 3rem 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0 2rem; align-items: start; }
+    .wy-margin > :nth-child(1) { grid-column: 1; grid-row: 1; } .wy-margin > .wy-mini { grid-column: 1; grid-row: 2; }
+    .wy-margin > :nth-child(3) { grid-column: 2; grid-row: 1; } .wy-margin > .wy-code { grid-column: 2; grid-row: 2; }
+    .wy-margin figcaption { grid-column: 1 / -1; }
+    .wy-crawl-t, .wy-code { font-size: var(--small-size); }
     .wy-wrap { float: none; inline-size: auto; margin: 3rem 0; }
     .wy-stack-t, .wy-stack, .wy-wrap figcaption { font-size: var(--small-size); }
     .wy-h { font-size: 3.4rem; margin-block-start: 6rem; }
