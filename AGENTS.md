@@ -13,3 +13,4 @@ Deliberate, keep unless told otherwise:
 Gate: `python3 check.py` exits 0.
 Visual check: `tools/snap.py` (base before, diff after). Only pages linking the changed files (--css) and only the regimes the change touches.
 Template previews: `tools/thumbs.py` after a template changes visibly.
+Reader-mode check: `tools/reader.py` after changing a page's main content.

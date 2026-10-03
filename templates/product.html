@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
 <head>
   <script src="../assets/theme-init.js?v=1"></script>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8"><meta property="og:title" content="Crumb One"><meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Shutter &amp; Crumb, a fictional camera shop: a product page template built with Prastora.">
   <title>Crumb One – Shutter &amp; Crumb (Prastora demo)</title>
   <link rel="stylesheet" href="../css/core.css">
@@ -42,13 +42,14 @@
         <div class="product-viewer-stage"><figure><svg viewBox="0 0 400 280" role="img" aria-label="Crumb One, front"><use href="../assets/shop.svg#cam-front"/></svg></figure><figure><svg viewBox="0 0 400 280" role="img" aria-label="Crumb One, back and screen"><use href="../assets/shop.svg#cam-back"/></svg></figure><figure><svg viewBox="0 0 400 280" role="img" aria-label="Crumb One, top dials"><use href="../assets/shop.svg#cam-top"/></svg></figure><figure><svg viewBox="0 0 400 280" role="img" aria-label="Crumb One, 35 mm lens"><use href="../assets/shop.svg#cam-lens"/></svg></figure></div>
         <div class="product-viewer-thumbs"><label for="view-1"><svg viewBox="0 0 400 280" aria-hidden="true"><use href="../assets/shop.svg#cam-front"/></svg></label><label for="view-2"><svg viewBox="0 0 400 280" aria-hidden="true"><use href="../assets/shop.svg#cam-back"/></svg></label><label for="view-3"><svg viewBox="0 0 400 280" aria-hidden="true"><use href="../assets/shop.svg#cam-top"/></svg></label><label for="view-4"><svg viewBox="0 0 400 280" aria-hidden="true"><use href="../assets/shop.svg#cam-lens"/></svg></label></div>
       </div>
-      <form class="pd-buy stack" id="buy" action="#buy">
+      <div class="pd-buy stack" id="buy">
         <div class="stack-small">
           <h1>Crumb One</h1>
           <p class="lead">A pocketable 24 MP camera that makes soup look like a magazine cover.</p>
           <a class="rating" href="#reviews"><span class="rating-stars" aria-hidden="true">★★★★½</span><span>4.6 out of 5 · 212 reviews</span></a>
         </div>
         <p class="pd-price"><span class="pd-price-body">$649</span><span class="pd-price-kit">$799</span><small class="muted">Taxes included. Lunch not included.</small></p>
+        <form class="stack" action="#buy">
         <fieldset class="choice"><legend>Colour</legend>
           <input type="radio" name="colour" id="c-graphite" value="graphite" checked><label for="c-graphite"><span class="swatch" style="--swatch: var(--graphite)"></span>Graphite</label>
           <input type="radio" name="colour" id="c-sage" value="sage"><label for="c-sage"><span class="swatch" style="--swatch: var(--sage)"></span>Sage</label>
@@ -67,7 +68,8 @@
           <li>Free returns within 30 days, even if the soup was bad.</li>
           <li>Two-year warranty. Dropping it in the soup is on you.</li>
         </ul>
-      </form>
+        </form>
+      </div>
     </div>
 
     <section class="section surface anchor" id="details">
