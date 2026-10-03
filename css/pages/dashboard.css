@@ -13,7 +13,7 @@
   .db-side a:hover { background: var(--paper); }
   .db-side a[aria-current=page] { background: var(--paper); color: var(--accent); font-weight: 650; text-decoration: none !important; }
   .db-side a:last-child { margin-block-start: 2rem; color: var(--accent); }
-  .db-main { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 2rem; align-content: start; padding: 2.4rem var(--space-inline) 4rem 3rem; }
+  .db-main { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 2rem; align-content: start; padding: 4.4rem var(--space-inline) 4rem 3rem; }
   .db-head { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 1.6rem; }
   .db-head h1 { font-size: 3.2rem; }
   .db-range { align-items: center; }
@@ -46,6 +46,8 @@
   }
   @media (width > 50em) {
     :root { --scale-units: 152; }
+    .db { background: linear-gradient(to right, var(--surface) 20rem, var(--line) 20rem 20.1rem, transparent 20.1rem); }
+    .db-side { position: sticky; inset-block-start: 10.8rem; align-self: start; max-block-size: calc(100svh - 10.8rem); overflow-y: auto; border-inline-end: 0; background: none; }
   }
   @media (width >= 125em) {
     :root { --scale-units: 190; }
