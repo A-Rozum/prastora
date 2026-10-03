@@ -29,10 +29,11 @@
   .wy-pull { margin-block: 6rem; margin-inline: -6rem -10rem; padding-inline-start: 3rem; border-inline-start: .6rem solid var(--accent); }
   .wy-pull p { font-size: 4rem; line-height: 1.2; font-weight: 650; letter-spacing: -.01em; }
   .wy-figure { margin-block: 6rem; margin-inline: calc(-1 * (4rem + 6rem)) calc(-1 * (var(--wy-gap) + 16rem)); padding: 3rem; border-radius: var(--radius); background: var(--surface); }
-  .wy-fig-row { display: block; inline-size: 100%; block-size: auto; }
+  .wy-shots { display: grid; grid-template-columns: 1024fr 1440fr 1920fr; gap: 1.6rem; align-items: end; }
+  .wy-shots img { display: block; inline-size: 100%; block-size: auto; border-radius: .6rem; border: .1rem solid var(--line); }
   .wy-fig-label { font-size: var(--small-size); font-weight: 650; }
-  .wy-fig-label + .wy-fig-row { margin-block-start: 1rem; }
-  .wy-fig-row + .wy-fig-label { margin-block-start: 3rem; }
+  .wy-fig-label + .wy-shots { margin-block-start: 1rem; }
+  .wy-shots + .wy-fig-label { margin-block-start: 3rem; }
   .wy-figure figcaption { margin-block-start: 2rem; font-size: var(--small-size); color: var(--muted); }
   .wy-margin { float: inline-end; clear: inline-end; inline-size: var(--wy-rail); margin-inline-end: calc(-1 * (var(--wy-rail) + var(--wy-gap))); margin-block: .6rem 2rem; }
   .wy-crawl-t { margin-block-end: .8rem; font-size: 1.3rem; font-weight: 650; }
@@ -47,14 +48,6 @@
   .wy-stack li { padding: .5rem .8rem; border-radius: .3rem; background: var(--paper); border: .1rem solid var(--line); }
   .wy-stack .is-you { background: var(--accent); border-color: var(--accent); color: var(--on-accent); font-weight: 650; }
   .wy-wrap figcaption { margin-block-start: 1.4rem; font-size: 1.3rem; line-height: 1.45; color: var(--muted); }
-  .f-screen { fill: var(--paper); }
-  .f-edge { fill: none; stroke: var(--line); stroke-width: 1.5; }
-  .f-line { fill: var(--line); }
-  .f-ink { fill: var(--ink); }
-  .f-muted { fill: var(--muted); opacity: .5; }
-  .f-acc { fill: var(--accent); }
-  .f-acc2 { fill: var(--accent); opacity: .25; }
-  .f-card { fill: var(--surface); stroke: var(--line); stroke-width: 1; }
   .wy-sloth { display: flex; justify-content: flex-end; margin-block: 2rem -10.3rem; margin-inline-end: -8rem; pointer-events: none; }
   .wy-sloth svg { inline-size: 20rem; block-size: auto; }
   .wy-last { margin-block-start: 0; padding-block-start: 3rem; border-block-start: .3rem solid var(--ink); font-size: 3.4rem; line-height: 1.25; font-weight: 650; letter-spacing: -.01em; }
