@@ -98,14 +98,16 @@ def check_css(errors):
 
 
 def check_pages(errors):
-    pages = {p: Page(p.read_text(encoding="utf-8")) for p in sorted(ROOT.glob("*.html"))}
+    files = [p for p in sorted(ROOT.rglob("*.html")) if not {".git", ".snap", "tools"} & set(p.relative_to(ROOT).parts)]
+    pages = {p.resolve(): Page(p.read_text(encoding="utf-8")) for p in files}
     for path, page in pages.items():
-        name = path.name
+        name = path.relative_to(ROOT).as_posix()
         errors += [f"{name}: duplicate id {i}" for i in page.duplicates]
         for src in page.scripts + page.styles:
             if urlsplit(src).scheme or urlsplit(src).netloc:
                 errors.append(f"{name}: external script or stylesheet {src}")
-        layers = [layer_of(ROOT / urlsplit(s).path) for s in page.styles if urlsplit(s).path.startswith("css/")]
+        css_paths = [(path.parent / urlsplit(s).path).resolve() for s in page.styles]
+        layers = [layer_of(c) for c in css_paths if (ROOT / "css") in c.parents]
         if not layers or layers[0] != "core" or "theme" not in layers:
             errors.append(f"{name}: link css/core.css first, then a theme")
         if [ORDER.index(l) for l in layers if l] != sorted(ORDER.index(l) for l in layers if l):
@@ -114,7 +116,7 @@ def check_pages(errors):
             url = urlsplit(ref)
             if url.scheme or url.netloc:
                 continue
-            target = path.parent / unquote(url.path) if url.path else path
+            target = (path.parent / unquote(url.path)).resolve() if url.path else path
             if not target.is_file():
                 errors.append(f"{name}: missing target {ref}")
             elif url.fragment and target.suffix == ".html":

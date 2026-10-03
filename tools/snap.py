@@ -4,7 +4,7 @@
   (make changes)
   python3 tools/snap.py diff        # re-shoots the same set, prints only differences, exit 1 if any
 
---css picks the pages that link those files. Default: all pages, all regimes, light scheme.
+--css picks the pages that link those files (paths from the repo root). --pages takes names like templates/pricing. Default: all pages, all regimes, light scheme.
 One width per regime is enough: within a regime the layout only scales.
 """
 import argparse, functools, http.server, json, re, sys, threading
@@ -18,10 +18,14 @@ HIDE = ".load-reading,.viewport-reading output,iframe{visibility:hidden!importan
 
 def pages_for(css):
     names = []
-    for page in sorted(ROOT.glob("*.html")):
+    wanted = {(ROOT / c).resolve() for c in css}
+    for page in sorted(ROOT.rglob("*.html")):
+        rel = page.relative_to(ROOT)
+        if {".git", ".snap", "tools"} & set(rel.parts):
+            continue
         links = re.findall(r'<link rel="stylesheet" href="([^"]+)"', page.read_text(encoding="utf-8"))
-        if not css or any(c in links for c in css):
-            names.append(page.stem)
+        if not css or wanted & {(page.parent / l).resolve() for l in links}:
+            names.append(rel.with_suffix("").as_posix())
     return names
 
 
@@ -47,7 +51,7 @@ def shoot(params, out):
             tab.goto(base + page + ".html")
             tab.add_style_tag(content=HIDE)
             tab.wait_for_timeout(200)
-            tab.screenshot(path=str(out / f"{page}_{regime}_{scheme}.png"), full_page=True)
+            tab.screenshot(path=str(out / f"{page.replace('/', '~')}_{regime}_{scheme}.png"), full_page=True)
             ctx.close()
         browser.close()
     server.shutdown()
