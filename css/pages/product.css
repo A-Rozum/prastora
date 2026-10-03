@@ -1,0 +1,27 @@
+/* Page composition for the product example (Shutter & Crumb). Colour and kit choices are CSS only:
+   :has() reads the checked radio, recolours the camera and swaps the price. */
+@layer page {
+  .pd { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 1.6rem 6rem; align-items: start; }
+  .pd-crumbs { grid-column: 1 / -1; }
+  .pd-buy { position: sticky; inset-block-start: 10rem; }
+  .pd:has(#c-graphite:checked) { --cam-body: var(--graphite); }
+  .pd:has(#c-sage:checked) { --cam-body: var(--sage); }
+  .pd:has(#c-butter:checked) { --cam-body: var(--butter); }
+  .pd-price { display: grid; gap: .4rem; font-size: 4rem; font-weight: 650; line-height: 1.1; font-variant-numeric: tabular-nums; }
+  .pd-price small { font-size: var(--small-size); font-weight: 400; line-height: 1.5; }
+  .pd-price-kit, .pd:has(#k-lens:checked) .pd-price-body { display: none; }
+  .pd:has(#k-lens:checked) .pd-price-kit { display: inline; }
+  .pd-cart { display: grid; grid-template-columns: 12rem minmax(0, 1fr); gap: 1.6rem; align-items: end; }
+  .pd-add { inline-size: 100%; }
+  .pd-notes { display: grid; gap: .6rem; padding-inline-start: 2rem; color: var(--muted); }
+  .pd-h3 { font-size: 2.5rem; }
+  .pd-acc { display: grid; grid-template-columns: 12rem minmax(0, 1fr); gap: 2rem; align-items: center; }
+  .pd-acc svg { inline-size: 100%; block-size: auto; }
+  .pd-acc-price { font-weight: 650; }
+  @media (width <= 50em) {
+    .pd { grid-template-columns: 1fr; }
+    .pd-buy { position: static; }
+    .pd-cart { grid-template-columns: 14rem minmax(0, 1fr); }
+    .pd-acc { grid-template-columns: 16rem minmax(0, 1fr); }
+  }
+}

@@ -13,6 +13,7 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "assets" / "templates"
 SHOTS = {  # name: (selector to start from, colour scheme)
     "landing": (".sb-hero", "dark"),
+    "product": (".pd", "light"),
     "service": ("main", "light"),
     "article": ("main", "light"),
     "pricing": ("#packages", "light"),
