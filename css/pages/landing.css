@@ -40,8 +40,8 @@
   .sb-pipe-end { clip-path: inset(-1rem 0 0 0); }
   .sb-pipe-end::before { content: none; }
   .sb-drop { position: relative; z-index: 2; block-size: 0; margin-block-start: 0; }
-  .sb-outlet { position: absolute; inset-block-start: -60rem; inset-inline-start: -6.4rem; inline-size: 1.8rem; block-size: 52rem; background: linear-gradient(to right, var(--brass-dark), var(--brass) 30%, color-mix(in srgb, var(--brass) 55%, var(--paper)) 48%, var(--brass) 66%, var(--brass-dark)); }
-  .sb-shot { position: absolute; inset-block-start: -8rem; inset-inline-start: -6.4rem; inline-size: 42rem; block-size: 17rem; overflow: visible; pointer-events: none; }
+  .sb-outlet { position: absolute; inset-block-start: -60rem; inset-inline-start: calc(3.6rem - var(--space-inline) - 6rem); inline-size: 1.8rem; block-size: 52rem; background: linear-gradient(to right, var(--brass-dark), var(--brass) 30%, color-mix(in srgb, var(--brass) 55%, var(--paper)) 48%, var(--brass) 66%, var(--brass-dark)); }
+  .sb-shot { position: absolute; inset-block-start: -8rem; inset-inline-start: calc(3.6rem - var(--space-inline) - 6rem); inline-size: 9rem; block-size: 17rem; overflow: visible; pointer-events: none; }
   .sb-capsule { position: absolute; z-index: 1; inset-block-start: 38%; inset-inline-start: 3.8rem; inline-size: 1.4rem; block-size: 3.4rem; border-radius: .7rem; border: .2rem solid var(--brass-dark); background: var(--neon); }
 
   .sb-file { position: relative; padding: 3rem 2.4rem 7rem; border: .1rem solid var(--line); border-radius: 0 var(--radius) var(--radius) var(--radius); background: var(--surface); }
@@ -52,7 +52,9 @@
   .sb-stamp { position: absolute; inset-block-end: 2.2rem; inset-inline-end: 2.4rem; padding: .2rem 1.4rem; border: .3rem solid var(--stamp); border-radius: .4rem; color: var(--stamp); font-size: 2rem; letter-spacing: .14em; text-transform: uppercase; transform: rotate(-7deg); opacity: .85; }
 
   .pricing-plan { background: var(--paper); }
-  .sb-pipe-end .pricing-grid { position: relative; }
+  .sb-price-hit { position: relative; }
+  .sb-flying { position: absolute; inset-block-start: .6rem; inset-inline-start: 9rem; inline-size: 9rem; transform: rotate(30deg); pointer-events: none; }
+  .sb-flying svg { display: block; inline-size: 100%; block-size: auto; }
   .sb-faq { max-inline-size: 84rem; }
   .sb-final { display: grid; justify-items: center; gap: 2.4rem; padding-block: 10rem; text-align: center; background: var(--surface); border-block-start: .5rem solid var(--brass); }
   .sb-final h2 { font-size: 5rem; }
@@ -75,8 +77,8 @@
     .sb-pipe::after { inset-inline-start: 1.9rem; inline-size: 2.3rem; block-size: 1.2rem; }
     .sb-pipe-start::after { inset-block-start: 1.6rem; inset-inline-start: 1.1rem; inline-size: 3.9rem; block-size: 3.6rem; }
     .sb-capsule { inset-inline-start: 2.5rem; inline-size: 1rem; block-size: 2.6rem; }
-    .sb-outlet { inset-inline-start: -5rem; inline-size: 1.3rem; block-size: 54.2rem; }
-    .sb-shot { inset-block-start: -5.8rem; inset-inline-start: -5rem; inline-size: 30.2rem; block-size: 12.2rem; }
+    .sb-outlet { inset-inline-start: calc(2.4rem - var(--space-inline) - 3.4rem); inline-size: 1.3rem; block-size: 54.2rem; }
+    .sb-shot { inset-block-start: -5.8rem; inset-inline-start: calc(2.4rem - var(--space-inline) - 3.4rem); inline-size: 6.47rem; block-size: 12.2rem; }
     .sb-final h2 { font-size: 3.6rem; }
     .sb-final-inner { inline-size: 100%; }
     .sb-big { min-block-size: 6.4rem; font-size: 2.6rem; }
