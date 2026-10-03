@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <script src="../assets/theme-init.js?v=1"></script>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Slowburn, a fictional bug investigation service: a landing page template built with Prastora.">
+  <title>Slowburn – bug investigations (Prastora demo)</title>
+  <link rel="stylesheet" href="../css/core.css">
+  <link rel="stylesheet" href="../css/themes/deco.css">
+  <link rel="stylesheet" href="../css/components/navigation.css">
+  <link rel="stylesheet" href="../css/components/content.css">
+  <link rel="stylesheet" href="../css/components/commerce.css">
+  <link rel="stylesheet" href="../css/components/utility.css">
+  <link rel="stylesheet" href="../css/pages/landing.css">
+  <link rel="stylesheet" href="../css/dev/viewport.css">
+  <script src="../assets/viewport.js?v=2" defer></script>
+  <script src="../assets/interactions.js?v=9" defer></script>
+</head>
+<body>
+  <div class="css-top" data-css-header>
+  <aside class="viewport-panel" data-viewport hidden aria-label="Utility strip">
+    <div class="viewport-tools">
+      <button class="theme-toggle" data-theme-toggle type="button" aria-label="Switch colour theme" hidden><svg class="theme-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg><svg class="theme-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.5A9 9 0 0 1 9.5 3.5a9 9 0 1 0 11 11Z"/></svg></button>
+      <div class="viewport-reading" title="Browser viewport size in CSS pixels"><output data-viewport-value dir="ltr"></output></div>
+    </div>
+    <div class="utility-actions"><span class="language-control"><select aria-label="Language" title="English only for now; other languages are planned"><option value="en" lang="en" selected>English</option><option value="es" lang="es" disabled>Español — soon</option><option value="fr" lang="fr" disabled>Français — soon</option><option value="ar" lang="ar" dir="rtl" disabled>العربية — soon</option></select><svg class="language-arrow" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="m4 6 4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><button type="button" disabled title="Account access is not connected"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="../assets/placeholders.svg#account"/></svg>Sign in</button></div>
+  </aside>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header"><div class="header-inner">
+    <a class="brand" href="#main"><svg viewBox="0 0 64 64" aria-hidden="true"><use href="../assets/slowburn.svg#logo"/></svg>Slowburn</a>
+    <nav class="desktop-nav desktop-only" aria-label="Main navigation"><a href="#how">How it works</a><a href="#features">Features</a><a href="#cases">Cases</a><a href="#rates">Rates</a><a href="#faq">FAQ</a><a class="btn" href="#open">Open a case</a></nav>
+    <details class="mobile-nav mobile-only"><summary>Menu</summary><nav aria-label="Mobile navigation"><a href="#how">How it works</a><a href="#features">Features</a><a href="#cases">Cases</a><a href="#rates">Rates</a><a href="#faq">FAQ</a><a href="#open">Open a case</a></nav></details>
+  </div></header>
+  </div>
+  <main id="main">
+    <section class="section sb-hero">
+      <div class="sb-hero-text stack">
+        <h1>The bug walked in at 2&nbsp;a.m. It had production written all over it.</h1>
+        <p class="lead">Slowburn tracks incidents down the slow, thorough way – through logs, traces and that config file everyone swears they never touched. When we close a case, it stays closed.</p>
+        <div class="flex"><a class="btn" href="#open">Open a case</a><a class="btn btn-secondary" href="#how">See how it works</a></div>
+        <p class="small muted">First case is on the house. The rest we can discuss over coffee.</p>
+      </div>
+      <svg class="sb-window" viewBox="0 0 400 500" role="img" aria-label="A rainy night city seen through an art deco office window"><use href="../assets/slowburn.svg#window"/></svg>
+      <div class="sb-blinds" aria-hidden="true"></div>
+      <svg class="sb-sloth" viewBox="0 0 190 160" aria-hidden="true"><use href="../assets/slowburn.svg#sloth-draped"/></svg>
+    </section>
+
+    <section class="section sb-clients" aria-labelledby="clients-title">
+      <h2 id="clients-title" class="sb-quiet">Trusted by companies that would rather stay anonymous.</h2>
+      <ul class="sb-redacted">
+        <li><span>Client name redacted</span></li><li><span>Client name redacted</span></li><li><span>Client name redacted</span></li><li><span>Client name redacted</span></li><li><span>Client name redacted</span></li>
+      </ul>
+      <p class="small muted">Their lawyers were very clear about this.</p>
+    </section>
+
+    <section class="section sb-pipe sb-pipe-start anchor" id="how">
+      <div class="stack">
+        <h2>How a case gets solved</h2>
+        <ol class="grid grid-3 sb-steps">
+          <li class="stack-small"><h3>The call</h3><p>Tell us what happened. All of it, including the part where someone deployed on a Friday afternoon.</p></li>
+          <li class="stack-small"><h3>The legwork</h3><p>We follow the trail through logs, traces and commit history. Every witness gets questioned, the intern's cron job included.</p></li>
+          <li class="stack-small"><h3>The report</h3><p>A plain account of what broke, why it broke and what keeps it from breaking again. We check DNS first. It's always DNS – until it isn't.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section surface sb-pipe anchor" id="features">
+      <span class="sb-capsule" aria-hidden="true"></span>
+      <div class="stack">
+        <h2>What you get for your money</h2>
+        <div class="grid grid-3">
+          <article class="card stack-small"><h3>Follows the trail</h3><p>Traces from every service stitched into one timeline, so you see what happened in the order it happened. Revolutionary, we know.</p></article>
+          <article class="card stack-small"><h3>Knows everyone in town</h3><p>Plugs into your repositories, chat, CI and monitoring. Has a contact in every department, and none of them ask questions.</p></article>
+          <article class="card stack-small"><h3>Connects the dots</h3><p>Groups incidents that share a cause. The detective calls it the fundamental interconnectedness of all bugs. We've stopped arguing.</p></article>
+          <article class="card stack-small"><h3>Keeps his mouth shut</h3><p>Your data stays in the region you choose, encrypted at rest and in transit. What happens in production stays in production.</p></article>
+          <article class="card stack-small"><h3>Writes it all down</h3><p>Every case ends with a report people actually read: short, clear and free of blame. Blame costs extra.</p></article>
+          <article class="card stack-small"><h3>Works nights</h3><p>Watches your systems around the clock. Sloths are famous for sleeping through most of the day. Not this one, not on shift.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section sb-pipe anchor" id="cases">
+      <span class="sb-capsule" aria-hidden="true"></span>
+      <div class="stack">
+        <h2>Closed cases</h2>
+        <div class="grid grid-3">
+          <article class="sb-file stack-small"><p class="sb-file-no">Case 1187</p><h3>The vanishing checkout</h3><blockquote><p>Orders disappeared every Tuesday at noon. Turned out to be a cron job with ambitions. Fixed before the next Tuesday, which is more than our last vendor managed in a year.</p></blockquote><p class="small">Priya N., head of platform, Hollow Pine Outfitters</p><p class="sb-stamp">Closed</p></article>
+          <article class="sb-file stack-small"><p class="sb-file-no">Case 2040</p><h3>The midnight leak</h3><blockquote><p>Our API put on a gigabyte of memory every night, like a rumour gaining weight. Slowburn found it in a cache we had all forgotten about. We named the fix after the detective.</p></blockquote><p class="small">Marco D., CTO, Tidewater Logistics</p><p class="sb-stamp">Closed</p></article>
+          <article class="sb-file stack-small"><p class="sb-file-no">Case 404</p><h3>The missing page</h3><blockquote><p>Half our readers hit a dead end after the redesign. The trail led to a redirect map written in a hurry and a hope. Solved by lunch – his lunch, which takes a while.</p></blockquote><p class="small">Jo W., product lead, Lantern Books</p><p class="sb-stamp">Closed</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section surface sb-pipe sb-pipe-end anchor" id="rates">
+      <span class="sb-outlet" aria-hidden="true"></span>
+      <div class="stack">
+        <h2>Rates</h2>
+        <p class="lead">Honest rates for honest work. No retainers, no surprises, no small print. The large print is fine.</p>
+        <div class="grid grid-3 pricing-grid">
+          <article class="card pricing-plan"><h3>Small-time</h3><p>For side projects and the occasional mystery.</p><p class="plan-price"><bdi>$0</bdi><small>Free, for as long as you like</small></p><ul><li>One project</li><li>Three open cases at a time</li><li>Seven days of history</li><li>Email support, answered eventually</li></ul><div class="plan-actions"><a class="btn btn-secondary" href="#open">Start for free</a></div></article>
+          <article class="card pricing-plan pricing-featured"><h3>Regular</h3><p>For teams that ship every day and sometimes regret it.</p><p class="plan-price"><bdi>$29</bdi><small>Per seat, per month</small></p><ul><li>Ten projects</li><li>Unlimited open cases</li><li>Ninety days of history</li><li>Traces and every integration</li><li>Support on weekdays, with a pulse</li></ul><div class="plan-actions"><a class="btn" href="#open">Open a case</a></div></article>
+          <article class="card pricing-plan"><h3>The whole city</h3><p>For when you run the city, or at least its payments.</p><p class="plan-price"><bdi>Let's talk</bdi><small>Priced to the size of the trouble</small></p><ul><li>Unlimited everything</li><li>Single sign-on and audit log</li><li>Your own data region</li><li>A detective on call, awake</li></ul><div class="plan-actions"><a class="btn btn-secondary" href="#open">Call the office</a></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section anchor" id="faq">
+      <div class="sb-faq stack">
+        <h2>Questions people ask the detective</h2>
+        <div>
+          <details class="disclosure"><summary>Why a sloth?</summary><p>Fast is how you got into this. We look carefully, change one thing at a time and leave the place tidier than we found it.</p></details>
+          <details class="disclosure"><summary>How slow is slow?</summary><p>Most cases close within a day. Slow is about method, not about your pager going off for a week.</p></details>
+          <details class="disclosure"><summary>Do you need access to production?</summary><p>Read-only, and only to what you allow. The detective doesn't pick locks. Usually.</p></details>
+          <details class="disclosure"><summary>Can we blame the intern?</summary><p>You can. The report will still show who approved the pull request.</p></details>
+          <details class="disclosure"><summary>Is Slowburn real?</summary><p>No. It's a demo template for <a href="../index.html">Prastora</a>, a CSS framework. The sloth abides, though.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section sb-final anchor" id="open">
+      <h2>Every bug has a story. Let's hear yours.</h2>
+      <div class="flex"><a class="btn" href="#open">Open a case</a></div>
+      <p class="small muted">The office is open. The coffee is terrible.</p>
+    </section>
+  </main>
+  <footer class="site-footer section">
+    <div class="grid grid-3">
+      <div class="stack-small"><h3>Slowburn</h3><p class="muted">Bug investigations, established some time ago.</p></div>
+      <nav class="stack-small" aria-label="Footer"><h3>The office</h3><div class="footer-links"><a href="#how">How it works</a><a href="#cases">Cases</a><a href="#rates">Rates</a><a href="#faq">FAQ</a></div></nav>
+      <div class="stack-small"><h3>Fine print</h3><p class="muted">Slowburn is fictional: a landing page template for <a href="../index.html">Prastora</a>. No bugs were harmed.</p></div>
+    </div>
+  </footer>
+</body>
+</html>
