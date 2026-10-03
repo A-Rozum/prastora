@@ -3,7 +3,7 @@
 Pre-product (0.x). Each template stresses something the others don't.
 
 ## First wave
-- **landing** – poster-like composition, artwork across section boundaries (first draft: templates/landing.html)
+- **landing** – poster-like composition, artwork across section boundaries (done: templates/landing.html)
 - **article** – long-form typography: footnotes, tables, quotes
 - **product** – gallery, specs, variants
 - **checkout** – multi-step form, validation, order summary

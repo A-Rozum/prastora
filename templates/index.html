@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <script src="../assets/theme-init.js?v=1"></script>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Complete page templates built with Prastora: a catalogue with previews and filters.">
+  <title>Templates – Prastora</title>
+  <link rel="stylesheet" href="../css/core.css">
+  <link rel="stylesheet" href="../css/themes/default.css">
+  <link rel="stylesheet" href="../css/components/navigation.css">
+  <link rel="stylesheet" href="../css/components/content.css">
+    <link rel="stylesheet" href="../css/components/utility.css">
+  <link rel="stylesheet" href="../css/components/consent.css">
+  <link rel="stylesheet" href="../css/pages/templates.css">
+  <link rel="stylesheet" href="../css/dev/viewport.css">
+  <script src="../assets/viewport.js?v=2" defer></script>
+  <script src="../assets/interactions.js?v=9" defer></script>
+</head>
+<body>
+  <div class="css-top" data-css-header>
+  <aside class="viewport-panel" data-viewport hidden aria-label="Utility strip">
+    <div class="viewport-tools">
+      <button class="theme-toggle" data-theme-toggle type="button" aria-label="Switch colour theme" hidden><svg class="theme-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg><svg class="theme-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.5A9 9 0 0 1 9.5 3.5a9 9 0 1 0 11 11Z"/></svg></button>
+      <div class="viewport-reading" title="Browser viewport size in CSS pixels"><output data-viewport-value dir="ltr"></output></div>
+    </div>
+    <div class="utility-actions"><span class="language-control"><select aria-label="Language" title="English only for now; other languages are planned"><option value="en" lang="en" selected>English</option><option value="es" lang="es" disabled>Español — soon</option><option value="fr" lang="fr" disabled>Français — soon</option><option value="ar" lang="ar" dir="rtl" disabled>العربية — soon</option></select><svg class="language-arrow" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="m4 6 4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><button type="button" disabled title="Account access is not connected"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="../assets/placeholders.svg#account"/></svg>Sign in</button></div>
+  </aside>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header"><div class="header-inner">
+    <a class="brand" href="../index.html"><svg viewBox="0 0 64 64" aria-hidden="true"><use href="../assets/placeholders.svg#logo"/></svg>Prastora</a>
+    <nav class="desktop-nav desktop-only" aria-label="Main navigation"><a href="../index.html">Overview</a><a href="index.html" aria-current="page">Templates</a><a href="../components/index.html">Components</a><a href="../start.html">Starter</a></nav>
+    <details class="mobile-nav mobile-only"><summary>Explore Prastora</summary><nav aria-label="Mobile navigation"><a href="../index.html">Overview</a><a href="index.html" aria-current="page">Templates</a><a href="../components/index.html">Components</a><a href="../start.html">Starter</a></nav></details>
+  </div></header>
+  </div>
+  <main id="main">
+    <section class="section stack">
+      <h1>Pick a page, keep the proportions.</h1>
+      <p class="lead">Complete pages built with Prastora. Each one leans on a different part of the framework, and a couple insist on dressing themselves.</p>
+    </section>
+    <section class="section surface tpl-catalog" aria-label="Template catalogue">
+      <fieldset class="tpl-filter"><legend class="small muted">Show</legend><input type="radio" name="tpl-filter" id="tpl-all" value="all" checked><label for="tpl-all">All</label><input type="radio" name="tpl-filter" id="tpl-own" value="own"><label for="tpl-own">Own design</label><input type="radio" name="tpl-filter" id="tpl-marketing" value="marketing"><label for="tpl-marketing">Marketing</label><input type="radio" name="tpl-filter" id="tpl-editorial" value="editorial"><label for="tpl-editorial">Editorial</label><input type="radio" name="tpl-filter" id="tpl-commerce" value="commerce"><label for="tpl-commerce">Commerce</label><input type="radio" name="tpl-filter" id="tpl-planned" value="planned"><label for="tpl-planned">Planned</label></fieldset>
+      <div class="grid grid-3 tpl-grid">
+        <article class="card tpl-card" data-tags="marketing own">
+          <a class="tpl-link" href="landing.html"><img class="tpl-shot" src="../assets/templates/landing.webp" width="720" height="450" alt="" loading="lazy"><h2>Slowburn landing</h2></a>
+          <p>A noir landing page for a bug-hunting sloth. The artwork crosses section edges and lands in the same spot on every screen.</p>
+          <ul class="tpl-tags"><li class="badge">Marketing</li><li class="badge">Own design</li></ul>
+        </article>
+        <article class="card tpl-card" data-tags="marketing">
+          <a class="tpl-link" href="service.html"><img class="tpl-shot" src="../assets/templates/service.webp" width="720" height="450" alt="" loading="lazy"><h2>Service page</h2></a>
+          <p>A long, structured offer: scope, process, questions and an enquiry form, without turning into a wall of text.</p>
+          <ul class="tpl-tags"><li class="badge">Marketing</li></ul>
+        </article>
+        <article class="card tpl-card" data-tags="editorial">
+          <a class="tpl-link" href="article.html"><img class="tpl-shot" src="../assets/templates/article.webp" width="720" height="450" alt="" loading="lazy"><h2>Long-form article</h2></a>
+          <p>Reading-first typography with notes, quotes, media and a sidebar that knows its place.</p>
+          <ul class="tpl-tags"><li class="badge">Editorial</li></ul>
+        </article>
+        <article class="card tpl-card" data-tags="commerce">
+          <a class="tpl-link" href="pricing.html"><img class="tpl-shot" src="../assets/templates/pricing.webp" width="720" height="450" alt="" loading="lazy"><h2>Pricing</h2></a>
+          <p>Plans side by side, a comparison table and the questions people ask right before they pay.</p>
+          <ul class="tpl-tags"><li class="badge">Commerce</li></ul>
+        </article>
+        <article class="card tpl-card" data-tags="portfolio">
+          <a class="tpl-link" href="gallery.html"><img class="tpl-shot" src="../assets/templates/gallery.webp" width="720" height="450" alt="" loading="lazy"><h2>Gallery</h2></a>
+          <p>Images of every proportion, captions and a grid that keeps its calm when the pictures don't.</p>
+          <ul class="tpl-tags"><li class="badge">Portfolio</li></ul>
+        </article>
+        <article class="card tpl-card" data-tags="marketing">
+          <a class="tpl-link" href="contacts.html"><img class="tpl-shot" src="../assets/templates/contacts.webp" width="720" height="450" alt="" loading="lazy"><h2>Contacts</h2></a>
+          <p>Contact routes, a form with its states, a map and a list of locations.</p>
+          <ul class="tpl-tags"><li class="badge">Business</li></ul>
+        </article>
+        <article class="card tpl-card tpl-planned" data-tags="planned">
+          <div class="tpl-shot tpl-soon" aria-hidden="true">Coming next</div><h2>Product page</h2>
+          <p>Gallery, specs and variants for things people actually want to buy.</p>
+          <ul class="tpl-tags"><li class="badge">Planned</li></ul>
+        </article>
+        <article class="card tpl-card tpl-planned" data-tags="planned">
+          <div class="tpl-shot tpl-soon" aria-hidden="true">Coming next</div><h2>Checkout</h2>
+          <p>A multi-step form that stays calm while someone types in a card number.</p>
+          <ul class="tpl-tags"><li class="badge">Planned</li></ul>
+        </article>
+        <article class="card tpl-card tpl-planned" data-tags="planned">
+          <div class="tpl-shot tpl-soon" aria-hidden="true">Coming next</div><h2>Dashboard</h2>
+          <p>Dense data on its own scale: more numbers on a bigger screen, not bigger numbers.</p>
+          <ul class="tpl-tags"><li class="badge">Planned</li></ul>
+        </article>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer section"><div class="grid grid-3"><div class="stack-small"><h3>Prastora</h3><p class="muted">An evolving CSS framework for predictable layouts across screen sizes.</p></div><nav class="stack-small" aria-label="Examples"><h3>Explore</h3><div class="footer-links"><a href="../index.html">Overview</a><a href="service.html">Layouts</a><a href="article.html">Typography</a><a href="../components/index.html">Patterns</a><a href="../start.html">Starter</a><a href="pricing.html">Pricing</a><a href="gallery.html">Gallery</a><a href="contacts.html">Contacts</a><a href="../experiments.html">Experiments</a></div></nav><div class="stack-small"><h3>Built with the web</h3><p>HTML · CSS · SVG</p><p class="small muted">Core layouts need no JavaScript. Viewport and load-time diagnostics are optional prototyping aids.</p><div><button type="button" class="consent-reopen" data-consent-reopen hidden>Cookie settings</button><p class="small muted" data-consent-status role="status"></p></div></div></div>
+  </footer>
+  <aside class="consent-bar" data-consent-demo hidden aria-label="Cookie preferences">
+    <div class="consent-settings" id="consent-settings" data-consent-settings hidden><p>Cookie preferences · necessary functions stay available.</p><label><input type="checkbox" id="consent-analytics">Analytics</label><label><input type="checkbox" id="consent-marketing">Marketing</label><button type="button" data-consent-save>Save preferences</button></div>
+    <div class="consent-row"><p>We use cookies.<span class="desktop-only"> Choose which data we may collect, or set your preferences in Settings.</span></p><div class="consent-actions"><button type="button" data-consent-accept>Accept all</button><button type="button" data-consent-reject>Necessary only</button><button type="button" data-consent-configure aria-expanded="false" aria-controls="consent-settings">Settings</button></div></div>
+  </aside>
+</body>
+</html>

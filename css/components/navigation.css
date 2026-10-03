@@ -27,7 +27,7 @@
   .brand svg { inline-size: 4rem; block-size: 4rem; }
   .desktop-nav { display: flex; flex-wrap: wrap; gap: 1rem; }
   .desktop-nav a, .mobile-nav a { padding: .8rem 1rem; text-decoration: none; min-block-size: 4.4rem; display: inline-flex; align-items: center; }
-  [aria-current=page] { font-weight: 700; text-decoration: underline !important; }
+  [aria-current=page], :is(.desktop-nav, .mobile-nav) [aria-current=true] { font-weight: 700; text-decoration: underline !important; }
   .demo-note { padding: 1rem var(--space-inline); font-size: var(--small-size); background: var(--surface); color: var(--muted); }
   .site-footer { border-block-start: .1rem solid var(--line); background: var(--surface); }
   .site-footer .footer-links { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem 2rem; }

@@ -1,5 +1,7 @@
 /* Page composition for the overview example. Not part of the framework. */
 @layer page {
+  .showcase-shot { display: block; }
+  .showcase-shot img { inline-size: 100%; block-size: auto; aspect-ratio: 16 / 10; border-radius: var(--radius); border: .1rem solid var(--line); }
   @media (width <= 50em) {
     .overview-examples-grid { --columns: 2; }
     .overview-examples-grid > .card-icon-feature { grid-column: 1 / -1; }
