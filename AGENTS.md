@@ -8,4 +8,4 @@ Deliberate, keep unless told otherwise:
 - CSS lives in css/ by layer: core.css, themes/ (custom properties only), components/, pages/ (demo compositions), dev/ (development aids). Pages link only what they use, in that order.
 
 Gate: `python3 check.py` exits 0.
-Verify in proportion to risk: one width per scale regime is enough unless a change targets a regime boundary.
+Visual check: `tools/snap.py` (base before, diff after). Only pages linking the changed files (--css) and only the regimes the change touches.
