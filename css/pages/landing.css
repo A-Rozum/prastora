@@ -30,6 +30,7 @@
   .sb-steps { padding: 0; list-style: none; counter-reset: step; }
   .sb-steps > li { counter-increment: step; display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: 2rem; row-gap: 1rem; align-items: start; }
   .sb-steps > li > * { grid-column: 2; }
+  .sb-steps h3 { margin-block-start: 1.7rem; }
   .sb-steps > li::before { content: counter(step); grid-row: 1 / span 2; display: block; font-family: var(--font-display, var(--font)); font-size: 6rem; line-height: 1; color: var(--brass); }
 
   .sb-pipe { position: relative; padding-inline-start: calc(var(--space-inline) + 6rem); }
