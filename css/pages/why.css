@@ -1,0 +1,61 @@
+/* Page composition for why.html, the framework's long read. One reading column with a margin for the
+   part labels, a reading-progress bar driven by scroll (no script), pull quotes and one wide figure. */
+@layer page {
+  .wy-progress { position: fixed; z-index: 30; inset-block-start: 0; inset-inline: 0; block-size: .5rem; background: var(--accent); transform-origin: 0 50%; transform: scaleX(0); }
+  @supports (animation-timeline: scroll()) {
+    .wy-progress { animation: wy-read linear both; animation-timeline: scroll(root); }
+  }
+  @keyframes wy-read { to { transform: scaleX(1); } }
+  .wy { --wy-gap: 4rem; display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 7fr) minmax(0, 2fr); column-gap: var(--wy-gap); row-gap: 4rem; padding-block: 8rem 6rem; }
+  .wy-head { grid-column: 2 / -1; display: grid; gap: 1.6rem; }
+  .wy-kicker { color: var(--accent); font-weight: 650; }
+  .wy h1 { font-size: 7rem; line-height: 1.02; letter-spacing: -.02em; }
+  .wy-dek { font-size: 2.4rem; line-height: 1.45; color: var(--muted); max-inline-size: 78rem; }
+  .wy-meta { color: var(--muted); }
+  .wy-toc { grid-column: 1; grid-row: 2; position: sticky; inset-block-start: 14rem; align-self: start; display: grid; gap: 1rem; padding-block-start: 1rem; border-block-start: .3rem solid var(--ink); }
+  .wy-toc p { color: var(--muted); }
+  .wy-toc ol { display: grid; gap: .8rem; margin: 0; padding: 0; list-style: none; counter-reset: part; }
+  .wy-toc li { counter-increment: part; display: grid; grid-template-columns: 2.4rem minmax(0, 1fr); }
+  .wy-toc li::before { content: counter(part); color: var(--accent); font-weight: 650; }
+  .wy-toc a { color: var(--ink); text-decoration: none; }
+  .wy-toc a:hover { text-decoration: underline; }
+  .wy-body { grid-column: 2; grid-row: 2; font-size: 2rem; line-height: 1.72; }
+  .wy-body > * + * { margin-block-start: 2.6rem; }
+  .wy-lede::first-letter { float: inline-start; margin: .5rem 1.2rem 0 0; font-size: 9rem; line-height: .8; font-weight: 700; color: var(--accent); }
+  .wy-break { display: flex; align-items: center; gap: 2rem; margin-block: 7rem 4rem; color: var(--muted); font-size: var(--small-size); scroll-margin-block-start: 14rem; }
+  .wy-break::before, .wy-break::after { content: ''; flex: 1; border-block-start: .1rem solid var(--line); }
+  .wy-pull { margin-block: 6rem; margin-inline: -6rem -10rem; padding-inline-start: 3rem; border-inline-start: .6rem solid var(--accent); }
+  .wy-pull p { font-size: 4rem; line-height: 1.2; font-weight: 650; letter-spacing: -.01em; }
+  .wy-figure { margin-block: 6rem; margin-inline: calc(-1 * (4rem + 6rem)) calc(-1 * (var(--wy-gap) + 16rem)); padding: 3rem; border-radius: var(--radius); background: var(--surface); }
+  .wy-fig-row { display: block; inline-size: 100%; block-size: auto; }
+  .wy-fig-label { font-size: var(--small-size); font-weight: 650; }
+  .wy-fig-label + .wy-fig-row { margin-block-start: 1rem; }
+  .wy-fig-row + .wy-fig-label { margin-block-start: 3rem; }
+  .wy-figure figcaption { margin-block-start: 2rem; font-size: var(--small-size); color: var(--muted); }
+  .f-screen { fill: var(--paper); }
+  .f-edge { fill: none; stroke: var(--line); stroke-width: 1.5; }
+  .f-line { fill: var(--line); }
+  .f-ink { fill: var(--ink); }
+  .f-muted { fill: var(--muted); opacity: .5; }
+  .f-acc { fill: var(--accent); }
+  .f-acc2 { fill: var(--accent); opacity: .25; }
+  .f-card { fill: var(--surface); stroke: var(--line); stroke-width: 1; }
+  .wy-sloth { display: flex; justify-content: flex-end; margin-block: 2rem -10.3rem; margin-inline-end: -8rem; pointer-events: none; }
+  .wy-sloth svg { inline-size: 20rem; block-size: auto; }
+  .wy-last { margin-block-start: 0; padding-block-start: 3rem; border-block-start: .3rem solid var(--ink); font-size: 3.4rem; line-height: 1.25; font-weight: 650; letter-spacing: -.01em; }
+  .wy-next { grid-column: 2; display: grid; gap: 1.2rem; padding-block-start: 4rem; }
+  @media (width <= 50em) {
+    .wy { grid-template-columns: minmax(0, 1fr); padding-block: 5rem 4rem; }
+    .wy-head, .wy-body, .wy-next, .wy-toc { grid-column: 1; }
+    .wy-toc { grid-row: auto; position: static; }
+    .wy-body { grid-row: auto; font-size: 2.3rem; }
+    .wy h1 { font-size: 5rem; }
+    .wy-dek { font-size: 2.6rem; }
+    .wy-pull { margin-inline: 0; padding-inline-start: 2rem; }
+    .wy-pull p { font-size: 3.2rem; }
+    .wy-figure { margin-inline: 0; padding: 2rem; }
+    .wy-sloth { margin-inline-end: 0; margin-block-end: -8.24rem; }
+    .wy-sloth svg { inline-size: 16rem; }
+    .wy-last { font-size: 3rem; padding-inline-end: 12rem; }
+  }
+}
