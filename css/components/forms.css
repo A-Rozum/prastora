@@ -8,7 +8,7 @@
   .rail-contact-row label { font-size: var(--small-size); }
   .contact-form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; }
   .contact-form-grid > * { min-inline-size: 0; }
-  @media (max-width: 50em) {
+  @media (width <= 50em) {
     .contact-form-grid { grid-template-columns: minmax(0, 1fr); }
   }
 }

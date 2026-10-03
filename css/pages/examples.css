@@ -44,9 +44,9 @@
   .story-row > * { min-inline-size: 0; }
   .story-row h3 { font-size: 2.2rem; }
   .story-row .media { --media-ratio: 1; }
-  @media (max-width: 50em) {
+  .story-row p { text-wrap: pretty; }
+  @media (width <= 50em) {
     .context-layout { grid-template-columns: minmax(0, 1fr); }
-    .context-sidebar { display: none; }
     .heading-sample { max-inline-size: 100%; }
   }
   @media print {
@@ -55,5 +55,4 @@
     body { padding-block-end: 0; }
     .component-resizable { resize: none; overflow: visible; }
   }
-  .story-row p { text-wrap: pretty; }
 }

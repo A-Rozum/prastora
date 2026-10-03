@@ -21,10 +21,6 @@
   .specs dt { color: var(--muted); }
   .specs dd { margin: 0; }
   .aligned > .card > ul { list-style: none; padding: 0; }
-  @media print {
-    .btn { display: none; }
-    .card { break-inside: avoid; }
-  }
   .lead, .card > p:not(.eyebrow, .sample-label, .paragraph-sample, .price), .card-flex > p { text-wrap: pretty; }
   .eyebrow { font-size: var(--small-size); text-transform: uppercase; letter-spacing: .1em; color: var(--muted); }
   .hero { align-items: center; }
@@ -53,6 +49,27 @@
   .related-list p { margin-block-start: .5rem; font-size: var(--small-size); color: var(--muted); }
   .prose .related-list { padding: 0; }
   .prose .related-list li + li { margin-block-start: 0; }
+  .code { max-inline-size: 100%; margin: 0; padding: 2rem; border: .1rem solid var(--line); border-radius: var(--radius); background: var(--paper); white-space: pre-wrap; overflow-wrap: anywhere; font-size: var(--small-size); }
+  .media-link { display: block; inline-size: 100%; line-height: 0; border-radius: var(--radius); }
+  .media-link > .media { display: block; }
+  @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+    :where(.btn, .brand, .desktop-nav a, .mobile-nav > summary, .mobile-nav nav a, .footer-links a, .catalog-nav a, .card a, .media-link) { transition: transform .16s ease; }
+    .card a:not(.btn), .footer-links a { display: inline-block; }
+    :where(.btn, .brand, .desktop-nav a, .mobile-nav > summary, .mobile-nav nav a, .footer-links a, .catalog-nav a, .card a, .media-link):not(:disabled):hover { transform: scale(1.03); }
+    .brand { transform-origin: left center; }
+    .brand:dir(rtl) { transform-origin: right center; }
+    .mobile-nav > summary, .mobile-nav nav a, .language-control { transform-origin: right center; }
+    :is(.mobile-nav > summary, .mobile-nav nav a, .language-control):dir(rtl) { transform-origin: left center; }
+  }
+  .contact-facts { margin: 0; }
+  .contact-facts > div { padding-block: 1.5rem; border-block-end: .1rem solid var(--line); }
+  .contact-facts dt { font-weight: 650; }
+  .contact-facts dd { margin: .5rem 0 0; }
+  @media (width <= 50em) {
+    .icon-heading-reserved .icon { block-size: 6.44rem; }
+    .grid-compact .card { --card-space: 1.5rem; }
+    .grid-compact h3 { font-size: 2.5rem; }
+  }
   @media (width > 50em) {
     .callout > div:last-child { display: flex; justify-content: center; align-items: center; }
     .prose-action { margin-block-start: 2rem; }
@@ -66,25 +83,8 @@
     .disclosure:dir(rtl) > summary::before { transform: rotate(225deg); }
     .disclosure[open] > summary::before { transform: rotate(135deg); }
   }
-  .code { max-inline-size: 100%; margin: 0; padding: 2rem; border: .1rem solid var(--line); border-radius: var(--radius); background: var(--paper); white-space: pre-wrap; overflow-wrap: anywhere; font-size: var(--small-size); }
-  .media-link { display: block; inline-size: 100%; line-height: 0; border-radius: var(--radius); }
-  .media-link > .media { display: block; }
-  @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
-    :where(.btn, .brand, .desktop-nav a, .mobile-nav > summary, .mobile-nav nav a, .footer-links a, .catalog-nav a, .card a, .media-link) { transition: transform .16s ease; }
-    .card a:not(.btn), .footer-links a { display: inline-block; }
-    :where(.btn, .brand, .desktop-nav a, .mobile-nav > summary, .mobile-nav nav a, .footer-links a, .catalog-nav a, .card a, .media-link):not(:disabled):hover { transform: scale(1.03); }
-    .brand { transform-origin: left center; }
-    .brand:dir(rtl) { transform-origin: right center; }
-    .mobile-nav > summary, .mobile-nav nav a, .language-control { transform-origin: right center; }
-    :is(.mobile-nav > summary, .mobile-nav nav a, .language-control):dir(rtl) { transform-origin: left center; }
+  @media print {
+    .btn { display: none; }
+    .card { break-inside: avoid; }
   }
-  @media (max-width: 50em) {
-    .icon-heading-reserved .icon { block-size: 6.44rem; }
-    .grid-compact .card { --card-space: 1.5rem; }
-    .grid-compact h3 { font-size: 2.5rem; }
-  }
-  .contact-facts { margin: 0; }
-  .contact-facts > div { padding-block: 1.5rem; border-block-end: .1rem solid var(--line); }
-  .contact-facts dt { font-weight: 650; }
-  .contact-facts dd { margin: .5rem 0 0; }
 }

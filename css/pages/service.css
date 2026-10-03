@@ -1,11 +1,7 @@
 /* Page composition for the service example. Not part of the framework. */
 @layer page {
-  .form-art { display: none; }
+  .form-art { --media-ratio: 16 / 9; }
   @media (width > 50em) {
     .service-intro { padding-block-start: 0; }
-    .form-art { display: block; --media-ratio: 16 / 9; }
-  }
-  @media (max-width: 50em) {
-    .form-art { display: none; }
   }
 }

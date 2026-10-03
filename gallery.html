@@ -12,7 +12,6 @@
   <link rel="stylesheet" href="css/components/gallery.css">
   <link rel="stylesheet" href="css/components/utility.css">
   <link rel="stylesheet" href="css/components/consent.css">
-  <link rel="stylesheet" href="css/pages/gallery.css">
   <link rel="stylesheet" href="css/dev/viewport.css">
   <script src="assets/viewport.js?v=2" defer></script>
   <script src="assets/interactions.js?v=9" defer></script>
@@ -29,8 +28,8 @@
   <a class="skip" href="#main">Skip to content</a>
   <header class="site-header"><div class="header-inner">
     <a class="brand" href="index.html"><svg viewBox="0 0 64 64" aria-hidden="true"><use href="assets/placeholders.svg#logo"/></svg>Prastora</a>
-    <nav class="desktop-nav" aria-label="Main navigation"><a href="index.html">Overview</a><a href="service.html">Layouts</a><a href="article.html">Typography</a><a href="catalog.html">Patterns</a><a href="product.html">Starter</a><a href="pricing.html">Pricing</a><a href="gallery.html" aria-current="page">Gallery</a><a href="contacts.html">Contacts</a></nav>
-    <details class="mobile-nav"><summary>Explore Prastora</summary><nav aria-label="Mobile navigation"><a href="index.html">Overview</a><a href="service.html">Layouts</a><a href="article.html">Typography</a><a href="catalog.html">Patterns</a><a href="product.html">Starter</a><a href="pricing.html">Pricing</a><a href="gallery.html" aria-current="page">Gallery</a><a href="contacts.html">Contacts</a></nav></details>
+    <nav class="desktop-nav desktop-only" aria-label="Main navigation"><a href="index.html">Overview</a><a href="service.html">Layouts</a><a href="article.html">Typography</a><a href="catalog.html">Patterns</a><a href="product.html">Starter</a><a href="pricing.html">Pricing</a><a href="gallery.html" aria-current="page">Gallery</a><a href="contacts.html">Contacts</a></nav>
+    <details class="mobile-nav mobile-only"><summary>Explore Prastora</summary><nav aria-label="Mobile navigation"><a href="index.html">Overview</a><a href="service.html">Layouts</a><a href="article.html">Typography</a><a href="catalog.html">Patterns</a><a href="product.html">Starter</a><a href="pricing.html">Pricing</a><a href="gallery.html" aria-current="page">Gallery</a><a href="contacts.html">Contacts</a></nav></details>
   </div></header>
   </div>
   <main id="main">
@@ -45,7 +44,7 @@
         <figure class="gallery-wide"><a class="media-link" href="catalog.html" aria-label="Explore patterns with the Shapes in balance illustration"><svg class="media" viewBox="0 0 640 480" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="assets/gallery.svg#composition"/></svg></a><figcaption class="gallery-caption stack-small"><h3>Shapes in balance</h3><p class="small muted">An alternative to repeating the same image card.</p><a href="catalog.html">Explore patterns</a></figcaption></figure>
       </div>
     </section>
-    <section class="section gallery-feature anchor" id="featured"><figure class="stack-small gallery-repeat"><svg class="media" viewBox="0 0 640 480" role="img" aria-label="Abstract composition of a warm arch, a teal circle and a dark triangle"><use href="assets/gallery.svg#composition"/></svg><figcaption class="small muted">Shapes in balance · uncropped local SVG artwork.</figcaption></figure><div class="stack"><p class="eyebrow">A closer look</p><h2>Let one image lead the section.</h2><p class="text-pretty">A gallery does not have to stop at a grid. A larger image can share a section with its context, materials or a route to the next page.</p><p class="text-pretty">The artwork stays crisp as the layout scales. The caption remains part of the reading flow rather than appearing only on hover.</p><a class="btn btn-secondary" href="article.html#media">Read the media guide</a></div></section>
+    <section class="section gallery-feature anchor" id="featured"><figure class="stack-small desktop-only"><svg class="media" viewBox="0 0 640 480" role="img" aria-label="Abstract composition of a warm arch, a teal circle and a dark triangle"><use href="assets/gallery.svg#composition"/></svg><figcaption class="small muted">Shapes in balance · uncropped local SVG artwork.</figcaption></figure><div class="stack"><p class="eyebrow">A closer look</p><h2>Let one image lead the section.</h2><p class="text-pretty">A gallery does not have to stop at a grid. A larger image can share a section with its context, materials or a route to the next page.</p><p class="text-pretty">The artwork stays crisp as the layout scales. The caption remains part of the reading flow rather than appearing only on hover.</p><a class="btn btn-secondary" href="article.html#media">Read the media guide</a></div></section>
     <section class="section pair anchor" id="missing-media"><div class="stack"><h2>Keep the destination useful when an image is missing.</h2><p>The title, explanation and link should survive without the artwork. This deliberate placeholder demonstrates the state without requesting a broken image.</p></div><article class="card stack"><h3>When an image is unavailable</h3><div class="card surface stack-small"><p>Image unavailable</p><p class="small muted">The title and destination remain useful without the artwork.</p></div><a href="product.html">Explore the starter</a></article></section>
     <section class="section surface pair anchor" id="gallery-notes"><div class="stack"><h2>Useful media, without a heavy gallery engine.</h2><p class="text-pretty">The composition uses CSS Grid, figures and ordinary links. Add a lightbox or filtering only when the content genuinely needs those behaviours.</p><a href="product.html#setup">Start with the page structure</a></div><div>
       <details class="disclosure" name="gallery-questions"><summary>How do the proportions change?</summary><p>Desktop uses four grid columns, with two artworks spanning a pair of columns. Mobile uses two columns and gives the wider artworks their own row. The source order stays the same.</p></details>
@@ -57,7 +56,7 @@
   </footer>
   <aside class="consent-bar" data-consent-demo hidden aria-label="Cookie preferences">
     <div class="consent-settings" id="consent-settings" data-consent-settings hidden><p>Cookie preferences · necessary functions stay available.</p><label><input type="checkbox" id="consent-analytics">Analytics</label><label><input type="checkbox" id="consent-marketing">Marketing</label><button type="button" data-consent-save>Save preferences</button></div>
-    <div class="consent-row"><p>We use cookies.<span class="consent-desktop-copy"> Choose which data we may collect, or set your preferences in Settings.</span></p><div class="consent-actions"><button type="button" data-consent-accept>Accept all</button><button type="button" data-consent-reject>Necessary only</button><button type="button" data-consent-configure aria-expanded="false" aria-controls="consent-settings">Settings</button></div></div>
+    <div class="consent-row"><p>We use cookies.<span class="desktop-only"> Choose which data we may collect, or set your preferences in Settings.</span></p><div class="consent-actions"><button type="button" data-consent-accept>Accept all</button><button type="button" data-consent-reject>Necessary only</button><button type="button" data-consent-configure aria-expanded="false" aria-controls="consent-settings">Settings</button></div></div>
   </aside>
 </body>
 </html>
