@@ -2,6 +2,8 @@
 
 Pre-product (0.x). Each template stresses something the others don't.
 
+0.2.0 is done when the first wave is finished, the older pages follow the current logic of the project, and the site can be shown to a sceptical user of such tools.
+
 ## First wave
 - **landing** – poster-like composition, artwork across section boundaries (done: templates/landing.html)
 - **article** – long-form typography: footnotes, tables, quotes
