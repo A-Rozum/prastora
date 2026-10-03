@@ -1,11 +1,13 @@
 # Prastora
 
-Prastora is a small experimental CSS toolkit built around one idea: let the whole page scale with the screen.
+Prastora is an experimental CSS toolkit for layouts that scale as a whole.
 
-Most websites keep their content in a fixed-width column. On a large monitor it turns into an island surrounded by empty space, and text that feels right on a laptop is too small on a TV. Prastora ties the root font size to the viewport width instead, so typography, spacing and layout keep the same proportions at any size. A few scale regimes – phone, desktop, large screen – change the composition where proportional scaling alone isn't enough.
+Responsive layouts usually adapt to the screen by rearranging their elements: columns stretch, text rewraps and elements shift relative to each other. But with so many devices, browsers and browser versions, side panels and extensions in use, the visible area of a page can take an enormous number of width and height combinations – and ideally each one needs checking.
 
-It's plain HTML and CSS: no build step, no dependencies, and pages work without JavaScript.
+Prastora builds the composition differently. It replaces this zoo of possible states with a few stable modes for different classes of device – phone, tablet, desktop, large display – in which the composition depends, in essence, on a single parameter. This gives the developer a clear picture of how elements will be positioned and proportioned in each case, without extensive testing.
 
-See it in action: https://a-rozum.github.io/prastora/
+Within each mode the page scales as a whole, much like a vector image: as elements change size, their proportions and relative positions stay the same. This makes possible techniques that fluid layouts cannot deliver, or cannot deliver reliably – graphics locked to text, compositions that cross section boundaries and more. The page ends up working as a single, coherent image.
 
-Prastora is early and still changing. Ideas and feedback are welcome.
+Examples: https://a-rozum.github.io/prastora/
+
+Usage instructions, including how to add Prastora to a project, will follow later.
