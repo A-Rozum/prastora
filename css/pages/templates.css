@@ -9,9 +9,10 @@
   .tpl-card { display: flex; flex-direction: column; gap: 1.2rem; padding: 1.2rem 1.2rem 2rem; }
   .tpl-card > :not(.tpl-link), .tpl-link h2 { margin-inline: .8rem; }
   .tpl-link { display: grid; gap: 1.6rem; color: inherit; text-decoration: none; }
-  .tpl-link h2 { font-size: 2.4rem; }
+  .tpl-card h2 { font-size: 2.4rem; }
   .tpl-link:hover h2, .tpl-link:focus-visible h2 { text-decoration: underline; text-underline-offset: .2em; }
   .tpl-shot { display: block; inline-size: 100%; block-size: auto; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; border-radius: calc(var(--radius) * .75); border: .1rem solid var(--line); }
+  .tpl-link .tpl-shot { margin-inline-start: .8rem; }
   .tpl-soon { display: grid; place-items: center; border-style: dashed; color: var(--muted); background: var(--surface); }
   .tpl-planned { opacity: .75; }
   .tpl-tags { display: flex; flex-wrap: wrap; gap: .6rem; margin-block-start: auto; padding: 0; list-style: none; }
