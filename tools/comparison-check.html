@@ -11,6 +11,19 @@
 <section><h2>short: 844 × 390</h2><iframe id="short" title="short" width="844" height="390" src="../templates/comparison.html?check=compact#compare"></iframe></section>
 <section><h2>text: 1024 × 768 · 150% text only</h2><iframe id="text" title="text" width="1024" height="768" src="../templates/comparison.html?check=compact#compare"></iframe></section>
 <script>
+// Optional cache refresh for test frames only; production stylesheet links stay unversioned.
+const fresh = new URLSearchParams(location.search).get('fresh');
+if (fresh) {
+  for (const frame of document.querySelectorAll('iframe')) {
+    frame.addEventListener('load', () => {
+      for (const link of frame.contentDocument.querySelectorAll('link[rel="stylesheet"]')) {
+        const url = new URL(link.href);
+        url.searchParams.set('qa', fresh);
+        link.href = url.href;
+      }
+    });
+  }
+}
 // Test harness only. Capture every original size before applying user-style overrides.
 const textFrame = document.querySelector('#text');
 textFrame.addEventListener('load', () => {
