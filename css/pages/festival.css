@@ -104,7 +104,7 @@
     .of-timetable, .of-program:has(#stage-yard:checked, #stage-platform:checked, #stage-waiting:checked) .of-timetable { display: grid; grid-template-columns: minmax(0, 1fr); grid-template-rows: none; gap: 1.5rem; }
     .of-axis, .of-stage-label, .of-stage-track { display: none; }
     .of-set, .of-program:has(#stage-yard:checked, #stage-platform:checked, #stage-waiting:checked) .of-set { grid-column: auto; grid-row: auto; margin: 0; }
-    .of-set > summary { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: .7rem 2rem; padding: 2rem; }
+    .of-set > summary { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: .7rem 2rem; padding: 2rem; block-size: auto; }
     .of-set-time { grid-column: 1; font-size: var(--small-size); }
     .of-set strong { grid-column: 1 / -1; grid-row: 2; font-size: 2.6rem; }
     .of-set-stage { display: block; grid-column: 1; font-size: var(--small-size); }
