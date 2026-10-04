@@ -1,0 +1,7 @@
+/* Tandem palette. Geometry belongs to the core and page layers. */
+@layer theme {
+  :root { color-scheme: light; --radius: 1.2rem; --ink: #20202c; --muted: #62616f; --paper: #fcfcff; --surface: #f0eff6; --line: #dad8e5; --accent: #6450cf; --on-accent: #ffffff; --featured: #f1edff; --success: #246955; --error: #a53448; --utility-surface: #ecebf4; --utility-line: #d3d0e1; --shadow: #24203b18; }
+  @media (prefers-color-scheme: dark) { :root { color-scheme: dark; --ink: #eeeaf8; --muted: #b5afc5; --paper: #1c1b26; --surface: #242231; --line: #454053; --accent: #b9a8ff; --on-accent: #241b43; --featured: #302841; --success: #93d8b6; --error: #ffb2bc; --utility-surface: #292635; --utility-line: #474153; --shadow: #00000050; } }
+  :root[data-scheme=light] { color-scheme: light; --ink: #20202c; --muted: #62616f; --paper: #fcfcff; --surface: #f0eff6; --line: #dad8e5; --accent: #6450cf; --on-accent: #ffffff; --featured: #f1edff; --success: #246955; --error: #a53448; --utility-surface: #ecebf4; --utility-line: #d3d0e1; --shadow: #24203b18; }
+  :root[data-scheme=dark] { color-scheme: dark; --ink: #eeeaf8; --muted: #b5afc5; --paper: #1c1b26; --surface: #242231; --line: #454053; --accent: #b9a8ff; --on-accent: #241b43; --featured: #302841; --success: #93d8b6; --error: #ffb2bc; --utility-surface: #292635; --utility-line: #474153; --shadow: #00000050; }
+}

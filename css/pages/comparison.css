@@ -1,0 +1,157 @@
+/* Tandem comparison demo. State lives in native controls; no page script.
+   The table keeps its composition in an explicitly scrollable region.
+   Sticky row/column headers share that one scroll ancestor.
+   No colspan: every header band obeys the same plan visibility as the data. */
+@layer page {
+  .tm { --comparison-text: 2rem; --feature-width: 26rem; --plan-width: 20rem; }
+  .tm-wordmark-dot, .tm-hero h1 em { color: var(--accent); }
+  .tm-wordmark-dot { margin-inline-start: -.8rem; }
+  .tm-hero { display: grid; grid-template-columns: 1.1fr 1fr; align-items: center; gap: 6rem; padding-block: 7rem; background: radial-gradient(ellipse at 95% 0%, var(--featured), transparent 65%); }
+  .tm-hero-copy { gap: 2.2rem; }
+  .tm-hero h1 { font-size: 6.8rem; letter-spacing: -.045em; line-height: 1.05; }
+  .tm-hero h1 em { font-style: normal; }
+  .tm-hero .lead { font-size: 2.1rem; }
+  .tm-text-link { justify-self: start; font-weight: 650; text-decoration: none; border-block-end: .15rem solid var(--accent); padding-block: .8rem; }
+  .tm-text-link span { margin-inline-start: 2rem; }
+  .tm-board { padding: 2.5rem; border: .1rem solid var(--line); border-radius: 2rem; background: var(--paper); box-shadow: 0 2rem 5rem var(--shadow); transform: rotate(-2deg); }
+  .tm-board figcaption { display: flex; align-items: center; gap: 1.2rem; padding-block-end: 2rem; font-size: 2rem; font-weight: 650; }
+  .tm-board figcaption small { display: block; font-size: var(--small-size); font-weight: 400; color: var(--muted); }
+  .tm-board-icon { display: grid; place-items: center; inline-size: 4.5rem; block-size: 4.5rem; flex: none; background: var(--featured); color: var(--accent); border-radius: 1rem; font-size: 3rem; }
+  .tm-avatars { margin-inline-start: auto; border-radius: 4rem; padding: .6rem 1rem; border: .1rem solid var(--line); font-size: 1.2rem; white-space: nowrap; }
+  .tm-board-columns { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; }
+  .tm-board-columns > div { background: var(--surface); border-radius: 1rem; padding: 1rem; }
+  .tm-board-label { display: flex; justify-content: space-between; font-size: var(--small-size); color: var(--muted); padding: .4rem; }
+  .tm-task { display: grid; gap: 1rem; padding: 1.4rem; border-radius: .8rem; background: var(--paper); border: .1rem solid var(--line); }
+  .tm-task strong { font-size: 1.8rem; line-height: 1.4; }
+  .tm-task-tag { justify-self: start; border-radius: .4rem; padding: .2rem .6rem; background: var(--featured); color: var(--accent); font-size: 1.2rem; }
+  .tm-task-done .tm-task-tag { background: var(--surface); color: var(--success); }
+  .tm-progress { block-size: .5rem; border-radius: 1rem; background: var(--surface); }
+  .tm-progress span { display: block; inline-size: 70%; block-size: 100%; border-radius: inherit; background: var(--accent); }
+  .tm-board-note { align-self: center; padding: 2rem 1rem; font-size: 1.6rem; color: var(--muted); }
+  .tm-board-bottom { margin-block-start: 2rem; font-size: var(--small-size); color: var(--muted); }
+  .tm-comparison { --free: 1; --studio: 1; --team: 1; --enterprise: 1; --plan-count: calc(var(--free) + var(--studio) + var(--team) + var(--enterprise)); background: var(--surface); }
+  .tm-comparison-heading { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 3rem; padding-block-end: 3rem; }
+  .tm-cycle { align-items: center; gap: .5rem; }
+  .tm-cycle legend { position: absolute; inline-size: .1rem; block-size: .1rem; overflow: hidden; clip-path: inset(50%); }
+  .tm-cycle label { padding: 1rem 1.6rem; }
+  .tm-saving { display: inline-block; margin-inline-start: .6rem; font-size: var(--small-size); font-weight: 650; color: var(--success); }
+  .tm-controls { display: flex; flex-wrap: wrap; gap: 2rem; justify-content: space-between; align-items: end; padding-block-end: 1.5rem; }
+  .tm-visibility { gap: .8rem; }
+  .tm-visibility label { display: flex; align-items: center; gap: .8rem; }
+  .tm-visibility input:not(:checked) + label { color: var(--muted); background: var(--surface); }
+  .tm-visibility input:not(:checked) + label span { visibility: hidden; }
+  .tm-reading { padding-block: 1rem; color: var(--muted); }
+  .tm-scroll-hint { color: var(--muted); font-size: var(--small-size); margin-block-end: 1.6rem; }
+  .tm-scroll { overflow: auto; block-size: 68rem; border: .1rem solid var(--line); border-radius: 1.2rem; background: var(--paper); overscroll-behavior: contain; scrollbar-gutter: stable; }
+  .tm-table { table-layout: fixed; border-collapse: separate; border-spacing: 0; font-size: var(--comparison-text); inline-size: 100%; min-inline-size: calc(var(--feature-width) + var(--plan-count) * var(--plan-width)); }
+  .tm-table th, .tm-table td { padding: 1.6rem 1.5rem; line-height: 1.45; vertical-align: middle; border-block-end: .1rem solid var(--line); border-inline-end: .1rem solid var(--line); background: var(--paper); overflow-wrap: anywhere; }
+  .tm-table td, .tm-table th[data-plan] { text-align: center; }
+  .tm-table tr > :last-child { border-inline-end: 0; }
+  .tm-table tr > th:first-child { inline-size: var(--feature-width); position: sticky; inset-inline-start: 0; z-index: 2; text-align: start; box-shadow: .4rem 0 .8rem var(--shadow); }
+  .tm-table thead th { position: sticky; inset-block-start: 0; z-index: 3; vertical-align: top; padding: 2rem 1.5rem; color: var(--ink); font-size: inherit; border-block-end-width: .2rem; }
+  .tm-table thead th:first-child { z-index: 4; }
+  .tm-table [data-plan=team] { background: var(--featured); }
+  .tm-table thead [data-plan=team] { box-shadow: inset 0 .4rem var(--accent); }
+  .tm-table-intro { display: grid; gap: 1.5rem; padding-block-start: 3.5rem; }
+  .tm-table-intro h3 { font-size: 2.6rem; }
+  .tm-table-intro p { font-size: 1.6rem; font-weight: 400; color: var(--muted); }
+  .tm-plan { gap: 1rem; font-weight: 400; }
+  .tm-plan h3 { font-size: 2.5rem; }
+  .tm-plan-tag { font-size: 1.2rem; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+  .tm-plan [class] { justify-self: stretch; }
+  .tm-plan-description { min-block-size: 5.2rem; font-size: 1.5rem; color: var(--muted); }
+  .tm-price { font-size: 4.6rem; font-weight: 650; line-height: 1.2; letter-spacing: -.05em; }
+  .tm-price-unit { display: block; font-size: 1.3rem; color: var(--muted); }
+  .tm-contact-price { display: block; font-size: 2.9rem; font-weight: 650; min-block-size: 7rem; align-content: center; }
+  .tm-billing-note { min-block-size: 3rem; font-size: 1.2rem; color: var(--muted); }
+  .tm-plan .btn { padding: .9rem .7rem; font-size: 1.6rem; }
+  .tm-monthly { display: none; }
+  .tm:has(#monthly:checked) .tm-annual { display: none; }
+  .tm:has(#monthly:checked) .tm-monthly { display: inline; }
+  .tm-comparison:has(#show-free:not(:checked)) { --free: 0; }
+  .tm-comparison:has(#show-studio:not(:checked)) { --studio: 0; }
+  .tm-comparison:has(#show-team:not(:checked)) { --team: 0; }
+  .tm-comparison:has(#show-enterprise:not(:checked)) { --enterprise: 0; }
+  .tm-comparison:has(#show-free:not(:checked)) [data-plan=free],
+  .tm-comparison:has(#show-studio:not(:checked)) [data-plan=studio],
+  .tm-comparison:has(#show-team:not(:checked)) [data-plan=team],
+  .tm-comparison:has(#show-enterprise:not(:checked)) [data-plan=enterprise] { display: none; }
+  .tm-empty { display: none; padding: 4rem; }
+  .tm-comparison:not(:has(.tm-visibility input:checked)) .tm-scroll { display: none; }
+  .tm-comparison:not(:has(.tm-visibility input:checked)) .tm-empty { display: grid; }
+  .tm:has(#larger-text:checked) { --comparison-text: 2.5rem; --feature-width: 30rem; --plan-width: 24rem; }
+  .tm-table tbody .tm-group > * { background: var(--surface); padding-block: 1.2rem; }
+  .tm-group label { display: flex; align-items: center; gap: 1rem; cursor: pointer; font-size: 1.8rem; }
+  .tm-group small { display: block; font-size: 1.2rem; font-weight: 400; color: var(--muted); }
+  .tm-chevron { display: inline-block; font-size: 2rem; transform: rotate(-90deg); }
+  .tm-group-toggle:checked + label .tm-chevron { transform: none; }
+  .tm-group-toggle:focus-visible + label { outline: .25rem solid var(--accent); outline-offset: .3rem; border-radius: .4rem; }
+  .tm-table tbody:has(.tm-group-toggle:not(:checked)) .tm-feature-row { display: none; }
+  .tm-feature-row th { font-weight: 500; }
+  .tm-yes { color: var(--success); font-weight: 700; }
+  .tm-no { color: var(--muted); }
+  .tm-cell-help { display: inline-flex; align-items: center; justify-content: center; gap: .7rem; border: 0; padding: .5rem .3rem; background: none; color: var(--ink); font: inherit; }
+  .tm-info { display: inline-grid; place-items: center; flex: none; inline-size: 1.8rem; block-size: 1.8rem; font: 600 1.2rem/1 var(--font); border: .12rem solid var(--accent); border-radius: 50%; color: var(--accent); }
+  .tm-cell-help:hover { color: var(--accent); }
+  .tm-popover { inline-size: 44rem; max-inline-size: calc(100% - 4rem); max-block-size: calc(100svh - 4rem); overflow: auto; margin: auto; padding: 3rem; border: .15rem solid var(--line); border-radius: 1.6rem; background: var(--paper); color: var(--ink); box-shadow: 0 2rem 8rem var(--shadow); }
+  .tm-popover:not(:popover-open) { display: none; }
+  .tm-popover::backdrop { background: var(--shadow); }
+  .tm-table-notes { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; padding-block-start: 1.6rem; font-size: var(--small-size); color: var(--muted); }
+  .tm-reassurance { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 5rem; padding-block: 6rem; }
+  .tm-reassurance > div { display: grid; gap: 1.4rem; }
+  .tm-reassurance p { color: var(--muted); }
+  .tm-number { color: var(--accent); font-size: 1.4rem; font-weight: 650; }
+  .tm-faq { display: grid; grid-template-columns: 1fr 1.3fr; gap: 8rem; border-block-start: .1rem solid var(--line); padding-block: 6rem; }
+  .tm-faq .disclosure p { padding-block-end: 2rem; color: var(--muted); }
+  .tm-footer { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 3rem; background: var(--surface); }
+  @media (width <= 50em) {
+    .tm { --comparison-text: 2.6rem; --feature-width: 26rem; --plan-width: 22rem; }
+    .tm-hero { grid-template-columns: minmax(0, 1fr); gap: 4rem; padding-block: 5rem; }
+    .tm-hero h1 { font-size: 6.4rem; }
+    .tm-hero .lead { font-size: var(--lead-size); }
+    .tm-board { margin: 1rem; transform: rotate(-1deg); }
+    .tm-board figcaption { font-size: 2.8rem; }
+    .tm-task strong { font-size: 2.3rem; }
+    .tm-task-tag, .tm-avatars { font-size: 1.6rem; }
+    .tm-board-note { font-size: 2rem; }
+    .tm-comparison-heading { align-items: start; gap: 2rem; }
+    .tm-scroll { block-size: 88rem; }
+    .tm-table th, .tm-table td { padding: 2rem 1.5rem; }
+    .tm-plan h3 { font-size: 3.2rem; }
+    .tm-plan-tag { font-size: 1.6rem; }
+    .tm-plan-description { font-size: 2rem; min-block-size: 8.7rem; }
+    .tm-price { font-size: 6rem; }
+    .tm-price-unit { font-size: 1.8rem; }
+    .tm-contact-price { font-size: 3.8rem; min-block-size: 9rem; }
+    .tm-billing-note { font-size: 1.6rem; min-block-size: 5rem; }
+    .tm-plan .btn { min-block-size: 6.5rem; font-size: 2.2rem; }
+    .tm-table-intro h3 { font-size: 3.2rem; }
+    .tm-table-intro p { font-size: 2rem; }
+    .tm-group label { font-size: 2.4rem; }
+    .tm-group small { font-size: 1.6rem; }
+    .tm-chevron { font-size: 2.6rem; }
+    .tm-info { inline-size: 2.6rem; block-size: 2.6rem; font-size: 1.8rem; }
+    .tm:has(#larger-text:checked) { --comparison-text: 3.25rem; --feature-width: 30rem; --plan-width: 26rem; }
+    .tm-reassurance, .tm-faq { grid-template-columns: minmax(0, 1fr); gap: 3rem; }
+    .tm-reassurance h3 { font-size: 3.2rem; }
+  }
+  @media (height <= 30em) {
+    .tm-hero { padding-block: 3rem; }
+    .tm-hero h1 { font-size: min(6rem, 14vh); }
+    .tm-scroll { block-size: 90svh; }
+    .tm-plan-description, .tm-table-intro p { display: none; }
+    .tm-table thead th { padding-block: .8rem; }
+    .tm-price { font-size: 3.4rem; }
+    .tm-plan .btn { min-block-size: 3.8rem; padding-block: .4rem; }
+  }
+  @media print {
+    .tm-controls, .tm-cycle, .tm-scroll-hint, .tm-plan .btn, .tm-popover { display: none !important; }
+    .tm-scroll { overflow: visible; block-size: auto; }
+    .tm-table { min-inline-size: 0; font-size: 1rem; }
+    .tm-table tr > th:first-child { inline-size: 20%; }
+    .tm-table th { position: static !important; }
+    .tm-plan h3 { font-size: 1.5rem; }
+    .tm-price { font-size: 2rem; }
+    .tm-plan-description, .tm-table-intro { display: none; }
+  }
+}
