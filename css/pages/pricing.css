@@ -1,0 +1,55 @@
+/* Page composition for the pricing example (Harbour Lights subscriptions). Plans are cut-out coupons;
+   the billing switch swaps monthly and yearly prices with :has(), no script. */
+@layer page {
+  .hl-head { display: grid; gap: 1.6rem; padding-block: 7rem 3rem; }
+  .hl-head h1 { font-family: var(--font-display, var(--font)); font-size: 6.4rem; line-height: 1.02; font-weight: 600; max-inline-size: 90rem; }
+  .hl-billing { display: inline-flex; justify-self: start; align-items: center; gap: .4rem; margin: 1.6rem 0 0; padding: .4rem; border: .15rem solid var(--ink); border-radius: 4rem; }
+  .hl-billing legend { float: inline-start; margin-inline: 1.2rem; padding: 0; color: var(--muted); }
+  .hl-billing input { position: absolute; opacity: 0; inline-size: .1rem; block-size: .1rem; }
+  .hl-billing label { padding: .6rem 1.8rem; border-radius: 3rem; cursor: pointer; }
+  .hl-billing label span { margin-inline-start: .6rem; color: var(--accent); font-size: var(--small-size); }
+  .hl-billing input:checked + label { background: var(--ink); color: var(--paper); }
+  .hl-billing input:checked + label span { color: inherit; opacity: .8; }
+  .hl-billing input:focus-visible + label { outline: .25rem solid var(--accent); outline-offset: .2rem; }
+  .hl-plans { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4rem; align-items: start; padding-block: 3rem 8rem; }
+  .hl-coupon { position: relative; display: grid; gap: 1.4rem; padding: 3.2rem 2.8rem 3rem; border: .25rem dashed var(--ink); background: var(--paper); }
+  .hl-coupon.is-pick { border-color: var(--accent); background: var(--surface); transform: translateY(-2rem); }
+  .hl-cut { position: absolute; inset-block-start: -1.6rem; inset-inline-start: 2rem; padding-inline: .6rem; background: var(--paper); font-size: 2.4rem; line-height: 1; transform: rotate(-90deg); }
+  .hl-coupon.is-pick .hl-cut { color: var(--accent); }
+  .hl-pick { justify-self: start; padding: .2rem 1rem; background: var(--accent); color: var(--on-accent); font-size: var(--small-size); }
+  .hl-coupon h3 { font-family: var(--font-display, var(--font)); font-size: 3rem; font-weight: 600; }
+  .hl-desc { color: var(--muted); }
+  .hl-bike { display: block; inline-size: 70%; block-size: auto; justify-self: end; margin-block: -1rem -1rem; }
+  .hl-price { font-family: var(--font-display, var(--font)); font-size: 4.4rem; line-height: 1; }
+  .hl-price small { font-size: var(--small-size); color: var(--muted); margin-inline-start: .4rem; }
+  .hl-y, .hl-head:has(#b-year:checked) ~ .hl-plans .hl-m { display: none; }
+  .hl-head:has(#b-year:checked) ~ .hl-plans .hl-y { display: inline; }
+  .hl-coupon ul { display: grid; gap: .6rem; padding-inline-start: 2rem; }
+  .hl-table th, .hl-table td { text-align: center; }
+  .hl-table tbody th { text-align: start; font-weight: 400; }
+  .hl-table td:nth-child(3) { background: color-mix(in srgb, var(--accent) 8%, transparent); }
+  .hl-table .no { color: var(--muted); }
+  .hl-gift { display: grid; padding-block: 8rem; }
+  .hl-gift-card { position: relative; display: grid; gap: 1.4rem; justify-self: center; max-inline-size: 76rem; padding: 4rem 4.4rem; border: .25rem dashed var(--accent); text-align: center; justify-items: center; }
+  .hl-gift-card h2 { font-family: var(--font-display, var(--font)); font-size: 3.6rem; font-weight: 600; line-height: 1.15; }
+  .hl-gift-price { font-family: var(--font-display, var(--font)); font-size: 2.8rem; }
+  .hl-letters { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4rem; margin-block-start: 1.6rem; }
+  .hl-letter { display: grid; align-content: start; gap: 1.2rem; padding-block-start: 1.6rem; border-block-start: .3rem solid var(--ink); }
+  .hl-letter h3 { font-family: var(--font-display, var(--font)); font-size: 2.2rem; font-weight: 600; line-height: 1.2; }
+  .hl-sign { font-style: italic; color: var(--muted); }
+  .hl-reply { padding-inline-start: 1.6rem; border-inline-start: .3rem solid var(--accent); }
+  .hl-reply span { font-weight: 700; }
+  @media (width <= 50em) {
+    .hl-head { padding-block: 4rem 2rem; }
+    .hl-head h1 { font-size: 4.6rem; }
+    .hl-plans { grid-template-columns: minmax(0, 1fr); gap: 4.4rem; padding-block: 3rem 5rem; }
+    .hl-coupon.is-pick { transform: none; }
+    .hl-letters { grid-template-columns: minmax(0, 1fr); }
+    .hl-gift { padding-block: 5rem; }
+    .hl-gift-card { padding: 3rem 2.4rem; }
+  }
+  @media (height <= 30em) {
+    .hl-head h1 { font-size: min(6.4rem, 11vh); }
+    .hl-head { padding-block-start: 2.4rem; }
+  }
+}

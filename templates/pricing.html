@@ -3,15 +3,16 @@
 <head>
   <script src="../assets/theme-init.js?v=1"></script>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="A complete pricing-page pattern with three packages, a feature comparison and native frequently asked questions, built with Prastora.">
-  <title>Pricing – Prastora</title>
+  <meta name="description" content="Subscriptions to Harbour Lights, a fictional city magazine: a pricing page template built with Prastora.">
+  <title>Subscribe – Harbour Lights (Prastora demo)</title>
   <link rel="stylesheet" href="../css/core.css">
-  <link rel="stylesheet" href="../css/themes/default.css">
+  <link rel="stylesheet" href="../css/themes/press.css">
   <link rel="stylesheet" href="../css/components/navigation.css">
   <link rel="stylesheet" href="../css/components/content.css">
   <link rel="stylesheet" href="../css/components/commerce.css">
   <link rel="stylesheet" href="../css/components/utility.css">
-  <link rel="stylesheet" href="../css/components/consent.css">
+  <link rel="stylesheet" href="../css/pages/harbour.css">
+  <link rel="stylesheet" href="../css/pages/pricing.css">
   <link rel="stylesheet" href="../css/dev/viewport.css">
   <script src="../assets/viewport.js?v=2" defer></script>
   <script src="../assets/interactions.js?v=9" defer></script>
@@ -22,54 +23,47 @@
     <div class="viewport-tools">
       <button class="theme-toggle" data-theme-toggle type="button" aria-label="Switch colour theme" hidden><svg class="theme-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg><svg class="theme-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.5A9 9 0 0 1 9.5 3.5a9 9 0 1 0 11 11Z"/></svg></button>
       <div class="viewport-reading" title="Browser viewport size in CSS pixels"><output data-viewport-value dir="ltr"></output><div class="viewport-orientation"><svg class="orient-landscape" viewBox="0 0 24 24"><title>Landscape window</title><rect x="3" y="7" width="18" height="11" rx="2"/></svg><svg class="orient-portrait" viewBox="0 0 24 24"><title>Portrait window</title><rect x="7" y="3" width="11" height="18" rx="2"/></svg></div></div>
+      <a class="utility-back" href="../index.html" aria-label="Back to Prastora"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg><span class="mobile-only">Back</span><span class="desktop-only">Back to Prastora</span></a>
     </div>
     <div class="utility-actions"><span class="language-control"><select aria-label="Language" title="English only for now; other languages are planned"><option value="en" lang="en" selected>English</option><option value="es" lang="es" disabled>Español — soon</option><option value="fr" lang="fr" disabled>Français — soon</option><option value="ar" lang="ar" dir="rtl" disabled>العربية — soon</option></select><svg class="language-arrow" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="m4 6 4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><button type="button" disabled title="Account access is not connected"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="../assets/placeholders.svg#account"/></svg>Sign in</button></div>
   </aside>
   <a class="skip" href="#main">Skip to content</a>
   <header class="site-header"><div class="header-inner">
-    <a class="brand" href="../index.html"><svg viewBox="0 0 64 64" aria-hidden="true"><use href="../assets/placeholders.svg#logo"/></svg>Prastora</a>
-    <nav class="desktop-nav desktop-only" aria-label="Main navigation"><a href="../index.html">Overview</a><a href="index.html" aria-current="true">Templates</a><a href="../components/index.html">Components</a><a href="../start.html">Starter</a></nav>
-    <details class="mobile-nav mobile-only"><summary>Explore Prastora</summary><nav aria-label="Mobile navigation"><a href="../index.html">Overview</a><a href="index.html" aria-current="true">Templates</a><a href="../components/index.html">Components</a><a href="../start.html">Starter</a></nav></details>
+    <a class="brand ar-masthead" href="#main">Harbour Lights</a>
+    <nav class="desktop-nav desktop-only" aria-label="Main navigation"><a href="#main">City</a><a href="#main">Culture</a><a href="#main">Food</a><a href="article.html">Long reads</a><a href="gallery.html">Photo</a><a class="btn" href="#main" aria-current="true">Subscribe</a></nav>
+    <details class="mobile-nav mobile-only"><summary>Sections</summary><nav aria-label="Mobile navigation"><a href="#main">City</a><a href="#main">Culture</a><a href="#main">Food</a><a href="article.html">Long reads</a><a href="gallery.html">Photo</a><a href="#main" aria-current="true">Subscribe</a></nav></details>
   </div></header>
   </div>
   <main id="main">
-    <section class="section stack">
-      <p class="eyebrow">Pricing page pattern</p><h1>Make the differences easy to compare.</h1>
-      <p class="lead">Bring packages, prices and scope together in a clear hierarchy. Give each option enough detail to be useful, without making visitors decode a wall of features.</p>
-      <nav class="flex catalog-nav" aria-label="Pricing sections"><a href="#packages">Packages</a><a href="#comparison">Compare the scope</a><a href="#questions">Questions</a></nav>
+    <section class="section hl-head">
+      <p class="ar-kicker">Subscribe</p>
+      <h1>Keep the lights on in the harbour</h1>
+      <p class="ar-dek">Harbour Lights is paid for by its readers, not by adverts that follow you around the internet. Pick a plan, cut along the dotted line.</p>
+      <fieldset class="hl-billing"><legend class="small">Billing</legend>
+        <input type="radio" name="billing" id="b-month" checked><label for="b-month">Monthly</label>
+        <input type="radio" name="billing" id="b-year"><label for="b-year">Yearly <span>two months free</span></label>
+      </fieldset>
     </section>
-    <section class="section surface stack anchor" id="packages">
-      <h2>A clear starting point for every scope.</h2><p class="small muted">Illustrative package prices, not Prastora offers. Purchasing is not connected.</p>
-      <div class="grid grid-3 pricing-grid">
-        <article class="card pricing-plan"><p class="eyebrow">One focused page</p><h3>Essential</h3><p class="text-pretty">A concise introduction with a clear route to the next step.</p><p class="plan-price"><bdi>$190</bdi><small>Example one-time price</small></p><ul><li>Single-page composition</li><li>Introduction and key details</li><li>One primary action</li><li>Mobile navigation</li></ul><div class="plan-actions"><button class="btn btn-secondary" type="button" disabled>Choose Essential</button><a href="service.html">Explore a focused layout</a></div></article>
-        <article class="card pricing-plan pricing-featured"><p class="eyebrow">More room for content</p><h3>Expanded</h3><p class="text-pretty">A fuller composition for an offer that needs explanation and comparison.</p><p class="plan-price"><bdi>$490</bdi><small>Example one-time price</small></p><ul><li>Everything in Essential</li><li>Package comparison</li><li>Editorial and media sections</li><li>Frequently asked questions</li><li>Contact form layout</li></ul><div class="plan-actions"><button class="btn" type="button" disabled>Choose Expanded</button><a href="article.html">Explore content-led pages</a></div></article>
-        <article class="card pricing-plan"><p class="eyebrow">A connected collection</p><h3>Complete</h3><p class="text-pretty">Multiple page types sharing one navigation, visual language and proportional scale.</p><p class="plan-price"><bdi>$990</bdi><small>Example one-time price</small></p><ul><li>Everything in Expanded</li><li>Collection and detail pages</li><li>Gallery composition</li><li>Dedicated contact page</li><li>Shared page navigation</li><li>Reusable theme variables</li></ul><div class="plan-actions"><button class="btn btn-secondary" type="button" disabled>Choose Complete</button><a href="gallery.html">Explore the gallery</a></div></article>
-      </div>
+    <section class="section hl-plans" id="plans" aria-label="Plans"><article class="hl-coupon"><p class="hl-cut" aria-hidden="true">✂</p><h3>Digital</h3><p class="hl-desc">For reading on the tram, which gives you plenty of time.</p><p class="hl-price"><span class="hl-m">€4<small>/month</small></span><span class="hl-y">€40<small>/year</small></span></p><ul><li>Every story online</li><li>The Saturday email</li><li>Archive back to 1987</li></ul><a class="btn btn-secondary" href="#letters">Clip and subscribe</a></article><article class="hl-coupon is-pick"><p class="hl-cut" aria-hidden="true">✂</p><p class="hl-pick">Most readers pick this</p><h3>Print &amp; digital</h3><p class="hl-desc">Saturday paper on your doorstep, the rest on your phone.</p><svg class="hl-bike" viewBox="0 0 330 229.5" aria-hidden="true"><use href="../assets/harbour.svg#sloth-bike"/></svg><p class="hl-price"><span class="hl-m">€9<small>/month</small></span><span class="hl-y">€90<small>/year</small></span></p><ul><li>Everything in Digital</li><li>The printed edition every Saturday</li><li>Delivered by bicycle, mostly on time</li></ul><a class="btn" href="#letters">Clip and subscribe</a></article><article class="hl-coupon"><p class="hl-cut" aria-hidden="true">✂</p><h3>Patron</h3><p class="hl-desc">For people who want the city to keep a newspaper.</p><p class="hl-price"><span class="hl-m">€20<small>/month</small></span><span class="hl-y">€200<small>/year</small></span></p><ul><li>Everything in Print &amp; digital</li><li>A seat on the annual night tram ride</li><li>Your name in the masthead, very small</li></ul><a class="btn btn-secondary" href="#letters">Clip and subscribe</a></article></section>
+    <section class="section surface" aria-labelledby="cmp-h">
+      <h2 id="cmp-h" class="ar-small-h">What each plan includes</h2>
+      <div class="table-wrap"><table class="comparison-table hl-table"><thead><tr><th scope="col"><span class="visually-hidden">Feature</span></th><th scope="col">Digital</th><th scope="col">Print &amp; digital</th><th scope="col">Patron</th></tr></thead><tbody><tr><th scope="row">Every story online</th><td>✓</td><td>✓</td><td>✓</td></tr><tr><th scope="row">The Saturday email</th><td>✓</td><td>✓</td><td>✓</td></tr><tr><th scope="row">Archive back to 1987</th><td>✓</td><td>✓</td><td>✓</td></tr><tr><th scope="row">No adverts</th><td>✓</td><td>✓</td><td>✓</td></tr><tr><th scope="row">Printed edition on Saturdays</th><td class="no">–</td><td>✓</td><td>✓</td></tr><tr><th scope="row">Bicycle delivery</th><td class="no">–</td><td>✓</td><td>✓</td></tr><tr><th scope="row">Night tram ride invitation</th><td class="no">–</td><td class="no">–</td><td>✓</td></tr><tr><th scope="row">Name in the masthead</th><td class="no">–</td><td class="no">–</td><td>Very small</td></tr></tbody></table></div>
     </section>
-    <section class="section stack anchor" id="comparison">
-      <h2>Show what changes between options.</h2>
-      <table class="comparison-table"><caption>Example package scope. These labels demonstrate a comparison layout, not a subscription service.</caption><thead><tr><th scope="col">Scope</th><th scope="col">Essential</th><th scope="col">Expanded</th><th scope="col">Complete</th></tr></thead><tbody>
-        <tr><th scope="row">Page composition</th><td>One focused page</td><td>One detailed page</td><td>Several page types</td></tr>
-        <tr><th scope="row">Mobile navigation</th><td>Included</td><td>Included</td><td>Included</td></tr>
-        <tr><th scope="row">Comparison section</th><td>Not included</td><td>Included</td><td>Included</td></tr>
-        <tr><th scope="row">Gallery layout</th><td>Not included</td><td>Not included</td><td>Included</td></tr>
-        <tr><th scope="row">Contact composition</th><td>Action link</td><td>Form section</td><td>Dedicated page</td></tr>
-        <tr><th scope="row">Checkout or form backend</th><td>Not connected</td><td>Not connected</td><td>Not connected</td></tr>
-      </tbody></table>
+    <section class="section hl-gift" aria-labelledby="gift-h">
+      <div class="hl-gift-card"><p class="hl-cut" aria-hidden="true">✂</p><h2 id="gift-h">Give it to someone who complains about the trams</h2><p>A year of Print &amp; digital, wrapped in an envelope and delivered with a note in your words. They will finally have the facts.</p><p class="hl-gift-price">€90, once</p><a class="btn" href="#letters">Send a gift</a></div>
     </section>
-    <section class="section surface pair anchor" id="questions"><div class="stack"><p class="eyebrow">Keep the fine print readable</p><h2>Answer the questions that affect the choice.</h2><p class="text-pretty">Put important limits next to the options. Use disclosures for supporting detail, not to hide the difference between packages.</p><a href="contacts.html">Explore the contact page</a></div><div>
-      <details class="disclosure" name="pricing-questions"><summary>Are these prices for Prastora?</summary><p>No. The figures are illustrative content for this pricing-page pattern. Prastora does not offer these packages or a connected checkout.</p></details>
-      <details class="disclosure" name="pricing-questions"><summary>Can the cards contain different amounts of text?</summary><p>Yes. Each card follows its content while the action area remains at the bottom of the shared row. On mobile, cards form a single reading column.</p></details>
-      <details class="disclosure" name="pricing-questions"><summary>Can I use a different currency or billing period?</summary><p>Replace the amounts and labels with your own terms. Keep the currency, billing period and any material conditions visible near the price.</p></details>
-      <details class="disclosure" name="pricing-questions"><summary>What needs connecting on a live site?</summary><p>Purchasing, payment, account access and form processing need their own integrations. This page demonstrates their composition, not those services.</p></details>
-    </div></section>
-    <section class="section callout pair hero"><div class="stack"><h2>Compare the layout before choosing the details.</h2><p>Use the starter to build a pricing page around real content, then review it at the screen sizes your visitors use.</p></div><div><a class="btn" href="../start.html">Explore the starter</a></div></section>
+    <section class="section surface anchor" id="letters" aria-labelledby="letters-h">
+      <h2 id="letters-h" class="ar-small-h">Letters about subscriptions</h2>
+      <div class="hl-letters"><article class="hl-letter"><h3>Can I pause my subscription while I’m away?</h3><p>Dear Harbour Lights, I spend every August on my sister’s boat and would rather not pay for papers piling up on the doormat.</p><p class="hl-sign">R. Okafor, Mill Lane</p><p class="hl-reply"><span>The editor replies:</span> Yes, for up to two months a year, from your account page. The bicycle courier has also been told, and is relieved.</p></article><article class="hl-letter"><h3>Do you deliver to the islands?</h3><p>Dear Harbour Lights, The ferry exists. Does your courier know?</p><p class="hl-sign">A. Lind, North Island</p><p class="hl-reply"><span>The editor replies:</span> The ferry, the courier and the bicycle have all been introduced. Print copies reach the islands on Sunday, which islanders tell us is the correct day anyway.</p></article><article class="hl-letter"><h3>Why should I pay for news at all?</h3><p>Dear Harbour Lights, Most of it is free somewhere.</p><p class="hl-sign">Name withheld, Old Town</p><p class="hl-reply"><span>The editor replies:</span> Somebody has to sit through the council meeting so you don’t have to. Your subscription pays for the chair, the coffee and the reporter who stays awake.</p></article></div>
+    </section>
   </main>
-  <footer class="site-footer section"><div class="grid grid-3"><div class="stack-small"><h3>Prastora</h3><p class="muted">An evolving CSS framework for predictable layouts across screen sizes.</p></div><nav class="stack-small" aria-label="Examples"><h3>Explore</h3><div class="footer-links"><a href="../index.html">Overview</a><a href="service.html">Layouts</a><a href="../approach.html">Typography</a><a href="../components/index.html">Patterns</a><a href="../start.html">Starter</a><a href="pricing.html">Pricing</a><a href="gallery.html">Gallery</a><a href="contacts.html">Contacts</a><a href="../experiments.html">Experiments</a></div></nav><div class="stack-small"><h3>Built with the web</h3><p>HTML · CSS · SVG</p><p class="small muted">Core layouts need no JavaScript. Viewport and load-time diagnostics are optional prototyping aids.</p><div><button type="button" class="consent-reopen" data-consent-reopen hidden>Cookie settings</button><p class="small muted" data-consent-status role="status"></p></div></div></div>
+</main>
+  <footer class="site-footer section">
+    <div class="grid grid-3">
+      <div class="stack-small"><h3>Harbour Lights</h3><p class="muted">Stories from Port Ellery, a city that runs slightly behind schedule.</p></div>
+      <nav class="stack-small" aria-label="Footer"><h3>Sections</h3><div class="footer-links"><a href="#main">City</a><a href="#main">Culture</a><a href="#main">Food</a><a href="article.html">Long reads</a><a href="gallery.html">Photo</a></div></nav>
+      <div class="stack-small"><h3>Fine print</h3><p class="muted">Harbour Lights and Port Ellery are fictional: a pricing page template for <a href="../index.html">Prastora</a>. No trams were delayed in the making of it. They managed that on their own.</p></div>
+    </div>
   </footer>
-  <aside class="consent-bar" data-consent-demo hidden aria-label="Cookie preferences">
-    <div class="consent-settings" id="consent-settings" data-consent-settings hidden><p>Cookie preferences · necessary functions stay available.</p><label><input type="checkbox" id="consent-analytics">Analytics</label><label><input type="checkbox" id="consent-marketing">Marketing</label><button type="button" data-consent-save>Save preferences</button></div>
-    <div class="consent-row"><p>We use cookies.<span class="desktop-only"> Choose which data we may collect, or set your preferences in Settings.</span></p><div class="consent-actions"><button type="button" data-consent-accept>Accept all</button><button type="button" data-consent-reject>Necessary only</button><button type="button" data-consent-configure aria-expanded="false" aria-controls="consent-settings">Settings</button></div></div>
-  </aside>
 </body>
 </html>

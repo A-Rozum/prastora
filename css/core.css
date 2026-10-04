@@ -60,6 +60,7 @@
     .aligned > .card { display: grid; grid-template-rows: subgrid; grid-row: span calc(var(--items) + 1); row-gap: 1rem; }
     .aligned > .card > ul { display: grid; grid-template-rows: subgrid; grid-row: 2 / span var(--items); row-gap: 1rem; }
   }
+  .visually-hidden { position: absolute; inline-size: .1rem; block-size: .1rem; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
   @media (width <= 50em) {
     .desktop-only { display: none !important; }
     :root { --scale-units: 64; --text-size: 2.08rem; --small-size: 1.82rem; --lead-size: 2.47rem; --button-size: 2.52rem; --space-block: 3rem; --space-inline: 1.6rem; --gap: 2rem; }
