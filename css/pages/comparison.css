@@ -101,12 +101,27 @@
   .tm-popover:not(:popover-open) { display: none; }
   .tm-popover::backdrop { background: var(--shadow); }
   .tm-table-notes { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; padding-block-start: 1.6rem; font-size: var(--small-size); color: var(--muted); }
-  .tm-reassurance { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 5rem; padding-block: 6rem; }
-  .tm-reassurance > div { display: grid; gap: 1.4rem; }
-  .tm-reassurance p { color: var(--muted); }
-  .tm-number { color: var(--accent); font-size: 1.4rem; font-weight: 650; }
-  .tm-faq { display: grid; grid-template-columns: 1fr 1.3fr; gap: 8rem; border-block-start: .1rem solid var(--line); padding-block: 6rem; }
-  .tm-faq .disclosure p { padding-block-end: 2rem; color: var(--muted); }
+  /* One full-width set of plan notes, rather than a benefits grid and a split FAQ. */
+  .tm-terms { padding-block: 6rem; }
+  .tm-terms-heading { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 3rem; padding-block-end: 3rem; }
+  .tm-terms-heading > p { color: var(--muted); }
+  .tm-terms-ledger { border-block-start: .2rem solid var(--ink); }
+  .tm-term { padding-block: 0; }
+  .tm-term[open] { background: var(--surface); }
+  .tm-term > summary { display: grid; grid-template-columns: 4rem 16rem minmax(0, 1fr) 2rem; align-items: center; gap: 2rem; padding: 2rem; list-style: none; cursor: pointer; }
+  .tm-term > summary::-webkit-details-marker { display: none; }
+  .tm-term > summary::marker { content: ''; }
+  .tm-term > summary::before { content: none; }
+  .tm-term > summary::after { content: '+'; color: var(--accent); font-size: 2.6rem; line-height: 1; text-align: center; }
+  .tm-term[open] > summary::after { content: '−'; }
+  .tm-term > summary:hover > :last-child { color: var(--accent); }
+  .tm-term > summary:focus-visible { outline: .25rem solid var(--accent); outline-offset: -.25rem; }
+  .tm-term-number { color: var(--accent); font-size: var(--small-size); font-variant-numeric: tabular-nums; }
+  .tm-term-topic { color: var(--muted); font-size: var(--small-size); }
+  .tm-term > summary > :last-child { font-weight: 650; }
+  .tm-term > p { margin: 0; padding: 0 6rem 2.5rem 26rem; color: var(--muted); }
+  .tm-terms-bottom { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 2rem; padding-block-start: 2rem; }
+  .tm-terms-bottom p { color: var(--muted); font-size: var(--small-size); }
   .tm-footer { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 3rem; background: var(--surface); }
   @media (width <= 50em) {
     .tm { font-size: var(--text-size); --comparison-text: 2.4rem; --feature-width: 26rem; --plan-width: 22rem; }
@@ -132,8 +147,11 @@
     .tm-group small { font-size: 1.6rem; }
     .tm-chevron { font-size: 2.6rem; }
     .tm-info { inline-size: 2.6rem; block-size: 2.6rem; font-size: 1.8rem; }
-    .tm-reassurance, .tm-faq { grid-template-columns: minmax(0, 1fr); gap: 3rem; }
-    .tm-reassurance h3 { font-size: 3.2rem; }
+    .tm-terms-heading { align-items: start; gap: 2rem; }
+    .tm-term > summary { grid-template-columns: 3rem minmax(0, 1fr) 2rem; gap: 1rem 2rem; }
+    .tm-term > summary > :last-child { grid-column: 2; }
+    .tm-term > summary::after { grid-column: 3; grid-row: 1 / span 2; }
+    .tm-term > p { padding-inline: 7rem 2rem; }
   }
   @media (height <= 30em) {
     .tm-hero { padding-block: 3rem; }
