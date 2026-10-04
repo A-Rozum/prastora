@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="../css/themes/press.css">
   <link rel="stylesheet" href="../css/components/navigation.css">
   <link rel="stylesheet" href="../css/components/content.css">
+  <link rel="stylesheet" href="../css/components/forms.css">
   <link rel="stylesheet" href="../css/components/commerce.css">
   <link rel="stylesheet" href="../css/components/utility.css">
   <link rel="stylesheet" href="../css/pages/harbour.css">
@@ -38,13 +39,29 @@
     <section class="section hl-head">
       <p class="ar-kicker">Subscribe</p>
       <h1>Keep the lights on in the harbour</h1>
-      <p class="ar-dek">Harbour Lights is paid for by its readers, not by adverts that follow you around the internet. Pick a plan, cut along the dotted line.</p>
-      <fieldset class="hl-billing"><legend class="small">Billing</legend>
-        <input type="radio" name="billing" id="b-month" checked><label for="b-month">Monthly</label>
-        <input type="radio" name="billing" id="b-year"><label for="b-year">Yearly <span>two months free</span></label>
-      </fieldset>
+      <p class="ar-dek">Harbour Lights is paid for by its readers, not by adverts that follow you around the internet. Fill in the coupon below. Scissors optional.</p>
     </section>
-    <section class="section hl-plans" id="plans" aria-label="Plans"><article class="hl-coupon"><p class="hl-cut" aria-hidden="true">✂</p><h3>Digital</h3><p class="hl-desc">For reading on the tram, which gives you plenty of time.</p><p class="hl-price"><span class="hl-m">€4<small>/month</small></span><span class="hl-y">€40<small>/year</small></span></p><ul><li>Every story online</li><li>The Saturday email</li><li>Archive back to 1987</li></ul><a class="btn btn-secondary" href="#letters">Clip and subscribe</a></article><article class="hl-coupon is-pick"><p class="hl-cut" aria-hidden="true">✂</p><p class="hl-pick">Most readers pick this</p><h3>Print &amp; digital</h3><p class="hl-desc">Saturday paper on your doorstep, the rest on your phone.</p><svg class="hl-bike" viewBox="0 0 330 229.5" aria-hidden="true"><use href="../assets/harbour.svg#sloth-bike"/></svg><p class="hl-price"><span class="hl-m">€9<small>/month</small></span><span class="hl-y">€90<small>/year</small></span></p><ul><li>Everything in Digital</li><li>The printed edition every Saturday</li><li>Delivered by bicycle, mostly on time</li></ul><a class="btn" href="#letters">Clip and subscribe</a></article><article class="hl-coupon"><p class="hl-cut" aria-hidden="true">✂</p><h3>Patron</h3><p class="hl-desc">For people who want the city to keep a newspaper.</p><p class="hl-price"><span class="hl-m">€20<small>/month</small></span><span class="hl-y">€200<small>/year</small></span></p><ul><li>Everything in Print &amp; digital</li><li>A seat on the annual night tram ride</li><li>Your name in the masthead, very small</li></ul><a class="btn btn-secondary" href="#letters">Clip and subscribe</a></article></section>
+    <section class="section hl-order-wrap" id="plans" aria-labelledby="order-h">
+      <div class="hl-order">
+        <p class="hl-cutline" aria-hidden="true"><span>✂</span></p>
+        <form class="hl-coupon" action="#letters">
+          <!-- Demo: fields have no name attributes, so nothing typed here leaves the page. -->
+          <header class="hl-coupon-head"><h2 id="order-h">Subscription order form</h2><p>Harbour Lights · Freepost PE 1987</p></header>
+          <fieldset class="hl-billing"><legend>Pay</legend>
+            <input type="radio" name="billing" id="b-month" checked><label for="b-month">monthly</label>
+            <input type="radio" name="billing" id="b-year"><label for="b-year">yearly <span>(two months free)</span></label>
+          </fieldset>
+          <fieldset class="choice choice-stack hl-plan-list"><legend>Tick one box</legend><input type="radio" name="plan" id="p-digital"><label for="p-digital"><span class="hl-name">Digital</span><span class="hl-dots" aria-hidden="true"></span><b><span class="hl-m">€4 a month</span><span class="hl-y">€40 a year</span></b><small>Every story online, the Saturday email and the archive back to 1987.</small></label><input type="radio" name="plan" id="p-print" checked><label for="p-print"><span class="hl-name">Print &amp; digital</span><span class="hl-dots" aria-hidden="true"></span><b><span class="hl-m">€9 a month</span><span class="hl-y">€90 a year</span></b><small>All of Digital, plus the printed edition every Saturday, delivered by bicycle.</small></label><input type="radio" name="plan" id="p-patron"><label for="p-patron"><span class="hl-name">Patron</span><span class="hl-dots" aria-hidden="true"></span><b><span class="hl-m">€20 a month</span><span class="hl-y">€200 a year</span></b><small>All of the above, a seat on the annual night tram ride and your name in the masthead, very small.</small></label></fieldset>
+          <div class="hl-lines">
+            <div class="field"><label for="o-name">Name</label><input id="o-name" type="text" autocomplete="name"></div>
+            <div class="field"><label for="o-addr">Address for the paper</label><input id="o-addr" type="text" autocomplete="street-address"></div>
+          </div>
+          <p class="hl-note">Delivery on Saturdays. On the islands, Sunday, which islanders tell us is the correct day anyway.</p>
+          <button class="btn hl-post" type="submit">Post the coupon</button>
+        </form>
+        <figure class="hl-hang" aria-hidden="true"><svg viewBox="0 0 200 260"><use href="../assets/slowburn.svg#sloth-hanging"/></svg><figcaption>Please don't cut along this line. — The management</figcaption></figure>
+      </div>
+    </section>
     <section class="section surface" aria-labelledby="cmp-h">
       <h2 id="cmp-h" class="ar-small-h">What each plan includes</h2>
       <div class="table-wrap"><table class="comparison-table hl-table"><thead><tr><th scope="col"><span class="visually-hidden">Feature</span></th><th scope="col">Digital</th><th scope="col">Print &amp; digital</th><th scope="col">Patron</th></tr></thead><tbody><tr><th scope="row">Every story online</th><td>✓</td><td>✓</td><td>✓</td></tr><tr><th scope="row">The Saturday email</th><td>✓</td><td>✓</td><td>✓</td></tr><tr><th scope="row">Archive back to 1987</th><td>✓</td><td>✓</td><td>✓</td></tr><tr><th scope="row">No adverts</th><td>✓</td><td>✓</td><td>✓</td></tr><tr><th scope="row">Printed edition on Saturdays</th><td class="no">–</td><td>✓</td><td>✓</td></tr><tr><th scope="row">Bicycle delivery</th><td class="no">–</td><td>✓</td><td>✓</td></tr><tr><th scope="row">Night tram ride invitation</th><td class="no">–</td><td class="no">–</td><td>✓</td></tr><tr><th scope="row">Name in the masthead</th><td class="no">–</td><td class="no">–</td><td>Very small</td></tr></tbody></table></div>

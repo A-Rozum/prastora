@@ -3,28 +3,39 @@
 @layer page {
   .hl-head { display: grid; gap: 1.6rem; padding-block: 7rem 3rem; }
   .hl-head h1 { font-family: var(--font-display, var(--font)); font-size: 6.4rem; line-height: 1.02; font-weight: 600; max-inline-size: 90rem; }
-  .hl-billing { display: inline-flex; justify-self: start; align-items: center; gap: .4rem; margin: 1.6rem 0 0; padding: .4rem; border: .15rem solid var(--ink); border-radius: 4rem; }
-  .hl-billing legend { float: inline-start; margin-inline: 1.2rem; padding: 0; color: var(--muted); }
-  .hl-billing input { position: absolute; opacity: 0; inline-size: .1rem; block-size: .1rem; }
-  .hl-billing label { padding: .6rem 1.8rem; border-radius: 3rem; cursor: pointer; }
-  .hl-billing label span { margin-inline-start: .6rem; color: var(--accent); font-size: var(--small-size); }
-  .hl-billing input:checked + label { background: var(--ink); color: var(--paper); }
-  .hl-billing input:checked + label span { color: inherit; opacity: .8; }
-  .hl-billing input:focus-visible + label { outline: .25rem solid var(--accent); outline-offset: .2rem; }
-  .hl-plans { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4rem; align-items: start; padding-block: 3rem 8rem; }
-  .hl-coupon { position: relative; display: grid; gap: 1.4rem; padding: 3.2rem 2.8rem 3rem; border: .25rem dashed var(--ink); background: var(--paper); }
-  .hl-coupon.is-pick { border-color: var(--accent); background: var(--surface); transform: translateY(-2rem); }
-  .hl-cut { position: absolute; inset-block-start: -1.6rem; inset-inline-start: 2rem; padding-inline: .6rem; background: var(--paper); font-size: 2.4rem; line-height: 1; transform: rotate(-90deg); }
-  .hl-coupon.is-pick .hl-cut { color: var(--accent); }
-  .hl-pick { justify-self: start; padding: .2rem 1rem; background: var(--accent); color: var(--on-accent); font-size: var(--small-size); }
-  .hl-coupon h3 { font-family: var(--font-display, var(--font)); font-size: 3rem; font-weight: 600; }
-  .hl-desc { color: var(--muted); }
-  .hl-bike { display: block; inline-size: 70%; block-size: auto; justify-self: end; margin-block: -1rem -1rem; }
-  .hl-price { font-family: var(--font-display, var(--font)); font-size: 4.4rem; line-height: 1; }
-  .hl-price small { font-size: var(--small-size); color: var(--muted); margin-inline-start: .4rem; }
-  .hl-y, .hl-head:has(#b-year:checked) ~ .hl-plans .hl-m { display: none; }
-  .hl-head:has(#b-year:checked) ~ .hl-plans .hl-y { display: inline; }
-  .hl-coupon ul { display: grid; gap: .6rem; padding-inline-start: 2rem; }
+  .hl-order { display: grid; grid-template-columns: minmax(0, 8fr) minmax(0, 3fr); grid-template-rows: 2.4rem auto; gap: 3rem 4rem; padding-block: 2rem 6rem; }
+  .hl-cutline { grid-column: 1 / -1; position: relative; }
+  .hl-cutline::before { content: ''; position: absolute; inset-inline: 0; inset-block-start: 1.2rem; border-block-start: .25rem dashed var(--ink); }
+  .hl-cutline span { position: absolute; inset-block-start: 0; inset-inline-start: 2rem; padding-inline: .6rem; background: var(--paper); font-size: 2.4rem; line-height: 1; }
+  .hl-coupon { display: grid; gap: 2.4rem; padding: 3.2rem 3.6rem 3.6rem; border: .15rem solid var(--ink); }
+  .hl-coupon-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 1rem 3rem; padding-block-end: 1.2rem; border-block-end: .4rem double var(--ink); }
+  .hl-coupon-head h2 { font-family: var(--font-display, var(--font)); font-size: 3.4rem; font-weight: 600; }
+  .hl-coupon-head p { font-size: var(--small-size); color: var(--muted); letter-spacing: .06em; text-transform: uppercase; }
+  .hl-billing { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem 2rem; margin: 0; padding: 0; border: 0; }
+  .hl-billing legend { float: inline-start; margin-inline-end: 1.6rem; font-weight: 700; }
+  .hl-billing input, .hl-plan-list input { position: absolute; opacity: 0; inline-size: .1rem; block-size: .1rem; }
+  .hl-billing label, .hl-plan-list label { cursor: pointer; }
+  .hl-billing label::before, .hl-plan-list label::before { content: ''; display: inline-grid; place-items: center; inline-size: 2rem; block-size: 2rem; margin-inline-end: .8rem; border: .15rem solid var(--ink); vertical-align: -.3rem; font-size: 1.6rem; line-height: 1; }
+  .hl-billing input:checked + label::before, .hl-plan-list input:checked + label::before { content: '✓'; color: var(--accent); }
+  .hl-billing input:focus-visible + label, .hl-plan-list input:focus-visible + label { outline: .25rem solid var(--accent); outline-offset: .3rem; }
+  .hl-billing label span { color: var(--accent); }
+  .hl-plan-list legend { margin-block-end: 1.2rem; font-weight: 700; }
+  .hl-plan-list label { display: grid; grid-template-columns: auto auto minmax(2rem, 1fr) auto; align-items: baseline; gap: .4rem .8rem; min-block-size: 0; padding: 1.4rem 0; border: 0; border-block-end: .1rem solid var(--line); border-radius: 0; background: none; box-shadow: none; }
+  .hl-plan-list label::before { grid-row: 1; }
+  .hl-plan-list input:checked + label { box-shadow: none; }
+  .hl-name { font-family: var(--font-display, var(--font)); font-size: 2.4rem; font-weight: 600; }
+  .hl-dots { align-self: end; margin-block-end: .7rem; border-block-end: .25rem dotted var(--muted); }
+  .hl-plan-list b { grid-column: 4; font-family: var(--font-display, var(--font)); font-size: 2.4rem; font-weight: 600; }
+  .hl-plan-list small { grid-column: 2 / -1; color: var(--muted); font-size: var(--small-size); }
+  .hl-y, .hl-coupon:has(#b-year:checked) .hl-m { display: none; }
+  .hl-coupon:has(#b-year:checked) .hl-y { display: inline; }
+  .hl-lines { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); gap: 2rem; }
+  .hl-lines input { border: 0; border-block-end: .15rem solid var(--ink); border-radius: 0; background: transparent; padding-inline: 0; }
+  .hl-note { font-style: italic; color: var(--muted); }
+  .hl-post { justify-self: start; }
+  .hl-hang { grid-column: 2; grid-row: 2; display: grid; gap: 1.6rem; justify-items: center; align-content: start; margin: -6rem 0 0; position: relative; z-index: 1; }
+  .hl-hang svg { inline-size: 18rem; block-size: auto; }
+  .hl-hang figcaption { max-inline-size: 22rem; text-align: center; font-style: italic; color: var(--muted); font-size: var(--small-size); }
   .hl-table th, .hl-table td { text-align: center; }
   .hl-table tbody th { text-align: start; font-weight: 400; }
   .hl-table td:nth-child(3) { background: color-mix(in srgb, var(--accent) 8%, transparent); }
@@ -42,9 +53,19 @@
   @media (width <= 50em) {
     .hl-head { padding-block: 4rem 2rem; }
     .hl-head h1 { font-size: 4.6rem; }
-    .hl-plans { grid-template-columns: minmax(0, 1fr); gap: 4.4rem; padding-block: 3rem 5rem; }
-    .hl-coupon.is-pick { transform: none; }
     .hl-letters { grid-template-columns: minmax(0, 1fr); }
+    .hl-order { grid-template-columns: minmax(0, 1fr) 10rem; gap: 3rem 1.2rem; }
+    .hl-coupon { grid-column: 1 / -1; grid-row: 3; padding: 2.4rem 2rem; }
+    .hl-hang { grid-column: 2; grid-row: 2; margin-block-start: -5.6rem; }
+    .hl-hang svg { inline-size: 10rem; }
+    .hl-hang figcaption { display: none; }
+    .hl-lines { grid-template-columns: minmax(0, 1fr); }
+    .hl-plan-list label { grid-template-columns: auto minmax(0, 1fr); }
+    .hl-dots { display: none; }
+    .hl-name { grid-column: 2; grid-row: 1; }
+    .hl-plan-list b { grid-column: 2; grid-row: 2; }
+    .hl-plan-list small { grid-column: 2; grid-row: 3; font-size: 1.8rem; }
+    .hl-hang svg { inline-size: 12rem; }
     .hl-gift { padding-block: 5rem; }
     .hl-gift-card { padding: 3rem 2.4rem; }
   }

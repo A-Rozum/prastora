@@ -20,7 +20,7 @@ SHOTS = {  # name: (selector to start from, colour scheme)
     "dashboard": (".db-main", "light"),
     "service": (".sv-hero", "dark"),
     "article": (".ar", "light"),
-    "pricing": (".hl-head", "light"),
+    "pricing": ("#plans", "light"),
     "gallery": (".pe-head", "light"),
     "contacts": ("#locations", "dark"),
 }
