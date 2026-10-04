@@ -2,14 +2,14 @@
 <html lang="en"><head><meta charset="utf-8"><title>Tandem comparison — viewport checks</title>
 <style>body{margin:20px;background:#e5e5e5;color:#222;font:16px/1.5 system-ui}section{margin:30px 0}iframe{border:1px solid #999;display:block}h2{font-size:18px}</style></head><body>
 <h1>Tandem comparison — viewport checks</h1><p>These frames load the actual template. Test billing, column visibility, group folding, cell explanations and scrolling inside each frame. The last frame simulates 150% text without resizing geometry; it does not replace a real browser zoom or minimum-font-size check.</p>
-<section><h2>phone320: 320 × 568</h2><iframe id="phone320" title="phone320" width="320" height="568" src="../templates/comparison.html?check=final#compare"></iframe></section>
-<section><h2>phone: 390 × 844</h2><iframe id="phone" title="phone" width="390" height="844" src="../templates/comparison.html?check=final#compare"></iframe></section>
-<section><h2>tablet768: 768 × 1024</h2><iframe id="tablet768" title="tablet768" width="768" height="1024" src="../templates/comparison.html?check=final#compare"></iframe></section>
-<section><h2>tablet863: 863 × 900</h2><iframe id="tablet863" title="tablet863" width="863" height="900" src="../templates/comparison.html?check=final#compare"></iframe></section>
-<section><h2>desktop: 1440 × 900</h2><iframe id="desktop" title="desktop" width="1440" height="900" src="../templates/comparison.html?check=final#compare"></iframe></section>
-<section><h2>wide: 2560 × 1440</h2><iframe id="wide" title="wide" width="2560" height="1440" src="../templates/comparison.html?check=final#compare"></iframe></section>
-<section><h2>short: 844 × 390</h2><iframe id="short" title="short" width="844" height="390" src="../templates/comparison.html?check=final#compare"></iframe></section>
-<section><h2>text: 1024 × 768 · 150% text only</h2><iframe id="text" title="text" width="1024" height="768" src="../templates/comparison.html?check=final#compare"></iframe></section>
+<section><h2>phone320: 320 × 568</h2><iframe id="phone320" title="phone320" width="320" height="568" src="../templates/comparison.html?check=compact#compare"></iframe></section>
+<section><h2>phone: 390 × 844</h2><iframe id="phone" title="phone" width="390" height="844" src="../templates/comparison.html?check=compact#compare"></iframe></section>
+<section><h2>tablet768: 768 × 1024</h2><iframe id="tablet768" title="tablet768" width="768" height="1024" src="../templates/comparison.html?check=compact#compare"></iframe></section>
+<section><h2>tablet863: 863 × 900</h2><iframe id="tablet863" title="tablet863" width="863" height="900" src="../templates/comparison.html?check=compact#compare"></iframe></section>
+<section><h2>desktop: 1440 × 900</h2><iframe id="desktop" title="desktop" width="1440" height="900" src="../templates/comparison.html?check=compact#compare"></iframe></section>
+<section><h2>wide: 2560 × 1440</h2><iframe id="wide" title="wide" width="2560" height="1440" src="../templates/comparison.html?check=compact#compare"></iframe></section>
+<section><h2>short: 844 × 390</h2><iframe id="short" title="short" width="844" height="390" src="../templates/comparison.html?check=compact#compare"></iframe></section>
+<section><h2>text: 1024 × 768 · 150% text only</h2><iframe id="text" title="text" width="1024" height="768" src="../templates/comparison.html?check=compact#compare"></iframe></section>
 <script>
 // Test harness only. Capture every original size before applying user-style overrides.
 const textFrame = document.querySelector('#text');

@@ -12,10 +12,11 @@
   <link rel="stylesheet" href="../css/components/forms.css">
   <link rel="stylesheet" href="../css/components/utility.css">
   <link rel="stylesheet" href="../css/components/consent.css">
-  <link rel="stylesheet" href="../css/pages/comparison.css?v=2">
+  <link rel="stylesheet" href="../css/pages/comparison.css?v=3">
   <link rel="stylesheet" href="../css/dev/viewport.css">
   <script src="../assets/viewport.js?v=2" defer></script>
   <script src="../assets/interactions.js?v=9" defer></script>
+  <script src="../assets/comparison.js?v=1" defer></script>
 </head>
 <body>
   <div class="css-top" data-css-header>
@@ -55,7 +56,7 @@
     <section class="section tm-comparison anchor" id="compare" aria-labelledby="compare-title">
       <div class="tm-comparison-heading"><div class="stack-small"><p class="eyebrow">A clear comparison</p><h2 id="compare-title">Pick the room you need.</h2><p class="muted">Four plans. The details that actually matter.</p></div>
       <fieldset class="choice tm-cycle"><legend>Billing</legend><input type="radio" name="billing" id="monthly" value="monthly"><label for="monthly">Monthly</label><input type="radio" name="billing" id="annual" value="annual" checked><label for="annual">Annual <span class="tm-saving">Save 20%</span></label></fieldset></div>
-      <div class="tm-controls"><form id="plan-visibility"><fieldset class="choice tm-visibility"><legend>Plans to compare</legend><input type="checkbox" id="show-free" name="free" checked><label for="show-free"><span aria-hidden="true">✓</span>Free</label><input type="checkbox" id="show-studio" name="studio" checked><label for="show-studio"><span aria-hidden="true">✓</span>Studio</label><input type="checkbox" id="show-team" name="team" checked><label for="show-team"><span aria-hidden="true">✓</span>Team</label><input type="checkbox" id="show-enterprise" name="enterprise" checked><label for="show-enterprise"><span aria-hidden="true">✓</span>Enterprise</label></fieldset></form><label class="check tm-reading"><input type="checkbox" id="larger-text">Larger comparison text</label></div>
+      <div class="tm-controls"><form id="plan-visibility"><fieldset class="choice tm-visibility"><legend>Plans to compare</legend><input type="checkbox" id="show-free" name="free" checked><label for="show-free"><span aria-hidden="true">✓</span>Free</label><input type="checkbox" id="show-studio" name="studio" checked><label for="show-studio"><span aria-hidden="true">✓</span>Studio</label><input type="checkbox" id="show-team" name="team" checked><label for="show-team"><span aria-hidden="true">✓</span>Team</label><input type="checkbox" id="show-enterprise" name="enterprise" checked><label for="show-enterprise"><span aria-hidden="true">✓</span>Enterprise</label></fieldset></form></div>
       <p class="tm-scroll-hint" id="table-hint">Scroll within the comparison. Plan names stay above; feature names stay beside you. Select a group to fold it away, or an ⓘ for the details.</p>
       <div class="tm-empty card stack"><h3>A little too much breathing room.</h3><p>Select at least one plan to compare its features.</p><button class="btn" type="reset" form="plan-visibility">Show all plans</button></div>
       <div class="table-wrap tm-scroll" tabindex="0" role="region" aria-label="Plan comparison, scrollable" aria-describedby="table-hint">

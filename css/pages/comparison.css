@@ -1,9 +1,10 @@
-/* Tandem comparison demo. State lives in native controls; no page script.
+/* Tandem comparison demo. Comparison state lives in native controls. A small page script coordinates
+   the mobile page-to-table scroll handoff. Without it, ordinary nested scrolling works.
    The table keeps its composition in an explicitly scrollable region.
    Sticky row/column headers share that one scroll ancestor.
    No colspan: every header band obeys the same plan visibility as the data. */
 @layer page {
-  .tm { font-size: 2rem; --comparison-text: 2.4rem; --feature-width: 26rem; --plan-width: 20rem; }
+  .tm { font-size: 2rem; --comparison-text: 2rem; --feature-width: 26rem; --plan-width: 20rem; }
   .tm-wordmark-dot, .tm-hero h1 em { color: var(--accent); }
   .tm-wordmark-dot { margin-inline-start: -.8rem; }
   .tm-hero { display: grid; grid-template-columns: 1.1fr 1fr; align-items: center; gap: 6rem; padding-block: 7rem; background: radial-gradient(ellipse at 95% 0%, var(--featured), transparent 65%); }
@@ -40,11 +41,10 @@
   .tm-visibility label { display: flex; align-items: center; gap: .8rem; }
   .tm-visibility input:not(:checked) + label { color: var(--muted); background: var(--surface); }
   .tm-visibility input:not(:checked) + label span { visibility: hidden; }
-  .tm-reading { padding-block: 1rem; color: var(--muted); }
   .tm-scroll-hint { color: var(--muted); font-size: var(--small-size); margin-block-end: 1.6rem; }
   .tm-scroll { position: relative; overflow: auto; block-size: 68rem; border: .1rem solid var(--line); border-radius: 1.2rem; background: var(--paper); overscroll-behavior: contain; scrollbar-gutter: stable; }
   .tm-table { table-layout: fixed; border-collapse: separate; border-spacing: 0; font-size: var(--comparison-text); inline-size: 100%; min-inline-size: calc(var(--feature-width) + var(--plan-count) * var(--plan-width)); }
-  .tm-table th, .tm-table td { padding: 1.6rem 1.5rem; line-height: 1.45; vertical-align: middle; border-block-end: .1rem solid var(--line); border-inline-end: .1rem solid var(--line); background: var(--paper); overflow-wrap: anywhere; }
+  .tm-table th, .tm-table td { padding: 1.2rem 1.5rem; line-height: 1.45; vertical-align: middle; border-block-end: .1rem solid var(--line); border-inline-end: .1rem solid var(--line); background: var(--paper); overflow-wrap: anywhere; }
   .tm-table td, .tm-table th[data-plan] { text-align: center; }
   .tm-table tr > :last-child { border-inline-end: 0; }
   .tm-table tr > th:first-child { inline-size: var(--feature-width); position: sticky; inset-inline-start: 0; z-index: 2; text-align: start; box-shadow: .4rem 0 .8rem var(--shadow); }
@@ -58,10 +58,10 @@
   .tm-table [data-plan=team] { background: var(--featured); }
   .tm-table thead [data-plan=team] { box-shadow: inset 0 .4rem var(--accent); }
   .tm-table-intro { display: grid; gap: 1.5rem; padding-block-start: 3.5rem; }
-  .tm-table-intro h3 { font-size: 2.6rem; }
+  .tm-table-intro h3 { font-size: inherit; font-weight: 650; }
   .tm-table-intro p { font-size: 1.6rem; font-weight: 400; color: var(--muted); }
   .tm-plan { gap: 1rem; font-weight: 400; }
-  .tm-plan h3 { font-size: 2.5rem; }
+  .tm-plan h3 { font-size: inherit; font-weight: 650; }
   .tm-plan-tag { font-size: 1.2rem; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
   .tm-plan [class] { justify-self: stretch; }
   .tm-plan-description { min-block-size: 6rem; font-size: 1.8rem; color: var(--muted); }
@@ -84,9 +84,8 @@
   .tm-empty { display: none; padding: 4rem; }
   .tm-comparison:not(:has(.tm-visibility input:checked)) .tm-scroll { display: none; }
   .tm-comparison:not(:has(.tm-visibility input:checked)) .tm-empty { display: grid; }
-  .tm:has(#larger-text:checked) { --comparison-text: 3rem; --feature-width: 30rem; --plan-width: 24rem; }
   .tm-table tbody .tm-group > * { background: var(--surface); padding-block: 1.2rem; }
-  .tm-group label { display: flex; align-items: center; gap: 1rem; cursor: pointer; font-size: 1.8rem; }
+  .tm-group label { display: flex; align-items: center; gap: 1rem; cursor: pointer; font-size: inherit; font-weight: 650; }
   .tm-group small { display: block; font-size: 1.2rem; font-weight: 400; color: var(--muted); }
   .tm-chevron { display: inline-block; font-size: 2rem; transform: rotate(-90deg); }
   .tm-group-toggle:checked + label .tm-chevron { transform: none; }
@@ -110,7 +109,7 @@
   .tm-faq .disclosure p { padding-block-end: 2rem; color: var(--muted); }
   .tm-footer { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 3rem; background: var(--surface); }
   @media (width <= 50em) {
-    .tm { font-size: var(--text-size); --comparison-text: 2.6rem; --feature-width: 26rem; --plan-width: 22rem; }
+    .tm { font-size: var(--text-size); --comparison-text: 2.4rem; --feature-width: 26rem; --plan-width: 22rem; }
     .tm-hero { grid-template-columns: minmax(0, 1fr); gap: 4rem; padding-block: 5rem; }
     .tm-hero h1 { font-size: 6.4rem; }
     .tm-hero .lead { font-size: var(--lead-size); }
@@ -120,9 +119,8 @@
     .tm-task-tag, .tm-avatars { font-size: 1.6rem; }
     .tm-board-note { font-size: 2rem; }
     .tm-comparison-heading { align-items: start; gap: 2rem; }
-    .tm-scroll { block-size: 88rem; }
-    .tm-table th, .tm-table td { padding: 2rem 1.5rem; }
-    .tm-plan h3 { font-size: 3.2rem; }
+    .tm-scroll { block-size: 88rem; overscroll-behavior-y: auto; }
+    .tm-table th, .tm-table td { padding: 1.4rem 1.5rem; }
     .tm-plan-tag { font-size: 1.6rem; }
     .tm-plan-description { font-size: 2rem; min-block-size: 8.7rem; }
     .tm-price { font-size: 6rem; }
@@ -130,13 +128,10 @@
     .tm-contact-price { font-size: 3.8rem; min-block-size: 9rem; }
     .tm-billing-note { font-size: 1.6rem; min-block-size: 5rem; }
     .tm-plan .btn { min-block-size: 6.5rem; font-size: 2.2rem; }
-    .tm-table-intro h3 { font-size: 3.2rem; }
     .tm-table-intro p { font-size: 2rem; }
-    .tm-group label { font-size: 2.4rem; }
     .tm-group small { font-size: 1.6rem; }
     .tm-chevron { font-size: 2.6rem; }
     .tm-info { inline-size: 2.6rem; block-size: 2.6rem; font-size: 1.8rem; }
-    .tm:has(#larger-text:checked) { --comparison-text: 3.25rem; --feature-width: 30rem; --plan-width: 26rem; }
     .tm-reassurance, .tm-faq { grid-template-columns: minmax(0, 1fr); gap: 3rem; }
     .tm-reassurance h3 { font-size: 3.2rem; }
   }
@@ -155,7 +150,6 @@
     .tm-table { min-inline-size: 0; font-size: 1rem; }
     .tm-table tr > th:first-child { inline-size: 20%; }
     .tm-table th { position: static !important; }
-    .tm-plan h3 { font-size: 1.5rem; }
     .tm-price { font-size: 2rem; }
     .tm-plan-description, .tm-table-intro { display: none; }
   }
