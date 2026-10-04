@@ -4,19 +4,15 @@
   const value = panel?.querySelector('[data-viewport-value]');
   if (!value) return;
   const reading = value.parentElement;
-  reading.querySelector('span')?.remove();
   value.setAttribute('aria-label', 'Browser viewport width and height');
   const timing = document.createElement('span');
   timing.className = 'load-reading';
   timing.hidden = true;
-  const separator = document.createElement('span');
-  separator.textContent = '|';
-  separator.setAttribute('aria-hidden', 'true');
   const loadValue = document.createElement('output');
   loadValue.setAttribute('data-load-time', '');
   loadValue.setAttribute('aria-label', 'Page load time');
   loadValue.title = 'Time from navigation start to the load event; includes resource loading, not later interaction. Reloads and caching affect this value.';
-  timing.append(separator, loadValue);
+  timing.append(loadValue);
   reading.append(timing);
 
   const update = () => {
