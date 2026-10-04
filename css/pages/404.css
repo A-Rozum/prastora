@@ -1,0 +1,13 @@
+/* Page composition for 404.html. GitHub Pages serves it for any missing path, so the page sets
+   <base href="/prastora/"> to keep its links working at every depth. */
+@layer page {
+  .nf { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 6fr); gap: 6rem; align-items: center; min-block-size: 60svh; padding-block: 8rem; }
+  .nf-art { display: block; inline-size: 100%; block-size: auto; }
+  .nf-digits { stroke: color-mix(in srgb, var(--accent) 35%, var(--paper)); }
+  .nf h1 { font-size: 5.6rem; }
+  @media (width <= 50em) {
+    .nf { grid-template-columns: minmax(0, 1fr); gap: 3rem; padding-block: 5rem; }
+    .nf-art { inline-size: 86%; justify-self: center; }
+    .nf h1 { font-size: 4.4rem; }
+  }
+}

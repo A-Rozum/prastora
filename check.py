@@ -60,7 +60,7 @@ class Page(HTMLParser):
             (self.duplicates if attrs["id"] in self.ids else []).append(attrs["id"])
             self.ids.add(attrs["id"])
         for key in ("href", "src", "action"):
-            if attrs.get(key):
+            if attrs.get(key) and tag != "base":
                 self.refs.append(attrs[key])
         if tag == "link" and attrs.get("rel") == "stylesheet":
             self.styles.append(attrs.get("href", ""))
