@@ -3,7 +3,7 @@
    Sticky row/column headers share that one scroll ancestor.
    No colspan: every header band obeys the same plan visibility as the data. */
 @layer page {
-  .tm { --comparison-text: 2rem; --feature-width: 26rem; --plan-width: 20rem; }
+  .tm { font-size: 2rem; --comparison-text: 2.4rem; --feature-width: 26rem; --plan-width: 20rem; }
   .tm-wordmark-dot, .tm-hero h1 em { color: var(--accent); }
   .tm-wordmark-dot { margin-inline-start: -.8rem; }
   .tm-hero { display: grid; grid-template-columns: 1.1fr 1fr; align-items: center; gap: 6rem; padding-block: 7rem; background: radial-gradient(ellipse at 95% 0%, var(--featured), transparent 65%); }
@@ -59,12 +59,12 @@
   .tm-plan h3 { font-size: 2.5rem; }
   .tm-plan-tag { font-size: 1.2rem; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
   .tm-plan [class] { justify-self: stretch; }
-  .tm-plan-description { min-block-size: 5.2rem; font-size: 1.5rem; color: var(--muted); }
+  .tm-plan-description { min-block-size: 6rem; font-size: 1.8rem; color: var(--muted); }
   .tm-price { font-size: 4.6rem; font-weight: 650; line-height: 1.2; letter-spacing: -.05em; }
   .tm-price-unit { display: block; font-size: 1.3rem; color: var(--muted); }
   .tm-contact-price { display: block; font-size: 2.9rem; font-weight: 650; min-block-size: 7rem; align-content: center; }
   .tm-billing-note { min-block-size: 3rem; font-size: 1.2rem; color: var(--muted); }
-  .tm-plan .btn { padding: .9rem .7rem; font-size: 1.6rem; }
+  .tm-plan .btn { padding: .9rem .7rem; font-size: 1.8rem; }
   .tm-monthly { display: none; }
   .tm:has(#monthly:checked) .tm-annual { display: none; }
   .tm:has(#monthly:checked) .tm-monthly { display: inline; }
@@ -79,7 +79,7 @@
   .tm-empty { display: none; padding: 4rem; }
   .tm-comparison:not(:has(.tm-visibility input:checked)) .tm-scroll { display: none; }
   .tm-comparison:not(:has(.tm-visibility input:checked)) .tm-empty { display: grid; }
-  .tm:has(#larger-text:checked) { --comparison-text: 2.5rem; --feature-width: 30rem; --plan-width: 24rem; }
+  .tm:has(#larger-text:checked) { --comparison-text: 3rem; --feature-width: 30rem; --plan-width: 24rem; }
   .tm-table tbody .tm-group > * { background: var(--surface); padding-block: 1.2rem; }
   .tm-group label { display: flex; align-items: center; gap: 1rem; cursor: pointer; font-size: 1.8rem; }
   .tm-group small { display: block; font-size: 1.2rem; font-weight: 400; color: var(--muted); }
@@ -105,7 +105,7 @@
   .tm-faq .disclosure p { padding-block-end: 2rem; color: var(--muted); }
   .tm-footer { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 3rem; background: var(--surface); }
   @media (width <= 50em) {
-    .tm { --comparison-text: 2.6rem; --feature-width: 26rem; --plan-width: 22rem; }
+    .tm { font-size: var(--text-size); --comparison-text: 2.6rem; --feature-width: 26rem; --plan-width: 22rem; }
     .tm-hero { grid-template-columns: minmax(0, 1fr); gap: 4rem; padding-block: 5rem; }
     .tm-hero h1 { font-size: 6.4rem; }
     .tm-hero .lead { font-size: var(--lead-size); }
