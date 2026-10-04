@@ -16,7 +16,7 @@
   reading.append(timing);
 
   const update = () => {
-    value.textContent = `${window.innerWidth} × ${window.innerHeight}`;
+    value.textContent = `${window.innerWidth}×${window.innerHeight}`;
     panel.hidden = false;
   };
 
@@ -25,7 +25,7 @@
   const showLoadTime = () => {
     const navigation = performance.getEntriesByType('navigation')[0];
     if (!navigation || navigation.loadEventEnd <= 0) return;
-    loadValue.textContent = `${((navigation.loadEventEnd - navigation.startTime) / 1000).toFixed(3)} s`;
+    loadValue.textContent = `${((navigation.loadEventEnd - navigation.startTime) / 1000).toFixed(3)}s`;
     timing.hidden = false;
   };
   // loadEventEnd is populated after load handlers finish, not inside the event.

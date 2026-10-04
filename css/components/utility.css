@@ -1,13 +1,14 @@
 /* Utility strip.
    .viewport-panel / .viewport-tools / .utility-actions – strip above the header
-   .theme-toggle, .language-control, .utility-back (Back to Prastora on templates with their own design) */
+   .theme-toggle, .language-control, .utility-back (Back to Prastora on templates with their own design)
+   .text-size – three-step text size buttons (trial on experiments.html) */
 @layer components {
   .viewport-panel { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .6rem 2rem; padding: .3rem var(--space-inline); border-block-end: .1rem solid var(--utility-line); background: var(--utility-surface); color: var(--ink); font-size: calc(var(--small-size) * .9); line-height: 1.5; }
   .viewport-panel[hidden] { display: none; }
   .utility-actions { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem 1rem; min-inline-size: 0; }
   .utility-actions { margin-inline-start: auto; }
   .utility-actions select, .utility-actions button { font: inherit; padding: .25rem .7rem; border: .1rem solid var(--line); border-radius: .4rem; background: var(--paper); color: var(--ink); }
-  .language-control { position: relative; display: inline-flex; inline-size: 14rem; max-inline-size: 100%; min-inline-size: 0; flex: none; }
+  .language-control { position: relative; display: inline-flex; inline-size: 6.4rem; max-inline-size: 100%; min-inline-size: 0; flex: none; }
   .utility-actions select { appearance: none; -webkit-appearance: none; inline-size: 100%; min-inline-size: 0; max-inline-size: 100%; flex: none; padding-block: .25rem; padding-inline: .8rem 2.8rem; line-height: 1.5; background-image: none; }
   .language-control .language-arrow { position: absolute; inset-inline-end: .8rem; inset-block-start: 50%; transform: translateY(-50%); inline-size: 1.2rem; block-size: 1.2rem; color: var(--ink); pointer-events: none; }
   @media (forced-colors: active) {
@@ -39,10 +40,18 @@
   :root[data-scheme=light] .theme-toggle .theme-moon { display: block; }
   .theme-toggle[hidden] { display: none; }
   .viewport-panel :is(a, button, select, .language-control) { transform: none; transition: none; }
+  .text-size { display: inline-flex; align-items: end; }
+  .text-size button { padding: .1rem .5rem; border-radius: 0; line-height: 1.2; font-weight: 600; }
+  .text-size button + button { border-inline-start: 0; }
+  .text-size button:first-child { border-start-start-radius: .4rem; border-end-start-radius: .4rem; }
+  .text-size button:last-child { border-start-end-radius: .4rem; border-end-end-radius: .4rem; }
+  .text-size .ts-s { font-size: .8em; }
+  .text-size .ts-l { font-size: 1.25em; }
+  .text-size [aria-pressed=true] { background: var(--ink); color: var(--paper); }
   @media (width > 50em) {
     .viewport-panel { padding-block: .22rem; font-size: calc(var(--small-size) * .8); }
     .utility-actions select, .utility-actions button { padding: .18rem .6rem; }
-    .language-control { inline-size: 12rem; }
+    .language-control { inline-size: 8.6rem; }
     .utility-actions select { padding-inline: .65rem 2.5rem; }
     .language-control .language-arrow { inline-size: 1rem; block-size: 1rem; inset-inline-end: .7rem; }
     .utility-actions svg { inline-size: calc(var(--small-size) * .85); block-size: calc(var(--small-size) * .85); }
