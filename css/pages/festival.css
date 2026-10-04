@@ -24,6 +24,7 @@
   .of-arrivals { display: grid; grid-template-columns: 23rem minmax(0, 1fr); gap: 2rem; padding: 2rem var(--space-inline); border-block: .12rem solid var(--ink); }
   .of-arrivals > span { font-size: var(--small-size); color: var(--muted); }
   .of-arrivals p { font-weight: 600; }
+  .of-arrivals .of-arrivals-guests { font-weight: 400; }
   .of-welcome .pair { grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); gap: 8rem; }
   .of-welcome h2 { font-family: Georgia, serif; font-weight: 400; font-size: 4rem; }
   .of-program { position: relative; z-index: 1; background: var(--surface); border-block: .1rem solid var(--line); }
@@ -63,6 +64,7 @@
   .of-program-foot { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; border-block-start: .1rem solid var(--line); padding-block-start: 2rem; margin-block-start: 2rem; color: var(--muted); }
   .of-artist { display: grid; grid-template-columns: 8rem 32rem minmax(0, 1fr); align-items: start; gap: 3rem; border-block-start: .1rem solid var(--line); padding-block: 3.5rem; }
   .of-artist-photo { display: grid; gap: 1rem; }
+  .of-artist-photo .media { object-fit: cover; }
   .of-artist-photo figcaption { color: var(--muted); font-size: var(--small-size); line-height: 1.5; }
   .of-artist-index { font-family: Georgia, serif; font-size: 8rem; line-height: 1; color: var(--muted); }
   .of-artist > .stack { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 3rem; }
@@ -72,6 +74,13 @@
   .of-watch { display: flex; flex-wrap: wrap; align-items: baseline; gap: .7rem 2rem; }
   .of-watch a { font-size: var(--small-size); }
   .of-availability { border-block-start: .1rem solid var(--line); padding-block-start: 2rem; }
+  .of-guests { background: var(--surface); border-block: .1rem solid var(--line); }
+  .of-guests-intro { margin-block-start: 2rem; font-size: var(--lead-size); }
+  .of-guest-pass { display: grid; gap: 1rem; padding: 2rem 3rem; color: var(--poster-ink); background: var(--poster-paper); border: .12rem solid var(--poster-ink); transform: rotate(-2deg); }
+  .of-guest-pass .eyebrow { color: inherit; }
+  .of-guest-pass strong { font-size: 2.7rem; line-height: 1.15; }
+  .of-guest-pass > span:last-child { font-size: var(--small-size); }
+  .of-guest-index { font-size: 5rem; }
   .of-station { background: var(--surface); border-block: .1rem solid var(--line); }
   .of-station h2 { font-family: Georgia, serif; font-weight: 400; font-size: 5.5rem; }
   .of-places { padding-block-start: 2rem; }
@@ -113,6 +122,8 @@
     .of-artist > .stack { grid-template-columns: minmax(0, 1fr); gap: 2rem; }
     .of-artist h3 { font-size: 3.4rem; }
     .of-artist-role { padding-inline-start: 1.5rem; }
+    .of-guest-pass { margin-block: 1rem; }
+    .of-guest-index { font-size: 4rem; }
     .of-places { --columns: 3; }
     .of-manager { padding-block-start: 3rem; }
     .of-manager svg { inline-size: 36rem; }
