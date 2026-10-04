@@ -1,0 +1,13 @@
+/* Shared styles of the Harbour Lights demo site (article, photo essay, subscriptions): masthead,
+   kickers, decks and small headings. */
+@layer page {
+  .ar-masthead { font-family: var(--font-display, var(--font)); font-size: 2.6rem; letter-spacing: .02em; }
+  .desktop-nav .btn { padding-inline: 1.6rem; min-block-size: 3.8rem; font-size: var(--text-size); }
+  .ar-kicker { font-family: var(--font-display, var(--font)); color: var(--accent); }
+  .ar-kicker a { color: inherit; }
+  .ar-dek { font-size: 2.3rem; line-height: 1.45; color: var(--muted); max-inline-size: 80rem; }
+  .ar-small-h { margin-block-end: 1.2rem; font-family: var(--font-display, var(--font)); font-size: 2.2rem; font-weight: 600; }
+  @media (width <= 50em) {
+    .ar-dek { font-size: 2.6rem; }
+  }
+}

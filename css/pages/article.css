@@ -2,14 +2,9 @@
    margin – so sidenotes can float into the margin next to the paragraph that cites them. With 128 units
    across, the column arithmetic is exact at every width within a regime. */
 @layer page {
-  .ar-masthead { font-family: var(--font-display, var(--font)); font-size: 2.6rem; letter-spacing: .02em; }
-  .desktop-nav .btn { padding-inline: 1.6rem; min-block-size: 3.8rem; font-size: var(--text-size); }
   .ar { --ar-gap: 4rem; --ar-rail: 28rem; display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 7fr) minmax(0, 3fr); column-gap: var(--ar-gap); row-gap: 3rem; padding-block-start: 6rem; }
   .ar-head { grid-column: 2 / -1; display: grid; gap: 1.6rem; }
-  .ar-kicker { font-family: var(--font-display, var(--font)); color: var(--accent); }
-  .ar-kicker a { color: inherit; }
   .ar h1 { font-family: var(--font-display, var(--font)); font-size: 6.4rem; line-height: 1.02; font-weight: 600; max-inline-size: 90rem; }
-  .ar-dek { font-size: 2.3rem; line-height: 1.45; color: var(--muted); max-inline-size: 80rem; }
   .ar-meta { grid-column: 1; display: grid; gap: 1.6rem; align-content: start; padding-block-start: .6rem; border-block-start: .3rem solid var(--ink); color: var(--muted); }
   .ar-meta b { color: var(--ink); }
   .ar-share { display: grid; gap: .4rem; }
@@ -34,7 +29,6 @@
   .ar-after { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 5fr) minmax(0, 4fr); gap: 4rem; align-items: start; }
   .ar-author-col { --fill-min: 16rem; --fill-max: 26rem; --fill-overlap: 1.6rem; --fill-bleed: var(--space-block); }
   .ar-bike { opacity: .9; }
-  .ar-small-h { margin-block-end: 1.2rem; font-family: var(--font-display, var(--font)); font-size: 2.2rem; font-weight: 600; }
   .ar-list { display: grid; gap: 1.6rem; margin: 0; padding: 0; list-style: none; }
   .ar-list li { display: grid; gap: .2rem; padding-block-end: 1.6rem; border-block-end: .1rem solid var(--line); }
   .ar-list a { font-family: var(--font-display, var(--font)); font-size: 2rem; line-height: 1.25; color: var(--ink); text-decoration: none; }
@@ -44,7 +38,6 @@
     .ar { grid-template-columns: minmax(0, 1fr); padding-block-start: 4rem; }
     .ar-head, .ar-meta, .ar-body { grid-column: 1; }
     .ar h1 { font-size: 4.4rem; }
-    .ar-dek { font-size: 2.6rem; }
     .ar-meta { display: flex; flex-wrap: wrap; gap: 1rem 3rem; }
     .ar-share { display: flex; gap: 1.6rem; }
     .ar-body { font-size: 2.3rem; }

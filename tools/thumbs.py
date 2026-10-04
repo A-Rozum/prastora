@@ -21,7 +21,7 @@ SHOTS = {  # name: (selector to start from, colour scheme)
     "service": (".sv-hero", "dark"),
     "article": (".ar", "light"),
     "pricing": ("#packages", "light"),
-    "gallery": ("#collection", "light"),
+    "gallery": (".pe-head", "light"),
     "contacts": ("#locations", "dark"),
 }
 WIDTH, THUMB = 1440, (720, 450)
