@@ -30,7 +30,7 @@
   .of-arrivals p { font-weight: 600; }
   .of-welcome .pair { grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); gap: 8rem; }
   .of-welcome h2 { font-family: Georgia, serif; font-weight: 400; font-size: 4rem; }
-  .of-program { background: var(--surface); border-block: .1rem solid var(--line); }
+  .of-program { position: relative; z-index: 1; background: var(--surface); border-block: .1rem solid var(--line); }
   .of-section-head { display: flex; justify-content: space-between; align-items: end; gap: 3rem; margin-block-end: 3rem; }
   .of-section-head h2 { font-size: 4.6rem; letter-spacing: -.15rem; margin-block-start: 1rem; }
   .of-section-head > p { color: var(--muted); font-size: var(--small-size); }
@@ -38,7 +38,7 @@
   .of-filters legend { font-size: var(--small-size); }
   .of-filters input:checked + label { color: var(--on-accent); background: var(--accent); }
   .of-program-help { color: var(--muted); margin-block-end: 2rem; }
-  .of-timetable { position: relative; display: grid; grid-template-columns: 12rem repeat(44, minmax(0, 1fr)); grid-template-rows: 3.5rem repeat(3, 15rem); column-gap: 0; row-gap: .8rem; isolation: isolate; }
+  .of-timetable { position: relative; display: grid; grid-template-columns: 12rem repeat(44, minmax(0, 1fr)); grid-template-rows: 3.5rem repeat(3, 17rem); column-gap: 0; row-gap: .8rem; isolation: isolate; }
   .of-axis { grid-column: 2 / -1; grid-row: 1; display: grid; grid-template-columns: repeat(44, minmax(0, 1fr)); align-items: end; }
   .of-hour { grid-column: calc(var(--tick) * 4 + 1) / span 4; font-size: 1.2rem; font-variant-numeric: tabular-nums; padding-block-end: .5rem; }
   .of-stage-label { grid-column: 1; grid-row: calc(var(--stage) + 2); padding: 1.5rem 1rem 1rem 0; display: flex; flex-direction: column; gap: .8rem; font-size: 1.5rem; line-height: 1.3; }
@@ -48,10 +48,12 @@
   .of-platform { --stage-colour: var(--platform); }
   .of-waiting { --stage-colour: var(--waiting); }
   .of-set { position: relative; grid-column: calc(var(--from) + 2) / span var(--duration); grid-row: calc(var(--stage) + 2); margin-inline: .25rem; margin-block: .8rem; color: var(--stage-ink); background: var(--stage-colour); border: .1rem solid var(--stage-ink); border-radius: .3rem; }
-  .of-set > summary { display: flex; flex-direction: column; gap: .8rem; padding: .9rem .7rem; block-size: 100%; list-style: none; }
+  .of-set > summary { box-sizing: border-box; display: flex; flex-direction: column; gap: .8rem; padding: .9rem .7rem; block-size: 100%; list-style: none; }
   .of-set > summary::-webkit-details-marker { display: none; }
   .of-set-time { font-size: 1rem; font-weight: 500; font-variant-numeric: tabular-nums; line-height: 1.3; }
   .of-set strong { font-size: 1.5rem; font-weight: 700; line-height: 1.2; overflow-wrap: normal; hyphens: auto; }
+  .of-short > summary { padding-inline: .4rem; }
+  .of-short strong { font-size: 1.2rem; }
   .of-set-stage { display: none; }
   .of-set-toggle { margin-block-start: auto; font-size: 1rem; line-height: 1.3; }
   .of-set[open] { z-index: 5; box-shadow: 0 0 0 .2rem var(--stage-ink); }
@@ -60,7 +62,7 @@
   .of-set-notes h3 { font-size: 2.1rem; }
   .of-late .of-set-notes { inset-inline-start: auto; inset-inline-end: 0; }
   .of-program:has(#stage-yard:checked) [data-stage]:not([data-stage=yard]), .of-program:has(#stage-platform:checked) [data-stage]:not([data-stage=platform]), .of-program:has(#stage-waiting:checked) [data-stage]:not([data-stage=waiting]) { display: none; }
-  .of-program:has(#stage-yard:checked, #stage-platform:checked, #stage-waiting:checked) .of-timetable { grid-template-rows: 3.5rem 15rem; }
+  .of-program:has(#stage-yard:checked, #stage-platform:checked, #stage-waiting:checked) .of-timetable { grid-template-rows: 3.5rem 17rem; }
   .of-program:has(#stage-yard:checked, #stage-platform:checked, #stage-waiting:checked) :is(.of-stage-label, .of-stage-track, .of-set) { grid-row: 2; }
   .of-program-foot { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; border-block-start: .1rem solid var(--line); padding-block-start: 2rem; margin-block-start: 2rem; color: var(--muted); }
   .of-artist { display: grid; grid-template-columns: 12rem minmax(0, 1fr); gap: 4rem; border-block-start: .1rem solid var(--line); padding-block: 3.5rem; }
