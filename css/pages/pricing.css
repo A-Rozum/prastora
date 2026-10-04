@@ -47,6 +47,10 @@
   .hl-letters { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4rem; margin-block-start: 1.6rem; }
   .hl-letter { display: grid; align-content: start; gap: 1.2rem; padding-block-start: 1.6rem; border-block-start: .3rem solid var(--ink); }
   .hl-letter h3 { font-family: var(--font-display, var(--font)); font-size: 2.2rem; font-weight: 600; line-height: 1.2; }
+  .hl-letter-courier { position: relative; }
+  .hl-courier { position: absolute; inset-block-start: -6.3rem; inset-inline-end: 0; display: flex; align-items: end; gap: 1rem; margin: 0; pointer-events: none; }
+  .hl-courier svg { inline-size: 9rem; block-size: auto; }
+  .hl-courier span { margin-block-end: .6rem; font-size: 1.2rem; font-style: italic; color: var(--muted); }
   .hl-sign { font-style: italic; color: var(--muted); }
   .hl-reply { padding-inline-start: 1.6rem; border-inline-start: .3rem solid var(--accent); }
   .hl-reply span { font-weight: 700; }
@@ -54,6 +58,10 @@
     .hl-head { padding-block: 4rem 2rem; }
     .hl-head h1 { font-size: 4.6rem; }
     .hl-letters { grid-template-columns: minmax(0, 1fr); }
+    .hl-letter-courier { margin-block-start: 3rem; }
+    .hl-courier { inset-block-start: -5.1rem; }
+    .hl-courier svg { inline-size: 7.4rem; }
+    .hl-courier span { font-size: 1.5rem; }
     .hl-order { grid-template-columns: minmax(0, 1fr) 10rem; gap: 3rem 1.2rem; }
     .hl-coupon { grid-column: 1 / -1; grid-row: 3; padding: 2.4rem 2rem; }
     .hl-hang { grid-column: 2; grid-row: 2; margin-block-start: -5.6rem; }
