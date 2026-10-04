@@ -55,4 +55,8 @@
     .ar-author-col { grid-template-rows: none; gap: 2rem; }
     .ar-bike { position: static; inline-size: 70%; block-size: auto; justify-self: center; }
   }
+  @media (height <= 30em) {
+    .ar h1 { font-size: min(6.4rem, 11vh); }
+    .ar { padding-block-start: 2.4rem; }
+  }
 }

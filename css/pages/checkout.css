@@ -26,4 +26,7 @@
     .co-summary { position: static; grid-row: 1; }
     .co-done-inner { grid-template-columns: 1fr; gap: 3rem; }
   }
+  @media (height <= 30em) {
+    .co-summary { position: static; }
+  }
 }

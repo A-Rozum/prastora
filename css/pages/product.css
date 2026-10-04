@@ -24,4 +24,7 @@
     .pd-cart { grid-template-columns: 14rem minmax(0, 1fr); }
     .pd-acc { grid-template-columns: 16rem minmax(0, 1fr); }
   }
+  @media (height <= 30em) {
+    .pd-buy { position: static; }
+  }
 }

@@ -7,7 +7,7 @@
 --css picks the pages that link those files (paths from the repo root). --pages takes names like templates/pricing. Default: all pages, all regimes, light scheme.
 One width per regime is enough: within a regime the layout only scales.
 """
-import argparse, functools, http.server, json, re, sys, threading
+import argparse, functools, shutil, http.server, json, re, sys, threading
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -31,6 +31,7 @@ def pages_for(css):
 
 def shoot(params, out):
     from playwright.sync_api import sync_playwright
+    shutil.rmtree(out, ignore_errors=True)
     out.mkdir(parents=True, exist_ok=True)
     class Quiet(http.server.SimpleHTTPRequestHandler):
         def log_message(self, *args):
@@ -50,6 +51,8 @@ def shoot(params, out):
             tab.route("**/*", lambda r: r.continue_() if r.request.url.startswith(base) else r.abort())
             tab.goto(base + page + ".html")
             tab.add_style_tag(content=HIDE)
+            tab.evaluate("document.querySelectorAll('img[loading=lazy]').forEach(i => i.loading = 'eager')")
+            tab.wait_for_function("[...document.images].every(i => i.complete)")
             tab.wait_for_timeout(200)
             tab.screenshot(path=str(out / f"{page.replace('/', '~')}_{regime}_{scheme}.png"), full_page=True)
             ctx.close()

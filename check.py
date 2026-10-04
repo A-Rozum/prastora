@@ -8,7 +8,7 @@ import re
 ROOT = Path(__file__).resolve().parent
 LAYERS = {"core.css": "core", "themes": "theme", "components": "components", "pages": "page", "dev": "dev"}
 ORDER = ["core", "theme", "components", "page", "dev"]
-REGIMES = ["(width <= 50em)", "(width > 50em)", "(width >= 125em)"]
+REGIMES = ["(width <= 50em)", "(width > 50em)", "(width >= 125em)", "(height <= 30em)"]
 
 
 def top_level(body):
@@ -31,8 +31,8 @@ def top_level(body):
 
 def check_regimes(name, css, errors):
     for cond in re.findall(r"@media\s+([^{]*?)\s*\{", css):
-        if re.search(r"width", cond) and cond not in REGIMES:
-            errors.append(f"{name}: width query {cond} is not a regime query (see core.css)")
+        if re.search(r"width|height", cond) and cond not in REGIMES:
+            errors.append(f"{name}: size query {cond} is not a regime query (see core.css)")
     layer = top_level(re.sub(r"^\s*@layer [\w\s,]+;", "", css))
     if not layer:
         return

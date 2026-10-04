@@ -77,4 +77,10 @@
     .wy-sloth svg { inline-size: 16rem; }
     .wy-last { font-size: 3rem; padding-inline-end: 12rem; }
   }
+  @media (height <= 30em) {
+    .wy h1 { font-size: min(7rem, 11vh); }
+    .wy { padding-block-start: 2.4rem; }
+    .wy-toc { inset-block-start: 2rem; }
+    .wy-h { scroll-margin-block-start: 2rem; }
+  }
 }

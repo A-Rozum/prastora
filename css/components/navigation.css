@@ -51,6 +51,17 @@
     .brand { font-size: 2.4rem; }
     .catalog-nav { gap: 1rem; }
   }
+  @media (height <= 30em) {
+    html:has([data-css-header]) { scroll-padding-block-start: 0; }
+    .css-top { position: static; grid-template-rows: auto auto; }
+    .css-top .site-header { max-block-size: none; }
+    .css-top :is(.header-inner, .brand svg, .header-inner > .brand, .desktop-nav a, .mobile-nav > summary) { animation: none; }
+    .css-top .header-inner { padding-block: .15rem; }
+    .css-top .brand svg { inline-size: 3rem; block-size: 3rem; }
+    .css-top .header-inner > .brand { min-block-size: 3.8rem; }
+    .css-top .desktop-nav a { min-block-size: 3.6rem; padding-block: .4rem; }
+    .css-top .mobile-nav > summary { min-block-size: 3.8rem; padding-block: .3rem; }
+  }
   @media print {
     .site-header, .site-footer, .demo-note { display: none; }
     html:has([data-css-header]) { scroll-padding-block-start: 0; }

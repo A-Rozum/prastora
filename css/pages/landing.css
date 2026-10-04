@@ -88,4 +88,8 @@
   @media (width >= 125em) {
     .sb-flying { inset-block-start: -7.4rem; inset-inline-start: calc(-1 * var(--card-space) - 8.2rem); transform: rotate(18deg); }
   }
+  @media (height <= 30em) {
+    .sb-hero h1 { font-size: min(6.2rem, 11vh); }
+    .sb-hero { padding-block-start: 2.4rem; }
+  }
 }

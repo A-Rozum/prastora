@@ -3,6 +3,8 @@
      (width <= 50em)   mobile
      (width > 50em)    above mobile (desktop and wide)
      (width >= 125em)  wide
+     (height <= 30em)  short window (phones held sideways, low browser windows): no sticky header, smaller titles.
+                       Title sizes here may use vh, because height is the constraint.
    Show or hide by regime with .desktop-only / .mobile-only rather than per-component display rules. */
 @layer core, theme, components, page, dev;
 @layer core {
@@ -73,6 +75,9 @@
   }
   @media (width >= 125em) {
     :root { --scale-units: 160; --space-block: 6rem; --space-inline: 12rem; --gap: 6rem; }
+  }
+  @media (height <= 30em) {
+    h1 { font-size: min(5rem, 11vh); }
   }
   @media print {
     html { font-size: 10pt; }
