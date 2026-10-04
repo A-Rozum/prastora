@@ -51,19 +51,33 @@
       <div class="stack">
         <h2>What we take on</h2>
         <p class="sv-intro">If it has been open longer than the intern has been employed, it's probably ours.</p>
-        <div class="grid grid-3"><article class="card stack-small"><h3>The Friday bug</h3><p>Shows up at the end of the week, never when anyone is watching, and leaves before Monday.</p></article><article class="card stack-small"><h3>The memory leak with a schedule</h3><p>Everyone restarts the service at three in the morning. Nobody remembers why. It has a cron job now.</p></article><article class="card stack-small"><h3>The flaky test</h3><p>Fails one run in twenty. Retried until green, then forgotten, until the release day it isn't.</p></article><article class="card stack-small"><h3>The ghost complaint</h3><p>Customers report it, support confirms it, engineering can't reproduce it. Everyone is telling the truth.</p></article><article class="card stack-small"><h3>The page that was always slow</h3><p>So slow for so long that it became the baseline. We bring a stopwatch and no respect for tradition.</p></article><article class="card stack-small"><h3>The workaround with a wiki page</h3><p>A fix so temporary it now has documentation, an owner and a birthday.</p></article></div>
+        <div class="eb" aria-label="Evidence board: six kinds of cold case pinned around their usual cause">
+          <article class="eb-card" style="--r: 1; --c: 1"><h3>The Friday bug</h3><p>Shows up at the end of the week, never when anyone is watching, and leaves before Monday.</p></article><article class="eb-card" style="--r: 1; --c: 3"><h3>The memory leak with a schedule</h3><p>Everyone restarts the service at three in the morning. Nobody remembers why. It has a cron job now.</p></article><article class="eb-card" style="--r: 2; --c: 1"><h3>The flaky test</h3><p>Fails one run in twenty. Retried until green, then forgotten, until the release day it isn't.</p></article><article class="eb-card" style="--r: 2; --c: 3"><h3>The ghost complaint</h3><p>Customers report it, support confirms it, engineering can't reproduce it. Everyone is telling the truth.</p></article><article class="eb-card" style="--r: 3; --c: 1"><h3>The page that was always slow</h3><p>So slow for so long it became the baseline. We bring a stopwatch and no respect for tradition.</p></article><article class="eb-card" style="--r: 3; --c: 3"><h3>The workaround with a wiki page</h3><p>A fix so temporary it now has documentation, an owner and a birthday.</p></article>
+          <article class="eb-card eb-culprit" style="--r: 2; --c: 2"><p class="eb-tag">Prime suspect</p><h3>A decision nobody remembers making</h3><p>Usually not the code itself, but a choice kept alive because everyone was too busy to question it.</p></article>
+          <p class="eb-note" style="--r: 1; --c: 2">Last seen: Friday, 17:59</p>
+          <p class="eb-note eb-note-b" style="--r: 3; --c: 2">Witness: the intern. Says nothing. Knows everything.</p>
+          <svg class="eb-strings desktop-only" viewBox="0 0 108 70" aria-hidden="true"><g class="eb-thread"><line x1="16" y1="1.2" x2="54" y2="26.2"/><line x1="92" y1="1.2" x2="54" y2="26.2"/><line x1="16" y1="26.2" x2="54" y2="26.2"/><line x1="92" y1="26.2" x2="54" y2="26.2"/><line x1="16" y1="51.2" x2="54" y2="43.8"/><line x1="92" y1="51.2" x2="54" y2="43.8"/><line x1="54" y1="1.2" x2="16" y2="1.2"/><line x1="54" y1="51.2" x2="92" y2="51.2"/></g><g class="eb-pin"><circle cx="16" cy="1.2" r=".6"/><circle cx="92" cy="1.2" r=".6"/><circle cx="16" cy="26.2" r=".6"/><circle cx="92" cy="26.2" r=".6"/><circle cx="16" cy="51.2" r=".6"/><circle cx="92" cy="51.2" r=".6"/><circle cx="54" cy="26.2" r=".6"/><circle cx="54" cy="1.2" r=".6"/><circle cx="54" cy="51.2" r=".6"/><circle cx="54" cy="43.8" r=".6"/></g></svg>
+        </div>
       </div>
     </section>
 
     <section class="section anchor" id="process">
       <div class="stack">
         <h2>How it runs</h2>
-        <ol class="sb-steps sv-steps">
-          <li><h3>Day 1 · The briefing</h3><p>Bring everything: logs, tickets, the chat thread from two years ago and the colleague who says it works on their machine. Especially them.</p></li>
-          <li><h3>Days 2–8 · The legwork</h3><p>We reproduce the problem before we touch it. Traces, timelines, a few uncomfortable questions for the codebase. Sometimes the bug confesses early. Usually it needs time.</p></li>
-          <li><h3>Days 9–12 · The fix</h3><p>One change at a time, each with a test, so everyone knows which one mattered. No heroic rewrites, no new framework. Well, not that kind.</p></li>
-          <li><h3>Days 13–14 · The handover</h3><p>A short report your whole team can read, a walkthrough call and a list of the next three suspects, in case you want to keep going.</p></li>
+        <div class="tl" role="img" aria-label="Fourteen days: day 1 briefing, days 2 to 8 legwork, days 9 to 12 the fix, days 13 and 14 handover">
+          <span class="tl-day">1</span><span class="tl-day">2</span><span class="tl-day">3</span><span class="tl-day">4</span><span class="tl-day">5</span><span class="tl-day is-weekend">6</span><span class="tl-day is-weekend">7</span><span class="tl-day">8</span><span class="tl-day">9</span><span class="tl-day">10</span><span class="tl-day">11</span><span class="tl-day">12</span><span class="tl-day is-weekend">13</span><span class="tl-day is-weekend">14</span>
+          <span class="tl-bar tl-1" style="grid-column: 1 / 2">1</span>
+          <span class="tl-bar tl-2" style="grid-column: 2 / 9">2</span>
+          <span class="tl-bar tl-3" style="grid-column: 9 / 13">3</span>
+          <span class="tl-bar tl-4" style="grid-column: 13 / 15">4</span>
+        </div>
+        <ol class="tl-phases">
+          <li><h3><span class="tl-key tl-1"></span>Day 1 · The briefing</h3><p>Bring everything: logs, tickets, the chat thread from two years ago and the colleague who says it works on their machine. Especially them.</p></li>
+          <li><h3><span class="tl-key tl-2"></span>Days 2–8 · The legwork</h3><p>We reproduce the problem before we touch it. Traces, timelines, a few uncomfortable questions for the codebase. Half the job, and it shows on the calendar.</p></li>
+          <li><h3><span class="tl-key tl-3"></span>Days 9–12 · The fix</h3><p>One change at a time, each with a test, so everyone knows which one mattered. No heroic rewrites.</p></li>
+          <li><h3><span class="tl-key tl-4"></span>Days 13–14 · The handover</h3><p>A short report, a walkthrough call and the next three suspects, in case you want to keep going.</p></li>
         </ol>
+        <p class="small muted">Shaded days are weekends. The detective rests; cold cases, famously, don't.</p>
       </div>
     </section>
 
@@ -108,7 +122,8 @@
     </section>
 
     <section class="section anchor" id="reopen">
-      <div class="sv-form-wrap stack">
+      <div class="sv-intake stack">
+        <header class="in-head"><p>Slowburn · Bug investigations</p><p>Form SB-7 · Case intake</p></header>
         <h2>Reopen a case</h2>
         <p>Tell us what keeps happening. We'll reply within a working day, slowly but thoroughly.</p>
         <form class="stack" action="#reopen">
@@ -121,7 +136,7 @@
             <input type="radio" name="age" id="age-y"><label for="age-y">Years</label>
             <input type="radio" name="age" id="age-n"><label for="age-n">Nobody remembers</label>
           </fieldset>
-          <button class="btn sb-big" type="submit">Reopen the case</button>
+          <div class="in-foot"><button class="in-submit" type="submit">File the case</button><p class="in-stamp" aria-hidden="true"><span class="in-pending">Incomplete</span><span class="in-ready">Ready to file</span></p></div>
         </form>
       </div>
     </section>

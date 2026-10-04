@@ -7,18 +7,71 @@
   .sv-hero .lead { max-inline-size: 72rem; }
   .sv-nav { display: grid; gap: .6rem; padding-inline-start: 2rem; border-inline-start: .3rem solid var(--brass); }
   .sv-intro { font-size: 2.2rem; color: var(--muted); }
-  .sv-steps { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4rem 6rem; }
   .sv-report { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 4fr) minmax(0, 3fr); gap: 4rem; align-items: center; }
   .sv-list { display: grid; gap: .8rem; padding-inline-start: 2.2rem; }
   .sv-sloth { display: block; inline-size: 100%; block-size: auto; }
   .sv-fees { max-inline-size: 90rem; }
-  .sv-form-wrap { max-inline-size: 84rem; }
+  #scope { background: radial-gradient(circle at 1rem 1rem, color-mix(in srgb, var(--card-ink) 18%, transparent) .15rem, transparent .2rem) 0 0 / 2.4rem 2.4rem, var(--cork); }
+  #scope h2, #scope .sv-intro { color: var(--card-paper); }
+  .eb { position: relative; display: grid; grid-template-columns: repeat(3, 32rem); grid-template-rows: repeat(3, 20rem); gap: 5rem 6rem; inline-size: 108rem; margin: 2rem auto 0; }
+  .eb > * { grid-area: var(--r) / var(--c); }
+  .eb-card { display: grid; align-content: start; gap: 1rem; padding: 2.4rem 2rem 2rem; background: var(--card-paper); color: var(--card-ink); box-shadow: 0 .6rem 1.4rem color-mix(in srgb, var(--city) 45%, transparent); transform: rotate(-1.2deg); }
+  .eb-card:nth-of-type(even) { transform: rotate(1.4deg); }
+  .eb-card h3 { font-size: 2.1rem; line-height: 1.2; }
+  .eb-card p { font-size: 1.5rem; line-height: 1.5; }
+  .eb-culprit { outline: .3rem solid var(--stamp); outline-offset: -.9rem; transform: none; }
+  .eb-tag { font-family: var(--font-type, monospace); color: var(--stamp); letter-spacing: .12em; text-transform: uppercase; }
+  .eb-note { align-self: start; justify-self: center; inline-size: 22rem; padding: 1.6rem; background: var(--lit); color: var(--city); font-family: var(--font-type, monospace); font-size: 1.5rem; line-height: 1.4; transform: rotate(-3deg); box-shadow: 0 .4rem 1rem color-mix(in srgb, var(--city) 35%, transparent); }
+  .eb-note-b { transform: rotate(2.5deg); }
+  .eb-strings { position: absolute; z-index: 2; inset: 0; inline-size: 100%; block-size: 100%; pointer-events: none; }
+  .eb-thread { stroke: var(--stamp); stroke-width: .22; opacity: .85; }
+  .eb-pin { fill: var(--stamp); stroke: var(--city); stroke-width: .12; }
+
+  .tl { display: grid; grid-template-columns: repeat(14, minmax(0, 1fr)); gap: .6rem .4rem; margin-block-start: 1rem; }
+  .tl-day { padding-block: .6rem; border-radius: .3rem; background: var(--surface); color: var(--muted); font-size: var(--small-size); text-align: center; font-variant-numeric: tabular-nums; }
+  .tl-day.is-weekend { background: color-mix(in srgb, var(--surface) 50%, transparent); }
+  .tl-bar { grid-row: 2; display: grid; place-items: center; min-block-size: 4rem; border-radius: .4rem; color: var(--on-accent); font-family: var(--font-display, var(--font)); font-size: 2rem; }
+  .tl-1 { background: color-mix(in srgb, var(--brass) 60%, var(--paper)); }
+  .tl-2 { background: var(--brass); }
+  .tl-3 { background: var(--neon); }
+  .tl-4 { background: color-mix(in srgb, var(--neon) 55%, var(--paper)); }
+  .tl-phases { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 3rem; margin: 2rem 0 0; padding: 0; list-style: none; }
+  .tl-phases h3 { display: flex; align-items: center; gap: 1rem; margin-block-end: .8rem; font-size: 2rem; }
+  .tl-key { inline-size: 1.6rem; block-size: 1.6rem; border-radius: .3rem; flex: none; }
+
+  .sv-intake { max-inline-size: 86rem; padding: 4rem 4.8rem 4.4rem; background: var(--card-paper); color: var(--card-ink); box-shadow: 0 1rem 3rem color-mix(in srgb, var(--city) 40%, transparent); }
+  .sv-intake h2 { font-size: 4rem; }
+  .in-head { display: flex; justify-content: space-between; gap: 2rem; padding-block-end: 1.2rem; border-block-end: .2rem solid var(--card-ink); font-family: var(--font-type, monospace); font-size: 1.3rem; letter-spacing: .08em; text-transform: uppercase; }
+  .sv-intake label, .sv-intake legend { font-family: var(--font-type, monospace); font-size: 1.4rem; letter-spacing: .04em; }
+  .sv-intake .field :is(input, textarea) { border: 0; border-block-end: .15rem solid color-mix(in srgb, var(--card-ink) 55%, transparent); border-radius: 0; background: transparent; color: var(--card-ink); font-family: var(--font-type, monospace); padding-inline: 0; }
+  .sv-intake .field textarea { line-height: 3rem; background: repeating-linear-gradient(transparent 0 2.85rem, color-mix(in srgb, var(--card-ink) 30%, transparent) 2.85rem 3rem); border-block-end: 0; }
+  .sv-intake .field-hint { color: color-mix(in srgb, var(--card-ink) 65%, transparent); }
+  .sv-intake .choice label { min-block-size: auto; padding: .4rem 1.6rem .4rem 0; border: 0; background: transparent; box-shadow: none; }
+  .sv-intake .choice label::before { content: ''; display: inline-grid; place-items: center; inline-size: 2rem; block-size: 2rem; border: .15rem solid var(--card-ink); font-size: 1.6rem; line-height: 1; }
+  .sv-intake .choice input:checked + label::before { content: '✕'; }
+  .in-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 2rem; margin-block-start: 1rem; }
+  .in-submit { padding: 1rem 2.4rem; border: .35rem solid var(--stamp); border-radius: .5rem; background: transparent; color: var(--stamp); font-family: var(--font-display, var(--font)); font-size: 2.4rem; letter-spacing: .12em; text-transform: uppercase; transform: rotate(-2deg); cursor: pointer; }
+  .in-submit:hover { background: color-mix(in srgb, var(--stamp) 10%, transparent); }
+  .in-stamp { padding: .8rem 1.6rem; border: .2rem dashed color-mix(in srgb, var(--card-ink) 45%, transparent); font-family: var(--font-type, monospace); font-size: 1.4rem; letter-spacing: .1em; text-transform: uppercase; color: color-mix(in srgb, var(--card-ink) 60%, transparent); transform: rotate(3deg); }
+  .in-ready, .sv-intake form:valid .in-pending { display: none; }
+  .sv-intake form:valid .in-ready { display: inline; color: var(--success); }
   @media (width <= 50em) {
     .sv-hero { grid-template-columns: minmax(0, 1fr); gap: 3rem; padding-block: 5rem 4rem; }
     .sv-hero h1 { font-size: 5rem; }
     .sv-nav { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .sv-nav p { grid-column: 1 / -1; }
-    .sv-steps { grid-template-columns: minmax(0, 1fr); }
+    .eb { grid-template-columns: minmax(0, 1fr); grid-template-rows: none; gap: 2.4rem; inline-size: auto; }
+    .eb > * { grid-area: auto; }
+    .eb-culprit { order: -1; }
+    .eb-note { justify-self: start; font-size: 1.9rem; inline-size: 30rem; }
+    .eb-card h3 { font-size: 2.6rem; }
+    .eb-card p { font-size: 2rem; }
+    .tl-day { font-size: 1.3rem; padding-block: .3rem; }
+    .tl-bar { min-block-size: 3rem; font-size: 1.6rem; }
+    .tl-phases { grid-template-columns: minmax(0, 1fr); gap: 2rem; }
+    .sv-intake { padding: 2.6rem 2.2rem 3rem; }
+    .sv-intake h2 { font-size: 3.4rem; }
+    .in-head { flex-direction: column; gap: .4rem; }
     .sv-report { grid-template-columns: minmax(0, 1fr); }
     .sv-sloth { inline-size: 60%; justify-self: center; }
   }
