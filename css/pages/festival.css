@@ -75,6 +75,7 @@
   .of-watch a { font-size: var(--small-size); }
   .of-availability { border-block-start: .1rem solid var(--line); padding-block-start: 2rem; }
   .of-guests { background: var(--surface); border-block: .1rem solid var(--line); }
+  .of-guests .of-artist { grid-template-columns: 8rem minmax(0, 1fr) 32rem; }
   .of-guests-intro { margin-block-start: 2rem; font-size: var(--lead-size); }
   .of-guest-pass { display: grid; gap: 1rem; padding: 2rem 3rem; color: var(--poster-ink); background: var(--poster-paper); border: .12rem solid var(--poster-ink); transform: rotate(-2deg); }
   .of-guest-pass .eyebrow { color: inherit; }
@@ -122,10 +123,10 @@
     .of-artist > .stack { grid-template-columns: minmax(0, 1fr); gap: 2rem; }
     .of-artist h3 { font-size: 3.4rem; }
     .of-artist-role { padding-inline-start: 1.5rem; }
+    .of-guests .of-artist { grid-template-columns: 6rem minmax(0, 1fr); }
     .of-guest-pass { margin-block: 1rem; }
     .of-guest-index { font-size: 4rem; }
     .of-places { --columns: 3; }
-    .of-manager { padding-block-start: 3rem; }
     .of-manager svg { inline-size: 36rem; }
     .of-footer { flex-direction: column; gap: 3rem; }
   }
