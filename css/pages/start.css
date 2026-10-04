@@ -1,9 +1,21 @@
-/* Page composition for the product example. Not part of the framework. */
+/* Page composition for the starter page. */
 @layer page {
-  .product-thumbs { margin-block-start: 1.5rem; gap: 1.5rem; }
-  .product-thumbs .media { --media-ratio: 4 / 3; }
-  .product-gallery > details { margin-block-start: 1rem; }
+  .st-hero { padding-block: 8rem 6rem; max-inline-size: 96rem; }
+  .st-hero h1 { font-size: 6rem; line-height: 1.05; }
+  .st-steps { display: grid; gap: 5rem; margin: 0; padding: 0; list-style: none; counter-reset: step; }
+  .st-step { counter-increment: step; display: grid; grid-template-columns: 6rem minmax(0, 5fr) minmax(0, 6fr); gap: 4rem; align-items: start; }
+  .st-step::before { content: counter(step); font-size: 6rem; line-height: 1; font-weight: 700; color: var(--accent); }
+  .st-step h2 { font-size: 3rem; }
+  .st-step .code { font-size: 1.4rem; line-height: 1.6; white-space: pre; overflow-x: auto; overflow-wrap: normal; }
   @media (width <= 50em) {
-    .product-thumbs { --columns: 3; }
+    .st-hero { padding-block: 5rem 4rem; }
+    .st-hero h1 { font-size: 4.6rem; }
+    .st-step { grid-template-columns: 4rem minmax(0, 1fr); gap: 1.6rem 2rem; }
+    .st-step::before { font-size: 4rem; grid-row: span 2; }
+    .st-step .code { font-size: 1.6rem; }
+  }
+  @media (height <= 30em) {
+    .st-hero h1 { font-size: min(6rem, 11vh); }
+    .st-hero { padding-block-start: 2.4rem; }
   }
 }

@@ -15,7 +15,7 @@
   <aside class="viewport-panel" data-viewport hidden aria-label="Utility strip">
     <div class="viewport-tools">
       <button class="theme-toggle" data-theme-toggle type="button" aria-label="Switch colour theme" hidden><svg class="theme-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg><svg class="theme-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.5A9 9 0 0 1 9.5 3.5a9 9 0 1 0 11 11Z"/></svg></button>
-      <div class="viewport-reading" title="Browser viewport size in CSS pixels"><output data-viewport-value dir="ltr"></output><div class="viewport-orientation"><svg class="orient-landscape" viewBox="0 0 24 24"><title>Landscape window</title><rect x="3" y="7" width="18" height="11" rx="2"/></svg><svg class="orient-portrait" viewBox="0 0 24 24"><title>Portrait window</title><rect x="7" y="3" width="11" height="18" rx="2"/></svg></div></div>
+      <div class="viewport-reading" title="Browser viewport size in CSS pixels"><output data-viewport-value dir="ltr"></output><div class="viewport-orientation"><svg class="orient-landscape" viewBox="0 0 24 24"><title>Starter – Prastora</title><rect x="3" y="7" width="18" height="11" rx="2"/></svg><svg class="orient-portrait" viewBox="0 0 24 24"><title>Starter – Prastora</title><rect x="7" y="3" width="11" height="18" rx="2"/></svg></div></div>
     </div>
     <div class="utility-actions"><span class="language-control"><select aria-label="Language" title="English only for now; other languages are planned"><option value="en" lang="en" selected>English</option><option value="es" lang="es" disabled>Español — soon</option><option value="fr" lang="fr" disabled>Français — soon</option><option value="ar" lang="ar" dir="rtl" disabled>العربية — soon</option></select><svg class="language-arrow" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="m4 6 4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><button type="button" disabled title="Account access is not connected"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="assets/placeholders.svg#account"/></svg>Sign in</button></div>
   </aside>
@@ -23,23 +23,40 @@
 <header class="site-header"><div class="header-inner"><a class="brand" href="index.html"><svg viewBox="0 0 64 64" aria-hidden="true"><use href="assets/placeholders.svg#logo"/></svg>Prastora</a><nav class="desktop-nav desktop-only" aria-label="Main navigation"><a href="index.html">Overview</a><a href="templates/index.html">Templates</a><a href="components/index.html">Components</a><a href="start.html" aria-current="page">Starter</a></nav><details class="mobile-nav mobile-only"><summary>Explore Prastora</summary><nav aria-label="Mobile navigation"><a href="index.html">Overview</a><a href="templates/index.html">Templates</a><a href="components/index.html">Components</a><a href="start.html" aria-current="page">Starter</a></nav></details></div></header>
 </div>
 <main id="main">
-<section class="section pair pair-equal"><div class="product-gallery"><svg class="media" viewBox="0 0 640 480" role="img" aria-label="Starter building block illustration"><use href="assets/placeholders.svg#product"/></svg><details class="disclosure"><summary>Explore the visual patterns</summary><div class="grid grid-3 product-thumbs"><a class="media-link" href="components/index.html#blocks" aria-label="Explore building blocks"><svg class="media" viewBox="0 0 640 480" aria-hidden="true"><use href="assets/placeholders.svg#product"/></svg></a><a class="media-link" href="templates/service.html" aria-label="Explore the service layout"><svg class="media" viewBox="0 0 640 480" aria-hidden="true"><use href="assets/placeholders.svg#workspace"/></svg></a><a class="media-link" href="approach.html#media" aria-label="Explore editorial media patterns"><svg class="media" viewBox="0 0 640 480" aria-hidden="true"><use href="assets/placeholders.svg#video"/></svg></a></div></details></div>
-<div class="stack"><p class="eyebrow">A lightweight starting point</p><h1>Prastora page starter</h1><p class="lead">Start with a complete composition, then adapt it to the page you need. Keep the shared scale and components, or change the theme without rebuilding the structure.</p><span class="badge">Experimental</span><p class="price">HTML + CSS</p><p>No package manager or JavaScript is required for the core layouts.</p><div class="flex"><a class="btn" href="css/core.css" download>Get core CSS</a><a class="btn btn-secondary" href="#setup">Quick start</a></div><dl class="specs"><div><dt>Layout</dt><dd>CSS Grid and Flexbox</dd></div><div><dt>Scale</dt><dd>Viewport-linked rem units</dd></div><div><dt>Customisation</dt><dd>CSS variables and a separate theme</dd></div><div><dt>Interaction</dt><dd>Native links, forms and disclosures</dd></div></dl></div></section>
-<section class="section surface pair anchor" id="setup"><article class="prose"><h2>Add the styles. Start composing.</h2><p>Include the stylesheets in this order. The core provides the primitives, the theme sets the palette and components add the blocks a page uses.</p><pre class="code" dir="ltr"><code>&lt;link rel="stylesheet" href="css/core.css"&gt;
-&lt;link rel="stylesheet" href="css/themes/default.css"&gt;
-&lt;link rel="stylesheet" href="css/components/content.css"&gt;</code></pre><p>Use a section for outer spacing, a grid to arrange related items, and a card when the content needs a visible boundary.</p><pre class="code" dir="ltr"><code>&lt;section class="section grid grid-2"&gt;
-  &lt;article class="card stack"&gt;
-    &lt;h2&gt;A clear heading&lt;/h2&gt;
-    &lt;p&gt;Content that finds its own height.&lt;/p&gt;
-  &lt;/article&gt;
-&lt;/section&gt;</code></pre><p>The download contains the core stylesheet only. Keep the theme and SVG assets alongside it to reproduce the examples, or use your own visual assets.</p><a href="css/themes/default.css" download>Get theme CSS</a></article><aside class="card stack"><h3>Explore before extending</h3><p>See how the same primitives work in different page types, then decide which parts your site actually needs.</p><a href="components/index.html">Browse the patterns</a></aside></section>
-<section class="section stack anchor" id="theme"><h2>Make the shared choices your own.</h2><p>Override theme variables after the core stylesheet. Change the palette or spacing without copying every component rule.</p><pre class="code" dir="ltr"><code>:root {
-  --accent: #285d6b;
-  --space-inline: 4rem;
-  --radius: .8rem;
-}</code></pre><details class="disclosure" name="starter-questions"><summary>Can I use my own build process?</summary><p>The output is ordinary HTML and CSS. Shared templates can be generated before deployment without requiring a browser runtime.</p></details><details class="disclosure" name="starter-questions"><summary>What is outside the current toolkit?</summary><p>Translation routing, form processing, catalogue search and checkout are site-level integrations. Prastora provides a visual starting point, not those application features.</p></details></section>
-</main>
-<footer class="site-footer section"><div class="grid grid-3"><div class="stack-small"><h3>Prastora</h3><p class="muted">An evolving CSS framework for predictable layouts across screen sizes.</p></div><nav class="stack-small" aria-label="Examples"><h3>Explore</h3><div class="footer-links"><a href="index.html">Overview</a><a href="templates/service.html">Layouts</a><a href="approach.html">Typography</a><a href="components/index.html">Patterns</a><a href="start.html">Starter</a><a href="templates/pricing.html">Pricing</a><a href="templates/gallery.html">Gallery</a><a href="templates/contacts.html">Contacts</a><a href="experiments.html">Experiments</a></div></nav><div class="stack-small"><h3>Built with the web</h3><p>HTML · CSS · SVG</p><p class="small muted">Core layouts need no JavaScript. Viewport and load-time diagnostics are optional prototyping aids.</p><div><button type="button" class="consent-reopen" data-consent-reopen hidden>Cookie settings</button><p class="small muted" data-consent-status role="status"></p></div></div></div>
+    <section class="section st-hero stack">
+      <p class="eyebrow">Starter</p>
+      <h1>Five steps, no installation.</h1>
+      <p class="lead">Prastora is a few CSS files and a few rules. This page is all of them. If you'd rather start from something finished, take a template and change it.</p>
+    </section>
+    <section class="section surface"><ol class="st-steps"><li class="st-step"><div class="stack-small"><h2>Copy the files</h2><p>The whole framework is the <code>css/</code> folder: a core file, a theme, a handful of component files. Copy it into your project. There is nothing to install, so there is nothing to update either.</p></div><div><div class="flex"><a class="btn" href="https://github.com/A-Rozum/prastora">Get it on GitHub</a><a class="btn btn-secondary" href="css/core.css" download>Just core.css</a></div></div></li><li class="st-step"><div class="stack-small"><h2>Link what the page uses</h2><p>Core first, then one theme, then the components the page needs, then the page’s own styles. Each file wraps itself in a cascade layer, so later layers win without specificity battles.</p></div><div><pre class="code"><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/core.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;css/themes/default.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;css/components/content.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;css/pages/my-page.css&quot;&gt;</code></pre></div></li><li class="st-step"><div class="stack-small"><h2>Write ordinary HTML</h2><p>Sections, stacks and grids do the composing. Size everything in <code>rem</code>: one rem is a fixed share of the window width, which is what keeps the composition intact on every screen.</p></div><div><pre class="code"><code>&lt;main id=&quot;main&quot;&gt;
+  &lt;section class=&quot;section stack&quot;&gt;
+    &lt;h1&gt;My first page&lt;/h1&gt;
+    &lt;p class=&quot;lead&quot;&gt;Composed once, scaled everywhere.&lt;/p&gt;
+    &lt;a class=&quot;btn&quot; href=&quot;#more&quot;&gt;Read more&lt;/a&gt;
+  &lt;/section&gt;
+&lt;/main&gt;</code></pre></div></li><li class="st-step"><div class="stack-small"><h2>Adjust per mode, not per pixel</h2><p>Page styles may add a block for each mode, at the end of the file and in this order. Only these conditions exist, so there are four places to look, not forty.</p></div><div><pre class="code"><code>@layer page {
+  .my-hero { padding-block: 8rem; }
+
+  @media (width &lt;= 50em) { /* phones */ }
+  @media (width &gt; 50em) { /* desktop */ }
+  @media (width &gt;= 125em) { /* large screens */ }
+  @media (height &lt;= 30em) { /* low windows */ }
+}</code></pre></div></li><li class="st-step"><div class="stack-small"><h2>Make it yours</h2><p>A theme is only a set of values. Copy <code>themes/default.css</code>, change the colours and fonts, link your copy instead. Three themes ship with the templates: default, deco and press.</p></div><div><pre class="code"><code>@layer theme {
+  :root {
+    --ink: #1d2730; --paper: #fbfcfd; --accent: #285f73;
+    --font: system-ui, sans-serif;
+  }
+}</code></pre></div></li></ol></section>
+    <section class="section stack">
+      <h2>Before you call it done</h2>
+      <p>Check one window per mode, not every width: within a mode the page only scales. Two scripts in the repository help: <code>check.py</code> keeps the rules (rem only, layer order, known modes) and <code>tools/snap.py</code> compares screenshots before and after a change.</p>
+      <div class="flex"><a class="btn" href="templates/index.html">Pick a template</a><a class="btn btn-secondary" href="components/index.html">Browse the components</a></div>
+    </section>
+  </main>
+<footer class="site-footer section"><div class="grid grid-3"><div class="stack-small"><h3>Prastora</h3><p class="muted">An evolving CSS framework for predictable layouts across screen sizes.</p></div><nav class="stack-small" aria-label="Examples"><h3>Explore</h3><div class="footer-links"><a href="index.html">Overview</a><a href="templates/index.html">Templates</a><a href="components/index.html">Components</a><a href="start.html">Starter</a><a href="why.html">Why Prastora</a><a href="experiments.html">Experiments</a></div></nav><div class="stack-small"><h3>Built with the web</h3><p>HTML · CSS · SVG</p><p class="small muted">Core layouts need no JavaScript. Viewport and load-time diagnostics are optional prototyping aids.</p><div><button type="button" class="consent-reopen" data-consent-reopen hidden>Cookie settings</button><p class="small muted" data-consent-status role="status"></p></div></div></div>
 </footer>
 <aside class="consent-bar" data-consent-demo hidden aria-label="Cookie preferences">
   <div class="consent-settings" id="consent-settings" data-consent-settings hidden><p>Cookie preferences · necessary functions stay available.</p><label><input type="checkbox" id="consent-analytics">Analytics</label><label><input type="checkbox" id="consent-marketing">Marketing</label><button type="button" data-consent-save>Save preferences</button></div>

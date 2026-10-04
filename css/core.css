@@ -11,7 +11,8 @@
   :root { --scale-units: 128; --scale-min: 0rem; --text-size: 1.6rem; --small-size: 1.4rem; --lead-size: 1.9rem; --button-size: 1.8rem; --font: system-ui, sans-serif; --line-height: 1.6; --space-block: 4rem; --space-inline: 4rem; --gap: 3rem; --card-space: 2rem; --radius: .8rem; --ink: #25313c; --muted: #64717d; --paper: #fff; --surface: #f3f5f7; --line: #d5dce3; --accent: #245b82; --on-accent: #fff; }
   html { font-size: max(var(--scale-min), calc(100vw / var(--scale-units))); box-sizing: border-box; text-size-adjust: 100%; }
   *, ::before, ::after { box-sizing: inherit; }
-  body { margin: 0; font: var(--text-size)/var(--line-height) var(--font); color: var(--ink); background: var(--paper); }
+  body { display: flex; flex-direction: column; min-block-size: 100svh; margin: 0; font: var(--text-size)/var(--line-height) var(--font); color: var(--ink); background: var(--paper); }
+  body > main { flex: 1 0 auto; }
   h1, h2, h3, h4, p, ul, ol, figure, blockquote { margin: 0; }
   h1, h2, h3, h4, h5, h6 { line-height: 1.15; font-weight: 650; overflow-wrap: anywhere; text-wrap: balance; }
   h1 { font-size: 5rem; }

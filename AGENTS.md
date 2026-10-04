@@ -7,6 +7,7 @@ Deliberate, keep unless told otherwise:
 - CSS lives in css/ by layer: core.css, themes/ (custom properties only), components/, pages/ (CSS of one page, same name as the page; a folder's index takes the folder name; a demo site's shared styles take the site's name), dev/ (development aids). Pages link only what they use, in that order.
 - HTML: framework pages in the root, component catalogue in components/, demo templates in templates/.
 - Copy in English, lively and varied in register. Humour and self-irony woven into the text's logic, never bolted on; tease gently, never mock others. Templates use plausible fictional content of their field, marked as demo.
+- Try uncertain elements in experiments.html first, then move them to the pages that need them; leave it short when idle.
 - Before writing page CSS, read the inventory at the top of each css/components/*.css; reuse or extend before adding.
 - Mascot (sloth): at most one per page and only where it fits; exceptions are rare.
 

@@ -1,0 +1,24 @@
+/* Page composition for the component catalogue (components/index.html): one section per component
+   file, each with a short header and framed live examples. */
+@layer page {
+  .cx-intro { padding-block: 7rem 3rem; }
+  .cx { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 9fr); gap: 4rem; align-items: start; }
+  .cx-head { display: grid; gap: 1rem; position: sticky; inset-block-start: 12rem; }
+  .cx-file code { font-size: var(--small-size); color: var(--accent); }
+  .cx-body { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.4rem; }
+  .cx-demo { display: grid; align-content: start; gap: 1.6rem; padding: 2.4rem; border: .1rem solid var(--line); border-radius: var(--radius); background: var(--paper); }
+  .cx-wide { grid-column: 1 / -1; }
+  .cx-label { font-size: var(--small-size); color: var(--muted); }
+  .cx-box { padding: 1.2rem 1.6rem; border-radius: calc(var(--radius) * .6); background: var(--surface); }
+  .cx-mini + .cx-mini { margin-block-start: 1.2rem; }
+  .cx-wrap h3 { font-size: 3rem; max-inline-size: 30rem; }
+  .cx-balance { text-wrap: balance; }
+  .cx-pretty { text-wrap: pretty; }
+  .cx-wrap p { max-inline-size: 42rem; }
+  @media (width <= 50em) {
+    .cx { grid-template-columns: minmax(0, 1fr); gap: 2.4rem; }
+    .cx-head { position: static; }
+    .cx-body { grid-template-columns: minmax(0, 1fr); }
+    .cx-intro { padding-block: 4rem 2rem; }
+  }
+}

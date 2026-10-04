@@ -1,11 +1,30 @@
-/* Page composition for the overview example. Not part of the framework. */
+/* Page composition for the Prastora home page. */
 @layer page {
-  .showcase-shot { display: block; }
-  .showcase-shot img { inline-size: 100%; block-size: auto; aspect-ratio: 16 / 10; border-radius: var(--radius); border: .1rem solid var(--line); }
+  .ix-hero { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 6rem; align-items: center; padding-block: 8rem 7rem; }
+  .ix-hero h1 { font-size: 6rem; line-height: 1.05; }
+  .ix-compare { display: grid; gap: 1.2rem; margin: 0; }
+  .ix-compare-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+  .ix-compare img { display: block; inline-size: 100%; block-size: auto; border-radius: .6rem; border: .1rem solid var(--line); }
+  .ix-intro { max-inline-size: 76rem; color: var(--muted); }
+  .ix-site { display: grid; align-content: start; gap: 1.4rem; padding: 1.2rem 1.2rem 2.4rem; }
+  .ix-site > :not(.ix-shot) { margin-inline: .8rem; }
+  .ix-shot img { display: block; inline-size: 100%; block-size: auto; border-radius: calc(var(--radius) * .75); border: .1rem solid var(--line); }
+  .ix-site h3 a { color: inherit; text-decoration: none; }
+  .ix-site h3 a:hover { text-decoration: underline; }
+  .ix-pages { color: var(--muted); }
+  .ix-perks h3 { font-size: 2.2rem; }
+  .ix-contact { position: relative; }
+  .ix-what { padding-block-end: 10rem; }
+  .ix-sloth { position: absolute; z-index: 2; inset-block-start: -8.6rem; inset-inline-end: 10rem; inline-size: 18rem; block-size: auto; pointer-events: none; }
   @media (width <= 50em) {
-    .overview-examples-grid { --columns: 2; }
-    .overview-examples-grid > .card-icon-feature { grid-column: 1 / -1; }
-    .overview-media-grid { --columns: 2; }
-    .overview-media-grid > :last-child { grid-column: 1 / -1; }
+    .ix-hero { grid-template-columns: minmax(0, 1fr); gap: 3rem; padding-block: 5rem 4rem; }
+    .ix-hero h1 { font-size: 4.6rem; }
+    .ix-perks { --columns: 1; }
+    .ix-what { padding-block-end: 9rem; }
+    .ix-sloth { inset-block-start: -6.7rem; inset-inline-end: 3rem; inline-size: 14rem; }
+  }
+  @media (height <= 30em) {
+    .ix-hero h1 { font-size: min(6rem, 11vh); }
+    .ix-hero { padding-block-start: 2.4rem; }
   }
 }

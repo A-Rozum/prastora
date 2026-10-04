@@ -1,0 +1,9 @@
+/* Page composition for experiments.html, the testing ground. Empty most of the time on purpose. */
+@layer page {
+  .xp { display: grid; gap: 2rem; padding-block: 8rem; max-inline-size: 96rem; }
+  .xp h1 { font-size: 6rem; line-height: 1.05; }
+  @media (width <= 50em) {
+    .xp { padding-block: 5rem; }
+    .xp h1 { font-size: 4.4rem; }
+  }
+}
