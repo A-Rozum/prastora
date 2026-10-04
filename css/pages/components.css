@@ -12,6 +12,7 @@
   .cx-box { padding: 1.2rem 1.6rem; border-radius: calc(var(--radius) * .6); background: var(--surface); }
   .cx-mini + .cx-mini { margin-block-start: 1.2rem; }
   .cx-wrap h3 { font-size: 3rem; max-inline-size: 30rem; }
+  .cx-ordinary { text-wrap: wrap; }
   .cx-balance { text-wrap: balance; }
   .cx-pretty { text-wrap: pretty; }
   .cx-wrap p { max-inline-size: 42rem; }
