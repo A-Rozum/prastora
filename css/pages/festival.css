@@ -61,9 +61,11 @@
   .of-program:has(#stage-yard:checked, #stage-platform:checked, #stage-waiting:checked) .of-timetable { grid-template-rows: 3.5rem 17rem; }
   .of-program:has(#stage-yard:checked, #stage-platform:checked, #stage-waiting:checked) :is(.of-stage-label, .of-stage-track, .of-set) { grid-row: 2; }
   .of-program-foot { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; border-block-start: .1rem solid var(--line); padding-block-start: 2rem; margin-block-start: 2rem; color: var(--muted); }
-  .of-artist { display: grid; grid-template-columns: 12rem minmax(0, 1fr); gap: 4rem; border-block-start: .1rem solid var(--line); padding-block: 3.5rem; }
+  .of-artist { display: grid; grid-template-columns: 8rem 32rem minmax(0, 1fr); align-items: start; gap: 3rem; border-block-start: .1rem solid var(--line); padding-block: 3.5rem; }
+  .of-artist-photo { display: grid; gap: 1rem; }
+  .of-artist-photo figcaption { color: var(--muted); font-size: var(--small-size); line-height: 1.5; }
   .of-artist-index { font-family: Georgia, serif; font-size: 8rem; line-height: 1; color: var(--muted); }
-  .of-artist > .stack { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 5rem; }
+  .of-artist > .stack { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 3rem; }
   .of-artist :is(.eyebrow, h3, .of-watch) { grid-column: 1 / -1; }
   .of-artist h3 { font-size: 3.4rem; letter-spacing: -.1rem; }
   .of-artist-role { padding-inline-start: 2rem; border-inline-start: .25rem solid var(--line); font-family: Georgia, serif; font-size: var(--lead-size); }
@@ -106,7 +108,8 @@
     .of-set-notes, .of-late .of-set-notes { position: static; inline-size: auto; padding: 2rem; margin: .5rem; border: 0; box-shadow: none; }
     .of-set-notes h3 { font-size: 2.8rem; }
     .of-artist { grid-template-columns: 6rem minmax(0, 1fr); gap: 2rem; }
-    .of-artist-index { font-size: 5rem; }
+    .of-artist-index { font-size: 5rem; grid-row: 1 / 3; }
+    .of-artist-photo, .of-artist > .stack { grid-column: 2; }
     .of-artist > .stack { grid-template-columns: minmax(0, 1fr); gap: 2rem; }
     .of-artist h3 { font-size: 3.4rem; }
     .of-artist-role { padding-inline-start: 1.5rem; }
