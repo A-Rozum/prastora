@@ -3,11 +3,7 @@
    The timetable is page-specific: --from/--duration count 15-minute tracks
    after noon, --stage selects a row. Notes and filters need no JavaScript. */
 @layer page {
-  .of-demo { display: flex; justify-content: space-between; flex-wrap: wrap; gap: .6rem 2rem; padding: .6rem var(--space-inline); color: var(--on-accent); background: var(--accent); font-size: var(--small-size); }
-  .of-demo a { color: inherit; }
   .of-brand-year { font-weight: 400; }
-  .of-nav { display: flex; flex-wrap: wrap; gap: 2.5rem; }
-  .of-nav a { color: var(--ink); text-decoration: none; padding-block: .8rem; }
   .of-hero { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 4rem; padding-block: 5rem 4rem; overflow: hidden; }
   .of-hero-copy { gap: 2.5rem; }
   .of-hero h1 { font-size: 16rem; font-weight: 900; line-height: .83; letter-spacing: -.9rem; text-wrap: nowrap; overflow-wrap: normal; }
@@ -86,8 +82,6 @@
   .of-footer > div:first-child { display: grid; gap: 1.5rem; }
   @supports not selector(:has(*)) { .of-filters { display: none; } }
   @media (width <= 50em) {
-    .header-inner { gap: 1rem; }
-    .of-nav { gap: 2rem; font-size: var(--small-size); }
     .of-hero { grid-template-columns: minmax(0, 1fr); gap: 5rem; padding-block: 4rem; }
     .of-hero h1 { font-size: 15rem; letter-spacing: -.8rem; }
     .of-tagline { font-size: 5rem; }
@@ -121,8 +115,12 @@
     .of-manager svg { inline-size: 36rem; }
     .of-footer { flex-direction: column; gap: 3rem; }
   }
+  @media (height <= 30em) {
+    .of-hero { padding-block-start: 2.4rem; }
+    .of-hero h1 { font-size: min(16rem, 18vh); letter-spacing: -.3rem; }
+  }
   @media print {
-    .of-demo, .of-filters, .of-poster, .of-manager { display: none; }
+    .of-filters, .of-poster, .of-manager { display: none; }
     .of-hero { display: block; }
     .of-hero h1 { font-size: 7rem; }
     .of-timetable { display: block; }
