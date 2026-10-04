@@ -24,6 +24,7 @@ SHOTS = {  # name: (selector to start from, colour scheme)
     "gallery": (".pe-head", "light"),
     "contacts": ("#locations", "dark"),
     "festival": (".of-hero", "light"),
+    "comparison": (".tm-hero", "light"),
 }
 WIDTH, THUMB = 1440, (720, 450)
 
