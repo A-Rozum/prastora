@@ -10,7 +10,23 @@
   .sv-report { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 4fr) minmax(0, 3fr); gap: 4rem; align-items: center; }
   .sv-list { display: grid; gap: .8rem; padding-inline-start: 2.2rem; }
   .sv-sloth { display: block; inline-size: 100%; block-size: auto; }
-  .sv-fees { max-inline-size: 90rem; }
+  .sv-sheet { position: relative; display: grid; gap: 1.6rem; padding: 3rem 3.2rem 7rem; background: var(--card-paper); color: var(--card-ink); font-family: var(--font-type, monospace); box-shadow: 0 1rem 2.4rem color-mix(in srgb, var(--city) 40%, transparent); transform: rotate(.8deg); }
+  .sv-sheet-head { display: flex; justify-content: space-between; padding-block-end: .8rem; border-block-end: .15rem solid var(--card-ink); font-size: 1.2rem; letter-spacing: .1em; text-transform: uppercase; }
+  .sv-sheet h3 { font-family: var(--font-type, monospace); font-size: 2.2rem; }
+  .sv-sheet-dl { font-size: 1.4rem; }
+  .sv-sheet-dl > div { grid-template-columns: 11rem minmax(0, 1fr); border-color: color-mix(in srgb, var(--card-ink) 25%, transparent); }
+  .sv-sheet-dl dt { color: var(--card-ink); font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+  .sv-sheet-dl dd { color: var(--card-ink); }
+  .sv-sheet-stamp { position: absolute; inset-block-end: 1.6rem; inset-inline-end: 2rem; padding: .2rem 1.4rem; border: .3rem solid var(--stamp); border-radius: .4rem; color: var(--stamp); font-family: var(--font-display, var(--font)); font-size: 2rem; letter-spacing: .14em; text-transform: uppercase; transform: rotate(-8deg); opacity: .85; }
+  .sv-transcript { max-inline-size: 84rem; }
+  .tr-head { font-family: var(--font-type, monospace); font-size: 1.3rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+  .tr-pair { display: grid; gap: .8rem; padding-block: 2rem; border-block-start: .1rem dashed var(--line); }
+  .tr-q, .tr-a { display: grid; grid-template-columns: 4rem minmax(0, 1fr); }
+  .tr-q { font-family: var(--font-type, monospace); font-size: 1.6rem; color: var(--muted); }
+  .tr-a { font-size: 1.9rem; }
+  .tr-q span, .tr-a span { font-family: var(--font-type, monospace); color: var(--brass); }
+  .in-fee { padding: 1.2rem 0; border-block: .15rem dashed color-mix(in srgb, var(--card-ink) 45%, transparent); font-family: var(--font-type, monospace); font-size: 1.4rem; line-height: 1.6; }
+  .in-fee span { font-weight: 700; letter-spacing: .1em; text-transform: uppercase; margin-inline-end: 1rem; }
   #scope { background: radial-gradient(circle at 1rem 1rem, color-mix(in srgb, var(--card-ink) 18%, transparent) .15rem, transparent .2rem) 0 0 / 2.4rem 2.4rem, var(--cork); }
   #scope h2, #scope .sv-intro { color: var(--card-paper); }
   .eb { position: relative; display: grid; grid-template-columns: repeat(3, 32rem); grid-template-rows: repeat(3, 20rem); gap: 5rem 6rem; inline-size: 108rem; margin: 2rem auto 0; }
@@ -74,6 +90,8 @@
     .in-head { flex-direction: column; gap: .4rem; }
     .sv-report { grid-template-columns: minmax(0, 1fr); }
     .sv-sloth { inline-size: 60%; justify-self: center; }
+    .sv-sheet-dl, .in-fee { font-size: 1.8rem; }
+    .sv-sheet { padding: 2.4rem 2.2rem 4rem; }
   }
   @media (height <= 30em) {
     .sv-hero h1 { font-size: min(7rem, 11vh); }

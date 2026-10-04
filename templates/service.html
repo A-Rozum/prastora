@@ -42,9 +42,9 @@
         <h1>Cold case review</h1>
         <p class="lead">Some bugs never get solved. Teams just get used to them. We reopen the ones you've learned to live with and close them properly, with evidence.</p>
         <div class="flex"><a class="btn" href="#reopen">Reopen a case</a><a class="btn btn-secondary" href="#scope">See what we take on</a></div>
-        <p class="small muted">Fixed fee · two weeks · a report, a fix and a much quieter on-call rota</p>
+        <p class="small muted">$4,900 fixed · two weeks · a report, a fix and a much quieter on-call rota</p>
       </div>
-      <nav class="section-nav sv-nav" aria-label="On this page"><p class="small">On this page</p><a href="#scope">What we take on</a><a href="#process">How it runs</a><a href="#report">What you get</a><a href="#fees">Fees</a><a href="#questions">Questions</a><a href="#reopen">Reopen a case</a></nav>
+      <nav class="section-nav sv-nav" aria-label="On this page"><p class="small">On this page</p><a href="#scope">What we take on</a><a href="#process">How it runs</a><a href="#report">What you get</a><a href="#questions">Questions</a><a href="#reopen">Reopen a case</a></nav>
     </section>
 
     <section class="section surface anchor" id="scope">
@@ -64,7 +64,7 @@
     <section class="section anchor" id="process">
       <div class="stack">
         <h2>How it runs</h2>
-        <div class="tl" role="img" aria-label="Fourteen days: day 1 briefing, days 2 to 8 legwork, days 9 to 12 the fix, days 13 and 14 handover">
+        <div class="tl" role="img" aria-label="Fourteen days: day 1 digging up the file, days 2 to 8 reconstructing the scene, days 9 to 12 the fix, days 13 and 14 closing the file">
           <span class="tl-day">1</span><span class="tl-day">2</span><span class="tl-day">3</span><span class="tl-day">4</span><span class="tl-day">5</span><span class="tl-day is-weekend">6</span><span class="tl-day is-weekend">7</span><span class="tl-day">8</span><span class="tl-day">9</span><span class="tl-day">10</span><span class="tl-day">11</span><span class="tl-day">12</span><span class="tl-day is-weekend">13</span><span class="tl-day is-weekend">14</span>
           <span class="tl-bar tl-1" style="grid-column: 1 / 2">1</span>
           <span class="tl-bar tl-2" style="grid-column: 2 / 9">2</span>
@@ -72,10 +72,10 @@
           <span class="tl-bar tl-4" style="grid-column: 13 / 15">4</span>
         </div>
         <ol class="tl-phases">
-          <li><h3><span class="tl-key tl-1"></span>Day 1 · The briefing</h3><p>Bring everything: logs, tickets, the chat thread from two years ago and the colleague who says it works on their machine. Especially them.</p></li>
-          <li><h3><span class="tl-key tl-2"></span>Days 2–8 · The legwork</h3><p>We reproduce the problem before we touch it. Traces, timelines, a few uncomfortable questions for the codebase. Half the job, and it shows on the calendar.</p></li>
+          <li><h3><span class="tl-key tl-1"></span>Day 1 · Digging up the file</h3><p>Bring everything: logs, tickets, the chat thread from two years ago and the colleague who says it works on their machine. Especially them.</p></li>
+          <li><h3><span class="tl-key tl-2"></span>Days 2–8 · Reconstructing the scene</h3><p>We reproduce the problem before we touch it. Traces, timelines, a few uncomfortable questions for the codebase. Half the job, and it shows on the calendar.</p></li>
           <li><h3><span class="tl-key tl-3"></span>Days 9–12 · The fix</h3><p>One change at a time, each with a test, so everyone knows which one mattered. No heroic rewrites.</p></li>
-          <li><h3><span class="tl-key tl-4"></span>Days 13–14 · The handover</h3><p>A short report, a walkthrough call and the next three suspects, in case you want to keep going.</p></li>
+          <li><h3><span class="tl-key tl-4"></span>Days 13–14 · Closing the file</h3><p>A short report, a walkthrough call and the next three suspects, in case you want to keep going.</p></li>
         </ol>
         <p class="small muted">Shaded days are weekends. The detective rests; cold cases, famously, don't.</p>
       </div>
@@ -93,31 +93,27 @@
             <li>Three suspects worth a look next</li>
           </ul>
         </div>
-        <article class="sb-file sv-file"><p class="sb-file-no">Case 0311 · reopened</p><h3>The 3 a.m. restart</h3><blockquote><p>Cause: a cache that never forgot anything. Evidence: memory profile, attached. Fix: an expiry policy and a test that would have caught it in 2022. The cron job has been retired with honours.</p></blockquote><p class="sb-stamp">Closed</p></article>
+        <article class="sv-sheet" aria-label="Sample report">
+          <header class="sv-sheet-head"><p>Report · Case 0311</p><p>Page 1 of 3</p></header>
+          <h3>The 3 a.m. restart</h3>
+          <dl class="specs sv-sheet-dl">
+            <div><dt>Symptom</dt><dd>Service slows down every night; restarted by cron at 03:00 since 2022.</dd></div>
+            <div><dt>Cause</dt><dd>A cache that never forgot anything.</dd></div>
+            <div><dt>Evidence</dt><dd>Memory profile over 72 hours, attached as exhibit A.</dd></div>
+            <div><dt>Fix</dt><dd>Expiry policy plus the test that would have caught it.</dd></div>
+            <div><dt>Status</dt><dd>Cron job retired with honours.</dd></div>
+          </dl>
+          <p class="sv-sheet-stamp" aria-hidden="true">Closed</p>
+        </article>
         <svg class="sv-sloth" viewBox="0 0 240 250" aria-hidden="true"><use href="../assets/slowburn.svg#sloth-reading"/></svg>
       </div>
     </section>
 
-    <section class="section anchor" id="fees">
-      <div class="stack">
-        <h2>Fees</h2>
-        <p class="lead">Fixed, agreed up front and paid in two halves. If we don't find the cause, you don't pay the second half.</p>
-        <div class="grid grid-2 pricing-grid sv-fees">
-          <article class="card pricing-plan"><h3>One case</h3><p>For the bug everyone has a theory about.</p><p class="plan-price"><bdi>$4,900</bdi><small>Fixed fee, two weeks</small></p><ul><li>One cold case, start to finish</li><li>Fix merged with tests</li><li>Case file and handover call</li></ul><div class="plan-actions"><a class="btn" href="#reopen">Reopen a case</a></div></article>
-          <article class="card pricing-plan"><h3>Three cases</h3><p>For teams with a drawer full of them.</p><p class="plan-price"><bdi>$12,500</bdi><small>Fixed fee, six weeks</small></p><ul><li>Three cold cases, one detective</li><li>Fixes merged with tests</li><li>A quarterly look at new suspects</li></ul><div class="plan-actions"><a class="btn btn-secondary" href="#reopen">Talk it through</a></div></article>
-        </div>
-      </div>
-    </section>
-
     <section class="section surface anchor" id="questions">
-      <div class="sb-faq stack">
+      <div class="sv-transcript stack">
         <h2>Questions</h2>
-        <div>
-          <details class="disclosure"><summary>What if you don't find it?</summary><p>You don't pay the second half, and you get everything we ruled out, which is often half the answer. The detective also takes it personally, for free.</p></details>
-          <details class="disclosure"><summary>Can you fix it in a week?</summary><p>We can usually find it in a week. Fixing it properly depends on how much has been built on top of it since.</p></details>
-          <details class="disclosure"><summary>Will the report blame someone?</summary><p>It names causes, not people. Bugs this old are rarely one person's fault; they're everyone's habit.</p></details>
-          <details class="disclosure"><summary>Do you need access to production?</summary><p>Read-only, and only to what you choose. Most cold cases crack in a copy of production anyway.</p></details>
-        </div>
+        <p class="tr-head">Transcript · first call with a client, abridged</p>
+        <div class="tr-pair"><p class="tr-q"><span>Q.</span>Why do you call them cold cases?</p><p class="tr-a"><span>A.</span>Because the trail has gone cold, and so has everyone's enthusiasm for it. We bring a fresh pair of eyes and a thermos.</p></div><div class="tr-pair"><p class="tr-q"><span>Q.</span>What if you don't find it?</p><p class="tr-a"><span>A.</span>Then you don't pay the second half, and you keep everything we ruled out, which is often half the answer. The detective takes it personally, at no extra charge.</p></div><div class="tr-pair"><p class="tr-q"><span>Q.</span>Can you fix it in a week?</p><p class="tr-a"><span>A.</span>We can usually find it in a week. Fixing it properly depends on how much has been built on top of it since.</p></div><div class="tr-pair"><p class="tr-q"><span>Q.</span>Will the report blame someone?</p><p class="tr-a"><span>A.</span>It names causes, not people. Bugs this old are rarely one person's fault; they're everyone's habit.</p></div>
       </div>
     </section>
 
@@ -136,6 +132,7 @@
             <input type="radio" name="age" id="age-y"><label for="age-y">Years</label>
             <input type="radio" name="age" id="age-n"><label for="age-n">Nobody remembers</label>
           </fieldset>
+          <p class="in-fee"><span>Fee</span> $4,900 fixed for one case, two weeks. Half on opening, half on closing; the second half is waived if we don't find the cause.</p>
           <div class="in-foot"><button class="in-submit" type="submit">File the case</button><p class="in-stamp" aria-hidden="true"><span class="in-pending">Incomplete</span><span class="in-ready">Ready to file</span></p></div>
         </form>
       </div>
