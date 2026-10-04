@@ -1,0 +1,10 @@
+/* OFFSCREEN: station paper, painted signs and stage colours. Tokens only. */
+@layer theme {
+  :root { color-scheme: light; --font: Arial, Helvetica, sans-serif; --ink: #243b34; --muted: #59665c; --paper: #f4efdf; --surface: #e9e4d4; --line: #c8c5b2; --accent: #243b34; --on-accent: #f4efdf; --radius: .3rem; --poster-paper: #ead2ad; --poster-ink: #243b34; --yard: #eec5ae; --platform: #d6dfbc; --waiting: #c5d8db; --stage-ink: #243b34; --station-light: #df9c37; --signal: #b34a31; }
+  @media (prefers-color-scheme: dark) {
+    :root { color-scheme: dark; --ink: #f1ebd7; --muted: #c0c5b7; --paper: #1c2b25; --surface: #253b32; --line: #526255; --accent: #ead2ad; --on-accent: #243b34; --yard: #e3b59f; --platform: #c5d1a7; --waiting: #b0cbce; }
+  }
+  @media print {
+    :root { color-scheme: light; --ink: #243b34; --muted: #59665c; --paper: #fff; --surface: #f4efdf; --line: #c8c5b2; --accent: #243b34; --on-accent: #fff; }
+  }
+}
