@@ -1,7 +1,7 @@
 /* Utility strip.
    .viewport-panel / .viewport-tools / .utility-actions – strip above the header
    .theme-toggle, .language-control, .utility-back (Back to Prastora on templates with their own design)
-   .text-size – three-step text size buttons (trial on experiments.html) */
+   .text-size – smaller and larger text buttons (trial on experiments.html) */
 @layer components {
   .viewport-panel { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .6rem 2rem; padding: .3rem var(--space-inline); border-block-end: .1rem solid var(--utility-line); background: var(--utility-surface); color: var(--ink); font-size: calc(var(--small-size) * .9); line-height: 1.5; }
   .viewport-panel[hidden] { display: none; }
@@ -45,9 +45,8 @@
   .text-size button + button { border-inline-start: 0; }
   .text-size button:first-child { border-start-start-radius: .4rem; border-end-start-radius: .4rem; }
   .text-size button:last-child { border-start-end-radius: .4rem; border-end-end-radius: .4rem; }
-  .text-size .ts-s { font-size: .8em; }
-  .text-size .ts-l { font-size: 1.25em; }
-  .text-size [aria-pressed=true] { background: var(--ink); color: var(--paper); }
+  .text-size .ts-s { font-size: .85em; }
+  .text-size .ts-l { font-size: 1.15em; }
   @media (width > 50em) {
     .viewport-panel { padding-block: .22rem; font-size: calc(var(--small-size) * .8); }
     .utility-actions select, .utility-actions button { padding: .18rem .6rem; }
