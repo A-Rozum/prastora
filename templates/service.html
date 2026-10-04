@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="../css/components/forms.css">
   <link rel="stylesheet" href="../css/components/commerce.css">
   <link rel="stylesheet" href="../css/components/utility.css">
+  <link rel="stylesheet" href="../css/components/consent.css">
   <link rel="stylesheet" href="../css/pages/slowburn.css">
   <link rel="stylesheet" href="../css/pages/service.css">
   <link rel="stylesheet" href="../css/dev/viewport.css">
@@ -142,8 +143,12 @@
     <div class="grid grid-3">
       <div class="stack-small"><h3>Slowburn</h3><p class="muted">Bug investigations, established some time ago.</p></div>
       <nav class="stack-small" aria-label="Footer"><h3>The office</h3><div class="footer-links"><a href="landing.html#how">How it works</a><a href="#main">Cold cases</a><a href="landing.html#cases">Closed cases</a><a href="landing.html#rates">Rates</a><a href="contacts.html">Offices</a></div></nav>
-      <div class="stack-small"><h3>Fine print</h3><p class="muted">Slowburn is fictional: a service page template for <a href="../index.html">Prastora</a>. No bugs were harmed.</p></div>
+      <div class="stack-small"><h3>Fine print</h3><p class="muted">Slowburn is fictional: a service page template for <a href="../index.html">Prastora</a>. No bugs were harmed.</p><div><button type="button" class="consent-reopen" data-consent-reopen hidden>Cookie settings</button><p class="small muted" data-consent-status role="status"></p></div></div>
     </div>
   </footer>
+<aside class="consent-bar" data-consent-demo hidden aria-label="Cookie preferences">
+    <div class="consent-settings" id="consent-settings" data-consent-settings hidden><p>Cookie preferences · necessary functions stay available.</p><label><input type="checkbox" id="consent-analytics">Analytics</label><label><input type="checkbox" id="consent-marketing">Marketing</label><button type="button" data-consent-save>Save preferences</button></div>
+    <div class="consent-row"><p>We use cookies.<span class="desktop-only"> Choose which data we may collect, or set your preferences in Settings.</span></p><div class="consent-actions"><button type="button" data-consent-accept>Accept all</button><button type="button" data-consent-reject>Necessary only</button><button type="button" data-consent-configure aria-expanded="false" aria-controls="consent-settings">Settings</button></div></div>
+  </aside>
 </body>
 </html>

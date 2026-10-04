@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="../css/components/forms.css">
   <link rel="stylesheet" href="../css/components/commerce.css">
   <link rel="stylesheet" href="../css/components/utility.css">
+  <link rel="stylesheet" href="../css/components/consent.css">
   <link rel="stylesheet" href="../css/pages/harbour.css">
   <link rel="stylesheet" href="../css/pages/pricing.css">
   <link rel="stylesheet" href="../css/dev/viewport.css">
@@ -79,8 +80,12 @@
     <div class="grid grid-3">
       <div class="stack-small"><h3>Harbour Lights</h3><p class="muted">Stories from Port Ellery, a city that runs slightly behind schedule.</p></div>
       <nav class="stack-small" aria-label="Footer"><h3>Sections</h3><div class="footer-links"><a href="#main">City</a><a href="#main">Culture</a><a href="#main">Food</a><a href="article.html">Long reads</a><a href="gallery.html">Photo</a></div></nav>
-      <div class="stack-small"><h3>Fine print</h3><p class="muted">Harbour Lights and Port Ellery are fictional: a pricing page template for <a href="../index.html">Prastora</a>. No trams were delayed in the making of it. They managed that on their own.</p></div>
+      <div class="stack-small"><h3>Fine print</h3><p class="muted">Harbour Lights and Port Ellery are fictional: a pricing page template for <a href="../index.html">Prastora</a>. No trams were delayed in the making of it. They managed that on their own.</p><div><button type="button" class="consent-reopen" data-consent-reopen hidden>Cookie settings</button><p class="small muted" data-consent-status role="status"></p></div></div>
     </div>
   </footer>
+<aside class="consent-bar" data-consent-demo hidden aria-label="Cookie preferences">
+    <div class="consent-settings" id="consent-settings" data-consent-settings hidden><p>Cookie preferences · necessary functions stay available.</p><label><input type="checkbox" id="consent-analytics">Analytics</label><label><input type="checkbox" id="consent-marketing">Marketing</label><button type="button" data-consent-save>Save preferences</button></div>
+    <div class="consent-row"><p>We use cookies.<span class="desktop-only"> Choose which data we may collect, or set your preferences in Settings.</span></p><div class="consent-actions"><button type="button" data-consent-accept>Accept all</button><button type="button" data-consent-reject>Necessary only</button><button type="button" data-consent-configure aria-expanded="false" aria-controls="consent-settings">Settings</button></div></div>
+  </aside>
 </body>
 </html>

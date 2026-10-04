@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="../css/components/forms.css">
   <link rel="stylesheet" href="../css/components/data.css">
   <link rel="stylesheet" href="../css/components/utility.css">
+  <link rel="stylesheet" href="../css/components/consent.css">
   <link rel="stylesheet" href="../css/pages/dashboard.css">
   <link rel="stylesheet" href="../css/dev/viewport.css">
   <script src="../assets/viewport.js?v=2" defer></script>
@@ -88,7 +89,12 @@
         </ul>
       </section>
       <p class="small muted db-foot">Shutter &amp; Crumb is fictional: a dashboard template for <a href="../index.html">Prastora</a>. The numbers are made up, the lunch peak is not.</p>
+      <div><button type="button" class="consent-reopen" data-consent-reopen hidden>Cookie settings</button><p class="small muted" data-consent-status role="status"></p></div>
     </main>
   </div>
+<aside class="consent-bar" data-consent-demo hidden aria-label="Cookie preferences">
+    <div class="consent-settings" id="consent-settings" data-consent-settings hidden><p>Cookie preferences · necessary functions stay available.</p><label><input type="checkbox" id="consent-analytics">Analytics</label><label><input type="checkbox" id="consent-marketing">Marketing</label><button type="button" data-consent-save>Save preferences</button></div>
+    <div class="consent-row"><p>We use cookies.<span class="desktop-only"> Choose which data we may collect, or set your preferences in Settings.</span></p><div class="consent-actions"><button type="button" data-consent-accept>Accept all</button><button type="button" data-consent-reject>Necessary only</button><button type="button" data-consent-configure aria-expanded="false" aria-controls="consent-settings">Settings</button></div></div>
+  </aside>
 </body>
 </html>
