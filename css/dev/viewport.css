@@ -6,6 +6,13 @@
   .load-reading[hidden] { display: none; }
   .viewport-reading { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem 1rem; min-inline-size: 0; }
   .viewport-tools .viewport-reading { flex-wrap: nowrap; }
+  .viewport-orientation { display: inline-flex; }
+  .viewport-orientation svg { inline-size: 2rem; block-size: 2rem; fill: none; stroke: currentColor; stroke-width: 2; }
+  .orient-portrait { display: none; }
+  @media (orientation: portrait) {
+    .orient-landscape { display: none; }
+    .orient-portrait { display: block; }
+  }
   @media (width > 50em) {
     .viewport-reading { font-size: calc(var(--small-size) * .75); }
   }

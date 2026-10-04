@@ -5,14 +5,20 @@
   python3 tools/snap.py diff        # re-shoots the same set, prints only differences, exit 1 if any
 
 --css picks the pages that link those files (paths from the repo root). --pages takes names like templates/pricing. Default: all pages, all regimes, light scheme.
-One width per regime is enough: within a regime the layout only scales.
+One window per regime is enough: within a regime the layout only scales. Extra windows:
+narrow (320 wide), short (863x339, a phone held sideways) and sideways (734x232) – add them with --regimes
+when a change touches small or low windows.
 """
 import argparse, functools, shutil, http.server, json, re, sys, threading
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 STORE = ROOT / ".snap"
-REGIMES = {"mobile": 390, "desktop": 1440, "wide": 2560}
+REGIMES = {  # name: (width, height); the first three are the default set
+    "mobile": (390, 844), "desktop": (1440, 900), "wide": (2560, 1440),
+    "narrow": (320, 568), "short": (863, 339), "sideways": (734, 232),
+}
+DEFAULT = ["mobile", "desktop", "wide"]
 HIDE = ".load-reading,.viewport-reading output,iframe{visibility:hidden!important}"
 
 
@@ -46,7 +52,8 @@ def shoot(params, out):
     with sync_playwright() as pw:
         browser = pw.chromium.launch()
         for page, regime, scheme in jobs:
-            ctx = browser.new_context(viewport={"width": REGIMES[regime], "height": 900}, color_scheme=scheme)
+            width, height = REGIMES[regime]
+            ctx = browser.new_context(viewport={"width": width, "height": height}, color_scheme=scheme)
             tab = ctx.new_page()
             tab.route("**/*", lambda r: r.continue_() if r.request.url.startswith(base) else r.abort())
             tab.goto(base + page + ".html")
@@ -66,7 +73,7 @@ def main():
     ap.add_argument("action", choices=["base", "diff"])
     ap.add_argument("--css", nargs="*", default=[])
     ap.add_argument("--pages", nargs="*")
-    ap.add_argument("--regimes", nargs="*", default=list(REGIMES), choices=list(REGIMES))
+    ap.add_argument("--regimes", nargs="*", default=DEFAULT, choices=list(REGIMES))
     ap.add_argument("--dark", action="store_true")
     a = ap.parse_args()
     if a.action == "base":
