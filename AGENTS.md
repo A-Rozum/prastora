@@ -4,7 +4,7 @@ Deliberate, keep unless told otherwise:
 - Root font-size = 100vw / --scale-units, set per regime. No clamp, caps or max-width containers; --scale-min stays 0. Jumps between regimes are intended. A page may set a denser --scale-units per regime (see dashboard).
 - CSS lengths in rem only.
 - JS only where HTML/CSS have no equivalent, with a working no-JS fallback.
-- CSS lives in css/ by layer: core.css, themes/ (custom properties only), components/, pages/ (CSS of one page, same name as the page; a folder's index takes the folder name), dev/ (development aids). Pages link only what they use, in that order.
+- CSS lives in css/ by layer: core.css, themes/ (custom properties only), components/, pages/ (CSS of one page, same name as the page; a folder's index takes the folder name; a demo site's shared styles take the site's name), dev/ (development aids). Pages link only what they use, in that order.
 - HTML: framework pages in the root, component catalogue in components/, demo templates in templates/.
 - Copy in English, lively and varied in register. Humour and self-irony woven into the text's logic, never bolted on; tease gently, never mock others. Templates use plausible fictional content of their field, marked as demo.
 - Before writing page CSS, read the inventory at the top of each css/components/*.css; reuse or extend before adding.

@@ -1,49 +1,137 @@
 <!doctype html>
 <html lang="en" dir="ltr">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Layouts – Prastora</title><script src="../assets/theme-init.js?v=1"></script><link rel="stylesheet" href="../css/core.css">
-  <link rel="stylesheet" href="../css/themes/default.css">
+<head>
+  <script src="../assets/theme-init.js?v=1"></script>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Slowburn's cold case review, a fictional service: a service page template built with Prastora.">
+  <title>Cold case review – Slowburn (Prastora demo)</title>
+  <link rel="stylesheet" href="../css/core.css">
+  <link rel="stylesheet" href="../css/themes/deco.css">
   <link rel="stylesheet" href="../css/components/navigation.css">
   <link rel="stylesheet" href="../css/components/content.css">
   <link rel="stylesheet" href="../css/components/forms.css">
+  <link rel="stylesheet" href="../css/components/commerce.css">
   <link rel="stylesheet" href="../css/components/utility.css">
-  <link rel="stylesheet" href="../css/components/consent.css">
-  <link rel="stylesheet" href="../css/pages/examples.css">
+  <link rel="stylesheet" href="../css/pages/slowburn.css">
   <link rel="stylesheet" href="../css/pages/service.css">
   <link rel="stylesheet" href="../css/dev/viewport.css">
   <script src="../assets/viewport.js?v=2" defer></script>
-  <script src="../assets/interactions.js?v=9" defer></script></head>
+  <script src="../assets/interactions.js?v=9" defer></script>
+</head>
 <body>
   <div class="css-top" data-css-header>
   <aside class="viewport-panel" data-viewport hidden aria-label="Utility strip">
     <div class="viewport-tools">
       <button class="theme-toggle" data-theme-toggle type="button" aria-label="Switch colour theme" hidden><svg class="theme-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg><svg class="theme-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.5A9 9 0 0 1 9.5 3.5a9 9 0 1 0 11 11Z"/></svg></button>
       <div class="viewport-reading" title="Browser viewport size in CSS pixels"><output data-viewport-value dir="ltr"></output><div class="viewport-orientation"><svg class="orient-landscape" viewBox="0 0 24 24"><title>Landscape window</title><rect x="3" y="7" width="18" height="11" rx="2"/></svg><svg class="orient-portrait" viewBox="0 0 24 24"><title>Portrait window</title><rect x="7" y="3" width="11" height="18" rx="2"/></svg></div></div>
+      <a class="utility-back" href="../index.html" aria-label="Back to Prastora"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg><span class="mobile-only">Back</span><span class="desktop-only">Back to Prastora</span></a>
     </div>
     <div class="utility-actions"><span class="language-control"><select aria-label="Language" title="English only for now; other languages are planned"><option value="en" lang="en" selected>English</option><option value="es" lang="es" disabled>Español — soon</option><option value="fr" lang="fr" disabled>Français — soon</option><option value="ar" lang="ar" dir="rtl" disabled>العربية — soon</option></select><svg class="language-arrow" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="m4 6 4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><button type="button" disabled title="Account access is not connected"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="../assets/placeholders.svg#account"/></svg>Sign in</button></div>
   </aside>
   <a class="skip" href="#main">Skip to content</a>
-  <header class="site-header"><div class="header-inner"><a class="brand" href="../index.html"><svg viewBox="0 0 64 64" aria-hidden="true"><use href="../assets/placeholders.svg#logo"/></svg>Prastora</a><nav class="desktop-nav desktop-only" aria-label="Main navigation"><a href="../index.html">Overview</a><a href="index.html" aria-current="true">Templates</a><a href="../components/index.html">Components</a><a href="../start.html">Starter</a></nav><details class="mobile-nav mobile-only"><summary>Explore Prastora</summary><nav aria-label="Mobile navigation"><a href="../index.html">Overview</a><a href="index.html" aria-current="true">Templates</a><a href="../components/index.html">Components</a><a href="../start.html">Starter</a></nav></details></div></header>
+  <header class="site-header"><div class="header-inner">
+    <a class="brand" href="landing.html"><svg viewBox="0 0 64 64" aria-hidden="true"><use href="../assets/slowburn.svg#logo"/></svg>Slowburn</a>
+    <nav class="desktop-nav desktop-only" aria-label="Main navigation"><a href="landing.html">How it works</a><a href="#main" aria-current="true">Cold cases</a><a href="landing.html#cases">Closed cases</a><a href="landing.html#rates">Rates</a><a class="btn" href="#reopen">Reopen a case</a></nav>
+    <details class="mobile-nav mobile-only"><summary>Menu</summary><nav aria-label="Mobile navigation"><a href="landing.html">How it works</a><a href="#main" aria-current="true">Cold cases</a><a href="landing.html#cases">Closed cases</a><a href="landing.html#rates">Rates</a><a href="#reopen">Reopen a case</a></nav></details>
+  </div></header>
   </div>
-  <nav class="demo-note" aria-label="Breadcrumb"><ol class="breadcrumbs"><li><a href="../index.html">Prastora</a></li><li aria-current="page">Layouts</li></ol></nav>
   <main id="main">
-    <section class="section surface stack service-intro"><div class="pair pair-equal hero"><div class="stack"><p class="eyebrow">Compose a complete page</p><h1>Give every section a clear purpose.</h1><p class="lead">Introduce the offer, explain the details and make the next step easy to find. A service page is one way to see how Prastora's layout primitives fit together.</p><a class="btn" href="#scope">Explore the structure</a></div><svg class="media" viewBox="0 0 640 480" role="img" aria-label="Workspace illustration"><use href="../assets/placeholders.svg#workspace"/></svg></div></section>
-    <nav class="section section-nav" aria-label="Page sections"><p class="small">On this page</p><a href="#scope">Composition</a><a href="#steps">Getting started</a><a href="#price">Core and theme</a><a href="#faq">Questions</a><a href="#rhythm">Visual rhythm</a><a href="#contact">Form pattern</a></nav>
-    <div class="section pair"><article class="prose">
-      <section class="prose anchor" id="scope"><h2>Compose around the content.</h2><p>Sections, stacks and grids give you a small set of reusable decisions. Use a wide introduction, pair detailed content with an aside, or bring several cards into the same row.</p><ul><li>Use a section to establish the page's outer spacing.</li><li>Use a stack for a predictable rhythm between headings, paragraphs and actions.</li><li>Use a grid or pair when the content benefits from a shared composition.</li></ul><blockquote>A layout pattern should help you organise the page, not decide what your site is allowed to contain.</blockquote></section>
-      <section class="prose anchor" id="steps"><h2>Start with HTML. Refine with CSS.</h2><ol><li><strong>Choose an example.</strong> Begin with the composition closest to the page you need.</li><li><strong>Replace the content.</strong> Let headings and paragraphs find their natural height rather than forcing them into fixed boxes.</li><li><strong>Adjust the theme.</strong> Change colours, spacing and typography through CSS variables.</li><li><strong>Review on real screens.</strong> Check reading, navigation and longer translations on the devices your visitors use.</li></ol></section>
-      <section class="prose anchor" id="faq"><h2>Common questions</h2><details class="disclosure" name="service-questions"><summary>Do I need a build tool?</summary><p>Not for these examples. They use ordinary HTML, CSS and a local SVG sprite. Build-time templates can be added later without turning the site into a client-side application.</p></details><details class="disclosure" name="service-questions"><summary>Does Prastora replace responsive breakpoints?</summary><p>No. Proportional scaling and responsive composition do different jobs. A grid can become a single reading column while its typography continues to follow the chosen scale.</p></details><details class="disclosure" name="service-questions"><summary>Can I change the design without changing the structure?</summary><p>The core primitives and demonstration theme are separate. You can replace the theme or extend individual components without rebuilding every page.</p></details></section>
-    </article><aside class="stack"><section class="card stack anchor" id="price"><p class="eyebrow">Two stylesheets</p><h2>Core + theme</h2><p class="price">HTML + CSS</p><p>Keep the layout foundation stable while the site's visual identity changes.</p><a class="btn" href="../start.html">Explore the starter</a></section><section class="card stack"><h3>Read the longer version</h3><p>See typography, lists, quotations and supporting media in the context of a complete article.</p><a href="../approach.html">Explore typography</a></section></aside></div>
-    <section class="section stack anchor" id="rhythm"><h2>Vary the rhythm without adding noise.</h2><p>Pair one larger composition with a compact list instead of repeating the same image card for every item.</p><div class="pair">
-      <article class="surface card stack"><p class="eyebrow">Featured composition</p><div class="pair pair-equal hero"><a class="media-link" href="#scope" aria-label="Explore the service composition"><svg class="media" viewBox="0 0 640 480" aria-hidden="true"><use href="../assets/placeholders.svg#workspace"/></svg></a><div class="stack"><h3>A clear introduction with room for the details.</h3><p>Text and imagery share a section without needing identical card proportions.</p><a href="#scope">Explore the composition</a></div></div></article>
-      <aside class="story-list" aria-label="Related patterns"><article class="story-row"><a class="media-link" href="../start.html" aria-label="Explore the detail page"><svg class="media" viewBox="0 0 640 480" aria-hidden="true"><use href="../assets/placeholders.svg#product"/></svg></a><div class="stack-small"><h3>Detail pages</h3><p class="small muted">A compact introduction to another composition.</p><a href="../start.html">Explore the starter</a></div></article><article class="story-row"><a class="media-link" href="../approach.html#media" aria-label="Explore editorial media"><svg class="media" viewBox="0 0 640 480" aria-hidden="true"><use href="../assets/placeholders.svg#video"/></svg></a><div class="stack-small"><h3>Editorial media</h3><p class="small muted">An image can support a short entry instead of dominating it.</p><a href="../approach.html#media">Read the media guide</a></div></article></aside>
-    </div></section>
-    <section class="section surface pair pair-equal anchor" id="contact"><div class="stack"><h2>A straightforward form pattern.</h2><p>Labels, fields and an action can share the same visual language as the rest of the page. Keep validation and submission requirements specific to the site you build.</p><p class="muted">This example shows the form layout only. Submission is disabled until an endpoint is connected.</p><svg class="media form-art desktop-only" viewBox="0 0 640 480" aria-hidden="true" focusable="false"><use href="../assets/placeholders.svg#workspace"/></svg></div><form class="card stack" action="#contact" method="post"><div class="field"><label for="name">Name</label><input id="name" name="name" autocomplete="name" required></div><div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div><div class="field"><label for="message">Message</label><textarea id="message" name="message" required></textarea></div><button class="btn" type="submit" disabled>Submit enquiry</button><p class="small muted">Form example – no messages are sent.</p></form></section>
+    <section class="section sv-hero">
+      <div class="stack">
+        <p class="sv-kicker">Service</p>
+        <h1>Cold case review</h1>
+        <p class="lead">Some bugs never get solved. Teams just get used to them. We reopen the ones you've learned to live with and close them properly, with evidence.</p>
+        <div class="flex"><a class="btn" href="#reopen">Reopen a case</a><a class="btn btn-secondary" href="#scope">See what we take on</a></div>
+        <p class="small muted">Fixed fee · two weeks · a report, a fix and a much quieter on-call rota</p>
+      </div>
+      <nav class="section-nav sv-nav" aria-label="On this page"><p class="small">On this page</p><a href="#scope">What we take on</a><a href="#process">How it runs</a><a href="#report">What you get</a><a href="#fees">Fees</a><a href="#questions">Questions</a><a href="#reopen">Reopen a case</a></nav>
+    </section>
+
+    <section class="section surface anchor" id="scope">
+      <div class="stack">
+        <h2>What we take on</h2>
+        <p class="sv-intro">If it has been open longer than the intern has been employed, it's probably ours.</p>
+        <div class="grid grid-3"><article class="card stack-small"><h3>The Friday bug</h3><p>Shows up at the end of the week, never when anyone is watching, and leaves before Monday.</p></article><article class="card stack-small"><h3>The memory leak with a schedule</h3><p>Everyone restarts the service at three in the morning. Nobody remembers why. It has a cron job now.</p></article><article class="card stack-small"><h3>The flaky test</h3><p>Fails one run in twenty. Retried until green, then forgotten, until the release day it isn't.</p></article><article class="card stack-small"><h3>The ghost complaint</h3><p>Customers report it, support confirms it, engineering can't reproduce it. Everyone is telling the truth.</p></article><article class="card stack-small"><h3>The page that was always slow</h3><p>So slow for so long that it became the baseline. We bring a stopwatch and no respect for tradition.</p></article><article class="card stack-small"><h3>The workaround with a wiki page</h3><p>A fix so temporary it now has documentation, an owner and a birthday.</p></article></div>
+      </div>
+    </section>
+
+    <section class="section anchor" id="process">
+      <div class="stack">
+        <h2>How it runs</h2>
+        <ol class="sb-steps sv-steps">
+          <li><h3>Day 1 · The briefing</h3><p>Bring everything: logs, tickets, the chat thread from two years ago and the colleague who says it works on their machine. Especially them.</p></li>
+          <li><h3>Days 2–8 · The legwork</h3><p>We reproduce the problem before we touch it. Traces, timelines, a few uncomfortable questions for the codebase. Sometimes the bug confesses early. Usually it needs time.</p></li>
+          <li><h3>Days 9–12 · The fix</h3><p>One change at a time, each with a test, so everyone knows which one mattered. No heroic rewrites, no new framework. Well, not that kind.</p></li>
+          <li><h3>Days 13–14 · The handover</h3><p>A short report your whole team can read, a walkthrough call and a list of the next three suspects, in case you want to keep going.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section surface anchor" id="report">
+      <div class="sv-report">
+        <div class="stack">
+          <h2>What you get</h2>
+          <p>A case file, not a slide deck. It says what happened, why it kept happening and what stops it from coming back, in plain language and in that order.</p>
+          <ul class="sv-list">
+            <li>The cause, with the evidence that proves it</li>
+            <li>The fix, merged and covered by tests</li>
+            <li>A timeline of how the bug survived this long</li>
+            <li>Three suspects worth a look next</li>
+          </ul>
+        </div>
+        <article class="sb-file sv-file"><p class="sb-file-no">Case 0311 · reopened</p><h3>The 3 a.m. restart</h3><blockquote><p>Cause: a cache that never forgot anything. Evidence: memory profile, attached. Fix: an expiry policy and a test that would have caught it in 2022. The cron job has been retired with honours.</p></blockquote><p class="sb-stamp">Closed</p></article>
+        <svg class="sv-sloth" viewBox="0 0 240 250" aria-hidden="true"><use href="../assets/slowburn.svg#sloth-reading"/></svg>
+      </div>
+    </section>
+
+    <section class="section anchor" id="fees">
+      <div class="stack">
+        <h2>Fees</h2>
+        <p class="lead">Fixed, agreed up front and paid in two halves. If we don't find the cause, you don't pay the second half.</p>
+        <div class="grid grid-2 pricing-grid sv-fees">
+          <article class="card pricing-plan"><h3>One case</h3><p>For the bug everyone has a theory about.</p><p class="plan-price"><bdi>$4,900</bdi><small>Fixed fee, two weeks</small></p><ul><li>One cold case, start to finish</li><li>Fix merged with tests</li><li>Case file and handover call</li></ul><div class="plan-actions"><a class="btn" href="#reopen">Reopen a case</a></div></article>
+          <article class="card pricing-plan"><h3>Three cases</h3><p>For teams with a drawer full of them.</p><p class="plan-price"><bdi>$12,500</bdi><small>Fixed fee, six weeks</small></p><ul><li>Three cold cases, one detective</li><li>Fixes merged with tests</li><li>A quarterly look at new suspects</li></ul><div class="plan-actions"><a class="btn btn-secondary" href="#reopen">Talk it through</a></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section surface anchor" id="questions">
+      <div class="sb-faq stack">
+        <h2>Questions</h2>
+        <div>
+          <details class="disclosure"><summary>What if you don't find it?</summary><p>You don't pay the second half, and you get everything we ruled out, which is often half the answer. The detective also takes it personally, for free.</p></details>
+          <details class="disclosure"><summary>Can you fix it in a week?</summary><p>We can usually find it in a week. Fixing it properly depends on how much has been built on top of it since.</p></details>
+          <details class="disclosure"><summary>Will the report blame someone?</summary><p>It names causes, not people. Bugs this old are rarely one person's fault; they're everyone's habit.</p></details>
+          <details class="disclosure"><summary>Do you need access to production?</summary><p>Read-only, and only to what you choose. Most cold cases crack in a copy of production anyway.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section anchor" id="reopen">
+      <div class="sv-form-wrap stack">
+        <h2>Reopen a case</h2>
+        <p>Tell us what keeps happening. We'll reply within a working day, slowly but thoroughly.</p>
+        <form class="stack" action="#reopen">
+          <!-- Demo: fields have no name attributes, so nothing typed here leaves the page. -->
+          <div class="field-row"><div class="field"><label for="f-name">Your name</label><input id="f-name" type="text" autocomplete="name" required aria-describedby="f-name-err"><p class="field-error" id="f-name-err">We need someone to address the reply to.</p></div><div class="field"><label for="f-mail">Work email</label><input id="f-mail" type="email" autocomplete="email" required aria-describedby="f-mail-err"><p class="field-error" id="f-mail-err">An email with an @ and a domain, please.</p></div></div>
+          <div class="field"><label for="f-what">What keeps happening?</label><textarea id="f-what" rows="5" required aria-describedby="f-what-hint f-what-err"></textarea><p class="field-hint" id="f-what-hint">Symptoms, when it happens, what you've already tried. Theories welcome, blame less so.</p><p class="field-error" id="f-what-err">A sentence or two is enough to get started.</p></div>
+          <fieldset class="choice"><legend>How long has it been going on?</legend>
+            <input type="radio" name="age" id="age-w"><label for="age-w">Weeks</label>
+            <input type="radio" name="age" id="age-m" checked><label for="age-m">Months</label>
+            <input type="radio" name="age" id="age-y"><label for="age-y">Years</label>
+            <input type="radio" name="age" id="age-n"><label for="age-n">Nobody remembers</label>
+          </fieldset>
+          <button class="btn sb-big" type="submit">Reopen the case</button>
+        </form>
+      </div>
+    </section>
   </main>
-  <footer class="site-footer section"><div class="grid grid-3"><div class="stack-small"><h3>Prastora</h3><p class="muted">An evolving CSS framework for predictable layouts across screen sizes.</p></div><nav class="stack-small" aria-label="Examples"><h3>Explore</h3><div class="footer-links"><a href="../index.html">Overview</a><a href="service.html">Layouts</a><a href="../approach.html">Typography</a><a href="../components/index.html">Patterns</a><a href="../start.html">Starter</a><a href="pricing.html">Pricing</a><a href="gallery.html">Gallery</a><a href="contacts.html">Contacts</a><a href="../experiments.html">Experiments</a></div></nav><div class="stack-small"><h3>Built with the web</h3><p>HTML · CSS · SVG</p><p class="small muted">Core layouts need no JavaScript. Viewport and load-time diagnostics are optional prototyping aids.</p><div><button type="button" class="consent-reopen" data-consent-reopen hidden>Cookie settings</button><p class="small muted" data-consent-status role="status"></p></div></div></div>
+  <footer class="site-footer section">
+    <div class="grid grid-3">
+      <div class="stack-small"><h3>Slowburn</h3><p class="muted">Bug investigations, established some time ago.</p></div>
+      <nav class="stack-small" aria-label="Footer"><h3>The office</h3><div class="footer-links"><a href="landing.html">How it works</a><a href="service.html">Cold cases</a><a href="landing.html#cases">Closed cases</a><a href="landing.html#rates">Rates</a></div></nav>
+      <div class="stack-small"><h3>Fine print</h3><p class="muted">Slowburn is fictional: a service page template for <a href="../index.html">Prastora</a>. No bugs were harmed.</p></div>
+    </div>
   </footer>
-  <aside class="consent-bar" data-consent-demo hidden aria-label="Cookie preferences">
-    <div class="consent-settings" id="consent-settings" data-consent-settings hidden><p>Cookie preferences · necessary functions stay available.</p><label><input type="checkbox" id="consent-analytics">Analytics</label><label><input type="checkbox" id="consent-marketing">Marketing</label><button type="button" data-consent-save>Save preferences</button></div>
-    <div class="consent-row"><p>We use cookies.<span class="desktop-only"> Choose which data we may collect, or set your preferences in Settings.</span></p><div class="consent-actions"><button type="button" data-consent-accept>Accept all</button><button type="button" data-consent-reject>Necessary only</button><button type="button" data-consent-configure aria-expanded="false" aria-controls="consent-settings">Settings</button></div></div>
-  </aside>
 </body>
 </html>
