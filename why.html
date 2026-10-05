@@ -1,14 +1,14 @@
 <!doctype html>
 <html lang="en" dir="ltr">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Why another CSS framework? – Prastora</title><script src="assets/theme-init.js?v=1"></script><link rel="stylesheet" href="css/core.css">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Why another CSS framework? – Prastora</title><script src="assets/theme-init.js"></script><link rel="stylesheet" href="css/core.css">
   <link rel="stylesheet" href="css/themes/default.css">
   <link rel="stylesheet" href="css/components/navigation.css">
   <link rel="stylesheet" href="css/components/content.css">
   <link rel="stylesheet" href="css/components/utility.css">
     <link rel="stylesheet" href="css/pages/why.css">
   <link rel="stylesheet" href="css/dev/viewport.css">
-  <script src="assets/viewport.js?v=2" defer></script>
-  <script src="assets/interactions.js?v=9" defer></script></head>
+  <script src="assets/viewport.js" defer></script>
+  <script src="assets/interactions.js" defer></script></head>
 <body>
 <div class="css-top" data-css-header>
   <aside class="viewport-panel" data-viewport hidden aria-label="Utility strip">
@@ -54,12 +54,12 @@
       <h2 class="wy-h" id="part-2">Why light sites survive</h2>
       <figure class="wy-wrap" aria-labelledby="cap-stack">
         <div class="wy-stacks">
-          <div><p class="wy-stack-t">A typical builder page</p><ol class="wy-stack"><li>Page builder</li><li>Theme</li><li>Plugins, a dozen or so</li><li>Analytics, chat, pixels</li><li>Web fonts</li><li>Script libraries</li><li class="is-you">Your content</li></ol></div>
-          <div><p class="wy-stack-t">A hand-built page</p><ol class="wy-stack"><li>HTML</li><li>CSS</li><li class="is-you">Your content</li></ol></div>
+          <div><p class="wy-stack-t">A builder page</p><ol class="wy-stack"><li>Theme and plugin CSS, a dozen files</li><li>Scripts: analytics, chat, sliders</li><li>Builder HTML, wrappers inside wrappers</li><li>Menus, banners and pop-up markup</li><li class="is-you">Your headline: line 208</li></ol></div>
+          <div><p class="wy-stack-t">This page</p><ol class="wy-stack"><li>A few small CSS files</li><li>Three small deferred scripts</li><li>Header HTML</li><li class="is-you">Your headline: line 29</li></ol></div>
         </div>
-        <figcaption id="cap-stack">What arrives before the visitor sees anything. Not to scale; then again, neither is the page builder.</figcaption>
+        <figcaption id="cap-stack">What the browser reads before your first headline. Left: a WordPress site we look after. Right: the page you’re reading, about 4 KB in.</figcaption>
       </figure>
-      <p>This is why lightweight sites, and even sites written entirely by hand, never really went out of fashion. A page of plain HTML and CSS has very little to go wrong. It arrives fast because it carries almost nothing, it's readable to any robot on the first visit because the content is right there in the markup, and it's hard to hack because there's nothing to break into: no database, no plugin from 2017 waiting for an update, no admin panel guarded by a password the owner's nephew chose. It can be hosted for free, moved anywhere in an afternoon and still opened in a browser twenty years from now. People who build such sites for small businesses for a living tend to say that the hardest part isn't the code, it's explaining to the client why any of this matters.</p>
+      <p>This is why lightweight sites, and even sites written entirely by hand, never really went out of fashion. A page of plain HTML and CSS has very little to go wrong. It arrives fast because it carries almost nothing, it's readable to any robot on the first visit because the content is right there in the markup, near the top rather than two hundred lines down, and it's hard to hack because there's nothing to break into: no database, no plugin from 2017 waiting for an update, no admin panel guarded by a password the owner's nephew chose. It can be hosted for free, moved anywhere in an afternoon and still opened in a browser twenty years from now. People who build such sites for small businesses for a living tend to say that the hardest part isn't the code, it's explaining to the client why any of this matters.</p>
       <p>Here lies a paradox. The classic CSS frameworks were created precisely to make this kind of work easier, and they did: a whole generation learned layout from them. Yet many of the same craft-minded developers now describe them as an extra layer of dependencies and complexity. What went wrong?</p>
       <p>Partly success. The older ones became so common that their sites can be recognised from across the room, and making one look like anything else means overriding defaults, then overriding the overrides, until the stylesheet is mostly an argument with itself. The newer approach avoided the arguments by having no opinions about appearance, and replaced them with markup buried under long strings of utility classes, a build step, a configuration file and, every few years, a migration guide.</p>
       <p>Behind both lies the same pattern: a framework becomes universal by accumulation, adding a piece for every case it meets, and sooner or later you are maintaining the framework alongside your site. Fashion hasn't helped. It's now common to boast of having vibe-coded a whole site in an afternoon. The afternoon is fine. It's the following year, when someone has to change the menu inside a stack nobody chose, that tends to be less fun.</p>
