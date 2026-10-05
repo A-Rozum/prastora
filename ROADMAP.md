@@ -31,3 +31,7 @@ an organisation publishing many documents (with a document catalogue), an online
 ## Framework pages
 - Overview, component catalogue, side-by-side comparison with a conventional layout
 - Scale regimes: tablet portrait, small phone, ultrawide – closer to 1.0
+
+## Notes
+- Built with Prastora (real sites as case pages): notes/built-with-prastora.md
+- Text size controls: postponed indefinitely; a trial of the buttons lived on experiments.html.
