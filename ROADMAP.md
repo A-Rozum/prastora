@@ -2,7 +2,9 @@
 
 Pre-product (0.x). Each template stresses something the others don't.
 
-0.2.0 is done when the first wave is finished, the older pages follow the current logic of the project, and the site can be shown to a sceptical user of such tools.
+0.2.0 (done): the first wave of templates, three demo sites plus standalone pages, framework pages rewritten (home, starter, components, why, experiments, 404), the low-window regime and the shared utility strip and consent bar on every template.
+
+Next (0.3.0 candidates): mobile and print passes, reader-mode check of every page, a decision on a panoramic regime for ultrawide windows, Built with Prastora once there are real sites.
 
 ## First wave
 - **landing** – poster-like composition, artwork across section boundaries (done: templates/landing.html)
