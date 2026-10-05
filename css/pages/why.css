@@ -42,9 +42,11 @@
   .wy-code { margin: 0; padding: 1rem 1.2rem; border-radius: .6rem; background: var(--surface); border: .1rem solid var(--line); font-size: .85rem; line-height: 1.5; color: var(--muted); max-inline-size: 100%; }
   .wy-margin figcaption { margin-block-start: 1rem; font-size: var(--small-size); line-height: 1.5; color: var(--muted); }
   .wy-wrap { float: inline-end; inline-size: 30rem; margin: .8rem 0 2rem 3.6rem; padding: 2rem; border-radius: var(--radius); background: var(--surface); }
-  .wy-stacks { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1.6rem; align-items: start; }
+  .wy-wrap { text-wrap: pretty; }
+  .wy-stacks { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-rows: auto auto; column-gap: 1.6rem; align-items: start; }
+  .wy-stacks > div { display: grid; grid-row: span 2; grid-template-rows: subgrid; align-content: start; }
   .wy-stack-t { margin-block-end: .8rem; font-size: 1.3rem; line-height: 1.3; font-weight: 650; }
-  .wy-stack { display: grid; gap: .3rem; margin: 0; padding: 0; list-style: none; font-size: 1.2rem; line-height: 1.3; }
+  .wy-stack { display: grid; align-content: start; gap: .3rem; margin: 0; padding: 0; list-style: none; font-size: 1.2rem; line-height: 1.3; }
   .wy-stack li { padding: .5rem .8rem; border-radius: .3rem; background: var(--paper); border: .1rem solid var(--line); }
   .wy-stack .is-later { border-style: dashed; background: transparent; color: var(--muted); }
   .wy-stack .is-you { background: var(--accent); border-color: var(--accent); color: var(--on-accent); font-weight: 650; }
