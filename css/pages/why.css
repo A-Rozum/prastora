@@ -46,6 +46,7 @@
   .wy-stack-t { margin-block-end: .8rem; font-size: 1.3rem; line-height: 1.3; font-weight: 650; }
   .wy-stack { display: grid; gap: .3rem; margin: 0; padding: 0; list-style: none; font-size: 1.2rem; line-height: 1.3; }
   .wy-stack li { padding: .5rem .8rem; border-radius: .3rem; background: var(--paper); border: .1rem solid var(--line); }
+  .wy-stack .is-later { border-style: dashed; background: transparent; color: var(--muted); }
   .wy-stack .is-you { background: var(--accent); border-color: var(--accent); color: var(--on-accent); font-weight: 650; }
   .wy-wrap figcaption { margin-block-start: 1.4rem; font-size: 1.3rem; line-height: 1.45; color: var(--muted); }
   .wy-sloth { display: flex; justify-content: flex-end; margin-block: 2rem -10.3rem; margin-inline-end: -8rem; pointer-events: none; }
