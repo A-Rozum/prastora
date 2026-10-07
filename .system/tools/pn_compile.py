@@ -25,8 +25,8 @@ def main():
            ", ".join(f"{k}={v}" for k, v in task.items()) + ".",
            "Read this file instead of browsing the repository. More specific elements come first and override general ones; the kernel's invariants are never overridden.", ""]
     if missing:
-        out += ['## Missing inputs — preconditions unmet', '',
-                'Work requiring these inputs is paused; the result cannot be presented as complete. Obtain and register the missing material, then compile again.', '']
+        out += ['## Missing inputs', '',
+                'Report these to the user before relying on them. How to proceed without them (wait, search, work on the client\'s account with marked uncertainty, draft but not file) is the user\'s decision, given in the task.', '']
         out += [f'- {element}: missing {kind}' for element, kind in missing] + ['']
     st = repo / "state.yaml"
     if st.exists():
