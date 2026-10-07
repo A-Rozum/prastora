@@ -1,0 +1,471 @@
+- id: core:web.css/kernel@1
+  path: AGENTS.md
+  applies:
+    always: true
+  status: active
+  access: public
+  audience: agent
+- id: core:web.css/core@1
+  path: css/core.css
+  applies:
+    all:
+    - &id002
+      domain: web.css
+    - &id001
+      task_kind:
+      - implementation
+      - design
+      - review
+  status: active
+  access: public
+  audience: agent
+- id: norm:web/js-only-where-needed@1
+  path: norms/js-only-where-needed.md
+  applies:
+    all:
+    - &id003
+      domain: web
+    - *id001
+  status: active
+  access: public
+  audience: agent
+- id: norm:web.css/css-layering@1
+  path: norms/css-layering.md
+  applies:
+    all:
+    - *id002
+    - *id001
+  status: active
+  access: public
+  audience: agent
+- id: norm:web/html-placement@1
+  path: norms/html-placement.md
+  applies:
+    all:
+    - *id003
+    - task_kind:
+      - implementation
+      - design
+  status: active
+  access: public
+  audience: agent
+- id: norm:web/copy-voice@1
+  path: norms/copy-voice.md
+  applies:
+    all:
+    - *id003
+    - task_kind:
+      - drafting
+      - review
+  status: active
+  access: public
+  audience: agent
+- id: norm:web/template-shared-elements@1
+  path: norms/template-shared-elements.md
+  applies:
+    all:
+    - *id003
+    - task_kind:
+      - implementation
+      - design
+      - review
+    - subject: template
+  status: active
+  access: public
+  audience: agent
+- id: norm:web/mascot@1
+  path: norms/mascot.md
+  applies:
+    all:
+    - *id003
+    - task_kind:
+      - design
+      - drafting
+      - review
+  status: active
+  access: public
+  audience: agent
+- id: norm:web/current-only@1
+  path: norms/current-only.md
+  applies:
+    all:
+    - *id003
+    - task_kind:
+      - maintenance
+      - review
+  status: active
+  access: public
+  audience: agent
+  relations:
+  - rel: derived_from
+    to: spec:core/principles
+- id: method:web/experiments-first@1
+  path: methods/experiments-first.md
+  applies:
+    all:
+    - *id003
+    - task_kind:
+      - design
+      - implementation
+  status: active
+  access: public
+  audience: agent
+- id: method:web.css/inventory-first@1
+  path: methods/inventory-first.md
+  applies:
+    all:
+    - *id002
+    - task_kind:
+      - implementation
+      - design
+  status: active
+  access: public
+  audience: agent
+  relations:
+  - rel: achieved_by
+    to: norm:web.css/css-layering
+- id: method:web/visual-checks@1
+  path: methods/visual-checks.md
+  applies:
+    all:
+    - *id003
+    - task_kind:
+      - implementation
+      - review
+  status: active
+  access: public
+  audience: agent
+- id: tool:web/check@1
+  path: check.py
+  applies:
+    all:
+    - *id003
+    - task_kind:
+      - implementation
+      - review
+      - maintenance
+  status: active
+  access: public
+  audience: agent
+- id: tool:web/snap@1
+  path: tools/snap.py
+  applies:
+    all:
+    - *id003
+    - task_kind:
+      - implementation
+      - review
+  status: active
+  access: public
+  audience: agent
+- id: tool:web/thumbs@1
+  path: tools/thumbs.py
+  applies:
+    all:
+    - *id003
+    - subject: template
+  status: active
+  access: public
+  audience: agent
+- id: tool:web/reader@1
+  path: tools/reader.py
+  applies:
+    all:
+    - *id003
+    - task_kind:
+      - drafting
+      - review
+  status: active
+  access: public
+  audience: agent
+- id: component:web.css/commerce@1
+  path: css/components/commerce.css
+  applies:
+    all:
+    - *id002
+    - task_kind:
+      - implementation
+      - design
+  status: active
+  access: public
+  audience: agent
+  load: head
+- id: component:web.css/consent@1
+  path: css/components/consent.css
+  applies:
+    all:
+    - *id002
+    - task_kind:
+      - implementation
+      - design
+  status: active
+  access: public
+  audience: agent
+  load: head
+- id: component:web.css/content@1
+  path: css/components/content.css
+  applies:
+    all:
+    - *id002
+    - task_kind:
+      - implementation
+      - design
+  status: active
+  access: public
+  audience: agent
+  load: head
+- id: component:web.css/data@1
+  path: css/components/data.css
+  applies:
+    all:
+    - *id002
+    - task_kind:
+      - implementation
+      - design
+  status: active
+  access: public
+  audience: agent
+  load: head
+- id: component:web.css/forms@1
+  path: css/components/forms.css
+  applies:
+    all:
+    - *id002
+    - task_kind:
+      - implementation
+      - design
+  status: active
+  access: public
+  audience: agent
+  load: head
+- id: component:web.css/gallery@1
+  path: css/components/gallery.css
+  applies:
+    all:
+    - *id002
+    - task_kind:
+      - implementation
+      - design
+  status: active
+  access: public
+  audience: agent
+  load: head
+- id: component:web.css/maps@1
+  path: css/components/maps.css
+  applies:
+    all:
+    - *id002
+    - task_kind:
+      - implementation
+      - design
+  status: active
+  access: public
+  audience: agent
+  load: head
+- id: component:web.css/navigation@1
+  path: css/components/navigation.css
+  applies:
+    all:
+    - *id002
+    - task_kind:
+      - implementation
+      - design
+  status: active
+  access: public
+  audience: agent
+  load: head
+- id: component:web.css/utility@1
+  path: css/components/utility.css
+  applies:
+    all:
+    - *id002
+    - task_kind:
+      - implementation
+      - design
+  status: active
+  access: public
+  audience: agent
+  load: head
+- id: convention:web.css/theme-comparison@1
+  path: css/themes/comparison.css
+  applies:
+    all:
+    - *id002
+    - subject:
+      - theme
+      - comparison
+  status: active
+  access: public
+  audience: agent
+- id: convention:web.css/theme-deco@1
+  path: css/themes/deco.css
+  applies:
+    all:
+    - *id002
+    - subject:
+      - theme
+      - deco
+  status: active
+  access: public
+  audience: agent
+- id: convention:web.css/theme-default@1
+  path: css/themes/default.css
+  applies:
+    all:
+    - *id002
+    - subject:
+      - theme
+      - default
+  status: active
+  access: public
+  audience: agent
+- id: convention:web.css/theme-festival@1
+  path: css/themes/festival.css
+  applies:
+    all:
+    - *id002
+    - subject:
+      - theme
+      - festival
+  status: active
+  access: public
+  audience: agent
+- id: convention:web.css/theme-press@1
+  path: css/themes/press.css
+  applies:
+    all:
+    - *id002
+    - subject:
+      - theme
+      - press
+  status: active
+  access: public
+  audience: agent
+- id: template:web/article@1
+  path: templates/article.html
+  applies:
+    all:
+    - *id003
+    - subject:
+      - article
+  status: active
+  access: public
+  audience: both
+- id: template:web/checkout@1
+  path: templates/checkout.html
+  applies:
+    all:
+    - *id003
+    - subject:
+      - checkout
+  status: active
+  access: public
+  audience: both
+- id: template:web/comparison@1
+  path: templates/comparison.html
+  applies:
+    all:
+    - *id003
+    - subject:
+      - comparison
+  status: active
+  access: public
+  audience: both
+- id: template:web/contacts@1
+  path: templates/contacts.html
+  applies:
+    all:
+    - *id003
+    - subject:
+      - contacts
+  status: active
+  access: public
+  audience: both
+- id: template:web/dashboard@1
+  path: templates/dashboard.html
+  applies:
+    all:
+    - *id003
+    - subject:
+      - dashboard
+  status: active
+  access: public
+  audience: both
+- id: template:web/festival@1
+  path: templates/festival.html
+  applies:
+    all:
+    - *id003
+    - subject:
+      - festival
+  status: active
+  access: public
+  audience: both
+- id: template:web/gallery@1
+  path: templates/gallery.html
+  applies:
+    all:
+    - *id003
+    - subject:
+      - gallery
+  status: active
+  access: public
+  audience: both
+- id: template:web/landing@1
+  path: templates/landing.html
+  applies:
+    all:
+    - *id003
+    - subject:
+      - landing
+  status: active
+  access: public
+  audience: both
+- id: template:web/pricing@1
+  path: templates/pricing.html
+  applies:
+    all:
+    - *id003
+    - subject:
+      - pricing
+  status: active
+  access: public
+  audience: both
+- id: template:web/product@1
+  path: templates/product.html
+  applies:
+    all:
+    - *id003
+    - subject:
+      - product
+  status: active
+  access: public
+  audience: both
+- id: template:web/service@1
+  path: templates/service.html
+  applies:
+    all:
+    - *id003
+    - subject:
+      - service
+  status: active
+  access: public
+  audience: both
+- id: index:web/templates@1
+  path: templates/index.html
+  applies:
+    all:
+    - *id003
+    - subject: template
+  status: active
+  access: public
+  audience: human
+- id: index:web/components@1
+  path: components/index.html
+  applies:
+    all:
+    - *id003
+    - subject: component
+  status: active
+  access: public
+  audience: human

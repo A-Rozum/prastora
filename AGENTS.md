@@ -1,18 +1,12 @@
-Static HTML/CSS, no build. GitHub Pages serves main.
+# Kernel (Prastora)
 
-Deliberate, keep unless told otherwise:
+Static HTML/CSS, no build; GitHub Pages serves main.
+Navigation: system.yaml; elements.yaml lists elements with computable applicability. Select what a task needs:
+`python .system/tools/select.py . domain=web.css task_kind=implementation [subject=<component|template|theme>]`
+
+Core invariants (any CSS work):
 - Root font-size = 100vw / --scale-units, set per regime. No clamp, caps or max-width containers; --scale-min stays 0. Jumps between regimes are intended. A page may set a denser --scale-units per regime (see dashboard).
 - CSS lengths in rem only.
-- JS only where HTML/CSS have no equivalent, with a working no-JS fallback.
-- CSS lives in css/ by layer: core.css, themes/ (custom properties only), components/, pages/ (CSS of one page, same name as the page; a folder's index takes the folder name; a demo site's shared styles take the site's name), dev/ (development aids). Pages link only what they use, in that order.
-- HTML: framework pages in the root, component catalogue in components/, demo templates in templates/.
-- Copy in English, lively and varied in register. Humour and self-irony woven into the text's logic, never bolted on; tease gently, never mock others. Templates use plausible fictional content of their field, marked as demo.
-- Templates must include two shared interface elements: the utility strip at the top and the cookie consent bar at the bottom. Copy both from templates/product.html. Other components are used as needed.
-- Try uncertain elements in experiments.html first, then move them to the pages that need them; leave it short when idle.
-- Before writing page CSS, read the inventory at the top of each css/components/*.css; reuse or extend before adding.
-- Mascot (sloth): at most one per page and only where it fits; exceptions are rare.
 
-Gate: `python3 check.py` exits 0.
-Visual check: `tools/snap.py` (base before, diff after). Only pages linking the changed files (--css) and only the regimes the change touches.
-Template previews: `tools/thumbs.py` after a template changes visibly (`--why` when the landing changes).
-Reader-mode check: `tools/reader.py` after changing a page's main content.
+Gate: `python3 check.py` exits 0 and `python .system/tools/validate.py . --formats .system/formats` passes.
+Temporary material goes to lab/ (lab.yaml), never to ad-hoc folders.

@@ -1,4 +1,5 @@
-/* Temporary device-review aid. Remove with css/dev/viewport.css and its HTML hooks. */
+/* Dev tool: viewport and load-time readout. Permanent on the Prastora demo site; on sites built with Prastora a prototyping aid,
+   removed together with css/dev/viewport.css and its HTML hooks. */
 (() => {
   const panel = document.querySelector('[data-viewport]');
   const value = panel?.querySelector('[data-viewport-value]');

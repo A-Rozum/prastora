@@ -1,0 +1,9 @@
+# Facets of a task. Values of closed facets are listed; hierarchical values use dots (legal.interpol is inside legal).
+# An element written for a parent value applies to its children: domain "legal" matches a task in "legal.interpol".
+domain:      {closed: true, values: [system, measurement, web, web.css, legal, legal.interpol, legal.translation, legal.asylum]}
+task_kind:   {closed: true, values: [design, implementation, drafting, review, translation, classification, measurement, maintenance, discussion]}
+role:        {closed: true, values: [assigner, manager, executor, reviewer, acceptor, user]}
+phase:       {closed: false}
+jurisdiction: {closed: false}
+subject:     {closed: false}
+access:      {closed: true, values: [public, internal, confidential, client]}

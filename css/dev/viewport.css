@@ -1,4 +1,4 @@
-/* Developer aid: viewport size and load-time readout. Not for production. */
+/* Dev tool: viewport size and load-time readout. Permanent on the Prastora demo site; not for production sites built with Prastora. */
 @layer dev {
   .viewport-panel output { font-variant-numeric: tabular-nums; font-weight: 400; }
   .viewport-reading { font-size: calc(var(--small-size) * .85); white-space: nowrap; }

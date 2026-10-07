@@ -1,0 +1,203 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "elements.yaml — element registry",
+ "type": "array",
+ "items": {
+  "type": "object",
+  "required": [
+   "id",
+   "path",
+   "applies",
+   "status",
+   "access",
+   "audience"
+  ],
+  "additionalProperties": false,
+  "properties": {
+   "id": {
+    "type": "string",
+    "pattern": "^(core|norm|method|convention|concept|component|template|reference|example|quality-model|metric|role|task-type|handoff|trigger|tool|check|profile|resource|block|index|package|benchmark-task|spec|format):[a-z0-9.-]+/[a-z0-9-]+(@[0-9][0-9.]*)?$"
+   },
+   "path": {
+    "type": "string"
+   },
+   "applies_when": {
+    "type": "string"
+   },
+   "version": {
+    "type": "string"
+   },
+   "status": {
+    "enum": [
+     "proposed",
+     "trial",
+     "active",
+     "deprecated",
+     "removed"
+    ]
+   },
+   "access": {
+    "enum": [
+     "public",
+     "internal",
+     "confidential",
+     "client"
+    ]
+   },
+   "audience": {
+    "enum": [
+     "agent",
+     "human",
+     "both"
+    ]
+   },
+   "depends_on": {
+    "type": "array",
+    "items": {
+     "type": "string"
+    }
+   },
+   "relations": {
+    "type": "array",
+    "items": {
+     "type": "object",
+     "required": [
+      "rel",
+      "to"
+     ],
+     "additionalProperties": false,
+     "properties": {
+      "rel": {
+       "enum": [
+        "overrides",
+        "checked_by",
+        "achieved_by",
+        "implements",
+        "representation_of",
+        "instance_of",
+        "derived_from",
+        "replaces"
+       ]
+      },
+      "to": {
+       "type": "string"
+      }
+     }
+    }
+   },
+   "provenance": {
+    "type": "string"
+   },
+   "last_check": {
+    "type": "string"
+   },
+   "tokens": {
+    "type": "integer",
+    "minimum": 0
+   },
+   "applies": {
+    "$ref": "#/$defs/pred"
+   },
+   "load": {
+    "enum": [
+     "content",
+     "head",
+     "reference"
+    ],
+    "description": "content: load the file; head: only its leading inventory/comment block; reference: name and how to use, not the source (default for tool, check, trigger)"
+   }
+  }
+ },
+ "$defs": {
+  "pred": {
+   "oneOf": [
+    {
+     "type": "object",
+     "required": [
+      "always"
+     ],
+     "additionalProperties": false,
+     "properties": {
+      "always": {
+       "const": true
+      }
+     }
+    },
+    {
+     "type": "object",
+     "required": [
+      "all"
+     ],
+     "additionalProperties": false,
+     "properties": {
+      "all": {
+       "type": "array",
+       "minItems": 1,
+       "items": {
+        "$ref": "#/$defs/pred"
+       }
+      }
+     }
+    },
+    {
+     "type": "object",
+     "required": [
+      "any"
+     ],
+     "additionalProperties": false,
+     "properties": {
+      "any": {
+       "type": "array",
+       "minItems": 1,
+       "items": {
+        "$ref": "#/$defs/pred"
+       }
+      }
+     }
+    },
+    {
+     "type": "object",
+     "required": [
+      "not"
+     ],
+     "additionalProperties": false,
+     "properties": {
+      "not": {
+       "$ref": "#/$defs/pred"
+      }
+     }
+    },
+    {
+     "type": "object",
+     "minProperties": 1,
+     "maxProperties": 1,
+     "propertyNames": {
+      "pattern": "^[a-z_]+$",
+      "not": {
+       "enum": [
+        "always",
+        "all",
+        "any",
+        "not"
+       ]
+      }
+     },
+     "additionalProperties": {
+      "oneOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "array",
+        "items": {
+         "type": "string"
+        },
+        "minItems": 1
+       }
+      ]
+     }
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,79 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "system.yaml — repository manifest",
+ "type": "object",
+ "required": [
+  "id",
+  "kind",
+  "access",
+  "audience",
+  "description"
+ ],
+ "additionalProperties": false,
+ "properties": {
+  "id": {
+   "type": "string",
+   "pattern": "^repo:[a-z0-9-]+$"
+  },
+  "kind": {
+   "enum": [
+    "system",
+    "package",
+    "project",
+    "bench",
+    "lab",
+    "archive"
+   ]
+  },
+  "access": {
+   "enum": [
+    "public",
+    "internal",
+    "confidential",
+    "client"
+   ]
+  },
+  "audience": {
+   "enum": [
+    "agent",
+    "human",
+    "both"
+   ]
+  },
+  "description": {
+   "type": "string"
+  },
+  "packages": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "id",
+     "version",
+     "repo"
+    ],
+    "additionalProperties": false,
+    "properties": {
+     "id": {
+      "type": "string"
+     },
+     "version": {
+      "type": "string"
+     },
+     "repo": {
+      "type": "string"
+     },
+     "path": {
+      "type": "string"
+     }
+    }
+   }
+  },
+  "provides": {
+   "type": "array",
+   "items": {
+    "type": "string"
+   }
+  }
+ }
+}

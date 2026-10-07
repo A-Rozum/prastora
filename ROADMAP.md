@@ -1,39 +1,27 @@
 # Roadmap
 
 Pre-product (0.x). Each template stresses something the others don't.
+This file holds open plans only: a finished item is deleted in the commit that finishes it.
 
-0.2.0 (done): the first wave of templates, three demo sites plus standalone pages, framework pages rewritten (home, starter, components, why, experiments, 404), the low-window regime and the shared utility strip and consent bar on every template.
+## Now (0.2.0)
+Demo sites: Slowburn, bug investigations (deco) – landing, service, contacts; Shutter & Crumb, camera
+shop (default) – product, checkout, dashboard; Harbour Lights, city magazine (press) – article, photo
+gallery, subscription pricing. Standalone: OFFSCREEN 2100 festival, Tandem plan comparison.
 
-Next (0.3.0 candidates): a loading-order pass (content first; analytics and other extras after it, following Google's page-speed guidance, with a recommended way to add them to Prastora sites), mobile and print passes, reader-mode check of every page, a decision on a panoramic regime for ultrawide windows, Built with Prastora once there are real sites.
-
-## First wave
-- **landing** – poster-like composition, artwork across section boundaries (done: templates/landing.html)
-- **article** – long-form typography: footnotes, tables, quotes (done: templates/article.html)
-- **product** – gallery, specs, variants (done: templates/product.html)
-- **checkout** – multi-step form, validation, order summary (done: templates/checkout.html)
-- **dashboard** – dense data, charts, tables, its own scale (done: templates/dashboard.html)
-
-## Demo sites
-Templates are grouped into small fictional sites that share a theme and navigation:
-- Slowburn, bug investigations (deco): landing; service and contacts to come
-- Shutter & Crumb, camera shop (default): product, checkout, dashboard
-- Harbour Lights, city magazine (press): article; photo gallery and subscription pricing to come
-
-Ideas for further sites, not a closed list: portfolio, analytics, AI tools, bank or exchange,
-an organisation publishing many documents (with a document catalogue), an online catalogue.
+## 0.3.0 candidates
+- Dev tools as a separate package: the viewport, load-time and similar readouts stay on the Prastora
+  demo site, but on a site built with Prastora they are prototyping aids, removable in one step
+  (drop the dev files and their links). Candidates to add: rulers along the working area.
+- Loading order: content first; analytics and other extras after it, following Google's page-speed
+  guidance, with a recommended way to add them to Prastora sites.
+- Mobile and print passes; reader-mode check of every page.
+- Scale regimes: small phone, tablet portrait, a decision on a panoramic regime for ultrawide windows.
 
 ## Later
-- Marketing & services: service, pricing, contacts
-- Media & text: news feed, blog index, documentation
-- Shop: listing with filters, cart
-- Account & social: sign-in / sign-up, personal account (orders, settings), profile
-- Data & admin: data table with actions, settings
-- Portfolio: work grid, case study
-
-## Framework pages
-- Overview, component catalogue, side-by-side comparison with a conventional layout
-- Scale regimes: tablet portrait, small phone, ultrawide – closer to 1.0
-
-## Notes
-- Built with Prastora (real sites as case pages): notes/built-with-prastora.md
-- Text size controls: postponed indefinitely; a trial of the buttons lived on experiments.html.
+- Text size control at the start of the main content, as some media sites do; find examples first.
+  An earlier trial in the utility strip was rejected.
+- Page types not yet covered: news feed, blog index, documentation; listing with filters, cart;
+  sign-in, personal account, profile; data table with actions, settings; portfolio grid, case study.
+- Further demo sites (ideas): portfolio, analytics, AI tools, bank or exchange, an organisation
+  publishing many documents, an online catalogue.
+- Built with Prastora once there are real sites: lab/built-with-prastora.md

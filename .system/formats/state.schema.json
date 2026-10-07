@@ -1,0 +1,141 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "state.yaml — project state (active memory only)",
+ "type": "object",
+ "required": [
+  "direction",
+  "tasks"
+ ],
+ "additionalProperties": false,
+ "properties": {
+  "direction": {
+   "type": "object",
+   "required": [
+    "text"
+   ],
+   "additionalProperties": false,
+   "properties": {
+    "text": {
+     "type": "string"
+    },
+    "criteria": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    }
+   }
+  },
+  "tasks": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "id",
+     "title",
+     "status",
+     "assigner",
+     "executor",
+     "done_when"
+    ],
+    "additionalProperties": false,
+    "properties": {
+     "id": {
+      "type": "string"
+     },
+     "title": {
+      "type": "string"
+     },
+     "status": {
+      "enum": [
+       "open",
+       "active",
+       "paused",
+       "blocked"
+      ]
+     },
+     "assigner": {
+      "type": "string"
+     },
+     "executor": {
+      "type": "string"
+     },
+     "acceptor": {
+      "type": "string"
+     },
+     "done_when": {
+      "type": "string"
+     },
+     "parent": {
+      "type": "string"
+     },
+     "depends_on": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "priority": {
+      "type": "integer"
+     }
+    }
+   }
+  },
+  "open_items": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "text",
+     "kind"
+    ],
+    "additionalProperties": false,
+    "properties": {
+     "text": {
+      "type": "string"
+     },
+     "kind": {
+      "enum": [
+       "unknown",
+       "ambiguity",
+       "decision-needed"
+      ]
+     },
+     "task": {
+      "type": "string"
+     },
+     "origin": {
+      "enum": [
+       "stated",
+       "decided",
+       "inferred"
+      ]
+     }
+    }
+   }
+  },
+  "artifacts": {
+   "type": "array",
+   "items": {
+    "type": "string"
+   }
+  },
+  "progress": {
+   "type": "object",
+   "properties": {
+    "V": {
+     "type": "number"
+    },
+    "failing": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    }
+   }
+  },
+  "summary": {
+   "type": "string"
+  }
+ }
+}

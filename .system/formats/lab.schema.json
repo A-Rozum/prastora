@@ -1,0 +1,66 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "lab.yaml — workshop entries (temporary by design)",
+ "type": "array",
+ "items": {
+  "type": "object",
+  "required": [
+   "id",
+   "path",
+   "question",
+   "kind",
+   "status",
+   "created",
+   "review_by",
+   "exit"
+  ],
+  "additionalProperties": false,
+  "properties": {
+   "id": {
+    "type": "string",
+    "pattern": "^[a-z0-9-]+$"
+   },
+   "path": {
+    "type": "string"
+   },
+   "question": {
+    "type": "string",
+    "description": "the one question this entry serves"
+   },
+   "kind": {
+    "enum": [
+     "note",
+     "discussion",
+     "prototype",
+     "experiment"
+    ]
+   },
+   "status": {
+    "enum": [
+     "proposed",
+     "trial"
+    ]
+   },
+   "created": {
+    "type": "string",
+    "format": "date"
+   },
+   "review_by": {
+    "type": "string",
+    "format": "date"
+   },
+   "exit": {
+    "enum": [
+     "promote",
+     "decide",
+     "delete"
+    ],
+    "description": "expected outcome: promote to a package/project, distil into decisions/spec, or delete"
+   },
+   "owner": {
+    "type": "string",
+    "description": "role responsible"
+   }
+  }
+ }
+}
