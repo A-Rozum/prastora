@@ -106,8 +106,51 @@
      "reference"
     ],
     "description": "content: whole file; head: leading inventory block; demand: listed with a one-line description, opened only when the task needs it (default for reference); reference: tool or check — run, do not read (default for tool, check, trigger)"
+   },
+   "basis": {
+    "type": "object",
+    "required": [
+     "kind",
+     "date"
+    ],
+    "additionalProperties": false,
+    "properties": {
+     "kind": {
+      "enum": [
+       "practice",
+       "measured",
+       "decided"
+      ]
+     },
+     "date": {
+      "type": "string"
+     },
+     "ref": {
+      "type": "string"
+     }
+    },
+    "description": "why the element is active: proven by practice, by measurement, or decided by an acceptor"
    }
-  }
+  },
+  "allOf": [
+   {
+    "if": {
+     "properties": {
+      "status": {
+       "const": "active"
+      }
+     },
+     "required": [
+      "status"
+     ]
+    },
+    "then": {
+     "required": [
+      "basis"
+     ]
+    }
+   }
+  ]
  },
  "$defs": {
   "pred": {

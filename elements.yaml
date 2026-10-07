@@ -5,6 +5,10 @@
   status: active
   access: public
   audience: agent
+  basis:
+    kind: decided
+    date: '2026-10-07'
+    ref: accepted by the user during migration
 - id: core:web.css/core@1
   path: css/core.css
   applies:
@@ -19,6 +23,10 @@
   status: active
   access: public
   audience: agent
+  basis:
+    kind: decided
+    date: '2026-10-07'
+    ref: accepted by the user during migration
 - id: norm:web/js-only-where-needed@1
   path: norms/js-only-where-needed.md
   applies:
@@ -29,6 +37,10 @@
   status: active
   access: public
   audience: agent
+  basis:
+    kind: practice
+    date: '2026-10-07'
+    ref: migration to system standard; basis = practice of the project before migration
 - id: norm:web.css/css-layering@1
   path: norms/css-layering.md
   applies:
@@ -38,6 +50,10 @@
   status: active
   access: public
   audience: agent
+  basis:
+    kind: practice
+    date: '2026-10-07'
+    ref: migration to system standard; basis = practice of the project before migration
 - id: norm:web/html-placement@1
   path: norms/html-placement.md
   applies:
@@ -49,6 +65,10 @@
   status: active
   access: public
   audience: agent
+  basis:
+    kind: practice
+    date: '2026-10-07'
+    ref: migration to system standard; basis = practice of the project before migration
 - id: norm:web/copy-voice@1
   path: norms/copy-voice.md
   applies:
@@ -60,6 +80,10 @@
   status: active
   access: public
   audience: agent
+  basis:
+    kind: practice
+    date: '2026-10-07'
+    ref: migration to system standard; basis = practice of the project before migration
 - id: norm:web/template-shared-elements@1
   path: norms/template-shared-elements.md
   applies:
@@ -73,6 +97,10 @@
   status: active
   access: public
   audience: agent
+  basis:
+    kind: practice
+    date: '2026-10-07'
+    ref: migration to system standard; basis = practice of the project before migration
 - id: norm:web/mascot@1
   path: norms/mascot.md
   applies:
@@ -85,6 +113,10 @@
   status: active
   access: public
   audience: agent
+  basis:
+    kind: practice
+    date: '2026-10-07'
+    ref: migration to system standard; basis = practice of the project before migration
 - id: norm:web/current-only@1
   path: norms/current-only.md
   applies:
@@ -99,6 +131,10 @@
   relations:
   - rel: derived_from
     to: spec:core/principles
+  basis:
+    kind: practice
+    date: '2026-10-07'
+    ref: migration to system standard; basis = practice of the project before migration
 - id: method:web/experiments-first@1
   path: methods/experiments-first.md
   applies:
@@ -110,6 +146,10 @@
   status: active
   access: public
   audience: agent
+  basis:
+    kind: practice
+    date: '2026-10-07'
+    ref: migration to system standard; basis = practice of the project before migration
 - id: method:web.css/inventory-first@1
   path: methods/inventory-first.md
   applies:
@@ -124,6 +164,10 @@
   relations:
   - rel: achieved_by
     to: norm:web.css/css-layering
+  basis:
+    kind: practice
+    date: '2026-10-07'
+    ref: migration to system standard; basis = practice of the project before migration
 - id: method:web/visual-checks@1
   path: methods/visual-checks.md
   applies:
@@ -135,6 +179,10 @@
   status: active
   access: public
   audience: agent
+  basis:
+    kind: practice
+    date: '2026-10-07'
+    ref: migration to system standard; basis = practice of the project before migration
 - id: tool:web/check@1
   path: check.py
   applies:
@@ -147,6 +195,10 @@
   status: active
   access: public
   audience: agent
+  basis:
+    kind: practice
+    date: '2026-10-07'
+    ref: migration to system standard; basis = practice of the project before migration
 - id: tool:web/snap@1
   path: tools/snap.py
   applies:
@@ -158,6 +210,10 @@
   status: active
   access: public
   audience: agent
+  basis:
+    kind: practice
+    date: '2026-10-07'
+    ref: migration to system standard; basis = practice of the project before migration
 - id: tool:web/thumbs@1
   path: tools/thumbs.py
   applies:
@@ -167,6 +223,10 @@
   status: active
   access: public
   audience: agent
+  basis:
+    kind: practice
+    date: '2026-10-07'
+    ref: migration to system standard; basis = practice of the project before migration
 - id: tool:web/reader@1
   path: tools/reader.py
   applies:
@@ -178,6 +238,10 @@
   status: active
   access: public
   audience: agent
+  basis:
+    kind: practice
+    date: '2026-10-07'
+    ref: migration to system standard; basis = practice of the project before migration
 - id: component:web.css/commerce@1
   path: css/components/commerce.css
   applies:
@@ -190,6 +254,10 @@
   access: public
   audience: agent
   load: head
+  basis:
+    kind: practice
+    date: '2026-10-07'
+    ref: migration to system standard; basis = practice of the project before migration
 - id: component:web.css/consent@1
   path: css/components/consent.css
   applies:
@@ -202,6 +270,10 @@
   access: public
   audience: agent
   load: head
+  basis:
+    kind: practice
+    date: '2026-10-07'
+    ref: migration to system standard; basis = practice of the project before migration
 - id: component:web.css/content@1
   path: css/components/content.css
   applies:
@@ -214,6 +286,10 @@
   access: public
   audience: agent
   load: head
+  basis:
+    kind: practice
+    date: '2026-10-07'
+    ref: migration to system standard; basis = practice of the project before migration
 - id: component:web.css/data@1
   path: css/components/data.css
   applies:
@@ -226,6 +302,10 @@
   access: public
   audience: agent
   load: head
+  basis:
+    kind: practice
+    date: '2026-10-07'
+    ref: migration to system standard; basis = practice of the project before migration
 - id: component:web.css/forms@1
   path: css/components/forms.css
   applies:
@@ -238,6 +318,10 @@
   access: public
   audience: agent
   load: head
+  basis:
+    kind: practice
+    date: '2026-10-07'
+    ref: migration to system standard; basis = practice of the project before migration
 - id: component:web.css/gallery@1
   path: css/components/gallery.css
   applies:
@@ -250,6 +334,10 @@
   access: public
   audience: agent
   load: head
+  basis:
+    kind: practice
+    date: '2026-10-07'
+    ref: migration to system standard; basis = practice of the project before migration
 - id: component:web.css/maps@1
   path: css/components/maps.css
   applies:
@@ -262,6 +350,10 @@
   access: public
   audience: agent
   load: head
+  basis:
+    kind: practice
+    date: '2026-10-07'
+    ref: migration to system standard; basis = practice of the project before migration
 - id: component:web.css/navigation@1
   path: css/components/navigation.css
   applies:
@@ -274,6 +366,10 @@
   access: public
   audience: agent
   load: head
+  basis:
+    kind: practice
+    date: '2026-10-07'
+    ref: migration to system standard; basis = practice of the project before migration
 - id: component:web.css/utility@1
   path: css/components/utility.css
   applies:
@@ -286,6 +382,10 @@
   access: public
   audience: agent
   load: head
+  basis:
+    kind: practice
+    date: '2026-10-07'
+    ref: migration to system standard; basis = practice of the project before migration
 - id: convention:web.css/theme-comparison@1
   path: css/themes/comparison.css
   applies:
@@ -297,6 +397,10 @@
   status: active
   access: public
   audience: agent
+  basis:
+    kind: practice
+    date: '2026-10-07'
+    ref: migration to system standard; basis = practice of the project before migration
 - id: convention:web.css/theme-deco@1
   path: css/themes/deco.css
   applies:
@@ -308,6 +412,10 @@
   status: active
   access: public
   audience: agent
+  basis:
+    kind: practice
+    date: '2026-10-07'
+    ref: migration to system standard; basis = practice of the project before migration
 - id: convention:web.css/theme-default@1
   path: css/themes/default.css
   applies:
@@ -319,6 +427,10 @@
   status: active
   access: public
   audience: agent
+  basis:
+    kind: practice
+    date: '2026-10-07'
+    ref: migration to system standard; basis = practice of the project before migration
 - id: convention:web.css/theme-festival@1
   path: css/themes/festival.css
   applies:
@@ -330,6 +442,10 @@
   status: active
   access: public
   audience: agent
+  basis:
+    kind: practice
+    date: '2026-10-07'
+    ref: migration to system standard; basis = practice of the project before migration
 - id: convention:web.css/theme-press@1
   path: css/themes/press.css
   applies:
@@ -341,6 +457,10 @@
   status: active
   access: public
   audience: agent
+  basis:
+    kind: practice
+    date: '2026-10-07'
+    ref: migration to system standard; basis = practice of the project before migration
 - id: template:web/article@1
   path: templates/article.html
   applies:
@@ -351,6 +471,10 @@
   status: active
   access: public
   audience: both
+  basis:
+    kind: practice
+    date: '2026-10-07'
+    ref: migration to system standard; basis = practice of the project before migration
 - id: template:web/checkout@1
   path: templates/checkout.html
   applies:
@@ -361,6 +485,10 @@
   status: active
   access: public
   audience: both
+  basis:
+    kind: practice
+    date: '2026-10-07'
+    ref: migration to system standard; basis = practice of the project before migration
 - id: template:web/comparison@1
   path: templates/comparison.html
   applies:
@@ -371,6 +499,10 @@
   status: active
   access: public
   audience: both
+  basis:
+    kind: practice
+    date: '2026-10-07'
+    ref: migration to system standard; basis = practice of the project before migration
 - id: template:web/contacts@1
   path: templates/contacts.html
   applies:
@@ -381,6 +513,10 @@
   status: active
   access: public
   audience: both
+  basis:
+    kind: practice
+    date: '2026-10-07'
+    ref: migration to system standard; basis = practice of the project before migration
 - id: template:web/dashboard@1
   path: templates/dashboard.html
   applies:
@@ -391,6 +527,10 @@
   status: active
   access: public
   audience: both
+  basis:
+    kind: practice
+    date: '2026-10-07'
+    ref: migration to system standard; basis = practice of the project before migration
 - id: template:web/festival@1
   path: templates/festival.html
   applies:
@@ -401,6 +541,10 @@
   status: active
   access: public
   audience: both
+  basis:
+    kind: practice
+    date: '2026-10-07'
+    ref: migration to system standard; basis = practice of the project before migration
 - id: template:web/gallery@1
   path: templates/gallery.html
   applies:
@@ -411,6 +555,10 @@
   status: active
   access: public
   audience: both
+  basis:
+    kind: practice
+    date: '2026-10-07'
+    ref: migration to system standard; basis = practice of the project before migration
 - id: template:web/landing@1
   path: templates/landing.html
   applies:
@@ -421,6 +569,10 @@
   status: active
   access: public
   audience: both
+  basis:
+    kind: practice
+    date: '2026-10-07'
+    ref: migration to system standard; basis = practice of the project before migration
 - id: template:web/pricing@1
   path: templates/pricing.html
   applies:
@@ -431,6 +583,10 @@
   status: active
   access: public
   audience: both
+  basis:
+    kind: practice
+    date: '2026-10-07'
+    ref: migration to system standard; basis = practice of the project before migration
 - id: template:web/product@1
   path: templates/product.html
   applies:
@@ -441,6 +597,10 @@
   status: active
   access: public
   audience: both
+  basis:
+    kind: practice
+    date: '2026-10-07'
+    ref: migration to system standard; basis = practice of the project before migration
 - id: template:web/service@1
   path: templates/service.html
   applies:
@@ -451,6 +611,10 @@
   status: active
   access: public
   audience: both
+  basis:
+    kind: practice
+    date: '2026-10-07'
+    ref: migration to system standard; basis = practice of the project before migration
 - id: index:web/templates@1
   path: templates/index.html
   applies:
@@ -460,6 +624,10 @@
   status: active
   access: public
   audience: human
+  basis:
+    kind: practice
+    date: '2026-10-07'
+    ref: migration to system standard; basis = practice of the project before migration
 - id: index:web/components@1
   path: components/index.html
   applies:
@@ -469,3 +637,7 @@
   status: active
   access: public
   audience: human
+  basis:
+    kind: practice
+    date: '2026-10-07'
+    ref: migration to system standard; basis = practice of the project before migration
