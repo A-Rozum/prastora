@@ -4,4 +4,4 @@ access: public
 audience: both
 description: Prastora — CSS toolkit for layouts that scale as a whole; a package of web elements (core, components, themes, templates) with demo sites.
 packages:
-  - {id: "repo:system", version: "v0.3.0 (84971a6)", repo: A-Rozum/system, path: .system}
+  - {id: "repo:system", version: "v0.4.2 (f6e8503)", repo: A-Rozum/system, path: .system}
