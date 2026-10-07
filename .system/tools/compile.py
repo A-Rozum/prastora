@@ -26,8 +26,11 @@ def main():
     if not normative:
         out += ["## Not anticipated", "", "No element applies beyond the kernel. Work from general knowledge and search with lowered trust; say in the result that the task was not anticipated, so the gap can be filled.", ""]
     refs = [p for p in chosen if p["mode"] == "reference"]
-    for p in [p for p in chosen if p["mode"] != "reference"]:
+    demand = [p for p in chosen if p["mode"] == "demand"]
+    for p in [p for p in chosen if p["mode"] not in ("reference", "demand")]:
         out += [f'<element id="{p["id"]}" path="{p["path"]}"' + (' load="head"' if p["mode"] == "head" else "") + ">", p["text"].strip(), "</element>", ""]
+    if demand:
+        out += ["## Open when needed (sources: cite exactly from the file, never from memory)", ""] + [f"- {p['id']} — {p['path']} — {p['text']}" for p in demand] + [""]
     if refs:
         out += ["## Tools and checks (run, do not read)", ""] + [f"- {p['path']} — {p['text']}" for p in refs] + [""]
     if skipped:

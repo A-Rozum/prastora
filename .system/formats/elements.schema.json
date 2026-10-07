@@ -102,9 +102,10 @@
     "enum": [
      "content",
      "head",
+     "demand",
      "reference"
     ],
-    "description": "content: load the file; head: only its leading inventory/comment block; reference: name and how to use, not the source (default for tool, check, trigger)"
+    "description": "content: whole file; head: leading inventory block; demand: listed with a one-line description, opened only when the task needs it (default for reference); reference: tool or check — run, do not read (default for tool, check, trigger)"
    }
   }
  },

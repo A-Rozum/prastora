@@ -14,13 +14,14 @@ def parse(args):
     return repo, task, budget, target
 
 def load_mode(e):
-    return e.get("load") or ("reference" if e["id"].split(":")[0] in ("tool", "check", "trigger") else "content")
+    kind = e["id"].split(":")[0]
+    return e.get("load") or ("reference" if kind in ("tool", "check", "trigger") else "demand" if kind == "reference" else "content")
 
 def excerpt(path, mode):
     text = path.read_text(errors="ignore") if path.is_file() else ""
     if mode == "head":
         return text[: text.find("*/") + 2] if "*/" in text[:4000] else "\n".join(text.splitlines()[:40])
-    if mode == "reference":
+    if mode in ("reference", "demand"):
         first = next((l.strip(' "#/*') for l in text.splitlines() if l.strip(' "#/*')), "")
         return first[:200]
     return text
@@ -40,7 +41,7 @@ def select(repo, task, budget=10**9):
         m, spec = evaluate(e["applies"], task)
         if not m: continue
         mode = load_mode(e); text = excerpt(repo / e["path"], mode)
-        tokens = 20 if mode == "reference" else (e.get("tokens") or len(text) // 4)
+        tokens = 20 if mode in ("reference", "demand") else (e.get("tokens") or len(text) // 4)
         kind = e["id"].split(":")[0]
         asked = task.get("subject"); asked = asked if isinstance(asked, list) else ([asked] if asked else [])
         if any(f == "subject" and v in asked for f, v in conds(e["applies"])):
