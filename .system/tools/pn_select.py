@@ -33,11 +33,37 @@ def excerpt(path, mode):
 TIER = {"core": 0, "norm": 1, "convention": 2, "method": 3, "role": 3, "task-type": 3, "quality-model": 4, "template": 4,
         "concept": 5, "component": 5, "metric": 5, "package": 5, "benchmark-task": 5, "reference": 6, "example": 7}
 
+RANK = {'public': 0, 'internal': 1, 'confidential': 2, 'client': 3}
+
+def package_elements(repo):
+    """Elements of packages copied into this repository (manifest packages with a path holding elements.yaml).
+    Paths are made relative to the repository; a project's own element with the same id overrides the package's;
+    a package element whose access exceeds the repository's class is refused."""
+    man = read(repo, 'system.yaml') or {}
+    limit = RANK.get(man.get('access'), 3)
+    out = []
+    for p in man.get('packages', []):
+        base = p.get('path')
+        if not base or not (repo / base / 'elements.yaml').is_file():
+            continue
+        for e in read(repo / base, 'elements.yaml') or []:
+            if RANK.get(e.get('access'), 3) > limit:
+                raise ValueError(f"{p['id']}: {e['id']}: access exceeds repository class")
+            if e['id'].split(':')[0] == 'core' and e['path'] == 'AGENTS.md':
+                continue   # a package's repository kernel addresses work on that package, not work that uses it
+            out.append({**e, 'path': f"{base}/{e['path']}", 'package': p['id']})
+    return out
+
+def all_elements(repo):
+    own = read(repo, 'elements.yaml') or []
+    ids = {e['id'].split('@')[0] for e in own}
+    return own + [e for e in package_elements(repo) if e['id'].split('@')[0] not in ids]
+
 def eligible(repo, task):
     elements = read(repo, 'elements.yaml')
     matters, _ = inventory(repo, elements)
     allowed = allowed_matters(matters, task)
-    return [e for e in elements if e.get('status') not in ('deprecated', 'removed')
+    return [e for e in all_elements(repo) if e.get('status') not in ('deprecated', 'removed')
             and in_scope(e, allowed) and evaluate(e['applies'], task)[0]]
 
 def select(repo, task, budget=10**9):
