@@ -2,6 +2,16 @@ id: repo:prastora
 kind: package
 access: public
 audience: both
-description: Prastora — CSS toolkit for layouts that scale as a whole; a package of web elements (core, components, themes, templates) with demo sites.
+description: Prastora — CSS toolkit for layouts that scale as a whole; a package of
+  web elements (core, components, themes, templates) with demo sites.
 packages:
-  - {id: "repo:system", version: "v0.4.3 (1f0b072)", repo: A-Rozum/system, path: .system}
+- id: repo:system
+  version: v0.4.3 (1f0b072)
+  repo: A-Rozum/system
+  path: .system
+artifacts:
+- '*.html'
+- assets/**
+- css/pages/**
+- css/dev/**
+- tools/vendor/**

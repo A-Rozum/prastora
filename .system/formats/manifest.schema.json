@@ -74,6 +74,13 @@
    "items": {
     "type": "string"
    }
+  },
+  "artifacts": {
+   "type": "array",
+   "items": {
+    "type": "string"
+   },
+   "description": "glob patterns of files that are the project's products (pages, assets, page CSS), not reusable elements; excluded from the unregistered-files check"
   }
  }
 }
