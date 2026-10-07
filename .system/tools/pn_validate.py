@@ -1,5 +1,5 @@
 """Validate a repository against the system formats: system.yaml, elements.yaml, state.yaml (if present).
-Usage: python tools/validate.py [repo_dir] [--formats DIR]. Exit 0 = valid. First executable part of the kernel."""
+Usage: python tools/pn_validate.py [repo_dir] [--formats DIR]. Exit 0 = valid. First executable part of the kernel."""
 import sys, json, pathlib, re, yaml
 from jsonschema import Draft202012Validator
 
@@ -33,6 +33,15 @@ def main():
         errors.append("system.yaml: missing")
     elements = check("elements.yaml", "elements.schema.json") or []
     check("state.yaml", "state.schema.json")
+    from pn_inputs import inventory
+    try:
+        matters, materials = inventory(repo, elements, fdir, require_files=True)
+        st = _plain(yaml.safe_load((repo / 'state.yaml').read_text())) if (repo / 'state.yaml').exists() else {}
+        for t in st.get('tasks', []):
+            if t.get('matter') is not None and t['matter'] not in {m['id'] for m in matters}:
+                errors.append(f"state.yaml: {t['id']}: unknown matter")
+    except (ValueError, TypeError, KeyError) as ex:
+        errors.append(str(ex))
     lab = check("lab.yaml", "lab.schema.json") or []
     import datetime
     today = datetime.date.today().isoformat()
@@ -53,7 +62,7 @@ def main():
     vocab_file = fdir.parent / "vocabulary" / "facets.yaml"
     if vocab_file.exists():
         sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
-        from facets import conds
+        from pn_facets import conds
         vocab = yaml.safe_load(vocab_file.read_text())
         for e in elements:
             if not isinstance(e, dict) or not isinstance(e.get("applies"), dict):

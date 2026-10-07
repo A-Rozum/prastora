@@ -36,5 +36,5 @@ def evaluate(pred, task):
     (f, v), = pred.items()
     tv = task.get(f); tv = tv if isinstance(tv, list) else ([tv] if tv else [])
     wants = v if isinstance(v, list) else [v]
-    hits = [w for w in wants if _hit(tv, w)]
+    hits = [w for w in wants if (w in tv if f == 'matter' else _hit(tv, w))]
     return bool(hits), max((w.count(".") + 1 for w in hits), default=0)

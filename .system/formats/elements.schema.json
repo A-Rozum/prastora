@@ -130,6 +130,19 @@
      }
     },
     "description": "why the element is active: proven by practice, by measurement, or decided by an acceptor"
+   },
+   "matter": {
+    "type": "string",
+    "pattern": "^[a-z0-9][a-z0-9._-]*$"
+   },
+   "requires_inputs": {
+    "type": "array",
+    "minItems": 1,
+    "uniqueItems": true,
+    "items": {
+     "type": "string",
+     "pattern": "^[a-z0-9][a-z0-9._-]*$"
+    }
    }
   },
   "allOf": [
@@ -147,6 +160,23 @@
     "then": {
      "required": [
       "basis"
+     ]
+    }
+   },
+   {
+    "if": {
+     "properties": {
+      "access": {
+       "const": "client"
+      }
+     },
+     "required": [
+      "access"
+     ]
+    },
+    "then": {
+     "required": [
+      "matter"
      ]
     }
    }

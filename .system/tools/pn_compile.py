@@ -1,26 +1,39 @@
 """Compile the context for one task into .context/task.md — a vendor-neutral bundle any agent environment can read
 (Claude Code via CLAUDE.md → AGENTS.md, Codex and OpenCode via AGENTS.md, a chat by uploading the file).
-Usage: python tools/compile.py [repo_dir] domain=… task_kind=… [subject=…] [budget=…]
+Usage: python tools/pn_compile.py [repo_dir] domain=… task_kind=… [subject=…] [budget=…]
 The bundle holds: task facets, open tasks from state.yaml, selected elements most specific first (content or head),
 tools by reference, elements dropped by budget, and the fallback note if nothing normative matched."""
 import sys, pathlib, datetime, yaml
-import importlib.util
-_spec = importlib.util.spec_from_file_location("ctx_select", pathlib.Path(__file__).resolve().parent / "select.py")
-_sel = importlib.util.module_from_spec(_spec); _spec.loader.exec_module(_sel)   # local select.py, not the stdlib module
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+import pn_select as _sel
 parse, select = _sel.parse, _sel.select
+from pn_inputs import read, inventory, allowed_matters, in_scope, available_materials, missing_inputs
 
 def main():
+    # A failed compile must not leave a stale bundle from another task.
+    root = pathlib.Path(sys.argv[1]) if len(sys.argv) > 1 and '=' not in sys.argv[1] else pathlib.Path('.')
+    (root / '.context' / 'task.md').unlink(missing_ok=True)
     repo, task, budget, _ = parse(sys.argv[1:])
+    elements = read(repo, 'elements.yaml')
+    matters, materials = inventory(repo, elements)
+    allowed = allowed_matters(matters, task)
+    available = available_materials(repo, materials, allowed)
+    missing = missing_inputs(_sel.eligible(repo, task), available)
     chosen, skipped, normative = select(repo, task, budget)
     out = [f"# Context for the current task", "",
-           f"Compiled {datetime.datetime.now(datetime.timezone.utc):%Y-%m-%d %H:%M} UTC by tools/compile.py. Facets: " +
+           f"Compiled {datetime.datetime.now(datetime.timezone.utc):%Y-%m-%d %H:%M} UTC by tools/pn_compile.py. Facets: " +
            ", ".join(f"{k}={v}" for k, v in task.items()) + ".",
            "Read this file instead of browsing the repository. More specific elements come first and override general ones; the kernel's invariants are never overridden.", ""]
+    if missing:
+        out += ['## Missing inputs — preconditions unmet', '',
+                'Work requiring these inputs is paused; the result cannot be presented as complete. Obtain and register the missing material, then compile again.', '']
+        out += [f'- {element}: missing {kind}' for element, kind in missing] + ['']
     st = repo / "state.yaml"
     if st.exists():
         s = yaml.safe_load(st.read_text()) or {}
         out += ["## Open tasks (state.yaml)", ""]
         for t in s.get("tasks", []):
+            if not in_scope(t, allowed): continue
             out.append(f"- [{t['status']}] {t['id']}: {t['title']} — done when: {t['done_when']} (executor: {t['executor']})")
         out.append("")
     if not normative:
@@ -35,8 +48,27 @@ def main():
         out += ["## Tools and checks (run, do not read)", ""] + [f"- {p['path']} — {p['text']}" for p in refs] + [""]
     if skipped:
         out += ["## Dropped by budget (open only if the task requires)", ""] + [f"- {p['id']} — {p['path']}" for p in skipped] + [""]
+    if available:
+        out += ['## Matter materials (only the permitted scope)', '']
+        remaining = max(0, budget - sum(p['tokens'] for p in chosen))
+        for m in available:
+            mode = m.get('load', 'demand')
+            if mode == 'demand':
+                out += [f"- {m['id']} — {m['path']} — kind: {m['kind']}"]
+                continue
+            text = _sel.excerpt(repo / m['path'], mode)
+            tokens = max(1, len(text) // 4)
+            if tokens > remaining:
+                out += [f"- {m['id']} — {m['path']} — kind: {m['kind']} (open when needed; budget)"]
+            else:
+                remaining -= tokens
+                out += [f'<material id="{m["id"]}" matter="{m["matter"]}">', text.strip(), '</material>', '']
+        out.append('')
     dst = repo / ".context" / "task.md"; dst.parent.mkdir(exist_ok=True); dst.write_text("\n".join(out))
     print(f"{dst}: {len(chosen)} elements, ~{sum(p['tokens'] for p in chosen)} tokens" + (f", {len(skipped)} dropped by budget" if skipped else ""))
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except ValueError as ex:
+        sys.exit(f'Cannot compile context: {ex}')

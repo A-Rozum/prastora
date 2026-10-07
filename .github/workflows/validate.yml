@@ -9,4 +9,4 @@ jobs:
       - uses: actions/setup-python@v5
         with: {python-version: "3.12"}
       - run: pip install pyyaml jsonschema
-      - run: python .system/tools/validate.py . --formats .system/formats
+      - run: python .system/tools/pn_validate.py . --formats .system/formats

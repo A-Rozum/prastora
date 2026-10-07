@@ -1,0 +1,49 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "materials.yaml — project-owned matter inputs (trial)",
+ "type": "array",
+ "items": {
+  "type": "object",
+  "required": [
+   "id",
+   "path",
+   "matter",
+   "kind",
+   "access"
+  ],
+  "additionalProperties": false,
+  "properties": {
+   "id": {
+    "type": "string",
+    "pattern": "^[a-z0-9][a-z0-9._-]*$"
+   },
+   "path": {
+    "type": "string",
+    "minLength": 1
+   },
+   "matter": {
+    "type": "string",
+    "pattern": "^[a-z0-9][a-z0-9._-]*$"
+   },
+   "kind": {
+    "type": "string",
+    "pattern": "^[a-z0-9][a-z0-9._-]*$"
+   },
+   "access": {
+    "enum": [
+     "public",
+     "internal",
+     "confidential",
+     "client"
+    ]
+   },
+   "load": {
+    "enum": [
+     "content",
+     "head",
+     "demand"
+    ]
+   }
+  }
+ }
+}

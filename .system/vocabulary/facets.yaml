@@ -7,3 +7,5 @@ phase:       {closed: false}
 jurisdiction: {closed: false}
 subject:     {closed: false}
 access:      {closed: true, values: [public, internal, confidential, client]}
+# Matter identity is exact; related matters come only from matters.yaml.
+matter:      {closed: false}

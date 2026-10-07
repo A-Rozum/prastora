@@ -1,0 +1,26 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "title": "matters.yaml — explicit directed matter boundaries (trial)",
+ "type": "array",
+ "items": {
+  "type": "object",
+  "required": [
+   "id"
+  ],
+  "additionalProperties": false,
+  "properties": {
+   "id": {
+    "type": "string",
+    "pattern": "^[a-z0-9][a-z0-9._-]*$"
+   },
+   "related": {
+    "type": "array",
+    "uniqueItems": true,
+    "items": {
+     "type": "string",
+     "pattern": "^[a-z0-9][a-z0-9._-]*$"
+    }
+   }
+  }
+ }
+}

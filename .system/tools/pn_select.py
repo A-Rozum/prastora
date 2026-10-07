@@ -1,8 +1,9 @@
 """Select elements applicable to a task (first part of the context assembler).
-Usage: python tools/select.py [repo_dir] domain=legal.interpol task_kind=drafting [subject=...] [budget=8000]"""
+Usage: python tools/pn_select.py [repo_dir] domain=legal.interpol task_kind=drafting [subject=...] [budget=8000]"""
 import sys, pathlib, yaml
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
-from facets import evaluate, conds
+from pn_facets import evaluate, conds
+from pn_inputs import read, inventory, allowed_matters, in_scope
 
 def parse(args):
     repo = pathlib.Path(args[0]) if args and "=" not in args[0] else pathlib.Path(".")
@@ -32,12 +33,17 @@ def excerpt(path, mode):
 TIER = {"core": 0, "norm": 1, "convention": 2, "method": 3, "role": 3, "task-type": 3, "quality-model": 4, "template": 4,
         "concept": 5, "component": 5, "metric": 5, "package": 5, "benchmark-task": 5, "reference": 6, "example": 7}
 
+def eligible(repo, task):
+    elements = read(repo, 'elements.yaml')
+    matters, _ = inventory(repo, elements)
+    allowed = allowed_matters(matters, task)
+    return [e for e in elements if e.get('status') not in ('deprecated', 'removed')
+            and in_scope(e, allowed) and evaluate(e['applies'], task)[0]]
+
 def select(repo, task, budget=10**9):
     """Return (chosen, skipped, normative_match). chosen: list of dicts with id, path, mode, spec, tokens, text."""
-    elements = yaml.safe_load((repo / "elements.yaml").read_text()) or []
     picked = []
-    for e in elements:
-        if e.get("status") in ("deprecated", "removed"): continue
+    for e in eligible(repo, task):
         m, spec = evaluate(e["applies"], task)
         if not m: continue
         mode = load_mode(e); text = excerpt(repo / e["path"], mode)
