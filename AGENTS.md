@@ -9,5 +9,4 @@ Core invariants (any CSS work):
 - CSS lengths in rem only.
 
 Gate: `python3 check.py` exits 0 and `python .system/tools/pn_validate.py . --formats .system/formats` passes.
-For changes authored with ChatGPT/Codex, append `Co-authored-by: ChatGPT (Codex) <codex@openai.com>` to the commit message.
 Temporary material goes to lab/ (lab.yaml), never to ad-hoc folders.
