@@ -42,6 +42,17 @@ def main():
     demand = [p for p in chosen if p["mode"] == "demand"]
     for p in [p for p in chosen if p["mode"] not in ("reference", "demand")]:
         out += [f'<element id="{p["id"]}" path="{p["path"]}"' + (' load="head"' if p["mode"] == "head" else "") + ">", p["text"].strip(), "</element>", ""]
+    exp_by_id = {e.get("id"): e.get("expects") for e in (elements or []) if isinstance(e, dict) and e.get("expects")}
+    exp = [(p["id"], exp_by_id[p["id"]]) for p in chosen if p["id"] in exp_by_id]
+    if exp:
+        out += ["## Expected result (check before handing over; a departure in either direction goes to the project's feedback log)", "",
+                "basic: without it the result fails; ordinary: a competent result has it; refinement: tolerable if missing. Meeting them does not make the result ideal.", ""]
+        for eid, levels in exp:
+            out.append(f"- {eid}")
+            for lvl in ("basic", "ordinary", "refinement"):
+                for c in levels.get(lvl, []):
+                    out.append(f"  - {lvl}: {c}")
+        out.append("")
     if demand:
         out += ["## Open when needed (sources: cite exactly from the file, never from memory)", ""] + [f"- {p['id']} — {p['path']} — {p['text']}" for p in demand] + [""]
     if refs:

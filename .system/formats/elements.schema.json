@@ -143,6 +143,34 @@
      "type": "string",
      "pattern": "^[a-z0-9][a-z0-9._-]*$"
     }
+   },
+   "expects": {
+    "type": "object",
+    "additionalProperties": false,
+    "description": "Expected change from applying the element, by level: basic (without it the result fails), ordinary (a competent result normally has it), refinement (nuances; tolerable if missing). Meeting the levels does not make a result ideal. Absent or partial: the expectation is not yet known; it forms with the user, whose first-glance verdict (matches / partly / does not) is the reference. Criteria start with the obvious and are refined over time. A departure is a difference from these levels in either direction.",
+    "properties": {
+     "basic": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      },
+      "minItems": 1
+     },
+     "ordinary": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      },
+      "minItems": 1
+     },
+     "refinement": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      },
+      "minItems": 1
+     }
+    }
    }
   },
   "allOf": [
