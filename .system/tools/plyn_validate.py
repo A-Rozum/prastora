@@ -89,6 +89,14 @@ def main():
         for pid in manifest.get("provides", []):
             if pid not in known:
                 errors.append(f"system.yaml: provides {pid}, not in elements.yaml")
+    # Registry text (identifiers, lexemes, values): NFC only, so that identical-looking names are identical.
+    import unicodedata as _ud
+    for _name in ("elements.yaml", "system.yaml", "state.yaml", "lab.yaml", "matters.yaml", "materials.yaml", "terms.yaml"):
+        _f = repo / _name
+        if _f.is_file():
+            _t = _f.read_text(encoding="utf-8")
+            if _ud.normalize("NFC", _t) != _t:
+                errors.append(f"{_name}: text is not in Unicode NFC form (identifiers and lexemes must be NFC)")
     # File names: Unicode allowed, NFC only; no two names that differ only by normalization or case.
     import unicodedata
     seen = {}
