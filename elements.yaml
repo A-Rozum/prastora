@@ -1,4 +1,4 @@
-- id: core:web.css/kernel@1
+- id: jadro:web.css/repo@1
   path: AGENTS.md
   applies:
     always: true
@@ -9,7 +9,7 @@
     kind: decided
     date: '2026-10-07'
     ref: accepted by the user during migration
-- id: core:web.css/core@1
+- id: jadro:web.css/core@1
   path: css/core.css
   applies:
     all:

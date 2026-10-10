@@ -150,7 +150,7 @@ class Inputs(unittest.TestCase):
         (pkg / 'kernel.md').write_text('PACKAGE_KERNEL_FOR_ITS_OWN_REPO')
         (pkg / 'elements.yaml').write_text(yaml.safe_dump([
             {'id':'norm:legal/pkg-norm@1','path':'norm.md','applies':{'domain':'legal'},'status':'trial','access':'internal','audience':'agent'},
-            {'id':'core:legal/pkg-kernel@1','path':'AGENTS.md','applies':{'always':True},'status':'trial','access':'internal','audience':'agent'}]))
+            {'id':'jadro:legal/pkg-kernel@1','path':'AGENTS.md','applies':{'always':True},'status':'trial','access':'internal','audience':'agent'}]))
         (pkg / 'AGENTS.md').write_text('PACKAGE_KERNEL_FOR_ITS_OWN_REPO')
         man = yaml.safe_load((self.repo/'system.yaml').read_text())
         man['packages'] = [{'id':'repo:pkg','version':'test','repo':'x/pkg','path':'pkg'}]

@@ -30,7 +30,7 @@ def excerpt(path, mode):
 # Instructions before material: a kernel is never dropped; norms, conventions, methods and roles come before
 # templates, concepts and references. Within a tier, more specific first. (Found in ccf: by specificity alone,
 # large references pushed out the legal kernel and the methods under a tight budget.)
-TIER = {"core": 0, "norm": 1, "convention": 2, "method": 3, "role": 3, "task-type": 3, "quality-model": 4, "template": 4,
+TIER = {"jadro": 0, "norm": 1, "convention": 2, "method": 3, "role": 3, "task-type": 3, "quality-model": 4, "template": 4,
         "concept": 5, "component": 5, "metric": 5, "package": 5, "benchmark-task": 5, "reference": 6, "example": 7}
 
 RANK = {'public': 0, 'internal': 1, 'confidential': 2, 'client': 3}
@@ -49,7 +49,7 @@ def package_elements(repo):
         for e in read(repo / base, 'elements.yaml') or []:
             if RANK.get(e.get('access'), 3) > limit:
                 raise ValueError(f"{p['id']}: {e['id']}: access exceeds repository class")
-            if e['id'].split(':')[0] == 'core' and e['path'] == 'AGENTS.md':
+            if e['id'].split(':')[0] == 'jadro' and e['path'] == 'AGENTS.md':
                 continue   # a package's repository kernel addresses work on that package, not work that uses it
             out.append({**e, 'path': f"{base}/{e['path']}", 'package': p['id']})
     return out
@@ -79,7 +79,7 @@ def select(repo, task, budget=10**9):
         if any(f == "subject" and v in asked for f, v in conds(e["applies"])):
             spec += 10   # explicitly requested by the task's subject: first within its tier
         picked.append({"id": e["id"], "path": e["path"], "mode": mode, "spec": spec, "tokens": tokens, "text": text,
-                       "always": "always" in e["applies"] or kind == "core", "tier": TIER.get(kind, 6)})
+                       "always": "always" in e["applies"] or kind == "jadro", "tier": TIER.get(kind, 6)})
     picked.sort(key=lambda x: (x["tier"], -x["spec"], x["id"]))
     chosen, skipped, total = [], [], 0
     for p in picked:

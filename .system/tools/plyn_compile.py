@@ -23,7 +23,7 @@ def main():
     out = [f"# Context for the current task", "",
            f"Compiled {datetime.datetime.now(datetime.timezone.utc):%Y-%m-%d %H:%M} UTC by tools/plyn_compile.py. Facets: " +
            ", ".join(f"{k}={v}" for k, v in task.items()) + ".",
-           "Read this file instead of browsing the repository. More specific elements come first and override general ones; the kernel's invariants are never overridden.", ""]
+           "Read this file instead of browsing the repository. More specific elements come first and override general ones; the jadro's invariants are never overridden.", ""]
     if missing:
         out += ['## Missing inputs', '',
                 'Report these to the user before relying on them. How to proceed without them (wait, search, work on the client\'s account with marked uncertainty, draft but not file) is the user\'s decision, given in the task.', '']
