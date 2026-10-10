@@ -9,7 +9,7 @@ packages:
   repo: A-Rozum/plyn-standard
   path: .system
 - id: plyn:tools
-  version: v0.8.0
+  version: v0.8.1
   repo: A-Rozum/plyn-tools
   path: .system/tools
 artifacts:

@@ -89,6 +89,19 @@ def main():
         for pid in manifest.get("provides", []):
             if pid not in known:
                 errors.append(f"system.yaml: provides {pid}, not in elements.yaml")
+    # File names: Unicode allowed, NFC only; no two names that differ only by normalization or case.
+    import unicodedata
+    seen = {}
+    for p in repo.rglob("*"):
+        rel = p.relative_to(repo).as_posix()
+        if rel.split("/")[0] in (".git", ".context") or "__pycache__" in rel:
+            continue
+        if unicodedata.normalize("NFC", rel) != rel:
+            errors.append(f"{rel}: file name is not in Unicode NFC form")
+        key = unicodedata.normalize("NFC", rel).casefold()
+        if key in seen:
+            errors.append(f"{rel}: clashes with {seen[key]} (same name after normalization or case folding)")
+        seen.setdefault(key, rel)
     for w in warnings:
         print("WARN ", w)
     for e in errors:
