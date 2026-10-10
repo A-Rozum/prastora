@@ -29,11 +29,11 @@
    },
    "status": {
     "enum": [
-     "proposed",
-     "trial",
-     "active",
-     "deprecated",
-     "removed"
+     "prapanova",
+     "proba",
+     "užytak",
+     "adstaŭka",
+     "archiŭ"
     ]
    },
    "access": {
@@ -45,11 +45,15 @@
     ]
    },
    "audience": {
-    "enum": [
-     "agent",
-     "human",
-     "both"
-    ]
+    "type": "array",
+    "items": {
+     "enum": [
+      "agent",
+      "human"
+     ]
+    },
+    "minItems": 1,
+    "uniqueItems": true
    },
    "depends_on": {
     "type": "array",
@@ -117,9 +121,9 @@
     "properties": {
      "kind": {
       "enum": [
-       "practice",
-       "measured",
-       "decided"
+       "praktyka",
+       "zamier",
+       "rašennie"
       ]
      },
      "date": {

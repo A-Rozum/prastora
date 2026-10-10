@@ -35,11 +35,15 @@
    ]
   },
   "audience": {
-   "enum": [
-    "agent",
-    "human",
-    "both"
-   ]
+   "type": "array",
+   "items": {
+    "enum": [
+     "agent",
+     "human"
+    ]
+   },
+   "minItems": 1,
+   "uniqueItems": true
   },
   "description": {
    "type": "string"

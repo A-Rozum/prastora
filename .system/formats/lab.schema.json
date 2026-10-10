@@ -37,8 +37,8 @@
    },
    "status": {
     "enum": [
-     "proposed",
-     "trial"
+     "prapanova",
+     "proba"
     ]
    },
    "created": {
@@ -51,9 +51,9 @@
    },
    "exit": {
     "enum": [
-     "promote",
-     "decide",
-     "delete"
+     "pavyšennie",
+     "pastanova",
+     "vydaliennie"
     ],
     "description": "expected outcome: promote to a package/project, distil into decisions/spec, or delete"
    },

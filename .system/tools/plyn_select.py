@@ -62,7 +62,7 @@ def eligible(repo, task):
     elements = read(repo, 'elements.yaml')
     matters, _ = inventory(repo, elements)
     allowed = allowed_matters(matters, task)
-    return [e for e in all_elements(repo) if e.get('status') not in ('deprecated', 'removed')
+    return [e for e in all_elements(repo) if e.get('status') not in ('adstaŭka', 'archiŭ')
             and in_scope(e, allowed) and evaluate(e['applies'], task)[0]]
 
 def select(repo, task, budget=10**9):

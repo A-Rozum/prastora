@@ -48,10 +48,10 @@
      },
      "status": {
       "enum": [
-       "open",
-       "active",
-       "paused",
-       "blocked"
+       "čarha",
+       "praca",
+       "pauza",
+       "pieraškoda"
       ]
      },
      "assigner": {
@@ -100,9 +100,9 @@
      },
      "kind": {
       "enum": [
-       "unknown",
-       "ambiguity",
-       "decision-needed"
+       "niaviedannie",
+       "dvuznačnasć",
+       "patreba.rašennie"
       ]
      },
      "task": {
@@ -110,9 +110,9 @@
      },
      "origin": {
       "enum": [
-       "stated",
-       "decided",
-       "inferred"
+       "zajava",
+       "rašennie",
+       "vyvad"
       ]
      }
     }

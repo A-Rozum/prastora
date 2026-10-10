@@ -13,7 +13,7 @@ class Inputs(unittest.TestCase):
         self.tmp = tempfile.TemporaryDirectory(dir=ROOT / '.context')
         self.repo = pathlib.Path(self.tmp.name)
         self.write('system.yaml', {'id':'repo:fixture', 'kind':'project', 'access':'internal',
-                                 'audience':'agent', 'description':'invented cases'})
+                                 'audience':['agent'], 'description':'invented cases'})
         self.write('matters.yaml', [{'id':'a'}, {'id':'a.child'}, {'id':'b'}, {'id':'c'}])
         self.elements = [self.element('mietad:legal/draft', 'draft.md', requires_inputs=['decision'])]
         self.write('draft.md', 'Prepare a draft from the decision.')
@@ -26,7 +26,7 @@ class Inputs(unittest.TestCase):
     def tearDown(self): self.tmp.cleanup()
 
     def element(self, ident, path, **kw):
-        return dict(id=ident, path=path, status='trial', access='public', audience='agent', applies={'always':True}, **kw)
+        return dict(id=ident, path=path, status='proba', access='public', audience=['agent'], applies={'always':True}, **kw)
 
     def write(self, path, data):
         (self.repo / path).write_text(data if isinstance(data,str) else yaml.safe_dump(data,sort_keys=False))
@@ -138,7 +138,7 @@ class Inputs(unittest.TestCase):
             self.validate(success=False);self.compile('matter=a',success=False)
 
     def test_scoped_state_tasks(self):
-        base={'status':'open','assigner':'user','executor':'executor','done_when':'accepted'}
+        base={'status':'čarha','assigner':'user','executor':'executor','done_when':'accepted'}
         self.write('state.yaml',{'direction':{'text':'work'},'tasks':[dict(base,id='foreign',title='BETA_PRIVATE_FACT',matter='b'),dict(base,id='own',title='ALPHA_TASK',matter='a')]})
         self.validate();text=self.compile('matter=a')
         self.assertIn('ALPHA_TASK',text);self.assertNotIn('BETA_PRIVATE_FACT',text)
@@ -149,8 +149,8 @@ class Inputs(unittest.TestCase):
         (pkg / 'norm.md').write_text('PACKAGE_NORM')
         (pkg / 'kernel.md').write_text('PACKAGE_KERNEL_FOR_ITS_OWN_REPO')
         (pkg / 'elements.yaml').write_text(yaml.safe_dump([
-            {'id':'norma:legal/pkg-norm@1','path':'norm.md','applies':{'domain':'legal'},'status':'trial','access':'internal','audience':'agent'},
-            {'id':'jadro:legal/pkg-kernel@1','path':'AGENTS.md','applies':{'always':True},'status':'trial','access':'internal','audience':'agent'}]))
+            {'id':'norma:legal/pkg-norm@1','path':'norm.md','applies':{'domain':'legal'},'status':'proba','access':'internal','audience':['agent']},
+            {'id':'jadro:legal/pkg-kernel@1','path':'AGENTS.md','applies':{'always':True},'status':'proba','access':'internal','audience':['agent']}]))
         (pkg / 'AGENTS.md').write_text('PACKAGE_KERNEL_FOR_ITS_OWN_REPO')
         man = yaml.safe_load((self.repo/'system.yaml').read_text())
         man['packages'] = [{'id':'repo:pkg','version':'test','repo':'x/pkg','path':'pkg'}]

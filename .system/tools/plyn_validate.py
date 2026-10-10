@@ -56,7 +56,7 @@ def main():
             if e.get("path") and not (repo / e["path"]).exists():
                 errors.append(f"lab.yaml: {e.get('id')}: path not found: {e['path']}")
             if str(e.get("review_by", "9999")) < today:
-                (errors if "--strict" in sys.argv else warnings).append(f"lab.yaml: {e.get('id')}: review_by {e.get('review_by')} has passed — promote, decide or delete")
+                (errors if "--strict" in sys.argv else warnings).append(f"lab.yaml: {e.get('id')}: review_by {e.get('review_by')} has passed — pavyšennie, pastanova or vydaliennie")
     ids = [e.get("id", "") for e in elements if isinstance(e, dict)]
     bare = [re.sub(r"@.*$", "", i) for i in ids]
     for i in {x for x in bare if bare.count(x) > 1}:

@@ -2,11 +2,11 @@
   path: AGENTS.md
   applies:
     always: true
-  status: active
+  status: užytak
   access: public
-  audience: agent
+  audience: [agent]
   basis:
-    kind: decided
+    kind: rašennie
     date: '2026-10-07'
     ref: accepted by the user during migration
 - id: jadro:web.css/core@1
@@ -20,11 +20,11 @@
       - implementation
       - design
       - review
-  status: active
+  status: užytak
   access: public
-  audience: agent
+  audience: [agent]
   basis:
-    kind: decided
+    kind: rašennie
     date: '2026-10-07'
     ref: accepted by the user during migration
 - id: norma:web/js-only-where-needed@1
@@ -34,11 +34,11 @@
     - &id003
       domain: web
     - *id001
-  status: active
+  status: užytak
   access: public
-  audience: agent
+  audience: [agent]
   basis:
-    kind: practice
+    kind: praktyka
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
 - id: norma:web.css/css-layering@1
@@ -47,11 +47,11 @@
     all:
     - *id002
     - *id001
-  status: active
+  status: užytak
   access: public
-  audience: agent
+  audience: [agent]
   basis:
-    kind: practice
+    kind: praktyka
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
 - id: norma:web/html-placement@1
@@ -62,11 +62,11 @@
     - task_kind:
       - implementation
       - design
-  status: active
+  status: užytak
   access: public
-  audience: agent
+  audience: [agent]
   basis:
-    kind: practice
+    kind: praktyka
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
 - id: norma:web/copy-voice@1
@@ -77,11 +77,11 @@
     - task_kind:
       - drafting
       - review
-  status: active
+  status: užytak
   access: public
-  audience: agent
+  audience: [agent]
   basis:
-    kind: practice
+    kind: praktyka
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
 - id: norma:web/template-shared-elements@1
@@ -94,11 +94,11 @@
       - design
       - review
     - subject: template
-  status: active
+  status: užytak
   access: public
-  audience: agent
+  audience: [agent]
   basis:
-    kind: practice
+    kind: praktyka
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
 - id: norma:web/mascot@1
@@ -110,11 +110,11 @@
       - design
       - drafting
       - review
-  status: active
+  status: užytak
   access: public
-  audience: agent
+  audience: [agent]
   basis:
-    kind: practice
+    kind: praktyka
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
 - id: norma:web/current-only@1
@@ -125,14 +125,14 @@
     - task_kind:
       - maintenance
       - review
-  status: active
+  status: užytak
   access: public
-  audience: agent
+  audience: [agent]
   relations:
   - rel: derived_from
     to: specyfikacyja:standard/principles
   basis:
-    kind: practice
+    kind: praktyka
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
 - id: mietad:web/experiments-first@1
@@ -143,11 +143,11 @@
     - task_kind:
       - design
       - implementation
-  status: active
+  status: užytak
   access: public
-  audience: agent
+  audience: [agent]
   basis:
-    kind: practice
+    kind: praktyka
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
 - id: mietad:web.css/inventory-first@1
@@ -158,14 +158,14 @@
     - task_kind:
       - implementation
       - design
-  status: active
+  status: užytak
   access: public
-  audience: agent
+  audience: [agent]
   relations:
   - rel: achieved_by
     to: norma:web.css/css-layering
   basis:
-    kind: practice
+    kind: praktyka
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
 - id: mietad:web/visual-checks@1
@@ -176,11 +176,11 @@
     - task_kind:
       - implementation
       - review
-  status: active
+  status: užytak
   access: public
-  audience: agent
+  audience: [agent]
   basis:
-    kind: practice
+    kind: praktyka
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
 - id: prylada:web/check@1
@@ -192,11 +192,11 @@
       - implementation
       - review
       - maintenance
-  status: active
+  status: užytak
   access: public
-  audience: agent
+  audience: [agent]
   basis:
-    kind: practice
+    kind: praktyka
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
 - id: prylada:web/snap@1
@@ -207,11 +207,11 @@
     - task_kind:
       - implementation
       - review
-  status: active
+  status: užytak
   access: public
-  audience: agent
+  audience: [agent]
   basis:
-    kind: practice
+    kind: praktyka
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
 - id: prylada:web/thumbs@1
@@ -220,11 +220,11 @@
     all:
     - *id003
     - subject: template
-  status: active
+  status: užytak
   access: public
-  audience: agent
+  audience: [agent]
   basis:
-    kind: practice
+    kind: praktyka
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
 - id: prylada:web/reader@1
@@ -235,11 +235,11 @@
     - task_kind:
       - drafting
       - review
-  status: active
+  status: užytak
   access: public
-  audience: agent
+  audience: [agent]
   basis:
-    kind: practice
+    kind: praktyka
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
 - id: kampanient:web.css/commerce@1
@@ -250,12 +250,12 @@
     - task_kind:
       - implementation
       - design
-  status: active
+  status: užytak
   access: public
-  audience: agent
+  audience: [agent]
   load: head
   basis:
-    kind: practice
+    kind: praktyka
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
 - id: kampanient:web.css/consent@1
@@ -266,12 +266,12 @@
     - task_kind:
       - implementation
       - design
-  status: active
+  status: užytak
   access: public
-  audience: agent
+  audience: [agent]
   load: head
   basis:
-    kind: practice
+    kind: praktyka
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
 - id: kampanient:web.css/content@1
@@ -282,12 +282,12 @@
     - task_kind:
       - implementation
       - design
-  status: active
+  status: užytak
   access: public
-  audience: agent
+  audience: [agent]
   load: head
   basis:
-    kind: practice
+    kind: praktyka
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
 - id: kampanient:web.css/data@1
@@ -298,12 +298,12 @@
     - task_kind:
       - implementation
       - design
-  status: active
+  status: užytak
   access: public
-  audience: agent
+  audience: [agent]
   load: head
   basis:
-    kind: practice
+    kind: praktyka
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
 - id: kampanient:web.css/forms@1
@@ -314,12 +314,12 @@
     - task_kind:
       - implementation
       - design
-  status: active
+  status: užytak
   access: public
-  audience: agent
+  audience: [agent]
   load: head
   basis:
-    kind: practice
+    kind: praktyka
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
 - id: kampanient:web.css/gallery@1
@@ -330,12 +330,12 @@
     - task_kind:
       - implementation
       - design
-  status: active
+  status: užytak
   access: public
-  audience: agent
+  audience: [agent]
   load: head
   basis:
-    kind: practice
+    kind: praktyka
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
 - id: kampanient:web.css/maps@1
@@ -346,12 +346,12 @@
     - task_kind:
       - implementation
       - design
-  status: active
+  status: užytak
   access: public
-  audience: agent
+  audience: [agent]
   load: head
   basis:
-    kind: practice
+    kind: praktyka
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
 - id: kampanient:web.css/navigation@1
@@ -362,12 +362,12 @@
     - task_kind:
       - implementation
       - design
-  status: active
+  status: užytak
   access: public
-  audience: agent
+  audience: [agent]
   load: head
   basis:
-    kind: practice
+    kind: praktyka
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
 - id: kampanient:web.css/utility@1
@@ -378,12 +378,12 @@
     - task_kind:
       - implementation
       - design
-  status: active
+  status: užytak
   access: public
-  audience: agent
+  audience: [agent]
   load: head
   basis:
-    kind: practice
+    kind: praktyka
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
 - id: kanviencyja:web.css/theme-comparison@1
@@ -394,11 +394,11 @@
     - subject:
       - theme
       - comparison
-  status: active
+  status: užytak
   access: public
-  audience: agent
+  audience: [agent]
   basis:
-    kind: practice
+    kind: praktyka
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
 - id: kanviencyja:web.css/theme-deco@1
@@ -409,11 +409,11 @@
     - subject:
       - theme
       - deco
-  status: active
+  status: užytak
   access: public
-  audience: agent
+  audience: [agent]
   basis:
-    kind: practice
+    kind: praktyka
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
 - id: kanviencyja:web.css/theme-default@1
@@ -424,11 +424,11 @@
     - subject:
       - theme
       - default
-  status: active
+  status: užytak
   access: public
-  audience: agent
+  audience: [agent]
   basis:
-    kind: practice
+    kind: praktyka
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
 - id: kanviencyja:web.css/theme-festival@1
@@ -439,11 +439,11 @@
     - subject:
       - theme
       - festival
-  status: active
+  status: užytak
   access: public
-  audience: agent
+  audience: [agent]
   basis:
-    kind: practice
+    kind: praktyka
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
 - id: kanviencyja:web.css/theme-press@1
@@ -454,11 +454,11 @@
     - subject:
       - theme
       - press
-  status: active
+  status: užytak
   access: public
-  audience: agent
+  audience: [agent]
   basis:
-    kind: practice
+    kind: praktyka
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
 - id: šablon:web/article@1
@@ -468,11 +468,11 @@
     - *id003
     - subject:
       - article
-  status: active
+  status: užytak
   access: public
-  audience: both
+  audience: [agent, human]
   basis:
-    kind: practice
+    kind: praktyka
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
 - id: šablon:web/checkout@1
@@ -482,11 +482,11 @@
     - *id003
     - subject:
       - checkout
-  status: active
+  status: užytak
   access: public
-  audience: both
+  audience: [agent, human]
   basis:
-    kind: practice
+    kind: praktyka
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
 - id: šablon:web/comparison@1
@@ -496,11 +496,11 @@
     - *id003
     - subject:
       - comparison
-  status: active
+  status: užytak
   access: public
-  audience: both
+  audience: [agent, human]
   basis:
-    kind: practice
+    kind: praktyka
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
 - id: šablon:web/contacts@1
@@ -510,11 +510,11 @@
     - *id003
     - subject:
       - contacts
-  status: active
+  status: užytak
   access: public
-  audience: both
+  audience: [agent, human]
   basis:
-    kind: practice
+    kind: praktyka
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
 - id: šablon:web/dashboard@1
@@ -524,11 +524,11 @@
     - *id003
     - subject:
       - dashboard
-  status: active
+  status: užytak
   access: public
-  audience: both
+  audience: [agent, human]
   basis:
-    kind: practice
+    kind: praktyka
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
 - id: šablon:web/festival@1
@@ -538,11 +538,11 @@
     - *id003
     - subject:
       - festival
-  status: active
+  status: užytak
   access: public
-  audience: both
+  audience: [agent, human]
   basis:
-    kind: practice
+    kind: praktyka
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
 - id: šablon:web/gallery@1
@@ -552,11 +552,11 @@
     - *id003
     - subject:
       - gallery
-  status: active
+  status: užytak
   access: public
-  audience: both
+  audience: [agent, human]
   basis:
-    kind: practice
+    kind: praktyka
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
 - id: šablon:web/landing@1
@@ -566,11 +566,11 @@
     - *id003
     - subject:
       - landing
-  status: active
+  status: užytak
   access: public
-  audience: both
+  audience: [agent, human]
   basis:
-    kind: practice
+    kind: praktyka
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
 - id: šablon:web/pricing@1
@@ -580,11 +580,11 @@
     - *id003
     - subject:
       - pricing
-  status: active
+  status: užytak
   access: public
-  audience: both
+  audience: [agent, human]
   basis:
-    kind: practice
+    kind: praktyka
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
 - id: šablon:web/product@1
@@ -594,11 +594,11 @@
     - *id003
     - subject:
       - product
-  status: active
+  status: užytak
   access: public
-  audience: both
+  audience: [agent, human]
   basis:
-    kind: practice
+    kind: praktyka
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
 - id: šablon:web/service@1
@@ -608,11 +608,11 @@
     - *id003
     - subject:
       - service
-  status: active
+  status: užytak
   access: public
-  audience: both
+  audience: [agent, human]
   basis:
-    kind: practice
+    kind: praktyka
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
 - id: indeks:web/templates@1
@@ -621,11 +621,11 @@
     all:
     - *id003
     - subject: template
-  status: active
+  status: užytak
   access: public
-  audience: human
+  audience: [human]
   basis:
-    kind: practice
+    kind: praktyka
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
 - id: indeks:web/components@1
@@ -634,10 +634,10 @@
     all:
     - *id003
     - subject: component
-  status: active
+  status: užytak
   access: public
-  audience: human
+  audience: [human]
   basis:
-    kind: practice
+    kind: praktyka
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
