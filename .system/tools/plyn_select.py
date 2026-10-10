@@ -16,7 +16,7 @@ def parse(args):
 
 def load_mode(e):
     kind = e["id"].split(":")[0]
-    return e.get("load") or ("reference" if kind in ("tool", "check", "trigger") else "demand" if kind == "reference" else "content")
+    return e.get("load") or ("reference" if kind in ("prylada", "pravierka", "tryhier") else "demand" if kind == "daviednik" else "content")
 
 def excerpt(path, mode):
     text = path.read_text(errors="ignore") if path.is_file() else ""
@@ -30,8 +30,7 @@ def excerpt(path, mode):
 # Instructions before material: a kernel is never dropped; norms, conventions, methods and roles come before
 # templates, concepts and references. Within a tier, more specific first. (Found in ccf: by specificity alone,
 # large references pushed out the legal kernel and the methods under a tight budget.)
-TIER = {"jadro": 0, "norm": 1, "convention": 2, "method": 3, "role": 3, "task-type": 3, "quality-model": 4, "template": 4,
-        "concept": 5, "component": 5, "metric": 5, "package": 5, "benchmark-task": 5, "reference": 6, "example": 7}
+TIER = {"jadro": 0, "norma": 1, "kanviencyja": 2, "mietad": 3, "rolia": 3, "zadača.typ": 3, "jakasć.madel": 4, "šablon": 4, "kancept": 5, "kampanient": 5, "mietryka": 5, "pakiet": 5, "zadača.etalon": 5, "daviednik": 6, "pryklad": 7}
 
 RANK = {'public': 0, 'internal': 1, 'confidential': 2, 'client': 3}
 

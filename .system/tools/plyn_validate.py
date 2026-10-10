@@ -83,7 +83,7 @@ def main():
                 errors.append(f"elements.yaml: {e.get('id')}: malformed applies ({ex})")
     for e in elements:
         for r in (e.get("relations") or []) if isinstance(e, dict) else []:
-            if r.get("to") and re.sub(r"@.*$", "", r["to"]) not in known and ":" in r["to"] and r["to"].split(":")[0] in ("tool", "norm", "method", "check", "template"):
+            if r.get("to") and re.sub(r"@.*$", "", r["to"]) not in known and ":" in r["to"] and r["to"].split(":")[0] in ("prylada", "norma", "mietad", "pravierka", "šablon"):
                 errors.append(f"elements.yaml: {e.get('id')}: relation to unknown element {r['to']}")
     if manifest and isinstance(manifest, dict):
         for pid in manifest.get("provides", []):

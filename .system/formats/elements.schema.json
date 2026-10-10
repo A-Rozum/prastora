@@ -16,7 +16,7 @@
   "properties": {
    "id": {
     "type": "string",
-    "pattern": "^(jadro|norm|method|convention|concept|component|template|reference|example|quality-model|metric|role|task-type|handoff|trigger|tool|check|profile|resource|block|index|package|benchmark-task|spec|format):[a-z0-9.-]+/[a-z0-9-]+(@[0-9][0-9.]*)?$"
+    "pattern": "^(jadro|norma|mietad|kanviencyja|kancept|kampanient|šablon|daviednik|pryklad|jakasć\\.madel|mietryka|rolia|zadača\\.typ|pieradača|tryhier|prylada|pravierka|profiĺ|resurs|blok|indeks|pakiet|zadača\\.etalon|specyfikacyja|farmat):[a-z0-9.-]+/[a-z0-9-]+(@[0-9][0-9.]*)?$"
    },
    "path": {
     "type": "string"

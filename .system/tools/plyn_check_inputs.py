@@ -15,7 +15,7 @@ class Inputs(unittest.TestCase):
         self.write('system.yaml', {'id':'repo:fixture', 'kind':'project', 'access':'internal',
                                  'audience':'agent', 'description':'invented cases'})
         self.write('matters.yaml', [{'id':'a'}, {'id':'a.child'}, {'id':'b'}, {'id':'c'}])
-        self.elements = [self.element('method:legal/draft', 'draft.md', requires_inputs=['decision'])]
+        self.elements = [self.element('mietad:legal/draft', 'draft.md', requires_inputs=['decision'])]
         self.write('draft.md', 'Prepare a draft from the decision.')
         self.write('a.md', 'ALPHA_FACT')
         self.write('b.md', 'BETA_PRIVATE_FACT')
@@ -45,7 +45,7 @@ class Inputs(unittest.TestCase):
 
     def test_isolation_all_sections_before_read(self):
         for mode in ['content','head','demand','reference']:
-            self.elements.append(self.element('reference:legal/foreign-'+mode,'b.md',matter='b',load=mode))
+            self.elements.append(self.element('daviednik:legal/foreign-'+mode,'b.md',matter='b',load=mode))
         self.save(); self.validate()
         # Guard the reader as well as the output: no foreign file may even be excerpted.
         original = sel.excerpt
@@ -75,7 +75,7 @@ class Inputs(unittest.TestCase):
         self.elements[0]['applies']={'domain':'legal'}
         self.materials=[m for m in self.materials if m['matter']!='a']; self.save()
         text=self.compile('domain=legal','matter=a','budget=0')
-        self.assertIn('Missing inputs',text); self.assertIn('method:legal/draft: missing decision',text)
+        self.assertIn('Missing inputs',text); self.assertIn('mietad:legal/draft: missing decision',text)
         self.assertIn('Dropped by budget',text)
         self.assertNotIn('BETA_PRIVATE_FACT',text)
 
@@ -86,7 +86,7 @@ class Inputs(unittest.TestCase):
         self.assertNotIn('Missing inputs',self.compile('matter=a'))
 
     def test_exact_matter_identity(self):
-        self.elements.append(self.element('norm:legal/exact','a.md',matter='a',applies_when='exact'))
+        self.elements.append(self.element('norma:legal/exact','a.md',matter='a',applies_when='exact'))
         self.save()
         self.assertNotIn('ALPHA_FACT',self.compile('matter=a.child'))
         self.assertFalse(sel.evaluate({'matter':'a'},{'matter':'a.child'})[0])
@@ -112,7 +112,7 @@ class Inputs(unittest.TestCase):
         self.compile('matter=a',success=False)
 
     def test_global_alias_of_matter_material(self):
-        self.elements.append(self.element('reference:legal/unscoped','a.md'));self.save()
+        self.elements.append(self.element('daviednik:legal/unscoped','a.md'));self.save()
         self.validate(success=False);self.compile('matter=a',success=False)
 
     def test_client_element_needs_matter(self):
@@ -149,7 +149,7 @@ class Inputs(unittest.TestCase):
         (pkg / 'norm.md').write_text('PACKAGE_NORM')
         (pkg / 'kernel.md').write_text('PACKAGE_KERNEL_FOR_ITS_OWN_REPO')
         (pkg / 'elements.yaml').write_text(yaml.safe_dump([
-            {'id':'norm:legal/pkg-norm@1','path':'norm.md','applies':{'domain':'legal'},'status':'trial','access':'internal','audience':'agent'},
+            {'id':'norma:legal/pkg-norm@1','path':'norm.md','applies':{'domain':'legal'},'status':'trial','access':'internal','audience':'agent'},
             {'id':'jadro:legal/pkg-kernel@1','path':'AGENTS.md','applies':{'always':True},'status':'trial','access':'internal','audience':'agent'}]))
         (pkg / 'AGENTS.md').write_text('PACKAGE_KERNEL_FOR_ITS_OWN_REPO')
         man = yaml.safe_load((self.repo/'system.yaml').read_text())

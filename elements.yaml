@@ -27,7 +27,7 @@
     kind: decided
     date: '2026-10-07'
     ref: accepted by the user during migration
-- id: norm:web/js-only-where-needed@1
+- id: norma:web/js-only-where-needed@1
   path: norms/js-only-where-needed.md
   applies:
     all:
@@ -41,7 +41,7 @@
     kind: practice
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
-- id: norm:web.css/css-layering@1
+- id: norma:web.css/css-layering@1
   path: norms/css-layering.md
   applies:
     all:
@@ -54,7 +54,7 @@
     kind: practice
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
-- id: norm:web/html-placement@1
+- id: norma:web/html-placement@1
   path: norms/html-placement.md
   applies:
     all:
@@ -69,7 +69,7 @@
     kind: practice
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
-- id: norm:web/copy-voice@1
+- id: norma:web/copy-voice@1
   path: norms/copy-voice.md
   applies:
     all:
@@ -84,7 +84,7 @@
     kind: practice
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
-- id: norm:web/template-shared-elements@1
+- id: norma:web/template-shared-elements@1
   path: norms/template-shared-elements.md
   applies:
     all:
@@ -101,7 +101,7 @@
     kind: practice
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
-- id: norm:web/mascot@1
+- id: norma:web/mascot@1
   path: norms/mascot.md
   applies:
     all:
@@ -117,7 +117,7 @@
     kind: practice
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
-- id: norm:web/current-only@1
+- id: norma:web/current-only@1
   path: norms/current-only.md
   applies:
     all:
@@ -130,12 +130,12 @@
   audience: agent
   relations:
   - rel: derived_from
-    to: spec:standard/principles
+    to: specyfikacyja:standard/principles
   basis:
     kind: practice
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
-- id: method:web/experiments-first@1
+- id: mietad:web/experiments-first@1
   path: methods/experiments-first.md
   applies:
     all:
@@ -150,7 +150,7 @@
     kind: practice
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
-- id: method:web.css/inventory-first@1
+- id: mietad:web.css/inventory-first@1
   path: methods/inventory-first.md
   applies:
     all:
@@ -163,12 +163,12 @@
   audience: agent
   relations:
   - rel: achieved_by
-    to: norm:web.css/css-layering
+    to: norma:web.css/css-layering
   basis:
     kind: practice
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
-- id: method:web/visual-checks@1
+- id: mietad:web/visual-checks@1
   path: methods/visual-checks.md
   applies:
     all:
@@ -183,7 +183,7 @@
     kind: practice
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
-- id: tool:web/check@1
+- id: prylada:web/check@1
   path: check.py
   applies:
     all:
@@ -199,7 +199,7 @@
     kind: practice
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
-- id: tool:web/snap@1
+- id: prylada:web/snap@1
   path: tools/snap.py
   applies:
     all:
@@ -214,7 +214,7 @@
     kind: practice
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
-- id: tool:web/thumbs@1
+- id: prylada:web/thumbs@1
   path: tools/thumbs.py
   applies:
     all:
@@ -227,7 +227,7 @@
     kind: practice
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
-- id: tool:web/reader@1
+- id: prylada:web/reader@1
   path: tools/reader.py
   applies:
     all:
@@ -242,7 +242,7 @@
     kind: practice
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
-- id: component:web.css/commerce@1
+- id: kampanient:web.css/commerce@1
   path: css/components/commerce.css
   applies:
     all:
@@ -258,7 +258,7 @@
     kind: practice
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
-- id: component:web.css/consent@1
+- id: kampanient:web.css/consent@1
   path: css/components/consent.css
   applies:
     all:
@@ -274,7 +274,7 @@
     kind: practice
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
-- id: component:web.css/content@1
+- id: kampanient:web.css/content@1
   path: css/components/content.css
   applies:
     all:
@@ -290,7 +290,7 @@
     kind: practice
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
-- id: component:web.css/data@1
+- id: kampanient:web.css/data@1
   path: css/components/data.css
   applies:
     all:
@@ -306,7 +306,7 @@
     kind: practice
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
-- id: component:web.css/forms@1
+- id: kampanient:web.css/forms@1
   path: css/components/forms.css
   applies:
     all:
@@ -322,7 +322,7 @@
     kind: practice
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
-- id: component:web.css/gallery@1
+- id: kampanient:web.css/gallery@1
   path: css/components/gallery.css
   applies:
     all:
@@ -338,7 +338,7 @@
     kind: practice
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
-- id: component:web.css/maps@1
+- id: kampanient:web.css/maps@1
   path: css/components/maps.css
   applies:
     all:
@@ -354,7 +354,7 @@
     kind: practice
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
-- id: component:web.css/navigation@1
+- id: kampanient:web.css/navigation@1
   path: css/components/navigation.css
   applies:
     all:
@@ -370,7 +370,7 @@
     kind: practice
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
-- id: component:web.css/utility@1
+- id: kampanient:web.css/utility@1
   path: css/components/utility.css
   applies:
     all:
@@ -386,7 +386,7 @@
     kind: practice
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
-- id: convention:web.css/theme-comparison@1
+- id: kanviencyja:web.css/theme-comparison@1
   path: css/themes/comparison.css
   applies:
     all:
@@ -401,7 +401,7 @@
     kind: practice
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
-- id: convention:web.css/theme-deco@1
+- id: kanviencyja:web.css/theme-deco@1
   path: css/themes/deco.css
   applies:
     all:
@@ -416,7 +416,7 @@
     kind: practice
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
-- id: convention:web.css/theme-default@1
+- id: kanviencyja:web.css/theme-default@1
   path: css/themes/default.css
   applies:
     all:
@@ -431,7 +431,7 @@
     kind: practice
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
-- id: convention:web.css/theme-festival@1
+- id: kanviencyja:web.css/theme-festival@1
   path: css/themes/festival.css
   applies:
     all:
@@ -446,7 +446,7 @@
     kind: practice
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
-- id: convention:web.css/theme-press@1
+- id: kanviencyja:web.css/theme-press@1
   path: css/themes/press.css
   applies:
     all:
@@ -461,7 +461,7 @@
     kind: practice
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
-- id: template:web/article@1
+- id: šablon:web/article@1
   path: templates/article.html
   applies:
     all:
@@ -475,7 +475,7 @@
     kind: practice
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
-- id: template:web/checkout@1
+- id: šablon:web/checkout@1
   path: templates/checkout.html
   applies:
     all:
@@ -489,7 +489,7 @@
     kind: practice
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
-- id: template:web/comparison@1
+- id: šablon:web/comparison@1
   path: templates/comparison.html
   applies:
     all:
@@ -503,7 +503,7 @@
     kind: practice
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
-- id: template:web/contacts@1
+- id: šablon:web/contacts@1
   path: templates/contacts.html
   applies:
     all:
@@ -517,7 +517,7 @@
     kind: practice
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
-- id: template:web/dashboard@1
+- id: šablon:web/dashboard@1
   path: templates/dashboard.html
   applies:
     all:
@@ -531,7 +531,7 @@
     kind: practice
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
-- id: template:web/festival@1
+- id: šablon:web/festival@1
   path: templates/festival.html
   applies:
     all:
@@ -545,7 +545,7 @@
     kind: practice
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
-- id: template:web/gallery@1
+- id: šablon:web/gallery@1
   path: templates/gallery.html
   applies:
     all:
@@ -559,7 +559,7 @@
     kind: practice
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
-- id: template:web/landing@1
+- id: šablon:web/landing@1
   path: templates/landing.html
   applies:
     all:
@@ -573,7 +573,7 @@
     kind: practice
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
-- id: template:web/pricing@1
+- id: šablon:web/pricing@1
   path: templates/pricing.html
   applies:
     all:
@@ -587,7 +587,7 @@
     kind: practice
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
-- id: template:web/product@1
+- id: šablon:web/product@1
   path: templates/product.html
   applies:
     all:
@@ -601,7 +601,7 @@
     kind: practice
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
-- id: template:web/service@1
+- id: šablon:web/service@1
   path: templates/service.html
   applies:
     all:
@@ -615,7 +615,7 @@
     kind: practice
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
-- id: index:web/templates@1
+- id: indeks:web/templates@1
   path: templates/index.html
   applies:
     all:
@@ -628,7 +628,7 @@
     kind: practice
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
-- id: index:web/components@1
+- id: indeks:web/components@1
   path: components/index.html
   applies:
     all:
