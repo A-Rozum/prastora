@@ -3,6 +3,12 @@ Matter ids and material kinds are opaque: exact match, no hierarchy or transitiv
 import json, pathlib, datetime, yaml
 from jsonschema import Draft202012Validator
 
+def _default_formats():
+    """formats next to tools (vendored .system in a project), else the vendored standard of the tools repository."""
+    base = pathlib.Path(__file__).resolve().parent.parent
+    return base / "formats" if (base / "formats").is_dir() else base / ".system" / "formats"
+
+
 def plain(value):
     if isinstance(value, (datetime.date, datetime.datetime)): return value.isoformat()
     if isinstance(value, dict): return {k: plain(v) for k, v in value.items()}
@@ -24,7 +30,7 @@ def checked_path(repo, name):
 
 def inventory(repo, elements, formats=None, require_files=False):
     """Validate boundaries before any element/material content is read; missing files may be inputs to request."""
-    formats = formats or pathlib.Path(__file__).resolve().parent.parent / 'formats'
+    formats = formats or _default_formats()
     matters, materials = read(repo, 'matters.yaml'), read(repo, 'materials.yaml')
     for name, data, schema in [('matters.yaml', matters, 'matters.schema.json'),
                                ('materials.yaml', materials, 'materials.schema.json'),

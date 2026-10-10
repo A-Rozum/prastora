@@ -130,7 +130,7 @@
   audience: agent
   relations:
   - rel: derived_from
-    to: spec:core/principles
+    to: spec:standard/principles
   basis:
     kind: practice
     date: '2026-10-07'

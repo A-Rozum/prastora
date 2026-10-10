@@ -1,14 +1,17 @@
-id: repo:prastora
+id: a-rozum:prastora
 kind: package
 access: public
 audience: both
-description: Prastora — CSS toolkit for layouts that scale as a whole; a package of
-  web elements (core, components, themes, templates) with demo sites.
+description: Prastora — CSS toolkit for layouts that scale as a whole; a package of web elements (core, components, themes, templates) with demo sites.
 packages:
-- id: repo:system
-  version: v0.7.1 (b502e5a)
-  repo: A-Rozum/system
+- id: plyn:standard
+  version: v0.8.0
+  repo: A-Rozum/plyn-standard
   path: .system
+- id: plyn:tools
+  version: v0.8.0
+  repo: A-Rozum/plyn-tools
+  path: .system/tools
 artifacts:
 - '*.html'
 - assets/**

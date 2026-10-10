@@ -1,13 +1,13 @@
 """Compile the context for one task into .context/task.md — a vendor-neutral bundle any agent environment can read
 (Claude Code via CLAUDE.md → AGENTS.md, Codex and OpenCode via AGENTS.md, a chat by uploading the file).
-Usage: python tools/pn_compile.py [repo_dir] domain=… task_kind=… [subject=…] [budget=…]
+Usage: python tools/plyn_compile.py [repo_dir] domain=… task_kind=… [subject=…] [budget=…]
 The bundle holds: task facets, open tasks from state.yaml, selected elements most specific first (content or head),
 tools by reference, elements dropped by budget, and the fallback note if nothing normative matched."""
 import sys, pathlib, datetime, yaml
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
-import pn_select as _sel
+import plyn_select as _sel
 parse, select = _sel.parse, _sel.select
-from pn_inputs import read, inventory, allowed_matters, in_scope, available_materials, missing_inputs
+from plyn_inputs import read, inventory, allowed_matters, in_scope, available_materials, missing_inputs
 
 def main():
     # A failed compile must not leave a stale bundle from another task.
@@ -21,7 +21,7 @@ def main():
     missing = missing_inputs(_sel.eligible(repo, task), available)
     chosen, skipped, normative = select(repo, task, budget)
     out = [f"# Context for the current task", "",
-           f"Compiled {datetime.datetime.now(datetime.timezone.utc):%Y-%m-%d %H:%M} UTC by tools/pn_compile.py. Facets: " +
+           f"Compiled {datetime.datetime.now(datetime.timezone.utc):%Y-%m-%d %H:%M} UTC by tools/plyn_compile.py. Facets: " +
            ", ".join(f"{k}={v}" for k, v in task.items()) + ".",
            "Read this file instead of browsing the repository. More specific elements come first and override general ones; the kernel's invariants are never overridden.", ""]
     if missing:

@@ -1,7 +1,13 @@
 """Validate a repository against the system formats: system.yaml, elements.yaml, state.yaml (if present).
-Usage: python tools/pn_validate.py [repo_dir] [--formats DIR]. Exit 0 = valid. First executable part of the kernel."""
+Usage: python tools/plyn_validate.py [repo_dir] [--formats DIR]. Exit 0 = valid. Reference implementation of the Plyń standard."""
 import sys, json, pathlib, re, yaml
 from jsonschema import Draft202012Validator
+
+def _default_formats():
+    """formats next to tools (vendored .system in a project), else the vendored standard of the tools repository."""
+    base = pathlib.Path(__file__).resolve().parent.parent
+    return base / "formats" if (base / "formats").is_dir() else base / ".system" / "formats"
+
 
 def _plain(x):
     """YAML turns 2026-10-07 into a date object; schemas expect ISO strings."""
@@ -17,7 +23,7 @@ def _plain(x):
 def main():
     args = [a for a in sys.argv[1:] if not a.startswith("--")]
     repo = pathlib.Path(args[0] if args else ".").resolve()
-    fdir = pathlib.Path(sys.argv[sys.argv.index("--formats") + 1]) if "--formats" in sys.argv else pathlib.Path(__file__).resolve().parent.parent / "formats"
+    fdir = pathlib.Path(sys.argv[sys.argv.index("--formats") + 1]) if "--formats" in sys.argv else _default_formats()
     errors, warnings = [], []
     def check(file, schema):
         p = repo / file
@@ -33,7 +39,7 @@ def main():
         errors.append("system.yaml: missing")
     elements = check("elements.yaml", "elements.schema.json") or []
     check("state.yaml", "state.schema.json")
-    from pn_inputs import inventory
+    from plyn_inputs import inventory
     try:
         matters, materials = inventory(repo, elements, fdir, require_files=True)
         st = _plain(yaml.safe_load((repo / 'state.yaml').read_text())) if (repo / 'state.yaml').exists() else {}
@@ -62,7 +68,7 @@ def main():
     vocab_file = fdir.parent / "vocabulary" / "facets.yaml"
     if vocab_file.exists():
         sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
-        from pn_facets import conds
+        from plyn_facets import conds
         vocab = yaml.safe_load(vocab_file.read_text())
         for e in elements:
             if not isinstance(e, dict) or not isinstance(e.get("applies"), dict):

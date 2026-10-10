@@ -1,9 +1,9 @@
 """Select elements applicable to a task (first part of the context assembler).
-Usage: python tools/pn_select.py [repo_dir] domain=legal.interpol task_kind=drafting [subject=...] [budget=8000]"""
+Usage: python tools/plyn_select.py [repo_dir] domain=legal.interpol task_kind=drafting [subject=...] [budget=8000]"""
 import sys, pathlib, yaml
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
-from pn_facets import evaluate, conds
-from pn_inputs import read, inventory, allowed_matters, in_scope
+from plyn_facets import evaluate, conds
+from plyn_inputs import read, inventory, allowed_matters, in_scope
 
 def parse(args):
     repo = pathlib.Path(args[0]) if args and "=" not in args[0] else pathlib.Path(".")
