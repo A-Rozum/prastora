@@ -61,9 +61,15 @@ def main():
             page.goto(base + 'templates/expertise-experts.html')
             page.locator('[data-consent-reject]').click()
             assert page.locator('[data-expert-card]:visible').count() == 6
+            page.locator('select[name=country]').select_option('russia')
+            assert page.locator('[data-expert-card]:visible').count() == 1
+            expect(page.locator('#expert-krivoi')).to_be_visible()
+            page.locator('select[name=topic]').select_option('sanctions')
+            expect(page.locator('#expert-krivoi')).to_be_visible()
+            page.locator('#directory-reset').click()
             page.locator('select[name=country]').select_option('regional')
             assert page.locator('[data-expert-card]:visible').count() == 1
-            page.get_by_role('link', name='Профиль и CV').click()
+            page.get_by_role('link', name='Профиль эксперта').click()
             expect(page.locator('#focus-regional')).to_be_checked()
             expect(page.locator('#evidence-regional')).to_be_visible()
             page.goto(base + 'templates/expertise-experts.html?topic=interpol#directory')
@@ -90,6 +96,8 @@ def main():
             page.locator('label[for=focus-regional]').click()
             expect(page.locator('#evidence-regional')).to_be_visible()
             assert page.locator('a[href^="mailto:"]').count() == 1
+            assert page.locator('a[href$=".pdf"]').count() == 0
+            assert not list((ROOT / 'assets/expertise').glob('*.pdf'))
             page.locator('.desktop-nav .nav-dropdown > summary').first.click()
             expect(page.locator('.desktop-nav').get_by_role('link', name='Правовые заключения', exact=True)).to_be_visible()
             page.goto(base + 'templates/expertise-experts.html')
