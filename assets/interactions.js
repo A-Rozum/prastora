@@ -1,6 +1,7 @@
 /* Persistent local UI preferences. No trackers or third-party requests. */
 (() => {
   const root = document.documentElement;
+  const russian = root.lang === 'ru';
   const read = (store, key) => {
     try { return window[store].getItem(key); } catch { return null; }
   };
@@ -14,7 +15,7 @@
     const preference = matchMedia('(prefers-color-scheme: dark)');
     const isDark = () => root.dataset.scheme ? root.dataset.scheme === 'dark' : preference.matches;
     const describe = () => {
-      const label = `Switch to ${isDark() ? 'light' : 'dark'} theme`;
+      const label = russian ? `Включить ${isDark() ? 'светлую' : 'тёмную'} тему` : `Switch to ${isDark() ? 'light' : 'dark'} theme`;
       themeButton.setAttribute('aria-label', label);
       themeButton.title = label;
     };
@@ -85,7 +86,7 @@
       consent.hidden = true;
       settings.hidden = true;
       settingsButton.setAttribute('aria-expanded', 'false');
-      status.textContent = analytics || marketing ? 'Cookie preference selected.' : 'Necessary only selected.';
+      status.textContent = russian ? (analytics || marketing ? 'Настройки cookies сохранены.' : 'Выбраны только необходимые cookies.') : (analytics || marketing ? 'Cookie preference selected.' : 'Necessary only selected.');
       measure();
       focusWithoutScroll(target);
     };
@@ -112,6 +113,22 @@
     measure();
   }
 })();
+
+// Native details menus keep their keyboard behavior; add Escape and outside-click dismissal.
+const dropdowns = [...document.querySelectorAll('.nav-dropdown')];
+document.addEventListener('keydown', event => {
+  if (event.key !== 'Escape') return;
+  const opened = dropdowns.filter(menu => menu.open && menu.getClientRects().length);
+  if (!opened.length) return;
+  opened.forEach(menu => { menu.open = false; });
+  opened.at(-1).querySelector('summary').focus();
+});
+document.addEventListener('pointerdown', event => {
+  dropdowns.forEach(menu => { if (!menu.contains(event.target)) menu.open = false; });
+});
+document.querySelectorAll('.mobile-nav nav a').forEach(link => {
+  link.addEventListener('click', () => { link.closest('.mobile-nav').open = false; });
+});
 
 // Print button: shown only when scripts run, since printing needs window.print().
 document.querySelectorAll('[data-print]').forEach(button => {

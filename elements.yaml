@@ -641,3 +641,55 @@
     kind: praktyka
     date: '2026-10-07'
     ref: migration to system standard; basis = practice of the project before migration
+- id: kanviencyja:web.css/theme-expertise@1
+  path: css/themes/expertise.css
+  applies:
+    all:
+    - domain: web.css
+    - subject: expertise
+  status: proba
+  access: public
+  audience: [agent, human]
+  basis:
+    kind: rašennie
+    date: '2026-10-11'
+    ref: User requested a real-site Prastora example in GitHub
+- id: prylada:web/expertise-check@1
+  path: tools/test_expertise.py
+  applies:
+    all:
+    - domain: web
+    - subject: expertise
+  status: proba
+  access: public
+  audience: [agent]
+  basis:
+    kind: rašennie
+    date: '2026-10-11'
+    ref: Validate the real-site example across framework regimes and visitor journeys
+- id: šablon:web/expertise@1
+  path: templates/expertise.html
+  applies:
+    all:
+    - domain: web
+    - subject: expertise
+  status: proba
+  access: public
+  audience: [agent, human]
+  basis:
+    kind: rašennie
+    date: '2026-10-11'
+    ref: User requested a real-site Prastora example in GitHub
+- id: šablon:web/expertise-experts@1
+  path: templates/expertise-experts.html
+  applies:
+    all:
+    - domain: web
+    - subject: expertise
+  status: proba
+  access: public
+  audience: [agent, human]
+  basis:
+    kind: rašennie
+    date: '2026-10-11'
+    ref: User requested a real-site Prastora example in GitHub

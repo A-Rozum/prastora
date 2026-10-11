@@ -1,0 +1,53 @@
+name: check expertise
+on:
+  push:
+    branches: ['agent/codex/**']
+    paths:
+      - 'templates/expertise*.html'
+      - 'css/pages/expertise.css'
+      - 'css/themes/expertise.css'
+      - 'css/components/navigation.css'
+      - 'assets/expertise.js'
+      - 'assets/interactions.js'
+      - 'tools/test_expertise.py'
+      - '.github/workflows/check-expertise.yml'
+permissions:
+  contents: read
+  statuses: write
+jobs:
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -q playwright pillow pyyaml jsonschema
+      - run: python -m playwright install --with-deps chromium
+      - name: Check the static site and visitor journeys
+        id: test
+        run: |
+          python3 check.py
+          python3 .system/tools/plyn_validate.py . --formats .system/formats
+          node --check assets/expertise.js
+          node --check assets/interactions.js
+          python3 tools/test_expertise.py
+          python3 tools/snap.py base --pages templates/expertise templates/expertise-experts --regimes mobile desktop wide narrow short sideways --dark
+          python3 tools/thumbs.py expertise
+          python3 tools/reader.py templates/expertise templates/expertise-experts
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: expertise-browser-check
+          path: |
+            .snap/base
+            assets/templates/expertise.webp
+      - name: Post the result on the commit
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          OUTCOME: ${{ steps.test.outcome }}
+        run: |
+          if [ "$OUTCOME" = "success" ]; then state=success; else state=failure; fi
+          gh api repos/${{ github.repository }}/statuses/${{ github.sha }} -f state="$state" -f context=check/expertise -f description="Expertise layout and visitor journeys" -f target_url="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" > /dev/null
