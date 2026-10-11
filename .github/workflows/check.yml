@@ -1,0 +1,33 @@
+name: check
+on:
+  push:
+    branches: ['agent/codex/**']
+permissions:
+  contents: read
+  statuses: write
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate the branch
+        id: v
+        run: |
+          set +e
+          if [ -f .system/tools/plyn_validate.py ] || [ -f tools/plyn_validate.py ]; then
+            pip install -q pyyaml jsonschema
+            v=.system/tools/plyn_validate.py; [ -f tools/plyn_validate.py ] && v=tools/plyn_validate.py
+            f=.system/formats; [ -d formats ] && f=formats
+            python "$v" . --formats "$f" > /tmp/out 2>&1; code=$?
+          else echo "No validator in this repository" > /tmp/out; code=0; fi
+          cat /tmp/out
+          echo "code=$code" >> "$GITHUB_OUTPUT"
+          grep -m1 ERROR /tmp/out | cut -c1-130 > /tmp/first || true
+      - name: Post the result on the commit
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ "${{ steps.v.outputs.code }}" = "0" ]; then state=success; desc="Checks passed"; else state=failure; desc="$(cat /tmp/first)"; [ -n "$desc" ] || desc="Checks failed"; fi
+          gh api repos/${{ github.repository }}/statuses/${{ github.sha }} -f state=$state -f context=check -f description="$desc" -f target_url="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" > /dev/null
