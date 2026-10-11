@@ -4,7 +4,7 @@
   h1, h2, .expert-name, .panel-title { font-family: var(--serif); font-weight: 400; letter-spacing: -.035em; }
   h2 { font-size: 4.5rem; }
   a { text-decoration-thickness: .1rem; }
-  .brand-mark { inline-size: 3.6rem; block-size: 3.6rem; border: .1rem solid currentColor; border-inline-end: .05rem dashed currentColor; display: inline-flex; justify-content: flex-end; align-items: center; padding-inline-end: .15rem; font-family: var(--serif); font-size: 2.5rem; line-height: 1; }
+  .brand-mark { inline-size: 3.6rem; block-size: 3.6rem; border: .1rem solid currentColor; border-inline-end: .05rem dashed currentColor; display: inline-flex; justify-content: flex-end; align-items: center; padding-inline-end: 0; letter-spacing: -.1rem; font-family: var(--serif); font-size: 2.5rem; line-height: 1; }
   .brand-word { font-family: var(--serif); font-size: 2.5rem; letter-spacing: -.04em; line-height: 1; }
   .hero-layout { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 5rem; align-items: stretch; }
   .hero-copy { display: flex; flex-direction: column; align-items: start; gap: 2.5rem; padding-block: 1.5rem; }
@@ -73,7 +73,7 @@
   .footer-copy { font-size: var(--small-size); }
 
   .brand { gap: 0; align-items: baseline; }
-  .brand-mark { margin-inline-end: .05rem; font-weight: 400; }
+  .brand-mark { margin-inline-end: -.08rem; font-weight: 400; }
   .brand-word span { color: var(--warm); }
   .eyebrow { font-family: var(--font); font-weight: 500; letter-spacing: .1em; line-height: 1.5; }
   .intro-strip h2 { font-size: 3.1rem; letter-spacing: 0; }
