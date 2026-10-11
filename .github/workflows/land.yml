@@ -4,41 +4,48 @@ on:
     branches: ['agent/codex/**']
 permissions:
   contents: write
+  statuses: write
 concurrency:
   group: land-${{ github.ref }}
   cancel-in-progress: true
 jobs:
   land:
+    if: contains(github.event.head_commit.message, '[ready]')
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
-      - name: Wait until the agent stops writing to the branch
-        run: sleep 45
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.event.repository.default_branch }}
           fetch-depth: 0
           token: ${{ secrets.LAND_TOKEN }}
       - name: Land the branch on the default branch with Codex as author
+        id: land
         env:
           BRANCH: ${{ github.ref_name }}
           MAIN: ${{ github.event.repository.default_branch }}
         run: |
           git fetch -q origin "$BRANCH" 2>/dev/null || { echo "Branch already landed"; exit 0; }
           base=$(git merge-base "origin/$MAIN" "origin/$BRANCH")
-          if [ "$(git rev-parse "origin/$BRANCH")" = "$base" ]; then echo "Nothing written yet"; exit 0; fi
-          git log --reverse --format=%B "$base..origin/$BRANCH" | grep -v '^Co-authored-by:' | sed '/^\s*$/d' | awk '!seen[$0]++' | sed '1a\\' > /tmp/msg
+          git log --reverse --format=%B "$base..origin/$BRANCH" | grep -v '^Co-authored-by:' | sed 's/ *\[ready\]//' | sed '/^\s*$/d' | awk '!seen[$0]++' | sed '1a\\' > /tmp/msg
           [ -s /tmp/msg ] || echo "Changes by Codex" > /tmp/msg
-          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" merge --squash "origin/$BRANCH"
+          bot=(-c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com")
+          if ! git "${bot[@]}" merge --squash "origin/$BRANCH" > /tmp/out 2>&1; then echo "Conflicts with the default branch" > /tmp/why; cat /tmp/out; exit 1; fi
           if ! git diff --cached --quiet; then
-            git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
-              commit -q --author="Codex <codex@openai.com>" -F /tmp/msg
+            git "${bot[@]}" commit -q --author="Codex <codex@openai.com>" -F /tmp/msg
             if [ -f .system/tools/plyn_validate.py ] || [ -f tools/plyn_validate.py ]; then
               pip install -q pyyaml jsonschema
               v=.system/tools/plyn_validate.py; [ -f tools/plyn_validate.py ] && v=tools/plyn_validate.py
               f=.system/formats; [ -d formats ] && f=formats
-              python "$v" . --formats "$f" || { echo "Validation failed: branch kept, nothing landed"; exit 1; }
+              python "$v" . --formats "$f" > /tmp/out 2>&1 || { echo "Checks fail together with the default branch" > /tmp/why; cat /tmp/out; exit 1; }
             fi
             git push -q origin "HEAD:$MAIN"
           fi
           git push -q origin --delete "$BRANCH"
+      - name: Post the landing result on the commit
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ "${{ steps.land.outcome }}" = "success" ]; then state=success; desc="Landed"; else state=failure; desc="Not landed: $(cat /tmp/why 2>/dev/null || echo error)"; fi
+          gh api repos/${{ github.repository }}/statuses/${{ github.sha }} -f state=$state -f context=land -f description="$desc" > /dev/null
