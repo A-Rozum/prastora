@@ -30,17 +30,23 @@ jobs:
           git log --reverse --format=%B "$base..origin/$BRANCH" | grep -v '^Co-authored-by:' | sed 's/ *\[ready\]//' | sed '/^\s*$/d' | awk '!seen[$0]++' | sed '1a\\' > /tmp/msg
           [ -s /tmp/msg ] || echo "Changes by Codex" > /tmp/msg
           bot=(-c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com")
-          if ! git "${bot[@]}" merge --squash "origin/$BRANCH" > /tmp/out 2>&1; then echo "Conflicts with the default branch" > /tmp/why; cat /tmp/out; exit 1; fi
-          if ! git diff --cached --quiet; then
+          landed=""
+          for attempt in 1 2 3; do
+            git fetch -q origin "$MAIN" && git reset -q --hard "origin/$MAIN"
+            if ! git "${bot[@]}" merge --squash "origin/$BRANCH" > /tmp/out 2>&1; then echo "Conflicts with the default branch" > /tmp/why; cat /tmp/out; exit 1; fi
+            if git diff --cached --quiet; then landed=yes; break; fi
             git "${bot[@]}" commit -q --author="Codex <codex@openai.com>" -F /tmp/msg
+            if [ -f system.yaml ] && [ ! -f .system/tools/plyn_validate.py ] && [ ! -f tools/plyn_validate.py ]; then echo "Validator expected but missing" > /tmp/why; exit 1; fi
             if [ -f .system/tools/plyn_validate.py ] || [ -f tools/plyn_validate.py ]; then
               pip install -q pyyaml jsonschema
               v=.system/tools/plyn_validate.py; [ -f tools/plyn_validate.py ] && v=tools/plyn_validate.py
               f=.system/formats; [ -d formats ] && f=formats
               python "$v" . --formats "$f" > /tmp/out 2>&1 || { echo "Checks fail together with the default branch" > /tmp/why; cat /tmp/out; exit 1; }
             fi
-            git push -q origin "HEAD:$MAIN"
-          fi
+            if git push -q origin "HEAD:$MAIN"; then landed=yes; break; fi
+            sleep $((attempt * 10))
+          done
+          [ -n "$landed" ] || { echo "The default branch kept moving; push rejected three times" > /tmp/why; exit 1; }
           git push -q origin --delete "$BRANCH"
       - name: Post the landing result on the commit
         if: always()
