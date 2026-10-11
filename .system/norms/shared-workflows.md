@@ -1,0 +1,1 @@
+The workflows check.yml and land.yml come from A-Rozum/plyn-tools/workflows and are replaced at every release. A project adds its own checks as .github/workflows/check-<name>.yml that post the commit status check/<name>; landing waits for them.

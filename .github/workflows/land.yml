@@ -19,6 +19,23 @@ jobs:
           ref: ${{ github.event.repository.default_branch }}
           fetch-depth: 0
           token: ${{ secrets.LAND_TOKEN }}
+      - name: Wait for every check on the commit (check, and check/<name> from check-<name>.yml)
+        id: wait
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          expected="check"
+          for f in .github/workflows/check-*.yml; do [ -e "$f" ] || continue; n=$(basename "$f" .yml); expected="$expected check/${n#check-}"; done
+          for attempt in $(seq 1 60); do
+            pending=""
+            for c in $expected; do
+              st=$(gh api repos/${{ github.repository }}/commits/${{ github.sha }}/status --jq "[.statuses[] | select(.context == \"$c\")][0].state // \"pending\"")
+              case "$st" in failure|error) echo "Check $c failed" > /tmp/why; exit 1 ;; success) ;; *) pending="$pending $c" ;; esac
+            done
+            [ -z "$pending" ] && exit 0
+            sleep 10
+          done
+          echo "Checks did not finish:$pending" > /tmp/why; exit 1
       - name: Land the branch on the default branch with Codex as author
         id: land
         env:
