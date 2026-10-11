@@ -20,6 +20,7 @@ jobs:
             v=.system/tools/plyn_validate.py; [ -f tools/plyn_validate.py ] && v=tools/plyn_validate.py
             f=.system/formats; [ -d formats ] && f=formats
             python "$v" . --formats "$f" > /tmp/out 2>&1; code=$?
+          elif [ -f system.yaml ]; then echo "ERROR Validator expected but missing (.system/tools/plyn_validate.py)" > /tmp/out; code=1
           else echo "No validator in this repository" > /tmp/out; code=0; fi
           cat /tmp/out
           echo "code=$code" >> "$GITHUB_OUTPUT"
