@@ -25,7 +25,7 @@ def main():
            ", ".join(f"{k}={v}" for k, v in task.items()) + ".",
            "Read this file instead of browsing the repository. More specific elements come first and override general ones; jadro.invaryjant is never overridden.", "",
            "Plyń grows by need: add or change an element, rule, term, file or repository when the work needs it, not in advance.",
-           "Service texts state what to do and what is needed to do it; a prohibition only where the prohibited action would otherwise be the default; no discussion history, check dates, reasoning or facts one command retrieves.", ""]
+           "Service texts state what to do and what is needed to do it, only where it differs from what an agent already does reliably; a prohibition only where the prohibited action would otherwise be the default; no discussion history, check dates, reasoning or facts one command retrieves.", ""]
     if missing:
         out += ['## Missing inputs', '',
                 'Report these to the user before relying on them. How to proceed without them (wait, search, work on the client\'s account with marked uncertainty, draft but not file) is the user\'s decision, given in the task.', '']
