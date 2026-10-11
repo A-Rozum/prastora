@@ -4,8 +4,8 @@
   h1, h2, .expert-name, .panel-title { font-family: var(--serif); font-weight: 400; letter-spacing: -.035em; }
   h2 { font-size: 4.5rem; }
   a { text-decoration-thickness: .1rem; }
-  .brand-mark { inline-size: 3.6rem; block-size: 3.6rem; border: .1rem solid currentColor; display: grid; place-items: center; font-family: var(--serif); font-size: 2.5rem; }
-  .brand-word { font-family: var(--serif); font-size: 2.5rem; letter-spacing: -.04em; }
+  .brand-mark { inline-size: 3.6rem; block-size: 3.6rem; border: .1rem solid currentColor; display: inline-flex; justify-content: flex-end; align-items: center; padding-inline-end: .15rem; font-family: var(--serif); font-size: 2.5rem; line-height: 1; }
+  .brand-word { font-family: var(--serif); font-size: 2.5rem; letter-spacing: -.04em; line-height: 1; }
   .hero-layout { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 5rem; align-items: stretch; }
   .hero-copy { display: flex; flex-direction: column; align-items: start; gap: 2.5rem; padding-block: 1.5rem; }
   .hero-copy h1 { font-size: 6.6rem; line-height: 1.04; }
@@ -72,7 +72,7 @@
   .site-footer { padding: 3rem var(--space-inline); display: flex; flex-wrap: wrap; justify-content: space-between; align-items: start; gap: 2rem; border-block-start: .1rem solid var(--line); }
   .footer-copy { font-size: var(--small-size); }
 
-  .brand { gap: 0; }
+  .brand { gap: 0; align-items: baseline; }
   .brand-mark { margin-inline-end: .2rem; font-weight: 400; }
   .brand-word span { color: var(--warm); }
   .eyebrow { font-family: var(--font); font-weight: 500; letter-spacing: .1em; line-height: 1.5; }
@@ -89,7 +89,7 @@
   @media (width <= 50em) {
     :root { --scale-units: 48; --space-inline: 2.4rem; --space-block: 4.5rem; --text-size: 2rem; --small-size: 1.75rem; --lead-size: 2.2rem; --button-size: 1.9rem; }
     h2 { font-size: 4.3rem; }
-    .brand-word { font-size: 2.7rem; }
+    .brand-mark, .brand-word { font-size: 2.7rem; }
     .header-inner { grid-template-columns: minmax(0, 1fr) 8rem; gap: 1rem; }
     .mobile-nav nav { margin-inline-start: calc(8rem - 100vw + 2 * var(--space-inline)); gap: .5rem; }
     .mobile-nav .nav-cta { color: var(--on-accent); padding-inline: 1.2rem; }
