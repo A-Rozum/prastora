@@ -27,7 +27,7 @@ jobs:
           git fetch -q origin "$BRANCH" 2>/dev/null || { echo "Branch already landed"; exit 0; }
           base=$(git merge-base "origin/$MAIN" "origin/$BRANCH")
           if [ "$(git rev-parse "origin/$BRANCH")" = "$base" ]; then echo "Nothing written yet"; exit 0; fi
-          git log --reverse --format=%B "$base..origin/$BRANCH" | grep -v '^Co-authored-by:' | sed '/^\s*$/d' | awk '!seen[$0]++' > /tmp/msg
+          git log --reverse --format=%B "$base..origin/$BRANCH" | grep -v '^Co-authored-by:' | sed '/^\s*$/d' | awk '!seen[$0]++' | sed '1a\\' > /tmp/msg
           [ -s /tmp/msg ] || echo "Changes by Codex" > /tmp/msg
           git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" merge --squash "origin/$BRANCH"
           if ! git diff --cached --quiet; then
