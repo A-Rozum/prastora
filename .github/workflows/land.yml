@@ -33,6 +33,12 @@ jobs:
           if ! git diff --cached --quiet; then
             git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
               commit -q --author="Codex <codex@openai.com>" -F /tmp/msg
+            if [ -f .system/tools/plyn_validate.py ] || [ -f tools/plyn_validate.py ]; then
+              pip install -q pyyaml jsonschema
+              v=.system/tools/plyn_validate.py; [ -f tools/plyn_validate.py ] && v=tools/plyn_validate.py
+              f=.system/formats; [ -d formats ] && f=formats
+              python "$v" . --formats "$f" || { echo "Validation failed: branch kept, nothing landed"; exit 1; }
+            fi
             git push -q origin "HEAD:$MAIN"
           fi
           git push -q origin --delete "$BRANCH"
