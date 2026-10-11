@@ -1,0 +1,1 @@
+At the start of a session, read the open issue "Attention" in A-Rozum/plyn: fix the items in the repositories of your task, mention the others in one line, and leave other agents' branches as they are.

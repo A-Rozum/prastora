@@ -1,0 +1,1 @@
+Service texts (README, AGENTS.md, instructions, element texts) state what to do and what is needed to do it, only where it differs from what an agent already does reliably; a prohibition only where the prohibited action would otherwise be the default; no discussion history, check dates, reasoning or facts one command retrieves. In plyn-* repositories they are in English.
