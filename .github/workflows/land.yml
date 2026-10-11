@@ -5,13 +5,15 @@ on:
 permissions:
   contents: write
 concurrency:
-  group: land
-  cancel-in-progress: false
+  group: land-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   land:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
+      - name: Wait until the agent stops writing to the branch
+        run: sleep 45
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.event.repository.default_branch }}
@@ -22,12 +24,13 @@ jobs:
           BRANCH: ${{ github.ref_name }}
           MAIN: ${{ github.event.repository.default_branch }}
         run: |
-          git fetch -q origin "$BRANCH"
+          git fetch -q origin "$BRANCH" 2>/dev/null || { echo "Branch already landed"; exit 0; }
           base=$(git merge-base "origin/$MAIN" "origin/$BRANCH")
+          if [ "$(git rev-parse "origin/$BRANCH")" = "$base" ]; then echo "Nothing written yet"; exit 0; fi
           git log --reverse --format=%B "$base..origin/$BRANCH" | grep -v '^Co-authored-by:' | sed '/^\s*$/d' | awk '!seen[$0]++' > /tmp/msg
           [ -s /tmp/msg ] || echo "Changes by Codex" > /tmp/msg
           git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" merge --squash "origin/$BRANCH"
-          if git diff --cached --quiet; then echo "Nothing to land"; else
+          if ! git diff --cached --quiet; then
             git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
               commit -q --author="Codex <codex@openai.com>" -F /tmp/msg
             git push -q origin "HEAD:$MAIN"
