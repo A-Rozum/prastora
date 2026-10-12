@@ -1,0 +1,80 @@
+/* Member mini-sites of the expertise association (templates/expertise-member-*.html).
+   The member's own colour is --member; the association appears only as the frame strip and the ELEA badge, which members do not restyle. */
+@layer page {
+  .member h1, .member h2, .member h3, .member-brand-name, .member-footer-name { font-family: var(--serif); font-weight: 500; letter-spacing: -.01em; }
+  .member h1 { font-size: 6rem; line-height: 1.04; }
+  .member h2 { font-size: 3.8rem; }
+  .member h3 { font-size: 2.4rem; line-height: 1.2; }
+  .member .eyebrow { color: var(--member); letter-spacing: .14em; }
+  .member-brand { gap: 1.4rem; font-weight: 500; }
+  .member-logo { display: grid; place-items: center; inline-size: 4.6rem; block-size: 4.6rem; flex: none; border-radius: 50%; background: var(--member); color: var(--paper); font-family: var(--serif); font-size: 1.9rem; letter-spacing: .06em; }
+  .member-brand-name { display: grid; font-size: 2.2rem; line-height: 1.15; color: var(--ink); }
+  .member-brand-name span { font-family: var(--font); font-size: 1.3rem; color: var(--muted); letter-spacing: .02em; }
+  .site-header .desktop-nav { align-items: center; gap: .4rem; }
+  .member-cta { background: var(--member); border-color: var(--member); color: var(--paper) !important; }
+  .member-header .member-cta { min-block-size: 4rem; margin-inline-start: 1rem; padding-block: .6rem; font-size: var(--text-size); }
+
+  .member-frame { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem 3rem; padding: .9rem var(--space-inline); background: var(--deep); color: var(--on-deep); font-size: var(--small-size); }
+  .member-frame a { color: var(--on-deep); text-decoration: none; }
+  .member-frame-home { display: inline-flex; align-items: center; gap: 1rem; }
+  .member-frame-home b { margin-inline-end: .8rem; font-family: var(--serif); font-weight: 500; letter-spacing: .14em; }
+  .member-frame .elea-mark { stroke: var(--on-deep); }
+  .elea-mark { inline-size: 2.4rem; block-size: 2.4rem; flex: none; fill: none; stroke: var(--accent); stroke-width: 3.6; stroke-linecap: square; }
+
+  .elea-badge { display: inline-flex; align-items: center; gap: 1.2rem; padding: 1rem 1.6rem 1rem 1.2rem; border: .1rem solid var(--line); background: var(--paper); color: var(--ink); text-decoration: none; }
+  .elea-badge .elea-mark { inline-size: 3.2rem; block-size: 3.2rem; }
+  .elea-badge span { display: grid; line-height: 1.3; }
+  .elea-badge b { font-family: var(--serif); font-weight: 500; font-size: 1.9rem; letter-spacing: .04em; }
+  .elea-badge small { font-size: 1.3rem; color: var(--muted); }
+  .elea-badge:hover { border-color: var(--accent); }
+
+  .member-hero { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: calc(var(--gap) * 1.5); align-items: center; padding-block: 6rem; }
+  .member-photo { inline-size: 100%; aspect-ratio: 1; object-fit: cover; }
+  .member-kicker { font-size: var(--small-size); letter-spacing: .12em; text-transform: uppercase; color: var(--member); }
+  .member-hero .lead { color: var(--muted); }
+  .member-fields { padding-block: 1.4rem; border-block: .1rem solid var(--line); }
+  .member-linkedin { font-weight: 600; }
+  .member-hero .elea-badge { margin-block-start: 1rem; }
+
+  .member-head { display: grid; gap: 1rem; margin-block-end: 3.5rem; }
+  .member-service, .member-post { display: grid; align-content: start; gap: 1.2rem; padding-block-start: 2rem; border-block-start: .2rem solid var(--member); }
+  .member-service p, .member-post p:not(.member-post-meta) { color: var(--muted); }
+  .member-note { margin-block-start: 3rem; }
+  .member-post-meta, .member-case-meta { font-size: var(--small-size); letter-spacing: .08em; text-transform: uppercase; color: var(--member); }
+  .member-case-list { display: grid; padding: 0; list-style: none; }
+  .member-case-list li { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 4fr) minmax(0, 5fr); gap: var(--gap); padding-block: 2.4rem; border-block-start: .1rem solid var(--line); }
+  .member-case-list li:last-child { border-block-end: .1rem solid var(--line); }
+  .member-case-list p { color: var(--muted); }
+
+  .member-about { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); gap: calc(var(--gap) * 2); align-items: start; }
+  .member-specs dt { color: var(--ink); font-weight: 600; }
+  .member-specs dd { color: var(--muted); }
+  .member-affiliation { display: grid; gap: 1.6rem; padding: 3rem; background: var(--member-soft); }
+  .member-org { display: flex; align-items: center; gap: 1.4rem; }
+  .member-org span:last-child { display: grid; font-weight: 600; }
+  .member-org small { font-weight: 400; color: var(--muted); }
+  .member-org-logo { display: grid; place-items: center; inline-size: 5.6rem; block-size: 4rem; flex: none; border: .1rem dashed var(--muted); color: var(--muted); font-size: 1.3rem; letter-spacing: .08em; }
+
+  .member-contact { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: calc(var(--gap) * 2); align-items: start; background: var(--member-soft); }
+  .member-form > .field, .member-form > .field-row { justify-self: stretch; }
+  .member-form .btn { justify-self: start; }
+
+  .member-footer { display: grid; grid-template-columns: minmax(0, 2fr) auto minmax(0, 1fr); gap: var(--gap); align-items: center; }
+  .member-footer-name { font-size: 2.4rem; }
+
+  @media (width <= 50em) {
+    .member h1 { font-size: 5rem; }
+    .member h3 { font-size: 2.9rem; }
+    .member-brand-name { font-size: 2.4rem; }
+    .member-brand-name span { font-size: 1.6rem; }
+    .member-hero, .member-about, .member-contact, .member-footer { grid-template-columns: minmax(0, 1fr); }
+    .member-hero { padding-block: 3rem; }
+    .member-photo { inline-size: 60%; }
+    .member-case-list li { grid-template-columns: minmax(0, 1fr); gap: 1rem; }
+    .member-frame-home span { font-size: 0; }
+    .member-frame-home b { font-size: var(--small-size); }
+    .elea-badge small { font-size: 1.6rem; }
+    .elea-badge b { font-size: 2.2rem; }
+    .member-footer { justify-items: start; }
+  }
+}
