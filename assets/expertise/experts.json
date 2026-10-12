@@ -1,23 +1,5 @@
 [
   {
-    "id": "breski",
-    "name": "Олег Бреский",
-    "role": "Юрист и медиатор",
-    "field": "Медиация · Конституционное право · Права человека",
-    "brief": "Разрешение споров через медиацию. Исследовательский и преподавательский опыт в праве.",
-    "details": "Медиация, переговоры и внесудебное разрешение конфликтов. На профессиональном сайте указаны публикации по европейскому и конституционному праву, а также правам человека.",
-    "qualification": "Кандидатская степень по юриспруденции, МГУ, 2001. Преподавал в Европейском гуманитарном университете; автор курса медиации.",
-    "linkedin": "https://www.linkedin.com/in/oleg-bresky-b6bab54b/",
-    "sources": [
-      "https://mediacja.by/courses.html",
-      "https://ru.ehuniversity.lt/novosti/novym-predsedatelem-senata-izbran-prof-oleg-bresky/",
-      "https://lt.linkedin.com/company/legal-status"
-    ],
-    "country": "",
-    "topic": "mediation constitutional humanrights",
-    "asset_name": "oleg-bresky"
-  },
-  {
     "id": "kryvoi",
     "name": "Ярослав Кривой",
     "role": "Юридический эксперт",
@@ -34,6 +16,24 @@
     "country": "russia",
     "topic": "commercial arbitration sanctions",
     "asset_name": "yarik-kryvoi"
+  },
+  {
+    "id": "breski",
+    "name": "Олег Бреский",
+    "role": "Юрист и медиатор",
+    "field": "Медиация · Конституционное право · Права человека",
+    "brief": "Разрешение споров через медиацию. Исследовательский и преподавательский опыт в праве.",
+    "details": "Медиация, переговоры и внесудебное разрешение конфликтов. На профессиональном сайте указаны публикации по европейскому и конституционному праву, а также правам человека.",
+    "qualification": "Кандидатская степень по юриспруденции, МГУ, 2001. Преподавал в Европейском гуманитарном университете; автор курса медиации.",
+    "linkedin": "https://www.linkedin.com/in/oleg-bresky-b6bab54b/",
+    "sources": [
+      "https://mediacja.by/courses.html",
+      "https://ru.ehuniversity.lt/novosti/novym-predsedatelem-senata-izbran-prof-oleg-bresky/",
+      "https://lt.linkedin.com/company/legal-status"
+    ],
+    "country": "",
+    "topic": "mediation constitutional humanrights",
+    "asset_name": "oleg-bresky"
   },
   {
     "id": "zabolotna",

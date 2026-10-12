@@ -9,6 +9,7 @@ ROOT = Path(__file__).resolve().parent
 LAYERS = {"core.css": "core", "themes": "theme", "components": "components", "pages": "page", "dev": "dev"}
 ORDER = ["core", "theme", "components", "page", "dev"]
 REGIMES = ["(width <= 50em)", "(width > 50em)", "(width >= 125em)", "(height <= 30em)"]
+PREVIEW_GLOBS = ("templates/expertise*.html",)
 
 
 def top_level(body):
@@ -52,10 +53,15 @@ class Page(HTMLParser):
     def __init__(self, text):
         super().__init__()
         self.ids, self.duplicates, self.refs, self.styles, self.scripts = set(), [], [], [], []
+        self.in_head, self.robots = False, set()
         self.feed(text)
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
+        if tag == "head":
+            self.in_head = True
+        if tag == "meta" and self.in_head and (attrs.get("name") or "").lower() == "robots":
+            self.robots.update(re.split(r"[,\s]+", (attrs.get("content") or "").lower()))
         if attrs.get("id"):
             (self.duplicates if attrs["id"] in self.ids else []).append(attrs["id"])
             self.ids.add(attrs["id"])
@@ -67,6 +73,10 @@ class Page(HTMLParser):
         if tag == "script" and attrs.get("src"):
             self.scripts.append(attrs["src"])
 
+    def handle_endtag(self, tag):
+        if tag == "head":
+            self.in_head = False
+
 
 def layer_of(path):
     rel = path.relative_to(ROOT / "css").parts
@@ -76,6 +86,8 @@ def layer_of(path):
 def check_css(errors):
     for path in sorted((ROOT / "css").rglob("*.css")):
         name = path.relative_to(ROOT).as_posix()
+        if any(Path(name).match(pattern) for pattern in PREVIEW_GLOBS) and "noindex" not in page.robots:
+            errors.append(f"{name}: real-site preview needs meta robots noindex in its head")
         css = re.sub(r"/\*.*?\*/", "", path.read_text(encoding="utf-8"), flags=re.S)
         layer = layer_of(path)
         if layer is None:

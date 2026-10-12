@@ -1,67 +1,5 @@
 [
   {
-    "id": "breski",
-    "source": "https://mediacja.by/images/photos/Oleg.jpeg",
-    "processing": {},
-    "variants": [
-      {
-        "output": "assets/expertise/oleg-bresky-portrait-1x1-320w.webp",
-        "source_size": [
-          640,
-          640
-        ],
-        "oriented_size": [
-          640,
-          640
-        ],
-        "crop_box": [
-          0.0,
-          0.0,
-          640.0,
-          640.0
-        ],
-        "size": [
-          320,
-          320
-        ],
-        "format": "WEBP",
-        "quality": 84,
-        "bytes": 17834,
-        "sha256": "3c1b9dd005fe80e6d2f952fc9872ae575d39026021ae3e80212f682f077005f1",
-        "alpha": false
-      },
-      {
-        "output": "assets/expertise/oleg-bresky-portrait-1x1-640w.webp",
-        "source_size": [
-          640,
-          640
-        ],
-        "oriented_size": [
-          640,
-          640
-        ],
-        "crop_box": [
-          0.0,
-          0.0,
-          640.0,
-          640.0
-        ],
-        "size": [
-          640,
-          640
-        ],
-        "format": "WEBP",
-        "quality": 84,
-        "bytes": 39974,
-        "sha256": "81ea51a7aa7491795cf94e8a9e65c7dac8b138e48f4524f47608dae47815b950",
-        "alpha": false
-      }
-    ],
-    "asset_name": "oleg-bresky",
-    "role": "portrait",
-    "aspect_ratio": "1x1"
-  },
-  {
     "id": "kryvoi",
     "source": "https://keidanharrison.com/wp-content/uploads/2026/09/Yarik-Kryvoi-1.jpg",
     "processing": {
@@ -129,6 +67,68 @@
       }
     ],
     "asset_name": "yarik-kryvoi",
+    "role": "portrait",
+    "aspect_ratio": "1x1"
+  },
+  {
+    "id": "breski",
+    "source": "https://mediacja.by/images/photos/Oleg.jpeg",
+    "processing": {},
+    "variants": [
+      {
+        "output": "assets/expertise/oleg-bresky-portrait-1x1-320w.webp",
+        "source_size": [
+          640,
+          640
+        ],
+        "oriented_size": [
+          640,
+          640
+        ],
+        "crop_box": [
+          0.0,
+          0.0,
+          640.0,
+          640.0
+        ],
+        "size": [
+          320,
+          320
+        ],
+        "format": "WEBP",
+        "quality": 84,
+        "bytes": 17834,
+        "sha256": "3c1b9dd005fe80e6d2f952fc9872ae575d39026021ae3e80212f682f077005f1",
+        "alpha": false
+      },
+      {
+        "output": "assets/expertise/oleg-bresky-portrait-1x1-640w.webp",
+        "source_size": [
+          640,
+          640
+        ],
+        "oriented_size": [
+          640,
+          640
+        ],
+        "crop_box": [
+          0.0,
+          0.0,
+          640.0,
+          640.0
+        ],
+        "size": [
+          640,
+          640
+        ],
+        "format": "WEBP",
+        "quality": 84,
+        "bytes": 39974,
+        "sha256": "81ea51a7aa7491795cf94e8a9e65c7dac8b138e48f4524f47608dae47815b950",
+        "alpha": false
+      }
+    ],
+    "asset_name": "oleg-bresky",
     "role": "portrait",
     "aspect_ratio": "1x1"
   },
