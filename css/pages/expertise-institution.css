@@ -4,8 +4,11 @@
   .inst h1 { font-size: 5.8rem; line-height: 1.06; }
   .inst h2 { font-size: 4.2rem; line-height: 1.1; }
   .inst-brand { gap: 1.4rem; font-weight: 500; }
-  .inst-seal { inline-size: 4.4rem; block-size: 4.4rem; flex: none; fill: none; stroke: var(--accent); stroke-width: 1.4; }
-  .inst-brand-name { display: block; font-family: var(--serif); font-size: 1.9rem; line-height: 1.12; color: var(--ink); }
+  .inst-seal { inline-size: 4.4rem; block-size: 4.4rem; flex: none; fill: none; stroke: var(--accent); stroke-width: 3.2; stroke-linecap: square; stroke-linejoin: miter; }
+  .inst-brand-text { display: grid; gap: .3rem; }
+  .inst-brand-abbr { display: block; font-family: var(--serif); font-size: 3rem; line-height: 1; letter-spacing: .14em; color: var(--ink); }
+  .inst-brand-name { display: block; font-family: var(--font); font-size: 1.2rem; font-weight: 500; line-height: 1.2; letter-spacing: .04em; color: var(--muted); max-inline-size: 20rem; }
+  .inst-footer-name .inst-brand-abbr { margin-block-end: .8rem; }
   .site-header .desktop-nav { align-items: center; gap: .4rem; }
   .direction-switch { display: flex; flex-wrap: wrap; gap: .4rem 1.6rem; }
   .inst-nav-cta { min-block-size: 4rem; margin-inline-start: 1rem; padding-block: .6rem; font-size: var(--text-size); color: var(--on-accent) !important; }
@@ -112,7 +115,8 @@
   @media (width <= 50em) {
     .inst h1 { font-size: 5.2rem; }
     .inst h2 { font-size: 3.8rem; }
-    .inst-brand-name { font-size: 2rem; }
+    .inst-brand-name { font-size: 1.5rem; max-inline-size: 32rem; }
+    .inst-brand-abbr { font-size: 3.4rem; }
     .inst-place, .inst-ledger tbody th { font-size: 2.9rem; }
     .inst-service-title, .inst-person-name, .inst-tier h3, .inst-article h3, .inst-situation-list h3 { font-size: 2.9rem; }
     .inst-person-name { min-block-size: calc(2.9rem * 1.2 * 2); }
