@@ -42,8 +42,8 @@ jobs:
           BRANCH: ${{ github.ref_name }}
           MAIN: ${{ github.event.repository.default_branch }}
         run: |
-          git fetch -q origin "$BRANCH" 2>/dev/null || { echo "Branch already landed"; exit 0; }
-          if [ "$(git rev-parse "origin/$BRANCH")" != "${{ github.sha }}" ]; then echo "The branch moved past the checked commit; a later run handles it"; exit 0; fi
+          git fetch -q origin "$BRANCH" 2>/dev/null || { echo "Branch already landed"; touch /tmp/skip; exit 0; }
+          if [ "$(git rev-parse "origin/$BRANCH")" != "${{ github.sha }}" ]; then echo "The branch moved past the checked commit; a later run handles it"; touch /tmp/skip; exit 0; fi
           base=$(git merge-base "origin/$MAIN" "origin/$BRANCH")
           git log --reverse --format=%B "$base..origin/$BRANCH" | grep -v '^Co-authored-by:' | sed 's/ *\[ready\]//' | sed '/^\s*$/d' | awk '!seen[$0]++' | sed '1a\\' > /tmp/msg
           [ -s /tmp/msg ] || echo "Changes by Codex" > /tmp/msg
@@ -71,5 +71,6 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
+          [ -e /tmp/skip ] && { echo "Superseded or already landed: no status for this commit"; exit 0; }
           if [ "${{ steps.land.outcome }}" = "success" ]; then state=success; desc="Landed"; else state=failure; desc="Not landed: $(cat /tmp/why 2>/dev/null || echo error)"; fi
           gh api repos/${{ github.repository }}/statuses/${{ github.sha }} -f state=$state -f context=land -f description="$desc" > /dev/null
