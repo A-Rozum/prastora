@@ -43,6 +43,7 @@ jobs:
           MAIN: ${{ github.event.repository.default_branch }}
         run: |
           git fetch -q origin "$BRANCH" 2>/dev/null || { echo "Branch already landed"; exit 0; }
+          if [ "$(git rev-parse "origin/$BRANCH")" != "${{ github.sha }}" ]; then echo "The branch moved past the checked commit; a later run handles it"; exit 0; fi
           base=$(git merge-base "origin/$MAIN" "origin/$BRANCH")
           git log --reverse --format=%B "$base..origin/$BRANCH" | grep -v '^Co-authored-by:' | sed 's/ *\[ready\]//' | sed '/^\s*$/d' | awk '!seen[$0]++' | sed '1a\\' > /tmp/msg
           [ -s /tmp/msg ] || echo "Changes by Codex" > /tmp/msg
@@ -64,7 +65,7 @@ jobs:
             sleep $((attempt * 10))
           done
           [ -n "$landed" ] || { echo "The default branch kept moving; push rejected three times" > /tmp/why; exit 1; }
-          git push -q origin --delete "$BRANCH"
+          git push -q origin --delete "$BRANCH" || echo "::warning::Landed, but the branch could not be deleted; the daily scan removes it"
       - name: Post the landing result on the commit
         if: always()
         env:
