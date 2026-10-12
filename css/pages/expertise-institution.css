@@ -23,7 +23,7 @@
   .inst-route + .inst-route { border-block-start-width: .1rem; }
   .inst-route-for { font-size: var(--small-size); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
   .inst-route-title { font-size: 3rem; line-height: 1.15; color: var(--accent); }
-  .inst-route-title::after { content: ' →'; }
+  .inst-route-title::after { content: '\00a0→'; }
   .inst-route-text { color: var(--muted); }
   .inst-route:hover .inst-route-title { text-decoration: underline; text-underline-offset: .2em; text-decoration-thickness: .1rem; }
 
@@ -63,7 +63,12 @@
   .inst-person { display: grid; gap: .6rem; align-content: start; block-size: 100%; color: var(--ink); text-decoration: none; }
   .inst-person img { inline-size: 100%; aspect-ratio: 1; object-fit: cover; filter: grayscale(1); margin-block-end: .8rem; }
   .inst-person:is(:hover, :focus-visible) img { filter: none; }
-  .inst-person-name { font-size: 2.1rem; line-height: 1.2; }
+  .inst-person-name { font-size: 2.1rem; line-height: 1.2; min-block-size: calc(2.1rem * 1.2 * 2); }
+  .inst-person-all .inst-person-name { min-block-size: 0; }
+  .inst-situation-list { margin: 0; padding: 0; list-style: none; row-gap: 4rem; }
+  .inst-situation-list li { display: grid; align-content: start; gap: 1rem; padding-block-start: 2rem; border-block-start: .1rem solid var(--line); }
+  .inst-situation-list h3 { font-size: 2.5rem; }
+  .inst-situation-list p { color: var(--muted); }
   .inst-person-field { font-size: var(--small-size); color: var(--muted); }
   .inst-person-all { align-content: center; padding: 2.4rem; border: .1rem solid var(--line); background: var(--surface); }
   .inst-person-all .inst-person-name { color: var(--accent); }
@@ -109,7 +114,9 @@
     .inst h2 { font-size: 3.8rem; }
     .inst-brand-name { font-size: 2rem; }
     .inst-place, .inst-ledger tbody th { font-size: 2.9rem; }
-    .inst-service-title, .inst-person-name, .inst-tier h3, .inst-article h3 { font-size: 2.9rem; }
+    .inst-service-title, .inst-person-name, .inst-tier h3, .inst-article h3, .inst-situation-list h3 { font-size: 2.9rem; }
+    .inst-person-name { min-block-size: calc(2.9rem * 1.2 * 2); }
+    .inst-situation-list { row-gap: 2.4rem; }
     .inst-seal { inline-size: 4.6rem; block-size: 4.6rem; }
     .inst-head, .inst-hero, .inst-standards, .inst-request, .inst-footer { grid-template-columns: minmax(0, 1fr); }
     .inst-head { margin-block-end: 3rem; gap: 1.6rem; }
