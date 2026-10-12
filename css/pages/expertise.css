@@ -83,6 +83,8 @@
   .expert-evidence:has(#focus-regional:checked) [data-focus-panel=regional] { display: grid; }
   .expert-evidence:has(#focus-regional:checked) [data-focus-panel=belarus] { display: none; }
   .directory-filters { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; }
+  .directory-card .expert-photo { display: block; inline-size: 100%; object-fit: cover; background: var(--surface); }
+  .directory-card h2 a { text-decoration: none; }
   .directory-card h2 { font-size: 3rem; }
   .directory-card > div { margin-block-start: auto; }
   .practice-groups { row-gap: 3rem; }

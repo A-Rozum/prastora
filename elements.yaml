@@ -768,3 +768,107 @@
     kind: rašennie
     date: '2026-10-12'
     ref: User requested visual directions for the legal expertise platform
+- id: prylada:web/images@1
+  path: tools/images.py
+  applies:
+    all:
+    - domain: web
+    - task_kind: [implementation, design, review]
+  status: proba
+  access: public
+  audience: [agent, human]
+  basis:
+    kind: rašennie
+    date: '2026-10-12'
+    ref: User requested five expert portraits and a portable image preparation tool
+- id: prylada:web/images-check@1
+  path: tools/test_images.py
+  applies:
+    all:
+    - domain: web
+    - task_kind: [implementation, design, review]
+  status: proba
+  access: public
+  audience: [agent, human]
+  basis:
+    kind: rašennie
+    date: '2026-10-12'
+    ref: User requested five expert portraits and a portable image preparation tool
+- id: mietad:web/images@1
+  path: methods/images.md
+  applies:
+    all:
+    - domain: web
+    - task_kind: [implementation, design, review]
+  status: proba
+  access: public
+  audience: [agent, human]
+  basis:
+    kind: rašennie
+    date: '2026-10-12'
+    ref: User requested five expert portraits and a portable image preparation tool
+- id: šablon:web/expertise-michalevic@1
+  path: templates/expertise-michalevic.html
+  applies:
+    all:
+    - domain: web
+    - task_kind: [implementation, design, review]
+  status: proba
+  access: public
+  audience: [agent, human]
+  basis:
+    kind: rašennie
+    date: '2026-10-12'
+    ref: User requested five expert portraits and a portable image preparation tool
+- id: šablon:web/expertise-kryvoi@1
+  path: templates/expertise-kryvoi.html
+  applies:
+    all:
+    - domain: web
+    - task_kind: [implementation, design, review]
+  status: proba
+  access: public
+  audience: [agent, human]
+  basis:
+    kind: rašennie
+    date: '2026-10-12'
+    ref: User requested five expert portraits and a portable image preparation tool
+- id: šablon:web/expertise-breski@1
+  path: templates/expertise-breski.html
+  applies:
+    all:
+    - domain: web
+    - task_kind: [implementation, design, review]
+  status: proba
+  access: public
+  audience: [agent, human]
+  basis:
+    kind: rašennie
+    date: '2026-10-12'
+    ref: User requested five expert portraits and a portable image preparation tool
+- id: šablon:web/expertise-dovgal@1
+  path: templates/expertise-dovgal.html
+  applies:
+    all:
+    - domain: web
+    - task_kind: [implementation, design, review]
+  status: proba
+  access: public
+  audience: [agent, human]
+  basis:
+    kind: rašennie
+    date: '2026-10-12'
+    ref: User requested five expert portraits and a portable image preparation tool
+- id: šablon:web/expertise-zabolotna@1
+  path: templates/expertise-zabolotna.html
+  applies:
+    all:
+    - domain: web
+    - task_kind: [implementation, design, review]
+  status: proba
+  access: public
+  audience: [agent, human]
+  basis:
+    kind: rašennie
+    date: '2026-10-12'
+    ref: User requested five expert portraits and a portable image preparation tool

@@ -2,17 +2,6 @@ name: check expertise
 on:
   push:
     branches: ['agent/codex/**']
-    paths:
-      - 'templates/expertise*.html'
-      - 'css/pages/expertise.css'
-      - 'css/themes/expertise.css'
-      - 'css/pages/expertise-directions.css'
-      - 'css/themes/expertise-directions.css'
-      - 'css/components/navigation.css'
-      - 'assets/expertise.js'
-      - 'assets/interactions.js'
-      - 'tools/test_expertise.py'
-      - '.github/workflows/check-expertise.yml'
 permissions:
   contents: read
   statuses: write
@@ -30,6 +19,7 @@ jobs:
       - name: Check the static site and visitor journeys
         id: test
         run: |
+          python3 tools/test_images.py
           python3 check.py
           python3 .system/tools/plyn_validate.py . --formats .system/formats
           node --check assets/expertise.js
@@ -47,6 +37,7 @@ jobs:
           path: |
             .snap/base
             .snap/concepts
+            .snap/profiles
             assets/templates/expertise.webp
             assets/templates/expertise-*.webp
       - name: Post the result on the commit

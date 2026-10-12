@@ -10,3 +10,5 @@ Core invariants (any CSS work):
 
 Gate: `python3 check.py` exits 0 and `python .system/tools/plyn_validate.py . --formats .system/formats` passes.
 Temporary material goes to lab/ (lab.yaml), never to ad-hoc folders.
+
+For raster assets, read methods/images.md and use tools/images.py; the same portable tool serves independent sites built with Prastora.

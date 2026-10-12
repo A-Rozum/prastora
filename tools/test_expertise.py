@@ -1,4 +1,5 @@
 """Browser checks for the real-site example; requires Python Playwright and Chromium."""
+import json
 from pathlib import Path
 from functools import partial
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
@@ -70,14 +71,17 @@ def main():
             page.locator('select[name=country]').select_option('regional')
             assert page.locator('[data-expert-card]:visible').count() == 1
             page.get_by_role('link', name='Профиль эксперта').click()
-            expect(page.locator('#focus-regional')).to_be_checked()
-            expect(page.locator('#evidence-regional')).to_be_visible()
+            assert page.url.endswith('expertise-michalevic.html')
+            expect(page.locator('#profile-name')).to_have_text('Алесь Михалевич')
             page.goto(base + 'templates/expertise-experts.html?topic=interpol#directory')
             assert page.locator('[data-expert-card]:visible').count() == 1
             page.locator('#directory-reset').click()
             page.locator('input[name=name]').fill('Довгаль')
             assert page.locator('[data-expert-card]:visible').count() == 1
-            page.get_by_role('link', name='Обсудить вопрос').click()
+            expect(page.locator('#expert-dovgal')).to_contain_text('Экстрадиция · Право беженцев')
+            page.get_by_role('link', name='Профиль эксперта').click()
+            expect(page.locator('.profile-linkedin')).to_have_attribute('href', 'https://www.linkedin.com/in/ihor-dovhal-284005264/')
+            page.goto(base + 'templates/expertise.html?expert=dovgal#contact')
             assert 'Игорь Довгаль' in page.locator('#request-title').inner_text()
             assert page.locator('#request-expert').input_value() == 'dovgal'
             page.locator('#request-contact').fill('review@example.test')
@@ -117,6 +121,13 @@ def main():
                         assert page.locator('html').get_attribute('data-scheme') == ('dark' if scheme == 'light' else 'light')
                         theme.click()
                         if name != 'expertise-directions':
+                            assert page.locator('[data-home-expert]').count() == 5
+                            for portrait in page.locator('[data-home-expert] img').all():
+                                portrait.scroll_into_view_if_needed()
+                                page.wait_for_function('(img) => img.complete && img.naturalWidth > 0', arg=portrait.element_handle())
+                                assert portrait.evaluate('(img) => img.naturalWidth === img.naturalHeight')
+                                box = portrait.bounding_box()
+                                assert abs(box['width'] - box['height']) < 1
                             nav = page.locator('.desktop-nav') if width > 800 else page.locator('.mobile-nav nav')
                             if width <= 800:
                                 page.locator('.mobile-nav > summary').click()
@@ -138,6 +149,31 @@ def main():
                         page.screenshot(path=str(concept_shots / f'{name}_{width}x{height}_{scheme}.png'), full_page=True)
                         assert not errors, errors
                         context.close()
+
+            profiles = json.loads((ROOT / 'assets/expertise/experts.json').read_text())
+            profile_shots = ROOT / '.snap/profiles'
+            profile_shots.mkdir(parents=True, exist_ok=True)
+            for width, height in REGIMES:
+                for scheme in ('light', 'dark'):
+                    for expert in profiles:
+                        context = browser.new_context(viewport={'width': width, 'height': height}, color_scheme=scheme)
+                        page = context.new_page()
+                        failures = []
+                        page.on('pageerror', lambda error: failures.append(str(error)))
+                        page.goto(base + f'templates/expertise-{expert["id"]}.html')
+                        page.locator('[data-consent-reject]').click()
+                        expect(page.locator('#profile-name')).to_have_text(expert['name'])
+                        expect(page.locator('.profile-linkedin')).to_have_attribute('href', expert['linkedin'])
+                        assert page.locator('main a[href^="mailto:"], main a[href^="tel:"], main a[href$=".pdf"]').count() == 0
+                        image = page.locator('.profile-top img')
+                        expect(image).to_have_js_property('complete', True)
+                        assert image.evaluate('(img) => img.naturalWidth > 0 && img.naturalWidth === img.naturalHeight')
+                        assert page.evaluate('document.documentElement.scrollWidth <= innerWidth + 1'), (expert['id'], width, scheme)
+                        if width in (390, 1440):
+                            page.screenshot(path=str(profile_shots / f'{expert["id"]}_{width}_{scheme}.png'), full_page=True)
+                        assert not failures, failures
+                        context.close()
+
 
             for name in concept_names:
                 context = browser.new_context(java_script_enabled=False, viewport={'width': 390, 'height': 844})

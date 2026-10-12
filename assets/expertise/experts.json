@@ -1,0 +1,84 @@
+[
+  {
+    "id": "michalevic",
+    "name": "Алесь Михалевич",
+    "role": "Юридический эксперт",
+    "field": "Уголовная юстиция · INTERPOL · Экстрадиция",
+    "brief": "Беларусь и постсоветские юрисдикции. Адвокат в Чехии и Украине.",
+    "details": "Исследование правоприменения, работы органов уголовной юстиции и контекста преследования. Экспертиза может относиться к одной стране или более широкому региональному контексту.",
+    "qualification": "PhD; адвокат в Чехии и Украине. Опыт юридической работы и экспертной поддержки международных дел.",
+    "linkedin": "https://www.linkedin.com/in/alaksiej-michalevic-771b47b/",
+    "sources": [
+      "https://www.linkedin.com/in/alaksiej-michalevic-771b47b/"
+    ],
+    "country": "belarus regional",
+    "topic": "justice interpol extradition"
+  },
+  {
+    "id": "kryvoi",
+    "name": "Ярослав Кривой",
+    "role": "Юридический эксперт",
+    "field": "Российское право · Международный арбитраж · Санкции",
+    "brief": "Экспертные заключения и показания для иностранных судов и арбитражей.",
+    "details": "Российское гражданское, коммерческое, корпоративное и процессуальное право. Международное разрешение споров, санкции и контрсанкции, юрисдикция и исполнение решений.",
+    "qualification": "LL.M., Harvard Law School; PhD, UCL. Senior Fellow в BIICL и директор Investment Treaty Forum; Of Counsel в Keidan Harrison.",
+    "linkedin": "https://www.linkedin.com/in/kryvoi/",
+    "sources": [
+      "https://kryvoi.net/russian-law-expert.html",
+      "https://www.biicl.org/people/yarik-kryvoi",
+      "https://keidanharrison.com/people/prof-yarik-kryvoi/"
+    ],
+    "country": "russia",
+    "topic": "commercial arbitration sanctions"
+  },
+  {
+    "id": "breski",
+    "name": "Олег Бреский",
+    "role": "Юрист и медиатор",
+    "field": "Медиация · Конституционное право · Права человека",
+    "brief": "Разрешение споров через медиацию. Исследовательский и преподавательский опыт в праве.",
+    "details": "Медиация, переговоры и внесудебное разрешение конфликтов. На профессиональном сайте указаны публикации по европейскому и конституционному праву, а также правам человека.",
+    "qualification": "Кандидатская степень по юриспруденции, МГУ, 2001. Преподавал в Европейском гуманитарном университете; автор курса медиации.",
+    "linkedin": "https://www.linkedin.com/in/oleg-bresky-b6bab54b/",
+    "sources": [
+      "https://mediacja.by/courses.html",
+      "https://ru.ehuniversity.lt/novosti/novym-predsedatelem-senata-izbran-prof-oleg-bresky/",
+      "https://lt.linkedin.com/company/legal-status"
+    ],
+    "country": "",
+    "topic": "mediation constitutional humanrights"
+  },
+  {
+    "id": "dovgal",
+    "name": "Игорь Довгаль",
+    "role": "Юрист",
+    "field": "Экстрадиция · Право беженцев",
+    "brief": "Международная защита и вопросы, связанные с экстрадицией.",
+    "details": "Экстрадиция и право беженцев. Задачу, применимые страны и необходимую форму работы можно согласовать через координатора площадки.",
+    "qualification": "Магистр права. Опыт работы с международными юридическими вопросами; в профессиональном профиле представлен как Ihor Dovhal.",
+    "linkedin": "https://www.linkedin.com/in/ihor-dovhal-284005264/",
+    "sources": [
+      "https://www.lexardi.com/",
+      "https://pl.linkedin.com/company/legal-status"
+    ],
+    "country": "",
+    "topic": "extradition refugees"
+  },
+  {
+    "id": "zabolotna",
+    "name": "Екатерина Заболотна",
+    "role": "Исследователь",
+    "field": "Исследования обучения · Образовательные технологии",
+    "brief": "PhD в образовательных науках. Исследовательская работа в Университете Оулу и Университете Тампере.",
+    "details": "Совместное обучение, регуляция учебной деятельности, построение знаний и образовательные технологии. На странице Университета Оулу также указаны интересы в области искусственного интеллекта в образовании и аналитики обучения.",
+    "qualification": "MA (Teacher Education), PhD (Educational Sciences). Постдокторант Learning and Educational Technology Research Lab, University of Oulu.",
+    "linkedin": "https://www.linkedin.com/in/kat-zabolotna/",
+    "sources": [
+      "https://www.oulu.fi/en/researchers/kateryna-zabolotna",
+      "https://researchportal.tuni.fi/en/persons/kateryna-zabolotna/",
+      "https://fi.linkedin.com/in/kat-zabolotna"
+    ],
+    "country": "",
+    "topic": "education"
+  }
+]

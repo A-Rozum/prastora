@@ -77,7 +77,6 @@
       }
       document.getElementById('directory-count').textContent = 'Найдено экспертов: ' + found;
       document.getElementById('directory-empty').hidden = found > 0;
-      document.querySelector('#expert-michalevic a[href*="#expert-name"]').href = 'expertise.html' + (country ? '?focus=' + country : '') + '#expert-name';
       reset.hidden = !country && !topic && !name;
     };
     const clear = () => { filters.reset(); update(); };

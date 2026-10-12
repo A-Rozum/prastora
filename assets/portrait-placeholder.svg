@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" role="img" aria-labelledby="title">
+<title id="title">Фотография пока отсутствует</title>
+<rect width="640" height="640" fill="#eaf0f3"/>
+<circle cx="320" cy="244" r="100" fill="#9cabb5"/>
+<path d="M128 574v-34c0-106 86-192 192-192s192 86 192 192v34" fill="#9cabb5"/>
+<path d="M96 576h448" stroke="#c7d1d8" stroke-width="4"/>
+<style>@media(prefers-color-scheme:dark){rect{fill:#24343e}circle,path[fill]{fill:#82939f}path[stroke]{stroke:#4a616f}}</style>
+</svg>
