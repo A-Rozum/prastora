@@ -141,6 +141,18 @@ def main():
                                 box = portrait.bounding_box()
                                 assert abs(box['width'] - box['height']) < 1
                             assert_aligned_slots(page, '.expert-rows')
+                            for field in page.locator('.expert-row .expert-field').all():
+                                starts = field.evaluate('''el => {
+                                    const text = el.firstChild, lines = new Map(), range = document.createRange();
+                                    for (let i = 0; i < text.length; i++) {
+                                        if (!text.textContent[i].trim()) continue;
+                                        range.setStart(text, i); range.setEnd(text, i + 1);
+                                        const top = Math.round(range.getBoundingClientRect().top);
+                                        if (!lines.has(top)) lines.set(top, text.textContent[i]);
+                                    }
+                                    return [...lines.values()];
+                                }''')
+                                assert '·' not in starts, (name, width, 'separator starts a line', starts)
                             if width > 800:
                                 lines = page.locator('[data-home-expert=kryvoi] .expert-field').evaluate('''el => {
                                     const range = document.createRange(); range.selectNodeContents(el);
