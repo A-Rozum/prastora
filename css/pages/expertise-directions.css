@@ -60,8 +60,8 @@
   .process-list li > span { color: var(--accent); font-size: 1.3rem; }
   .process-list h3 { font-size: 1.7rem; margin-block-end: .4rem; }
   .process-list p { font-size: var(--small-size); color: var(--muted); }
-  .expert-rows { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 2.5rem; }
-  .expert-row { display: grid; align-content: start; gap: 1rem; padding-block: 2rem; border-block-start: .1rem solid var(--line); }
+  .expert-rows { --aligned-rows: 6; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); column-gap: 2.5rem; row-gap: 1rem; }
+  .expert-row { display: grid; align-content: start; align-items: start; gap: 1rem; padding-block: 2rem; border-block-start: .1rem solid var(--line); }
   .expert-row h3 { font-size: 1.9rem; line-height: 1.3; }
   .expert-row h3 a { font-size: inherit; text-decoration: none; }
   .expert-photo { display: block; inline-size: 100%; object-fit: cover; background: var(--surface); }
@@ -75,7 +75,7 @@
   .profile-sources { padding-inline-start: 2rem; margin-block-start: 1.5rem; display: grid; gap: 1rem; }
   .profile-followup .inline-link { justify-self: start; }
   .expert-row p, .expert-row a { font-size: var(--small-size); }
-  .expert-row .expert-field { color: var(--accent); }
+  .expert-row .expert-field { color: var(--accent); text-wrap: balance; }
   .expert-row .inline-link { align-self: end; }
   .publications { border-block-start: .1rem solid var(--line); }
   .article-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 3rem; }
@@ -191,7 +191,7 @@
     .process-list li > span { font-size: 1.8rem; }
     [data-direction=network] .process-list { grid-template-columns: minmax(0, 1fr); gap: 0; }
     [data-direction=network] .process-list li { grid-template-columns: 3rem minmax(0, 1fr); }
-    .expert-rows { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.4rem; }
+    .expert-rows { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 2.4rem; row-gap: 1rem; }
     .expert-row h3 { font-size: 2.35rem; }
     .expert-row .eyebrow { font-size: 1.5rem; }
     .profile-top, .profile-details { grid-template-columns: minmax(0, 1fr); gap: 3rem; }

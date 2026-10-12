@@ -15,6 +15,18 @@ class Quiet(SimpleHTTPRequestHandler):
         pass
 
 
+def assert_aligned_slots(page, selector):
+    cards = page.locator(selector).evaluate('''grid => [...grid.children].map(card => ({
+        top: card.getBoundingClientRect().top,
+        slots: [...card.children].map(slot => slot.getBoundingClientRect().top)
+    }))''')
+    for card in cards:
+        neighbors = [other for other in cards if abs(other['top'] - card['top']) < 1]
+        for other in neighbors:
+            assert len(other['slots']) == len(card['slots']), (selector, 'different slots')
+            assert all(abs(a - b) < 1 for a, b in zip(card['slots'], other['slots'])), (selector, card, other)
+
+
 def main():
     server = ThreadingHTTPServer(('127.0.0.1', 0), partial(Quiet, directory=str(ROOT)))
     Thread(target=server.serve_forever, daemon=True).start()
@@ -128,6 +140,22 @@ def main():
                                 assert portrait.evaluate('(img) => img.naturalWidth === img.naturalHeight')
                                 box = portrait.bounding_box()
                                 assert abs(box['width'] - box['height']) < 1
+                            assert_aligned_slots(page, '.expert-rows')
+                            if width > 800:
+                                lines = page.locator('[data-home-expert=kryvoi] .expert-field').evaluate('''el => {
+                                    const range = document.createRange(); range.selectNodeContents(el);
+                                    return range.getClientRects().length;
+                                }''')
+                                assert lines <= 2, (name, width, 'Kryvoi specializations', lines)
+                            if name == 'expertise-portal' and width == 1440 and scheme == 'light':
+                                brief = page.locator('.expert-brief').first
+                                original = brief.inner_text()
+                                link = page.locator('.expert-row .inline-link').first
+                                before = link.bounding_box()['y']
+                                brief.evaluate('(el, text) => el.textContent = text', original * 4)
+                                assert_aligned_slots(page, '.expert-rows')
+                                assert link.bounding_box()['y'] > before + 20, 'Cards must grow with longer content'
+                                brief.evaluate('(el, text) => el.textContent = text', original)
                             nav = page.locator('.desktop-nav') if width > 800 else page.locator('.mobile-nav nav')
                             if width <= 800:
                                 page.locator('.mobile-nav > summary').click()
@@ -149,6 +177,13 @@ def main():
                         page.screenshot(path=str(concept_shots / f'{name}_{width}x{height}_{scheme}.png'), full_page=True)
                         assert not errors, errors
                         context.close()
+
+            for width in (390, 1440):
+                context = browser.new_context(java_script_enabled=False, viewport={'width': width, 'height': 900})
+                page = context.new_page()
+                page.goto(base + 'components/index.html#aligned-cards')
+                assert_aligned_slots(page, '#aligned-cards .aligned-rows')
+                context.close()
 
             profiles = json.loads((ROOT / 'assets/expertise/experts.json').read_text())
             profile_shots = ROOT / '.snap/profiles'
@@ -181,6 +216,7 @@ def main():
                 page.goto(base + f'templates/{name}.html')
                 assert page.evaluate('document.documentElement.scrollWidth <= innerWidth + 1'), (name, 'no JS overflow')
                 if name != 'expertise-directions':
+                    assert_aligned_slots(page, '.expert-rows')
                     page.locator('.mobile-nav > summary').click()
                     page.locator('.mobile-nav .nav-dropdown > summary').first.click()
                     page.locator('.mobile-nav nav').get_by_role('link', name='Правовые заключения', exact=True).click()

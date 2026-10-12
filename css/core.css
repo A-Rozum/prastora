@@ -1,4 +1,5 @@
 /* Core: scale regimes, structural tokens, reset, base typography and layout primitives. Required on every page.
+   .aligned-rows on a grid aligns matching slots in its children; set --aligned-rows to their slot count.
    Regime queries – the only width conditions allowed anywhere, one block each, at the end of a file, in this order:
      (width <= 50em)   mobile
      (width > 50em)    above mobile (desktop and wide)
@@ -57,6 +58,7 @@
   .aligned li { display: flex; align-items: center; gap: 1rem; min-inline-size: 0; }
   .aligned li::before { content: ''; inline-size: .6rem; block-size: .6rem; border-radius: 50%; background: var(--accent); flex: none; }
   @supports (grid-template-rows: subgrid) {
+    .aligned-rows > * { display: grid; grid-template-rows: subgrid; grid-row: span var(--aligned-rows, 3); }
     .aligned { row-gap: 1rem; }
     .aligned > .card { display: grid; grid-template-rows: subgrid; grid-row: span calc(var(--items) + 1); row-gap: 1rem; }
     .aligned > .card > ul { display: grid; grid-template-rows: subgrid; grid-row: 2 / span var(--items); row-gap: 1rem; }

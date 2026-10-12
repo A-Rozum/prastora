@@ -1,7 +1,7 @@
 /* Content.
    .card, .card-flex, .card-icon-flow, .card-icon-feature – cards; .icon, .icon-heading – icons
    .btn, .btn-secondary – buttons; .badge – pill label
-   .media (+ -square, -wide), .media-link – image frames
+   .media (+ -square, -wide, -rounded), .media-link – image frames; --media-radius overrides their rounding
    .disclosure – native <details> accordion; .toc, .section-nav, .breadcrumbs – in-page navigation
    .specs – definition list of properties; .data-table, .table-wrap – tables
    .hero, .callout, .section-heading, .eyebrow, .price, .prose-action, .related-list, .code
@@ -13,9 +13,10 @@
   .btn { display: inline-flex; align-items: center; justify-content: center; min-block-size: 4.4rem; padding: 1rem 2rem; font-size: var(--button-size); line-height: 1.3; border: .1rem solid transparent; border-radius: var(--radius); color: var(--on-accent); background: var(--accent); text-decoration: none; text-align: center; max-inline-size: 100%; }
   .btn-secondary { color: var(--accent); background: var(--paper); border-color: var(--line); }
   .btn[disabled] { opacity: .6; cursor: not-allowed; }
-  .media { display: block; inline-size: 100%; aspect-ratio: var(--media-ratio, 4 / 3); border-radius: var(--radius); background: var(--surface); }
+  .media { display: block; inline-size: 100%; aspect-ratio: var(--media-ratio, 4 / 3); border-radius: var(--media-radius, var(--radius)); background: var(--surface); }
   .media-wide { --media-ratio: 16 / 9; }
   .media-square { --media-ratio: 1; }
+  .media-rounded { --media-radius: 1rem; }
   .disclosure { border-block-end: .1rem solid var(--line); padding-block: 1rem; }
   .disclosure > summary { padding-block: 1rem; min-block-size: 4.4rem; }
   .disclosure > :not(summary) { margin-block: 1rem; }
