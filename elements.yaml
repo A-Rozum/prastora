@@ -872,3 +872,48 @@
     kind: rašennie
     date: '2026-10-12'
     ref: User requested five expert portraits and a portable image preparation tool
+- id: šablon:web/expertise-opinion-portal@1
+  path: templates/expertise-opinion-portal.html
+  applies:
+    all:
+    - domain: web
+    - subject: expertise
+  status: proba
+  access: public
+  audience:
+  - agent
+  - human
+  basis:
+    kind: rašennie
+    date: '2026-10-12'
+    ref: User approved three distinct visitor routes and legal opinion pages
+- id: šablon:web/expertise-opinion-editorial@1
+  path: templates/expertise-opinion-editorial.html
+  applies:
+    all:
+    - domain: web
+    - subject: expertise
+  status: proba
+  access: public
+  audience:
+  - agent
+  - human
+  basis:
+    kind: rašennie
+    date: '2026-10-12'
+    ref: User approved three distinct visitor routes and legal opinion pages
+- id: šablon:web/expertise-opinion-network@1
+  path: templates/expertise-opinion-network.html
+  applies:
+    all:
+    - domain: web
+    - subject: expertise
+  status: proba
+  access: public
+  audience:
+  - agent
+  - human
+  basis:
+    kind: rašennie
+    date: '2026-10-12'
+    ref: User approved three distinct visitor routes and legal opinion pages

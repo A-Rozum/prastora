@@ -30,6 +30,7 @@ jobs:
           python3 tools/thumbs.py expertise-portal expertise-editorial expertise-network
           python3 tools/reader.py templates/expertise templates/expertise-experts
           python3 tools/reader.py templates/expertise-portal templates/expertise-editorial templates/expertise-network
+          python3 tools/reader.py templates/expertise-opinion-portal templates/expertise-opinion-editorial templates/expertise-opinion-network
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -38,6 +39,7 @@ jobs:
             .snap/base
             .snap/concepts
             .snap/profiles
+            .snap/opinions
             assets/templates/expertise.webp
             assets/templates/expertise-*.webp
       - name: Post the result on the commit

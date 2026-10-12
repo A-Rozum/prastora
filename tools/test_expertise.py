@@ -112,6 +112,8 @@ def main():
                 page = context.new_page()
                 page.goto(base + 'templates/expertise-portal.html')
                 page.locator('[data-consent-reject]').click()
+                if service == 'opinion':
+                    page.locator('.portal-choices a[href="expertise-opinion-portal.html"]').click()
                 page.locator(f'a[href="expertise.html?service={service}#contact"]').first.click()
                 expect(page.locator('#request-service')).to_have_value(service)
                 context.close()
@@ -175,7 +177,9 @@ def main():
                             expect(nav.get_by_role('link', name='Правовые заключения', exact=True)).to_be_visible()
                             assert page.evaluate('document.documentElement.scrollWidth <= innerWidth + 1'), (name, width, 'menu overflow')
                             nav.get_by_role('link', name='Правовые заключения', exact=True).click()
-                            expect(page.locator('#service-opinion')).to_be_in_viewport()
+                            assert page.url.endswith(name.replace('expertise-', 'expertise-opinion-') + '.html')
+                            expect(page.locator('#opinion-title')).to_be_visible()
+                            page.go_back()
                             page.keyboard.press('Escape')
                             article = page.locator('.article-topic .disclosure').first
                             article.locator('summary').click()
@@ -189,6 +193,52 @@ def main():
                         page.screenshot(path=str(concept_shots / f'{name}_{width}x{height}_{scheme}.png'), full_page=True)
                         assert not errors, errors
                         context.close()
+
+            opinion_shots = ROOT / '.snap' / 'opinions'
+            opinion_shots.mkdir(parents=True, exist_ok=True)
+            for direction in ('portal', 'editorial', 'network'):
+                name = f'expertise-opinion-{direction}'
+                for width, height in REGIMES:
+                    for scheme in ('light', 'dark'):
+                        context = browser.new_context(viewport={'width': width, 'height': height}, color_scheme=scheme)
+                        page = context.new_page()
+                        failures = []
+                        page.on('pageerror', lambda error: failures.append(str(error)))
+                        page.goto(base + f'templates/{name}.html')
+                        assert 'noindex' in page.locator('meta[name=robots]').get_attribute('content')
+                        expect(page.locator('#opinion-title')).to_be_visible()
+                        assert page.evaluate('document.documentElement.scrollWidth <= innerWidth + 1'), (name, width, scheme, 'overflow')
+                        page.locator('[data-consent-reject]').click()
+                        page.locator('[data-theme-toggle]').click()
+                        assert page.locator('html').get_attribute('data-scheme') == ('dark' if scheme == 'light' else 'light')
+                        page.locator('[data-theme-toggle]').click()
+                        for link in page.locator('.service-chapters a').all():
+                            target = link.get_attribute('href')
+                            link.click()
+                            expect(page.locator(target)).to_be_in_viewport()
+                        assert page.locator('.direction-switch a').evaluate_all('(links) => links.every(a => a.getAttribute("href").startsWith("expertise-opinion-"))')
+                        page.locator('.site-header .brand').click()
+                        assert page.url.endswith(f'expertise-{direction}.html')
+                        page.go_back()
+                        page.locator('.hero-writing .btn, .research-title .btn').first.click()
+                        expect(page.locator('#contact')).to_be_in_viewport()
+                        page.evaluate('window.scrollTo(0, 0)')
+                        if width in (390, 1440):
+                            page.screenshot(path=str(opinion_shots / f'{name}_{width}x{height}_{scheme}.png'), full_page=True)
+                        page.get_by_role('link', name='Составить обращение', exact=False).click()
+                        expect(page.locator('#request-service')).to_have_value('opinion')
+                        assert not failures, failures
+                        context.close()
+                for width in (390, 1440):
+                    context = browser.new_context(java_script_enabled=False, viewport={'width': width, 'height': 900})
+                    page = context.new_page()
+                    page.goto(base + f'templates/{name}.html')
+                    assert page.evaluate('document.documentElement.scrollWidth <= innerWidth + 1'), (name, width, 'no JS overflow')
+                    page.locator('.service-chapters a[href="#scope"]').click()
+                    expect(page.locator('#scope')).to_be_in_viewport()
+                    page.get_by_role('link', name='Составить обращение', exact=False).click()
+                    expect(page.locator('#request-contact')).to_be_visible()
+                    context.close()
 
             for width in (390, 1440):
                 context = browser.new_context(java_script_enabled=False, viewport={'width': width, 'height': 900})
@@ -232,7 +282,10 @@ def main():
                     page.locator('.mobile-nav > summary').click()
                     page.locator('.mobile-nav .nav-dropdown > summary').first.click()
                     page.locator('.mobile-nav nav').get_by_role('link', name='Правовые заключения', exact=True).click()
-                    expect(page.locator('#service-opinion')).to_be_in_viewport()
+                    expect(page.locator('#opinion-title')).to_be_visible()
+                    page.go_back()
+                    if page.locator('.mobile-nav').get_attribute('open') is not None:
+                        page.locator('.mobile-nav > summary').click()
                     article = page.locator('.article-topic .disclosure').first
                     article.locator('summary').click()
                     expect(article.locator('div').first).to_be_visible()
@@ -254,7 +307,7 @@ def main():
             browser.close()
     finally:
         server.shutdown()
-    print('Six viewport regimes, both themes, three design directions, menus, filtering, enquiries and no-JS journeys passed')
+    print('Six viewport regimes, both themes, three home and opinion routes, menus, filtering, enquiries and no-JS journeys passed')
 
 
 if __name__ == '__main__':

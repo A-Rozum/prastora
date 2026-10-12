@@ -1,0 +1,111 @@
+/* Visitor routes: situation, research question, coordinated expertise. */
+@layer page {
+  .hero-writing, .contact-writing { display: grid; align-content: start; gap: 1.8rem; }
+  .hero-actions { gap: 1.5rem; }
+  .portal-hero, .network-hero, .opinion-portal-hero, .opinion-network-hero { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 5rem; align-items: start; }
+  .portal-hero, .opinion-portal-hero { background: var(--hero-paper); }
+  :is(.portal-hero, .network-hero, .opinion-portal-hero, .opinion-network-hero) h1 { font-size: 4.7rem; line-height: 1.14; }
+  .portal-choices { display: grid; gap: 1.3rem; padding: 2.8rem; background: var(--paper); border: .1rem solid var(--line); }
+  .portal-choices h2 { font-size: 2.6rem; }
+  .situation-link { display: grid; grid-template-columns: 2.5rem minmax(0, 1fr) 2rem; gap: 1.2rem; padding-block: 1.8rem; border-block-start: .1rem solid var(--line); text-decoration: none; color: var(--ink); }
+  .situation-link strong, .situation-link small { display: block; }
+  .situation-link strong { font-size: 1.8rem; }
+  .situation-link small { font-size: var(--small-size); color: var(--muted); margin-block-start: .5rem; }
+  .step-number { color: var(--accent); font-size: var(--small-size); }
+  .research-hero { display: grid; gap: 3rem; padding-block: 3.5rem 5rem; }
+  .research-masthead { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem 3rem; padding-block-end: 1.5rem; border-block-end: .1rem solid var(--line); }
+  .research-masthead > :last-child { color: var(--muted); font-size: var(--small-size); }
+  .research-hero h1 { font-size: 6.3rem; line-height: 1.07; }
+  .research-opening { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .8fr); gap: 8rem; align-items: start; }
+  .research-feature { display: grid; gap: 1rem; padding-inline-start: 2.5rem; border-inline-start: .3rem solid var(--signal); color: var(--ink); text-decoration: none; }
+  .research-feature h2 { font-size: 2.8rem; }
+  .research-feature > p:not(.eyebrow) { font-size: var(--small-size); color: var(--muted); }
+  .network-hero { border-block-end: .1rem solid var(--line); }
+  .network-hero .hero-writing { padding-inline-start: 2rem; border-inline-start: .4rem solid var(--accent); }
+  .collaboration-map { display: grid; gap: 2rem; text-align: center; }
+  .map-task { padding: 1.5rem 2rem; border: .1rem solid var(--line); background: var(--paper); }
+  .map-task strong { display: block; font-size: 2.3rem; margin-block: .5rem; }
+  .map-task p:last-child { font-size: var(--small-size); color: var(--muted); }
+  .map-people { position: relative; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; }
+  .map-people::before { content: ''; position: absolute; inset-block-start: -2rem; inset-inline-start: 50%; block-size: 2rem; border-inline-start: .1rem solid var(--line); }
+  .map-person { padding: 2rem; background: var(--soft-accent); border-block-start: .3rem solid var(--accent); }
+  .map-person strong { display: block; font-size: 2rem; margin-block-end: .6rem; }
+  .map-person p { font-size: var(--small-size); }
+  .map-outcome { padding: 1.2rem; border-block-start: .1rem solid var(--line); font-size: var(--small-size); }
+  .matching-strip { display: grid; grid-template-columns: minmax(0, 1fr) repeat(3, minmax(0, 1fr)); gap: 2.5rem; padding-block: 2.5rem; background: var(--surface); }
+  .matching-strip h2 { font-size: 2.2rem; }
+  .matching-strip a { display: grid; gap: .8rem; align-content: start; text-decoration: none; color: var(--ink); border-inline-start: .1rem solid var(--line); padding-inline-start: 2rem; }
+  .matching-strip a span { font-size: var(--small-size); color: var(--muted); }
+  .opinion-breadcrumbs { padding-block: 1.8rem; border-block-end: .1rem solid var(--line); }
+  .opinion-breadcrumbs .breadcrumbs { display: flex; flex-wrap: wrap; gap: .5rem 2rem; list-style: none; padding: 0; margin: 0; font-size: var(--small-size); }
+  .starting-note { padding: 2.8rem; background: var(--paper); border-block-start: .3rem solid var(--accent); display: grid; gap: 1.5rem; }
+  .starting-note ol { padding-inline-start: 2rem; display: grid; gap: 1rem; font-size: var(--small-size); }
+  .service-chapters { display: flex; flex-wrap: wrap; gap: 1rem 3rem; padding-block: 1.5rem; border-block: .1rem solid var(--line); font-size: var(--small-size); }
+  .service-chapters a { min-block-size: 3.6rem; display: inline-flex; align-items: center; }
+  .situation-cards .card { gap: 1.2rem; }
+  .situation-cards .inline-link { margin-block-start: auto; font-size: var(--small-size); }
+  .portal-result, .research-questions, .research-result, .assignment-layout, .matching-experts, .network-result, .opinion-contact { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6rem; align-items: start; }
+  .result-checklist { display: grid; }
+  .result-checklist > div { display: grid; grid-template-columns: 3rem minmax(0, 1fr); gap: 1.5rem; padding-block: 1.8rem; border-block-start: .1rem solid var(--line); }
+  .result-checklist > div > span { color: var(--accent); font-size: var(--small-size); }
+  .result-checklist strong { display: block; margin-block-end: .5rem; font-size: 1.9rem; }
+  .opinion-research-hero { display: grid; gap: 3rem; }
+  .research-title { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 6rem; align-items: start; }
+  .research-title h1 { font-size: 7rem; line-height: 1.05; }
+  .document-outline { border: .1rem solid var(--line); padding: 3rem; background: var(--paper); }
+  .document-heading { display: flex; justify-content: space-between; gap: 2rem; padding-block-end: 1.5rem; color: var(--muted); font-size: var(--small-size); }
+  .document-outline ol, .assignment-steps { margin: 0; padding: 0; list-style: none; display: grid; }
+  .document-outline li, .assignment-steps li { display: grid; grid-template-columns: 3rem minmax(0, 1fr); gap: 1.5rem; padding-block: 2rem; border-block-start: .1rem solid var(--line); }
+  .document-outline li > span, .assignment-steps li > span { font-size: var(--small-size); color: var(--accent); }
+  .document-outline h3, .assignment-steps h3 { margin-block-end: .7rem; }
+  .document-outline li p { color: var(--muted); font-size: var(--small-size); }
+  .research-margin { padding-block-start: 2rem; border-block-start: .3rem solid var(--signal); }
+  .assignment-card { display: grid; gap: 1.5rem; padding: 2.8rem; background: var(--surface); border: .1rem solid var(--line); }
+  .assignment-card dl { margin: 0; }
+  .assignment-card dl > div { display: grid; gap: .4rem; padding-block: 1.3rem; border-block-start: .1rem solid var(--line); }
+  .assignment-card dt { font-weight: 600; }
+  .assignment-card dd { margin: 0; font-size: var(--small-size); color: var(--muted); }
+  .assignment-steps small { display: block; color: var(--accent); margin-block-start: .9rem; font-size: var(--small-size); }
+  .person-route { display: grid; grid-template-columns: 8rem minmax(0, 1fr); gap: 2rem; padding-block: 1.5rem; border-block-start: .1rem solid var(--line); text-decoration: none; color: var(--ink); }
+  .person-route > span, .person-route > span > span { display: block; }
+  .person-route strong { display: block; font-size: 2rem; margin-block-end: .5rem; }
+  .person-route > span > span { font-size: var(--small-size); }
+  .person-route .inline-link { color: var(--accent); margin-block-start: .5rem; }
+  .responsibility-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; }
+  .responsibility-pair > div { border-block-start: .3rem solid var(--accent); padding-block-start: 1.5rem; display: grid; align-content: start; gap: 1rem; }
+  .responsibility-pair p:last-child { font-size: var(--small-size); }
+  .scope-grid .card { gap: 1.3rem; }
+  .scope-result { margin-block-start: auto; padding-block-start: 1.5rem; border-block-start: .1rem solid var(--line); font-size: var(--small-size); }
+  .scope-note { margin-block-start: 2.5rem; padding-block-start: 1.5rem; border-block-start: .1rem solid var(--line); color: var(--muted); font-size: var(--small-size); }
+  .opinion-contact { background: var(--hero-paper); }
+  .contact-preparation { padding-inline-start: 3rem; border-inline-start: .1rem solid var(--line); display: grid; gap: 1.5rem; }
+  .contact-preparation ul { padding-inline-start: 2rem; margin: 0; display: grid; gap: .8rem; }
+  @media (width <= 50em) {
+    .portal-hero, .network-hero, .opinion-portal-hero, .opinion-network-hero, .research-opening, .research-title, .portal-result, .research-questions, .research-result, .assignment-layout, .matching-experts, .network-result, .opinion-contact { grid-template-columns: minmax(0, 1fr); gap: 3rem; }
+    :is(.portal-hero, .network-hero, .opinion-portal-hero, .opinion-network-hero) h1 { font-size: 4.5rem; }
+    .research-hero h1, .research-title h1 { font-size: 5.2rem; }
+    .research-hero { gap: 2.5rem; }
+    .hero-actions { align-items: start; flex-direction: column; gap: .5rem; }
+    .portal-choices, .starting-note, .assignment-card, .document-outline { padding: 2.2rem; }
+    .portal-choices h2 { font-size: 3rem; }
+    .situation-link strong, .map-person strong, .person-route strong, .result-checklist strong { font-size: 2.3rem; }
+    .research-feature { padding-inline-start: 2rem; }
+    .research-feature h2 { font-size: 3.2rem; }
+    .map-people { gap: 1.2rem; }
+    .map-person { padding: 1.5rem; }
+    .matching-strip { grid-template-columns: minmax(0, 1fr); gap: 1.5rem; }
+    .matching-strip h2 { font-size: 3rem; }
+    .matching-strip a { border-inline-start: 0; border-block-start: .1rem solid var(--line); padding: 1.5rem 0 0; }
+    .service-chapters { gap: .5rem 2rem; }
+    .responsibility-pair { grid-template-columns: minmax(0, 1fr); }
+    .contact-preparation { padding-inline-start: 0; padding-block-start: 2rem; border-inline-start: 0; border-block-start: .1rem solid var(--line); }
+    .person-route { grid-template-columns: 9rem minmax(0, 1fr); gap: 1.5rem; }
+  }
+  @media (height <= 30em) {
+    :is(.portal-hero, .network-hero, .opinion-portal-hero, .opinion-network-hero, .research-hero, .research-title) h1 { font-size: min(4.5rem, 12vh); }
+  }
+  @media print {
+    .service-chapters, .hero-actions { display: none; }
+    .portal-hero, .network-hero, .opinion-portal-hero, .opinion-network-hero, .research-title, .research-opening, .portal-result, .research-result, .opinion-contact { grid-template-columns: minmax(0, 1fr); }
+  }
+}
