@@ -1,5 +1,6 @@
 /* Institutional homepage of the expertise association (templates/expertise-institution.html). */
 @layer page {
+  .inst h1, .inst h2, .inst h3, .inst-footer-name, .inst-route-title, .inst-service-title, .inst-person-name { font-family: var(--serif); font-weight: 500; letter-spacing: -.01em; }
   .inst h1 { font-size: 5.8rem; line-height: 1.06; }
   .inst h2 { font-size: 4.2rem; line-height: 1.1; }
   .inst-brand { gap: 1.4rem; font-weight: 500; }
