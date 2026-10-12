@@ -1,0 +1,12 @@
+/* Institutional direction for the expertise association: ivory paper, ink, one deep blue accent and a restrained oxblood mark. */
+@layer theme {
+  :root { color-scheme: light; --ink: #1c2431; --muted: #586172; --paper: #fbfaf6; --surface: #f1eee6; --line: #d9d3c6; --accent: #1f3d63; --on-accent: #fff; --signal: #8b3a2f; --deep: #16202e; --on-deep: #ece8de; --deep-muted: #a9b0bd; --deep-line: #36425a; --deep-raise: #1f2b3d; --deep-accent: #d8b48c; --utility-surface: #ece8df; --utility-line: #cfc8b9; --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif; --font: "Segoe UI", system-ui, sans-serif; --radius: .2rem; }
+  @media (prefers-color-scheme: dark) {
+    :root { color-scheme: dark; --ink: #e8e4da; --muted: #b3b6bd; --paper: #141a24; --surface: #1c2430; --line: #3a4556; --accent: #a9c4e6; --on-accent: #14202f; --signal: #e3a493; --deep: #0e131b; --on-deep: #ece8de; --deep-muted: #a9b0bd; --deep-line: #36425a; --deep-raise: #1f2b3d; --deep-accent: #d8b48c; --utility-surface: #1c2430; --utility-line: #3a4556; }
+  }
+  :root[data-scheme=light] { color-scheme: light; --ink: #1c2431; --muted: #586172; --paper: #fbfaf6; --surface: #f1eee6; --line: #d9d3c6; --accent: #1f3d63; --on-accent: #fff; --signal: #8b3a2f; --deep: #16202e; --deep-raise: #1f2b3d; --utility-surface: #ece8df; --utility-line: #cfc8b9; }
+  :root[data-scheme=dark] { color-scheme: dark; --ink: #e8e4da; --muted: #b3b6bd; --paper: #141a24; --surface: #1c2430; --line: #3a4556; --accent: #a9c4e6; --on-accent: #14202f; --signal: #e3a493; --deep: #0e131b; --deep-raise: #18212e; --utility-surface: #1c2430; --utility-line: #3a4556; }
+  @media print {
+    :root, :root[data-scheme] { color-scheme: light; --paper: #fff; --ink: #000; --muted: #333; }
+  }
+}
