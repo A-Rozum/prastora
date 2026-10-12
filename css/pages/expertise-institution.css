@@ -1,13 +1,10 @@
 /* Institutional homepage of the expertise association (templates/expertise-institution.html). */
 @layer page {
-  .inst h1, .inst h2, .inst h3, .inst-brand-name, .inst-footer-name, .inst-route-title, .inst-service-title, .inst-person-name, .inst figure dd { font-family: var(--serif); font-weight: 500; letter-spacing: -.01em; }
   .inst h1 { font-size: 5.8rem; line-height: 1.06; }
   .inst h2 { font-size: 4.2rem; line-height: 1.1; }
   .inst-brand { gap: 1.4rem; font-weight: 500; }
   .inst-seal { inline-size: 4.4rem; block-size: 4.4rem; flex: none; fill: none; stroke: var(--accent); stroke-width: 3.2; stroke-linecap: square; stroke-linejoin: miter; }
-  .inst-brand-text { display: grid; gap: .3rem; }
   .inst-brand-abbr { display: block; font-family: var(--serif); font-size: 3rem; line-height: 1; letter-spacing: .14em; color: var(--ink); }
-  .inst-brand-name { display: block; font-family: var(--font); font-size: 1.2rem; font-weight: 500; line-height: 1.2; letter-spacing: .04em; color: var(--muted); max-inline-size: 20rem; }
   .inst-footer-name .inst-brand-abbr { margin-block-end: .8rem; }
   .site-header .desktop-nav { align-items: center; gap: .4rem; }
   .direction-switch { display: flex; flex-wrap: wrap; gap: .4rem 1.6rem; }
@@ -115,7 +112,6 @@
   @media (width <= 50em) {
     .inst h1 { font-size: 5.2rem; }
     .inst h2 { font-size: 3.8rem; }
-    .inst-brand-name { font-size: 1.5rem; max-inline-size: 32rem; }
     .inst-brand-abbr { font-size: 3.4rem; }
     .inst-place, .inst-ledger tbody th { font-size: 2.9rem; }
     .inst-service-title, .inst-person-name, .inst-tier h3, .inst-article h3, .inst-situation-list h3 { font-size: 2.9rem; }
