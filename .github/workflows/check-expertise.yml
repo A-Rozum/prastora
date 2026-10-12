@@ -27,10 +27,10 @@ jobs:
           python3 tools/test_expertise.py
           python3 tools/snap.py base --pages templates/expertise templates/expertise-experts --regimes mobile desktop wide narrow short sideways --dark
           python3 tools/thumbs.py expertise
-          python3 tools/thumbs.py expertise-portal expertise-editorial expertise-network
+          python3 tools/thumbs.py expertise-portal expertise-editorial expertise-association
           python3 tools/reader.py templates/expertise templates/expertise-experts
-          python3 tools/reader.py templates/expertise-portal templates/expertise-editorial templates/expertise-network
-          python3 tools/reader.py templates/expertise-opinion-portal templates/expertise-opinion-editorial templates/expertise-opinion-network
+          python3 tools/reader.py templates/expertise-portal templates/expertise-editorial templates/expertise-association
+          python3 tools/reader.py templates/expertise-opinion-portal templates/expertise-opinion-editorial templates/expertise-opinion-association
       - uses: actions/upload-artifact@v4
         if: always()
         with:

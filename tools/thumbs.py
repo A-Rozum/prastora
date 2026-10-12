@@ -28,7 +28,7 @@ SHOTS = {  # name: (selector to start from, colour scheme)
     "expertise": (".hero-layout", "light"),
     "expertise-portal": (".portal-hero", "light"),
     "expertise-editorial": (".research-hero", "light"),
-    "expertise-network": (".network-hero", "light"),
+    "expertise-association": (".network-hero", "light"),
 }
 WIDTH, THUMB = 1440, (720, 450)
 

@@ -117,7 +117,7 @@ def main():
             assert not errors, errors
             context.close()
 
-            concept_names = ('expertise-portal', 'expertise-editorial', 'expertise-network', 'expertise-directions')
+            concept_names = ('expertise-portal', 'expertise-editorial', 'expertise-association', 'expertise-directions')
             for service in ('consultation', 'opinion', 'appearance'):
                 context = browser.new_context(viewport={'width': 1440, 'height': 900})
                 page = context.new_page()
@@ -207,7 +207,7 @@ def main():
 
             opinion_shots = ROOT / '.snap' / 'opinions'
             opinion_shots.mkdir(parents=True, exist_ok=True)
-            for direction in ('portal', 'editorial', 'network'):
+            for direction in ('portal', 'editorial', 'association'):
                 name = f'expertise-opinion-{direction}'
                 for width, height in REGIMES:
                     for scheme in ('light', 'dark'):

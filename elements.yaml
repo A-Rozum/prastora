@@ -753,8 +753,8 @@
     kind: rašennie
     date: '2026-10-12'
     ref: User requested visual directions for the legal expertise platform
-- id: šablon:web/expertise-network@1
-  path: templates/expertise-network.html
+- id: šablon:web/expertise-association@1
+  path: templates/expertise-association.html
   applies:
     all:
     - domain: web
@@ -902,8 +902,8 @@
     kind: rašennie
     date: '2026-10-12'
     ref: User approved three distinct visitor routes and legal opinion pages
-- id: šablon:web/expertise-opinion-network@1
-  path: templates/expertise-opinion-network.html
+- id: šablon:web/expertise-opinion-association@1
+  path: templates/expertise-opinion-association.html
   applies:
     all:
     - domain: web
