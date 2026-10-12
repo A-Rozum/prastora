@@ -101,8 +101,8 @@
     consent.querySelector('[data-consent-save]').addEventListener('click', () => {
       choose(consent.querySelector('#consent-analytics').checked, consent.querySelector('#consent-marketing').checked);
     });
-    reopen.hidden = false;
-    reopen.addEventListener('click', () => {
+    if (reopen) reopen.hidden = false;
+    reopen?.addEventListener('click', () => {
       returnControl = reopen;
       consent.hidden = false;
       measure();

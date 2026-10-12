@@ -79,7 +79,9 @@
   .join-layout .disclosure > div { padding-block: 1rem; }
   .join-layout .disclosure h3 { font-size: 1.8rem; }
   .contact-links { display: flex; flex-wrap: wrap; gap: 1rem 2rem; }
-  .site-footer { padding: 3rem var(--space-inline); display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr); gap: 3rem; font-size: var(--small-size); }
+  .site-footer { padding: 3rem var(--space-inline); display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 3rem; font-size: var(--small-size); }
+  .site-credit { grid-column: 1 / -1; padding-block-start: 1.2rem; border-block-start: .1rem solid var(--line); font-size: calc(var(--small-size) * .85); color: var(--muted); }
+  .site-credit a { color: inherit; }
   .site-footer .brand-word { font-size: 2rem; }
   .footer-links { align-content: start; }
   .footer-links a { min-block-size: 3.6rem; display: inline-flex; align-items: center; }

@@ -43,7 +43,8 @@ def main():
                     for name in ('expertise', 'expertise-experts'):
                         page.goto(base + f'templates/{name}.html')
                         if name == 'expertise-experts':
-                            page.locator('[data-consent-reopen]').click()
+                            page.evaluate('localStorage.removeItem("prastora.consent.v1")')
+                            page.reload()
                         expect(page.locator('[data-consent-demo]')).to_be_visible()
                         assert page.evaluate('document.documentElement.scrollWidth <= innerWidth + 1'), (name, width, scheme, 'horizontal overflow')
                         theme = page.locator('[data-theme-toggle]')
@@ -59,7 +60,11 @@ def main():
                         assert page.evaluate('document.documentElement.scrollWidth <= innerWidth + 1'), (name, width, 'menu overflow')
                         page.keyboard.press('Escape')
                         assert nav.locator('.nav-dropdown[open]').count() == 0
-                        page.locator('[data-consent-reject]').click()
+                        page.locator('[data-consent-configure]').click()
+                        expect(page.locator('[data-consent-settings]')).to_be_visible()
+                        page.locator('[data-consent-save]').click()
+                        expect(page.locator('[data-consent-demo]')).to_be_hidden()
+                        assert page.locator('.site-footer [data-consent-reopen]').count() == 0
                         page.evaluate('window.scrollTo(0, 700)')
                         top = page.locator('.css-top').bounding_box()['y']
                         assert abs(top) < 1 if height > 480 else top < 0, (width, height, 'sticky regime')
@@ -102,6 +107,12 @@ def main():
             expect(page.locator('#form-result')).to_contain_text('Заявка не отправлена')
             assert not [r for r in requests if r.method == 'POST'], 'The preview must not transmit enquiry data'
             page.goto(base + 'templates/product.html')
+            page.locator('[data-consent-reopen]').click()
+            expect(page.locator('[data-consent-demo]')).to_be_visible()
+            page.locator('[data-consent-configure]').click()
+            expect(page.locator('[data-consent-settings]')).to_be_visible()
+            page.locator('[data-consent-save]').click()
+            expect(page.locator('[data-consent-demo]')).to_be_hidden()
             expect(page.locator('[data-theme-toggle]')).to_have_attribute('aria-label', 'Switch to dark theme')
             assert not errors, errors
             context.close()
@@ -184,7 +195,7 @@ def main():
                             article = page.locator('.article-topic .disclosure').first
                             article.locator('summary').click()
                             expect(article.locator('div').first).to_be_visible()
-                            page.get_by_role('link', name='Стать экспертом', exact=False).click()
+                            page.get_by_role('link', name='Как стать экспертом Ассоциации', exact=False).click()
                             expect(page.locator('#join')).to_be_in_viewport()
                             page.evaluate('window.scrollTo(0, 700)')
                             top = page.locator('.css-top').bounding_box()['y']
