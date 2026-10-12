@@ -121,7 +121,7 @@ def main():
                         assert page.locator('html').get_attribute('data-scheme') == ('dark' if scheme == 'light' else 'light')
                         theme.click()
                         if name != 'expertise-directions':
-                            assert page.locator('[data-home-expert]').count() == 5
+                            assert page.locator('[data-home-expert]').evaluate_all('(cards) => cards.map(card => card.dataset.homeExpert)') == ['breski', 'kryvoi', 'zabolotna', 'dovgal', 'michalevic']
                             for portrait in page.locator('[data-home-expert] img').all():
                                 portrait.scroll_into_view_if_needed()
                                 page.wait_for_function('(img) => img.complete && img.naturalWidth > 0', arg=portrait.element_handle())

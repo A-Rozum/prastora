@@ -1,31 +1,24 @@
 [
   {
-    "id": "michalevic",
-    "source": "https://raw.githubusercontent.com/A-Rozum/michalevic/main/assets/portrait.webp",
-    "processing": {
-      "crop": [
-        0,
-        20,
-        835,
-        835
-      ]
-    },
+    "id": "breski",
+    "source": "https://mediacja.by/images/photos/Oleg.jpeg",
+    "processing": {},
     "variants": [
       {
-        "output": "assets/expertise/michalevic-320.webp",
+        "output": "assets/expertise/oleg-bresky-portrait-1x1-320w.webp",
         "source_size": [
-          1400,
-          855
+          640,
+          640
         ],
         "oriented_size": [
-          1400,
-          855
+          640,
+          640
         ],
         "crop_box": [
           0.0,
-          20.0,
-          835.0,
-          855.0
+          0.0,
+          640.0,
+          640.0
         ],
         "size": [
           320,
@@ -33,25 +26,25 @@
         ],
         "format": "WEBP",
         "quality": 84,
-        "bytes": 6070,
-        "sha256": "277bd8a354cdb7e0f984ab5a61f728f193fb2bf663f44df5c08546f3ebd437ab",
+        "bytes": 17834,
+        "sha256": "3c1b9dd005fe80e6d2f952fc9872ae575d39026021ae3e80212f682f077005f1",
         "alpha": false
       },
       {
-        "output": "assets/expertise/michalevic-640.webp",
+        "output": "assets/expertise/oleg-bresky-portrait-1x1-640w.webp",
         "source_size": [
-          1400,
-          855
+          640,
+          640
         ],
         "oriented_size": [
-          1400,
-          855
+          640,
+          640
         ],
         "crop_box": [
           0.0,
-          20.0,
-          835.0,
-          855.0
+          0.0,
+          640.0,
+          640.0
         ],
         "size": [
           640,
@@ -59,11 +52,14 @@
         ],
         "format": "WEBP",
         "quality": 84,
-        "bytes": 13968,
-        "sha256": "0eeccbfb95d6d77b78f04154e93b4d68cc45c83086e04a68ad6845c1ffc5bb0f",
+        "bytes": 39974,
+        "sha256": "81ea51a7aa7491795cf94e8a9e65c7dac8b138e48f4524f47608dae47815b950",
         "alpha": false
       }
-    ]
+    ],
+    "asset_name": "oleg-bresky",
+    "role": "portrait",
+    "aspect_ratio": "1x1"
   },
   {
     "id": "kryvoi",
@@ -79,7 +75,7 @@
     "variants": [
       {
         "source": "../portrait-inputs/kryvoi-current.jpg",
-        "output": "assets/expertise/kryvoi-320.webp",
+        "output": "assets/expertise/yarik-kryvoi-portrait-1x1-320w.webp",
         "source_size": [
           1400,
           934
@@ -106,7 +102,7 @@
       },
       {
         "source": "../portrait-inputs/kryvoi-current.jpg",
-        "output": "assets/expertise/kryvoi-640.webp",
+        "output": "assets/expertise/yarik-kryvoi-portrait-1x1-640w.webp",
         "source_size": [
           1400,
           934
@@ -131,132 +127,10 @@
         "sha256": "0c8874068e305e3ef6b406f75963cc0017069e397941a42b751a04da08069867",
         "alpha": false
       }
-    ]
-  },
-  {
-    "id": "breski",
-    "source": "https://mediacja.by/images/photos/Oleg.jpeg",
-    "processing": {},
-    "variants": [
-      {
-        "output": "assets/expertise/breski-320.webp",
-        "source_size": [
-          640,
-          640
-        ],
-        "oriented_size": [
-          640,
-          640
-        ],
-        "crop_box": [
-          0.0,
-          0.0,
-          640.0,
-          640.0
-        ],
-        "size": [
-          320,
-          320
-        ],
-        "format": "WEBP",
-        "quality": 84,
-        "bytes": 17834,
-        "sha256": "3c1b9dd005fe80e6d2f952fc9872ae575d39026021ae3e80212f682f077005f1",
-        "alpha": false
-      },
-      {
-        "output": "assets/expertise/breski-640.webp",
-        "source_size": [
-          640,
-          640
-        ],
-        "oriented_size": [
-          640,
-          640
-        ],
-        "crop_box": [
-          0.0,
-          0.0,
-          640.0,
-          640.0
-        ],
-        "size": [
-          640,
-          640
-        ],
-        "format": "WEBP",
-        "quality": 84,
-        "bytes": 39974,
-        "sha256": "81ea51a7aa7491795cf94e8a9e65c7dac8b138e48f4524f47608dae47815b950",
-        "alpha": false
-      }
-    ]
-  },
-  {
-    "id": "dovgal",
-    "source": "User-provided 20250312_150958.jpg",
-    "processing": {
-      "crop": [
-        225,
-        230,
-        925,
-        925
-      ]
-    },
-    "variants": [
-      {
-        "output": "assets/expertise/dovgal-320.webp",
-        "source_size": [
-          1153,
-          2048
-        ],
-        "oriented_size": [
-          1153,
-          2048
-        ],
-        "crop_box": [
-          225.0,
-          230.0,
-          1150.0,
-          1155.0
-        ],
-        "size": [
-          320,
-          320
-        ],
-        "format": "WEBP",
-        "quality": 84,
-        "bytes": 10666,
-        "sha256": "f8e53a372f9b2b17a223c18a6ff15cbe8ef0004ebc3bbd8286c4e5fbb3ad024e",
-        "alpha": false
-      },
-      {
-        "output": "assets/expertise/dovgal-640.webp",
-        "source_size": [
-          1153,
-          2048
-        ],
-        "oriented_size": [
-          1153,
-          2048
-        ],
-        "crop_box": [
-          225.0,
-          230.0,
-          1150.0,
-          1155.0
-        ],
-        "size": [
-          640,
-          640
-        ],
-        "format": "WEBP",
-        "quality": 84,
-        "bytes": 43240,
-        "sha256": "e4ff19442b3a4bdd5a1823aee2ae53eda2f04863e1941ecca12a055a54ef75e5",
-        "alpha": false
-      }
-    ]
+    ],
+    "asset_name": "yarik-kryvoi",
+    "role": "portrait",
+    "aspect_ratio": "1x1"
   },
   {
     "id": "zabolotna",
@@ -271,7 +145,7 @@
     },
     "variants": [
       {
-        "output": "assets/expertise/zabolotna-320.webp",
+        "output": "assets/expertise/kateryna-zabolotna-portrait-1x1-320w.webp",
         "source_size": [
           1201,
           1202
@@ -297,7 +171,7 @@
         "alpha": false
       },
       {
-        "output": "assets/expertise/zabolotna-640.webp",
+        "output": "assets/expertise/kateryna-zabolotna-portrait-1x1-640w.webp",
         "source_size": [
           1201,
           1202
@@ -322,6 +196,147 @@
         "sha256": "7f34a6f087d4caab5d5f267082fec7be6b817accb0d20288443c02b3edb45ab9",
         "alpha": false
       }
-    ]
+    ],
+    "asset_name": "kateryna-zabolotna",
+    "role": "portrait",
+    "aspect_ratio": "1x1"
+  },
+  {
+    "id": "dovgal",
+    "source": "User-provided 20250312_150958.jpg",
+    "processing": {
+      "crop": [
+        225,
+        230,
+        925,
+        925
+      ]
+    },
+    "variants": [
+      {
+        "output": "assets/expertise/ihor-dovhal-portrait-1x1-320w.webp",
+        "source_size": [
+          1153,
+          2048
+        ],
+        "oriented_size": [
+          1153,
+          2048
+        ],
+        "crop_box": [
+          225.0,
+          230.0,
+          1150.0,
+          1155.0
+        ],
+        "size": [
+          320,
+          320
+        ],
+        "format": "WEBP",
+        "quality": 84,
+        "bytes": 10666,
+        "sha256": "f8e53a372f9b2b17a223c18a6ff15cbe8ef0004ebc3bbd8286c4e5fbb3ad024e",
+        "alpha": false
+      },
+      {
+        "output": "assets/expertise/ihor-dovhal-portrait-1x1-640w.webp",
+        "source_size": [
+          1153,
+          2048
+        ],
+        "oriented_size": [
+          1153,
+          2048
+        ],
+        "crop_box": [
+          225.0,
+          230.0,
+          1150.0,
+          1155.0
+        ],
+        "size": [
+          640,
+          640
+        ],
+        "format": "WEBP",
+        "quality": 84,
+        "bytes": 43240,
+        "sha256": "e4ff19442b3a4bdd5a1823aee2ae53eda2f04863e1941ecca12a055a54ef75e5",
+        "alpha": false
+      }
+    ],
+    "asset_name": "ihor-dovhal",
+    "role": "portrait",
+    "aspect_ratio": "1x1"
+  },
+  {
+    "id": "michalevic",
+    "source": "User-provided mihalevicz.jpg_1.jpg.jpg.webp",
+    "processing": {
+      "crop": [
+        472,
+        0,
+        976,
+        976
+      ]
+    },
+    "variants": [
+      {
+        "output": "assets/expertise/alaksiej-michalevic-portrait-1x1-320w.webp",
+        "source_size": [
+          1920,
+          976
+        ],
+        "oriented_size": [
+          1920,
+          976
+        ],
+        "crop_box": [
+          472.0,
+          0.0,
+          1448.0,
+          976.0
+        ],
+        "size": [
+          320,
+          320
+        ],
+        "format": "WEBP",
+        "quality": 84,
+        "bytes": 5448,
+        "sha256": "a97516e0bdf7a8d1be1734051bca04da80acdf1e95d2ab7e85096e5a16eaf64f",
+        "alpha": false
+      },
+      {
+        "output": "assets/expertise/alaksiej-michalevic-portrait-1x1-640w.webp",
+        "source_size": [
+          1920,
+          976
+        ],
+        "oriented_size": [
+          1920,
+          976
+        ],
+        "crop_box": [
+          472.0,
+          0.0,
+          1448.0,
+          976.0
+        ],
+        "size": [
+          640,
+          640
+        ],
+        "format": "WEBP",
+        "quality": 84,
+        "bytes": 12930,
+        "sha256": "7cc4b0c4c57f39492d0620a8617835ed056cf8b2daefd3a2885c6037d317ac7d",
+        "alpha": false
+      }
+    ],
+    "asset_name": "alaksiej-michalevic",
+    "role": "portrait",
+    "aspect_ratio": "1x1"
   }
 ]

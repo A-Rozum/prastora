@@ -1,5 +1,6 @@
 """Behavior checks for the portable image converter; synthetic inputs only."""
 import hashlib
+import json
 from pathlib import Path
 import subprocess
 import sys
@@ -108,6 +109,39 @@ class ImagesTest(unittest.TestCase):
         result = subprocess.run(command, cwd=self.root, capture_output=True, text=True)
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertTrue((self.root / "portable.webp").is_file())
+
+    def test_named_cli_output_matches_actual_geometry_and_preserves_previous_file(self):
+        src = self.source(size=(200, 160))
+        command = [sys.executable, str(Path(images.__file__).resolve()), "convert",
+                   src.name, "assets", "--size", "80x100", "--name", "alaksiej-michalevic",
+                   "--role", "portrait"]
+        result = subprocess.run(command, cwd=self.root, capture_output=True, text=True)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        output = self.root / json.loads(result.stdout)["output"]
+        self.assertEqual(output.name, "alaksiej-michalevic-portrait-4x5-80w.webp")
+        with Image.open(output) as image:
+            self.assertEqual(image.size, (80, 100))
+        original = output.read_bytes()
+        repeated = subprocess.run(command, cwd=self.root, capture_output=True, text=True)
+        self.assertNotEqual(repeated.returncode, 0)
+        self.assertEqual(output.read_bytes(), original)
+
+    def test_named_outputs_reject_missing_identity_and_path_fragments(self):
+        src = self.source()
+        for options in ({"name": "oleg-bresky"}, {"role": "portrait"},
+                        {"name": "../oleg-bresky", "role": "portrait"},
+                        {"name": "oleg-bresky", "role": "portrait/card"}):
+            with self.assertRaises(ValueError):
+                images.convert(src, self.root / "assets", (64, 64), **options)
+        self.assertFalse((self.root / "assets").exists())
+
+    def test_named_outputs_support_non_person_images(self):
+        src = self.source(size=(200, 100))
+        result = images.convert(src, self.root / "assets", (160, 90),
+                                name="courtroom", role="hero")
+        self.assertEqual(Path(result["output"]).name, "courtroom-hero-16x9-160w.webp")
+        with Image.open(result["output"]) as image:
+            self.assertEqual(image.size, (160, 90))
 
 
 if __name__ == "__main__":

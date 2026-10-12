@@ -6,10 +6,21 @@ import io
 import json
 import math
 import os
+import re
 from pathlib import Path
 import tempfile
 
 from PIL import Image, ImageCms, ImageColor, ImageOps, features
+
+
+def asset_filename(name, role, target):
+    """Use an explicit identity and purpose; geometry comes from the actual target."""
+    for label, value in (("name", name), ("role", role)):
+        if not isinstance(value, str) or not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", value):
+            raise ValueError(f"{label} must use lowercase ASCII words separated by hyphens")
+    width, height = target
+    divisor = math.gcd(width, height)
+    return f"{name}-{role}-{width // divisor}x{height // divisor}-{width}w.webp"
 
 
 def pair(value):
@@ -134,6 +145,12 @@ def encode(image, quality=84, min_quality=72, max_bytes=None, lossless=False):
 
 def convert(source, destination, target, **options):
     source, destination = Path(source), Path(destination)
+    name, role = options.pop("name", None), options.pop("role", None)
+    if name is not None or role is not None:
+        filename = asset_filename(name, role, target)
+        if destination.suffix.lower() == ".webp" or (destination.exists() and not destination.is_dir()):
+            raise ValueError("With --name and --role, output must be a directory")
+        destination = destination / filename
     overwrite = options.pop("overwrite", False)
     if source.resolve() == destination.resolve():
         raise ValueError("Source and destination must differ")
@@ -174,8 +191,10 @@ def main():
     inspect.add_argument("source", type=Path)
     command = sub.add_parser("convert", help="Crop, resize, normalize and optimize a WebP derivative")
     command.add_argument("source", type=Path)
-    command.add_argument("output", type=Path)
+    command.add_argument("output", type=Path, help="WebP path, or an output directory with --name and --role")
     command.add_argument("--size", type=size, required=True, metavar="WIDTHxHEIGHT")
+    command.add_argument("--name", help="Stable identity, e.g. alaksiej-michalevic or courtroom")
+    command.add_argument("--role", help="Usage, e.g. portrait, hero or article; requires --name")
     command.add_argument("--fit", choices=("cover", "contain"), default="cover")
     command.add_argument("--focal", type=pair, default=(.5, .5), metavar="X,Y")
     command.add_argument("--zoom", type=float, default=1)
