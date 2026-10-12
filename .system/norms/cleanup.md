@@ -1,1 +1,1 @@
-Remove what a test or probe leaves behind (files, branches, workflows) once it is done; mention it only if something could not be removed.
+Mark the commits of a test or probe with [probe] in their message, so that their failures do not count as departures. Remove what the test leaves behind (files, branches, workflows) once it is done; mention it only if something could not be removed.
