@@ -90,6 +90,70 @@ def main():
             assert not errors, errors
             context.close()
 
+            concept_names = ('expertise-portal', 'expertise-editorial', 'expertise-network', 'expertise-directions')
+            for service in ('consultation', 'opinion', 'appearance'):
+                context = browser.new_context(viewport={'width': 1440, 'height': 900})
+                page = context.new_page()
+                page.goto(base + 'templates/expertise-portal.html')
+                page.locator('[data-consent-reject]').click()
+                page.locator(f'a[href="expertise.html?service={service}#contact"]').first.click()
+                expect(page.locator('#request-service')).to_have_value(service)
+                context.close()
+            concept_shots = ROOT / '.snap' / 'concepts'
+            concept_shots.mkdir(parents=True, exist_ok=True)
+            for width, height in REGIMES:
+                for scheme in ('light', 'dark'):
+                    for name in concept_names:
+                        context = browser.new_context(viewport={'width': width, 'height': height}, color_scheme=scheme)
+                        page = context.new_page()
+                        errors = []
+                        page.on('pageerror', lambda error: errors.append(str(error)))
+                        page.goto(base + f'templates/{name}.html')
+                        expect(page.locator('[data-consent-demo]')).to_be_visible()
+                        assert page.evaluate('document.documentElement.scrollWidth <= innerWidth + 1'), (name, width, scheme, 'overflow')
+                        page.locator('[data-consent-reject]').click()
+                        theme = page.locator('[data-theme-toggle]')
+                        theme.click()
+                        assert page.locator('html').get_attribute('data-scheme') == ('dark' if scheme == 'light' else 'light')
+                        theme.click()
+                        if name != 'expertise-directions':
+                            nav = page.locator('.desktop-nav') if width > 800 else page.locator('.mobile-nav nav')
+                            if width <= 800:
+                                page.locator('.mobile-nav > summary').click()
+                            nav.locator('.nav-dropdown > summary').first.click()
+                            expect(nav.get_by_role('link', name='Правовые заключения', exact=True)).to_be_visible()
+                            assert page.evaluate('document.documentElement.scrollWidth <= innerWidth + 1'), (name, width, 'menu overflow')
+                            nav.get_by_role('link', name='Правовые заключения', exact=True).click()
+                            expect(page.locator('#service-opinion')).to_be_in_viewport()
+                            page.keyboard.press('Escape')
+                            article = page.locator('.article-topic .disclosure').first
+                            article.locator('summary').click()
+                            expect(article.locator('div').first).to_be_visible()
+                            page.get_by_role('link', name='Стать экспертом', exact=False).click()
+                            expect(page.locator('#join')).to_be_in_viewport()
+                            page.evaluate('window.scrollTo(0, 700)')
+                            top = page.locator('.css-top').bounding_box()['y']
+                            assert abs(top) < 1 if height > 480 else top < 0, (name, width, height, 'sticky')
+                        page.evaluate('window.scrollTo(0, 0)')
+                        page.screenshot(path=str(concept_shots / f'{name}_{width}x{height}_{scheme}.png'), full_page=True)
+                        assert not errors, errors
+                        context.close()
+
+            for name in concept_names:
+                context = browser.new_context(java_script_enabled=False, viewport={'width': 390, 'height': 844})
+                page = context.new_page()
+                page.goto(base + f'templates/{name}.html')
+                assert page.evaluate('document.documentElement.scrollWidth <= innerWidth + 1'), (name, 'no JS overflow')
+                if name != 'expertise-directions':
+                    page.locator('.mobile-nav > summary').click()
+                    page.locator('.mobile-nav .nav-dropdown > summary').first.click()
+                    page.locator('.mobile-nav nav').get_by_role('link', name='Правовые заключения', exact=True).click()
+                    expect(page.locator('#service-opinion')).to_be_in_viewport()
+                    article = page.locator('.article-topic .disclosure').first
+                    article.locator('summary').click()
+                    expect(article.locator('div').first).to_be_visible()
+                context.close()
+
             context = browser.new_context(java_script_enabled=False, viewport={'width': 1440, 'height': 900})
             page = context.new_page()
             page.goto(base + 'templates/expertise.html')
@@ -106,7 +170,7 @@ def main():
             browser.close()
     finally:
         server.shutdown()
-    print('Six viewport regimes, both themes, menus, filtering, enquiries and no-JS journeys passed')
+    print('Six viewport regimes, both themes, three design directions, menus, filtering, enquiries and no-JS journeys passed')
 
 
 if __name__ == '__main__':

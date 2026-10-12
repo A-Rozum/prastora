@@ -6,6 +6,8 @@ on:
       - 'templates/expertise*.html'
       - 'css/pages/expertise.css'
       - 'css/themes/expertise.css'
+      - 'css/pages/expertise-directions.css'
+      - 'css/themes/expertise-directions.css'
       - 'css/components/navigation.css'
       - 'assets/expertise.js'
       - 'assets/interactions.js'
@@ -35,14 +37,18 @@ jobs:
           python3 tools/test_expertise.py
           python3 tools/snap.py base --pages templates/expertise templates/expertise-experts --regimes mobile desktop wide narrow short sideways --dark
           python3 tools/thumbs.py expertise
+          python3 tools/thumbs.py expertise-portal expertise-editorial expertise-network
           python3 tools/reader.py templates/expertise templates/expertise-experts
+          python3 tools/reader.py templates/expertise-portal templates/expertise-editorial templates/expertise-network
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: expertise-browser-check
           path: |
             .snap/base
+            .snap/concepts
             assets/templates/expertise.webp
+            assets/templates/expertise-*.webp
       - name: Post the result on the commit
         if: always()
         env:

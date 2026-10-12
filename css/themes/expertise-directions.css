@@ -1,0 +1,72 @@
+/* Design directions for expertise.law: institutional, editorial and network. */
+@layer theme {
+  :root {
+    color-scheme: light;
+    --ink: #192f43; --muted: #536677; --paper: #ffffff; --surface: #f1f5f8;
+    --line: #cdd8df; --accent: #175a86; --on-accent: #ffffff;
+    --utility-surface: #eaf0f4; --utility-line: #c3d0da;
+    --signal: #9e4d36; --soft-accent: #e4f0f7; --hero-paper: #f5f8fa;
+    --serif: Georgia, 'Times New Roman', serif; --radius: .25rem;
+  }
+  :root[data-direction=editorial] {
+    --ink: #28333c; --muted: #646b70; --paper: #fcfaf6; --surface: #f0eee7;
+    --line: #d6d3cb; --accent: #984632; --signal: #315777; --soft-accent: #f5e8df;
+    --hero-paper: #fcfaf6; --utility-surface: #eeede8; --utility-line: #d0d0c8;
+  }
+  :root[data-direction=network] {
+    --ink: #163e42; --muted: #4e686b; --paper: #ffffff; --surface: #eff5f4;
+    --line: #c6d9d8; --accent: #126765; --signal: #845b31; --soft-accent: #deefed;
+    --hero-paper: #f0f7f6; --utility-surface: #e8f1ef; --utility-line: #bdd3cf;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark; --ink: #e5edf4; --muted: #b5c4d0; --paper: #14232e;
+      --surface: #1c303e; --line: #476171; --accent: #92c9e9; --on-accent: #112735;
+      --utility-surface: #1c303e; --utility-line: #476171; --signal: #e5af8e;
+      --soft-accent: #223f50; --hero-paper: #192c39;
+    }
+    :root[data-direction=editorial] {
+      --ink: #eee8df; --muted: #c4bdb2; --paper: #262622; --surface: #30322d;
+      --line: #626459; --accent: #edb39e; --on-accent: #332118; --signal: #a7c8df;
+      --soft-accent: #47352c; --hero-paper: #262622; --utility-surface: #30322d; --utility-line: #626459;
+    }
+    :root[data-direction=network] {
+      --ink: #e2efec; --muted: #adc7c3; --paper: #142b2c; --surface: #1d3839;
+      --line: #4a6d6e; --accent: #96d5cc; --on-accent: #133332; --signal: #d7c3a0;
+      --soft-accent: #244848; --hero-paper: #193334; --utility-surface: #1d3839; --utility-line: #4a6d6e;
+    }
+  }
+  :root[data-scheme=light] {
+    color-scheme: light; --ink: #192f43; --muted: #536677; --paper: #ffffff;
+    --surface: #f1f5f8; --line: #cdd8df; --accent: #175a86; --on-accent: #ffffff;
+    --utility-surface: #eaf0f4; --utility-line: #c3d0da; --signal: #9e4d36;
+    --soft-accent: #e4f0f7; --hero-paper: #f5f8fa;
+  }
+  :root[data-direction=editorial][data-scheme=light] {
+    --ink: #28333c; --muted: #646b70; --paper: #fcfaf6; --surface: #f0eee7;
+    --line: #d6d3cb; --accent: #984632; --signal: #315777; --soft-accent: #f5e8df;
+    --hero-paper: #fcfaf6; --utility-surface: #eeede8; --utility-line: #d0d0c8;
+  }
+  :root[data-direction=network][data-scheme=light] {
+    --ink: #163e42; --muted: #4e686b; --paper: #ffffff; --surface: #eff5f4;
+    --line: #c6d9d8; --accent: #126765; --signal: #845b31; --soft-accent: #deefed;
+    --hero-paper: #f0f7f6; --utility-surface: #e8f1ef; --utility-line: #bdd3cf;
+  }
+  :root[data-scheme=dark] {
+    color-scheme: dark; --ink: #e5edf4; --muted: #b5c4d0; --paper: #14232e;
+    --surface: #1c303e; --line: #476171; --accent: #92c9e9; --on-accent: #112735;
+    --utility-surface: #1c303e; --utility-line: #476171; --signal: #e5af8e;
+    --soft-accent: #223f50; --hero-paper: #192c39;
+  }
+  :root[data-direction=editorial][data-scheme=dark] {
+    --ink: #eee8df; --muted: #c4bdb2; --paper: #262622; --surface: #30322d;
+    --line: #626459; --accent: #edb39e; --on-accent: #332118; --signal: #a7c8df;
+    --soft-accent: #47352c; --hero-paper: #262622; --utility-surface: #30322d; --utility-line: #626459;
+  }
+  :root[data-direction=network][data-scheme=dark] {
+    --ink: #e2efec; --muted: #adc7c3; --paper: #142b2c; --surface: #1d3839;
+    --line: #4a6d6e; --accent: #96d5cc; --on-accent: #133332; --signal: #d7c3a0;
+    --soft-accent: #244848; --hero-paper: #193334; --utility-surface: #1d3839; --utility-line: #4a6d6e;
+  }
+  @media print { :root, :root[data-direction], :root[data-scheme], :root[data-direction][data-scheme] { color-scheme: light; --ink: #000; --muted: #333; --paper: #fff; --surface: #fff; --line: #aaa; } }
+}

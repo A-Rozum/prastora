@@ -7,6 +7,8 @@
     if (focus === 'regional' || focus === 'belarus') document.getElementById('focus-' + focus).checked = true;
     const jurisdiction = document.getElementById('request-jurisdiction');
     const service = document.getElementById('request-service');
+    const requestedService = params.get('service');
+    if (['consultation', 'opinion', 'appearance'].includes(requestedService)) service.value = requestedService;
     const fields = document.getElementById('request-fields');
     const contact = document.getElementById('request-contact');
     const result = document.getElementById('form-result');

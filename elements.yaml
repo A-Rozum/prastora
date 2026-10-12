@@ -693,3 +693,78 @@
     kind: rašennie
     date: '2026-10-11'
     ref: User requested a real-site Prastora example in GitHub
+- id: kanviencyja:web.css/theme-expertise-directions@1
+  path: css/themes/expertise-directions.css
+  applies:
+    all:
+    - domain: web.css
+    - subject: expertise
+  status: proba
+  access: public
+  audience:
+  - agent
+  - human
+  basis:
+    kind: rašennie
+    date: '2026-10-12'
+    ref: User requested visual directions for the legal expertise platform
+- id: šablon:web/expertise-directions@1
+  path: templates/expertise-directions.html
+  applies:
+    all:
+    - domain: web
+    - subject: expertise
+  status: proba
+  access: public
+  audience:
+  - agent
+  - human
+  basis:
+    kind: rašennie
+    date: '2026-10-12'
+    ref: User requested visual directions for the legal expertise platform
+- id: šablon:web/expertise-portal@1
+  path: templates/expertise-portal.html
+  applies:
+    all:
+    - domain: web
+    - subject: expertise
+  status: proba
+  access: public
+  audience:
+  - agent
+  - human
+  basis:
+    kind: rašennie
+    date: '2026-10-12'
+    ref: User requested visual directions for the legal expertise platform
+- id: šablon:web/expertise-editorial@1
+  path: templates/expertise-editorial.html
+  applies:
+    all:
+    - domain: web
+    - subject: expertise
+  status: proba
+  access: public
+  audience:
+  - agent
+  - human
+  basis:
+    kind: rašennie
+    date: '2026-10-12'
+    ref: User requested visual directions for the legal expertise platform
+- id: šablon:web/expertise-network@1
+  path: templates/expertise-network.html
+  applies:
+    all:
+    - domain: web
+    - subject: expertise
+  status: proba
+  access: public
+  audience:
+  - agent
+  - human
+  basis:
+    kind: rašennie
+    date: '2026-10-12'
+    ref: User requested visual directions for the legal expertise platform
