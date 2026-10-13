@@ -86,8 +86,6 @@ def layer_of(path):
 def check_css(errors):
     for path in sorted((ROOT / "css").rglob("*.css")):
         name = path.relative_to(ROOT).as_posix()
-        if any(Path(name).match(pattern) for pattern in PREVIEW_GLOBS) and "noindex" not in page.robots:
-            errors.append(f"{name}: real-site preview needs meta robots noindex in its head")
         css = re.sub(r"/\*.*?\*/", "", path.read_text(encoding="utf-8"), flags=re.S)
         layer = layer_of(path)
         if layer is None:
@@ -114,6 +112,9 @@ def check_pages(errors):
     pages = {p.resolve(): Page(p.read_text(encoding="utf-8")) for p in files}
     for path, page in pages.items():
         name = path.relative_to(ROOT).as_posix()
+        if any(Path(name).match(pattern) for pattern in PREVIEW_GLOBS):
+            if not {"noindex", "nofollow"} <= page.robots or {"index", "follow", "all"} & page.robots:
+                errors.append(f"{name}: experimental site needs meta robots noindex, nofollow in its head")
         errors += [f"{name}: duplicate id {i}" for i in page.duplicates]
         for src in page.scripts + page.styles:
             if urlsplit(src).scheme or urlsplit(src).netloc:
