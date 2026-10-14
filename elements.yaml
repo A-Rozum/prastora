@@ -917,3 +917,30 @@
     kind: rašennie
     date: '2026-10-12'
     ref: User approved three distinct visitor routes and legal opinion pages
+
+- id: mietad:web.css/css-delivery@1
+  path: methods/css-delivery.md
+  applies:
+    all:
+    - domain: web.css
+    - task_kind: [implementation, review]
+  status: proba
+  access: public
+  audience: [agent, human]
+  basis:
+    kind: praktyka
+    date: '2026-10-14'
+    ref: Reproducible CSS delivery comparison on expertise-law.eu
+- id: prylada:web.css/styles@1
+  path: tools/styles.py
+  applies:
+    all:
+    - domain: web.css
+    - task_kind: [implementation, review]
+  status: proba
+  access: public
+  audience: [agent]
+  basis:
+    kind: rašennie
+    date: '2026-10-14'
+    ref: Optional release bundles with canonical filenames and dependency hashes

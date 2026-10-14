@@ -1,0 +1,5926 @@
+{
+  "format": 1,
+  "source_manifest": {
+    "format": 1,
+    "origin": "https://expertise-law.eu",
+    "prefix": "/__css-lab/run-38621323976",
+    "pages": {
+      "home": {
+        "source": "https://expertise-law.eu/",
+        "styles": [
+          "/css/core.css",
+          "/css/themes/expertise-institution.css",
+          "/css/components/navigation.css",
+          "/css/components/content.css",
+          "/css/components/forms.css",
+          "/css/components/enquiries.css",
+          "/css/components/utility.css",
+          "/css/components/consent.css",
+          "/css/pages/expertise-institution.css",
+          "/css/dev/viewport.css"
+        ],
+        "source_sha256": "31223a5eaf76c4db8f4ceeadf22e57d2d5f40e108a9174ecbd78622cfe547148"
+      },
+      "member": {
+        "source": "https://expertise-law.eu/en/members/kryvoi",
+        "styles": [
+          "/css/core.css",
+          "/css/themes/expertise-institution.css",
+          "/css/components/navigation.css",
+          "/css/components/content.css",
+          "/css/components/forms.css",
+          "/css/components/enquiries.css",
+          "/css/components/utility.css",
+          "/css/components/consent.css",
+          "/css/pages/expertise-member.css",
+          "/css/dev/viewport.css"
+        ],
+        "source_sha256": "43fbbdf992e47e18fad054a2f91a0a78446bc803a2b8cfa9fd4cab6abfe36a9e"
+      }
+    },
+    "variants": [
+      "blocking",
+      "async-modules",
+      "async-state",
+      "critical-inline",
+      "bundle",
+      "shared-bundle"
+    ],
+    "critical": {
+      "home": {
+        "bytes": 18968,
+        "hash": "'sha256-JeYNTlP+19DwFW1RLxgJ5zEhR4mMoeqiIKXe3kSYr3U='"
+      },
+      "member": {
+        "bytes": 19582,
+        "hash": "'sha256-4QP8IqMDJGePq2YbsrJBrdqtKZ6BrLCvJUR8soVHdtk='"
+      }
+    },
+    "browser": "141.0.7390.37",
+    "profiles": [
+      {
+        "name": "mobile",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "latency": 150,
+        "rate": 200000,
+        "cpu": 4
+      },
+      {
+        "name": "desktop",
+        "viewport": {
+          "width": 1280,
+          "height": 900
+        },
+        "latency": 20,
+        "rate": 1250000,
+        "cpu": 1
+      }
+    ]
+  },
+  "browser": "141.0.7390.37",
+  "measured_at": "2026-10-14T19:16:42.715Z",
+  "note": "Same public HTML snapshots on the real HTTPS host; native browser metrics under declared network/CPU conditions. Blocking time is excess long-task duration after FCP in this observation window, not Lighthouse TTI-based TBT.",
+  "quality": [
+    {
+      "name": "home",
+      "variant": "async-modules",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scheme": "light",
+      "fragment": "",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "async-state",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scheme": "light",
+      "fragment": "",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "critical-inline",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scheme": "light",
+      "fragment": "",
+      "first_paint_differences": [
+        "h1.y",
+        ".lead.y",
+        "main.y"
+      ],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "bundle",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scheme": "light",
+      "fragment": "",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "shared-bundle",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scheme": "light",
+      "fragment": "",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "async-modules",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scheme": "light",
+      "fragment": "#request",
+      "first_paint_differences": [
+        "main.y",
+        "[data-enquiry-form].height",
+        ".field-row.height",
+        ".field-row.display",
+        "[name=name].x",
+        "[name=name].y",
+        "[name=name].width",
+        "[name=name].height",
+        "[name=name].color",
+        "[name=name].display",
+        "[name=email].x",
+        "[name=email].y",
+        "[name=email].width",
+        "[name=email].height",
+        "[name=email].color",
+        "[name=email].display"
+      ],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "async-state",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scheme": "light",
+      "fragment": "#request",
+      "first_paint_differences": [
+        "[data-enquiry-form].height",
+        ".field-row.height",
+        "[name=email].y"
+      ],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "critical-inline",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scheme": "light",
+      "fragment": "#request",
+      "first_paint_differences": [
+        "main.y",
+        "[data-enquiry-form].y",
+        "[data-enquiry-form].height",
+        ".field-row.y",
+        ".field-row.height",
+        ".field-row.display",
+        "[name=name].x",
+        "[name=name].y",
+        "[name=name].width",
+        "[name=name].height",
+        "[name=name].color",
+        "[name=name].display",
+        "[name=email].x",
+        "[name=email].y",
+        "[name=email].width",
+        "[name=email].height",
+        "[name=email].color",
+        "[name=email].display"
+      ],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "bundle",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scheme": "light",
+      "fragment": "#request",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "shared-bundle",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scheme": "light",
+      "fragment": "#request",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "async-modules",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scheme": "dark",
+      "fragment": "",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "async-state",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scheme": "dark",
+      "fragment": "",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "critical-inline",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scheme": "dark",
+      "fragment": "",
+      "first_paint_differences": [
+        "h1.y",
+        ".lead.y",
+        "main.y"
+      ],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "bundle",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scheme": "dark",
+      "fragment": "",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "shared-bundle",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scheme": "dark",
+      "fragment": "",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "async-modules",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scheme": "dark",
+      "fragment": "#request",
+      "first_paint_differences": [
+        "main.y",
+        "[data-enquiry-form].height",
+        ".field-row.height",
+        ".field-row.display",
+        "[name=name].x",
+        "[name=name].y",
+        "[name=name].width",
+        "[name=name].height",
+        "[name=name].color",
+        "[name=name].display",
+        "[name=email].x",
+        "[name=email].y",
+        "[name=email].width",
+        "[name=email].height",
+        "[name=email].color",
+        "[name=email].display"
+      ],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "async-state",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scheme": "dark",
+      "fragment": "#request",
+      "first_paint_differences": [
+        "[data-enquiry-form].height",
+        ".field-row.height",
+        "[name=email].y"
+      ],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "critical-inline",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scheme": "dark",
+      "fragment": "#request",
+      "first_paint_differences": [
+        "main.y",
+        "[data-enquiry-form].y",
+        "[data-enquiry-form].height",
+        ".field-row.y",
+        ".field-row.height",
+        ".field-row.display",
+        "[name=name].x",
+        "[name=name].y",
+        "[name=name].width",
+        "[name=name].height",
+        "[name=name].color",
+        "[name=name].display",
+        "[name=email].x",
+        "[name=email].y",
+        "[name=email].width",
+        "[name=email].height",
+        "[name=email].color",
+        "[name=email].display"
+      ],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "bundle",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scheme": "dark",
+      "fragment": "#request",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "shared-bundle",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scheme": "dark",
+      "fragment": "#request",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "async-modules",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "scheme": "light",
+      "fragment": "",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "async-state",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "scheme": "light",
+      "fragment": "",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "critical-inline",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "scheme": "light",
+      "fragment": "",
+      "first_paint_differences": [
+        "h1.y",
+        ".lead.y",
+        "main.y"
+      ],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "bundle",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "scheme": "light",
+      "fragment": "",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "shared-bundle",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "scheme": "light",
+      "fragment": "",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "async-modules",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "scheme": "light",
+      "fragment": "#request",
+      "first_paint_differences": [
+        "main.y",
+        "[data-enquiry-form].y",
+        "[data-enquiry-form].height",
+        ".field-row.y",
+        ".field-row.height",
+        ".field-row.display",
+        "[name=name].x",
+        "[name=name].y",
+        "[name=name].width",
+        "[name=name].height",
+        "[name=name].color",
+        "[name=name].display",
+        "[name=email].x",
+        "[name=email].y",
+        "[name=email].width",
+        "[name=email].height",
+        "[name=email].color",
+        "[name=email].display"
+      ],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "async-state",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "scheme": "light",
+      "fragment": "#request",
+      "first_paint_differences": [
+        "[data-enquiry-form].height",
+        ".field-row.height",
+        "[name=email].y"
+      ],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "critical-inline",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "scheme": "light",
+      "fragment": "#request",
+      "first_paint_differences": [
+        ".site-header.height",
+        "main.y",
+        "[data-enquiry-form].x",
+        "[data-enquiry-form].y",
+        "[data-enquiry-form].width",
+        "[data-enquiry-form].height",
+        ".field-row.x",
+        ".field-row.y",
+        ".field-row.width",
+        ".field-row.height",
+        ".field-row.display",
+        "[name=name].x",
+        "[name=name].y",
+        "[name=name].width",
+        "[name=name].height",
+        "[name=name].color",
+        "[name=name].display",
+        "[name=email].x",
+        "[name=email].y",
+        "[name=email].width",
+        "[name=email].height",
+        "[name=email].color",
+        "[name=email].display"
+      ],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "bundle",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "scheme": "light",
+      "fragment": "#request",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "shared-bundle",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "scheme": "light",
+      "fragment": "#request",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "async-modules",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "scheme": "dark",
+      "fragment": "",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "async-state",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "scheme": "dark",
+      "fragment": "",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "critical-inline",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "scheme": "dark",
+      "fragment": "",
+      "first_paint_differences": [
+        "h1.y",
+        ".lead.y",
+        "main.y"
+      ],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "bundle",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "scheme": "dark",
+      "fragment": "",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "shared-bundle",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "scheme": "dark",
+      "fragment": "",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "async-modules",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "scheme": "dark",
+      "fragment": "#request",
+      "first_paint_differences": [
+        "main.y",
+        "[data-enquiry-form].y",
+        "[data-enquiry-form].height",
+        ".field-row.y",
+        ".field-row.height",
+        ".field-row.display",
+        "[name=name].x",
+        "[name=name].y",
+        "[name=name].width",
+        "[name=name].height",
+        "[name=name].color",
+        "[name=name].display",
+        "[name=email].x",
+        "[name=email].y",
+        "[name=email].width",
+        "[name=email].height",
+        "[name=email].color",
+        "[name=email].display"
+      ],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "async-state",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "scheme": "dark",
+      "fragment": "#request",
+      "first_paint_differences": [
+        "[data-enquiry-form].height",
+        ".field-row.height",
+        "[name=email].y"
+      ],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "critical-inline",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "scheme": "dark",
+      "fragment": "#request",
+      "first_paint_differences": [
+        "main.y",
+        "[data-enquiry-form].x",
+        "[data-enquiry-form].y",
+        "[data-enquiry-form].width",
+        "[data-enquiry-form].height",
+        ".field-row.x",
+        ".field-row.y",
+        ".field-row.width",
+        ".field-row.height",
+        ".field-row.display",
+        "[name=name].x",
+        "[name=name].y",
+        "[name=name].width",
+        "[name=name].height",
+        "[name=name].color",
+        "[name=name].display",
+        "[name=email].x",
+        "[name=email].y",
+        "[name=email].width",
+        "[name=email].height",
+        "[name=email].color",
+        "[name=email].display"
+      ],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "bundle",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "scheme": "dark",
+      "fragment": "#request",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "shared-bundle",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "scheme": "dark",
+      "fragment": "#request",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "async-modules",
+      "viewport": {
+        "width": 2560,
+        "height": 1440
+      },
+      "scheme": "light",
+      "fragment": "",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "async-state",
+      "viewport": {
+        "width": 2560,
+        "height": 1440
+      },
+      "scheme": "light",
+      "fragment": "",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "critical-inline",
+      "viewport": {
+        "width": 2560,
+        "height": 1440
+      },
+      "scheme": "light",
+      "fragment": "",
+      "first_paint_differences": [
+        "h1.y",
+        ".lead.y",
+        "main.y"
+      ],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "bundle",
+      "viewport": {
+        "width": 2560,
+        "height": 1440
+      },
+      "scheme": "light",
+      "fragment": "",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "shared-bundle",
+      "viewport": {
+        "width": 2560,
+        "height": 1440
+      },
+      "scheme": "light",
+      "fragment": "",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "async-modules",
+      "viewport": {
+        "width": 2560,
+        "height": 1440
+      },
+      "scheme": "light",
+      "fragment": "#request",
+      "first_paint_differences": [
+        "main.y",
+        "[data-enquiry-form].y",
+        "[data-enquiry-form].height",
+        ".field-row.y",
+        ".field-row.height",
+        ".field-row.display",
+        "[name=name].x",
+        "[name=name].y",
+        "[name=name].width",
+        "[name=name].height",
+        "[name=name].color",
+        "[name=name].display",
+        "[name=email].x",
+        "[name=email].y",
+        "[name=email].width",
+        "[name=email].height",
+        "[name=email].color",
+        "[name=email].display"
+      ],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "async-state",
+      "viewport": {
+        "width": 2560,
+        "height": 1440
+      },
+      "scheme": "light",
+      "fragment": "#request",
+      "first_paint_differences": [
+        "[data-enquiry-form].height",
+        ".field-row.height",
+        "[name=email].y"
+      ],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "critical-inline",
+      "viewport": {
+        "width": 2560,
+        "height": 1440
+      },
+      "scheme": "light",
+      "fragment": "#request",
+      "first_paint_differences": [
+        "main.y",
+        "[data-enquiry-form].x",
+        "[data-enquiry-form].y",
+        "[data-enquiry-form].width",
+        "[data-enquiry-form].height",
+        ".field-row.x",
+        ".field-row.y",
+        ".field-row.width",
+        ".field-row.height",
+        ".field-row.display",
+        "[name=name].x",
+        "[name=name].y",
+        "[name=name].width",
+        "[name=name].height",
+        "[name=name].color",
+        "[name=name].display",
+        "[name=email].x",
+        "[name=email].y",
+        "[name=email].width",
+        "[name=email].height",
+        "[name=email].color",
+        "[name=email].display"
+      ],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "bundle",
+      "viewport": {
+        "width": 2560,
+        "height": 1440
+      },
+      "scheme": "light",
+      "fragment": "#request",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "shared-bundle",
+      "viewport": {
+        "width": 2560,
+        "height": 1440
+      },
+      "scheme": "light",
+      "fragment": "#request",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "async-modules",
+      "viewport": {
+        "width": 2560,
+        "height": 1440
+      },
+      "scheme": "dark",
+      "fragment": "",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "async-state",
+      "viewport": {
+        "width": 2560,
+        "height": 1440
+      },
+      "scheme": "dark",
+      "fragment": "",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "critical-inline",
+      "viewport": {
+        "width": 2560,
+        "height": 1440
+      },
+      "scheme": "dark",
+      "fragment": "",
+      "first_paint_differences": [
+        "h1.y",
+        ".lead.y",
+        "main.y"
+      ],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "bundle",
+      "viewport": {
+        "width": 2560,
+        "height": 1440
+      },
+      "scheme": "dark",
+      "fragment": "",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "shared-bundle",
+      "viewport": {
+        "width": 2560,
+        "height": 1440
+      },
+      "scheme": "dark",
+      "fragment": "",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "async-modules",
+      "viewport": {
+        "width": 2560,
+        "height": 1440
+      },
+      "scheme": "dark",
+      "fragment": "#request",
+      "first_paint_differences": [
+        "main.y",
+        "[data-enquiry-form].y",
+        "[data-enquiry-form].height",
+        ".field-row.y",
+        ".field-row.height",
+        ".field-row.display",
+        "[name=name].x",
+        "[name=name].y",
+        "[name=name].width",
+        "[name=name].height",
+        "[name=name].color",
+        "[name=name].display",
+        "[name=email].x",
+        "[name=email].y",
+        "[name=email].width",
+        "[name=email].height",
+        "[name=email].color",
+        "[name=email].display"
+      ],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "async-state",
+      "viewport": {
+        "width": 2560,
+        "height": 1440
+      },
+      "scheme": "dark",
+      "fragment": "#request",
+      "first_paint_differences": [
+        "[data-enquiry-form].height",
+        ".field-row.height",
+        "[name=email].y"
+      ],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "critical-inline",
+      "viewport": {
+        "width": 2560,
+        "height": 1440
+      },
+      "scheme": "dark",
+      "fragment": "#request",
+      "first_paint_differences": [
+        "main.y",
+        "[data-enquiry-form].x",
+        "[data-enquiry-form].y",
+        "[data-enquiry-form].width",
+        "[data-enquiry-form].height",
+        ".field-row.x",
+        ".field-row.y",
+        ".field-row.width",
+        ".field-row.height",
+        ".field-row.display",
+        "[name=name].x",
+        "[name=name].y",
+        "[name=name].width",
+        "[name=name].height",
+        "[name=name].color",
+        "[name=name].display",
+        "[name=email].x",
+        "[name=email].y",
+        "[name=email].width",
+        "[name=email].height",
+        "[name=email].color",
+        "[name=email].display"
+      ],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "bundle",
+      "viewport": {
+        "width": 2560,
+        "height": 1440
+      },
+      "scheme": "dark",
+      "fragment": "#request",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "shared-bundle",
+      "viewport": {
+        "width": 2560,
+        "height": 1440
+      },
+      "scheme": "dark",
+      "fragment": "#request",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "async-modules",
+      "viewport": {
+        "width": 1024,
+        "height": 280
+      },
+      "scheme": "light",
+      "fragment": "",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "async-state",
+      "viewport": {
+        "width": 1024,
+        "height": 280
+      },
+      "scheme": "light",
+      "fragment": "",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "critical-inline",
+      "viewport": {
+        "width": 1024,
+        "height": 280
+      },
+      "scheme": "light",
+      "fragment": "",
+      "first_paint_differences": [
+        "h1.y",
+        "main.y"
+      ],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "bundle",
+      "viewport": {
+        "width": 1024,
+        "height": 280
+      },
+      "scheme": "light",
+      "fragment": "",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "shared-bundle",
+      "viewport": {
+        "width": 1024,
+        "height": 280
+      },
+      "scheme": "light",
+      "fragment": "",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "async-modules",
+      "viewport": {
+        "width": 1024,
+        "height": 280
+      },
+      "scheme": "light",
+      "fragment": "#request",
+      "first_paint_differences": [
+        "[data-enquiry-form].height",
+        ".field-row.height",
+        ".field-row.display",
+        "[name=name].x",
+        "[name=name].y",
+        "[name=name].width",
+        "[name=name].height",
+        "[name=name].color",
+        "[name=name].display",
+        "[name=email].x",
+        "[name=email].y",
+        "[name=email].width",
+        "[name=email].height",
+        "[name=email].color",
+        "[name=email].display"
+      ],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "async-state",
+      "viewport": {
+        "width": 1024,
+        "height": 280
+      },
+      "scheme": "light",
+      "fragment": "#request",
+      "first_paint_differences": [
+        "[data-enquiry-form].height",
+        ".field-row.height",
+        "[name=email].y"
+      ],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "critical-inline",
+      "viewport": {
+        "width": 1024,
+        "height": 280
+      },
+      "scheme": "light",
+      "fragment": "#request",
+      "first_paint_differences": [
+        "main.y",
+        "[data-enquiry-form].x",
+        "[data-enquiry-form].y",
+        "[data-enquiry-form].width",
+        "[data-enquiry-form].height",
+        ".field-row.x",
+        ".field-row.y",
+        ".field-row.width",
+        ".field-row.height",
+        ".field-row.display",
+        "[name=name].x",
+        "[name=name].y",
+        "[name=name].width",
+        "[name=name].height",
+        "[name=name].color",
+        "[name=name].display",
+        "[name=email].x",
+        "[name=email].y",
+        "[name=email].width",
+        "[name=email].height",
+        "[name=email].color",
+        "[name=email].display"
+      ],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "bundle",
+      "viewport": {
+        "width": 1024,
+        "height": 280
+      },
+      "scheme": "light",
+      "fragment": "#request",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "shared-bundle",
+      "viewport": {
+        "width": 1024,
+        "height": 280
+      },
+      "scheme": "light",
+      "fragment": "#request",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "async-modules",
+      "viewport": {
+        "width": 1024,
+        "height": 280
+      },
+      "scheme": "dark",
+      "fragment": "",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "async-state",
+      "viewport": {
+        "width": 1024,
+        "height": 280
+      },
+      "scheme": "dark",
+      "fragment": "",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "critical-inline",
+      "viewport": {
+        "width": 1024,
+        "height": 280
+      },
+      "scheme": "dark",
+      "fragment": "",
+      "first_paint_differences": [
+        "h1.y",
+        "main.y"
+      ],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "bundle",
+      "viewport": {
+        "width": 1024,
+        "height": 280
+      },
+      "scheme": "dark",
+      "fragment": "",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "shared-bundle",
+      "viewport": {
+        "width": 1024,
+        "height": 280
+      },
+      "scheme": "dark",
+      "fragment": "",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "async-modules",
+      "viewport": {
+        "width": 1024,
+        "height": 280
+      },
+      "scheme": "dark",
+      "fragment": "#request",
+      "first_paint_differences": [
+        "[data-enquiry-form].height",
+        ".field-row.height",
+        ".field-row.display",
+        "[name=name].x",
+        "[name=name].y",
+        "[name=name].width",
+        "[name=name].height",
+        "[name=name].color",
+        "[name=name].display",
+        "[name=email].x",
+        "[name=email].y",
+        "[name=email].width",
+        "[name=email].height",
+        "[name=email].color",
+        "[name=email].display"
+      ],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "async-state",
+      "viewport": {
+        "width": 1024,
+        "height": 280
+      },
+      "scheme": "dark",
+      "fragment": "#request",
+      "first_paint_differences": [
+        "[data-enquiry-form].height",
+        ".field-row.height",
+        "[name=email].y"
+      ],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "critical-inline",
+      "viewport": {
+        "width": 1024,
+        "height": 280
+      },
+      "scheme": "dark",
+      "fragment": "#request",
+      "first_paint_differences": [
+        "main.y",
+        "[data-enquiry-form].x",
+        "[data-enquiry-form].y",
+        "[data-enquiry-form].width",
+        "[data-enquiry-form].height",
+        ".field-row.x",
+        ".field-row.y",
+        ".field-row.width",
+        ".field-row.height",
+        ".field-row.display",
+        "[name=name].x",
+        "[name=name].y",
+        "[name=name].width",
+        "[name=name].height",
+        "[name=name].color",
+        "[name=name].display",
+        "[name=email].x",
+        "[name=email].y",
+        "[name=email].width",
+        "[name=email].height",
+        "[name=email].color",
+        "[name=email].display"
+      ],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "bundle",
+      "viewport": {
+        "width": 1024,
+        "height": 280
+      },
+      "scheme": "dark",
+      "fragment": "#request",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "shared-bundle",
+      "viewport": {
+        "width": 1024,
+        "height": 280
+      },
+      "scheme": "dark",
+      "fragment": "#request",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "async-modules",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scheme": "light",
+      "fragment": "",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "async-state",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scheme": "light",
+      "fragment": "",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "critical-inline",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scheme": "light",
+      "fragment": "",
+      "first_paint_differences": [
+        "h1.y",
+        ".lead.y",
+        "main.y",
+        ".member-photo.y"
+      ],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "bundle",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scheme": "light",
+      "fragment": "",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "shared-bundle",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scheme": "light",
+      "fragment": "",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "async-modules",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scheme": "light",
+      "fragment": "#contact",
+      "first_paint_differences": [
+        "[data-enquiry-form].height",
+        ".field-row.height",
+        ".field-row.display",
+        "[name=name].x",
+        "[name=name].y",
+        "[name=name].width",
+        "[name=name].height",
+        "[name=name].color",
+        "[name=name].display",
+        "[name=email].x",
+        "[name=email].y",
+        "[name=email].width",
+        "[name=email].height",
+        "[name=email].color",
+        "[name=email].display"
+      ],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "async-state",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scheme": "light",
+      "fragment": "#contact",
+      "first_paint_differences": [
+        "[data-enquiry-form].height",
+        ".field-row.height",
+        "[name=email].y"
+      ],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "critical-inline",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scheme": "light",
+      "fragment": "#contact",
+      "first_paint_differences": [
+        "main.y",
+        "[data-enquiry-form].y",
+        "[data-enquiry-form].height",
+        ".field-row.y",
+        ".field-row.height",
+        ".field-row.display",
+        "[name=name].x",
+        "[name=name].y",
+        "[name=name].width",
+        "[name=name].height",
+        "[name=name].color",
+        "[name=name].display",
+        "[name=email].x",
+        "[name=email].y",
+        "[name=email].width",
+        "[name=email].height",
+        "[name=email].color",
+        "[name=email].display"
+      ],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "bundle",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scheme": "light",
+      "fragment": "#contact",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "shared-bundle",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scheme": "light",
+      "fragment": "#contact",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "async-modules",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scheme": "dark",
+      "fragment": "",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "async-state",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scheme": "dark",
+      "fragment": "",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "critical-inline",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scheme": "dark",
+      "fragment": "",
+      "first_paint_differences": [
+        "h1.y",
+        ".lead.y",
+        "main.y",
+        ".member-photo.y"
+      ],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "bundle",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scheme": "dark",
+      "fragment": "",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "shared-bundle",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scheme": "dark",
+      "fragment": "",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "async-modules",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scheme": "dark",
+      "fragment": "#contact",
+      "first_paint_differences": [
+        "[data-enquiry-form].height",
+        ".field-row.height",
+        ".field-row.display",
+        "[name=name].x",
+        "[name=name].y",
+        "[name=name].width",
+        "[name=name].height",
+        "[name=name].color",
+        "[name=name].display",
+        "[name=email].x",
+        "[name=email].y",
+        "[name=email].width",
+        "[name=email].height",
+        "[name=email].color",
+        "[name=email].display"
+      ],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "async-state",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scheme": "dark",
+      "fragment": "#contact",
+      "first_paint_differences": [
+        "[data-enquiry-form].height",
+        ".field-row.height",
+        "[name=email].y"
+      ],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "critical-inline",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scheme": "dark",
+      "fragment": "#contact",
+      "first_paint_differences": [
+        "main.y",
+        "[data-enquiry-form].y",
+        "[data-enquiry-form].height",
+        ".field-row.y",
+        ".field-row.height",
+        ".field-row.display",
+        "[name=name].x",
+        "[name=name].y",
+        "[name=name].width",
+        "[name=name].height",
+        "[name=name].color",
+        "[name=name].display",
+        "[name=email].x",
+        "[name=email].y",
+        "[name=email].width",
+        "[name=email].height",
+        "[name=email].color",
+        "[name=email].display"
+      ],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "bundle",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scheme": "dark",
+      "fragment": "#contact",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "shared-bundle",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scheme": "dark",
+      "fragment": "#contact",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "async-modules",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "scheme": "light",
+      "fragment": "",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "async-state",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "scheme": "light",
+      "fragment": "",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "critical-inline",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "scheme": "light",
+      "fragment": "",
+      "first_paint_differences": [
+        "h1.y",
+        ".lead.y",
+        "main.y",
+        ".member-photo.y"
+      ],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "bundle",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "scheme": "light",
+      "fragment": "",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "shared-bundle",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "scheme": "light",
+      "fragment": "",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "async-modules",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "scheme": "light",
+      "fragment": "#contact",
+      "first_paint_differences": [
+        "main.y",
+        "[data-enquiry-form].y",
+        "[data-enquiry-form].height",
+        ".field-row.y",
+        ".field-row.height",
+        ".field-row.display",
+        "[name=name].x",
+        "[name=name].y",
+        "[name=name].width",
+        "[name=name].height",
+        "[name=name].color",
+        "[name=name].display",
+        "[name=email].x",
+        "[name=email].y",
+        "[name=email].width",
+        "[name=email].height",
+        "[name=email].color",
+        "[name=email].display"
+      ],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "async-state",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "scheme": "light",
+      "fragment": "#contact",
+      "first_paint_differences": [
+        "[data-enquiry-form].height",
+        ".field-row.height",
+        "[name=email].y"
+      ],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "critical-inline",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "scheme": "light",
+      "fragment": "#contact",
+      "first_paint_differences": [
+        "main.y",
+        "[data-enquiry-form].x",
+        "[data-enquiry-form].y",
+        "[data-enquiry-form].width",
+        "[data-enquiry-form].height",
+        ".field-row.x",
+        ".field-row.y",
+        ".field-row.width",
+        ".field-row.height",
+        ".field-row.display",
+        "[name=name].x",
+        "[name=name].y",
+        "[name=name].width",
+        "[name=name].height",
+        "[name=name].color",
+        "[name=name].display",
+        "[name=email].x",
+        "[name=email].y",
+        "[name=email].width",
+        "[name=email].height",
+        "[name=email].color",
+        "[name=email].display"
+      ],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "bundle",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "scheme": "light",
+      "fragment": "#contact",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "shared-bundle",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "scheme": "light",
+      "fragment": "#contact",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "async-modules",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "scheme": "dark",
+      "fragment": "",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "async-state",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "scheme": "dark",
+      "fragment": "",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "critical-inline",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "scheme": "dark",
+      "fragment": "",
+      "first_paint_differences": [
+        "h1.y",
+        ".lead.y",
+        "main.y",
+        ".member-photo.y"
+      ],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "bundle",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "scheme": "dark",
+      "fragment": "",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "shared-bundle",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "scheme": "dark",
+      "fragment": "",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "async-modules",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "scheme": "dark",
+      "fragment": "#contact",
+      "first_paint_differences": [
+        "main.y",
+        "[data-enquiry-form].y",
+        "[data-enquiry-form].height",
+        ".field-row.y",
+        ".field-row.height",
+        ".field-row.display",
+        "[name=name].x",
+        "[name=name].y",
+        "[name=name].width",
+        "[name=name].height",
+        "[name=name].color",
+        "[name=name].display",
+        "[name=email].x",
+        "[name=email].y",
+        "[name=email].width",
+        "[name=email].height",
+        "[name=email].color",
+        "[name=email].display"
+      ],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "async-state",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "scheme": "dark",
+      "fragment": "#contact",
+      "first_paint_differences": [
+        "[data-enquiry-form].height",
+        ".field-row.height",
+        "[name=email].y"
+      ],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "critical-inline",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "scheme": "dark",
+      "fragment": "#contact",
+      "first_paint_differences": [
+        "main.y",
+        "[data-enquiry-form].x",
+        "[data-enquiry-form].y",
+        "[data-enquiry-form].width",
+        "[data-enquiry-form].height",
+        ".field-row.x",
+        ".field-row.y",
+        ".field-row.width",
+        ".field-row.height",
+        ".field-row.display",
+        "[name=name].x",
+        "[name=name].y",
+        "[name=name].width",
+        "[name=name].height",
+        "[name=name].color",
+        "[name=name].display",
+        "[name=email].x",
+        "[name=email].y",
+        "[name=email].width",
+        "[name=email].height",
+        "[name=email].color",
+        "[name=email].display"
+      ],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "bundle",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "scheme": "dark",
+      "fragment": "#contact",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "shared-bundle",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "scheme": "dark",
+      "fragment": "#contact",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "async-modules",
+      "viewport": {
+        "width": 2560,
+        "height": 1440
+      },
+      "scheme": "light",
+      "fragment": "",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "async-state",
+      "viewport": {
+        "width": 2560,
+        "height": 1440
+      },
+      "scheme": "light",
+      "fragment": "",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "critical-inline",
+      "viewport": {
+        "width": 2560,
+        "height": 1440
+      },
+      "scheme": "light",
+      "fragment": "",
+      "first_paint_differences": [
+        "h1.y",
+        ".lead.y",
+        "main.y",
+        ".member-photo.y"
+      ],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "bundle",
+      "viewport": {
+        "width": 2560,
+        "height": 1440
+      },
+      "scheme": "light",
+      "fragment": "",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "shared-bundle",
+      "viewport": {
+        "width": 2560,
+        "height": 1440
+      },
+      "scheme": "light",
+      "fragment": "",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "async-modules",
+      "viewport": {
+        "width": 2560,
+        "height": 1440
+      },
+      "scheme": "light",
+      "fragment": "#contact",
+      "first_paint_differences": [
+        "main.y",
+        "[data-enquiry-form].y",
+        "[data-enquiry-form].height",
+        ".field-row.y",
+        ".field-row.height",
+        ".field-row.display",
+        "[name=name].x",
+        "[name=name].y",
+        "[name=name].width",
+        "[name=name].height",
+        "[name=name].color",
+        "[name=name].display",
+        "[name=email].x",
+        "[name=email].y",
+        "[name=email].width",
+        "[name=email].height",
+        "[name=email].color",
+        "[name=email].display"
+      ],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "async-state",
+      "viewport": {
+        "width": 2560,
+        "height": 1440
+      },
+      "scheme": "light",
+      "fragment": "#contact",
+      "first_paint_differences": [
+        "[data-enquiry-form].height",
+        ".field-row.height",
+        "[name=email].y"
+      ],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "critical-inline",
+      "viewport": {
+        "width": 2560,
+        "height": 1440
+      },
+      "scheme": "light",
+      "fragment": "#contact",
+      "first_paint_differences": [
+        "main.y",
+        "[data-enquiry-form].x",
+        "[data-enquiry-form].y",
+        "[data-enquiry-form].width",
+        "[data-enquiry-form].height",
+        ".field-row.x",
+        ".field-row.y",
+        ".field-row.width",
+        ".field-row.height",
+        ".field-row.display",
+        "[name=name].x",
+        "[name=name].y",
+        "[name=name].width",
+        "[name=name].height",
+        "[name=name].color",
+        "[name=name].display",
+        "[name=email].x",
+        "[name=email].y",
+        "[name=email].width",
+        "[name=email].height",
+        "[name=email].color",
+        "[name=email].display"
+      ],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "bundle",
+      "viewport": {
+        "width": 2560,
+        "height": 1440
+      },
+      "scheme": "light",
+      "fragment": "#contact",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "shared-bundle",
+      "viewport": {
+        "width": 2560,
+        "height": 1440
+      },
+      "scheme": "light",
+      "fragment": "#contact",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "async-modules",
+      "viewport": {
+        "width": 2560,
+        "height": 1440
+      },
+      "scheme": "dark",
+      "fragment": "",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "async-state",
+      "viewport": {
+        "width": 2560,
+        "height": 1440
+      },
+      "scheme": "dark",
+      "fragment": "",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "critical-inline",
+      "viewport": {
+        "width": 2560,
+        "height": 1440
+      },
+      "scheme": "dark",
+      "fragment": "",
+      "first_paint_differences": [
+        "h1.y",
+        ".lead.y",
+        "main.y",
+        ".member-photo.y"
+      ],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "bundle",
+      "viewport": {
+        "width": 2560,
+        "height": 1440
+      },
+      "scheme": "dark",
+      "fragment": "",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "shared-bundle",
+      "viewport": {
+        "width": 2560,
+        "height": 1440
+      },
+      "scheme": "dark",
+      "fragment": "",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "async-modules",
+      "viewport": {
+        "width": 2560,
+        "height": 1440
+      },
+      "scheme": "dark",
+      "fragment": "#contact",
+      "first_paint_differences": [
+        "main.y",
+        "[data-enquiry-form].y",
+        "[data-enquiry-form].height",
+        ".field-row.y",
+        ".field-row.height",
+        ".field-row.display",
+        "[name=name].x",
+        "[name=name].y",
+        "[name=name].width",
+        "[name=name].height",
+        "[name=name].color",
+        "[name=name].display",
+        "[name=email].x",
+        "[name=email].y",
+        "[name=email].width",
+        "[name=email].height",
+        "[name=email].color",
+        "[name=email].display"
+      ],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "async-state",
+      "viewport": {
+        "width": 2560,
+        "height": 1440
+      },
+      "scheme": "dark",
+      "fragment": "#contact",
+      "first_paint_differences": [
+        "[data-enquiry-form].height",
+        ".field-row.height",
+        "[name=email].y"
+      ],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "critical-inline",
+      "viewport": {
+        "width": 2560,
+        "height": 1440
+      },
+      "scheme": "dark",
+      "fragment": "#contact",
+      "first_paint_differences": [
+        "main.y",
+        "[data-enquiry-form].x",
+        "[data-enquiry-form].y",
+        "[data-enquiry-form].width",
+        "[data-enquiry-form].height",
+        ".field-row.x",
+        ".field-row.y",
+        ".field-row.width",
+        ".field-row.height",
+        ".field-row.display",
+        "[name=name].x",
+        "[name=name].y",
+        "[name=name].width",
+        "[name=name].height",
+        "[name=name].color",
+        "[name=name].display",
+        "[name=email].x",
+        "[name=email].y",
+        "[name=email].width",
+        "[name=email].height",
+        "[name=email].color",
+        "[name=email].display"
+      ],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "bundle",
+      "viewport": {
+        "width": 2560,
+        "height": 1440
+      },
+      "scheme": "dark",
+      "fragment": "#contact",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "shared-bundle",
+      "viewport": {
+        "width": 2560,
+        "height": 1440
+      },
+      "scheme": "dark",
+      "fragment": "#contact",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "async-modules",
+      "viewport": {
+        "width": 1024,
+        "height": 280
+      },
+      "scheme": "light",
+      "fragment": "",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "async-state",
+      "viewport": {
+        "width": 1024,
+        "height": 280
+      },
+      "scheme": "light",
+      "fragment": "",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "critical-inline",
+      "viewport": {
+        "width": 1024,
+        "height": 280
+      },
+      "scheme": "light",
+      "fragment": "",
+      "first_paint_differences": [
+        "h1.y",
+        ".lead.y",
+        "main.y",
+        ".member-photo.y"
+      ],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "bundle",
+      "viewport": {
+        "width": 1024,
+        "height": 280
+      },
+      "scheme": "light",
+      "fragment": "",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "shared-bundle",
+      "viewport": {
+        "width": 1024,
+        "height": 280
+      },
+      "scheme": "light",
+      "fragment": "",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "async-modules",
+      "viewport": {
+        "width": 1024,
+        "height": 280
+      },
+      "scheme": "light",
+      "fragment": "#contact",
+      "first_paint_differences": [
+        "[data-enquiry-form].height",
+        ".field-row.height",
+        ".field-row.display",
+        "[name=name].x",
+        "[name=name].y",
+        "[name=name].width",
+        "[name=name].height",
+        "[name=name].color",
+        "[name=name].display",
+        "[name=email].x",
+        "[name=email].y",
+        "[name=email].width",
+        "[name=email].height",
+        "[name=email].color",
+        "[name=email].display"
+      ],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "async-state",
+      "viewport": {
+        "width": 1024,
+        "height": 280
+      },
+      "scheme": "light",
+      "fragment": "#contact",
+      "first_paint_differences": [
+        "[data-enquiry-form].height",
+        ".field-row.height",
+        "[name=email].y"
+      ],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "critical-inline",
+      "viewport": {
+        "width": 1024,
+        "height": 280
+      },
+      "scheme": "light",
+      "fragment": "#contact",
+      "first_paint_differences": [
+        "main.y",
+        "[data-enquiry-form].x",
+        "[data-enquiry-form].y",
+        "[data-enquiry-form].width",
+        "[data-enquiry-form].height",
+        ".field-row.x",
+        ".field-row.y",
+        ".field-row.width",
+        ".field-row.height",
+        ".field-row.display",
+        "[name=name].x",
+        "[name=name].y",
+        "[name=name].width",
+        "[name=name].height",
+        "[name=name].color",
+        "[name=name].display",
+        "[name=email].x",
+        "[name=email].y",
+        "[name=email].width",
+        "[name=email].height",
+        "[name=email].color",
+        "[name=email].display"
+      ],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "bundle",
+      "viewport": {
+        "width": 1024,
+        "height": 280
+      },
+      "scheme": "light",
+      "fragment": "#contact",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "shared-bundle",
+      "viewport": {
+        "width": 1024,
+        "height": 280
+      },
+      "scheme": "light",
+      "fragment": "#contact",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "async-modules",
+      "viewport": {
+        "width": 1024,
+        "height": 280
+      },
+      "scheme": "dark",
+      "fragment": "",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "async-state",
+      "viewport": {
+        "width": 1024,
+        "height": 280
+      },
+      "scheme": "dark",
+      "fragment": "",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "critical-inline",
+      "viewport": {
+        "width": 1024,
+        "height": 280
+      },
+      "scheme": "dark",
+      "fragment": "",
+      "first_paint_differences": [
+        "h1.y",
+        ".lead.y",
+        "main.y",
+        ".member-photo.y"
+      ],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "bundle",
+      "viewport": {
+        "width": 1024,
+        "height": 280
+      },
+      "scheme": "dark",
+      "fragment": "",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "shared-bundle",
+      "viewport": {
+        "width": 1024,
+        "height": 280
+      },
+      "scheme": "dark",
+      "fragment": "",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "async-modules",
+      "viewport": {
+        "width": 1024,
+        "height": 280
+      },
+      "scheme": "dark",
+      "fragment": "#contact",
+      "first_paint_differences": [
+        "[data-enquiry-form].height",
+        ".field-row.height",
+        ".field-row.display",
+        "[name=name].x",
+        "[name=name].y",
+        "[name=name].width",
+        "[name=name].height",
+        "[name=name].color",
+        "[name=name].display",
+        "[name=email].x",
+        "[name=email].y",
+        "[name=email].width",
+        "[name=email].height",
+        "[name=email].color",
+        "[name=email].display"
+      ],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "async-state",
+      "viewport": {
+        "width": 1024,
+        "height": 280
+      },
+      "scheme": "dark",
+      "fragment": "#contact",
+      "first_paint_differences": [
+        "[data-enquiry-form].height",
+        ".field-row.height",
+        "[name=email].y"
+      ],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "critical-inline",
+      "viewport": {
+        "width": 1024,
+        "height": 280
+      },
+      "scheme": "dark",
+      "fragment": "#contact",
+      "first_paint_differences": [
+        "main.y",
+        "[data-enquiry-form].x",
+        "[data-enquiry-form].y",
+        "[data-enquiry-form].width",
+        "[data-enquiry-form].height",
+        ".field-row.x",
+        ".field-row.y",
+        ".field-row.width",
+        ".field-row.height",
+        ".field-row.display",
+        "[name=name].x",
+        "[name=name].y",
+        "[name=name].width",
+        "[name=name].height",
+        "[name=name].color",
+        "[name=name].display",
+        "[name=email].x",
+        "[name=email].y",
+        "[name=email].width",
+        "[name=email].height",
+        "[name=email].color",
+        "[name=email].display"
+      ],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "bundle",
+      "viewport": {
+        "width": 1024,
+        "height": 280
+      },
+      "scheme": "dark",
+      "fragment": "#contact",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "member",
+      "variant": "shared-bundle",
+      "viewport": {
+        "width": 1024,
+        "height": 280
+      },
+      "scheme": "dark",
+      "fragment": "#contact",
+      "first_paint_differences": [],
+      "final_differences": []
+    },
+    {
+      "name": "home",
+      "variant": "blocking",
+      "no_js": true,
+      "applied_stylesheets": 10,
+      "console_errors": 0
+    },
+    {
+      "name": "member",
+      "variant": "blocking",
+      "no_js": true,
+      "applied_stylesheets": 10,
+      "console_errors": 0
+    },
+    {
+      "name": "home",
+      "variant": "async-modules",
+      "no_js": true,
+      "applied_stylesheets": 10,
+      "console_errors": 0
+    },
+    {
+      "name": "member",
+      "variant": "async-modules",
+      "no_js": true,
+      "applied_stylesheets": 10,
+      "console_errors": 0
+    },
+    {
+      "name": "home",
+      "variant": "async-state",
+      "no_js": true,
+      "applied_stylesheets": 10,
+      "console_errors": 0
+    },
+    {
+      "name": "member",
+      "variant": "async-state",
+      "no_js": true,
+      "applied_stylesheets": 10,
+      "console_errors": 0
+    },
+    {
+      "name": "home",
+      "variant": "critical-inline",
+      "no_js": true,
+      "applied_stylesheets": 10,
+      "console_errors": 0
+    },
+    {
+      "name": "member",
+      "variant": "critical-inline",
+      "no_js": true,
+      "applied_stylesheets": 10,
+      "console_errors": 0
+    },
+    {
+      "name": "home",
+      "variant": "bundle",
+      "no_js": true,
+      "applied_stylesheets": 1,
+      "console_errors": 0
+    },
+    {
+      "name": "member",
+      "variant": "bundle",
+      "no_js": true,
+      "applied_stylesheets": 1,
+      "console_errors": 0
+    },
+    {
+      "name": "home",
+      "variant": "shared-bundle",
+      "no_js": true,
+      "applied_stylesheets": 2,
+      "console_errors": 0
+    },
+    {
+      "name": "member",
+      "variant": "shared-bundle",
+      "no_js": true,
+      "applied_stylesheets": 2,
+      "console_errors": 0
+    }
+  ],
+  "runs": [
+    {
+      "profile": "mobile",
+      "run": 0,
+      "name": "home",
+      "variant": "blocking",
+      "cache": "cold",
+      "fcp_ms": 768,
+      "lcp_ms": 768,
+      "cls": 0.0005899160360941739,
+      "ttfb_ms": 222.80000000001746,
+      "load_ms": 807.2000000000116,
+      "blocking_ms": 0,
+      "transferred_bytes": 31660,
+      "requests": 16,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 0,
+      "name": "home",
+      "variant": "blocking",
+      "cache": "repeat",
+      "fcp_ms": 512,
+      "lcp_ms": 512,
+      "cls": 0.00029709469969228005,
+      "ttfb_ms": 76.59999999997672,
+      "load_ms": 588.5999999999767,
+      "blocking_ms": 0,
+      "transferred_bytes": 4500,
+      "requests": 15,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 0,
+      "name": "member",
+      "variant": "blocking",
+      "cache": "from-home",
+      "fcp_ms": 492,
+      "lcp_ms": 576,
+      "cls": 0.00029709469969228005,
+      "ttfb_ms": 72.89999999999418,
+      "load_ms": 563.8999999999942,
+      "blocking_ms": 0,
+      "transferred_bytes": 34917,
+      "requests": 16,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 0,
+      "name": "home",
+      "variant": "async-modules",
+      "cache": "cold",
+      "fcp_ms": 784,
+      "lcp_ms": 784,
+      "cls": 0.0005899160360941739,
+      "ttfb_ms": 230.10000000000582,
+      "load_ms": 889.2000000000116,
+      "blocking_ms": 9,
+      "transferred_bytes": 32559,
+      "requests": 17,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 0,
+      "name": "home",
+      "variant": "async-modules",
+      "cache": "repeat",
+      "fcp_ms": 488,
+      "lcp_ms": 488,
+      "cls": 0.00029709469969228005,
+      "ttfb_ms": 61.60000000000582,
+      "load_ms": 628.3000000000175,
+      "blocking_ms": 14,
+      "transferred_bytes": 4800,
+      "requests": 16,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 0,
+      "name": "member",
+      "variant": "async-modules",
+      "cache": "from-home",
+      "fcp_ms": 524,
+      "lcp_ms": 680,
+      "cls": 0.0005899160360941739,
+      "ttfb_ms": 52.80000000001746,
+      "load_ms": 656.8000000000175,
+      "blocking_ms": 0,
+      "transferred_bytes": 35273,
+      "requests": 17,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 0,
+      "name": "home",
+      "variant": "async-state",
+      "cache": "cold",
+      "fcp_ms": 804,
+      "lcp_ms": 804,
+      "cls": 0.0005899160360941739,
+      "ttfb_ms": 162.5,
+      "load_ms": 972.8999999999942,
+      "blocking_ms": 33,
+      "transferred_bytes": 32549,
+      "requests": 17,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 0,
+      "name": "home",
+      "variant": "async-state",
+      "cache": "repeat",
+      "fcp_ms": 540,
+      "lcp_ms": 540,
+      "cls": 0.0005899160360941739,
+      "ttfb_ms": 61.30000000001746,
+      "load_ms": 694.1000000000058,
+      "blocking_ms": 22,
+      "transferred_bytes": 4800,
+      "requests": 16,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 0,
+      "name": "member",
+      "variant": "async-state",
+      "cache": "from-home",
+      "fcp_ms": 532,
+      "lcp_ms": 660,
+      "cls": 0.0005899160360941739,
+      "ttfb_ms": 64.70000000001164,
+      "load_ms": 634.2000000000116,
+      "blocking_ms": 0,
+      "transferred_bytes": 35263,
+      "requests": 17,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 0,
+      "name": "home",
+      "variant": "critical-inline",
+      "cache": "cold",
+      "fcp_ms": 696,
+      "lcp_ms": 696,
+      "cls": 0.2135426583479188,
+      "ttfb_ms": 273.6000000000058,
+      "load_ms": 1109.5,
+      "blocking_ms": 123,
+      "transferred_bytes": 36815,
+      "requests": 17,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 0,
+      "name": "home",
+      "variant": "critical-inline",
+      "cache": "repeat",
+      "fcp_ms": 460,
+      "lcp_ms": 460,
+      "cls": 0.21338292927451694,
+      "ttfb_ms": 70.89999999999418,
+      "load_ms": 892.0999999999767,
+      "blocking_ms": 125,
+      "transferred_bytes": 4800,
+      "requests": 16,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 0,
+      "name": "member",
+      "variant": "critical-inline",
+      "cache": "from-home",
+      "fcp_ms": 428,
+      "lcp_ms": 592,
+      "cls": 0.2135426583479188,
+      "ttfb_ms": 79.29999999998836,
+      "load_ms": 714.6999999999825,
+      "blocking_ms": 6,
+      "transferred_bytes": 39629,
+      "requests": 17,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 0,
+      "name": "home",
+      "variant": "bundle",
+      "cache": "cold",
+      "fcp_ms": 680,
+      "lcp_ms": 680,
+      "cls": 0.0005899160360941739,
+      "ttfb_ms": 194.10000000000582,
+      "load_ms": 715,
+      "blocking_ms": 0,
+      "transferred_bytes": 26148,
+      "requests": 7,
+      "css_requests": 1,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 0,
+      "name": "home",
+      "variant": "bundle",
+      "cache": "repeat",
+      "fcp_ms": 452,
+      "lcp_ms": 452,
+      "cls": 0.00029709469969228005,
+      "ttfb_ms": 63.10000000000582,
+      "load_ms": 536.6000000000058,
+      "blocking_ms": 0,
+      "transferred_bytes": 1800,
+      "requests": 6,
+      "css_requests": 1,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 0,
+      "name": "member",
+      "variant": "bundle",
+      "cache": "from-home",
+      "fcp_ms": 512,
+      "lcp_ms": 556,
+      "cls": 0.0005899160360941739,
+      "ttfb_ms": 67.19999999998254,
+      "load_ms": 543.1000000000058,
+      "blocking_ms": 0,
+      "transferred_bytes": 39720,
+      "requests": 7,
+      "css_requests": 1,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 0,
+      "name": "home",
+      "variant": "shared-bundle",
+      "cache": "cold",
+      "fcp_ms": 668,
+      "lcp_ms": 668,
+      "cls": 0.0005899160360941739,
+      "ttfb_ms": 182.5,
+      "load_ms": 700,
+      "blocking_ms": 0,
+      "transferred_bytes": 26927,
+      "requests": 8,
+      "css_requests": 2,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 0,
+      "name": "home",
+      "variant": "shared-bundle",
+      "cache": "repeat",
+      "fcp_ms": 448,
+      "lcp_ms": 448,
+      "cls": 0.00029709469969228005,
+      "ttfb_ms": 60.80000000001746,
+      "load_ms": 539.2000000000116,
+      "blocking_ms": 0,
+      "transferred_bytes": 2100,
+      "requests": 7,
+      "css_requests": 2,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 0,
+      "name": "member",
+      "variant": "shared-bundle",
+      "cache": "from-home",
+      "fcp_ms": 436,
+      "lcp_ms": 500,
+      "cls": 0.00029709469969228005,
+      "ttfb_ms": 58.70000000001164,
+      "load_ms": 540.2999999999884,
+      "blocking_ms": 0,
+      "transferred_bytes": 32449,
+      "requests": 8,
+      "css_requests": 2,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 0,
+      "name": "member",
+      "variant": "blocking",
+      "cache": "cold",
+      "fcp_ms": 712,
+      "lcp_ms": 780,
+      "cls": 0.0005899160360941739,
+      "ttfb_ms": 200.20000000001164,
+      "load_ms": 763.9000000000233,
+      "blocking_ms": 0,
+      "transferred_bytes": 50458,
+      "requests": 17,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 0,
+      "name": "member",
+      "variant": "blocking",
+      "cache": "repeat",
+      "fcp_ms": 460,
+      "lcp_ms": 472,
+      "cls": 0.0005899160360941739,
+      "ttfb_ms": 69.20000000001164,
+      "load_ms": 528.8999999999942,
+      "blocking_ms": 0,
+      "transferred_bytes": 4800,
+      "requests": 16,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 0,
+      "name": "member",
+      "variant": "async-modules",
+      "cache": "cold",
+      "fcp_ms": 696,
+      "lcp_ms": 800,
+      "cls": 0.00029709469969228005,
+      "ttfb_ms": 188.70000000001164,
+      "load_ms": 781.2999999999884,
+      "blocking_ms": 0,
+      "transferred_bytes": 51361,
+      "requests": 18,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 0,
+      "name": "member",
+      "variant": "async-modules",
+      "cache": "repeat",
+      "fcp_ms": 440,
+      "lcp_ms": 448,
+      "cls": 0.00029709469969228005,
+      "ttfb_ms": 64,
+      "load_ms": 564.7000000000116,
+      "blocking_ms": 0,
+      "transferred_bytes": 5100,
+      "requests": 17,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 0,
+      "name": "member",
+      "variant": "async-state",
+      "cache": "cold",
+      "fcp_ms": 692,
+      "lcp_ms": 788,
+      "cls": 0.00029709469969228005,
+      "ttfb_ms": 174.19999999998254,
+      "load_ms": 770.6000000000058,
+      "blocking_ms": 0,
+      "transferred_bytes": 51351,
+      "requests": 18,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 0,
+      "name": "member",
+      "variant": "async-state",
+      "cache": "repeat",
+      "fcp_ms": 452,
+      "lcp_ms": 456,
+      "cls": 0.0005899160360941739,
+      "ttfb_ms": 56.69999999998254,
+      "load_ms": 572.3999999999942,
+      "blocking_ms": 0,
+      "transferred_bytes": 5100,
+      "requests": 17,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 0,
+      "name": "member",
+      "variant": "critical-inline",
+      "cache": "cold",
+      "fcp_ms": 488,
+      "lcp_ms": 604,
+      "cls": 0.21338292927451694,
+      "ttfb_ms": 173.39999999999418,
+      "load_ms": 858.2999999999884,
+      "blocking_ms": 13,
+      "transferred_bytes": 55717,
+      "requests": 18,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 0,
+      "name": "member",
+      "variant": "critical-inline",
+      "cache": "repeat",
+      "fcp_ms": 404,
+      "lcp_ms": 404,
+      "cls": 0.21338292927451694,
+      "ttfb_ms": 56.10000000000582,
+      "load_ms": 681.7000000000116,
+      "blocking_ms": 0,
+      "transferred_bytes": 5100,
+      "requests": 17,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 0,
+      "name": "member",
+      "variant": "bundle",
+      "cache": "cold",
+      "fcp_ms": 676,
+      "lcp_ms": 724,
+      "cls": 0.00029709469969228005,
+      "ttfb_ms": 190.60000000000582,
+      "load_ms": 706.7999999999884,
+      "blocking_ms": 0,
+      "transferred_bytes": 45083,
+      "requests": 8,
+      "css_requests": 1,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 0,
+      "name": "member",
+      "variant": "bundle",
+      "cache": "repeat",
+      "fcp_ms": 400,
+      "lcp_ms": 400,
+      "cls": 0.00029709469969228005,
+      "ttfb_ms": 59.60000000000582,
+      "load_ms": 523.7000000000116,
+      "blocking_ms": 0,
+      "transferred_bytes": 2100,
+      "requests": 7,
+      "css_requests": 1,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 0,
+      "name": "member",
+      "variant": "shared-bundle",
+      "cache": "cold",
+      "fcp_ms": 632,
+      "lcp_ms": 700,
+      "cls": 0.00029709469969228005,
+      "ttfb_ms": 155.5,
+      "load_ms": 687.4000000000233,
+      "blocking_ms": 0,
+      "transferred_bytes": 45723,
+      "requests": 9,
+      "css_requests": 2,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 0,
+      "name": "member",
+      "variant": "shared-bundle",
+      "cache": "repeat",
+      "fcp_ms": 404,
+      "lcp_ms": 404,
+      "cls": 0.00029709469969228005,
+      "ttfb_ms": 50.60000000000582,
+      "load_ms": 525,
+      "blocking_ms": 0,
+      "transferred_bytes": 2400,
+      "requests": 8,
+      "css_requests": 2,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 1,
+      "name": "home",
+      "variant": "async-modules",
+      "cache": "cold",
+      "fcp_ms": 732,
+      "lcp_ms": 732,
+      "cls": 0.0005899160360941739,
+      "ttfb_ms": 188.80000000001746,
+      "load_ms": 841,
+      "blocking_ms": 11,
+      "transferred_bytes": 32559,
+      "requests": 17,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 1,
+      "name": "home",
+      "variant": "async-modules",
+      "cache": "repeat",
+      "fcp_ms": 480,
+      "lcp_ms": 480,
+      "cls": 0.00029709469969228005,
+      "ttfb_ms": 59.89999999999418,
+      "load_ms": 635.2999999999884,
+      "blocking_ms": 15,
+      "transferred_bytes": 4800,
+      "requests": 16,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 1,
+      "name": "member",
+      "variant": "async-modules",
+      "cache": "from-home",
+      "fcp_ms": 484,
+      "lcp_ms": 552,
+      "cls": 0.0005899160360941739,
+      "ttfb_ms": 55,
+      "load_ms": 587.5,
+      "blocking_ms": 0,
+      "transferred_bytes": 35273,
+      "requests": 17,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 1,
+      "name": "home",
+      "variant": "async-state",
+      "cache": "cold",
+      "fcp_ms": 748,
+      "lcp_ms": 748,
+      "cls": 0.0005899160360941739,
+      "ttfb_ms": 185.59999999997672,
+      "load_ms": 851.8999999999942,
+      "blocking_ms": 10,
+      "transferred_bytes": 32549,
+      "requests": 17,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 1,
+      "name": "home",
+      "variant": "async-state",
+      "cache": "repeat",
+      "fcp_ms": 500,
+      "lcp_ms": 500,
+      "cls": 0.00029709469969228005,
+      "ttfb_ms": 52.79999999998836,
+      "load_ms": 638,
+      "blocking_ms": 18,
+      "transferred_bytes": 4800,
+      "requests": 16,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 1,
+      "name": "member",
+      "variant": "async-state",
+      "cache": "from-home",
+      "fcp_ms": 492,
+      "lcp_ms": 616,
+      "cls": 0.00029709469969228005,
+      "ttfb_ms": 56.30000000001746,
+      "load_ms": 604.3999999999942,
+      "blocking_ms": 0,
+      "transferred_bytes": 35263,
+      "requests": 17,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 1,
+      "name": "home",
+      "variant": "critical-inline",
+      "cache": "cold",
+      "fcp_ms": 532,
+      "lcp_ms": 532,
+      "cls": 0.21338292927451694,
+      "ttfb_ms": 230,
+      "load_ms": 961.8000000000175,
+      "blocking_ms": 65,
+      "transferred_bytes": 36815,
+      "requests": 17,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 1,
+      "name": "home",
+      "variant": "critical-inline",
+      "cache": "repeat",
+      "fcp_ms": 352,
+      "lcp_ms": 352,
+      "cls": 0.21338292927451694,
+      "ttfb_ms": 60,
+      "load_ms": 672.2000000000116,
+      "blocking_ms": 65,
+      "transferred_bytes": 4800,
+      "requests": 16,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 1,
+      "name": "member",
+      "variant": "critical-inline",
+      "cache": "from-home",
+      "fcp_ms": 376,
+      "lcp_ms": 484,
+      "cls": 0.21338292927451694,
+      "ttfb_ms": 59.30000000001746,
+      "load_ms": 697.4000000000233,
+      "blocking_ms": 6,
+      "transferred_bytes": 39629,
+      "requests": 17,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 1,
+      "name": "home",
+      "variant": "bundle",
+      "cache": "cold",
+      "fcp_ms": 644,
+      "lcp_ms": 644,
+      "cls": 0.0005899160360941739,
+      "ttfb_ms": 156,
+      "load_ms": 689.0999999999767,
+      "blocking_ms": 0,
+      "transferred_bytes": 26148,
+      "requests": 7,
+      "css_requests": 1,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 1,
+      "name": "home",
+      "variant": "bundle",
+      "cache": "repeat",
+      "fcp_ms": 452,
+      "lcp_ms": 452,
+      "cls": 0.00029709469969228005,
+      "ttfb_ms": 55.30000000001746,
+      "load_ms": 535.2000000000116,
+      "blocking_ms": 0,
+      "transferred_bytes": 1800,
+      "requests": 6,
+      "css_requests": 1,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 1,
+      "name": "member",
+      "variant": "bundle",
+      "cache": "from-home",
+      "fcp_ms": 516,
+      "lcp_ms": 560,
+      "cls": 0.00029709469969228005,
+      "ttfb_ms": 63.5,
+      "load_ms": 547.5,
+      "blocking_ms": 0,
+      "transferred_bytes": 39720,
+      "requests": 7,
+      "css_requests": 1,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 1,
+      "name": "home",
+      "variant": "shared-bundle",
+      "cache": "cold",
+      "fcp_ms": 720,
+      "lcp_ms": 720,
+      "cls": 0.0005899160360941739,
+      "ttfb_ms": 226.60000000000582,
+      "load_ms": 756.8999999999942,
+      "blocking_ms": 0,
+      "transferred_bytes": 26927,
+      "requests": 8,
+      "css_requests": 2,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 1,
+      "name": "home",
+      "variant": "shared-bundle",
+      "cache": "repeat",
+      "fcp_ms": 448,
+      "lcp_ms": 448,
+      "cls": 0.00029709469969228005,
+      "ttfb_ms": 61.100000000034925,
+      "load_ms": 536,
+      "blocking_ms": 0,
+      "transferred_bytes": 2100,
+      "requests": 7,
+      "css_requests": 2,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 1,
+      "name": "member",
+      "variant": "shared-bundle",
+      "cache": "from-home",
+      "fcp_ms": 440,
+      "lcp_ms": 496,
+      "cls": 0.00029709469969228005,
+      "ttfb_ms": 55.20000000001164,
+      "load_ms": 540.5,
+      "blocking_ms": 0,
+      "transferred_bytes": 32449,
+      "requests": 8,
+      "css_requests": 2,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 1,
+      "name": "home",
+      "variant": "blocking",
+      "cache": "cold",
+      "fcp_ms": 744,
+      "lcp_ms": 744,
+      "cls": 0.0005899160360941739,
+      "ttfb_ms": 176.79999999998836,
+      "load_ms": 779.1000000000349,
+      "blocking_ms": 0,
+      "transferred_bytes": 31660,
+      "requests": 16,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 1,
+      "name": "home",
+      "variant": "blocking",
+      "cache": "repeat",
+      "fcp_ms": 508,
+      "lcp_ms": 508,
+      "cls": 0.00029709469969228005,
+      "ttfb_ms": 53.5,
+      "load_ms": 543.0999999999767,
+      "blocking_ms": 0,
+      "transferred_bytes": 4500,
+      "requests": 15,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 1,
+      "name": "member",
+      "variant": "blocking",
+      "cache": "from-home",
+      "fcp_ms": 500,
+      "lcp_ms": 584,
+      "cls": 0.0005899160360941739,
+      "ttfb_ms": 55,
+      "load_ms": 572.1000000000349,
+      "blocking_ms": 0,
+      "transferred_bytes": 34917,
+      "requests": 16,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 1,
+      "name": "member",
+      "variant": "async-modules",
+      "cache": "cold",
+      "fcp_ms": 668,
+      "lcp_ms": 776,
+      "cls": 0.00029709469969228005,
+      "ttfb_ms": 150.79999999998836,
+      "load_ms": 762.6999999999534,
+      "blocking_ms": 0,
+      "transferred_bytes": 51361,
+      "requests": 18,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 1,
+      "name": "member",
+      "variant": "async-modules",
+      "cache": "repeat",
+      "fcp_ms": 448,
+      "lcp_ms": 452,
+      "cls": 0.00029709469969228005,
+      "ttfb_ms": 56.70000000001164,
+      "load_ms": 578.2999999999884,
+      "blocking_ms": 0,
+      "transferred_bytes": 5100,
+      "requests": 17,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 1,
+      "name": "member",
+      "variant": "async-state",
+      "cache": "cold",
+      "fcp_ms": 692,
+      "lcp_ms": 792,
+      "cls": 0.00029709469969228005,
+      "ttfb_ms": 189.29999999998836,
+      "load_ms": 773.5,
+      "blocking_ms": 0,
+      "transferred_bytes": 51351,
+      "requests": 18,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 1,
+      "name": "member",
+      "variant": "async-state",
+      "cache": "repeat",
+      "fcp_ms": 456,
+      "lcp_ms": 460,
+      "cls": 0.00029709469969228005,
+      "ttfb_ms": 71.59999999997672,
+      "load_ms": 576.7999999999884,
+      "blocking_ms": 0,
+      "transferred_bytes": 5100,
+      "requests": 17,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 1,
+      "name": "member",
+      "variant": "critical-inline",
+      "cache": "cold",
+      "fcp_ms": 512,
+      "lcp_ms": 648,
+      "cls": 0.21338292927451694,
+      "ttfb_ms": 185.79999999998836,
+      "load_ms": 822.3999999999651,
+      "blocking_ms": 0,
+      "transferred_bytes": 55717,
+      "requests": 18,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 1,
+      "name": "member",
+      "variant": "critical-inline",
+      "cache": "repeat",
+      "fcp_ms": 404,
+      "lcp_ms": 404,
+      "cls": 0.21338292927451694,
+      "ttfb_ms": 59.399999999965075,
+      "load_ms": 686.1999999999534,
+      "blocking_ms": 1,
+      "transferred_bytes": 5100,
+      "requests": 17,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 1,
+      "name": "member",
+      "variant": "bundle",
+      "cache": "cold",
+      "fcp_ms": 656,
+      "lcp_ms": 716,
+      "cls": 0.00029709469969228005,
+      "ttfb_ms": 178,
+      "load_ms": 698.0999999999767,
+      "blocking_ms": 0,
+      "transferred_bytes": 45083,
+      "requests": 8,
+      "css_requests": 1,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 1,
+      "name": "member",
+      "variant": "bundle",
+      "cache": "repeat",
+      "fcp_ms": 408,
+      "lcp_ms": 408,
+      "cls": 0.00029709469969228005,
+      "ttfb_ms": 58.79999999998836,
+      "load_ms": 526.9000000000233,
+      "blocking_ms": 0,
+      "transferred_bytes": 2100,
+      "requests": 7,
+      "css_requests": 1,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 1,
+      "name": "member",
+      "variant": "shared-bundle",
+      "cache": "cold",
+      "fcp_ms": 684,
+      "lcp_ms": 748,
+      "cls": 0.00029709469969228005,
+      "ttfb_ms": 206.5,
+      "load_ms": 735.2999999999884,
+      "blocking_ms": 0,
+      "transferred_bytes": 45723,
+      "requests": 9,
+      "css_requests": 2,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 1,
+      "name": "member",
+      "variant": "shared-bundle",
+      "cache": "repeat",
+      "fcp_ms": 404,
+      "lcp_ms": 420,
+      "cls": 0.00029709469969228005,
+      "ttfb_ms": 70.89999999996508,
+      "load_ms": 530.5999999999767,
+      "blocking_ms": 0,
+      "transferred_bytes": 2400,
+      "requests": 8,
+      "css_requests": 2,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 1,
+      "name": "member",
+      "variant": "blocking",
+      "cache": "cold",
+      "fcp_ms": 708,
+      "lcp_ms": 768,
+      "cls": 0.0005899160360941739,
+      "ttfb_ms": 185.79999999998836,
+      "load_ms": 751.7000000000116,
+      "blocking_ms": 0,
+      "transferred_bytes": 50458,
+      "requests": 17,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 1,
+      "name": "member",
+      "variant": "blocking",
+      "cache": "repeat",
+      "fcp_ms": 480,
+      "lcp_ms": 488,
+      "cls": 0.0005899160360941739,
+      "ttfb_ms": 81.60000000003492,
+      "load_ms": 531,
+      "blocking_ms": 0,
+      "transferred_bytes": 4800,
+      "requests": 16,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 2,
+      "name": "home",
+      "variant": "async-state",
+      "cache": "cold",
+      "fcp_ms": 792,
+      "lcp_ms": 792,
+      "cls": 0.0005899160360941739,
+      "ttfb_ms": 242.19999999995343,
+      "load_ms": 909.2999999999884,
+      "blocking_ms": 13,
+      "transferred_bytes": 32549,
+      "requests": 17,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 2,
+      "name": "home",
+      "variant": "async-state",
+      "cache": "repeat",
+      "fcp_ms": 504,
+      "lcp_ms": 504,
+      "cls": 0.00029709469969228005,
+      "ttfb_ms": 100.90000000002328,
+      "load_ms": 632,
+      "blocking_ms": 12,
+      "transferred_bytes": 4800,
+      "requests": 16,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 2,
+      "name": "member",
+      "variant": "async-state",
+      "cache": "from-home",
+      "fcp_ms": 472,
+      "lcp_ms": 600,
+      "cls": 0.00029709469969228005,
+      "ttfb_ms": 93.89999999996508,
+      "load_ms": 585.3999999999651,
+      "blocking_ms": 0,
+      "transferred_bytes": 35263,
+      "requests": 17,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 2,
+      "name": "home",
+      "variant": "critical-inline",
+      "cache": "cold",
+      "fcp_ms": 612,
+      "lcp_ms": 612,
+      "cls": 0.21338292927451694,
+      "ttfb_ms": 243,
+      "load_ms": 1022.5,
+      "blocking_ms": 92,
+      "transferred_bytes": 36815,
+      "requests": 17,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 2,
+      "name": "home",
+      "variant": "critical-inline",
+      "cache": "repeat",
+      "fcp_ms": 356,
+      "lcp_ms": 356,
+      "cls": 0.21338292927451694,
+      "ttfb_ms": 76.89999999996508,
+      "load_ms": 711.7999999999884,
+      "blocking_ms": 60,
+      "transferred_bytes": 4800,
+      "requests": 16,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 2,
+      "name": "member",
+      "variant": "critical-inline",
+      "cache": "from-home",
+      "fcp_ms": 396,
+      "lcp_ms": 484,
+      "cls": 0.21338292927451694,
+      "ttfb_ms": 76.40000000002328,
+      "load_ms": 700.7000000000116,
+      "blocking_ms": 4,
+      "transferred_bytes": 39629,
+      "requests": 17,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 2,
+      "name": "home",
+      "variant": "bundle",
+      "cache": "cold",
+      "fcp_ms": 716,
+      "lcp_ms": 716,
+      "cls": 0.0005899160360941739,
+      "ttfb_ms": 242.20000000001164,
+      "load_ms": 752.5999999999767,
+      "blocking_ms": 0,
+      "transferred_bytes": 26148,
+      "requests": 7,
+      "css_requests": 1,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 2,
+      "name": "home",
+      "variant": "bundle",
+      "cache": "repeat",
+      "fcp_ms": 448,
+      "lcp_ms": 448,
+      "cls": 0.00029709469969228005,
+      "ttfb_ms": 81.59999999997672,
+      "load_ms": 532,
+      "blocking_ms": 0,
+      "transferred_bytes": 1800,
+      "requests": 6,
+      "css_requests": 1,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 2,
+      "name": "member",
+      "variant": "bundle",
+      "cache": "from-home",
+      "fcp_ms": 512,
+      "lcp_ms": 552,
+      "cls": 0.0005899160360941739,
+      "ttfb_ms": 65.69999999995343,
+      "load_ms": 534.3999999999651,
+      "blocking_ms": 0,
+      "transferred_bytes": 39720,
+      "requests": 7,
+      "css_requests": 1,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 2,
+      "name": "home",
+      "variant": "shared-bundle",
+      "cache": "cold",
+      "fcp_ms": 716,
+      "lcp_ms": 716,
+      "cls": 0.0005899160360941739,
+      "ttfb_ms": 230,
+      "load_ms": 769.7999999999884,
+      "blocking_ms": 0,
+      "transferred_bytes": 26927,
+      "requests": 8,
+      "css_requests": 2,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 2,
+      "name": "home",
+      "variant": "shared-bundle",
+      "cache": "repeat",
+      "fcp_ms": 448,
+      "lcp_ms": 448,
+      "cls": 0.00029709469969228005,
+      "ttfb_ms": 71.5,
+      "load_ms": 537.2000000000116,
+      "blocking_ms": 0,
+      "transferred_bytes": 2100,
+      "requests": 7,
+      "css_requests": 2,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 2,
+      "name": "member",
+      "variant": "shared-bundle",
+      "cache": "from-home",
+      "fcp_ms": 444,
+      "lcp_ms": 500,
+      "cls": 0.00029709469969228005,
+      "ttfb_ms": 66.20000000001164,
+      "load_ms": 542.2999999999884,
+      "blocking_ms": 0,
+      "transferred_bytes": 32449,
+      "requests": 8,
+      "css_requests": 2,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 2,
+      "name": "home",
+      "variant": "blocking",
+      "cache": "cold",
+      "fcp_ms": 760,
+      "lcp_ms": 760,
+      "cls": 0.0005899160360941739,
+      "ttfb_ms": 189.79999999998836,
+      "load_ms": 801.2999999999884,
+      "blocking_ms": 0,
+      "transferred_bytes": 31660,
+      "requests": 16,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 2,
+      "name": "home",
+      "variant": "blocking",
+      "cache": "repeat",
+      "fcp_ms": 524,
+      "lcp_ms": 524,
+      "cls": 0.00029709469969228005,
+      "ttfb_ms": 51.90000000002328,
+      "load_ms": 554.7000000000116,
+      "blocking_ms": 0,
+      "transferred_bytes": 4500,
+      "requests": 15,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 2,
+      "name": "member",
+      "variant": "blocking",
+      "cache": "from-home",
+      "fcp_ms": 516,
+      "lcp_ms": 580,
+      "cls": 0.0005899160360941739,
+      "ttfb_ms": 51.899999999965075,
+      "load_ms": 573.2999999999884,
+      "blocking_ms": 0,
+      "transferred_bytes": 34917,
+      "requests": 16,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 2,
+      "name": "home",
+      "variant": "async-modules",
+      "cache": "cold",
+      "fcp_ms": 724,
+      "lcp_ms": 724,
+      "cls": 0.0005899160360941739,
+      "ttfb_ms": 163.39999999996508,
+      "load_ms": 834.7000000000116,
+      "blocking_ms": 11,
+      "transferred_bytes": 32559,
+      "requests": 17,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 2,
+      "name": "home",
+      "variant": "async-modules",
+      "cache": "repeat",
+      "fcp_ms": 488,
+      "lcp_ms": 488,
+      "cls": 0.00029709469969228005,
+      "ttfb_ms": 56.100000000034925,
+      "load_ms": 570.7000000000116,
+      "blocking_ms": 18,
+      "transferred_bytes": 4800,
+      "requests": 16,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 2,
+      "name": "member",
+      "variant": "async-modules",
+      "cache": "from-home",
+      "fcp_ms": 480,
+      "lcp_ms": 612,
+      "cls": 0.0005899160360941739,
+      "ttfb_ms": 67,
+      "load_ms": 597,
+      "blocking_ms": 0,
+      "transferred_bytes": 35273,
+      "requests": 17,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 2,
+      "name": "member",
+      "variant": "async-state",
+      "cache": "cold",
+      "fcp_ms": 708,
+      "lcp_ms": 804,
+      "cls": 0.00029709469969228005,
+      "ttfb_ms": 181.29999999998836,
+      "load_ms": 788,
+      "blocking_ms": 0,
+      "transferred_bytes": 51351,
+      "requests": 18,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 2,
+      "name": "member",
+      "variant": "async-state",
+      "cache": "repeat",
+      "fcp_ms": 456,
+      "lcp_ms": 460,
+      "cls": 0.00029709469969228005,
+      "ttfb_ms": 54.90000000002328,
+      "load_ms": 590.5999999999767,
+      "blocking_ms": 0,
+      "transferred_bytes": 5100,
+      "requests": 17,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 2,
+      "name": "member",
+      "variant": "critical-inline",
+      "cache": "cold",
+      "fcp_ms": 576,
+      "lcp_ms": 596,
+      "cls": 0.21338292927451694,
+      "ttfb_ms": 164.39999999996508,
+      "load_ms": 884.6999999999534,
+      "blocking_ms": 0,
+      "transferred_bytes": 55717,
+      "requests": 18,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 2,
+      "name": "member",
+      "variant": "critical-inline",
+      "cache": "repeat",
+      "fcp_ms": 364,
+      "lcp_ms": 408,
+      "cls": 0.21338292927451694,
+      "ttfb_ms": 53.40000000002328,
+      "load_ms": 690,
+      "blocking_ms": 5,
+      "transferred_bytes": 5100,
+      "requests": 17,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 2,
+      "name": "member",
+      "variant": "bundle",
+      "cache": "cold",
+      "fcp_ms": 656,
+      "lcp_ms": 716,
+      "cls": 0.00029709469969228005,
+      "ttfb_ms": 165.89999999996508,
+      "load_ms": 692.6999999999534,
+      "blocking_ms": 0,
+      "transferred_bytes": 45083,
+      "requests": 8,
+      "css_requests": 1,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 2,
+      "name": "member",
+      "variant": "bundle",
+      "cache": "repeat",
+      "fcp_ms": 400,
+      "lcp_ms": 416,
+      "cls": 0.00029709469969228005,
+      "ttfb_ms": 53.29999999998836,
+      "load_ms": 523.1999999999534,
+      "blocking_ms": 0,
+      "transferred_bytes": 2100,
+      "requests": 7,
+      "css_requests": 1,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 2,
+      "name": "member",
+      "variant": "shared-bundle",
+      "cache": "cold",
+      "fcp_ms": 644,
+      "lcp_ms": 700,
+      "cls": 0.00029709469969228005,
+      "ttfb_ms": 167.10000000003492,
+      "load_ms": 687.4000000000233,
+      "blocking_ms": 0,
+      "transferred_bytes": 45723,
+      "requests": 9,
+      "css_requests": 2,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 2,
+      "name": "member",
+      "variant": "shared-bundle",
+      "cache": "repeat",
+      "fcp_ms": 404,
+      "lcp_ms": 404,
+      "cls": 0.00029709469969228005,
+      "ttfb_ms": 60.79999999998836,
+      "load_ms": 525.1999999999534,
+      "blocking_ms": 0,
+      "transferred_bytes": 2400,
+      "requests": 8,
+      "css_requests": 2,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 2,
+      "name": "member",
+      "variant": "blocking",
+      "cache": "cold",
+      "fcp_ms": 692,
+      "lcp_ms": 760,
+      "cls": 0.0005899160360941739,
+      "ttfb_ms": 162.10000000003492,
+      "load_ms": 736.2000000000116,
+      "blocking_ms": 0,
+      "transferred_bytes": 50458,
+      "requests": 17,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 2,
+      "name": "member",
+      "variant": "blocking",
+      "cache": "repeat",
+      "fcp_ms": 460,
+      "lcp_ms": 472,
+      "cls": 0.00029709469969228005,
+      "ttfb_ms": 55.300000000046566,
+      "load_ms": 534.7000000000116,
+      "blocking_ms": 0,
+      "transferred_bytes": 4800,
+      "requests": 16,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 2,
+      "name": "member",
+      "variant": "async-modules",
+      "cache": "cold",
+      "fcp_ms": 688,
+      "lcp_ms": 780,
+      "cls": 0.00029709469969228005,
+      "ttfb_ms": 183.40000000002328,
+      "load_ms": 768.9000000000233,
+      "blocking_ms": 0,
+      "transferred_bytes": 51361,
+      "requests": 18,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "mobile",
+      "run": 2,
+      "name": "member",
+      "variant": "async-modules",
+      "cache": "repeat",
+      "fcp_ms": 448,
+      "lcp_ms": 456,
+      "cls": 0.0005899160360941739,
+      "ttfb_ms": 55.70000000001164,
+      "load_ms": 579.7000000000116,
+      "blocking_ms": 0,
+      "transferred_bytes": 5100,
+      "requests": 17,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 0,
+      "name": "home",
+      "variant": "blocking",
+      "cache": "cold",
+      "fcp_ms": 388,
+      "lcp_ms": 388,
+      "cls": 0.0003107223510742188,
+      "ttfb_ms": 164.90000000002328,
+      "load_ms": 386.9000000000233,
+      "blocking_ms": 0,
+      "transferred_bytes": 31660,
+      "requests": 16,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 0,
+      "name": "home",
+      "variant": "blocking",
+      "cache": "repeat",
+      "fcp_ms": 224,
+      "lcp_ms": 224,
+      "cls": 0.0003107223510742188,
+      "ttfb_ms": 54.40000000002328,
+      "load_ms": 213.90000000002328,
+      "blocking_ms": 0,
+      "transferred_bytes": 4500,
+      "requests": 15,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 0,
+      "name": "member",
+      "variant": "blocking",
+      "cache": "from-home",
+      "fcp_ms": 212,
+      "lcp_ms": 232,
+      "cls": 0.00017721489800347223,
+      "ttfb_ms": 52.70000000001164,
+      "load_ms": 227.5,
+      "blocking_ms": 0,
+      "transferred_bytes": 34917,
+      "requests": 16,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 0,
+      "name": "home",
+      "variant": "async-modules",
+      "cache": "cold",
+      "fcp_ms": 316,
+      "lcp_ms": 316,
+      "cls": 0.00017721489800347223,
+      "ttfb_ms": 150.5,
+      "load_ms": 321.79999999998836,
+      "blocking_ms": 0,
+      "transferred_bytes": 32559,
+      "requests": 17,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 0,
+      "name": "home",
+      "variant": "async-modules",
+      "cache": "repeat",
+      "fcp_ms": 172,
+      "lcp_ms": 172,
+      "cls": 0.000366607666015625,
+      "ttfb_ms": 54.899999999965075,
+      "load_ms": 204.5,
+      "blocking_ms": 0,
+      "transferred_bytes": 4800,
+      "requests": 16,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 0,
+      "name": "member",
+      "variant": "async-modules",
+      "cache": "from-home",
+      "fcp_ms": 172,
+      "lcp_ms": 220,
+      "cls": 0.00015524224175347224,
+      "ttfb_ms": 65.69999999995343,
+      "load_ms": 233.19999999995343,
+      "blocking_ms": 0,
+      "transferred_bytes": 35273,
+      "requests": 17,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 0,
+      "name": "home",
+      "variant": "async-state",
+      "cache": "cold",
+      "fcp_ms": 416,
+      "lcp_ms": 416,
+      "cls": 0.00015524224175347224,
+      "ttfb_ms": 200.10000000003492,
+      "load_ms": 442.5,
+      "blocking_ms": 0,
+      "transferred_bytes": 32549,
+      "requests": 17,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 0,
+      "name": "home",
+      "variant": "async-state",
+      "cache": "repeat",
+      "fcp_ms": 188,
+      "lcp_ms": 188,
+      "cls": 0.000366607666015625,
+      "ttfb_ms": 66.09999999997672,
+      "load_ms": 221.89999999996508,
+      "blocking_ms": 0,
+      "transferred_bytes": 4800,
+      "requests": 16,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 0,
+      "name": "member",
+      "variant": "async-state",
+      "cache": "from-home",
+      "fcp_ms": 280,
+      "lcp_ms": 312,
+      "cls": 0.00017721489800347223,
+      "ttfb_ms": 78.40000000002328,
+      "load_ms": 322.1000000000349,
+      "blocking_ms": 0,
+      "transferred_bytes": 35263,
+      "requests": 17,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 0,
+      "name": "home",
+      "variant": "critical-inline",
+      "cache": "cold",
+      "fcp_ms": 368,
+      "lcp_ms": 368,
+      "cls": 0.21119485812717012,
+      "ttfb_ms": 234.90000000002328,
+      "load_ms": 452.0999999999767,
+      "blocking_ms": 0,
+      "transferred_bytes": 36815,
+      "requests": 17,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 0,
+      "name": "home",
+      "variant": "critical-inline",
+      "cache": "repeat",
+      "fcp_ms": 156,
+      "lcp_ms": 156,
+      "cls": 0.21119485812717012,
+      "ttfb_ms": 55.399999999965075,
+      "load_ms": 261.29999999998836,
+      "blocking_ms": 0,
+      "transferred_bytes": 4800,
+      "requests": 16,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 0,
+      "name": "member",
+      "variant": "critical-inline",
+      "cache": "from-home",
+      "fcp_ms": 176,
+      "lcp_ms": 216,
+      "cls": 0.21119485812717012,
+      "ttfb_ms": 63.90000000002328,
+      "load_ms": 281,
+      "blocking_ms": 0,
+      "transferred_bytes": 39629,
+      "requests": 17,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 0,
+      "name": "home",
+      "variant": "bundle",
+      "cache": "cold",
+      "fcp_ms": 360,
+      "lcp_ms": 360,
+      "cls": 0.000366607666015625,
+      "ttfb_ms": 160.59999999997672,
+      "load_ms": 345.0999999999767,
+      "blocking_ms": 0,
+      "transferred_bytes": 26148,
+      "requests": 7,
+      "css_requests": 1,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 0,
+      "name": "home",
+      "variant": "bundle",
+      "cache": "repeat",
+      "fcp_ms": 188,
+      "lcp_ms": 188,
+      "cls": 0.000366607666015625,
+      "ttfb_ms": 65.40000000002328,
+      "load_ms": 220.09999999997672,
+      "blocking_ms": 0,
+      "transferred_bytes": 1800,
+      "requests": 6,
+      "css_requests": 1,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 0,
+      "name": "member",
+      "variant": "bundle",
+      "cache": "from-home",
+      "fcp_ms": 232,
+      "lcp_ms": 236,
+      "cls": 0.0003107223510742188,
+      "ttfb_ms": 58.29999999998836,
+      "load_ms": 221.20000000001164,
+      "blocking_ms": 0,
+      "transferred_bytes": 39720,
+      "requests": 7,
+      "css_requests": 1,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 0,
+      "name": "home",
+      "variant": "shared-bundle",
+      "cache": "cold",
+      "fcp_ms": 380,
+      "lcp_ms": 380,
+      "cls": 0.00015524224175347224,
+      "ttfb_ms": 221.60000000003492,
+      "load_ms": 403.1000000000349,
+      "blocking_ms": 0,
+      "transferred_bytes": 26927,
+      "requests": 8,
+      "css_requests": 2,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 0,
+      "name": "home",
+      "variant": "shared-bundle",
+      "cache": "repeat",
+      "fcp_ms": 176,
+      "lcp_ms": 176,
+      "cls": 0.00017721489800347223,
+      "ttfb_ms": 59.09999999997672,
+      "load_ms": 204.5,
+      "blocking_ms": 0,
+      "transferred_bytes": 2100,
+      "requests": 7,
+      "css_requests": 2,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 0,
+      "name": "member",
+      "variant": "shared-bundle",
+      "cache": "from-home",
+      "fcp_ms": 196,
+      "lcp_ms": 272,
+      "cls": 0.0003107223510742188,
+      "ttfb_ms": 79.29999999998836,
+      "load_ms": 249.70000000001164,
+      "blocking_ms": 0,
+      "transferred_bytes": 32449,
+      "requests": 8,
+      "css_requests": 2,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 0,
+      "name": "member",
+      "variant": "blocking",
+      "cache": "cold",
+      "fcp_ms": 392,
+      "lcp_ms": 404,
+      "cls": 0.0003107223510742188,
+      "ttfb_ms": 190.29999999998836,
+      "load_ms": 371.70000000001164,
+      "blocking_ms": 0,
+      "transferred_bytes": 50458,
+      "requests": 17,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 0,
+      "name": "member",
+      "variant": "blocking",
+      "cache": "repeat",
+      "fcp_ms": 220,
+      "lcp_ms": 224,
+      "cls": 0.0003107223510742188,
+      "ttfb_ms": 57.40000000002328,
+      "load_ms": 211.90000000002328,
+      "blocking_ms": 0,
+      "transferred_bytes": 4800,
+      "requests": 16,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 0,
+      "name": "member",
+      "variant": "async-modules",
+      "cache": "cold",
+      "fcp_ms": 304,
+      "lcp_ms": 356,
+      "cls": 0.00015524224175347224,
+      "ttfb_ms": 175.89999999996508,
+      "load_ms": 325.8999999999651,
+      "blocking_ms": 0,
+      "transferred_bytes": 51361,
+      "requests": 18,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 0,
+      "name": "member",
+      "variant": "async-modules",
+      "cache": "repeat",
+      "fcp_ms": 164,
+      "lcp_ms": 164,
+      "cls": 0.0003107223510742188,
+      "ttfb_ms": 57.600000000034925,
+      "load_ms": 224.90000000002328,
+      "blocking_ms": 0,
+      "transferred_bytes": 5100,
+      "requests": 17,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 0,
+      "name": "member",
+      "variant": "async-state",
+      "cache": "cold",
+      "fcp_ms": 344,
+      "lcp_ms": 364,
+      "cls": 0.0003107223510742188,
+      "ttfb_ms": 162.19999999995343,
+      "load_ms": 342.29999999998836,
+      "blocking_ms": 0,
+      "transferred_bytes": 51351,
+      "requests": 18,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 0,
+      "name": "member",
+      "variant": "async-state",
+      "cache": "repeat",
+      "fcp_ms": 156,
+      "lcp_ms": 184,
+      "cls": 0.00017721489800347223,
+      "ttfb_ms": 54.20000000001164,
+      "load_ms": 185.90000000002328,
+      "blocking_ms": 0,
+      "transferred_bytes": 5100,
+      "requests": 17,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 0,
+      "name": "member",
+      "variant": "critical-inline",
+      "cache": "cold",
+      "fcp_ms": 312,
+      "lcp_ms": 316,
+      "cls": 0.21119485812717012,
+      "ttfb_ms": 177,
+      "load_ms": 392.20000000001164,
+      "blocking_ms": 0,
+      "transferred_bytes": 55717,
+      "requests": 18,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 0,
+      "name": "member",
+      "variant": "critical-inline",
+      "cache": "repeat",
+      "fcp_ms": 164,
+      "lcp_ms": 168,
+      "cls": 0.21119485812717012,
+      "ttfb_ms": 59.300000000046566,
+      "load_ms": 276,
+      "blocking_ms": 0,
+      "transferred_bytes": 5100,
+      "requests": 17,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 0,
+      "name": "member",
+      "variant": "bundle",
+      "cache": "cold",
+      "fcp_ms": 324,
+      "lcp_ms": 380,
+      "cls": 0.0003107223510742188,
+      "ttfb_ms": 197,
+      "load_ms": 360.20000000001164,
+      "blocking_ms": 0,
+      "transferred_bytes": 45083,
+      "requests": 8,
+      "css_requests": 1,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 0,
+      "name": "member",
+      "variant": "bundle",
+      "cache": "repeat",
+      "fcp_ms": 168,
+      "lcp_ms": 180,
+      "cls": 0.00017721489800347223,
+      "ttfb_ms": 63.300000000046566,
+      "load_ms": 224.10000000003492,
+      "blocking_ms": 0,
+      "transferred_bytes": 2100,
+      "requests": 7,
+      "css_requests": 1,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 0,
+      "name": "member",
+      "variant": "shared-bundle",
+      "cache": "cold",
+      "fcp_ms": 320,
+      "lcp_ms": 368,
+      "cls": 0.0003107223510742188,
+      "ttfb_ms": 195.29999999998836,
+      "load_ms": 352.79999999998836,
+      "blocking_ms": 0,
+      "transferred_bytes": 45723,
+      "requests": 9,
+      "css_requests": 2,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 0,
+      "name": "member",
+      "variant": "shared-bundle",
+      "cache": "repeat",
+      "fcp_ms": 172,
+      "lcp_ms": 180,
+      "cls": 0.00017721489800347223,
+      "ttfb_ms": 64.39999999996508,
+      "load_ms": 216.70000000001164,
+      "blocking_ms": 0,
+      "transferred_bytes": 2400,
+      "requests": 8,
+      "css_requests": 2,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 1,
+      "name": "home",
+      "variant": "async-modules",
+      "cache": "cold",
+      "fcp_ms": 372,
+      "lcp_ms": 372,
+      "cls": 0.00015524224175347224,
+      "ttfb_ms": 199.60000000003492,
+      "load_ms": 426.5,
+      "blocking_ms": 0,
+      "transferred_bytes": 32559,
+      "requests": 17,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 1,
+      "name": "home",
+      "variant": "async-modules",
+      "cache": "repeat",
+      "fcp_ms": 184,
+      "lcp_ms": 184,
+      "cls": 0.0003107223510742188,
+      "ttfb_ms": 61.20000000001164,
+      "load_ms": 270.79999999998836,
+      "blocking_ms": 0,
+      "transferred_bytes": 4800,
+      "requests": 16,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 1,
+      "name": "member",
+      "variant": "async-modules",
+      "cache": "from-home",
+      "fcp_ms": 160,
+      "lcp_ms": 220,
+      "cls": 0.00015524224175347224,
+      "ttfb_ms": 52.79999999998836,
+      "load_ms": 261.3999999999651,
+      "blocking_ms": 0,
+      "transferred_bytes": 35273,
+      "requests": 17,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 1,
+      "name": "home",
+      "variant": "async-state",
+      "cache": "cold",
+      "fcp_ms": 476,
+      "lcp_ms": 476,
+      "cls": 0.0003107223510742188,
+      "ttfb_ms": 246.40000000002328,
+      "load_ms": 486.70000000001164,
+      "blocking_ms": 0,
+      "transferred_bytes": 32549,
+      "requests": 17,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 1,
+      "name": "home",
+      "variant": "async-state",
+      "cache": "repeat",
+      "fcp_ms": 172,
+      "lcp_ms": 172,
+      "cls": 0.0003107223510742188,
+      "ttfb_ms": 57,
+      "load_ms": 220.29999999998836,
+      "blocking_ms": 0,
+      "transferred_bytes": 4800,
+      "requests": 16,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 1,
+      "name": "member",
+      "variant": "async-state",
+      "cache": "from-home",
+      "fcp_ms": 232,
+      "lcp_ms": 240,
+      "cls": 0.000366607666015625,
+      "ttfb_ms": 55.79999999998836,
+      "load_ms": 243,
+      "blocking_ms": 0,
+      "transferred_bytes": 35263,
+      "requests": 17,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 1,
+      "name": "home",
+      "variant": "critical-inline",
+      "cache": "cold",
+      "fcp_ms": 344,
+      "lcp_ms": 344,
+      "cls": 0.21119485812717012,
+      "ttfb_ms": 169,
+      "load_ms": 410.29999999998836,
+      "blocking_ms": 0,
+      "transferred_bytes": 36815,
+      "requests": 17,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 1,
+      "name": "home",
+      "variant": "critical-inline",
+      "cache": "repeat",
+      "fcp_ms": 180,
+      "lcp_ms": 180,
+      "cls": 0.21119485812717012,
+      "ttfb_ms": 65.60000000003492,
+      "load_ms": 308.20000000001164,
+      "blocking_ms": 0,
+      "transferred_bytes": 4800,
+      "requests": 16,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 1,
+      "name": "member",
+      "variant": "critical-inline",
+      "cache": "from-home",
+      "fcp_ms": 204,
+      "lcp_ms": 292,
+      "cls": 0.2113309326171875,
+      "ttfb_ms": 76.70000000001164,
+      "load_ms": 338,
+      "blocking_ms": 0,
+      "transferred_bytes": 39629,
+      "requests": 17,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 1,
+      "name": "home",
+      "variant": "bundle",
+      "cache": "cold",
+      "fcp_ms": 416,
+      "lcp_ms": 416,
+      "cls": 0.00015524224175347224,
+      "ttfb_ms": 206.40000000002328,
+      "load_ms": 425.70000000001164,
+      "blocking_ms": 0,
+      "transferred_bytes": 26148,
+      "requests": 7,
+      "css_requests": 1,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 1,
+      "name": "home",
+      "variant": "bundle",
+      "cache": "repeat",
+      "fcp_ms": 176,
+      "lcp_ms": 176,
+      "cls": 0.000366607666015625,
+      "ttfb_ms": 59.399999999965075,
+      "load_ms": 204.09999999997672,
+      "blocking_ms": 0,
+      "transferred_bytes": 1800,
+      "requests": 6,
+      "css_requests": 1,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 1,
+      "name": "member",
+      "variant": "bundle",
+      "cache": "from-home",
+      "fcp_ms": 160,
+      "lcp_ms": 216,
+      "cls": 0.0003107223510742188,
+      "ttfb_ms": 57.300000000046566,
+      "load_ms": 193.60000000003492,
+      "blocking_ms": 0,
+      "transferred_bytes": 39720,
+      "requests": 7,
+      "css_requests": 1,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 1,
+      "name": "home",
+      "variant": "shared-bundle",
+      "cache": "cold",
+      "fcp_ms": 328,
+      "lcp_ms": 328,
+      "cls": 0.0003107223510742188,
+      "ttfb_ms": 166.80000000004657,
+      "load_ms": 362.30000000004657,
+      "blocking_ms": 0,
+      "transferred_bytes": 26927,
+      "requests": 8,
+      "css_requests": 2,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 1,
+      "name": "home",
+      "variant": "shared-bundle",
+      "cache": "repeat",
+      "fcp_ms": 160,
+      "lcp_ms": 160,
+      "cls": 0.00015524224175347224,
+      "ttfb_ms": 52.09999999997672,
+      "load_ms": 183,
+      "blocking_ms": 0,
+      "transferred_bytes": 2100,
+      "requests": 7,
+      "css_requests": 2,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 1,
+      "name": "member",
+      "variant": "shared-bundle",
+      "cache": "from-home",
+      "fcp_ms": 152,
+      "lcp_ms": 256,
+      "cls": 0.00017721489800347223,
+      "ttfb_ms": 52.199999999953434,
+      "load_ms": 239.69999999995343,
+      "blocking_ms": 0,
+      "transferred_bytes": 32449,
+      "requests": 8,
+      "css_requests": 2,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 1,
+      "name": "home",
+      "variant": "blocking",
+      "cache": "cold",
+      "fcp_ms": 388,
+      "lcp_ms": 388,
+      "cls": 0.0003107223510742188,
+      "ttfb_ms": 159.29999999998836,
+      "load_ms": 370.20000000001164,
+      "blocking_ms": 0,
+      "transferred_bytes": 31660,
+      "requests": 16,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 1,
+      "name": "home",
+      "variant": "blocking",
+      "cache": "repeat",
+      "fcp_ms": 224,
+      "lcp_ms": 224,
+      "cls": 0.0003107223510742188,
+      "ttfb_ms": 55.5,
+      "load_ms": 215.20000000001164,
+      "blocking_ms": 0,
+      "transferred_bytes": 4500,
+      "requests": 15,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 1,
+      "name": "member",
+      "variant": "blocking",
+      "cache": "from-home",
+      "fcp_ms": 228,
+      "lcp_ms": 236,
+      "cls": 0.0003107223510742188,
+      "ttfb_ms": 57.399999999965075,
+      "load_ms": 212.79999999998836,
+      "blocking_ms": 0,
+      "transferred_bytes": 34917,
+      "requests": 16,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 1,
+      "name": "member",
+      "variant": "async-modules",
+      "cache": "cold",
+      "fcp_ms": 284,
+      "lcp_ms": 316,
+      "cls": 0.0003107223510742188,
+      "ttfb_ms": 154.5,
+      "load_ms": 299,
+      "blocking_ms": 0,
+      "transferred_bytes": 51361,
+      "requests": 18,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 1,
+      "name": "member",
+      "variant": "async-modules",
+      "cache": "repeat",
+      "fcp_ms": 144,
+      "lcp_ms": 144,
+      "cls": 0.0003107223510742188,
+      "ttfb_ms": 47.899999999965075,
+      "load_ms": 181.09999999997672,
+      "blocking_ms": 0,
+      "transferred_bytes": 5100,
+      "requests": 17,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 1,
+      "name": "member",
+      "variant": "async-state",
+      "cache": "cold",
+      "fcp_ms": 340,
+      "lcp_ms": 348,
+      "cls": 0.0003107223510742188,
+      "ttfb_ms": 160.09999999997672,
+      "load_ms": 365.79999999998836,
+      "blocking_ms": 0,
+      "transferred_bytes": 51351,
+      "requests": 18,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 1,
+      "name": "member",
+      "variant": "async-state",
+      "cache": "repeat",
+      "fcp_ms": 164,
+      "lcp_ms": 188,
+      "cls": 0.0003107223510742188,
+      "ttfb_ms": 58.59999999997672,
+      "load_ms": 207.40000000002328,
+      "blocking_ms": 0,
+      "transferred_bytes": 5100,
+      "requests": 17,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 1,
+      "name": "member",
+      "variant": "critical-inline",
+      "cache": "cold",
+      "fcp_ms": 312,
+      "lcp_ms": 332,
+      "cls": 0.21119485812717012,
+      "ttfb_ms": 182,
+      "load_ms": 393.5999999999767,
+      "blocking_ms": 0,
+      "transferred_bytes": 55717,
+      "requests": 18,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 1,
+      "name": "member",
+      "variant": "critical-inline",
+      "cache": "repeat",
+      "fcp_ms": 160,
+      "lcp_ms": 160,
+      "cls": 0.21119485812717012,
+      "ttfb_ms": 57.70000000001164,
+      "load_ms": 258.5999999999767,
+      "blocking_ms": 0,
+      "transferred_bytes": 5100,
+      "requests": 17,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 1,
+      "name": "member",
+      "variant": "bundle",
+      "cache": "cold",
+      "fcp_ms": 276,
+      "lcp_ms": 320,
+      "cls": 0.0003107223510742188,
+      "ttfb_ms": 160,
+      "load_ms": 299.20000000001164,
+      "blocking_ms": 0,
+      "transferred_bytes": 45083,
+      "requests": 8,
+      "css_requests": 1,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 1,
+      "name": "member",
+      "variant": "bundle",
+      "cache": "repeat",
+      "fcp_ms": 152,
+      "lcp_ms": 164,
+      "cls": 0.00017721489800347223,
+      "ttfb_ms": 53.20000000001164,
+      "load_ms": 187.70000000001164,
+      "blocking_ms": 0,
+      "transferred_bytes": 2100,
+      "requests": 7,
+      "css_requests": 1,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 1,
+      "name": "member",
+      "variant": "shared-bundle",
+      "cache": "cold",
+      "fcp_ms": 276,
+      "lcp_ms": 324,
+      "cls": 0.00017721489800347223,
+      "ttfb_ms": 157.10000000003492,
+      "load_ms": 302.20000000001164,
+      "blocking_ms": 0,
+      "transferred_bytes": 45723,
+      "requests": 9,
+      "css_requests": 2,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 1,
+      "name": "member",
+      "variant": "shared-bundle",
+      "cache": "repeat",
+      "fcp_ms": 148,
+      "lcp_ms": 164,
+      "cls": 0.00017721489800347223,
+      "ttfb_ms": 54.59999999997672,
+      "load_ms": 184.89999999996508,
+      "blocking_ms": 0,
+      "transferred_bytes": 2400,
+      "requests": 8,
+      "css_requests": 2,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 1,
+      "name": "member",
+      "variant": "blocking",
+      "cache": "cold",
+      "fcp_ms": 352,
+      "lcp_ms": 356,
+      "cls": 0.0003107223510742188,
+      "ttfb_ms": 173.19999999995343,
+      "load_ms": 371.8999999999651,
+      "blocking_ms": 0,
+      "transferred_bytes": 50458,
+      "requests": 17,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 1,
+      "name": "member",
+      "variant": "blocking",
+      "cache": "repeat",
+      "fcp_ms": 216,
+      "lcp_ms": 228,
+      "cls": 0.0003107223510742188,
+      "ttfb_ms": 57.20000000001164,
+      "load_ms": 205.60000000003492,
+      "blocking_ms": 0,
+      "transferred_bytes": 4800,
+      "requests": 16,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 2,
+      "name": "home",
+      "variant": "async-state",
+      "cache": "cold",
+      "fcp_ms": 424,
+      "lcp_ms": 424,
+      "cls": 0.0003107223510742188,
+      "ttfb_ms": 189.09999999997672,
+      "load_ms": 435.79999999998836,
+      "blocking_ms": 0,
+      "transferred_bytes": 32549,
+      "requests": 17,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 2,
+      "name": "home",
+      "variant": "async-state",
+      "cache": "repeat",
+      "fcp_ms": 200,
+      "lcp_ms": 200,
+      "cls": 0.00015524224175347224,
+      "ttfb_ms": 70,
+      "load_ms": 239.40000000002328,
+      "blocking_ms": 0,
+      "transferred_bytes": 4800,
+      "requests": 16,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 2,
+      "name": "member",
+      "variant": "async-state",
+      "cache": "from-home",
+      "fcp_ms": 228,
+      "lcp_ms": 256,
+      "cls": 0.0003107223510742188,
+      "ttfb_ms": 53.899999999965075,
+      "load_ms": 236.79999999998836,
+      "blocking_ms": 0,
+      "transferred_bytes": 35263,
+      "requests": 17,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 2,
+      "name": "home",
+      "variant": "critical-inline",
+      "cache": "cold",
+      "fcp_ms": 388,
+      "lcp_ms": 388,
+      "cls": 0.21119485812717012,
+      "ttfb_ms": 191.79999999998836,
+      "load_ms": 447.29999999998836,
+      "blocking_ms": 0,
+      "transferred_bytes": 36815,
+      "requests": 17,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 2,
+      "name": "home",
+      "variant": "critical-inline",
+      "cache": "repeat",
+      "fcp_ms": 164,
+      "lcp_ms": 164,
+      "cls": 0.2113309326171875,
+      "ttfb_ms": 61.5,
+      "load_ms": 260,
+      "blocking_ms": 0,
+      "transferred_bytes": 4800,
+      "requests": 16,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 2,
+      "name": "member",
+      "variant": "critical-inline",
+      "cache": "from-home",
+      "fcp_ms": 172,
+      "lcp_ms": 204,
+      "cls": 0.21119485812717012,
+      "ttfb_ms": 58.5,
+      "load_ms": 254.70000000001164,
+      "blocking_ms": 0,
+      "transferred_bytes": 39629,
+      "requests": 17,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 2,
+      "name": "home",
+      "variant": "bundle",
+      "cache": "cold",
+      "fcp_ms": 380,
+      "lcp_ms": 380,
+      "cls": 0.0003107223510742188,
+      "ttfb_ms": 183.89999999996508,
+      "load_ms": 384.79999999998836,
+      "blocking_ms": 0,
+      "transferred_bytes": 26148,
+      "requests": 7,
+      "css_requests": 1,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 2,
+      "name": "home",
+      "variant": "bundle",
+      "cache": "repeat",
+      "fcp_ms": 172,
+      "lcp_ms": 172,
+      "cls": 0.00015524224175347224,
+      "ttfb_ms": 56,
+      "load_ms": 194.29999999998836,
+      "blocking_ms": 0,
+      "transferred_bytes": 1800,
+      "requests": 6,
+      "css_requests": 1,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 2,
+      "name": "member",
+      "variant": "bundle",
+      "cache": "from-home",
+      "fcp_ms": 156,
+      "lcp_ms": 204,
+      "cls": 0.0003107223510742188,
+      "ttfb_ms": 52.59999999997672,
+      "load_ms": 192.79999999998836,
+      "blocking_ms": 0,
+      "transferred_bytes": 39720,
+      "requests": 7,
+      "css_requests": 1,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 2,
+      "name": "home",
+      "variant": "shared-bundle",
+      "cache": "cold",
+      "fcp_ms": 304,
+      "lcp_ms": 304,
+      "cls": 0.00015524224175347224,
+      "ttfb_ms": 153.39999999996508,
+      "load_ms": 310.19999999995343,
+      "blocking_ms": 0,
+      "transferred_bytes": 26927,
+      "requests": 8,
+      "css_requests": 2,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 2,
+      "name": "home",
+      "variant": "shared-bundle",
+      "cache": "repeat",
+      "fcp_ms": 180,
+      "lcp_ms": 180,
+      "cls": 0.00017721489800347223,
+      "ttfb_ms": 57.09999999997672,
+      "load_ms": 203.89999999996508,
+      "blocking_ms": 0,
+      "transferred_bytes": 2100,
+      "requests": 7,
+      "css_requests": 2,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 2,
+      "name": "member",
+      "variant": "shared-bundle",
+      "cache": "from-home",
+      "fcp_ms": 160,
+      "lcp_ms": 220,
+      "cls": 0.0003107223510742188,
+      "ttfb_ms": 57.90000000002328,
+      "load_ms": 204.79999999998836,
+      "blocking_ms": 0,
+      "transferred_bytes": 32449,
+      "requests": 8,
+      "css_requests": 2,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 2,
+      "name": "home",
+      "variant": "blocking",
+      "cache": "cold",
+      "fcp_ms": 448,
+      "lcp_ms": 448,
+      "cls": 0.00015524224175347224,
+      "ttfb_ms": 204.09999999997672,
+      "load_ms": 456.20000000001164,
+      "blocking_ms": 0,
+      "transferred_bytes": 31660,
+      "requests": 16,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 2,
+      "name": "home",
+      "variant": "blocking",
+      "cache": "repeat",
+      "fcp_ms": 232,
+      "lcp_ms": 232,
+      "cls": 0.0003107223510742188,
+      "ttfb_ms": 56.5,
+      "load_ms": 220.90000000002328,
+      "blocking_ms": 0,
+      "transferred_bytes": 4500,
+      "requests": 15,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 2,
+      "name": "member",
+      "variant": "blocking",
+      "cache": "from-home",
+      "fcp_ms": 240,
+      "lcp_ms": 248,
+      "cls": 0.0003107223510742188,
+      "ttfb_ms": 63.100000000034925,
+      "load_ms": 225.60000000003492,
+      "blocking_ms": 0,
+      "transferred_bytes": 34917,
+      "requests": 16,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 2,
+      "name": "home",
+      "variant": "async-modules",
+      "cache": "cold",
+      "fcp_ms": 392,
+      "lcp_ms": 392,
+      "cls": 0.00015524224175347224,
+      "ttfb_ms": 183.70000000001164,
+      "load_ms": 433,
+      "blocking_ms": 0,
+      "transferred_bytes": 32559,
+      "requests": 17,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 2,
+      "name": "home",
+      "variant": "async-modules",
+      "cache": "repeat",
+      "fcp_ms": 204,
+      "lcp_ms": 204,
+      "cls": 0.0003107223510742188,
+      "ttfb_ms": 68.59999999997672,
+      "load_ms": 246.69999999995343,
+      "blocking_ms": 0,
+      "transferred_bytes": 4800,
+      "requests": 16,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 2,
+      "name": "member",
+      "variant": "async-modules",
+      "cache": "from-home",
+      "fcp_ms": 192,
+      "lcp_ms": 252,
+      "cls": 0.00015524224175347224,
+      "ttfb_ms": 65.60000000003492,
+      "load_ms": 283.29999999998836,
+      "blocking_ms": 0,
+      "transferred_bytes": 35273,
+      "requests": 17,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 2,
+      "name": "member",
+      "variant": "async-state",
+      "cache": "cold",
+      "fcp_ms": 468,
+      "lcp_ms": 480,
+      "cls": 0.0003107223510742188,
+      "ttfb_ms": 236.09999999997672,
+      "load_ms": 515.9000000000233,
+      "blocking_ms": 0,
+      "transferred_bytes": 51351,
+      "requests": 18,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 2,
+      "name": "member",
+      "variant": "async-state",
+      "cache": "repeat",
+      "fcp_ms": 184,
+      "lcp_ms": 220,
+      "cls": 0.0003107223510742188,
+      "ttfb_ms": 67,
+      "load_ms": 233.09999999997672,
+      "blocking_ms": 0,
+      "transferred_bytes": 5100,
+      "requests": 17,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 2,
+      "name": "member",
+      "variant": "critical-inline",
+      "cache": "cold",
+      "fcp_ms": 380,
+      "lcp_ms": 416,
+      "cls": 0.21119485812717012,
+      "ttfb_ms": 238.79999999998836,
+      "load_ms": 494.70000000001164,
+      "blocking_ms": 0,
+      "transferred_bytes": 55717,
+      "requests": 18,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 2,
+      "name": "member",
+      "variant": "critical-inline",
+      "cache": "repeat",
+      "fcp_ms": 172,
+      "lcp_ms": 172,
+      "cls": 0.21119485812717012,
+      "ttfb_ms": 66,
+      "load_ms": 272.20000000001164,
+      "blocking_ms": 0,
+      "transferred_bytes": 5100,
+      "requests": 17,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 2,
+      "name": "member",
+      "variant": "bundle",
+      "cache": "cold",
+      "fcp_ms": 296,
+      "lcp_ms": 344,
+      "cls": 0.0003107223510742188,
+      "ttfb_ms": 177.69999999995343,
+      "load_ms": 321.8999999999651,
+      "blocking_ms": 0,
+      "transferred_bytes": 45083,
+      "requests": 8,
+      "css_requests": 1,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 2,
+      "name": "member",
+      "variant": "bundle",
+      "cache": "repeat",
+      "fcp_ms": 156,
+      "lcp_ms": 156,
+      "cls": 0.00017721489800347223,
+      "ttfb_ms": 55.59999999997672,
+      "load_ms": 187.09999999997672,
+      "blocking_ms": 0,
+      "transferred_bytes": 2100,
+      "requests": 7,
+      "css_requests": 1,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 2,
+      "name": "member",
+      "variant": "shared-bundle",
+      "cache": "cold",
+      "fcp_ms": 312,
+      "lcp_ms": 360,
+      "cls": 0.0003107223510742188,
+      "ttfb_ms": 184.19999999995343,
+      "load_ms": 345.3999999999651,
+      "blocking_ms": 0,
+      "transferred_bytes": 45723,
+      "requests": 9,
+      "css_requests": 2,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 2,
+      "name": "member",
+      "variant": "shared-bundle",
+      "cache": "repeat",
+      "fcp_ms": 176,
+      "lcp_ms": 176,
+      "cls": 0.00017721489800347223,
+      "ttfb_ms": 65.09999999997672,
+      "load_ms": 217.39999999996508,
+      "blocking_ms": 0,
+      "transferred_bytes": 2400,
+      "requests": 8,
+      "css_requests": 2,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 2,
+      "name": "member",
+      "variant": "blocking",
+      "cache": "cold",
+      "fcp_ms": 400,
+      "lcp_ms": 408,
+      "cls": 0.0003107223510742188,
+      "ttfb_ms": 192.5,
+      "load_ms": 381.20000000001164,
+      "blocking_ms": 0,
+      "transferred_bytes": 50458,
+      "requests": 17,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 2,
+      "name": "member",
+      "variant": "blocking",
+      "cache": "repeat",
+      "fcp_ms": 484,
+      "lcp_ms": 496,
+      "cls": 0.000366607666015625,
+      "ttfb_ms": 319,
+      "load_ms": 471.5,
+      "blocking_ms": 0,
+      "transferred_bytes": 4800,
+      "requests": 16,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 2,
+      "name": "member",
+      "variant": "async-modules",
+      "cache": "cold",
+      "fcp_ms": 360,
+      "lcp_ms": 408,
+      "cls": 0.0003107223510742188,
+      "ttfb_ms": 212.29999999998836,
+      "load_ms": 424.29999999998836,
+      "blocking_ms": 0,
+      "transferred_bytes": 51361,
+      "requests": 18,
+      "css_requests": 10,
+      "protocol": "h2"
+    },
+    {
+      "profile": "desktop",
+      "run": 2,
+      "name": "member",
+      "variant": "async-modules",
+      "cache": "repeat",
+      "fcp_ms": 208,
+      "lcp_ms": 208,
+      "cls": 0.0003107223510742188,
+      "ttfb_ms": 72.40000000002328,
+      "load_ms": 276.9000000000233,
+      "blocking_ms": 0,
+      "transferred_bytes": 5100,
+      "requests": 17,
+      "css_requests": 10,
+      "protocol": "h2"
+    }
+  ],
+  "experiment_source": "931c5150369e3ce6c1513b9a0d15c8e45c6604ec",
+  "workflow_url": "https://github.com/A-Rozum/hosting/actions/runs/38621323976",
+  "cache_policy": "All isolated fixtures use Cache-Control: no-cache, with native conditional revalidation; empty HTTP cache on first context navigation. DNS/TLS caches are not guaranteed empty."
+}

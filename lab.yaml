@@ -1,1 +1,3 @@
 - {id: built-with-prastora, path: lab/built-with-prastora.md, question: "How to show real sites built with Prastora and feed back what they needed", kind: note, status: prapanova, created: 2026-10-05, review_by: 2026-11-07, exit: pavyšennie, owner: architect}
+
+- {id: css-delivery, path: lab/css-delivery/README.md, question: "Which CSS delivery policy improves first paint with stable layouts, themes, anchors and native fallback", kind: note, status: prapanova, created: 2026-10-14, review_by: 2026-11-14, exit: pavyšennie, owner: architect}

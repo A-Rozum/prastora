@@ -1,0 +1,25 @@
+name: check-css-delivery
+on:
+  push:
+    branches: ['agent/codex/**']
+permissions:
+  contents: read
+  statuses: write
+jobs:
+  css-delivery:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check the experiment and optional loader
+        run: |
+          python3 -m py_compile lab/css-delivery/capture.py
+          node --check lab/css-delivery/compare.mjs
+          node lab/css-delivery/test-styles.mjs
+          python3 tools/test_styles.py
+      - name: Publish check result
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ "${{ job.status }}" = success ]; then state=success; else state=failure; fi
+          gh api repos/${{ github.repository }}/statuses/${{ github.sha }} -f state="$state" -f context=check/css-delivery -f description="CSS delivery experiment and readiness" > /dev/null
