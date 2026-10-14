@@ -10,12 +10,24 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - name: Install isolated parser and browser
+        run: |
+          npm install --prefix /tmp/css-tests --no-audit --no-fund playwright@1.56.1 lightningcss@1.33.0
+          /tmp/css-tests/node_modules/.bin/playwright install --with-deps chromium
       - name: Check the experiment and optional loader
+        env:
+          CSS_BROWSER_MODULE: /tmp/css-tests/node_modules/playwright/index.mjs
+          PRASTORA_LIGHTNING_CSS: /tmp/css-tests/node_modules/lightningcss
         run: |
           python3 -m py_compile lab/css-delivery/capture.py
           node --check lab/css-delivery/compare.mjs
+          node --check lab/css-delivery/placement.mjs
+          node --check lab/css-delivery/placement-generate.mjs
           node lab/css-delivery/test-styles.mjs
           python3 tools/test_styles.py
+          node tools/test_forms.mjs
       - name: Publish check result
         if: always()
         env:

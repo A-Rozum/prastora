@@ -5,6 +5,8 @@ import hashlib
 import json
 from pathlib import Path
 import re
+import os
+import subprocess
 
 
 def generate(root, plan):
@@ -36,7 +38,21 @@ def generate(root, plan):
             provenance.append({'path': source, 'sha256': digest})
             pieces.append('/* '+source+' */\n'+css.rstrip()+'\n')
         output = '\n'.join(pieces).encode()
-        result[target] = {'body': output, 'sources': provenance, 'sha256': hashlib.sha256(output).hexdigest()}
+        input_bytes = len(output)
+        minifier = plan.get('minifier')
+        if minifier:
+            if minifier != {'name': 'lightningcss', 'version': '1.33.0'}:
+                raise ValueError('Supported minifier: lightningcss 1.33.0 (explicit, pinned).')
+            module = os.environ.get('PRASTORA_LIGHTNING_CSS')
+            if not module:
+                raise ValueError('PRASTORA_LIGHTNING_CSS must point to the installed lightningcss package.')
+            operation = subprocess.run(['node', str(Path(__file__).with_name('styles-minify.mjs')), module],
+                input=output, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            if operation.returncode:
+                raise ValueError('CSS minification failed: ' + operation.stderr.decode('utf-8', errors='replace')[-1500:])
+            output = operation.stdout
+        result[target] = {'body': output, 'sources': provenance, 'sha256': hashlib.sha256(output).hexdigest(),
+                          'input_bytes': input_bytes, 'bytes': len(output), 'minifier': minifier}
     return result
 
 
@@ -61,3 +77,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+

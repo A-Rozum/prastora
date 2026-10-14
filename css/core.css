@@ -9,7 +9,7 @@
    Show or hide by regime with .desktop-only / .mobile-only rather than per-component display rules. */
 @layer core, theme, components, page, dev;
 @layer core {
-  :root { --scale-units: 128; --scale-min: 0rem; --text-size: 1.6rem; --small-size: 1.4rem; --lead-size: 1.9rem; --button-size: 1.8rem; --font: system-ui, sans-serif; --line-height: 1.6; --space-block: 4rem; --space-inline: 4rem; --gap: 3rem; --card-space: 2rem; --radius: .8rem; --ink: #25313c; --muted: #64717d; --paper: #fff; --surface: #f3f5f7; --line: #d5dce3; --accent: #245b82; --on-accent: #fff; }
+  :root { --scale-units: 128; --scale-min: 0rem; --text-size: 1.6rem; --small-size: 1.4rem; --lead-size: 1.9rem; --button-size: 1.8rem; --font: system-ui, sans-serif; --line-height: 1.6; --space-block: 4rem; --space-inline: 4rem; --gap: 3rem; --card-space: 2rem; --radius: .8rem; --ink: #25313c; --muted: #64717d; --paper: #fff; --surface: #f3f5f7; --line: #d5dce3; --accent: #245b82; --on-accent: #fff; --error: #a63d35; --success: #2e5a4f; }
   html { font-size: max(var(--scale-min), calc(100vw / var(--scale-units))); box-sizing: border-box; text-size-adjust: 100%; }
   *, ::before, ::after { box-sizing: inherit; }
   body { display: flex; flex-direction: column; min-block-size: 100svh; margin: 0; font: var(--text-size)/var(--line-height) var(--font); color: var(--ink); background: var(--paper); }
@@ -91,3 +91,4 @@
     .section { padding: 1rem 0; }
   }
 }
+

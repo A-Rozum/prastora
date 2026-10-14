@@ -944,3 +944,18 @@
     kind: rašennie
     date: '2026-10-14'
     ref: Optional release bundles with canonical filenames and dependency hashes
+
+- id: mietad:web.css/forms@1
+  path: methods/forms.md
+  applies:
+    all:
+    - domain: web.css
+    - task_kind: [implementation, review]
+    - subject: forms
+  status: proba
+  access: public
+  audience: [agent, human]
+  basis:
+    kind: praktyka
+    date: '2026-10-14'
+    ref: Unified native and server feedback through existing field-error and semantic states

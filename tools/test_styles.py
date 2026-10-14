@@ -1,5 +1,6 @@
 import importlib.util
 from pathlib import Path
+import os
 import tempfile
 import unittest
 
@@ -36,6 +37,21 @@ class Bundles(unittest.TestCase):
             with self.assertRaises(ValueError):
                 styles.generate(root, {'format':1,'bundles':{'/bundle.css':['/bundle.css']}})
 
+    @unittest.skipUnless(os.environ.get('PRASTORA_LIGHTNING_CSS'), 'Optional minifier not installed')
+    def test_parser_preserves_meaningful_whitespace_and_rejects_bad_css(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            (root/'a.css').write_text('@layer core, theme, components; @layer components {.parent .child::before{content:"a b";inline-size:calc(var(--x) - 2rem)}}')
+            plan = {'format':1, 'minifier':{'name':'lightningcss','version':'1.33.0'}, 'bundles':{'/bundle.css':['/a.css']}}
+            output = styles.generate(root, plan)['/bundle.css']
+            self.assertIn(b'.parent .child', output['body'])
+            self.assertIn(b'a b', output['body'])
+            self.assertIn(b'--x', output['body'])
+            self.assertLess(output['bytes'], output['input_bytes'])
+            (root/'a.css').write_text('a { color rgb(1 2 3); }')
+            with self.assertRaises(ValueError): styles.generate(root, plan)
+
 
 if __name__ == '__main__':
     unittest.main()
+
