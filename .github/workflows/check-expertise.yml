@@ -11,13 +11,32 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
+        with: {fetch-depth: 0}
+      - name: Select dependent browser checks
+        id: scope
+        run: |
+          python3 - <<'PY'
+          import os,subprocess
+          base=subprocess.check_output(['git','merge-base','HEAD','origin/main'],text=True).strip()
+          paths=subprocess.check_output(['git','diff','--name-only',base,'HEAD'],text=True).splitlines()
+          def metadata(p):
+              return p.endswith('.md') or p.startswith('lab/') or p in ['lab.yaml','elements.yaml','system.yaml','.github/workflows/check-expertise.yml']
+          needed=any(not metadata(p) for p in paths)
+          # Unknown executable/assets/templates changes widen scope; lab/report-only changes do not.
+          with open(os.environ['GITHUB_OUTPUT'],'a') as f:f.write('browser='+str(needed).lower()+'\n')
+          print('Browser checks required:',needed)
+          PY
       - uses: actions/setup-python@v5
+        if: steps.scope.outputs.browser == 'true'
         with:
           python-version: '3.12'
-      - run: pip install -q playwright pillow pyyaml jsonschema
-      - run: python -m playwright install --with-deps chromium
+      - if: steps.scope.outputs.browser == 'true'
+        run: pip install -q playwright pillow pyyaml jsonschema
+      - if: steps.scope.outputs.browser == 'true'
+        run: python -m playwright install --with-deps chromium
       - name: Check the static site and visitor journeys
         id: test
+        if: steps.scope.outputs.browser == 'true'
         run: |
           python3 tools/test_images.py
           python3 check.py
@@ -32,7 +51,7 @@ jobs:
           python3 tools/reader.py templates/expertise-portal templates/expertise-editorial templates/expertise-association
           python3 tools/reader.py templates/expertise-opinion-portal templates/expertise-opinion-editorial templates/expertise-opinion-association
       - uses: actions/upload-artifact@v4
-        if: always()
+        if: always() && steps.scope.outputs.browser == 'true'
         with:
           name: expertise-browser-check
           path: |
@@ -47,6 +66,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           OUTCOME: ${{ steps.test.outcome }}
+          NEED_BROWSER: ${{ steps.scope.outputs.browser }}
         run: |
-          if [ "$OUTCOME" = "success" ]; then state=success; else state=failure; fi
+          if [ "$OUTCOME" = "success" ] || [ "$NEED_BROWSER" = "false" ]; then state=success; else state=failure; fi
           gh api repos/${{ github.repository }}/statuses/${{ github.sha }} -f state="$state" -f context=check/expertise -f description="Expertise layout and visitor journeys" -f target_url="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" > /dev/null

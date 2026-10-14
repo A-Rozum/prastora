@@ -25,6 +25,7 @@ jobs:
           node --check lab/css-delivery/compare.mjs
           node --check lab/css-delivery/placement.mjs
           node --check lab/css-delivery/placement-generate.mjs
+          node lab/css-delivery/test-placement.mjs
           node lab/css-delivery/test-styles.mjs
           python3 tools/test_styles.py
           node tools/test_forms.mjs

@@ -33,7 +33,10 @@ try {
     let main='',late='';
     for(const rule of rules){
      if(rule.selectorText){
-      const list=selectors(rule.selectorText),footer=list.filter(s=>/footer/.test(s)),other=list.filter(s=>!/footer/.test(s));
+      const list=selectors(rule.selectorText);
+      // Keep mixed functional selectors (e.g. :where(menu, footer, button)) critical.
+      const isFooter=s=>/^(?:footer\b|\.(?:site-footer|footer-links|inst-footer(?:-[\w-]+)?|member-footer(?:-[\w-]+)?)(?=[\s.#:[>+~]|$))/.test(s);
+      const footer=list.filter(isFooter),other=list.filter(s=>!isFooter(s));
       if(other.length)main+=other.join(',')+'{'+rule.style.cssText+'}\n';
       if(footer.length)late+=footer.join(',')+'{'+rule.style.cssText+'}\n';
      }else if(rule.cssRules){const child=partition(rule.cssRules);const header=rule.cssText.slice(0,rule.cssText.indexOf('{'));
