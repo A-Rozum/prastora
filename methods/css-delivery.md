@@ -2,6 +2,19 @@
 
 A delivery decision belongs to a page/layout and its supported states, not permanently to a component. The same component can be offscreen on one page and immediately visible on another. Keep ordinary stylesheet links as the safe default. Link only used modules; preserve the layer declaration and source order described in [CSS layering](../norms/css-layering.md).
 
+## Delivery roles
+
+Use canonical output names to express when styles are needed:
+
+- `core.css`: shared reset, scale, typography defaults and layout primitives.
+- `site.css` (or a layout-specific bundle): selected component/theme rules needed for correct initial geometry, reading and interaction.
+- `lazy.css`: selected styles whose application may follow initial content rendering. The name describes delivery timing; its contents can be required for the finished page.
+- `print.css`: required print presentation, linked with `media="print"`; it need not delay screen content.
+
+Determine early/late eligibility by rule dependencies and supported page states. Keep geometry, text metrics, essential contrast, visibility and interaction feedback available initially. Reserve space through layout rules and media proportions, accounting for variable text lengths. A component can contribute both early and late rules while keeping its source together. Do not classify entire components or CSS properties as late solely by their name or screen position. Preserve custom-property dependencies and cascade order in generated outputs.
+
+These roles describe the target delivery arrangement; the currently measured site still uses two head bundles. The next general framework experiment is recorded in [the continuation note](../lab/css-delivery/next-session.md).
+
 ## Optional release bundles
 
 A deployment can combine selected CSS into canonical files with `tools/styles.py`. Source modules remain separately editable and directly usable in HTML; Prastora does not require a frontend build. Generate during preparation of a release, never while serving a PHP request. Start with shared/site and layout bundles when that improves measured cold and cross-layout navigation. One file per entire page is an alternative to measure, not a universal rule.
@@ -38,4 +51,4 @@ Add `"minifier": {"name":"lightningcss","version":"1.33.0"}` to the plan. Instal
 
 Loading position is a separate plan concern. Critical CSS goes in head; a genuinely noncritical screen stylesheet can use an ordinary link before the closing body tag. Print styles retain media=print. End-of-body discovery and non-blocking activation are different strategies; compare actual request starts, FCP/LCP and early geometry instead of assuming that a later HTML position guarantees later fetching. Never put link markup after the closing html tag.
 
-Measured example: [ordinary head/body placement](../lab/css-delivery/placement.md). Holding the footer stylesheet allowed first paint in 48/48 body-link cases versus 0/48 head-link cases. The small footer split showed no consistent timing benefit and changed early geometry on direct fragments, so expertise-law.eu retains two critical files in head. No fixed number of optional late bundles is required.
+Measured example: [ordinary head/body placement](../lab/css-delivery/placement.md). Holding the footer stylesheet allowed first paint in 48/48 body-link cases versus 0/48 head-link cases. The small footer split showed no consistent timing benefit and changed early geometry on direct fragments, so expertise-law.eu retains two critical files in head. The measured footer split does not determine whether other layouts need lazy.css; delivery timing and whether the finished page needs a stylesheet are separate decisions.

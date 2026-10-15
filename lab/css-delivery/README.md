@@ -2,6 +2,8 @@
 
 Completed: [initial comparison and selected baseline](comparison.md), [initial raw measurements](results.json), then [ordinary head/body placement, form unification and release minification](placement.md) with [corrected placement measurements](placement-results.json). Production uses two minified critical files in head. End-of-body styles are an optional measured per-layout choice; the separate non-blocking loader remains a lab prototype.
 
+Next session: [general core/site/lazy/print split and continuation point](next-session.md). The new experiment is deferred; current deployment stays in place.
+
 Question: Which stylesheet delivery policy improves first rendering while preserving Prastora's geometry, cascade, themes and native HTML behavior?
 
 The comparison captures read-only public Association and member HTML from expertise-law.eu. Session tokens are removed; isolated fixture headers disable submission and network form calls. All variants use the same content and assets. Compare normal module links, deferred form modules, deferred enquiry-state styling, browser-selected critical CSS, one complete bundle and shared/page bundles. The stylesheet loader uses external event listeners under a restrictive CSP, preserves DOM link order and returns explicit readiness/failure. A noscript link supplies native styles.
