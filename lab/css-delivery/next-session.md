@@ -27,3 +27,19 @@ Include a responsive grid, cards with unequal text lengths, media with reserved 
 Compare identical rules delivered together with rules split into early CSS plus lazy.css. Separate file-count/network effects from stylesheet position by retaining the matched all-in-head control. Assess actual paints and request timing in addition to geometry. Keep print.css refinement as separate work.
 
 Use the result to decide the reusable Prastora rule classification and release-plan integration for Rudy. Avoid assigning all declarations of a property or all rules of a component to one phase automatically. This session records the direction and point of return; the experiment is deferred to the next session.
+
+## Release transition and rebuild automation: next-session scope
+
+The transition from editable source modules to delivery files already occurs during release preparation. In Rudy, templates/styles.json explicitly maps ordered sources to core/site/member outputs; the pinned Prastora tools/styles.py generates/minifies them and emits hashes in tools/styles-manifest.json. CI currently rejects missing or stale outputs before runtime assembly. This is deterministic composition from a maintained plan; the general core/site/lazy/print split and unattended refresh of that plan are not yet implemented.
+
+After validating the generic early/late experiment, extend the existing preparation mechanism rather than adding a separate build system:
+
+- Keep one authoritative delivery description per site/layout, using shared Prastora component metadata where appropriate. Record rule roles and dependencies explicitly, including components that supply both initial and lazy rules. Decide the concrete representation with the experiment; do not reclassify styles from scratch for every edit.
+- Resolve the selected components and dependencies into canonical core.css, site/layout CSS, lazy.css and print.css. A role describes timing, not dispensability; print presentation is required. Preserve source order, layer declarations and custom-property dependencies.
+- Add automatic generation to release preparation: resolve the existing delivery description, rebuild affected outputs when inputs/configuration/tool versions change, minify, and record provenance. CI should verify freshness/reproducibility of the prepared artifacts.
+- Reuse and first discover Rudy's existing runtime preparation and hosting update mechanism. The deployed release includes ready assets; PHP requests do not build CSS.
+- Integrate template link generation or verification with the same delivery description so file contents and loading positions stay consistent.
+- Require classification when introducing or materially changing a component's delivery behavior. Ordinary source edits reuse that classification. New unclassified rules remain initially loaded until classified, rather than being silently deferred by a property-name/viewport heuristic.
+- Check affected outputs and consuming layouts/states, including required print assets. Avoid full-site testing after every unrelated change.
+
+Deliver a stable preparation command/integration that an agent can invoke without manually deciding which source goes into which output on every rebuild. Keep readable modular sources in development. This automation is authorized for the same next session, after the classification experiment; no implementation is requested in the current handoff-only session.
