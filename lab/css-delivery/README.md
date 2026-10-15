@@ -1,6 +1,6 @@
 # CSS delivery experiment
 
-Completed: [comparison and selected baseline](comparison.md), [raw measurements](results.json). Production baseline uses optional shared/layout bundles; the non-blocking loader remains a lab prototype.
+Completed: [initial comparison and selected baseline](comparison.md), [initial raw measurements](results.json), then [ordinary head/body placement, form unification and release minification](placement.md) with [corrected placement measurements](placement-results.json). Production uses two minified critical files in head. End-of-body styles are an optional measured per-layout choice; the separate non-blocking loader remains a lab prototype.
 
 Question: Which stylesheet delivery policy improves first rendering while preserving Prastora's geometry, cascade, themes and native HTML behavior?
 
