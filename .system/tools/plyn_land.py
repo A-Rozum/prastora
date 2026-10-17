@@ -66,8 +66,9 @@ def validate(path):
 def main():
     repo = slug()
     branch = sys.argv[1] if len(sys.argv) > 1 else git("rev-parse", "--abbrev-ref", "HEAD")
-    git("fetch", "-q", "origin")
     main_branch = git("symbolic-ref", "--short", "refs/remotes/origin/HEAD").split("/", 1)[1]
+    for b in (main_branch, branch):  # explicit refspecs: single-branch and shallow clones fetch only main
+        git("fetch", "-q", "origin", f"+refs/heads/{b}:refs/remotes/origin/{b}", check=b == main_branch)
     if branch == main_branch: raise SystemExit("Give the agent branch, not the default branch")
     if git("ls-remote", "--heads", "origin", branch) == "":
         raise SystemExit(f"origin/{branch} does not exist: push the branch first")
@@ -92,7 +93,7 @@ def main():
             msg = (lines[0] + "\n\n" + "\n".join(lines[1:])).strip() if lines else "Agent changes"
             author = git("log", "-1", "--format=%an <%ae>", tip)
             for attempt in range(3):
-                git("fetch", "-q", "origin", main_branch)
+                git("fetch", "-q", "origin", f"+refs/heads/{main_branch}:refs/remotes/origin/{main_branch}")
                 git("checkout", "-q", "--detach", f"origin/{main_branch}", cwd=wt)
                 r = subprocess.run(["git", "merge", "--squash", tip], cwd=wt, capture_output=True, text=True)
                 if r.returncode:
