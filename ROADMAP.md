@@ -18,6 +18,8 @@ gallery, subscription pricing. Standalone: OFFSCREEN 2100 festival, Tandem plan 
 - Scale regimes: small phone, tablet portrait, a decision on a panoramic regime for ultrawide windows.
 
 ## Later
+- Built in: initial language from the browser and colour theme from the system, with a remembered
+  manual choice (raised by plyn-site-preview).
 - Text size control at the start of the main content, as some media sites do; find examples first.
   An earlier trial in the utility strip was rejected.
 - Page types not yet covered: news feed, blog index, documentation; listing with filters, cart;
