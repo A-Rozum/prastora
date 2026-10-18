@@ -1,4 +1,4 @@
-# CSS delivery comparison — 2026-10-14
+# CSS delivery comparison – 2026-10-14
 
 Selected baseline: ordinary blocking shared/layout bundles. Non-blocking CSS remains an explicit, checked enhancement for genuinely noncritical states.
 

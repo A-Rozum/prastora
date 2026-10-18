@@ -1,6 +1,6 @@
 {
  "$schema": "https://json-schema.org/draft/2020-12/schema",
- "title": "state.yaml — project state (active memory only)",
+ "title": "state.yaml – project state (active memory only)",
  "type": "object",
  "required": [
   "direction",

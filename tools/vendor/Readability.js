@@ -594,7 +594,7 @@ Readability.prototype = {
     }
 
     // If there's a separator in the title, first remove the final part
-    const titleSeparators = /\|\-–—\\\/>»/.source;
+    const titleSeparators = /\|\-––\\\/>»/.source;
     if (new RegExp(`\\s[${titleSeparators}]\\s`).test(curTitle)) {
       titleHadHierarchicalSeparators = /\s[\\\/>»]\s/.test(curTitle);
       let allSeparators = Array.from(
@@ -1775,7 +1775,7 @@ Readability.prototype = {
   /**
    * Attempts to get excerpt and byline metadata for the article.
    *
-   * @param {Object} jsonld — object containing any metadata that
+   * @param {Object} jsonld – object containing any metadata that
    * could be extracted from JSON-LD object.
    *
    * @return Object with optional "excerpt" and "byline" properties

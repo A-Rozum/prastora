@@ -1,4 +1,4 @@
-"""Compile the context for one task into .context/task.md — a vendor-neutral bundle any agent environment can read
+"""Compile the context for one task into .context/task.md – a vendor-neutral bundle any agent environment can read
 (Claude Code via CLAUDE.md → AGENTS.md, Codex and OpenCode via AGENTS.md, a chat by uploading the file).
 Usage: python tools/plyn_compile.py [repo_dir] domain=… task_kind=… [subject=…] [budget=…]
 The bundle holds: task facets, open tasks from state.yaml, selected elements most specific first (content or head),
@@ -40,7 +40,7 @@ def main():
         out += ["## Open tasks (state.yaml)", ""]
         for t in s.get("tasks", []):
             if not in_scope(t, allowed): continue
-            out.append(f"- [{t['status']}] {t['id']}: {t['title']} — done when: {t['done_when']} (executor: {t['executor']})")
+            out.append(f"- [{t['status']}] {t['id']}: {t['title']} – done when: {t['done_when']} (executor: {t['executor']})")
         out.append("")
     if not normative:
         out += ["## Not anticipated", "", "No element applies beyond the kernel. Work from general knowledge and search with lowered trust; say in the result that the task was not anticipated, so the gap can be filled.", ""]
@@ -60,23 +60,23 @@ def main():
                     out.append(f"  - {lvl}: {c}")
         out.append("")
     if demand:
-        out += ["## Open when needed (sources: cite exactly from the file, never from memory)", ""] + [f"- {p['id']} — {p['path']} — {p['text']}" for p in demand] + [""]
+        out += ["## Open when needed (sources: cite exactly from the file, never from memory)", ""] + [f"- {p['id']} – {p['path']} – {p['text']}" for p in demand] + [""]
     if refs:
-        out += ["## Tools and checks (run, do not read)", ""] + [f"- {p['path']} — {p['text']}" for p in refs] + [""]
+        out += ["## Tools and checks (run, do not read)", ""] + [f"- {p['path']} – {p['text']}" for p in refs] + [""]
     if skipped:
-        out += ["## Dropped by budget (open only if the task requires)", ""] + [f"- {p['id']} — {p['path']}" for p in skipped] + [""]
+        out += ["## Dropped by budget (open only if the task requires)", ""] + [f"- {p['id']} – {p['path']}" for p in skipped] + [""]
     if available:
         out += ['## Matter materials (only the permitted scope)', '']
         remaining = max(0, budget - sum(p['tokens'] for p in chosen))
         for m in available:
             mode = m.get('load', 'demand')
             if mode == 'demand':
-                out += [f"- {m['id']} — {m['path']} — kind: {m['kind']}"]
+                out += [f"- {m['id']} – {m['path']} – kind: {m['kind']}"]
                 continue
             text = _sel.excerpt(repo / m['path'], mode)
             tokens = max(1, len(text) // 4)
             if tokens > remaining:
-                out += [f"- {m['id']} — {m['path']} — kind: {m['kind']} (open when needed; budget)"]
+                out += [f"- {m['id']} – {m['path']} – kind: {m['kind']} (open when needed; budget)"]
             else:
                 remaining -= tokens
                 out += [f'<material id="{m["id"]}" matter="{m["matter"]}">', text.strip(), '</material>', '']

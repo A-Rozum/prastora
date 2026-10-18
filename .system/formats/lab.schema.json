@@ -1,6 +1,6 @@
 {
  "$schema": "https://json-schema.org/draft/2020-12/schema",
- "title": "lab.yaml — workshop entries (temporary by design)",
+ "title": "lab.yaml – workshop entries (temporary by design)",
  "type": "array",
  "items": {
   "type": "object",

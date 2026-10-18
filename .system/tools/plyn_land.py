@@ -10,6 +10,8 @@ The branch defaults to the current one. Project checks (.github/workflows/check-
 Actions) are waited for through their statuses check/<name>, as land.yml does; a project check that skips
 private repositories is run in the agent's environment as the repository's AGENTS.md says. Exit code 0 means landed."""
 import json, os, re, subprocess, sys, tempfile, time, urllib.request
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import plyn_typography
 
 def git(*a, cwd=".", check=True):
     r = subprocess.run(["git", *a], cwd=cwd, capture_output=True, text=True)
@@ -98,6 +100,8 @@ def main():
                 r = subprocess.run(["git", "merge", "--squash", tip], cwd=wt, capture_output=True, text=True)
                 if r.returncode:
                     print(r.stdout + r.stderr); status(repo, tip, "land", "failure", "Not landed: Conflicts with the default branch"); return 1
+                fixed = plyn_typography.apply(wt)  # house dash on every landed text file
+                if fixed: git("add", "--", *fixed, cwd=wt); print("House dash set in: " + ", ".join(fixed))
                 if subprocess.run(["git", "diff", "--cached", "--quiet"], cwd=wt).returncode == 0:
                     print("Nothing to land: the default branch already has these changes"); break
                 git("commit", "-q", f"--author={author}", "-m", msg, cwd=wt)

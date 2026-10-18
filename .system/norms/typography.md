@@ -1,0 +1,1 @@
+The dash in every text produced in the system is U+2013 (–): text an agent generates, writes or edits, in repositories, on sites and in replies. A project whose owner chose another dash says so in its AGENTS.md and in typography.yaml at its root (`dash: em`); the tools then leave its texts as written.
