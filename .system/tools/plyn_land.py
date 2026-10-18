@@ -6,9 +6,11 @@ are posted on the branch tip. Run inside a clone whose origin is the GitHub repo
 
     GH_TOKEN=... python .system/tools/plyn_land.py [branch]
 
-The branch defaults to the current one. Project checks (.github/workflows/check-<name>.yml, still run by
-Actions) are waited for through their statuses check/<name>, as land.yml does; a project check that skips
-private repositories is run in the agent's environment as the repository's AGENTS.md says. Exit code 0 means landed."""
+The branch defaults to the current one. A project check (.github/workflows/check-<name>.yml) that declares its
+local command in `# local: <command>` lines is run here, in a checkout of the branch tip, and its status check/<name>
+is posted from here; GitHub Actions are then not needed for landing. A project check without such lines is waited
+for through its status check/<name>, posted by Actions; one that skips private repositories is run in the agent's
+environment as the repository's AGENTS.md says. Exit code 0 means landed."""
 import json, os, re, subprocess, sys, tempfile, time, urllib.request
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import plyn_typography
@@ -39,20 +41,34 @@ def api_get(path):
     req = urllib.request.Request(f"https://api.github.com/{path}", headers={"Authorization": f"token {token}"} if token else {})
     return json.loads(urllib.request.urlopen(req).read())
 
+def local_commands(text):
+    return [l.split(":", 1)[1].strip() for l in text.splitlines() if re.match(r"\s*#\s*local:", l)]
+
 def project_checks(repo, sha, path, attempts=60, interval=10):
     wf = os.path.join(path, ".github", "workflows")
-    names = sorted(f[6:-4] for f in os.listdir(wf) if f.startswith("check-") and f.endswith(".yml")
-                   and "repository.private" not in open(os.path.join(wf, f)).read()) if os.path.isdir(wf) else []
-    for attempt in range(attempts):
+    files = sorted(f for f in os.listdir(wf) if f.startswith("check-") and f.endswith(".yml")) if os.path.isdir(wf) else []
+    waited = []
+    for f in files:
+        n, text = f[6:-4], open(os.path.join(wf, f)).read()
+        cmds = local_commands(text)
+        if cmds:
+            print(f"Running check/{n} here")
+            r = subprocess.run(["bash", "-eo", "pipefail", "-c", "\n".join(cmds)], cwd=path, capture_output=True, text=True)
+            status(repo, sha, f"check/{n}", "success" if r.returncode == 0 else "failure",
+                   "Passed in the agent's environment" if r.returncode == 0 else "Failed in the agent's environment")
+            if r.returncode: print(r.stdout[-3000:] + r.stderr[-3000:]); return f"Check check/{n} failed"
+        elif "repository.private" not in text:
+            waited.append(n)
+    for attempt in range(attempts if waited else 0):
         states = {s["context"]: s["state"] for s in reversed(api_get(f"repos/{repo}/commits/{sha}/status").get("statuses", []))}
         pending = []
-        for n in names:
+        for n in waited:
             st = states.get(f"check/{n}", "pending")
             if st in ("failure", "error"): return f"Check check/{n} failed"
             if st != "success": pending.append(n)
         if not pending: return ""
         time.sleep(interval)
-    return "Checks did not finish: " + " ".join(pending)
+    return "Checks did not report (no # local: command, Actions did not run): " + " ".join(waited) if waited else ""
 
 def validate(path):
     v = next((p for p in (".system/tools/plyn_validate.py", "tools/plyn_validate.py") if os.path.exists(os.path.join(path, p))), None)
@@ -85,6 +101,7 @@ def main():
             why = project_checks(repo, tip, wt)
             if why:
                 print(why); status(repo, tip, "land", "failure", "Not landed: " + why); return 1
+            git("reset", "-q", "--hard", cwd=wt); git("clean", "-fdq", cwd=wt)  # what the checks wrote stays out of the landing
             base = git("merge-base", f"origin/{main_branch}", tip)
             msgs = git("log", "--reverse", "--format=%B", f"{base}..{tip}").splitlines()
             seen, lines = set(), []
