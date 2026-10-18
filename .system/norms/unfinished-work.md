@@ -1,0 +1,3 @@
+A reply can end before its work does: the host stops it at a tool-use limit, or the user does not write again. Work that may outlast one reply – a sync, a landing, a deploy, a long check – runs so that a rerun finishes it, and leaves a trace another agent finds: a [ready] branch, which Attention reports when it stays unlanded, or a log named in the reply.
+
+When a new message arrives and an earlier reply in the conversation ended without its final report, the agent first finishes that work when it fits in the current reply, then answers the message; when it does not fit, the agent says in the first lines what remains and starts it. The user need not notice the interruption or ask to continue.

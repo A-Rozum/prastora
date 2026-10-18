@@ -15,6 +15,9 @@ import json, os, re, subprocess, sys, tempfile, time, urllib.request
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import plyn_typography
 
+# Directories of installed or built material: a landed commit carries sources, these are produced from them.
+GENERATED = {"node_modules", "vendor", "__pycache__", ".venv", "venv", ".pytest_cache"}
+
 def git(*a, cwd=".", check=True):
     r = subprocess.run(["git", *a], cwd=cwd, capture_output=True, text=True)
     if check and r.returncode:
@@ -117,6 +120,12 @@ def main():
                 r = subprocess.run(["git", "merge", "--squash", tip], cwd=wt, capture_output=True, text=True)
                 if r.returncode:
                     print(r.stdout + r.stderr); status(repo, tip, "land", "failure", "Not landed: Conflicts with the default branch"); return 1
+                added = git("diff", "--cached", "--name-only", "--diff-filter=A", cwd=wt).splitlines()
+                built = sorted({p for p in added if GENERATED & set(p.split("/")[:-1]) or p.endswith((".pyc", ".pyo"))})
+                if built:
+                    why = "generated files in the commit: " + ", ".join(built[:5]) + (" …" if len(built) > 5 else "")
+                    print(why + "\nRemove them from the branch and add their paths to .gitignore.")
+                    status(repo, tip, "land", "failure", "Not landed: " + why); return 1
                 fixed = plyn_typography.apply(wt)  # house dash on every landed text file
                 if fixed: git("add", "--", *fixed, cwd=wt); print("House dash set in: " + ", ".join(fixed))
                 if subprocess.run(["git", "diff", "--cached", "--quiet"], cwd=wt).returncode == 0:
