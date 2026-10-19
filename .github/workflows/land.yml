@@ -39,6 +39,7 @@ jobs:
       - name: Land the branch on the default branch with Codex as author
         id: land
         env:
+          LAND_TOKEN: ${{ secrets.LAND_TOKEN }}
           BRANCH: ${{ github.ref_name }}
           MAIN: ${{ github.event.repository.default_branch }}
         run: |
@@ -52,17 +53,15 @@ jobs:
           for attempt in 1 2 3; do
             git fetch -q origin "$MAIN" && git reset -q --hard "origin/$MAIN"
             if ! git "${bot[@]}" merge --squash "origin/$BRANCH" > /tmp/out 2>&1; then echo "Conflicts with the default branch" > /tmp/why; cat /tmp/out; exit 1; fi
-            python3 - <<'PY'
-          # House dash (plyn-standard norms/typography.md): U+2013 instead of U+2014/U+2015, unless typography.yaml says dash: em
-          import pathlib, re, subprocess
-          t = pathlib.Path("typography.yaml")
-          if not (t.exists() and re.search(r"^\s*dash:\s*em\b", t.read_text(encoding="utf-8"), re.M)):
-              for rel in subprocess.run(["git", "diff", "--cached", "--name-only", "--diff-filter=AM"], capture_output=True, text=True).stdout.split():
-                  try: s = pathlib.Path(rel).read_bytes().decode("utf-8")
-                  except (OSError, UnicodeDecodeError): continue
-                  n = re.sub("[\u2014\u2015]", "\u2013", re.sub(r"(?<=[^\W\d])[\u2014\u2015](?=[^\W\d])", " \u2013 ", s))
-                  if n != s: pathlib.Path(rel).write_bytes(n.encode("utf-8")); subprocess.run(["git", "add", "--", rel])
-          PY
+            # House dash (plyn-standard norms/typography.md) with its quoted, code and verbatim scopes:
+            # the vendored tool, else the tool of this repository, else the current one from plyn-tools
+            tool=.system/tools/plyn_typography.py; [ -f tools/plyn_typography.py ] && tool=tools/plyn_typography.py
+            if [ ! -f "$tool" ]; then
+              tool=/tmp/plyn_typography.py
+              curl -fsSL -H "Authorization: token $LAND_TOKEN" -o "$tool" https://raw.githubusercontent.com/A-Rozum/plyn-tools/main/tools/plyn_typography.py || tool=""
+            fi
+            if [ -n "$tool" ]; then python3 "$tool" . && git diff --name-only -z | xargs -0 -r git add --
+            else echo "::warning::Typography tool unavailable; landed without the house dash"; fi
             if git diff --cached --quiet; then landed=yes; break; fi
             git "${bot[@]}" commit -q --author="Codex <codex@openai.com>" -F /tmp/msg
             if [ -f system.yaml ] && [ ! -f .system/tools/plyn_validate.py ] && [ ! -f tools/plyn_validate.py ]; then echo "Validator expected but missing" > /tmp/why; exit 1; fi
