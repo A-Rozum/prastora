@@ -126,8 +126,8 @@ def main():
                     why = "generated files in the commit: " + ", ".join(built[:5]) + (" …" if len(built) > 5 else "")
                     print(why + "\nRemove them from the branch and add their paths to .gitignore.")
                     status(repo, tip, "land", "failure", "Not landed: " + why); return 1
-                fixed = plyn_typography.apply(wt)  # house dash on every landed text file
-                if fixed: git("add", "--", *fixed, cwd=wt); print("House dash set in: " + ", ".join(fixed))
+                fixed = plyn_typography.apply(wt)  # base typography on every landed prose file
+                if fixed: git("add", "--", *fixed, cwd=wt); print("Base typography set in: " + ", ".join(fixed))
                 if subprocess.run(["git", "diff", "--cached", "--quiet"], cwd=wt).returncode == 0:
                     print("Nothing to land: the default branch already has these changes"); break
                 git("commit", "-q", f"--author={author}", "-m", msg, cwd=wt)

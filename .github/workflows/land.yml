@@ -53,7 +53,7 @@ jobs:
           for attempt in 1 2 3; do
             git fetch -q origin "$MAIN" && git reset -q --hard "origin/$MAIN"
             if ! git "${bot[@]}" merge --squash "origin/$BRANCH" > /tmp/out 2>&1; then echo "Conflicts with the default branch" > /tmp/why; cat /tmp/out; exit 1; fi
-            # House dash (plyn-standard norms/typography.md) with its quoted, code and verbatim scopes:
+            # Base typography (plyn-standard norms/typography.md):
             # the vendored tool, else the tool of this repository, else the current one from plyn-tools
             tool=.system/tools/plyn_typography.py; [ -f tools/plyn_typography.py ] && tool=tools/plyn_typography.py
             if [ ! -f "$tool" ]; then
@@ -61,7 +61,7 @@ jobs:
               curl -fsSL -H "Authorization: token $LAND_TOKEN" -o "$tool" https://raw.githubusercontent.com/A-Rozum/plyn-tools/main/tools/plyn_typography.py || tool=""
             fi
             if [ -n "$tool" ]; then python3 "$tool" . && git diff --name-only -z | xargs -0 -r git add --
-            else echo "::warning::Typography tool unavailable; landed without the house dash"; fi
+            else echo "::warning::Typography tool unavailable; landed without the base typography"; fi
             if git diff --cached --quiet; then landed=yes; break; fi
             git "${bot[@]}" commit -q --author="Codex <codex@openai.com>" -F /tmp/msg
             if [ -f system.yaml ] && [ ! -f .system/tools/plyn_validate.py ] && [ ! -f tools/plyn_validate.py ]; then echo "Validator expected but missing" > /tmp/why; exit 1; fi

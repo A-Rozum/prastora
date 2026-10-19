@@ -5,11 +5,11 @@ audience: [agent, human]
 description: Prastora – CSS toolkit for layouts that scale as a whole; a package of web elements (core, components, themes, templates) with demo sites.
 packages:
 - id: plyn:standard
-  version: v0.15.11
+  version: v0.15.12
   repo: A-Rozum/plyn-standard
   path: .system
 - id: plyn:tools
-  version: v0.15.12
+  version: v0.15.13
   repo: A-Rozum/plyn-tools
   path: .system/tools
 artifacts:
