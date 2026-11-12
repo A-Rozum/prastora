@@ -1,5 +1,7 @@
 # Prastora
 
+> **This is the earlier version.** Prastora continues, made anew, at [plyn-one/plyn.prastora](https://github.com/plyn-one/plyn.prastora): the same idea of layouts that scale as a whole, with a closed vocabulary for AI agents, a check by rendering, print, documents and blanks. New work goes there; this repository stays as it is.
+
 Prastora is an experimental CSS toolkit for layouts that scale as a whole.
 
 Responsive layouts usually adapt to the screen by rearranging their elements: columns stretch, text rewraps and elements shift relative to each other. But with so many devices, browsers and browser versions, side panels and extensions in use, the visible area of a page can take an enormous number of width and height combinations – and ideally each one needs checking.
